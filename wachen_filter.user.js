@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gebäude Übersicht
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Eigene Konfiguration zum ein-/ausblenden von Gebäuden in der Gebäudeübersicht
 // @author       Christian (LeitstelleHRO) / Jan (KBOE2)
 // @grant        none
