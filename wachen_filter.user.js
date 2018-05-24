@@ -15,12 +15,8 @@
         $(this).remove();
     });
 
-    var buttons;
-
-    if (localStorage.buildingListButtons) {
-        buttons = JSON.parse(localStorage.buildingListButtons);
-    } else {
-        buttons = [
+    var standardButtons = {
+        "script": [
             {
                 'ids': [0],
                 'name': 'Feuerwehr'
@@ -65,7 +61,45 @@
                 'ids': [4],
                 'name': 'Krankenhäuser'
             }
-        ];
+        ],
+        "game": [
+            {
+                'ids': [0],
+                'name': 'Feuerwehr'
+            },
+            {
+                'ids': [2, 4, 5, 12],
+                'name': 'Rettung'
+            },
+            {
+                'ids': [6, 11, 13, 17],
+                'name': 'Polizei'
+            },
+            {
+                'ids': [9],
+                'name': 'THW'
+            },
+            {
+                'ids': [15],
+                'name': 'Wasserrettung'
+            },
+            {
+                'ids': [1, 3, 8, 10],
+                'name': 'Schulen'
+            },
+            {
+                'ids': [7],
+                'name': 'Leitstelle'
+            }
+        ]
+    };
+
+    var buttons;
+
+    if (localStorage.buildingListButtons) {
+        buttons = JSON.parse(localStorage.buildingListButtons);
+    } else {
+        buttons = standardButtons.script;
         localStorage.buildingListButtons = JSON.stringify(buttons);
     }
 
@@ -118,7 +152,7 @@
     });
 
     $('#customizeBuildingFilter').on('click', function() {
-        var markup = '<div id="buildingFilterCustomizer" style="background: #fff; z-index: 10000; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); min-width: 200px; max-width: 600px; max-height: ' + (screen.height - 10) + 'px;width: 80%; border: 1px solid rgb(66, 66, 66); color: black; padding: 5px; overflow: auto;"><button type="button" class="close buildingFilterCustomizerClose aria-label="Schliessen" style="margin: 5px;">×</button><div class="container-fluid"><h3>Gebäude-Filter anpassen</h3><hr><div class="row"><div class="col col-md-6"><button class="btn btn-success" id="newFilter"><i class="glyphicon glyphicon-plus"></i></button><label for="newFilter">&nbsp;Neuen Filter hinzufügen</label></div><div class="col col-md-6"><button class="btn btn-success" id="saveFilters"><i class="glyphicon glyphicon-floppy-disk"></i></button><label for="saveFilters">&nbsp;Filter speichern</label></div></div><hr><div id="filterConfigurations"></div></div></div>';
+        var markup = '<div id="buildingFilterCustomizer" style="background: #fff; z-index: 10000; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); min-width: 200px; max-width: 600px; max-height: ' + (screen.height - 20) + 'px; width: 80%; border: 1px solid rgb(66, 66, 66); color: black; padding: 5px; overflow: auto; margin-top: 10px;"><button type="button" class="close buildingFilterCustomizerClose aria-label="Schliessen" style="margin: 5px;">×</button><div class="container-fluid"><h3>Gebäude-Filter anpassen</h3><hr><div class="row"><div class="col col-md-3"><button class="btn btn-success" id="newFilter"><i class="glyphicon glyphicon-plus"></i></button><label for="newFilter">&nbsp;Neuen Filter hinzufügen</label></div><div class="col col-md-3"><button class="btn btn-success" id="saveFilters"><i class="glyphicon glyphicon-floppy-disk"></i></button><label for="saveFilters">&nbsp;Filter speichern</label></div><div class="col col-md-3"><button class="btn btn-success" id="resetNormal"><i class="glyphicon glyphicon-floppy-remove"></i></button><label for="resetNormal">&nbsp;Auf Spiel-Standard zurücksetzen</label></div><div class="col col-md-3"><button class="btn btn-success" id="resetScript"><i class="glyphicon glyphicon-floppy-remove"></i></button><label for="resetScript">&nbsp;Auf Script-Standard zurücksetzen</label></div></div><hr><div id="filterConfigurations"></div></div></div>';
 
         $('body').append(markup);
 
@@ -203,6 +237,20 @@
             } else {
                 $(this).parent().parent().parent().remove();
             }
+        });
+
+        $('#resetNormal').click(function() {
+            buttons = standardButtons.game;
+            localStorage.buildingListButtons = JSON.stringify(buttons);
+            console.log('Reset Normal');
+            location.reload();
+        });
+
+        $('#resetScript').click(function() {
+            buttons = standardButtons.script;
+            localStorage.buildingListButtons = JSON.stringify(buttons);
+            console.log('Reset Script');
+            location.reload();
         });
     });
 
