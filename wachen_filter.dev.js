@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gebäude Übersicht_dev
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.3.1
 // @description  Eigene Konfiguration zum ein-/ausblenden von Gebäuden in der Gebäudeübersicht
 // @author       Christian (LeitstelleHRO) / Jan (KBOE2)
 // @grant        none
@@ -105,7 +105,7 @@
         localStorage.buildingListButtons = JSON.stringify(buttons);
     }
 
-    var gebaeude_typen = ['Feuerwache', 'Feuerwehrschule', 'Rettungswache', 'Rettungsschule', 'Krankenhaus', 'Rettungshubschrauber-Station', 'Leitstelle', 'Polizeiwache', 'Polizeischule', 'THW', 'THW Bundesschule', 'Bereitschaftspolizei', 'Schnelleinsatzgruppe (SEG)', 'Polizeihubschrauberstation', 'Bereitstellungsraum', 'Wasserrettung', 'Verbandzellen', 'Polizei-Sondereinheiten'];
+    var gebaeude_typen = ['Feuerwache', 'Feuerwehrschule', 'Rettungswache', 'Rettungsschule', 'Krankenhaus', 'Rettungshubschrauber-Station', 'Polizeiwache', 'Leitstelle', 'Polizeischule', 'THW', 'THW Bundesschule', 'Bereitschaftspolizei', 'Schnelleinsatzgruppe (SEG)', 'Polizeihubschrauberstation', 'Bereitstellungsraum', 'Wasserrettung', 'Verbandzellen', 'Polizei-Sondereinheiten'];
 
     $('#building_panel_heading > .btn-group').append('<a class="btn btn-xs btn-default" id="customizeBuildingFilter">Gebäude-Filter anpassen</a>');
 
