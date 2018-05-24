@@ -118,18 +118,7 @@
     });
 
     $('#customizeBuildingFilter').on('click', function() {
-        var markup = "";
-        markup += '<div id="buildingFilterCustomizer" ';
-        markup += 'style="background: #fff; z-index: 10000; position: absolute; left: 50%; top: 50%; ';
-        markup += 'transform: translate(-50%,-50%); min-width: 200px; ';
-        markup += 'max-width: 600px; max-height: ' + (screen.height - 10) + 'px;width: 80%; border: 1px solid rgb(66, 66, 66); color: black; padding: 5px; overflow: auto;">';
-        markup += '<button type="button" class="close buildingFilterCustomizerClose aria-label="Schliessen" style="margin: 5px;">×</button>';
-        markup += '<div class="container-fluid">';
-        markup += '<h3>Gebäude-Filter anpassen</h3><hr>';
-        markup += '<div class="row"><div class="col col-md-6"><button class="btn btn-success" id="newFilter"><i class="glyphicon glyphicon-plus"></i></button><label for="newFilter">&nbsp;Neuen Filter hinzufügen</label></div><div class="col col-md-6"><button class="btn btn-success" id="saveFilters"><i class="glyphicon glyphicon-floppy-disk"></i></button><label for="saveFilters">&nbsp;Filter speichern</label></div></div><hr>';
-        markup += '<div id="filterConfigurations"></div>';
-        markup += '</div>';
-        markup += '</div>';
+        var markup = '<div id="buildingFilterCustomizer" style="background: #fff; z-index: 10000; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); min-width: 200px; max-width: 600px; max-height: ' + (screen.height - 10) + 'px;width: 80%; border: 1px solid rgb(66, 66, 66); color: black; padding: 5px; overflow: auto;"><button type="button" class="close buildingFilterCustomizerClose aria-label="Schliessen" style="margin: 5px;">×</button><div class="container-fluid"><h3>Gebäude-Filter anpassen</h3><hr><div class="row"><div class="col col-md-6"><button class="btn btn-success" id="newFilter"><i class="glyphicon glyphicon-plus"></i></button><label for="newFilter">&nbsp;Neuen Filter hinzufügen</label></div><div class="col col-md-6"><button class="btn btn-success" id="saveFilters"><i class="glyphicon glyphicon-floppy-disk"></i></button><label for="saveFilters">&nbsp;Filter speichern</label></div></div><hr><div id="filterConfigurations"></div></div></div>';
 
         $('body').append(markup);
 
@@ -147,9 +136,7 @@
                 }
                 gebaeude_liste_formatiert += gebaeude_typen[filter[i].ids[j]];
             }
-            var filterMarkup = '<div class="buildingFilter" style="float: left;"><div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_name_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Name Filter ' + $('.buildingFilter').length + '</label> <button class="btn btn-danger btn-xs deleteFilter"><i class="glyphicon glyphicon-trash"></i></button></div><input class="string required form-control" id="filter_name_' + $('.buildingFilter').length + '" name="filter_name_' + $('.buildingFilter').length + '" size="50" type="text" value="' + filter[i].name + '"></div>';
-            filterMarkup += '<div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_ids_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen Ausgewählt Filter ' + $('.buildingFilter').length + '</label><input class="input required form-control disabled" id="filter_ids_' + $('.buildingFilter').length + '" name="filter_ids_' + $('.buildingFilter').length + '" disabled value="' + gebaeude_liste_formatiert + '"></input></div></div>';
-            filterMarkup += '<div class="input-group select required"><div class="input-group-addon"><label class="select required " for="filter_id_selection_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen-Auswahl Filter ' + $('.buildingFilter').length + '</label><select multiple class="select required form-control filterIdSelection" id="filter_id_selection_' + $('.buildingFilter').length + '">';
+            var filterMarkup = '<div class="buildingFilter" style="float: left;"><div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_name_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Name Filter ' + $('.buildingFilter').length + '</label> <button class="btn btn-danger btn-xs deleteFilter"><i class="glyphicon glyphicon-trash"></i></button></div><input class="string required form-control" id="filter_name_' + $('.buildingFilter').length + '" name="filter_name_' + $('.buildingFilter').length + '" size="50" type="text" value="' + filter[i].name + '"></div><div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_ids_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen Ausgewählt Filter ' + $('.buildingFilter').length + '</label><input class="input required form-control disabled" id="filter_ids_' + $('.buildingFilter').length + '" name="filter_ids_' + $('.buildingFilter').length + '" disabled value="' + gebaeude_liste_formatiert + '"></input></div></div><div class="input-group select required"><div class="input-group-addon"><label class="select required " for="filter_id_selection_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen-Auswahl Filter ' + $('.buildingFilter').length + '</label><select multiple class="select required form-control filterIdSelection" id="filter_id_selection_' + $('.buildingFilter').length + '">';
             for (var k = 0; k < gebaeude_typen.length; k++) {
                 filterMarkup += '<option>' + gebaeude_typen[k] + '</option>';
             }
@@ -177,9 +164,7 @@
         });
 
         $('#newFilter').click(function() {
-            var filterMarkup = '<div class="buildingFilter" style="float: left;"><div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_name_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Name Filter ' + $('.buildingFilter').length + '</label> <button class="btn btn-danger btn-xs deleteFilter"><i class="glyphicon glyphicon-trash"></i></button></div><input class="string required form-control" id="filter_name_' + $('.buildingFilter').length + '" name="filter_name_' + $('.buildingFilter').length + '" size="50" type="text"></div>';
-            filterMarkup += '<div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_ids_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen Ausgewählt Filter ' + $('.buildingFilter').length + '</label><input class="input required form-control disabled" id="filter_ids_' + $('.buildingFilter').length + '" name="filter_ids_' + $('.buildingFilter').length + '" disabled></input></div></div>';
-            filterMarkup += '<div class="input-group select required"><div class="input-group-addon"><label class="select required " for="filter_id_selection_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen-Auswahl Filter ' + $('.buildingFilter').length + '</label><select multiple class="select required form-control filterIdSelection" id="filter_id_selection_' + $('.buildingFilter').length + '">';
+            var filterMarkup = '<div class="buildingFilter" style="float: left;"><div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_name_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Name Filter ' + $('.buildingFilter').length + '</label> <button class="btn btn-danger btn-xs deleteFilter"><i class="glyphicon glyphicon-trash"></i></button></div><input class="string required form-control" id="filter_name_' + $('.buildingFilter').length + '" name="filter_name_' + $('.buildingFilter').length + '" size="50" type="text"></div><div class="input-group string required"><div class="input-group-addon"><label class="string required " for="filter_ids_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen Ausgewählt Filter ' + $('.buildingFilter').length + '</label><input class="input required form-control disabled" id="filter_ids_' + $('.buildingFilter').length + '" name="filter_ids_' + $('.buildingFilter').length + '" disabled></input></div></div><div class="input-group select required"><div class="input-group-addon"><label class="select required " for="filter_id_selection_' + $('.buildingFilter').length + '"><abbr title="required">*</abbr> Gebäudetypen-Auswahl Filter ' + $('.buildingFilter').length + '</label><select multiple class="select required form-control filterIdSelection" id="filter_id_selection_' + $('.buildingFilter').length + '">';
             for (var k = 0; k < gebaeude_typen.length; k++) {
                 filterMarkup += '<option>' + gebaeude_typen[k] + '</option>';
             }
@@ -213,7 +198,11 @@
         });
 
         $('.deleteFilter').click(function() {
-            $(this).parent().parent().parent().remove();
+            if ($('.buildingFilter').length == 1) {
+                alert("Du kannst den letzten verbleibenden Button nicht löschen!");
+            } else {
+                $(this).parent().parent().parent().remove();
+            }
         });
     });
 
