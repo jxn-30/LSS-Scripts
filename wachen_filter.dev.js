@@ -1,21 +1,17 @@
 // ==UserScript==
 // @name         Gebäude Übersicht_dev
 // @namespace    http://tampermonkey.net/
-// @version      1.3.1
+// @version      1.3.0
 // @description  Eigene Konfiguration zum ein-/ausblenden von Gebäuden in der Gebäudeübersicht
 // @author       Christian (LeitstelleHRO) / Jan (KBOE2)
 // @grant        none
 // @include      https://www.leitstellenspiel.de/
 // ==/UserScript==
 
-(function() {
-    'use strict';
-
+function wachenFilter() {
     $('.building_selection').each(function() {
         $(this).remove();
     });
-
-    var toggleMapIcons = true;
 
     var standardButtons = {
         "script": [
@@ -109,22 +105,9 @@
 
     $('#building_panel_heading > .btn-group').append('<a class="btn btn-xs btn-default" id="customizeBuildingFilter">Gebäude-Filter anpassen</a>');
 
-    $('#btn-group-building-select').append('<a class="btn btn-xs btn-success" id="building_selection_toggleMap" title="Grün = Gebäude werden auf der Karte ebenfalls ein-/ausgeblendet. Rot = Gebäude auf der Karte bleiben ein-/ausgeblendet."><i class="glyphicon glyphicon-globe"></i></a>');
-
     for (var i = 0; i < buttons.length; i++) {
         $('#btn-group-building-select').append('<a building_type_ids="' + JSON.stringify(buttons[i].ids) + '" class="btn btn-xs btn-success building_selection" id="building_selection_' + buttons[i].name.replace(new RegExp(' ', 'g'), '').toLowerCase() + '" title="Grün = Die Gebäude werden in der Leiste angezeigt. Rot = Die Gebäude werden nicht angezeigt.">' + buttons[i].name + '</a>');
     }
-
-    $('#building_selection_toggleMap').click(function() {
-        toggleMapIcons = !toggleMapIcons;
-        if (!toggleMapIcons) {
-            $(this).removeClass('btn-success');
-            $(this).addClass('btn-danger');
-        } else {
-            $(this).removeClass('btn-danger');
-            $(this).addClass('btn-success');
-        }
-    });
 
     $('.building_selection').on('click', function() {
         if ($(this).hasClass('btn-success')) {
@@ -134,13 +117,6 @@
                 for (var j = 0; j < $('.building_list_li[building_type_id="' + JSON.parse($(this).attr('building_type_ids'))[i] + '"]').length; j++) {
                     $($('.building_list_li[building_type_id="' + JSON.parse($(this).attr('building_type_ids'))[i] + '"]')[j]).hide();
                 }
-                if (toggleMapIcons) {
-                    for (var p = 0; p < building_markers_cache.length; p++) {
-                        if (building_markers_cache[p].building_type == JSON.parse($(this).attr('building_type_ids'))[i]) {
-                            $(building_markers[p]._icon).hide();
-                        }
-                    }
-                }
             }
         } else {
             $(this).removeClass('btn-danger');
@@ -149,13 +125,6 @@
                 for (var l = 0; l < $('.building_list_li[building_type_id="' + JSON.parse($(this).attr('building_type_ids'))[k] + '"]').length; l++) {
                     $($('.building_list_li[building_type_id="' + JSON.parse($(this).attr('building_type_ids'))[k] + '"]')[l]).show();
                 }
-                if (toggleMapIcons) {
-                    for (var q = 0; q < building_markers_cache.length; q++) {
-                        if (building_markers_cache[q].building_type == JSON.parse($(this).attr('building_type_ids'))[k]) {
-                            $(building_markers[q]._icon).show();
-                        }
-                    }
-                }
             }
         }
     });
@@ -163,9 +132,6 @@
     $('.building_selection').on('dblclick', function() {
         $('.building_list_li').each(function() {
             $(this).show();
-        });
-        $(building_markers).each(function() {
-            $($(this)[0]._icon).show();
         });
         $('.building_selection[id!="' + $(this).attr('id') + '"]').each(function(){
             $(this).removeClass('btn-success');
@@ -181,21 +147,10 @@
                 $(building).show();
             }
         }
-        if (toggleMapIcons) {
-            for (var k = 0; k < JSON.parse($(this).attr('building_type_ids')).length; k++) {
-                for (var q = 0; q < building_markers_cache.length; q++) {
-                    if (building_markers_cache[q].building_type == JSON.parse($(this).attr('building_type_ids'))[k]) {
-                        $(building_markers[q]._icon).show();
-                    } else {
-                        $(building_markers[q]._icon).hide();
-                    }
-                }
-            }
-        }
     });
 
     $('#customizeBuildingFilter').on('click', function() {
-        var markup = '<div id="buildingFilterCustomizer" style="background: #fff; z-index: 10000; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); min-width: 200px; max-width: 600px; max-height: ' + (screen.height - 20) + 'px; width: 80%; border: 1px solid rgb(66, 66, 66); color: black; padding: 5px; overflow: auto; margin-top: 10px;"><button type="button" class="close buildingFilterCustomizerClose aria-label="Schliessen" style="margin: 5px;">×</button><div class="container-fluid"><h3>Gebäude-Filter anpassen</h3><hr><div class="row"><div class="col col-md-3"><button class="btn btn-success" id="newFilter"><i class="glyphicon glyphicon-plus"></i></button><label for="newFilter">&nbsp;Neuen Filter hinzufügen</label></div><div class="col col-md-3"><button class="btn btn-success" id="saveFilters"><i class="glyphicon glyphicon-floppy-disk"></i></button><label for="saveFilters">&nbsp;Filter speichern</label></div><div class="col col-md-3"><button class="btn btn-success" id="resetNormal"><i class="glyphicon glyphicon-floppy-remove"></i></button><label for="resetNormal">&nbsp;Auf Spiel-Standard zurücksetzen</label></div><div class="col col-md-3"><button class="btn btn-success" id="resetScript"><i class="glyphicon glyphicon-floppy-remove"></i></button><label for="resetScript">&nbsp;Auf Script-Standard zurücksetzen</label></div></div><hr><div id="filterConfigurations"></div></div></div>';
+        var markup = '<div id="buildingFilterCustomizer" style="background: #fff; z-index: 10000; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); min-width: 200px; max-width: 600px; max-height: ' + ($(window).height() - 20) + 'px; width: 80%; border: 1px solid rgb(66, 66, 66); color: black; padding: 5px; overflow: auto; margin-top: 10px;"><button type="button" class="close buildingFilterCustomizerClose aria-label="Schliessen" style="margin: 5px;">×</button><div class="container-fluid"><h3>Gebäude-Filter anpassen</h3><hr><div class="row"><div class="col col-md-3"><button class="btn btn-success" id="newFilter"><i class="glyphicon glyphicon-plus"></i></button><label for="newFilter">&nbsp;Neuen Filter hinzufügen</label></div><div class="col col-md-3"><button class="btn btn-success" id="saveFilters"><i class="glyphicon glyphicon-floppy-disk"></i></button><label for="saveFilters">&nbsp;Filter speichern</label></div><div class="col col-md-3"><button class="btn btn-success" id="resetNormal"><i class="glyphicon glyphicon-floppy-remove"></i></button><label for="resetNormal">&nbsp;Auf Spiel-Standard zurücksetzen</label></div><div class="col col-md-3"><button class="btn btn-success" id="resetScript"><i class="glyphicon glyphicon-floppy-remove"></i></button><label for="resetScript">&nbsp;Auf Script-Standard zurücksetzen</label></div></div><hr><div id="filterConfigurations"></div></div></div>';
 
         $('body').append(markup);
 
@@ -301,4 +256,30 @@
     $('.building_list_li').each(function() {
         $(this).show();
     });
+}
+
+(function() {
+    'use strict';
+
+    wachenFilter();
+
+    let buildingLoadContentOrig = buildingLoadContent;
+
+    buildingLoadContent = function(url) {
+        $("#buildings").html(I18n.t("common.loading")),
+            buildingResetContentPossible = !1,
+            building_eval_unload && (eval(building_eval_unload),
+                                     building_eval_unload = null),
+            $.ajax({
+            url: url,
+            cache: !1
+        }).success(function(t) {
+            $("#buildings").html(t);
+            bigMapWindowSizeChanged();
+            if (url == '/buildings') {
+                wachenFilter();
+            }
+        });
+    }
+
 })();
