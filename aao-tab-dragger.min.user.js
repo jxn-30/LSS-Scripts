@@ -1,11 +1,15 @@
 // ==UserScript==
 // @name         AAO-Tab-Dragger
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Customize the order and names of your AAO-Tabs
 // @author       Jan (KBOE2)
-// @include      https://www.leitstellenspiel.de/missions/*
-// @include      https://www.leitstellenspiel.de/aaos*
+// @include      *://www.leitstellenspiel.de/missions/*
+// @include      *://www.leitstellenspiel.de/aaos*
+// @include      *://www.missionchief.com/missions/*
+// @include      *://www.missionchief.com/aaos*
+// @include      *://www.meldkamerspel.com/missions/*
+// @include      *://www.meldkamerspel.com/aaos*
 // @grant        none
 // ==/UserScript==
 
