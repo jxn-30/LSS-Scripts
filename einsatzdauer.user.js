@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-Einsatzdauer
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Zeigt die Einsatzdauer in der Einsatzliste an
 // @author       KBOE2
 // @match        https://www.leitstellenspiel.de/*
@@ -42,6 +42,13 @@
 				timeFormated += "00";
 			}
 			$('#mission_overview_countdown_' + t.id).html(timeFormated);
+            if ($('#mission_out_' + t.id)[0]) {
+                if ($('#mission_out_' + t.id).find('.btn-danger')[0]) {
+                    $('#mission_overview_countdown_' + t.id).appendTo('#mission_caption_' + t.id);
+                } else {
+                    $('#mission_overview_countdown_' + t.id).prependTo($('#mission_bar_outer_' + t.id).parent());
+                }
+            }
 		}
 		missionTimerOrig(t);
 	};
