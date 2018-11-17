@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         LSS-FollowVehicle
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description  try to take over the world!
 // @author       Jan (KBOE2)
 // @grant        none
 // @include      https://www.leitstellenspiel.de/*
+// @include      https://www.missionchief.com/*
+// @include      https://www.meldkamerspel.com/*
 // ==/UserScript==
 
 (function() {
