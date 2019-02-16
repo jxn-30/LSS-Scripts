@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-StatusCount
 // @namespace    http://tampermonkey.net/
-// @version      1.3.0
+// @version      1.3.1
 // @description  Status-Zähler
 // @author       Jan (KBOE2)
 // @match        https://www.leitstellenspiel.de/*
@@ -16,10 +16,12 @@
 (function() {
     'use strict';
 
+    const round = 0; // Auf so viele Nachkommastellen werden die Prozente gerundet.
+
     let s1 = {
         "show": true,     // Zähler wird eingeblendet bei true, bei false ausgeblendet (Wichtig: Überschreibt hide! => Wenn hide auf true aber show auf false ist, wird es trotzdem nie eingeblendet).
         "percent": true,  // Prozentsatz wird angezeigt bei true, bei false nicht.
-        "hide": true      // Bei true wird der Zähler ausgeblendet, sollte er auf 0 stehen, bei false ist diese Funktion deaktiviert.
+        "hide": false      // Bei true wird der Zähler ausgeblendet, sollte er auf 0 stehen, bei false ist diese Funktion deaktiviert.
     };
     let s2 = {
         "show": true,
@@ -28,7 +30,7 @@
     };
     let s3 = {
         "show": true,
-        "percent": false,
+        "percent": true,
         "hide": false
     };
     let s4 = {
@@ -43,7 +45,7 @@
         "blink": false     // Wenn dieser Wert auf false ist, blinkt der S5-Zähler nur, wenn mind. 1 Sprechwunsch vorhanden ist.
     };
     let s6 = {
-        "show": false,
+        "show": true,
         "percent": true,
         "hide": false
     };
@@ -69,14 +71,14 @@
         s7.amount = s7.show ? $('#building_panel_body .building_list_fms_7').length : 0;
         s9.amount = s9.show ? $('#building_panel_body .building_list_fms_9').length : 0;
         let sum = s1.amount + s2.amount + s3.amount + s4.amount + s5.amount + s6.amount + s7.amount;
-        s1.percentage = s1.percent ? parseInt(s1.amount/(sum/100)) : 0;
-        s2.percentage = s2.percent ? parseInt(s2.amount/(sum/100)) : 0;
-        s3.percentage = s3.percent ? parseInt(s3.amount/(sum/100)) : 0;
-        s4.percentage = s4.percent ? parseInt(s4.amount/(sum/100)) : 0;
-        s5.percentage = s5.percent ? parseInt(s5.amount/(sum/100)) : 0;
-        s6.percentage = s6.percent ? parseInt(s6.amount/(sum/100)) : 0;
-        s7.percentage = s7.percent ? parseInt(s7.amount/(sum/100)) : 0;
-        s9.percentage = s9.percent ? parseInt(s9.amount/(sum/100)) : 0;
+        s1.percentage = s1.percent ? parseFloat(s1.amount/(sum/100)).toFixed(round) : 0;
+        s2.percentage = s2.percent ? parseFloat(s2.amount/(sum/100)).toFixed(round) : 0;
+        s3.percentage = s3.percent ? parseFloat(s3.amount/(sum/100)).toFixed(round) : 0;
+        s4.percentage = s4.percent ? parseFloat(s4.amount/(sum/100)).toFixed(round) : 0;
+        s5.percentage = s5.percent ? parseFloat(s5.amount/(sum/100)).toFixed(round) : 0;
+        s6.percentage = s6.percent ? parseFloat(s6.amount/(sum/100)).toFixed(round) : 0;
+        s7.percentage = s7.percent ? parseFloat(s7.amount/(sum/100)).toFixed(round) : 0;
+        s9.percentage = s9.percent ? parseFloat(s9.amount/(sum/100)).toFixed(round) : 0;
         (s1.show && !s1.hide) || (s1.show && s1.hide && s1.amount) ? $("#statusCount").append('<span class="building_list_fms building_list_fms_1" title="Status 1: ' + s1.amount + '">' + s1.amount + (s1.percent ? " (" + s1.percentage + "%)" : "") + '</span>') : null;
         (s2.show && !s2.hide) || (s2.show && s2.hide && s2.amount) ? $("#statusCount").append('<span class="building_list_fms building_list_fms_2" title="Status 2: ' + s2.amount + '">' + s2.amount + (s2.percent ? " (" + s2.percentage + "%)" : "") + '</span>') : null;
         (s3.show && !s3.hide) || (s3.show && s3.hide && s3.amount) ? $("#statusCount").append('<span class="building_list_fms building_list_fms_3" title="Status 3: ' + s3.amount + '">' + s3.amount + (s3.percent ? " (" + s3.percentage + "%)" : "") + '</span>') : null;
