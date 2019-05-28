@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Einsatzhelfer French
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.0 (translation V.1.0.0)
 // @description  try to take over the world!
 // @author       Jan (KBOE2)
 // @include      https://www.leitstellenspiel.de/missions/*
