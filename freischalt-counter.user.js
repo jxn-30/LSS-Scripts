@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-Freischalt-Counter
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       Jan (KBOE2)
 // @match        https://www.leitstellenspiel.de/*
@@ -56,10 +56,7 @@
                 let grtw_naw_buildings = buildings.filter(building => building.can_grtw_naw).length
                 let grtw = vehicles.filter(vehicle => vehicle.vehicle_type === 73).length;
                 let naw = vehicles.filter(vehicle => vehicle.vehicle_type === 74).length;
-                /*
-                    // Wird aktiviert, sobald eine Möglichkeit besteht, Premium abzufragen.
-                    $(grtw_box).append(`<div class="alert alert-info">Du hast aktuell ${grtw} GRTWs von maximal ${Math.floor(grtw_naw_buildings/(user_premium ? 15 : 20))}. ${grtw_naw_buildings%(user_premium ? 15 : 20)}/${user_premium ? '15' : '20'} Rettungswachen bis zum Freischalten des nächsten GRTW</div>`);
-                */
+                $(grtw_box).append(`<div class="alert alert-info">Du hast aktuell ${grtw} GRTWs von maximal ${Math.floor(grtw_naw_buildings/20)} (bzw. ${Math.floor(grtw_naw_buildings/15)} mit Premium Account). ${grtw_naw_buildings%20}/20 (bzw. ${grtw_naw_buildings%15}/15 mit Premium Account) Rettungswachen bis zum Freischalten des nächsten GRTW</div>`);
                 $(naw_box).append(`<div class="alert alert-info">Du hast aktuell ${naw} NAWs von maximal ${grtw_naw_buildings}</div>`);
             });
         });
