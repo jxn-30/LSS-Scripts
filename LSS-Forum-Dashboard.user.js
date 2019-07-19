@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         LSS-Forum-Dashboard
 // @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  try to take over the world!
+// @version      1.1.0
+// @description  Dashboard-Link im LSS-Forum
 // @author       Jan (KBOE2)
 // @include      https://forum.leitstellenspiel.de/*
 // @grant        none
@@ -11,5 +11,6 @@
 (function() {
     'use strict';
 
-    $('ol.boxMenu').append('<li><a href="https://forum.leitstellenspiel.de/cms/index.php?dashboard/">Dashboard</a></li>');
+    $('ol.boxMenu')[0].innerHTML += '<li><a href="/cms/index.php?dashboard/">Dashboard</a></li>';
+    $('.menuOverlayItemList .menuOverlayItemSpacer').before('<li class="menuOverlayItem"><span class="menuOverlayItemWrapper"><a href="/cms/index.php?dashboard/" class="menuOverlayItemLink"><span class="menuOverlayItemTitle">Dashboard</span>')
 })();
