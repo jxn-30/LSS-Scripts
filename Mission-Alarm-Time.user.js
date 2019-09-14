@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-Mission-Alarm-Time
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.1.0
 // @description  Shows the maximum time of all selected vehicles.
 // @author       Jan (KBOE2)
 // @include      https://www.leitstellenspiel.de/missions/*
@@ -11,9 +11,10 @@
 (function() {
     'use strict';
 
-    $('#mission_alarm_btn').append(`&nbsp;<spann id="mission_alarm_time"></span>`);
+    $('#mission_alarm_btn').append(`&nbsp;<spann class="mission_alarm_time"></span>`);
 
     $("body").on("change", ".vehicle_checkbox", function() {
-        $('#mission_alarm_time').text($("#mission-form .vehicle_checkbox:checked:last").parent().parent().find('td[class^="alarm_distance"]').text());
+        $('.mission_alarm_time').text($("#mission-form .vehicle_checkbox:checked:last").parent().parent().find('td[class^="alarm_distance"]').text());
+        $('.customAllianceShareText:first-of-type').click();
     });
 })();
