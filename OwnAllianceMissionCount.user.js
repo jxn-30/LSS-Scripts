@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         LSS-Own-Alliance-Mission
+// @name         LSS-Own-Alliance-Mission-Count
 // @namespace    http://tampermonkey.net/
 // @version      1.0.0
 // @description  shows number of own alliance missions
