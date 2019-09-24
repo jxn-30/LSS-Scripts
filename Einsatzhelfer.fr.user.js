@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Einsatzhelfer French
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0 (translation V.1.0.0)
+// @version      1.1.0 (translation V.1.0.0)
 // @description  try to take over the world!
 // @author       Jan (KBOE2)
 // @include      https://www.leitstellenspiel.de/missions/*
@@ -126,7 +126,7 @@
     let markup = '<div class="alert alert-warning" id="missionHelper"><div class="handle"></div><a class="pull-right" id="pinMissionHelper"><i class="glyphicon glyphicon-pushpin"></i></a>';
 
     if (missionHelp.length > 0) {
-        $.getJSON(`https://lssm.ledbrain.de/lss-manager-v3/dev/modules/lss-missionHelper/missions.${I18n.locale}.json`, {_: new Date().getTime()}) // simple way to "disable" cache
+        $.getJSON(`https://lssm.ledbrain.de/api/missions.php`, {_: new Date().getTime()}) // simple way to "disable" cache
             .done(missions => {
                 let missionId = missionHelp.attr('href').split("/").pop().replace(/\?.*/, '');
                 let mission = missions[missionId];
