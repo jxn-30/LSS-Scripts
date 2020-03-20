@@ -9,6 +9,8 @@
 
 (function() {
     'use strict';
+    
+    const give_alert = false;
 
     const colors = {
         'FuStW': '#00f',
@@ -20,7 +22,7 @@
     $('#mission_vehicle_at_mission tbody tr[id^="vehicle_row"], #mission_vehicle_driving tbody tr[id^="vehicle_row"]').each((_, row) => {
         let vehicleType = row.querySelector('small').innerText.replace(/^\(|\)$/g, '');
         types.forEach(type => {
-            if (vehicleType == type) $(row).css('background-color', colors[type]) && !hatFz && alert("Brudaaa, farbiges Auto im Einsatz!");
+            if (vehicleType == type) $(row).css('background-color', colors[type]) && !hatFz && give_alert && alert("Brudaaa, farbiges Auto im Einsatz!");
         });
     });
 })();
