@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Mission-Vehicle-Highlight
-// @version      1.0.0
+// @version      1.1.0
 // @description  Highlights vehicles in alarm window
 // @author       Jan (KBOE2)
 // @include      https://www.leitstellenspiel.de/missions/*
