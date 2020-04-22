@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Mission-Less-ELW-Highlight
-// @version      1.0.0
+// @version      1.0.1
 // @description  Highlights missions in missionlist with less than required ELWs
 // @author       Jan (jxn_30)
 // @include      https://www.leitstellenspiel.de/
@@ -38,9 +38,9 @@
                         ))
                 );
                 if (elw[1] < reqElw1 || elw[2] < reqElw2)
-                    panel.querySelector('.panel-body').style.background =
+                    panel.querySelector('.panel-heading').style.background =
                         'blue';
-                else panel.querySelector('.panel-body').style.background = null;
+                else panel.querySelector('.panel-heading').style.background = null;
             });
             const missionMarkerAddOrig = window.missionMarkerAdd;
             window.missionMarkerAdd = (...args) => {
@@ -64,9 +64,9 @@
                         ))
                 );
                 if (elw[1] < reqElw1 || elw[2] < reqElw2)
-                    panel.querySelector('.panel-body').style.background =
+                    panel.querySelector('.panel-heading').style.background =
                         'blue';
-                else panel.querySelector('.panel-body').style.background = null;
+                else panel.querySelector('.panel-heading').style.background = null;
             };
         });
 })();
