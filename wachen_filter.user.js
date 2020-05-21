@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gebäude Übersicht
 // @namespace    http://tampermonkey.net/
-// @version      1.3.1
+// @version      1.3.2
 // @description  Eigene Konfiguration zum ein-/ausblenden von Gebäuden in der Gebäudeübersicht
 // @author       Christian (LeitstelleHRO) / Jan (KBOE2)
 // @grant        none
@@ -75,7 +75,7 @@
                 }]
             };
             localStorage.buildingListButtons ? b = JSON.parse(localStorage.buildingListButtons) : (b = a.script, localStorage.buildingListButtons = JSON.stringify(b));
-            var c = ['Feuerwache', 'Feuerwehrschule', 'Rettungswache', 'Rettungsschule', 'Krankenhaus', 'Rettungshubschrauber-Station', 'Polizeiwache', 'Leitstelle', 'Polizeischule', 'THW', 'THW Bundesschule', 'Bereitschaftspolizei', 'Schnelleinsatzgruppe (SEG)', 'Polizeihubschrauberstation', 'Bereitstellungsraum', 'Wasserrettung', 'Verbandzellen', 'Polizei-Sondereinheiten'];
+            var c = ['Feuerwache', 'Feuerwehrschule', 'Rettungswache', 'Rettungsschule', 'Krankenhaus', 'Rettungshubschrauber-Station', 'Polizeiwache', 'Leitstelle', 'Polizeischule', 'THW', 'THW Bundesschule', 'Bereitschaftspolizei', 'Schnelleinsatzgruppe (SEG)', 'Polizeihubschrauberstation', 'Bereitstellungsraum', 'Wasserrettung', 'Verbandzellen', 'Polizei-Sondereinheiten', 'Feuerwache (Kleinwache) => Geht leider derzeit nicht', 'Polizeiwache (Kleinwache) => Geht leider derzeit nicht', 'Rettungswache (Kleinwache) => Geht leider derzeit nicht', 'Rettungshundestaffel'];
             $('#building_panel_heading > .btn-group').append('<a class="btn btn-xs btn-default" id="customizeBuildingFilter">Geb\xE4ude-Filter anpassen</a>');
             for (var d = 0; d < b.length; d++) $('#btn-group-building-select').append('<a building_type_ids="' + JSON.stringify(b[d].ids) + '" class="btn btn-xs btn-success building_selection" id="building_selection_' + b[d].name.replace(/ /g, '').toLowerCase() + '" title="Gr\xFCn = Die Geb\xE4ude werden in der Leiste angezeigt. Rot = Die Geb\xE4ude werden nicht angezeigt.">' + b[d].name + '</a>');
             $('.building_selection').on('click', function() {
