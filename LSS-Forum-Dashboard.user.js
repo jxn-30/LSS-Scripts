@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Forum-Dashboard
-// @version      1.3.3
+// @version      1.3.4
 // @description  Dashboard-Link im LSS-Forum
 // @author       Jan (KBOE2)
 // @include      https://forum.leitstellenspiel.de/*
@@ -27,6 +27,15 @@
                 let e = document.createElement("script");
                 e.src = "https://www.amcharts.com/lib/3/themes/dark.js", document.head.appendChild(e),
                 window.clearInterval(a);
+            }
+        }, 1e3), q = window.setInterval(() => {
+            if (window.AmCharts) {
+                let e = document.createElement("script");
+                let f = document.createElement('link');
+                f.rel = 'stylesheet';
+                f.href = 'https://www.amcharts.com/lib/3/plugins/export/export.css';
+                e.src = "https://www.amcharts.com/lib/3/plugins/export/export.min.js", document.head.appendChild(e).appendChild(f),
+                window.clearInterval(q);
             }
         }, 1e3);
         t = parseInt(document.querySelector(".sidebar .containerContent dd:nth-of-type(2)").innerText.replace(/\D+/g, "")),
@@ -70,6 +79,9 @@
                 size: 15,
                 text: "Abstand Posts - Likes"
             } ],
+            export: {
+                enabled: true
+            },
             dataProvider: Object.keys(p).map((e, t) => {
                 let l = new Date();
                 l.setTime(parseInt(e));
@@ -77,7 +89,7 @@
                     date: l,
                     bldiff: p[e].p - p[e].l
                 };
-                for (let l = m; l <= c; l += m) (t % l == l - 1 || !t) && (i[`t${l}`] = p[e].p - p[e].l);
+                for (let l = m; l <= c; l += m) (t % l == l - 1 || !t || t === (c - 1)) && (i[`t${l}`] = p[e].p - p[e].l);
                 return i;
             })
         };
@@ -139,8 +151,7 @@
                         posts: t[e].p,
                         likes: t[e].l
                     };
-                    for (let r = a; r <= l; r += a) (i % r == r - 1 || !i) && (n[`t${r}p`] = t[e].p,
-                    n[`t${r}l`] = t[e].l);
+                    for (let r = a; r <= l; r += a) (i % r == r - 1 || !i || i === (l - 1)) && (n[`t${r}p`] = t[e].p, n[`t${r}l`] = t[e].l);
                     return n;
                 }), u.legend.enabled = !0, e.innerHTML += `AmCharts.makeChart("pl-chart", ${JSON.stringify(u)});`,
                 u.graphs = [ {
@@ -165,7 +176,7 @@
                         lpp: (t[e].l / t[e].p).toFixed(4),
                         ppl: (t[e].p / t[e].l).toFixed(4)
                     };
-                    for (let e = a; e <= l; e += a) (i % e == e - 1 || !i) && (n[`t${e}lpp`] = n.lpp,
+                    for (let e = a; e <= l; e += a) (i % e == e - 1 || !i || i === (l - 1)) && (n[`t${e}lpp`] = n.lpp,
                     n[`t${e}ppl`] = n.ppl);
                     return n;
                 });
@@ -191,5 +202,26 @@
                 e.innerHTML += `AmCharts.makeChart("lpp-chart", ${JSON.stringify(u)});`, document.body.appendChild(e);
             }
         }, 1e3);
+    }
+    if (window.location.search.startsWith('?members-list/') && window.location.search.match(/sortField=activityPoints/)) {
+        let prevPoints;
+        document.querySelectorAll('.userList > li .userInformation .inlineDataList').forEach(user => {
+            const posts = parseInt(user.querySelector('dd:nth-of-type(1)').textContent.trim().match(/^\d{1,3}(?:[.,]\d{3})*/)[0].replace(/\D/g, ''));
+            const likes = parseInt(user.querySelector('dd:nth-of-type(2)').textContent.trim().match(/^\d{1,3}(?:[.,]\d{3})*/)[0].replace(/\D/g, ''));
+            const points = parseInt(user.querySelector('dd:nth-of-type(3)').textContent.trim().match(/^\d{1,3}(?:[.,]\d{3})*/)[0].replace(/\D/g, ''));
+            const distDT = document.createElement('dt');
+            distDT.innerText = 'Punkte-Diff';
+            const distDD = document.createElement('dd');
+            distDD.innerText = ((prevPoints || points) - points).toLocaleString();
+            const postDT = document.createElement('dt');
+            postDT.innerText = 'Posts needed';
+            const postDD = document.createElement('dd');
+            postDD.innerText = Math.ceil(((prevPoints || points) - points) / (5 + (likes / posts))).toLocaleString();
+            user.appendChild(distDT);
+            user.appendChild(distDD);
+            user.appendChild(postDT);
+            user.appendChild(postDD);
+            prevPoints = points;
+        });
     }
 }();
