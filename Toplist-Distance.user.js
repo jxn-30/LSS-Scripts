@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name         LSS-Toplist-Distance
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Zeigt die fehlenden verdienten Credits zum nächsten Spieler in der Toplist an
 // @author       Jan (jxn_30)
 // @grant        none
 // @include      /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/toplist(\?.*)?$/
 // ==/UserScript==
 
-(function() {
+(async function() {
 	'use strict';
+
+    if (!window.sessionStorage.hasOwnProperty('api_credits_cache')) await fetch('/api/credits').then(res => res.json()).then(data => window.sessionStorage.setItem('api_credits_cache', JSON.stringify(data)));
 
     let prevValue;
 
@@ -19,6 +21,7 @@
         distSpan.innerText = (credits - (prevValue || credits)).toLocaleString();
         distSpan.style.color = 'red';
         distSpan.style.marginLeft = '1em';
+        distSpan.setAttribute('title', `Zum mir selbst: ${(credits - JSON.parse(window.sessionStorage.api_credits_cache).credits_user_total).toLocaleString()}`);
         cell.appendChild(distSpan);
         prevValue = credits;
     });
