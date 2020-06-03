@@ -21,7 +21,7 @@
         distSpan.innerText = (credits - (prevValue || credits)).toLocaleString();
         distSpan.style.color = 'red';
         distSpan.style.marginLeft = '1em';
-        distSpan.setAttribute('title', `Zum mir selbst: ${(credits - JSON.parse(window.sessionStorage.api_credits_cache).credits_user_total).toLocaleString()}`);
+        distSpan.setAttribute('title', `Zu mir selbst: ${(credits - JSON.parse(window.sessionStorage.api_credits_cache).credits_user_total).toLocaleString()}`);
         cell.appendChild(distSpan);
         prevValue = credits;
     });
