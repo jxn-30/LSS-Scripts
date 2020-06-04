@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-Alliance-Member-Notes
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Customizable Notes for each alliance member
 // @author       Jan (jxn_30)
 // @grant        none
@@ -10,6 +10,8 @@
 
 (function() {
 	'use strict';
+
+    const showIfNote = false;
 
     const notes = JSON.parse(window.localStorage.memberlistNotes || '{}');
 
@@ -33,6 +35,7 @@
             noteField.classList.toggle('hidden');
             saveBtn.classList.toggle('hidden');
         });
+        showIfNote && notes[userId] && noteBtn.click();
         saveBtn.addEventListener('click', () => {
             const notes = JSON.parse(window.localStorage.memberlistNotes || '{}');
             notes[userId] = noteField.value;
