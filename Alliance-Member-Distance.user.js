@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-Alliance-Member-Distance
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  Zeigt die fehlenden verdienten Credits zum nächsten Verbandsmitglied an
 // @author       Jan (jxn_30)
 // @grant        none
@@ -11,7 +11,7 @@
 (async function() {
 	'use strict';
 
-    if (!window.sessionStorage.hasOwnProperty('api_credits_cache') || JSON.parse(window.sessionStorage.api_credits_cache).lastUpdate < (new Date().getTime() - 5 * 1000 * 60)) await fetch('/api/credits').then(res => res.json()).then(data => window.sessionStorage.setItem('api_credits_cache', JSON.stringify({lastUpdate: new Date().getTime(), value: data})));
+    if (!window.sessionStorage.hasOwnProperty('aCredits') || JSON.parse(window.sessionStorage.aCredits).lastUpdate < (new Date().getTime() - 5 * 1000 * 60)) await fetch('/api/credits').then(res => res.json()).then(data => window.sessionStorage.setItem('aCredits', JSON.stringify({lastUpdate: new Date().getTime(), value: data})));
 
     let prevValue;
 
@@ -21,7 +21,7 @@
         distSpan.innerText = (credits - (prevValue || credits)).toLocaleString();
         distSpan.style.color = 'red';
         distSpan.style.marginLeft = '1em';
-        distSpan.setAttribute('title', `Zu mir selbst: ${(credits - JSON.parse(window.sessionStorage.api_credits_cache).value.credits_user_total).toLocaleString()}`);
+        distSpan.setAttribute('title', `Zu mir selbst: ${(credits - JSON.parse(window.sessionStorage.aCredits).value.credits_user_total).toLocaleString()}`);
         cell.appendChild(distSpan);
         prevValue = credits;
     });
