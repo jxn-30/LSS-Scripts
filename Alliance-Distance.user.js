@@ -1,7 +1,6 @@
 // ==UserScript==
 // @name         LSS-Alliance-Distance
-// @namespace    http://tampermonkey.net/
-// @version      1.0.5
+// @version      1.0.6
 // @description  Zeigt die fehlenden verdienten Credits zum nächsten Verband an
 // @author       Jan (jxn_30)
 // @grant        none
@@ -9,14 +8,22 @@
 // ==/UserScript==
 
 (async function() {
-	'use strict';
+    'use strict';
 
     if (!window.sessionStorage.hasOwnProperty('aCredits') || JSON.parse(window.sessionStorage.aCredits).lastUpdate < (new Date().getTime() - 5 * 1000 * 60)) await fetch('/api/credits').then(res => res.json()).then(data => window.sessionStorage.setItem('aCredits', JSON.stringify({lastUpdate: new Date().getTime(), value: data})));
 
     let prevValue;
+    const alliance_values = {};
+    const alliance_names = {};
+    const history = JSON.parse(localStorage.alliance_list_history || '{}');
+    const page = document.querySelector('.pagination .active').textContent;
 
-	document.querySelectorAll('tbody tr td:nth-of-type(3)').forEach(cell => {
+    document.querySelectorAll('tbody tr td:nth-of-type(3)').forEach(cell => {
         const credits = parseInt(cell.textContent.trim().match(/^\d{1,3}(?:[.,]\d{3})*/)[0].replace(/\D/g, ''));
+        const nameNode = cell.parentNode.querySelector('td:nth-of-type(2) a');
+        const allianceId = nameNode.href.match(/\d+$/)[0];
+        alliance_values[allianceId] = credits;
+        alliance_names[allianceId] = nameNode.textContent;
         const distSpan = document.createElement('span');
         distSpan.innerText = (credits - (prevValue || credits)).toLocaleString();
         distSpan.style.color = 'red';
@@ -25,4 +32,93 @@
         cell.appendChild(distSpan);
         prevValue = credits;
     });
+
+    if (!history.hasOwnProperty(page)) history[page] = {};
+
+    if ((Object.keys(history[page]).sort().reverse()[0] || 0) < new Date().getTime() - 10 * 60 * 1000) history[page][new Date().getTime()] = alliance_values;
+
+    console.log(history, alliance_names);
+
+    localStorage.alliance_list_history = JSON.stringify(history);
+
+    let e = document.createElement("script");
+    e.src = "https://www.amcharts.com/lib/3/amcharts.js", document.head.appendChild(e);
+    document.body.insertAdjacentHTML('beforeend', '<div id="gesamtcredits-chart" style="width: 100%; height: 100vh; background-color: #282828;"></div>');
+    let i = window.setInterval(() => {
+        if (window.AmCharts) {
+            let e = document.createElement("script");
+            e.src = "https://www.amcharts.com/lib/3/serial.js", document.head.appendChild(e),
+                window.clearInterval(i);
+        }
+    }, 1e3), a = window.setInterval(() => {
+        if (window.AmCharts) {
+            let e = document.createElement("script");
+            e.src = "https://www.amcharts.com/lib/3/themes/dark.js", document.head.appendChild(e),
+                window.clearInterval(a);
+        }
+    }, 1e3), q = window.setInterval(() => {
+        if (window.AmCharts) {
+            let e = document.createElement("script");
+            let f = document.createElement('link');
+            f.rel = 'stylesheet';
+            f.href = 'https://www.amcharts.com/lib/3/plugins/export/export.css';
+            e.src = "https://www.amcharts.com/lib/3/plugins/export/export.min.js", document.head.appendChild(e).appendChild(f),
+                window.clearInterval(q);
+        }
+    }, 1e3);
+    let b = window.setInterval(() => {
+        if (window.AmCharts && window.AmCharts.AmSerialChart) {
+            window.clearInterval(b);
+            const saved_graphs = Object.entries(history[page]).flatMap(([_, values]) => Object.keys(values).map(id => ({
+                id: id,
+                title: alliance_names[id] || id,
+                valueField: id,
+            })));
+            const graphs = [];
+            saved_graphs.forEach(g => {
+                !graphs.filter(c => c.id === g.id).length && graphs.push(g);
+            });
+            const u = {
+                type: "serial",
+                categoryField: "date",
+                theme: "dark",
+                creditsPosition: "top-right",
+                categoryAxis: {
+                    minPeriod: "ss",
+                    parseDates: !0
+                },
+                chartCursor: {
+                    enabled: !0,
+                    categoryBalloonDateFormat: "DD.MM JJ:NN:SS"
+                },
+                trendLines: [],
+                valueAxes: [ {
+                    "id": "ValueAxis-1",
+                    "usePrefixes": true,
+                } ],
+                graphs,
+                legend: {
+                    enabled: !0,
+                    useGraphSettings: !0
+                },
+                titles: [ {
+                    id: "title",
+                    size: 15,
+                    text: "Verlauf"
+                } ],
+                export: {
+                    enabled: true
+                },
+                dataProvider: Object.entries(history[page]).map(([time, data]) => {
+                    const date = new Date();
+                    date.setTime(time);
+                    return {
+                        date,
+                        ...data
+                    };
+                })
+            };
+            AmCharts.makeChart("gesamtcredits-chart", u);
+        }
+    }, 1e3);
 })();
