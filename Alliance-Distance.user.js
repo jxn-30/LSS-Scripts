@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Alliance-Distance
-// @version      1.0.6
+// @version      1.0.7
 // @description  Zeigt die fehlenden verdienten Credits zum nächsten Verband an
 // @author       Jan (jxn_30)
 // @grant        none
@@ -37,8 +37,6 @@
 
     if ((Object.keys(history[page]).sort().reverse()[0] || 0) < new Date().getTime() - 10 * 60 * 1000) history[page][new Date().getTime()] = alliance_values;
 
-    console.log(history, alliance_names);
-
     localStorage.alliance_list_history = JSON.stringify(history);
 
     let e = document.createElement("script");
@@ -66,18 +64,30 @@
                 window.clearInterval(q);
         }
     }, 1e3);
+    const getColorFromString = (string = '', shift = 0) => {
+        let hash = 0;
+        for (let i = 0; i < string.length; i++) {
+            hash = string.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        hash = (hash + 2 * shift) / 3;
+        hash = (hash & 0x00ffffff).toString(16).toUpperCase();
+        return '00000'.substring(0, 6 - hash.length) + hash;
+    };
     let b = window.setInterval(() => {
         if (window.AmCharts && window.AmCharts.AmSerialChart) {
             window.clearInterval(b);
+            const shown = JSON.parse(localStorage.alliance_list_history_shown || '[]');
             const saved_graphs = Object.entries(history[page]).flatMap(([_, values]) => Object.keys(values).map(id => ({
                 id: id,
                 title: alliance_names[id] || id,
                 valueField: id,
+                hidden: !shown.includes(id),
             })));
             const graphs = [];
             saved_graphs.forEach(g => {
-                !graphs.filter(c => c.id === g.id).length && graphs.push(g);
+                !graphs.filter(c => c.id === g.id).length && graphs.push({...g, lineColor: `#${getColorFromString(g.title)}`});
             });
+            console.log(graphs);
             const u = {
                 type: "serial",
                 categoryField: "date",
@@ -99,7 +109,7 @@
                 graphs,
                 legend: {
                     enabled: !0,
-                    useGraphSettings: !0
+                    useGraphSettings: !0,
                 },
                 titles: [ {
                     id: "title",
@@ -118,7 +128,15 @@
                     };
                 })
             };
-            AmCharts.makeChart("gesamtcredits-chart", u);
+            const chart = AmCharts.makeChart("gesamtcredits-chart", u);
+            chart.legend.addListener('showItem', ({ dataItem: { id } }) => {
+                shown.push(id);
+                localStorage.alliance_list_history_shown = JSON.stringify(shown);
+            });
+            chart.legend.addListener('hideItem', ({ dataItem: { id } }) => {
+                shown.splice(shown.findIndex(s => s === id), 1);
+                localStorage.alliance_list_history_shown = JSON.stringify(shown);
+            });
         }
     }, 1e3);
 })();
