@@ -15,8 +15,11 @@
     let prevValue;
     const alliance_values = {};
     const alliance_names = {};
+    const alliance_order = [];
+    const alliance_next = {};
     const history = JSON.parse(localStorage.alliance_list_history || '{}');
     const page = document.querySelector('.pagination .active').textContent;
+    const autoreload = false;
 
     document.querySelectorAll('tbody tr td:nth-of-type(3)').forEach(cell => {
         const credits = parseInt(cell.textContent.trim().match(/^\d{1,3}(?:[.,]\d{3})*/)[0].replace(/\D/g, ''));
@@ -24,6 +27,7 @@
         const allianceId = nameNode.href.match(/\d+$/)[0];
         alliance_values[allianceId] = credits;
         alliance_names[allianceId] = nameNode.textContent;
+        alliance_order.push(allianceId);
         const distSpan = document.createElement('span');
         distSpan.innerText = (credits - (prevValue || credits)).toLocaleString();
         distSpan.style.color = 'red';
@@ -33,6 +37,8 @@
         prevValue = credits;
     });
 
+    alliance_order.forEach((a, i) => i < alliance_order.length - 1 && (alliance_next[a] = alliance_order[i + 1]))
+
     if (!history.hasOwnProperty(page)) history[page] = {};
 
     if ((Object.keys(history[page]).sort().reverse()[0] || 0) < new Date().getTime() - 10 * 60 * 1000) history[page][new Date().getTime()] = alliance_values;
@@ -41,7 +47,7 @@
 
     let e = document.createElement("script");
     e.src = "https://www.amcharts.com/lib/3/amcharts.js", document.head.appendChild(e);
-    document.body.insertAdjacentHTML('beforeend', '<div id="gesamtcredits-chart" style="width: 100%; height: 100vh; background-color: #282828;"></div>');
+    document.body.insertAdjacentHTML('beforeend', '<div id="gesamtcredits-chart" style="width: 100%; height: 100vh; background-color: #282828;"></div><div id="distance-chart" style="width: 100%; height: 100vh; background-color: #282828;"></div>');
     let i = window.setInterval(() => {
         if (window.AmCharts) {
             let e = document.createElement("script");
@@ -87,7 +93,6 @@
             saved_graphs.forEach(g => {
                 !graphs.filter(c => c.id === g.id).length && graphs.push({...g, lineColor: `#${getColorFromString(g.title)}`});
             });
-            console.log(graphs);
             const u = {
                 type: "serial",
                 categoryField: "date",
@@ -128,6 +133,7 @@
                     };
                 })
             };
+            const e = JSON.parse(JSON.stringify(u));
             const chart = AmCharts.makeChart("gesamtcredits-chart", u);
             chart.legend.addListener('showItem', ({ dataItem: { id } }) => {
                 shown.push(id);
@@ -137,6 +143,38 @@
                 shown.splice(shown.findIndex(s => s === id), 1);
                 localStorage.alliance_list_history_shown = JSON.stringify(shown);
             });
+
+            const shownDiff = JSON.parse(localStorage.alliance_list_history_shownDiff || '[]');
+            const diffChart = AmCharts.makeChart("distance-chart", {
+                ...e,
+                graphs: graphs.filter(g => alliance_next.hasOwnProperty(g.id)).map(g => ({
+                    lineColor: `#${getColorFromString(g.title)}`,
+                    id: g.id.toString() + alliance_next[g.id].toString(),
+                    valueField: g.id.toString() + alliance_next[g.id].toString(),
+                    title: g.title + ' → ' + alliance_names[alliance_next[g.id]],
+                    hidden: !shownDiff.includes(g.id),
+                })),
+                dataProvider: Object.entries(history[page]).map(([time, data]) => {
+                    const date = new Date();
+                    date.setTime(time);
+                    return {
+                        date,
+                        ...Object.fromEntries(Object.entries(data).map(([id, val]) => {
+                            if (!alliance_next.hasOwnProperty(id)) return;
+                            return [id.toString() + alliance_next[id].toString(), val - data[alliance_next[id]]];
+                        }).filter(d => d)),
+                    };
+                })
+            });
+            diffChart.legend.addListener('showItem', ({ dataItem: { id } }) => {
+                shownDiff.push(id);
+                localStorage.alliance_list_history_shownDiff = JSON.stringify(shownDiff);
+            });
+            diffChart.legend.addListener('hideItem', ({ dataItem: { id } }) => {
+                shownDiff.splice(shown.findIndex(s => s === id), 1);
+                localStorage.alliance_list_history_shownDiff = JSON.stringify(shownDiff);
+            });
+            autoreload && window.setTimeout(() => window.location.reload(), 10 * 60 * 1000);
         }
     }, 1e3);
 })();
