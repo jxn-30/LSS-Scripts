@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Mission-Less-ELW-Highlight
-// @version      1.0.2
+// @version      1.0.3
 // @description  Highlights missions in missionlist with less than required ELWs
 // @author       Jan (jxn_30)
 // @include      https://www.leitstellenspiel.de/
@@ -17,7 +17,7 @@
             const missionType = parseInt(
                 panel.getAttribute('mission_type_id')
             );
-            const specs = data.find(m => m.id === missionId);
+            const specs = data.find(m => m.id === missionType);
             const mission = document.getElementById(`mission_missing_${missionId}`);
             if (Number.isNaN(missionType) || !specs || !mission) return;
             const reqElw1 = specs.requirements.battalion_chief_vehicles || 0;
