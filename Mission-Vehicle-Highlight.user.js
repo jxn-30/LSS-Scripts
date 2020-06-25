@@ -13,7 +13,7 @@
 (function() {
     'use strict';
 
-    const give_alert = true;
+    const give_alert = false;
     const colors = {
         'ELW 2': '#0f0',
         'FüKw': '#00f',
