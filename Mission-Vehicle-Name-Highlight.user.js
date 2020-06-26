@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Mission-Vehicle-Name-Highlight
-// @version      1.0.0
+// @version      1.0.1
 // @description  Highlights vehicles in alarm window
 // @author       Jan (KBOE2)
 // @include      https://www.leitstellenspiel.de/missions/*
@@ -15,13 +15,13 @@
 
     const give_alert = true;
     const colors = {
-        'Benz': '#f00',
+        '\\\W+ [A-z]+ \\\d{2}-\\\d{2}.+': '#f00',
     };
     let types = Object.keys(colors);
     $('#mission_vehicle_at_mission tbody tr[id^="vehicle_row"], #mission_vehicle_driving tbody tr[id^="vehicle_row"]').each((_, row) => {
         let vehicle = row.querySelector('td:nth-of-type(2)').innerText;
         types.forEach(type => {
-            if (vehicle.toLowerCase().match(type.toLowerCase())) $(row).css('background-color', colors[type])
+            if (vehicle.match(new RegExp(type))) $(row).css('background-color', colors[type])
         });
     });
 })();
