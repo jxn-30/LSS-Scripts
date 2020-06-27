@@ -15,7 +15,7 @@
 
     const give_alert = true;
     const colors = {
-        '\\\W+ [A-z]+ \\\d{2}-\\\d{2}.+': '#f00',
+        'Florian Regensburg': '#f00',
     };
     let types = Object.keys(colors);
     $('#mission_vehicle_at_mission tbody tr[id^="vehicle_row"], #mission_vehicle_driving tbody tr[id^="vehicle_row"]').each((_, row) => {
