@@ -25,6 +25,5 @@
             distanceTime.find('.calculateTime').click();
             observer.observe(distanceTime[0], { childList: true });
         }
-        $('.customAllianceShareText:first-of-type').click();
     });
 })();
