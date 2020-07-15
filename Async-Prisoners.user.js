@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Async-Prisoners
-// @version      1.0.0
+// @version      1.0.1
 // @description  Enables async prisoner transport in mission window
 // @author       Jan (jxn_30)
 // @include      https://www.leitstellenspiel.de/missions/*
@@ -21,7 +21,7 @@
             .getElementById('mission_vehicle_at_mission')
             .addEventListener('click', e => {
             const target = e.target;
-            if (!target.matches('a.btn.btn-success[href^="/vehicles/"][href*="/gefangener/"], a.btn.btn-warning[href^="/vehicles/"][href*="/gefangener/"]'))
+            if (!target.matches('a.btn.btn-success[href^="/vehicles/"][href*="/gefangener/"], a.btn.btn-warning[href^="/vehicles/"][href*="/gefangener/"]') || currentPrisoners <= 1)
                 return;
             e.preventDefault();
             $.get(target.getAttribute('href'), () => {
