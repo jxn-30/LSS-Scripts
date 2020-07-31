@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSSM-EnhancedPOI-Preview
-// @version      1.0.0
+// @version      1.0.1
 // @description  Colorizes same POI
 // @author       Jan (jxn_30)
 // @include      /^https?:\/\/(?:w{3}\.)?(?:operacni-stredisko\.cz|alarmcentral-spil\.dk|leitstellenspiel\.de|missionchief\.gr|(?:missionchief-australia|missionchief|hatakeskuspeli|missionchief-japan|missionchief-korea|nodsentralspillet|meldkamerspel|operador193|jogo-operador112|jocdispecerat112|dispecerske-centrum|112-merkez|dyspetcher101-game)\.com|missionchief\.co\.uk|centro-de-mando\.es|centro-de-mando\.mx|operateur112\.fr|operatore112\.it|operatorratunkowy\.pl|dispetcher112\.ru|larmcentralen-spelet\.se)\/?$/
@@ -11,6 +11,17 @@
     'use strict';
 
     if ("undefined" !== typeof mapkit) return;
+
+    const poiHighlightStyle = 'contrast(500%) brightness(60%) invert(100%)';
+    /*
+    ** 'sepia(100%) contrast(500%)'                    => braun
+    ** 'sepia(100%) contrast(5000%)'                   => rot
+    ** 'sepia(100%) contrast(500%) hue-rotate(100deg)' => grün
+    ** 'contrast(500%) brightness(60%) invert(100%)'   => weiß
+    **
+    ** Lektüre: https://www.html5rocks.com/en/tutorials/filters/understanding-css/
+    ** https://developer.mozilla.org/de/docs/Web/CSS/filter
+    */
 
     const modifyMarker = (poi, caption) => {
         const el = poi.getElement();
@@ -101,8 +112,7 @@
                 }"]`
             )).forEach(
                 el =>
-                    (el.style.filter =
-                        'contrast(500%) brightness(60%) invert(100%)')
+                    (el.style.filter = poiHighlightStyle)
             );
             colorMarkers(
                 form.querySelector('option:checked').textContent || ''
