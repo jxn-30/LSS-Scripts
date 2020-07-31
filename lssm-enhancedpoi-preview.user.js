@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSSM-EnhancedPOI-Preview
-// @version      1.0.1
+// @version      1.0.2
 // @description  Colorizes same POI
 // @author       Jan (jxn_30)
 // @include      /^https?:\/\/(?:w{3}\.)?(?:operacni-stredisko\.cz|alarmcentral-spil\.dk|leitstellenspiel\.de|missionchief\.gr|(?:missionchief-australia|missionchief|hatakeskuspeli|missionchief-japan|missionchief-korea|nodsentralspillet|meldkamerspel|operador193|jogo-operador112|jocdispecerat112|dispecerske-centrum|112-merkez|dyspetcher101-game)\.com|missionchief\.co\.uk|centro-de-mando\.es|centro-de-mando\.mx|operateur112\.fr|operatore112\.it|operatorratunkowy\.pl|dispetcher112\.ru|larmcentralen-spelet\.se)\/?$/
@@ -72,7 +72,7 @@
     let isPOIWindow = false;
 
     const poiHighlightedClass = 'poi-highlighted';
-    document.head.insertAdjacentHTML('beforeend', `<style>.poi.${poiHighlightedClass} {filter: contrast(500%) brightness(60%) invert(100%);}</style>`);
+    document.head.insertAdjacentHTML('beforeend', `<style>.poi.${poiHighlightedClass} {filter: ${poiHighlightStyle};}</style>`);
 
     const colorMarkers = (caption) =>
         Array.from(document.querySelectorAll('.poi')).forEach(el =>
@@ -104,16 +104,6 @@
             if (isPOIWindow) return;
             isPOIWindow = true;
 
-            Array.from(document.querySelectorAll(
-                `.lefalet-marker-icon[caption="${
-                    document.querySelector(
-                        '#mission_position_poi_type option:checked'
-                    ).textContent
-                }"]`
-            )).forEach(
-                el =>
-                    (el.style.filter = poiHighlightStyle)
-            );
             colorMarkers(
                 form.querySelector('option:checked').textContent || ''
             );
