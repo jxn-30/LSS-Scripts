@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         LSS-Mission-Alarm-Speaker
-// @version      1.0.1
+// @version      1.0.2
 // @description  Speaks alarmed vehicles out
-// @author       Jan (jxn_30)
+// @author       Jan (jxn_30) modded by Crazycake
 // @include      /https:\/\/www.leitstellenspiel.de/missions/\d+/
 // @grant        none
 // ==/UserScript==
@@ -13,6 +13,9 @@
     const useVehicleType = true;
     const playGong = false;
     const gongUrl = '';
+    const renamedVariables = [
+        ["-", " "], ["FuStW", "Funkstreife"]
+    ];    
 
     const alarmBtns = document.getElementById('mission_alarm_btn').parentElement.children;
     Array.from(alarmBtns).forEach(btn => btn.addEventListener('click', () => {
@@ -28,8 +31,10 @@
             buildings[buildingId].vehicles.push(useVehicleType ? vehicle.getAttribute('vehicle_type') : vehicle.querySelector('.mission_vehicle_label').textContent.trim());
         });
         let speech = 'Alarm für: ' + Object.values(buildings).map(b => `Von der Wache ${b.caption}: ${b.vehicles}!`).join(' ') + 'Für: ' + document.getElementById('missionH1').textContent.trim();
-        speech = speech.replace(/ +/g, ' ');
-
+        for(var i = 0; i < renamedVariables.length; i++)
+    {
+         speech = speech.replaceAll(renamedVariables[i][0], renamedVariables[i][1]);
+    }
         tellParent(`const alarmt2s = new SpeechSynthesisUtterance();alarmt2s.text = ${JSON.stringify(speech)};alarmt2s.lang = speechSynthesis.getVoices().find(voice => voice.lang === 'de');alarmt2s.rate = 1;${playGong ? `const gong = new Audio('${gongUrl}');gong.addEventListener('ended', () => ` : ''}speechSynthesis.speak(alarmt2s)${playGong ? `);gong.play();` : ''}`);
     }));
 })();
