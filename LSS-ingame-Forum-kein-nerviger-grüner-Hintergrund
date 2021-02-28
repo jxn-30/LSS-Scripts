@@ -7,4 +7,4 @@
 // @grant        none
 // ==/UserScript==
 
-window.allianceForumNew = e => document.getElementById('alliance_forum_new').style[e ? 'setProperty' : 'removeProperty']('display', 'none');
+document.head.innerHTML += `<style>.alliance_forum_new{background: unset !important;}</style>`
