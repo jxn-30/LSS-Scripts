@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Input-Length
-// @version      1.0.1
+// @version      1.0.2
 // @author       Jan (jxn_30)
 // @description  Shows current input length and sets minlength and maxlength
 // @include      /^https?:\/\/(?:w{3}\.)?(?:operacni-stredisko\.cz|alarmcentral-spil\.dk|leitstellenspiel\.de|missionchief\.gr|(?:missionchief-australia|missionchief|hatakeskuspeli|missionchief-japan|missionchief-korea|nodsentralspillet|meldkamerspel|operador193|jogo-operador112|jocdispecerat112|dispecerske-centrum|112-merkez|dyspetcher101-game)\.com|missionchief\.co\.uk|centro-de-mando\.es|centro-de-mando\.mx|operateur112\.fr|operatore112\.it|operatorratunkowy\.pl|dispetcher112\.ru|larmcentralen-spelet\.se)\/.*$/
@@ -68,6 +68,14 @@
             min: 2,
             max: 40,
         },
+        'vehicle_graphic[caption]': {
+            min: 3,
+            max: 30,
+        },
+        'mission_graphic[caption]': {
+            min: 3,
+            max: 30,
+        }
     };
 
     document.head.insertAdjacentHTML('beforeend', `<style type="text/css">${Object.keys(lengthMap)
