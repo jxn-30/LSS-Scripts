@@ -1,9 +1,8 @@
 // ==UserScript==
 // @name         LSS-Forum-ExternalLink
-// @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
-// @author       Jan (KBOE2)
+// @author       Jan (jxn_30)
 // @include      https://forum.leitstellenspiel.de/*
 // @grant        none
 // ==/UserScript==
@@ -11,5 +10,5 @@
 (function() {
     'use strict';
 
-    document.querySelectorAll('a').forEach(el => !el.href.match(/(^https:\/\/forum.leitstellenspiel.de)|(^javascript:)/) && el.setAttribute('target', '_blank'));
+    document.addEventListener('click', e => e.target.closest('.externalURL')?.setAttribute('target', '_blank'))
 })();
