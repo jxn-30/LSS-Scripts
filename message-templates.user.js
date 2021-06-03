@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LSS-Message-Templates
-// @version      1.0.0
+// @version      1.0.1
 // @description  Add multiple Templates for private messages
 // @author       Jan (jxn_30)
 // @include      /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/messages/((new\/?)|(\d+\/?))/
@@ -41,7 +41,12 @@ Auch Zeilenumbrüche funktionieren natürlich reibungslos!
             const titleEl = document.getElementById('message_subject');
             if (titleEl) titleEl.value = title;
             const bodyEl = document.getElementById('message_body');
-            if (bodyEl) bodyEl.value = body;
+            if (bodyEl) bodyEl.value = body.replace(
+                    /{{username}}/g,
+                    document
+                        .querySelector('#message_recipients')
+                        ?.value?.trim() ?? '{{username}}'
+                );
         };
         liEl.append(aEl);
         optionList.append(liEl);
