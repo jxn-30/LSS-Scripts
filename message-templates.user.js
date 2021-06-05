@@ -46,7 +46,11 @@ Auch Zeilenumbrüche funktionieren natürlich reibungslos!
                     document
                         .querySelector('#message_recipients')
                         ?.value?.trim() ?? '{{username}}'
-                );
+                ).replace(
+                        /{{today(?<offset>[+-]\d+)?}}/g,
+                        (_, offsetString) =>
+                            new Date(Date.now() + parseInt(offsetString ?? '0') * 1000 * 60 * 60 * 24).toLocaleDateString('de-DE', {dateStyle: "short"})
+                    );
         };
         liEl.append(aEl);
         optionList.append(liEl);
