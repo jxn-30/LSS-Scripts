@@ -3,7 +3,7 @@
 // @version     1.0.0
 // @description Macht die AAO über die Fahrzeugliste in Bereitstellungsräumen
 // @author      Jan (jxn_30)
-// @include     /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/buildings/\d+$/
+// @include     /^https?:\/\/[www.]*(?:leitstellenspiel\.de|meldkamerspel\.com|missionchief\.com|missionchief\.co.uk|missionchief-australia\.com|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|nodsentralspillet\.com|operacni-stredisko\.cz|112-merkez\.com|jogo-operador112\.com|operador193\.com|centro-de-mando\.mx|dyspetcher101-game\.com|missionchief-japan\.com|jocdispecerat112\.com|missionchief-korea\.com)\/buildings/\d+\/?$/
 // @grant       none
 // ==/UserScript==
 
