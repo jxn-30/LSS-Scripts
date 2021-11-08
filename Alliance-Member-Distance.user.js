@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS-Alliance-Member-Distance
 // @namespace    http://tampermonkey.net/
-// @version      1.0.9
+// @version      1.0.10
 // @description  Zeigt die fehlenden verdienten Credits zum nächsten Verbandsmitglied an
 // @author       Jan (jxn_30)
 // @grant        none
@@ -17,7 +17,7 @@
     const member_values = {};
     const member_names = {};
     const history = JSON.parse(localStorage.member_list_history || '{}');
-    const page = document.querySelector('.pagination .active').textContent;
+    const page = document.querySelector('.pagination .active')?.textContent ?? '1';
 
     document.querySelectorAll('tbody tr td:nth-of-type(3)').forEach(cell => {
         const credits = parseInt(cell.textContent.trim().match(/^\d{1,3}(?:[.,]\d{3})*/)[0].replace(/\D/g, ''));
