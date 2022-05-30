@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         LSS-Forum-Bookmarks
-// @version      1.2.0
+// @version      1.2.1
 // @description  Ein Interner Lesezeichen-Manager für das allgemeine Forum
 // @author       Jan (jxn_30)
-// @include      https://forum.leitstellenspiel.de/*
+// @namespace    https://jxn.lss-manager.de/
+// @match        https://forum.leitstellenspiel.de/*
 // @grant        none
 // ==/UserScript==
 
@@ -33,7 +34,7 @@ const drawList = () => {
         let t = JSON.parse(localStorage.bookmarks || "{}");
         window.changeBookmark = (t => {
             let o = JSON.parse(localStorage.bookmarks || "{}");
-            o[t] = e.querySelector(`input[name=${t}_title]`).value, localStorage.bookmarks = JSON.stringify(o);
+            o[t] = e.querySelector(`input[name="${t}_title]"`).value, localStorage.bookmarks = JSON.stringify(o);
         }), window.removeBookmark = (e => {
             let t = JSON.parse(localStorage.bookmarks || "{}");
             delete t[e], localStorage.bookmarks = JSON.stringify(t), o();
