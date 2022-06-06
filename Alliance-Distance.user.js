@@ -1,10 +1,48 @@
 // ==UserScript==
-// @name         LSS-Alliance-Distance
-// @version      1.0.9
-// @description  Zeigt die fehlenden verdienten Credits zum nächsten Verband an
-// @author       Jan (jxn_30)
-// @grant        none
-// @include      /^https?:\/\/(?:w{3}\.)?(?:(policie\.)?operacni-stredisko\.cz|(politi\.)?alarmcentral-spil\.dk|(polizei\.)?leitstellenspiel\.de|(?:(police\.)?missionchief-australia|(police\.)?missionchief|(poliisi\.)?hatakeskuspeli|missionchief-japan|missionchief-korea|(politiet\.)?nodsentralspillet|(politie\.)?meldkamerspel|operador193|(policia\.)?jogo-operador112|jocdispecerat112|dispecerske-centrum|112-merkez|dyspetcher101-game)\.com|(police\.)?missionchief\.co\.uk|centro-de-mando\.es|centro-de-mando\.mx|(police\.)?operateur112\.fr|(polizia\.)?operatore112\.it|(policja\.)?operatorratunkowy\.pl|dispetcher112\.ru|(polis\.)?larmcentralen-spelet\.se)\/alliances(\?.*)?$/
+// @name        LSS-Alliance-Distance
+// @version     1.0.10
+// @description Zeigt die fehlenden verdienten Credits zum nächsten Verband an
+// @author      Jan (jxn_30)
+// @grant       none
+// @namespace   https://jxn.lss-manager.de/
+// @match       https://www.operacni-stredisko.cz/alliances
+// @match       https://policie.operacni-stredisko.cz/alliances
+// @match       https://www.alarmcentral-spil.dk/alliances
+// @match       https://politi.alarmcentral-spil.dk/alliances
+// @match       https://www.leitstellenspiel.de/alliances
+// @match       https://polizei.leitstellenspiel.de/alliances
+// @match       https://www.missionchief-australia.com/alliances
+// @match       https://police.missionchief-australia.com/alliances
+// @match       https://www.missionchief.co.uk/alliances
+// @match       https://police.missionchief.co.uk/alliances
+// @match       https://www.missionchief.com/alliances
+// @match       https://police.missionchief.com/alliances
+// @match       https://www.centro-de-mando.es/alliances
+// @match       https://www.centro-de-mando.mx/alliances
+// @match       https://www.hatakeskuspeli.com/alliances
+// @match       https://poliisi.hatakeskuspeli.com/alliances
+// @match       https://www.operateur112.fr/alliances
+// @match       https://police.operateur112.fr/alliances
+// @match       https://www.operatore112.it/alliances
+// @match       https://polizia.operatore112.it/alliances
+// @match       https://www.missionchief-japan.com/alliances
+// @match       https://www.missionchief-korea.com/alliances
+// @match       https://www.nodsentralspillet.com/alliances
+// @match       https://politiet.nodsentralspillet.com/alliances
+// @match       https://www.meldkamerspel.com/alliances
+// @match       https://politie.meldkamerspel.com/alliances
+// @match       https://www.operatorratunkowy.pl/alliances
+// @match       https://policja.operatorratunkowy.pl/alliances
+// @match       https://www.operador193.com/alliances
+// @match       https://www.jogo-operador112.com/alliances
+// @match       https://policia.jogo-operador112.com/alliances
+// @match       https://www.jocdispecerat112.com/alliances
+// @match       https://www.dispetcher112.ru/alliances
+// @match       https://www.dispecerske-centrum.com/alliances
+// @match       https://www.larmcentralen-spelet.se/alliances
+// @match       https://polis.larmcentralen-spelet.se/alliances
+// @match       https://www.112-merkez.com/alliances
+// @match       https://www.dyspetcher101-game.com/alliances
 // ==/UserScript==
 
 (async function() {
