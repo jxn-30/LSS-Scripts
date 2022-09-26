@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS ScrollToTopButtons
 // @namespace    https://jxn.lss-manager.de
-// @version      1.0.1
+// @version      1.0.2
 // @description  Shows a scroll-to-top button to all scrollable elements
 // @author       Jan (jxn_30)
 // @match        https://www.operacni-stredisko.cz/*
@@ -80,7 +80,9 @@ GM_addStyle(`
             else target.append(scrollToTopBtn);
             let translateY = parseFloat(getComputedStyle(targetOrDocEl).paddingBottom);
             if (targetIsDocument && document.querySelector('.navbar-fixed-bottom:not(#navbar-mobile-footer)')) translateY -= 50;
-            scrollToTopBtn.style.setProperty('transform', `translateY(${translateY}px)`);
+            const personalOvertakeCounter = document.querySelector('#personal_hire_overtake_counter')
+            const translateX = 0 - (personalOvertakeCounter ? parseFloat(getComputedStyle(personalOvertakeCounter).width) : 0);
+            scrollToTopBtn.style.setProperty('transform', `translate(${translateX}px, ${translateY}px)`);
         }
         scrollToTopBtn.classList[showScrollToTop ? 'remove' : 'add']('hidden');
     }, {capture: true})
