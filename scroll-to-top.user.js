@@ -60,6 +60,7 @@ GM_addStyle(`
     'use strict';
 
     const hideTimeouts = {};
+    const hideAfter = 1;
 
     document.addEventListener('scroll', e => {
         const target = e.target;
@@ -89,6 +90,6 @@ GM_addStyle(`
         scrollToTopBtn.classList[showScrollToTop ? 'remove' : 'add']('hidden');
 
         if (hideTimeouts[targetOrDocEl]) window.clearTimeout(hideTimeouts[targetOrDocEl]);
-        hideTimeouts[targetOrDocEl] = window.setTimeout(() => scrollToTopBtn.classList.add('hidden'), 1000);
+        hideTimeouts[targetOrDocEl] = window.setTimeout(() => scrollToTopBtn.classList.add('hidden'), hideAfter*1000);
     }, {capture: true})
 })();
