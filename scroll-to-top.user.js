@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS ScrollToTopButtons
 // @namespace    https://jxn.lss-manager.de
-// @version      1.0.3
+// @version      1.0.4
 // @description  Shows a scroll-to-top button to all scrollable elements
 // @author       Jan (jxn_30)
 // @match        https://www.operacni-stredisko.cz/*
