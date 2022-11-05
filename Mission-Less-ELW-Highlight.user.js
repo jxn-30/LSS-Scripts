@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         LSS-Mission-Less-ELW-Highlight
-// @version      1.0.4
+// @version      1.0.5
 // @description  Highlights missions in missionlist with less than required ELWs
 // @author       Jan (jxn_30)
-// @include      https://www.leitstellenspiel.de/
+// @match        https://www.leitstellenspiel.de/
 // @grant        none
 // ==/UserScript==
 (function() {
