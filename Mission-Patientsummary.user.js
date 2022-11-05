@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         LSS-Mission-Patientsummary
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Summarizes the current patients need.
 // @author       Jan (jxn_30)
-// @include      https://www.leitstellenspiel.de/missions/*
+// @match        https://www.leitstellenspiel.de/missions/*
 // @grant        none
 // ==/UserScript==
 
