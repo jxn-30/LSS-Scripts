@@ -89,7 +89,10 @@ comments.forEach(comment => {
 
     // get paths to execute on
     const locales = getTags('locale');
-    const pathMatches = getTags('match', '/*');
+    const pathMatches = getTags('match', '/*').map(({ tag, content }) => ({
+        tag,
+        content: content.replace(/\*\\\//g, '*/'),
+    }));
 
     const matches = Object.keys(games)
         .filter(
