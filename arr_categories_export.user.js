@@ -1,10 +1,47 @@
 // ==UserScript==
-// @name        LSS ARR Categories Export
-// @version     1.0.0
-// @description enables exporting and importing ARR Categories
-// @author      Jan (jxn_30)
-// @include     /^https?:\/\/(?:w{3}\.)?(?:operacni-stredisko\.cz|alarmcentral-spil\.dk|leitstellenspiel\.de|missionchief\.gr|(?:missionchief-australia|missionchief|hatakeskuspeli|missionchief-japan|missionchief-korea|nodsentralspillet|meldkamerspel|operador193|jogo-operador112|jocdispecerat112|dispecerske-centrum|112-merkez|dyspetcher101-game)\.com|missionchief\.co\.uk|centro-de-mando\.es|centro-de-mando\.mx|operateur112\.fr|operatore112\.it|operatorratunkowy\.pl|dispetcher112\.ru|larmcentralen-spelet\.se)\/aao_categorys\/?$/
-// @grant       none
+// @name         LSS ARR Categories Export
+// @version      1.0.1
+// @description  enables exporting and importing ARR Categories
+// @author       Jan (jxn_30)
+// @match        https://www.operacni-stredisko.cz/aao_categorys
+// @match        https://policie.operacni-stredisko.cz/aao_categorys
+// @match        https://www.alarmcentral-spil.dk/aao_categorys
+// @match        https://politi.alarmcentral-spil.dk/aao_categorys
+// @match        https://www.leitstellenspiel.de/aao_categorys
+// @match        https://polizei.leitstellenspiel.de/aao_categorys
+// @match        https://www.missionchief-australia.com/aao_categorys
+// @match        https://police.missionchief-australia.com/aao_categorys
+// @match        https://www.missionchief.co.uk/aao_categorys
+// @match        https://police.missionchief.co.uk/aao_categorys
+// @match        https://www.missionchief.com/aao_categorys
+// @match        https://police.missionchief.com/aao_categorys
+// @match        https://www.centro-de-mando.es/aao_categorys
+// @match        https://www.centro-de-mando.mx/aao_categorys
+// @match        https://www.hatakeskuspeli.com/aao_categorys
+// @match        https://poliisi.hatakeskuspeli.com/aao_categorys
+// @match        https://www.operateur112.fr/aao_categorys
+// @match        https://police.operateur112.fr/aao_categorys
+// @match        https://www.operatore112.it/aao_categorys
+// @match        https://polizia.operatore112.it/aao_categorys
+// @match        https://www.missionchief-japan.com/aao_categorys
+// @match        https://www.missionchief-korea.com/aao_categorys
+// @match        https://www.nodsentralspillet.com/aao_categorys
+// @match        https://politiet.nodsentralspillet.com/aao_categorys
+// @match        https://www.meldkamerspel.com/aao_categorys
+// @match        https://politie.meldkamerspel.com/aao_categorys
+// @match        https://www.operatorratunkowy.pl/aao_categorys
+// @match        https://policja.operatorratunkowy.pl/aao_categorys
+// @match        https://www.operador193.com/aao_categorys
+// @match        https://www.jogo-operador112.com/aao_categorys
+// @match        https://policia.jogo-operador112.com/aao_categorys
+// @match        https://www.jocdispecerat112.com/aao_categorys
+// @match        https://www.dispetcher112.ru/aao_categorys
+// @match        https://www.dispecerske-centrum.com/aao_categorys
+// @match        https://www.larmcentralen-spelet.se/aao_categorys
+// @match        https://polis.larmcentralen-spelet.se/aao_categorys
+// @match        https://www.112-merkez.com/aao_categorys
+// @match        https://www.dyspetcher101-game.com/aao_categorys
+// @grant        none
 // ==/UserScript==
 
 const exportBtn = document.createElement('a');
