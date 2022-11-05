@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LSS ScrollToTopButtons
 // @namespace    https://jxn.lss-manager.de
-// @version      1.0.4
+// @version      1.0.5
 // @description  Shows a scroll-to-top button to all scrollable elements
 // @author       Jan (jxn_30)
 // @match        https://www.operacni-stredisko.cz/*
@@ -66,6 +66,7 @@ GM_addStyle(`
         const target = e.target;
         const targetIsDocument = target instanceof HTMLDocument
         if (!(target instanceof HTMLElement) && !targetIsDocument) return;
+        if (target instanceof HTMLInputElement) return;
 
         const targetOrDocEl = targetIsDocument ? document.documentElement : target;
 
