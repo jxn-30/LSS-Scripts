@@ -1,13 +1,51 @@
 // ==UserScript==
 // @name         LSS-Clickable-Links
-// @version      1.0.3
+// @version      1.0.4
 // @author       Jan (jxn_30)
 // @description  Sämtliche Links werden anklickbar und Bilder angezeigt
-// @include      /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/.*$/
+// @match        https://www.operacni-stredisko.cz/*
+// @match        https://policie.operacni-stredisko.cz/*
+// @match        https://www.alarmcentral-spil.dk/*
+// @match        https://politi.alarmcentral-spil.dk/*
+// @match        https://www.leitstellenspiel.de/*
+// @match        https://polizei.leitstellenspiel.de/*
+// @match        https://www.missionchief-australia.com/*
+// @match        https://police.missionchief-australia.com/*
+// @match        https://www.missionchief.co.uk/*
+// @match        https://police.missionchief.co.uk/*
+// @match        https://www.missionchief.com/*
+// @match        https://police.missionchief.com/*
+// @match        https://www.centro-de-mando.es/*
+// @match        https://www.centro-de-mando.mx/*
+// @match        https://www.hatakeskuspeli.com/*
+// @match        https://poliisi.hatakeskuspeli.com/*
+// @match        https://www.operateur112.fr/*
+// @match        https://police.operateur112.fr/*
+// @match        https://www.operatore112.it/*
+// @match        https://polizia.operatore112.it/*
+// @match        https://www.missionchief-japan.com/*
+// @match        https://www.missionchief-korea.com/*
+// @match        https://www.nodsentralspillet.com/*
+// @match        https://politiet.nodsentralspillet.com/*
+// @match        https://www.meldkamerspel.com/*
+// @match        https://politie.meldkamerspel.com/*
+// @match        https://www.operatorratunkowy.pl/*
+// @match        https://policja.operatorratunkowy.pl/*
+// @match        https://www.operador193.com/*
+// @match        https://www.jogo-operador112.com/*
+// @match        https://policia.jogo-operador112.com/*
+// @match        https://www.jocdispecerat112.com/*
+// @match        https://www.dispetcher112.ru/*
+// @match        https://www.dispecerske-centrum.com/*
+// @match        https://www.larmcentralen-spelet.se/*
+// @match        https://polis.larmcentralen-spelet.se/*
+// @match        https://www.112-merkez.com/*
+// @match        https://www.dyspetcher101-game.com/*
 // ==/UserScript==
 const showImg = true;
 
-const urlRegex = /(?:(?:[A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=+$,\w]+@)[A-Za-z0-9.-]+)(?:(?:\/[+~%/.\w\-_]*)?\??(?:[-+=&;%@.\w_():]*)#?(?:[.!/\\\w:()&=#-]*))?/g;
+// https://gist.github.com/dperini/729294
+const urlRegex = /(?:(?:ftp|https?):)?\/\/(?:\S+@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[01])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4])|(?:(?:[\da-z\u00a1-\uffff][\w\-\u00a1-\uffff]{0,62})?[\da-z\u00a1-\uffff]\.)+[a-z\u00a1-\uffff]{2,}\.?)(?::\d{2,5})?(?:[#/?]\S*)?/giu;
 
 const NoneTextParentNodes = [
     'head',
