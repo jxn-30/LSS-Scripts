@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Leitstellenansicht-Nav-toggle
-// @version      1.0.0
+// @version      1.0.1
 // @author       Jan (jxn_30)
-// @include      https://www.leitstellenspiel.de/leitstellenansicht
+// @,atch        https://www.leitstellenspiel.de/leitstellenansicht
 // @grant        none
 // ==/UserScript==
 
