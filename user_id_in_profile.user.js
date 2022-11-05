@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name         LSS-User-Id in profile
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description  shows user_id of user in each profile
-// @author       KBOE2
+// @author       Jan (jxn_30)
 // @match        https://www.leitstellenspiel.de/profile/*
 // @grant        none
-// @inlude       https://www.leitstellenspiel.de/profile/*
 // ==/UserScript==
 
 (function() {
