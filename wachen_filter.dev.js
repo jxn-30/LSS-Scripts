@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Gebäude Übersicht_dev
 // @namespace    http://tampermonkey.net/
-// @version      1.3.1
+// @version      1.3.2
 // @description  Eigene Konfiguration zum ein-/ausblenden von Gebäuden in der Gebäudeübersicht
-// @author       Christian (LeitstelleHRO) / Jan (KBOE2)
+// @author       Christian (LeitstelleHRO) / Jan (jxn_30)
 // @grant        none
-// @include      https://www.leitstellenspiel.de/
+// @match       https://www.leitstellenspiel.de/
 // ==/UserScript==
 
 (function() {
