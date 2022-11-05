@@ -1,0 +1,73 @@
+{
+    "extends": ["eslint:recommended", "prettier"],
+    "env": {
+        "browser": true,
+        "es2022": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "array-callback-return": ["error"],
+        "block-scoped-var": "warn",
+        "default-case-last": "error",
+        "guard-for-in": "error",
+        "no-constant-binary-expression": "error",
+        "no-duplicate-imports": ["error", { "includeExports": true }],
+        "no-eval": "error",
+        "no-implicit-coercion": [
+            "error",
+            {
+                "allow": ["!!"]
+            }
+        ],
+        "no-loop-func": "error",
+        "no-multi-str": "warn",
+        "no-param-reassign": "error",
+        "no-self-compare": "error",
+        "no-sequences": "error",
+        "no-template-curly-in-string": "warn",
+        "no-unmodified-loop-condition": "error",
+        "no-unreachable-loop": "error",
+        "no-unused-expressions": "error",
+        "no-useless-concat": "warn",
+        "no-useless-rename": "error",
+        "no-useless-return": "warn",
+        "no-var": "error",
+        "object-shorthand": ["error", "always", { "avoidQuotes": true }],
+        "prefer-arrow-callback": "error",
+        "prefer-const": "error",
+        "prefer-regex-literals": [
+            "error",
+            {
+                "disallowRedundantWrapping": true
+            }
+        ],
+        "prefer-rest-params": "error",
+        "prefer-spread": "error",
+        "prefer-template": "error",
+        "sort-imports": [
+            "warn",
+            {
+                "allowSeparatedGroups": true,
+                "ignoreCase": true,
+                "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+            }
+        ],
+        "yoda": [
+            "error",
+            "never",
+            {
+                "exceptRange": true
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["*.user.js"],
+            "plugins": ["userscripts"],
+            "extends": ["plugin:userscripts/recommended"]
+        }
+    ]
+}
