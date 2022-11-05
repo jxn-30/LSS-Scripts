@@ -1,9 +1,46 @@
 // ==UserScript==
 // @name        LSS Fahrzeugmarkt Zeige Anzahl
-// @version     1.0.0
+// @version     1.0.1
 // @description Zeigt im Fahrzeugmarkt wie viele Fahrzeuge auf der aktuell gebauten Wache bereits vorhanden sind vom jeweiligen Typ.
 // @author      Jan (jxn_30)
-// @include     /^https?:\/\/[www.]*(?:leitstellenspiel\.de|meldkamerspel\.com|missionchief\.com|missionchief\.co.uk|missionchief-australia\.com|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|nodsentralspillet\.com|operacni-stredisko\.cz|112-merkez\.com|jogo-operador112\.com|operador193\.com|centro-de-mando\.mx|dyspetcher101-game\.com|missionchief-japan\.com|jocdispecerat112\.com|missionchief-korea\.com)\/buildings/\d+\/vehicles\/new\/?$/
+// @match        https://www.operacni-stredisko.cz/vehicles/new
+// @match        https://policie.operacni-stredisko.cz/vehicles/new
+// @match        https://www.alarmcentral-spil.dk/vehicles/new
+// @match        https://politi.alarmcentral-spil.dk/vehicles/new
+// @match        https://www.leitstellenspiel.de/vehicles/new
+// @match        https://polizei.leitstellenspiel.de/vehicles/new
+// @match        https://www.missionchief-australia.com/vehicles/new
+// @match        https://police.missionchief-australia.com/vehicles/new
+// @match        https://www.missionchief.co.uk/vehicles/new
+// @match        https://police.missionchief.co.uk/vehicles/new
+// @match        https://www.missionchief.com/vehicles/new
+// @match        https://police.missionchief.com/vehicles/new
+// @match        https://www.centro-de-mando.es/vehicles/new
+// @match        https://www.centro-de-mando.mx/vehicles/new
+// @match        https://www.hatakeskuspeli.com/vehicles/new
+// @match        https://poliisi.hatakeskuspeli.com/vehicles/new
+// @match        https://www.operateur112.fr/vehicles/new
+// @match        https://police.operateur112.fr/vehicles/new
+// @match        https://www.operatore112.it/vehicles/new
+// @match        https://polizia.operatore112.it/vehicles/new
+// @match        https://www.missionchief-japan.com/vehicles/new
+// @match        https://www.missionchief-korea.com/vehicles/new
+// @match        https://www.nodsentralspillet.com/vehicles/new
+// @match        https://politiet.nodsentralspillet.com/vehicles/new
+// @match        https://www.meldkamerspel.com/vehicles/new
+// @match        https://politie.meldkamerspel.com/vehicles/new
+// @match        https://www.operatorratunkowy.pl/vehicles/new
+// @match        https://policja.operatorratunkowy.pl/vehicles/new
+// @match        https://www.operador193.com/vehicles/new
+// @match        https://www.jogo-operador112.com/vehicles/new
+// @match        https://policia.jogo-operador112.com/vehicles/new
+// @match        https://www.jocdispecerat112.com/vehicles/new
+// @match        https://www.dispetcher112.ru/vehicles/new
+// @match        https://www.dispecerske-centrum.com/vehicles/new
+// @match        https://www.larmcentralen-spelet.se/vehicles/new
+// @match        https://polis.larmcentralen-spelet.se/vehicles/new
+// @match        https://www.112-merkez.com/vehicles/new
+// @match        https://www.dyspetcher101-game.com/vehicles/new
 // @grant       none
 // ==/UserScript==
 
