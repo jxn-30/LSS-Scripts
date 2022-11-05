@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         LSS-Mission-Alarm-Speaker UK
-// @version      1.0.1
+// @version      1.0.2
 // @description  Speaks alarmed vehicles out
 // @author       Jan (jxn_30)
-// @include      /https:\/\/www.missionchief.co.uk/missions/\d+/
+// @match        https://www.missionchief.co.uk/missions/*
 // @grant        none
 // ==/UserScript==
 
