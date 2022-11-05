@@ -1,11 +1,48 @@
 // ==UserScript==
 // @name         LSS-Toplist-Distance
 // @namespace    http://tampermonkey.net/
-// @version      1.0.9
+// @version      1.0.10
 // @description  Zeigt die fehlenden verdienten Credits zum nächsten Spieler in der Toplist an
 // @author       Jan (jxn_30)
 // @grant        none
-// @include      /^https?:\/\/(?:w{3}\.)?(?:(policie\.)?operacni-stredisko\.cz|(politi\.)?alarmcentral-spil\.dk|(polizei\.)?leitstellenspiel\.de|(?:(police\.)?missionchief-australia|(police\.)?missionchief|(poliisi\.)?hatakeskuspeli|missionchief-japan|missionchief-korea|(politiet\.)?nodsentralspillet|(politie\.)?meldkamerspel|operador193|(policia\.)?jogo-operador112|jocdispecerat112|dispecerske-centrum|112-merkez|dyspetcher101-game)\.com|(police\.)?missionchief\.co\.uk|centro-de-mando\.es|centro-de-mando\.mx|(police\.)?operateur112\.fr|(polizia\.)?operatore112\.it|(policja\.)?operatorratunkowy\.pl|dispetcher112\.ru|(polis\.)?larmcentralen-spelet\.se)\/toplist(\?.*)?$/
+// @match        https://www.operacni-stredisko.cz/toplist/*
+// @match        https://policie.operacni-stredisko.cz/toplist/*
+// @match        https://www.alarmcentral-spil.dk/toplist/*
+// @match        https://politi.alarmcentral-spil.dk/toplist/*
+// @match        https://www.leitstellenspiel.de/toplist/*
+// @match        https://polizei.leitstellenspiel.de/toplist/*
+// @match        https://www.missionchief-australia.com/toplist/*
+// @match        https://police.missionchief-australia.com/toplist/*
+// @match        https://www.missionchief.co.uk/toplist/*
+// @match        https://police.missionchief.co.uk/toplist/*
+// @match        https://www.missionchief.com/toplist/*
+// @match        https://police.missionchief.com/toplist/*
+// @match        https://www.centro-de-mando.es/toplist/*
+// @match        https://www.centro-de-mando.mx/toplist/*
+// @match        https://www.hatakeskuspeli.com/toplist/*
+// @match        https://poliisi.hatakeskuspeli.com/toplist/*
+// @match        https://www.operateur112.fr/toplist/*
+// @match        https://police.operateur112.fr/toplist/*
+// @match        https://www.operatore112.it/toplist/*
+// @match        https://polizia.operatore112.it/toplist/*
+// @match        https://www.missionchief-japan.com/toplist/*
+// @match        https://www.missionchief-korea.com/toplist/*
+// @match        https://www.nodsentralspillet.com/toplist/*
+// @match        https://politiet.nodsentralspillet.com/toplist/*
+// @match        https://www.meldkamerspel.com/toplist/*
+// @match        https://politie.meldkamerspel.com/toplist/*
+// @match        https://www.operatorratunkowy.pl/toplist/*
+// @match        https://policja.operatorratunkowy.pl/toplist/*
+// @match        https://www.operador193.com/toplist/*
+// @match        https://www.jogo-operador112.com/toplist/*
+// @match        https://policia.jogo-operador112.com/toplist/*
+// @match        https://www.jocdispecerat112.com/toplist/*
+// @match        https://www.dispetcher112.ru/toplist/*
+// @match        https://www.dispecerske-centrum.com/toplist/*
+// @match        https://www.larmcentralen-spelet.se/toplist/*
+// @match        https://polis.larmcentralen-spelet.se/toplist/*
+// @match        https://www.112-merkez.com/toplist/*
+// @match        https://www.dyspetcher101-game.com/toplist/*
 // ==/UserScript==
 
 (async function() {
