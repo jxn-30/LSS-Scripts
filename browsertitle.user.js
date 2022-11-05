@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         LSS-Browsertitle
 // @namespace    http://tampermonkey.net/
-// @version      1.1.0
+// @version      1.1.1
 // @description  Heading als Titel im Browser
-// @author       Jan (KBOE2)
-// @include      https://www.leitstellenspiel.de/*
+// @author       Jan (jxn_30)
+// @match        https://www.leitstellenspiel.de/*
 // @grant        none
 // ==/UserScript==
 
