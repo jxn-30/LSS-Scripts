@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Fahrzeuge dragger
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Eigene Positionen von Fahrzeugen in der Gebäudeliste
-// @author       Jan (KBOE2)
+// @author       Jan (jxn_30)
 // @grant        none
 // @include      https://www.leitstellenspiel.de/*
 // ==/UserScript==
