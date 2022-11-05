@@ -1,9 +1,46 @@
 // ==UserScript==
 // @name         LSS-NavTabClicker
-// @version      1.0.0
+// @version      1.0.1
 // @author       Jan (jxn_30)
 // @description  Auto opens a tab if hash in URL
-// @include      /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/.*$/
+// @match        https://www.operacni-stredisko.cz/*
+// @match        https://policie.operacni-stredisko.cz/*
+// @match        https://www.alarmcentral-spil.dk/*
+// @match        https://politi.alarmcentral-spil.dk/*
+// @match        https://www.leitstellenspiel.de/*
+// @match        https://polizei.leitstellenspiel.de/*
+// @match        https://www.missionchief-australia.com/*
+// @match        https://police.missionchief-australia.com/*
+// @match        https://www.missionchief.co.uk/*
+// @match        https://police.missionchief.co.uk/*
+// @match        https://www.missionchief.com/*
+// @match        https://police.missionchief.com/*
+// @match        https://www.centro-de-mando.es/*
+// @match        https://www.centro-de-mando.mx/*
+// @match        https://www.hatakeskuspeli.com/*
+// @match        https://poliisi.hatakeskuspeli.com/*
+// @match        https://www.operateur112.fr/*
+// @match        https://police.operateur112.fr/*
+// @match        https://www.operatore112.it/*
+// @match        https://polizia.operatore112.it/*
+// @match        https://www.missionchief-japan.com/*
+// @match        https://www.missionchief-korea.com/*
+// @match        https://www.nodsentralspillet.com/*
+// @match        https://politiet.nodsentralspillet.com/*
+// @match        https://www.meldkamerspel.com/*
+// @match        https://politie.meldkamerspel.com/*
+// @match        https://www.operatorratunkowy.pl/*
+// @match        https://policja.operatorratunkowy.pl/*
+// @match        https://www.operador193.com/*
+// @match        https://www.jogo-operador112.com/*
+// @match        https://policia.jogo-operador112.com/*
+// @match        https://www.jocdispecerat112.com/*
+// @match        https://www.dispetcher112.ru/*
+// @match        https://www.dispecerske-centrum.com/*
+// @match        https://www.larmcentralen-spelet.se/*
+// @match        https://polis.larmcentralen-spelet.se/*
+// @match        https://www.112-merkez.com/*
+// @match        https://www.dyspetcher101-game.com/*
 // @run-at       document-idle
 // ==/UserScript==
 document.querySelector(`.nav-tabs a[href="${window.location.hash}"]`)?.click();
