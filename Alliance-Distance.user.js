@@ -7,8 +7,8 @@
 // @description:de  Zeigt die fehlenden verdienten Credits zum nächsten Verband an
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
-// @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/AllianceDistance.user.js
-// @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/AllianceDistance.user.js
+// @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceDistance.user.js
+// @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceDistance.user.js
 // @match           https://www.operacni-stredisko.cz/alliances
 // @match           https://www.operacni-stredisko.cz/alliances?page=*
 // @match           https://policie.operacni-stredisko.cz/alliances
