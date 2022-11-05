@@ -79,13 +79,13 @@ comments.forEach(comment => {
     const getTags = (title, defaultContent) =>
         filterTags(tags, title, defaultContent);
 
-    // add symbolic links
-    getTags('old').forEach(({ content }) =>
-        fs.symlinkSync(
-            `./${path.relative(ROOT_PATH, filePath)}`,
-            path.resolve(ROOT_PATH, `${content}.user.js`)
-        )
-    );
+    // add hardlinks
+    // unfortunately, hardlinks are required because GitHub doesn't support symbolic links
+    getTags('old').forEach(({ content }) => {
+        const linkPath = path.resolve(ROOT_PATH, `${content}.user.js`);
+        if (fs.existsSync(linkPath)) fs.rmSync(linkPath);
+        fs.linkSync(`./${path.relative(ROOT_PATH, filePath)}`, linkPath);
+    });
 
     // get paths to execute on
     const locales = getTags('locale');
