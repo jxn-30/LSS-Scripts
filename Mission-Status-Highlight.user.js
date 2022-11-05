@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         LSS-Mission-Status-Highlight
-// @version      1.0.0
+// @version      1.0.1
 // @description  Highlights rows by status in Mission
-// @author       Jan (KBOE2)
-// @include      https://www.leitstellenspiel.de/missions/*
+// @author       Jan (jxn_30)
+// @match        https://www.leitstellenspiel.de/missions/*
 // @grant        none
 // ==/UserScript==
 (function() {
