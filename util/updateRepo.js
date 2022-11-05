@@ -129,7 +129,14 @@ comments.forEach(comment => {
         },
         ...tags
             .filter(tag => tag.title.startsWith('name:'))
-            .map(({ title, value }) => ({ tag: title, content: value })),
+            .map(({ title, value }) => ({
+                tag: title,
+                content: `[${
+                    Object.entries(games).find(([lang]) =>
+                        lang.startsWith(title.split(':')[1])
+                    )?.[1].abbr ?? 'LSS'
+                }] ${value}`,
+            })),
         {
             tag: 'namespace',
             content: 'https://jxn.lss-manager.de',

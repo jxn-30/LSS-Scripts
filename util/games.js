@@ -1,4 +1,14 @@
+/**
+ * @typedef Game
+ * @property {string} flag
+ * @property {string} name
+ * @property {string} shortURL
+ * @property {string} [police]
+ * @property {string} [abbr]
+ */
+
 module.exports = {
+    /** @type {Object.<string, Game>} */
     games: {
         cs_CZ: {
             flag: '🇨🇿',
@@ -17,24 +27,28 @@ module.exports = {
             name: 'Leitstellenspiel.de',
             shortURL: 'leitstellenspiel.de',
             police: 'polizei',
+            abbr: 'LSS',
         },
         en_AU: {
             flag: '🇦🇺',
             name: 'Missionchief-Australia.com',
             shortURL: 'missionchief-australia.com',
             police: 'police',
+            abbr: 'MC',
         },
         en_GB: {
             flag: '🇬🇧',
             name: 'Missionchief.co.uk',
             shortURL: 'missionchief.co.uk',
             police: 'police',
+            abbr: 'MC',
         },
         en_US: {
             flag: '🇺🇸',
             name: 'Missionchief.com',
             shortURL: 'missionchief.com',
             police: 'police',
+            abbr: 'MC',
         },
         es_ES: {
             flag: '🇪🇸',

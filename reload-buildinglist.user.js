@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            [LSS] Reload list of buildings
-// @name:de         Gebäudeliste neu laden
+// @name:de         [LSS] Gebäudeliste neu laden
 // @namespace       https://jxn.lss-manager.de
 // @version         2022.0.0
 // @author          Jan (jxn_30)
