@@ -41,7 +41,6 @@
 // @match        https://polis.larmcentralen-spelet.se/missions/*
 // @match        https://www.112-merkez.com/missions/*
 // @match        https://www.dyspetcher101-game.com/missions/*
-
 // @grant        none
 // ==/UserScript==
 (function() {
