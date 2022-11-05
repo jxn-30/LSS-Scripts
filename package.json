@@ -3,8 +3,10 @@
     "description": "The collection of Scripts for leitstellenspiel, missionchief & co. By jxn_30",
     "packageManager": "yarn@3.2.3",
     "scripts": {
-        "lint:fix": "yarn eslint . --ext .ts,.user.js --exit-on-fatal-error --report-unused-disable-directives --cache --cache-strategy content --fix",
-        "prettier:write": "prettier --write ."
+        "lint:fix": "yarn eslint . --ext .js,.user.js --exit-on-fatal-error --report-unused-disable-directives --cache --cache-strategy content --fix",
+        "prettier:write": "prettier --write .",
+        "update": "node ./util/updateRepo.js",
+        "ci": "yarn lint:fix && yarn prettier:write && yarn update"
     },
     "devDependencies": {
         "@types/tampermonkey": "^4.0.5",

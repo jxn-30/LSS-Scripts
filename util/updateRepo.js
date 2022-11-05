@@ -110,13 +110,14 @@ comments.forEach(comment => {
                         content: `https://www.${shortURL}${path}`,
                     })
                 );
-                if (police)
+                if (police) {
                     pathMatches.forEach(({ content: path }) =>
                         matches.push({
                             tag: 'match',
                             content: `https://${police}.${shortURL}${path}`,
                         })
                     );
+                }
             }
             return matches;
         });
