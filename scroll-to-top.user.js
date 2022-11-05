@@ -1,1 +1,1 @@
-src/scrollToTop.user.js
+./src/scrollToTop.user.js

@@ -82,7 +82,7 @@ comments.forEach(comment => {
     // add symbolic links
     getTags('old').forEach(({ content }) =>
         fs.symlinkSync(
-            path.relative(ROOT_PATH, filePath),
+            `./${path.relative(ROOT_PATH, filePath)}`,
             path.resolve(ROOT_PATH, `${content}.user.js`)
         )
     );
@@ -125,7 +125,7 @@ comments.forEach(comment => {
     const userscriptHeaderInformation = [
         {
             tag: 'name',
-            content: `[LSS] ${comment.name}`,
+            content: `[LSS] ${comment.name.trim()}`,
         },
         ...tags
             .filter(tag => tag.title.startsWith('name:'))

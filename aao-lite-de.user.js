@@ -1,1 +1,1 @@
-src/aaoConfigLite.de.user.js
+./src/aaoConfigLite.de.user.js

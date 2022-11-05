@@ -1,1 +1,1 @@
-src/reloadBuildinglist.user.js
+./src/reloadBuildinglist.user.js
