@@ -99,8 +99,9 @@ document.addEventListener(
                 document.querySelector(
                     '.navbar-fixed-bottom:not(#navbar-mobile-footer)'
                 )
-            )
+            ) {
                 translateY -= 50;
+            }
             const personalOvertakeCounter = document.querySelector(
                 '#personal_hire_overtake_counter'
             );
@@ -118,8 +119,9 @@ document.addEventListener(
         }
         scrollToTopBtn.classList[showScrollToTop ? 'remove' : 'add']('hidden');
 
-        if (hideTimeouts[targetOrDocEl])
+        if (hideTimeouts[targetOrDocEl]) {
             window.clearTimeout(hideTimeouts[targetOrDocEl]);
+        }
         hideTimeouts[targetOrDocEl] = window.setTimeout(
             () => scrollToTopBtn.classList.add('hidden'),
             hideAfter * 1000

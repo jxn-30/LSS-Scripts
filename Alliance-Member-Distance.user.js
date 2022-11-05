@@ -104,10 +104,10 @@
     'use strict';
 
     if (
-        !window.sessionStorage['aCredits'] ||
+        !window.sessionStorage.aCredits ||
         JSON.parse(window.sessionStorage.aCredits).lastUpdate <
             new Date().getTime() - 5 * 1000 * 60
-    )
+    ) {
         await fetch('/api/credits')
             .then(res => res.json())
             .then(data =>
@@ -119,6 +119,7 @@
                     })
                 )
             );
+    }
 
     let prevValue;
     const member_values = {};
@@ -163,8 +164,9 @@
     if (
         (Object.keys(history[page]).sort().reverse()[0] || 0) <
         new Date().getTime() - 10 * 60 * 1000
-    )
+    ) {
         history[page][new Date().getTime()] = member_values;
+    }
 
     localStorage.member_list_history = JSON.stringify(history);
 
@@ -230,11 +232,12 @@
             );
             const graphs = [];
             saved_graphs.forEach(g => {
-                if (!graphs.filter(c => c.id === g.id).length)
+                if (!graphs.filter(c => c.id === g.id).length) {
                     graphs.push({
                         ...g,
                         lineColor: `#${getColorFromString(g.title)}`,
                     });
+                }
             });
             const u = {
                 type: 'serial',

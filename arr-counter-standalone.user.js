@@ -74,7 +74,7 @@
     const counterClass = 'arr-counter-standalone';
     const highlightClass = 'arr-clicked-standalone';
 
-    if (counter || highlight)
+    if (counter || highlight) {
         document.head.innerHTML += `<style>
 .${counterClass}:not([data-amount]), .${counterClass}[data-amount="0"] {
     display: none;
@@ -86,19 +86,21 @@
     border: 2px solid #008000 !important;
 }
 </style>`;
+    }
 
     const counterNodes = {};
 
     const resetCounters = () => {
-        if (counter)
+        if (counter) {
             Object.values(counterNodes).forEach(counter => {
                 counter.removeAttribute('data-amount');
                 counter.parentElement?.classList.remove(highlightClass);
             });
-        else
+        } else {
             Array.from(document.querySelectorAll(`.${highlightClass}`)).forEach(
                 arr => arr.classList.remove(highlightClass)
             );
+        }
         window.vehicleSelectionReset();
     };
 
@@ -110,8 +112,9 @@
                 !targetARR ||
                 !ARRContainer.contains(targetARR) ||
                 targetARR.querySelector('.label-danger')
-            )
+            ) {
                 return;
+            }
 
             const arrId =
                 targetARR.getAttribute('aao_id') ||
@@ -130,7 +133,7 @@
 
             if (targetARR.getAttribute('reset') === 'true') resetCounters();
 
-            if (counter)
+            if (counter) {
                 counterNode.setAttribute(
                     'data-amount',
                     (
@@ -139,6 +142,7 @@
                         ) + 1
                     ).toLocaleString()
                 );
+            }
 
             if (highlight) targetARR.classList.add(highlightClass);
         });
