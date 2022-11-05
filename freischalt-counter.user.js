@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         LSS-Freischalt-Counter
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3.0
 // @description  try to take over the world!
-// @author       Jan (KBOE2)
+// @author       Jan (jxn_30)
 // @match        https://www.leitstellenspiel.de/*
 // @grant        none
 // ==/UserScript==
