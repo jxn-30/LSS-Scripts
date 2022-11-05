@@ -1,9 +1,46 @@
 // ==UserScript==
 // @name         LSS-Message-Templates
-// @version      1.0.2
+// @version      1.0.3
 // @description  Add multiple Templates for private messages
 // @author       Jan (jxn_30)
-// @include      /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/messages/((new\/?)|(\d+\/?))/
+// @match        https://www.operacni-stredisko.cz/messages/new
+// @match        https://policie.operacni-stredisko.cz/messages/new
+// @match        https://www.alarmcentral-spil.dk/messages/new
+// @match        https://politi.alarmcentral-spil.dk/messages/new
+// @match        https://www.leitstellenspiel.de/messages/new
+// @match        https://polizei.leitstellenspiel.de/messages/new
+// @match        https://www.missionchief-australia.com/messages/new
+// @match        https://police.missionchief-australia.com/messages/new
+// @match        https://www.missionchief.co.uk/messages/new
+// @match        https://police.missionchief.co.uk/messages/new
+// @match        https://www.missionchief.com/messages/new
+// @match        https://police.missionchief.com/messages/new
+// @match        https://www.centro-de-mando.es/messages/new
+// @match        https://www.centro-de-mando.mx/messages/new
+// @match        https://www.hatakeskuspeli.com/messages/new
+// @match        https://poliisi.hatakeskuspeli.com/messages/new
+// @match        https://www.operateur112.fr/messages/new
+// @match        https://police.operateur112.fr/messages/new
+// @match        https://www.operatore112.it/messages/new
+// @match        https://polizia.operatore112.it/messages/new
+// @match        https://www.missionchief-japan.com/messages/new
+// @match        https://www.missionchief-korea.com/messages/new
+// @match        https://www.nodsentralspillet.com/messages/new
+// @match        https://politiet.nodsentralspillet.com/messages/new
+// @match        https://www.meldkamerspel.com/messages/new
+// @match        https://politie.meldkamerspel.com/messages/new
+// @match        https://www.operatorratunkowy.pl/messages/new
+// @match        https://policja.operatorratunkowy.pl/messages/new
+// @match        https://www.operador193.com/messages/new
+// @match        https://www.jogo-operador112.com/messages/new
+// @match        https://policia.jogo-operador112.com/messages/new
+// @match        https://www.jocdispecerat112.com/messages/new
+// @match        https://www.dispetcher112.ru/messages/new
+// @match        https://www.dispecerske-centrum.com/messages/new
+// @match        https://www.larmcentralen-spelet.se/messages/new
+// @match        https://polis.larmcentralen-spelet.se/messages/new
+// @match        https://www.112-merkez.com/messages/new
+// @match        https://www.dyspetcher101-game.com/messages/new
 // @run-at       document-idle
 // ==/UserScript==
 
