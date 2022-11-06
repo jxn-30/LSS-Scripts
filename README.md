@@ -15,6 +15,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes)
 - [[LSS] ARR Categories Export](#lss-arr-categories-export)
 - [[LSS] ARR Counter](#lss-arr-counter)
+- [[LSS] Async Prisoners](#lss-async-prisoners)
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
@@ -110,6 +111,21 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [arrCounter.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCounter.user.js
+
+### [LSS] Async Prisoners
+
+> [Currently DE only] transport prisoners without reloading the mission window
+
+| Version  | Available in | Alias / Old names |                     Download                     |
+|:--------:|:------------:|:-----------------:|:------------------------------------------------:|
+| 2022.0.0 |    `🇩🇪`    | `Async-Prisoners` | [asyncPrisoners.user.js][asyncPrisoners.user.js] |
+
+<details>
+    <summary>🇩🇪 [LSS] Asynchrone Gefangene</summary>
+    Verhindert das Neuladen der Einsatzseite beim Abtransportieren von Gefangenen
+</details>
+
+[asyncPrisoners.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/asyncPrisoners.user.js
 
 ### [LSS] BSR AAO über Fahrzeugliste
 
