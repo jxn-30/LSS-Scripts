@@ -17,6 +17,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] ARR Categories Export](#lss-arr-categories-export)
 - [[LSS] ARR Counter](#lss-arr-counter)
 - [[LSS] Async Prisoners](#lss-async-prisoners)
+- [[LSS] Browsertitle](#lss-browsertitle)
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
@@ -127,6 +128,21 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [asyncPrisoners.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/asyncPrisoners.user.js
+
+### [LSS] Browsertitle
+
+> [Currently DE only] Shows the current page as title in the browser
+
+| Version  | Available in | Alias / Old names |                   Download                   |
+|:--------:|:------------:|:-----------------:|:--------------------------------------------:|
+| 2022.0.0 |    `🇩🇪`    |  `browsertitle`   | [browsertitle.user.js][browsertitle.user.js] |
+
+<details>
+    <summary>🇩🇪 [LSS] Browsertitel</summary>
+    Zeigt die aktuelle Seite als Titel im Browser an
+</details>
+
+[browsertitle.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/browsertitle.user.js
 
 ### [LSS] BSR AAO über Fahrzeugliste
 
