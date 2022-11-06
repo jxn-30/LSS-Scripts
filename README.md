@@ -1,4 +1,15 @@
-## [LSS] AAO Config Lite
+# LSS-Scripts
+
+These are some scripts for Leitstellenspiel, Missionchief and the other versions.
+
+Alias-Versions (old links) are still working, but will be removed in the future.
+
+## Scripts
+
+This list is auto-generated and contains all scripts that are already ported into new format.
+
+<!-- == BEGIN SCRIPT-OVERVIEW == -->
+### [LSS] AAO Config Lite
 
 > This Script is for leitstellenspiel.de only!
 
@@ -13,7 +24,7 @@
 
 [aaoConfigLite.de.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 
-## [LSS] Alliance Distance
+### [LSS] Alliance Distance
 
 > Shows difference of total earned credits to the next alliance
 
@@ -28,7 +39,7 @@
 
 [allianceDistance.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceDistance.user.js
 
-## [LSS] Alliance Member Distance
+### [LSS] Alliance Member Distance
 
 > Shows difference of total earned credits to the next alliance member
 
@@ -43,7 +54,7 @@
 
 [allianceMemberDistance.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberDistance.user.js
 
-## [LSS] Alliance Member Notes
+### [LSS] Alliance Member Notes
 
 > Customizable Notes for each alliance member
 
@@ -58,7 +69,7 @@
 
 [allianceMemberNotes.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
 
-## [LSS] ARR Counter
+### [LSS] ARR Counter
 
 > Counts how often an ARR is clicked
 
@@ -73,7 +84,7 @@
 
 [arrCounter.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCounter.user.js
 
-## [LSS] BSR AAO über Fahrzeugliste
+### [LSS] BSR AAO über Fahrzeugliste
 
 > Macht die AAO über die Fahrzeugliste in Bereitstellungsräumen
 
@@ -85,7 +96,7 @@
 
 [bsrAAOAboveVehiclelist.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/bsrAAOAboveVehiclelist.user.js
 
-## [LSS] Leitstellenansicht Nav-toggle
+### [LSS] Leitstellenansicht Nav-toggle
 
 > Adds a button to show/hide navbar in Leitstellenansicht
 
@@ -97,7 +108,7 @@
 
 [navToggleLeitstellenansicht.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/navToggleLeitstellenansicht.user.js
 
-## [LSS] Reload list of buildings
+### [LSS] Reload list of buildings
 
 > Adds a button to the map to reload the list of buildings
 
@@ -112,7 +123,7 @@
 
 [reloadBuildinglist.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadBuildinglist.user.js
 
-## [LSS] Scroll-To-Top buttons
+### [LSS] Scroll-To-Top buttons
 
 > Shows a scroll-to-top button on all scrollable elements
 
@@ -127,7 +138,7 @@
 
 [scrollToTop.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
 
-## [LSS] Toplist Distance
+### [LSS] Toplist Distance
 
 > Shows difference of total earned credits to the next user
 
@@ -141,3 +152,4 @@
 </details>
 
 [toplistDistance.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/toplistDistance.user.js
+<!-- ## END SCRIPT-OVERVIEW ## -->

@@ -283,40 +283,39 @@ const centerString = (string, length) => {
     return string.padStart(half + string.length, ' ').padEnd(length, ' ');
 };
 
-fs.writeFileSync(
-    path.resolve(ROOT_PATH, 'README.md'),
-    scriptOverview
-        .sort((a, b) =>
-            a.name.toLowerCase().localeCompare(b.name.toLowerCase())
-        )
-        .map(script => {
-            /** @type {string[][]} */
-            const rows = [
-                ['Version', 'Alias / Old names', 'Download'],
-                [
-                    script.version,
-                    script.alias.map(alias => `\`${alias}\``).join(', '),
-                    `[${script.filename}][${script.filename}]`,
-                ],
-            ];
-            if (script.flagsAvailable.length) {
-                rows[0].splice(1, 0, 'Available in');
-                rows[1].splice(
-                    1,
-                    0,
-                    script.flagsAvailable.map(flag => `\`${flag}\``).join(', ')
-                );
-            }
-            const cellWidths = rows[0].map((_, i) =>
-                Math.max(...rows.map(row => row[i].length))
-            );
-            rows.splice(
+const sortedScripts = scriptOverview.sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+);
+
+const scriptOverviewMarkdown = sortedScripts
+    .map(script => {
+        /** @type {string[][]} */
+        const rows = [
+            ['Version', 'Alias / Old names', 'Download'],
+            [
+                script.version,
+                script.alias.map(alias => `\`${alias}\``).join(', '),
+                `[${script.filename}][${script.filename}]`,
+            ],
+        ];
+        if (script.flagsAvailable.length) {
+            rows[0].splice(1, 0, 'Available in');
+            rows[1].splice(
                 1,
                 0,
-                cellWidths.map(width => `:${'-'.repeat(width)}:`)
+                script.flagsAvailable.map(flag => `\`${flag}\``).join(', ')
             );
-            return `
-## ${script.name}
+        }
+        const cellWidths = rows[0].map((_, i) =>
+            Math.max(...rows.map(row => row[i].length))
+        );
+        rows.splice(
+            1,
+            0,
+            cellWidths.map(width => `:${'-'.repeat(width)}:`)
+        );
+        return `
+### ${script.name}
 
 > ${script.description}
 
@@ -342,6 +341,19 @@ ${Object.values(script.locales)
 
 [${script.filename}]: ${script.url}
 `.trim();
-        })
-        .join('\n\n')
+    })
+    .join('\n\n');
+
+const readmePath = path.resolve(ROOT_PATH, 'README.md');
+
+fs.writeFileSync(
+    readmePath,
+    fs.readFileSync(readmePath, 'utf8').replace(
+        /<!-- == BEGIN SCRIPT-OVERVIEW == -->.*?<!-- ## END SCRIPT-OVERVIEW ## -->/su,
+        `
+<!-- == BEGIN SCRIPT-OVERVIEW == -->
+${scriptOverviewMarkdown}
+<!-- ## END SCRIPT-OVERVIEW ## -->
+`.trim()
+    )
 );
