@@ -84,7 +84,36 @@
         {
             "files": ["*.user.js"],
             "plugins": ["userscripts"],
-            "extends": ["plugin:userscripts/recommended"]
+            "extends": ["plugin:userscripts/recommended"],
+            "globals": {
+                "uneval": "readonly",
+                "unsafeWindow": "readonly",
+                "GM_info": "readonly",
+                "GM": "readonly",
+                "GM_addStyle": "readonly",
+                "GM_addElement": "readonly",
+                "GM_cookie": "readonly",
+                "GM_deleteValue": "readonly",
+                "GM_listValues": "readonly",
+                "GM_getValue": "readonly",
+                "GM_download": "readonly",
+                "GM_log": "readonly",
+                "GM_registerMenuCommand": "readonly",
+                "GM_unregisterMenuCommand": "readonly",
+                "GM_openInTab": "readonly",
+                "GM_setValue": "readonly",
+                "GM_addValueChangeListener": "readonly",
+                "GM_removeValueChangeListener": "readonly",
+                "GM_xmlhttpRequest": "readonly",
+                "GM_webRequest": "readonly",
+                "GM_getTab": "readonly",
+                "GM_saveTab": "readonly",
+                "GM_getTabs": "readonly",
+                "GM_setClipboard": "readonly",
+                "GM_notification": "readonly",
+                "GM_getResourceText": "readonly",
+                "GM_getResourceURL": "readonly"
+            }
         }
     ]
 }
