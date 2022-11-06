@@ -13,6 +13,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Alliance Distance](#lss-alliance-distance)
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance)
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes)
+- [[LSS] ARR Categories Export](#lss-arr-categories-export)
 - [[LSS] ARR Counter](#lss-arr-counter)
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
@@ -79,6 +80,21 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [allianceMemberNotes.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
+
+### [LSS] ARR Categories Export
+
+> Allows exporting and importing custom ARR Categories
+
+| Version  |    Alias / Old names    |                          Download                          |
+|:--------:|:-----------------------:|:----------------------------------------------------------:|
+| 2022.0.0 | `arr_categories_export` | [arrCategoriesExport.user.js][arrCategoriesExport.user.js] |
+
+<details>
+    <summary>🇩🇪 [LSS] AAO-Kategorien Export</summary>
+    Eigenen AAO-Kategorien in eine Datei exportieren und diese wieder importieren
+</details>
+
+[arrCategoriesExport.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCategoriesExport.user.js
 
 ### [LSS] ARR Counter
 
