@@ -287,6 +287,17 @@ const sortedScripts = scriptOverview.sort((a, b) =>
     a.name.toLowerCase().localeCompare(b.name.toLowerCase())
 );
 
+const scriptTOCMarkdown = sortedScripts
+    .map(
+        ({ name }) =>
+            `- [${name}](#${name
+                .toLowerCase()
+                .replace(/[^a-z0-9-]/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-+|-+$/g, '')})`
+    )
+    .join('\n');
+
 const scriptOverviewMarkdown = sortedScripts
     .map(script => {
         /** @type {string[][]} */
@@ -352,6 +363,8 @@ fs.writeFileSync(
         /<!-- == BEGIN SCRIPT-OVERVIEW == -->.*?<!-- ## END SCRIPT-OVERVIEW ## -->/su,
         `
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
+${scriptTOCMarkdown}
+
 ${scriptOverviewMarkdown}
 <!-- ## END SCRIPT-OVERVIEW ## -->
 `.trim()
