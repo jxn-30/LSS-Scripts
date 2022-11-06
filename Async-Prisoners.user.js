@@ -10,6 +10,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/asyncPrisoners.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/asyncPrisoners.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/18769-gefangene-ohne-seite-neu-zu-laden-abschicken/
 // @match           https://www.leitstellenspiel.de/missions/*
 // @match           https://polizei.leitstellenspiel.de/missions/*
 // @run-at          document-idle

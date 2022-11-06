@@ -38,6 +38,7 @@ const { games } = require('./games');
  * @property {string} filename
  * @property {string} url
  * @property {string} version
+ * @property {string} forum
  * @property {string[]} alias
  * @property {string[]} flagsAvailable
  * @property {Object.<string, ScriptLocale>} locales
@@ -45,6 +46,7 @@ const { games } = require('./games');
 
 const ROOT_PATH = path.resolve(__dirname, '..');
 const SRC_PATH = path.resolve(ROOT_PATH, 'src');
+const GITHUB = 'https://github.com/jxn-30/LSS-Scripts';
 
 /** @type {Script[]} */
 const scriptOverview = [];
@@ -89,6 +91,17 @@ comments.forEach(comment => {
     const { tags } = comment;
 
     const updateURL = `https://github.com/jxn-30/LSS-Scripts/raw/master/src/${fileName}`;
+
+    /**
+     * Get a single tag
+     * @param {string} title
+     * @param {string} [defaultContent]
+     * @returns {{tag: string, content: string}}
+     */
+    const getTag = (title, defaultContent) => ({
+        tag: title,
+        content: tags.find(tag => tag.title === title)?.value ?? defaultContent,
+    });
 
     /**
      * Get Tags and their localized versions
@@ -190,7 +203,9 @@ comments.forEach(comment => {
         }
     });
 
-    const versionTag = getTags('version', `${new Date().getFullYear()}.0.0`)[0];
+    const versionTag = getTag('version', `${new Date().getFullYear()}.0.0`);
+
+    const forumTag = getTag('forum', '');
 
     scriptOverview.push({
         filename: fileName,
@@ -210,6 +225,7 @@ comments.forEach(comment => {
                       )
                       .map(game => games[game].flag),
         locales: localeTranslations,
+        forum: forumTag.content,
     });
 
     // list of tags to add to the userscript
@@ -232,11 +248,11 @@ comments.forEach(comment => {
         ...localeDescriptions,
         {
             tag: 'homepage',
-            content: 'https://github.com/jxn-30/LSS-Scripts',
+            content: GITHUB,
         },
         {
             tag: 'homepageURL',
-            content: 'https://github.com/jxn-30/LSS-Scripts',
+            content: GITHUB,
         },
         {
             tag: 'updateURL',
@@ -245,6 +261,10 @@ comments.forEach(comment => {
         {
             tag: 'downloadURL',
             content: updateURL,
+        },
+        {
+            tag: 'supportURL',
+            content: forumTag.content || GITHUB,
         },
         ...matches,
         ...getTags('run-at', 'document-idle'),
@@ -300,23 +320,27 @@ const scriptTOCMarkdown = sortedScripts
 
 const scriptOverviewMarkdown = sortedScripts
     .map(script => {
-        /** @type {string[][]} */
-        const rows = [
-            ['Version', 'Alias / Old names', 'Download'],
-            [
-                script.version,
-                script.alias.map(alias => `\`${alias}\``).join(', '),
-                `[${script.filename}][${script.filename}]`,
-            ],
-        ];
+        const headerRow = ['Version'];
+        const contentRow = [script.version];
         if (script.flagsAvailable.length) {
-            rows[0].splice(1, 0, 'Available in');
-            rows[1].splice(
-                1,
-                0,
+            headerRow.push('Available in');
+            contentRow.push(
                 script.flagsAvailable.map(flag => `\`${flag}\``).join(', ')
             );
         }
+        headerRow.push('Alias / Old names', 'Download');
+        contentRow.push(
+            script.alias.map(alias => `\`${alias}\``).join(', '),
+            `[${script.filename}][${script.filename}:download]`
+        );
+        if (script.forum) {
+            headerRow.push('Links');
+            contentRow.push(`[Forum][${script.filename}:forum]`);
+        }
+
+        /** @type {string[][]} */
+        const rows = [headerRow, contentRow];
+
         const cellWidths = rows[0].map((_, i) =>
             Math.max(...rows.map(row => row[i].length))
         );
@@ -350,7 +374,8 @@ ${Object.values(script.locales)
     )
     .join('\n')}
 
-[${script.filename}]: ${script.url}
+[${script.filename}:download]: ${script.url}
+${script.forum ? `[${script.filename}:forum]: ${script.forum}` : ''}
 `.trim();
     })
     .join('\n\n');

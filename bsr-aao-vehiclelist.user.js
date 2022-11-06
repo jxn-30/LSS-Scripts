@@ -8,6 +8,7 @@
 // @homepageURL  https://github.com/jxn-30/LSS-Scripts
 // @updateURL    https://github.com/jxn-30/LSS-Scripts/raw/master/src/bsrAAOAboveVehiclelist.user.js
 // @downloadURL  https://github.com/jxn-30/LSS-Scripts/raw/master/src/bsrAAOAboveVehiclelist.user.js
+// @supportURL   https://github.com/jxn-30/LSS-Scripts
 // @match        https://www.operacni-stredisko.cz/buildings/*
 // @match        https://policie.operacni-stredisko.cz/buildings/*
 // @match        https://www.alarmcentral-spil.dk/buildings/*

@@ -9,6 +9,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/18517-scriptwunsch-notizen-bei-mitgliedern
 // @match           https://www.operacni-stredisko.cz/verband/mitglieder
 // @match           https://www.operacni-stredisko.cz/verband/mitglieder/*
 // @match           https://policie.operacni-stredisko.cz/verband/mitglieder

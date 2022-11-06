@@ -8,6 +8,7 @@
 // @homepageURL  https://github.com/jxn-30/LSS-Scripts
 // @updateURL    https://github.com/jxn-30/LSS-Scripts/raw/master/src/navToggleLeitstellenansicht.user.js
 // @downloadURL  https://github.com/jxn-30/LSS-Scripts/raw/master/src/navToggleLeitstellenansicht.user.js
+// @supportURL   https://github.com/jxn-30/LSS-Scripts
 // @match        https://www.operacni-stredisko.cz/leitstellenansicht
 // @match        https://www.operacni-stredisko.cz/statusoverzicht
 // @match        https://policie.operacni-stredisko.cz/leitstellenansicht

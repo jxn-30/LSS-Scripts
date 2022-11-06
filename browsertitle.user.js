@@ -10,6 +10,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/browsertitle.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/browsertitle.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/16784-script-browsertitle/
 // @match           https://www.leitstellenspiel.de/*
 // @match           https://polizei.leitstellenspiel.de/*
 // @run-at          document-idle

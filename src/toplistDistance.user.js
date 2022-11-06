@@ -9,6 +9,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/toplistDistance.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/toplistDistance.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
 // @match           https://www.operacni-stredisko.cz/toplist
 // @match           https://www.operacni-stredisko.cz/toplist?page=*
 // @match           https://policie.operacni-stredisko.cz/toplist

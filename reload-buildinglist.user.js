@@ -10,6 +10,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadBuildinglist.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadBuildinglist.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/23357-script-wunsch-aktualisierung-der-lst-liste/
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://policie.operacni-stredisko.cz/
 // @match           https://www.alarmcentral-spil.dk/

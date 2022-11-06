@@ -9,6 +9,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceDistance.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceDistance.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
 // @match           https://www.operacni-stredisko.cz/alliances
 // @match           https://www.operacni-stredisko.cz/alliances?page=*
 // @match           https://policie.operacni-stredisko.cz/alliances

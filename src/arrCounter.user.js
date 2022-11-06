@@ -10,6 +10,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCounter.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCounter.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/19317-script-aao-z%C3%A4hler-standalone/
 // @match           https://www.operacni-stredisko.cz/missions/*
 // @match           https://policie.operacni-stredisko.cz/missions/*
 // @match           https://www.alarmcentral-spil.dk/missions/*

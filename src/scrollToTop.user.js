@@ -9,6 +9,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/22254-scriptwunsch-pfeil-oder-button-zum-seitenanfang-bzw-seitenende/
 // @match           https://www.operacni-stredisko.cz/*
 // @match           https://policie.operacni-stredisko.cz/*
 // @match           https://www.alarmcentral-spil.dk/*

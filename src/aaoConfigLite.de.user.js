@@ -9,6 +9,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
 // @match           https://www.leitstellenspiel.de/aaos/new
 // @match           https://www.leitstellenspiel.de/aaos/*/edit
 // @match           https://polizei.leitstellenspiel.de/aaos/new

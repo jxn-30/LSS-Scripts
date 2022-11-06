@@ -10,6 +10,7 @@
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCategoriesExport.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCategoriesExport.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/20531-aao-kategorien-exportieren-und-importieren/
 // @match           https://www.operacni-stredisko.cz/aao_categorys
 // @match           https://policie.operacni-stredisko.cz/aao_categorys
 // @match           https://www.alarmcentral-spil.dk/aao_categorys
