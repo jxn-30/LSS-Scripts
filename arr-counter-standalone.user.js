@@ -57,6 +57,7 @@
  * @name:de AAO-Zähler
  * @description Counts how often an ARR is clicked
  * @description:de Zeigt einen Zähler an, wie oft eine AAO geklickt wurde
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/19317-script-aao-z%C3%A4hler-standalone/
  * @match /missions/*
  * @old arr-counter-standalone
  */

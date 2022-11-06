@@ -93,6 +93,7 @@
  * @name Toplist Distance
  * @description Shows difference of total earned credits to the next user
  * @description:de Zeigt die fehlenden verdienten Credits zum nächsten Spieler an
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
  * @match /toplist
  * @match /toplist?page=*
  * @old Toplist-Distance

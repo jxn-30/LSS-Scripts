@@ -21,6 +21,7 @@
  * @name:de Asynchrone Gefangene
  * @description [Currently DE only] transport prisoners without reloading the mission window
  * @description:de Verhindert das Neuladen der Einsatzseite beim Abtransportieren von Gefangenen
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/18769-gefangene-ohne-seite-neu-zu-laden-abschicken/
  * @locale de_DE
  * @match /missions/*
  * @old Async-Prisoners

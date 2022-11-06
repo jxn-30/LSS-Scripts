@@ -57,6 +57,7 @@
  * @name:de AAO-Kategorien Export
  * @description Allows exporting and importing custom ARR Categories
  * @description:de Eigenen AAO-Kategorien in eine Datei exportieren und diese wieder importieren
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/20531-aao-kategorien-exportieren-und-importieren/
  * @match /aao_categorys
  * @old arr_categories_export
  */

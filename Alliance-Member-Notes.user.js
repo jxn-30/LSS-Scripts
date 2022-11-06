@@ -93,6 +93,7 @@
  * @name Alliance Member Notes
  * @description Customizable Notes for each alliance member
  * @description:de Frei anpassbare Notizen für jedes Verbandsmitglied
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/18517-scriptwunsch-notizen-bei-mitgliedern
  * @match /verband/mitglieder
  * @match /verband/mitglieder/*
  * @old Alliance-Member-Notes

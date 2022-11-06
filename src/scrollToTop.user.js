@@ -55,6 +55,7 @@
  * @name Scroll-To-Top buttons
  * @description Shows a scroll-to-top button on all scrollable elements
  * @description:de Zeigt einen Knopf, um in Elementen nach oben zu scrollen
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/22254-scriptwunsch-pfeil-oder-button-zum-seitenanfang-bzw-seitenende/
  * @old scroll-to-top
  */
 

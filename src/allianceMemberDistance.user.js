@@ -93,6 +93,7 @@
  * @name Alliance Member Distance
  * @description Shows difference of total earned credits to the next alliance member
  * @description:de Zeigt die fehlenden verdienten Credits zum nächsten Verbandsmitglied an
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
  * @match /verband/mitglieder
  * @match /verband/mitglieder/*
  * @old Alliance-Member-Distance

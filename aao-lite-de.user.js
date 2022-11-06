@@ -22,6 +22,7 @@
  * @description This Script is for leitstellenspiel.de only!
  * @description:de Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
  * @author JuMaHo & Jan (jxn_30)
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
  * @locale de_DE
  * @match /aaos/new
  * @match /aaos/*\/edit

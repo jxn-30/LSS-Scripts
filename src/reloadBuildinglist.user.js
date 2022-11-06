@@ -57,6 +57,7 @@
  * @name:de Gebäudeliste neu laden
  * @description Adds a button to the map to reload the list of buildings
  * @description:de Fügt der Karte einen Knopf hinzu, über den sich die Gebäudeliste neu laden lässt.
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/23357-script-wunsch-aktualisierung-der-lst-liste/
  * @match /
  * @old reload-buildinglist
  */
