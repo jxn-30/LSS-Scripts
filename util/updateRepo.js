@@ -357,16 +357,29 @@ ${Object.values(script.locales)
 
 const readmePath = path.resolve(ROOT_PATH, 'README.md');
 
+const escapeStringRegexp = string =>
+    string.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&').replace(/-/g, '\\x2d');
+
+const startComment =
+    '<!-- prettier-ignore-start -->\n<!-- == BEGIN SCRIPT-OVERVIEW == -->';
+const endComment =
+    '<!-- ## END SCRIPT-OVERVIEW ## -->\n<!-- prettier-ignore-end -->';
+
 fs.writeFileSync(
     readmePath,
     fs.readFileSync(readmePath, 'utf8').replace(
-        /<!-- == BEGIN SCRIPT-OVERVIEW == -->.*?<!-- ## END SCRIPT-OVERVIEW ## -->/su,
+        new RegExp(
+            `${escapeStringRegexp(startComment)}.*?${escapeStringRegexp(
+                endComment
+            )}`,
+            'su'
+        ),
         `
-<!-- == BEGIN SCRIPT-OVERVIEW == -->
+${startComment}
 ${scriptTOCMarkdown}
 
 ${scriptOverviewMarkdown}
-<!-- ## END SCRIPT-OVERVIEW ## -->
+${endComment}
 `.trim()
     )
 );

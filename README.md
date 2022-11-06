@@ -8,6 +8,7 @@ Alias-Versions (old links) are still working, but will be removed in the future.
 
 This list is auto-generated and contains all scripts that are already ported into new format.
 
+<!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO Config Lite](#lss-aao-config-lite)
 - [[LSS] Alliance Distance](#lss-alliance-distance)
@@ -196,3 +197,4 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [toplistDistance.user.js]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/toplistDistance.user.js
 <!-- ## END SCRIPT-OVERVIEW ## -->
+<!-- prettier-ignore-end -->
