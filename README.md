@@ -20,6 +20,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Browsertitle](#lss-browsertitle)
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)
+- [[LSS] Chat Hider](#lss-chat-hider)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)
@@ -179,6 +180,22 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [calendarGiftHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/calendarGiftHighlight.user.js
+
+### [LSS] Chat Hider
+
+> Hides chat messages by type
+
+| Version  | Alias / Old names |                    Download                     |              Links               |
+|:--------:|:-----------------:|:-----------------------------------------------:|:--------------------------------:|
+| 2022.0.0 |    `chathider`    | [chatHider.user.js][chatHider.user.js:download] | [Forum][chatHider.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Chat Hider</summary>
+    Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus
+</details>
+
+[chatHider.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/chatHider.user.js
+[chatHider.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18991-chat-hider/
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
