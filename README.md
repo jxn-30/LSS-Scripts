@@ -19,6 +19,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Async Prisoners](#lss-async-prisoners)
 - [[LSS] Browsertitle](#lss-browsertitle)
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)
+- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)
@@ -163,6 +164,21 @@ This list is auto-generated and contains all scripts that are already ported int
 
 
 [bsrAAOAboveVehiclelist.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/bsrAAOAboveVehiclelist.user.js
+
+### [LSS] Calendar-Gift-Highlight
+
+> Colors the gift-icon green, if the daily login has not been collected yet.
+
+| Version  |     Alias / Old names     |                                Download                                 |
+|:--------:|:-------------------------:|:-----------------------------------------------------------------------:|
+| 2022.0.0 | `Calendar-Gift-Highlight` | [calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Calendar-Gift-Highlight</summary>
+    Färbt das Geschenk-Icon grün, wenn der tägliche Login noch nicht abgeholt wurde.
+</details>
+
+[calendarGiftHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/calendarGiftHighlight.user.js
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
