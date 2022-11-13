@@ -25,6 +25,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)
 - [[LSS] Toplist Distance](#lss-toplist-distance)
+- [[LSS] User-ID](#lss-user-id)
 
 ### [LSS] AAO Config Lite
 
@@ -256,5 +257,21 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [toplistDistance.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/toplistDistance.user.js
 [toplistDistance.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
+
+### [LSS] User-ID
+
+> Shows the own User-ID in navbar on main page and a users ID on their respective profile page
+
+| Version  | Alias / Old names |                 Download                  |             Links             |
+|:--------:|:-----------------:|:-----------------------------------------:|:-----------------------------:|
+| 2022.0.0 |                   | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] User-ID</summary>
+    Zeigt die eigene Nutzer-ID in der Navigationsleiste auf der Hauptseite und die ID eines Nutzers auf dessen Profilseite an
+</details>
+
+[userId.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/userId.user.js
+[userId.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/12513-user-id-anzeiger/
 <!-- ## END SCRIPT-OVERVIEW ## -->
 <!-- prettier-ignore-end -->
