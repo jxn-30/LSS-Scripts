@@ -7,6 +7,7 @@
 // @description:de  Färbt das Geschenk-Icon grün, wenn der tägliche Login noch nicht abgeholt wurde.
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/calendarGiftHighlight.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/calendarGiftHighlight.user.js
 // @supportURL      https://github.com/jxn-30/LSS-Scripts

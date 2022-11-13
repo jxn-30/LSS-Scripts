@@ -8,6 +8,7 @@
 // @description:de  Zeigt die aktuelle Seite als Titel im Browser an
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/browsertitle.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/browsertitle.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/16784-script-browsertitle/

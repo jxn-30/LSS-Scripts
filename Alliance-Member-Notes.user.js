@@ -7,6 +7,7 @@
 // @description:de  Frei anpassbare Notizen für jedes Verbandsmitglied
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/18517-scriptwunsch-notizen-bei-mitgliedern

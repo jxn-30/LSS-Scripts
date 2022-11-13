@@ -7,6 +7,7 @@
 // @description:de  Zeigt die eigene Nutzer-ID in der Navigationsleiste auf der Hauptseite und die ID eines Nutzers auf dessen Profilseite an
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/userId.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/userId.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/12513-user-id-anzeiger/

@@ -8,6 +8,7 @@
 // @description:de  Fügt der Karte einen Knopf hinzu, über den sich die Gebäudeliste neu laden lässt.
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadBuildinglist.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadBuildinglist.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/23357-script-wunsch-aktualisierung-der-lst-liste/

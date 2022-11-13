@@ -6,6 +6,7 @@
 // @description  Macht die AAO über die Fahrzeugliste in Bereitstellungsräumen
 // @homepage     https://github.com/jxn-30/LSS-Scripts
 // @homepageURL  https://github.com/jxn-30/LSS-Scripts
+// @icon         https://www.leitstellenspiel.de/favicon.ico
 // @updateURL    https://github.com/jxn-30/LSS-Scripts/raw/master/src/bsrAAOAboveVehiclelist.user.js
 // @downloadURL  https://github.com/jxn-30/LSS-Scripts/raw/master/src/bsrAAOAboveVehiclelist.user.js
 // @supportURL   https://github.com/jxn-30/LSS-Scripts

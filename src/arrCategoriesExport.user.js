@@ -8,6 +8,7 @@
 // @description:de  Eigenen AAO-Kategorien in eine Datei exportieren und diese wieder importieren
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCategoriesExport.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCategoriesExport.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/20531-aao-kategorien-exportieren-und-importieren/

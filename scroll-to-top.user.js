@@ -7,6 +7,7 @@
 // @description:de  Zeigt einen Knopf, um in Elementen nach oben zu scrollen
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/22254-scriptwunsch-pfeil-oder-button-zum-seitenanfang-bzw-seitenende/

@@ -7,6 +7,7 @@
 // @description:de  Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/

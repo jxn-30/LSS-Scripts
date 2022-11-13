@@ -254,6 +254,7 @@ comments.forEach(comment => {
             tag: 'homepageURL',
             content: GITHUB,
         },
+        ...getTags('icon', 'https://www.leitstellenspiel.de/favicon.ico'),
         {
             tag: 'updateURL',
             content: updateURL,

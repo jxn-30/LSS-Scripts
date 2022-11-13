@@ -7,6 +7,7 @@
 // @description:de  Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
+// @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/chatHider.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/chatHider.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/18991-chat-hider/

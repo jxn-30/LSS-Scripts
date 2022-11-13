@@ -6,6 +6,7 @@
 // @description  Adds a button to show/hide navbar in Leitstellenansicht
 // @homepage     https://github.com/jxn-30/LSS-Scripts
 // @homepageURL  https://github.com/jxn-30/LSS-Scripts
+// @icon         https://www.leitstellenspiel.de/favicon.ico
 // @updateURL    https://github.com/jxn-30/LSS-Scripts/raw/master/src/navToggleLeitstellenansicht.user.js
 // @downloadURL  https://github.com/jxn-30/LSS-Scripts/raw/master/src/navToggleLeitstellenansicht.user.js
 // @supportURL   https://github.com/jxn-30/LSS-Scripts
