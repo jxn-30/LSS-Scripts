@@ -25,6 +25,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Clickable links](#lss-clickable-links) `2022.0.0`
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.0.0`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.0.0`
+- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.0.0`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.0.0`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.0.0`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.0.0`
@@ -265,6 +266,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [einsatzdauer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/einsatzdauer.user.js
 [einsatzdauer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13913-script-einsatzdauer-in-der-einsatzliste/
+
+### [LSS] extra alarm & close button
+
+> adds an extra button for closing the alarm window after alarming
+
+| Version  |      Alias / Old names      |                                Download                                 |                    Links                     |
+|:--------:|:---------------------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
+| 2022.0.0 | `extra-alarm-and-close-btn` | [extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download] | [Forum][extraAlarmAndCloseBtn.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] extra alarm & close button</summary>
+    Zeigt im Einsatzfenster einen zusätzlichen Knopf zum alarmieren und schließen an.
+</details>
+
+[extraAlarmAndCloseBtn.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/extraAlarmAndCloseBtn.user.js
+[extraAlarmAndCloseBtn.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23205-scriptwunsch-alarmieren-und-fenster-schlie%C3%9Fen/
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
