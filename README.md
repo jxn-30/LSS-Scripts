@@ -329,9 +329,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows the own User-ID in navbar on main page and a users ID on their respective profile page
 
-| Version  | Alias / Old names |                 Download                  |             Links             |
-|:--------:|:-----------------:|:-----------------------------------------:|:-----------------------------:|
-| 2022.0.0 |                   | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
+| Version  |  Alias / Old names   |                 Download                  |             Links             |
+|:--------:|:--------------------:|:-----------------------------------------:|:-----------------------------:|
+| 2022.0.0 | `user_id_in_profile` | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] User-ID</summary>

@@ -98,6 +98,7 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/12513-user-id-anzeiger/
  * @match /
  * @match /profile/*
+ * @old user_id_in_profile
  */
 
 const showInNavbar = true;
