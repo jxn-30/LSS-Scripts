@@ -101,5 +101,18 @@
 (function () {
     'use strict';
 
-    document.body.innerHTML += `<a class="btn btn-default" style="position: fixed; top: 1rem; right: 1rem; z-index: 10000;" onclick="$('.navbar-fixed-top').toggle()">S/H</a>`;
+    const btn = document.createElement('a');
+    btn.classList.add('btn', 'btn-default');
+    btn.style.setProperty('position', 'fixed');
+    btn.style.setProperty('top', '1rem');
+    btn.style.setProperty('right', '1rem');
+    btn.style.setProperty('z-index', '10000');
+    btn.textContent = 'S/H';
+
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector('.navbar-fixed-top').classList.toggle('hidden');
+    });
+
+    document.body.append(btn);
 })();
