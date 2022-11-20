@@ -112,14 +112,7 @@ comments.forEach(comment => {
     const getTags = (title, defaultContent) =>
         filterTags(tags, title, defaultContent);
 
-    // add hardlinks
-    // unfortunately, hardlinks are required because GitHub doesn't support symbolic links
     const oldNames = getTags('old');
-    oldNames.forEach(({ content }) => {
-        const linkPath = path.resolve(ROOT_PATH, `${content}.user.js`);
-        if (fs.existsSync(linkPath)) fs.rmSync(linkPath);
-        fs.linkSync(`./${path.relative(ROOT_PATH, filePath)}`, linkPath);
-    });
 
     // get paths to execute on
     const localesAvailable = getTags('locale');
@@ -295,6 +288,14 @@ ${userscriptTags}
 `.trim()
         )
     );
+
+    // add hardlinks
+    // unfortunately, hardlinks are required because GitHub doesn't support symbolic links
+    oldNames.forEach(({ content }) => {
+        const linkPath = path.resolve(ROOT_PATH, `${content}.user.js`);
+        if (fs.existsSync(linkPath)) fs.rmSync(linkPath);
+        fs.linkSync(`./${path.relative(ROOT_PATH, filePath)}`, linkPath);
+    });
 
     updatedFiles.push(fileName);
 });
