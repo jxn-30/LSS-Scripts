@@ -310,13 +310,16 @@ const sortedScripts = scriptOverview.sort((a, b) =>
 );
 
 const scriptTOCMarkdown = sortedScripts
-    .map(
-        ({ name, version }) =>
-            `- [${name}](#${name
-                .toLowerCase()
-                .replace(/[^a-z0-9-]/g, '-')
-                .replace(/-+/g, '-')
-                .replace(/^-+|-+$/g, '')}) \`${version}\``
+    .map(({ name, version, flagsAvailable }) =>
+        `- [${name}](#${name
+            .toLowerCase()
+            .replace(/[^a-z0-9-]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-+|-+$/g, '')}) \`${version}\` ${
+            flagsAvailable.length
+                ? `(${flagsAvailable.map(flag => `\`${flag}\``).join(', ')})`
+                : ''
+        }`.trim()
     )
     .join('\n');
 
