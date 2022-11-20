@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            [LSS] checkbox-multiselect
+// @name            [LSS] Checkbox-multiselect
 // @namespace       https://jxn.lss-manager.de
 // @version         2022.0.0
 // @author          Jan (jxn_30)

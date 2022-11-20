@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            [LSS] clickable links
+// @name            [LSS] Clickable links
 // @namespace       https://jxn.lss-manager.de
 // @version         2022.0.0
 // @author          Jan (jxn_30)

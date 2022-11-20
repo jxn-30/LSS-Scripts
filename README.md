@@ -21,6 +21,9 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)
 - [[LSS] Chat Hider](#lss-chat-hider)
+- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)
+- [[LSS] Clickable links](#lss-clickable-links)
+- [[LSS] Dark OSM](#lss-dark-osm)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)
@@ -197,6 +200,53 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [chatHider.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/chatHider.user.js
 [chatHider.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18991-chat-hider/
+
+### [LSS] Checkbox-multiselect
+
+> Allows to select multiple checkbox in a row by pressing the shift key
+
+| Version  |   Alias / Old names    |                              Download                               |                   Links                    |
+|:--------:|:----------------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
+| 2022.0.0 | `checkbox-multiselect` | [checkboxMultiselect.user.js][checkboxMultiselect.user.js:download] | [Forum][checkboxMultiselect.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Checkbox-multiselect</summary>
+    Erlaubt es, eine Reihe an Checkboxen durch halten der Umschalt-Taste auf einmal auszuwählen
+</details>
+
+[checkboxMultiselect.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/checkboxMultiselect.user.js
+[checkboxMultiselect.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22814-script-checkbox-multiselect/
+
+### [LSS] Clickable links
+
+> Allows to click any link in text messages in game
+
+| Version  | Alias / Old names |                         Download                          |                 Links                 |
+|:--------:|:-----------------:|:---------------------------------------------------------:|:-------------------------------------:|
+| 2022.0.0 | `clickable-links` | [clickableLinks.user.js][clickableLinks.user.js:download] | [Forum][clickableLinks.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Clickable links</summary>
+    Erlaubt es, alle Links in Textnachrichten im Spiel anzuklicken
+</details>
+
+[clickableLinks.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/clickableLinks.user.js
+[clickableLinks.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18350-clickable-links/
+
+### [LSS] Dark OSM
+
+> Darkens the OSM Map
+
+| Version  | Alias / Old names |                  Download                   |
+|:--------:|:-----------------:|:-------------------------------------------:|
+| 2022.0.0 |    `dark-osm`     | [darkOSM.user.js][darkOSM.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Dark OSM</summary>
+    Färbt die OSM-Karte im Spiel dunkel ein
+</details>
+
+[darkOSM.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/darkOSM.user.js
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
