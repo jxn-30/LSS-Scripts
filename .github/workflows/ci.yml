@@ -21,6 +21,20 @@ jobs:
                   corepack enable
                   yarn set version latest
 
+            - name: Get yarn cache directory path
+              run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+            - name: Restore Cache
+              uses: actions/cache@v3
+              with:
+                path: |
+                    ${{ steps.yarn_cache_dir.outputs.dir }}
+                    **/node_modules
+                    **/.eslintcache
+                key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
+                restore-keys: |
+                    ${{ runner.os }}-yarn-
+
             - name: Install dependencies
               run: |
                   yarn install --immutable
