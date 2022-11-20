@@ -27,6 +27,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)
+- [[LSS] SoSi-Switch](#lss-sosi-switch)
 - [[LSS] Toplist Distance](#lss-toplist-distance)
 - [[LSS] User-ID](#lss-user-id)
 
@@ -291,6 +292,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [scrollToTop.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
 [scrollToTop.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22254-scriptwunsch-pfeil-oder-button-zum-seitenanfang-bzw-seitenende/
+
+### [LSS] SoSi-Switch
+
+> This Script is for leitstellenspiel.de only!
+
+| Version  | Available in | Alias / Old names |                                Download                                 |                    Links                     |
+|:--------:|:------------:|:-----------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
+| 2022.0.0 |    `🇩🇪`    |     `de-sosi`     | [sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download] | [Forum][sonderrechteSwitch.de.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] SoSi-Switch</summary>
+    Zeigt einen Knopf zum Umschalten der Sonderrechte im Einsatzfenster an
+</details>
+
+[sonderrechteSwitch.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/sonderrechteSwitch.de.user.js
+[sonderrechteSwitch.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13928-mit-und-ohne-sonderrechte/&postID=463217#post463217
 
 ### [LSS] Toplist Distance
 
