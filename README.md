@@ -24,6 +24,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2022.0.0`
 - [[LSS] Clickable links](#lss-clickable-links) `2022.0.0`
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.0.0`
+- [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.0.0`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.0.0`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.0.0`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.0.0`
@@ -248,6 +249,22 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [darkOSM.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/darkOSM.user.js
+
+### [LSS] Einsatzdauer
+
+> Shows the remaining time for each mission in the missions list
+
+| Version  | Alias / Old names |                       Download                        |                Links                |
+|:--------:|:-----------------:|:-----------------------------------------------------:|:-----------------------------------:|
+| 2022.0.0 |  `einsatzdauer`   | [einsatzdauer.user.js][einsatzdauer.user.js:download] | [Forum][einsatzdauer.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Einsatzdauer</summary>
+    Zeigt die verbleibende Einsatzdauer in der Einsatzliste an
+</details>
+
+[einsatzdauer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/einsatzdauer.user.js
+[einsatzdauer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13913-script-einsatzdauer-in-der-einsatzliste/
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
