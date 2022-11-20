@@ -10,26 +10,26 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-- [[LSS] AAO Config Lite](#lss-aao-config-lite)
-- [[LSS] Alliance Distance](#lss-alliance-distance)
-- [[LSS] Alliance Member Distance](#lss-alliance-member-distance)
-- [[LSS] Alliance Member Notes](#lss-alliance-member-notes)
-- [[LSS] ARR Categories Export](#lss-arr-categories-export)
-- [[LSS] ARR Counter](#lss-arr-counter)
-- [[LSS] Async Prisoners](#lss-async-prisoners)
-- [[LSS] Browsertitle](#lss-browsertitle)
-- [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)
-- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)
-- [[LSS] Chat Hider](#lss-chat-hider)
-- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)
-- [[LSS] Clickable links](#lss-clickable-links)
-- [[LSS] Dark OSM](#lss-dark-osm)
-- [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)
-- [[LSS] Reload list of buildings](#lss-reload-list-of-buildings)
-- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)
-- [[LSS] SoSi-Switch](#lss-sosi-switch)
-- [[LSS] Toplist Distance](#lss-toplist-distance)
-- [[LSS] User-ID](#lss-user-id)
+- [[LSS] AAO Config Lite](#lss-aao-config-lite) `2022.0.0`
+- [[LSS] Alliance Distance](#lss-alliance-distance) `2022.0.0`
+- [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2022.0.0`
+- [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2022.0.0`
+- [[LSS] ARR Categories Export](#lss-arr-categories-export) `2022.0.0`
+- [[LSS] ARR Counter](#lss-arr-counter) `2022.0.0`
+- [[LSS] Async Prisoners](#lss-async-prisoners) `2022.0.0`
+- [[LSS] Browsertitle](#lss-browsertitle) `2022.0.0`
+- [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste) `2022.0.0`
+- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight) `2022.0.0`
+- [[LSS] Chat Hider](#lss-chat-hider) `2022.0.0`
+- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2022.0.0`
+- [[LSS] Clickable links](#lss-clickable-links) `2022.0.0`
+- [[LSS] Dark OSM](#lss-dark-osm) `2022.0.0`
+- [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.0.0`
+- [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.0.0`
+- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.0.0`
+- [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.0.0`
+- [[LSS] Toplist Distance](#lss-toplist-distance) `2022.0.0`
+- [[LSS] User-ID](#lss-user-id) `2022.0.0`
 
 ### [LSS] AAO Config Lite
 
