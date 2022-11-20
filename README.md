@@ -26,6 +26,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.0.0`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.0.0`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.0.0`
+- [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.0.0` (`🇩🇪`)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.0.0`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.0.0`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.0.0`
@@ -282,6 +283,19 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [extraAlarmAndCloseBtn.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/extraAlarmAndCloseBtn.user.js
 [extraAlarmAndCloseBtn.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23205-scriptwunsch-alarmieren-und-fenster-schlie%C3%9Fen/
+
+### [LSS] Grüße vom Jan
+
+> Fun-Script: Grüße halt, gelle
+
+| Version  | Available in | Alias / Old names |                  Download                   |             Links              |
+|:--------:|:------------:|:-----------------:|:-------------------------------------------:|:------------------------------:|
+| 2022.0.0 |    `🇩🇪`    |     `gruesse`     | [gruesse.user.js][gruesse.user.js:download] | [Forum][gruesse.user.js:forum] |
+
+
+
+[gruesse.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/gruesse.user.js
+[gruesse.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16931-%C3%BCbersicht-%C3%BCber-die-scripte/&postID=363928#post363928
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
