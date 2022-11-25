@@ -23,6 +23,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Chat Hider](#lss-chat-hider) `2022.0.0`
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2022.0.0`
 - [[LSS] Clickable links](#lss-clickable-links) `2022.0.0`
+- [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2022.0.0`
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.0.0`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.0.0`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.0.0`
@@ -236,6 +237,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [clickableLinks.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/clickableLinks.user.js
 [clickableLinks.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18350-clickable-links/
+
+### [LSS] Custom Vehicle Types Listing
+
+> Lists own vehicle types grouped by their station
+
+| Version  | Alias / Old names |                                    Download                                     |                      Links                       |
+|:--------:|:-----------------:|:-------------------------------------------------------------------------------:|:------------------------------------------------:|
+| 2022.0.0 |                   | [customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download] | [Forum][customVehicleTypesListing.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Auflistung eigener Fahrzeugtypen</summary>
+    Listet eigene Fahrzeugtypen nach Wache gruppiert auf
+</details>
+
+[customVehicleTypesListing.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/customVehicleTypesListing.user.js
+[customVehicleTypesListing.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
 
 ### [LSS] Dark OSM
 
