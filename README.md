@@ -252,7 +252,7 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [customVehicleTypesListing.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/customVehicleTypesListing.user.js
-[customVehicleTypesListing.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
+[customVehicleTypesListing.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/640-sammelthread-f%C3%BCr-einfache-fragen-und-antworten/&postID=467115#post467115
 
 ### [LSS] Dark OSM
 

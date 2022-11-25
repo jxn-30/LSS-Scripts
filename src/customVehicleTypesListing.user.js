@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/customVehicleTypesListing.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/customVehicleTypesListing.user.js
-// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/640-sammelthread-f%C3%BCr-einfache-fragen-und-antworten/&postID=467115#post467115
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://policie.operacni-stredisko.cz/
 // @match           https://www.alarmcentral-spil.dk/
