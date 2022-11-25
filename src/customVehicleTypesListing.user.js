@@ -60,7 +60,7 @@
  * @name:de Auflistung eigener Fahrzeugtypen
  * @description Lists own vehicle types grouped by their station
  * @description:de Listet eigene Fahrzeugtypen nach Wache gruppiert auf
- * @forum https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/640-sammelthread-f%C3%BCr-einfache-fragen-und-antworten/&postID=467115#post467115
  * @match /
  * @grant GM_addStyle
  */
