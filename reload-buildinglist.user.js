@@ -2,7 +2,7 @@
 // @name            [LSS] Reload list of buildings
 // @name:de         [LSS] Gebäudeliste neu laden
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1801
+// @version         2022.11.26+1803
 // @author          Jan (jxn_30)
 // @description     Adds a button to the map to reload the list of buildings
 // @description:de  Fügt der Karte einen Knopf hinzu, über den sich die Gebäudeliste neu laden lässt.

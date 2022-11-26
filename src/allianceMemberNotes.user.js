@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Alliance Member Notes
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1801
+// @version         2022.11.26+1803
 // @author          Jan (jxn_30)
 // @description     Customizable Notes for each alliance member
 // @description:de  Frei anpassbare Notizen für jedes Verbandsmitglied

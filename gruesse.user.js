@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Grüße vom Jan
 // @namespace    https://jxn.lss-manager.de
-// @version      2022.11.26+1801
+// @version      2022.11.26+1803
 // @author       Jan (jxn_30)
 // @description  Fun-Script: Grüße halt, gelle
 // @homepage     https://github.com/jxn-30/LSS-Scripts

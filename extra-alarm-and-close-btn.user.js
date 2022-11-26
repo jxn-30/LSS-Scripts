@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] extra alarm & close button
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1801
+// @version         2022.11.26+1803
 // @author          Jan (jxn_30)
 // @description     adds an extra button for closing the alarm window after alarming
 // @description:de  Zeigt im Einsatzfenster einen zusätzlichen Knopf zum alarmieren und schließen an.

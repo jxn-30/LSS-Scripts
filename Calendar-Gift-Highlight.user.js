@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Calendar-Gift-Highlight
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1801
+// @version         2022.11.26+1803
 // @author          Jan (jxn_30)
 // @description     Colors the gift-icon green, if the daily login has not been collected yet.
 // @description:de  Färbt das Geschenk-Icon grün, wenn der tägliche Login noch nicht abgeholt wurde.
