@@ -178,7 +178,7 @@ GM_addStyle(`
     top: 1em;
     margin: auto;
     z-index: 5000;
-    background-color: #505050;
+    background-color: #fafafa;
     padding: 1em;
     max-height: calc(100vh - 2em);
     overflow: auto;
@@ -186,6 +186,9 @@ GM_addStyle(`
     left: 1em;
     border: 1px solid black;
     border-radius: 10px;
+}
+body.dark #${modal.id} {
+    background-color: #505050;
 }
 body.dark #${modal.id} .close {
     color: white;
