@@ -2,7 +2,7 @@
 // @name            [LSS] ARR Categories Export
 // @name:de         [LSS] AAO-Kategorien Export
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1758
+// @version         2022.11.26+1801
 // @author          Jan (jxn_30)
 // @description     Allows exporting and importing custom ARR Categories
 // @description:de  Eigenen AAO-Kategorien in eine Datei exportieren und diese wieder importieren

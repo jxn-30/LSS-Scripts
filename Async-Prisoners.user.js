@@ -2,7 +2,7 @@
 // @name            [LSS] Async Prisoners
 // @name:de         [LSS] Asynchrone Gefangene
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1758
+// @version         2022.11.26+1801
 // @author          Jan (jxn_30)
 // @description     [Currently DE only] transport prisoners without reloading the mission window
 // @description:de  Verhindert das Neuladen der Einsatzseite beim Abtransportieren von Gefangenen

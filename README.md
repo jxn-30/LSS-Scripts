@@ -32,8 +32,8 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1758`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1758`
 - [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.11.26+1758` (`🇩🇪`)
-- [[LSS] Toplist Distance](#lss-toplist-distance) `2022.11.26+1758`
-- [[LSS] User-ID](#lss-user-id) `2022.11.26+1758`
+- [[LSS] Toplist Distance](#lss-toplist-distance) `2022.11.26+1759`
+- [[LSS] User-ID](#lss-user-id) `2022.11.26+1759`
 
 ### [LSS] AAO Config Lite
 
@@ -380,7 +380,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Alias / Old names  |                          Download                           |                 Links                  |
 |:---------------:|:------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2022.11.26+1758 | `Toplist-Distance` | [toplistDistance.user.js][toplistDistance.user.js:download] | [Forum][toplistDistance.user.js:forum] |
+| 2022.11.26+1759 | `Toplist-Distance` | [toplistDistance.user.js][toplistDistance.user.js:download] | [Forum][toplistDistance.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Toplist Distance</summary>
@@ -396,7 +396,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |  Alias / Old names   |                 Download                  |             Links             |
 |:---------------:|:--------------------:|:-----------------------------------------:|:-----------------------------:|
-| 2022.11.26+1758 | `user_id_in_profile` | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
+| 2022.11.26+1759 | `user_id_in_profile` | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] User-ID</summary>

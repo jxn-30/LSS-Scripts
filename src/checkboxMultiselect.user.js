@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Checkbox-multiselect
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1758
+// @version         2022.11.26+1801
 // @author          Jan (jxn_30)
 // @description     Allows to select multiple checkbox in a row by pressing the shift key
 // @description:de  Erlaubt es, eine Reihe an Checkboxen durch halten der Umschalt-Taste auf einmal auszuwählen
