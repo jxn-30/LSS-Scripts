@@ -242,9 +242,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Lists own vehicle types grouped by their station
 
-| Version  | Alias / Old names |                                    Download                                     |                      Links                       |
-|:--------:|:-----------------:|:-------------------------------------------------------------------------------:|:------------------------------------------------:|
-| 2022.0.1 |                   | [customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download] | [Forum][customVehicleTypesListing.user.js:forum] |
+| Version  |                      Links                       |
+|:--------:|:------------------------------------------------:|
+| 2022.0.1 | [Forum][customVehicleTypesListing.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Auflistung eigener Fahrzeugtypen</summary>

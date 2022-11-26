@@ -337,11 +337,13 @@ const scriptOverviewMarkdown = sortedScripts
                 script.flagsAvailable.map(flag => `\`${flag}\``).join(', ')
             );
         }
-        headerRow.push('Alias / Old names', 'Download');
-        contentRow.push(
-            script.alias.map(alias => `\`${alias}\``).join(', '),
-            `[${script.filename}][${script.filename}:download]`
-        );
+        if (script.alias.length) {
+            headerRow.push('Alias / Old names', 'Download');
+            contentRow.push(
+                script.alias.map(alias => `\`${alias}\``).join(', '),
+                `[${script.filename}][${script.filename}:download]`
+            );
+        }
         if (script.forum) {
             headerRow.push('Links');
             contentRow.push(`[Forum][${script.filename}:forum]`);
