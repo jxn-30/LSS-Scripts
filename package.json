@@ -2,10 +2,11 @@
     "name": "jxn_30-lss-scripts",
     "description": "The collection of Scripts for leitstellenspiel, missionchief & co. By jxn_30",
     "packageManager": "yarn@3.3.0",
+    "type": "module",
     "scripts": {
         "lint:fix": "yarn eslint . --ext .js,.user.js --exit-on-fatal-error --report-unused-disable-directives --cache --cache-strategy content --fix",
         "prettier:write": "prettier --write --cache --cache-strategy content .",
-        "update": "node ./util/updateRepo.js",
+        "update": "node ./util/updateRepo.mjs",
         "ci": "yarn lint:fix && yarn prettier:write && yarn update"
     },
     "devDependencies": {
@@ -14,6 +15,8 @@
         "eslint-config-prettier": "8.5.0",
         "eslint-plugin-userscripts": "0.2.10",
         "jsdoc-api": "7.1.1",
-        "prettier": "2.7.1"
+        "prettier": "2.7.1",
+        "simple-git": "3.15.0",
+        "userscript-meta": "1.0.1"
     }
 }

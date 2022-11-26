@@ -2,7 +2,7 @@
 // @name            [LSS] ARR Counter
 // @name:de         [LSS] AAO-Zähler
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.0.0
+// @version         2022.11.26+1758
 // @author          Jan (jxn_30)
 // @description     Counts how often an ARR is clicked
 // @description:de  Zeigt einen Zähler an, wie oft eine AAO geklickt wurde
@@ -54,7 +54,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.0
  * @name ARR Counter
  * @name:de AAO-Zähler
  * @description Counts how often an ARR is clicked

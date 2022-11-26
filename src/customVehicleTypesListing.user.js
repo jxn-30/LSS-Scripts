@@ -2,7 +2,7 @@
 // @name            [LSS] Custom Vehicle Types Listing
 // @name:de         [LSS] Auflistung eigener Fahrzeugtypen
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.0.1
+// @version         2022.11.26+1758
 // @author          Jan (jxn_30)
 // @description     Lists own vehicle types grouped by their station
 // @description:de  Listet eigene Fahrzeugtypen nach Wache gruppiert auf
@@ -55,7 +55,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.1
  * @name Custom Vehicle Types Listing
  * @name:de Auflistung eigener Fahrzeugtypen
  * @description Lists own vehicle types grouped by their station

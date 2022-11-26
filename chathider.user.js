@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Chat Hider
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.0.0
+// @version         2022.11.26+1758
 // @author          Jan (jxn_30)
 // @description     Hides chat messages by type
 // @description:de  Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus
@@ -54,7 +54,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.0
  * @name  Chat Hider
  * @description Hides chat messages by type
  * @description:de Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus

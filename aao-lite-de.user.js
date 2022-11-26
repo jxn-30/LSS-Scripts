@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] AAO Config Lite
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.0.0
+// @version         2022.11.26+1758
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
@@ -19,7 +19,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.0
  * @name  AAO Config Lite (DE)
  * @description This Script is for leitstellenspiel.de only!
  * @description:de Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.

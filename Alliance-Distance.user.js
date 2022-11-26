@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Alliance Distance
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.0.0
+// @version         2022.11.26+1758
 // @author          Jan (jxn_30)
 // @description     Shows difference of total earned credits to the next alliance
 // @description:de  Zeigt die fehlenden verdienten Credits zum nächsten Verband an
@@ -91,7 +91,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.0
  * @name Alliance Distance
  * @description Shows difference of total earned credits to the next alliance
  * @description:de Zeigt die fehlenden verdienten Credits zum nächsten Verband an

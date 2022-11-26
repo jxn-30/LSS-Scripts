@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Dark OSM
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.0.0
+// @version         2022.11.26+1758
 // @author          Jan (jxn_30)
 // @description     Darkens the OSM Map
 // @description:de  Färbt die OSM-Karte im Spiel dunkel ein
@@ -54,7 +54,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.0
  * @name Dark OSM
  * @description Darkens the OSM Map
  * @description:de Färbt die OSM-Karte im Spiel dunkel ein

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Leitstellenansicht Nav-toggle
 // @namespace    https://jxn.lss-manager.de
-// @version      2022.0.0
+// @version      2022.11.26+1758
 // @author       Jan (jxn_30)
 // @description  Adds a button to show/hide navbar in Leitstellenansicht
 // @homepage     https://github.com/jxn-30/LSS-Scripts
@@ -90,7 +90,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.0
  * @name Leitstellenansicht Nav-toggle
  * @description Adds a button to show/hide navbar in Leitstellenansicht
  * @match /leitstellenansicht

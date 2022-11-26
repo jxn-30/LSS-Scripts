@@ -2,7 +2,7 @@
 // @name            [LSS] Browsertitle
 // @name:de         [LSS] Browsertitel
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.0.1
+// @version         2022.11.26+1758
 // @author          Jan (jxn_30)
 // @description     [Currently DE only] Shows the current page as title in the browser
 // @description:de  Zeigt die aktuelle Seite als Titel im Browser an
@@ -19,7 +19,6 @@
 // ==/UserScript==
 
 /**
- * @version 2022.0.1
  * @name Browsertitle
  * @name:de Browsertitel
  * @description [Currently DE only] Shows the current page as title in the browser

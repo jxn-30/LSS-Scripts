@@ -7,7 +7,7 @@
  * @property {string} [abbr]
  */
 
-module.exports = {
+export default {
     /** @type {Object.<string, Game>} */
     games: {
         cs_CZ: {

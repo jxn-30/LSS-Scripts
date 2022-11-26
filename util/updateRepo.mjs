@@ -1,8 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const jsdoc = require('jsdoc-api');
+import fs from 'fs';
+import path from 'path';
+import jsdoc from 'jsdoc-api';
+import simpleGit from 'simple-git';
+import { fileURLToPath } from 'url';
+import { parse as parseMeta } from 'userscript-meta';
 
-const { games } = require('./games');
+import Games from './games.mjs';
+const { games } = Games;
 
 /**
  * @typedef Comment
@@ -45,9 +49,15 @@ const { games } = require('./games');
  * @property {Object.<string, ScriptLocale>} locales
  */
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const ROOT_PATH = path.resolve(__dirname, '..');
 const SRC_PATH = path.resolve(ROOT_PATH, 'src');
 const GITHUB = 'https://github.com/jxn-30/LSS-Scripts';
+const HEADER_REGEX = /^\/\/ ==UserScript==.*?\/\/ ==\/UserScript==/s;
+
+const git = simpleGit();
 
 /** @type {Script[]} */
 const scriptOverview = [];
@@ -73,6 +83,24 @@ const filterTags = (tags, title, defaultContent) => {
     }));
 };
 
+/**
+ * Gets a Version from current Date
+ * @param {number} [time]
+ * @returns {`${string}.${string}.${string}+${string}${string}`}
+ */
+const getVersion = time => {
+    const date = time ? new Date(time) : new Date();
+    const offset =
+        new Date(date.toLocaleString('en-US', { timeZone: 'UTC' })).getTime() -
+        new Date(
+            date.toLocaleString('en-US', { timeZone: 'Europe/Berlin' })
+        ).getTime();
+    const [year, month, day, hour, minute] = new Date(Date.now() - offset)
+        .toISOString()
+        .split(/[-T:]/gu);
+    return `${year}.${month}.${day}+${hour}${minute}`;
+};
+
 // Delete all symbolic links to userscripts in root directory
 fs.readdirSync(ROOT_PATH, { withFileTypes: true }).forEach(dirent => {
     if (!dirent.isSymbolicLink() || !dirent.name.endsWith('.user.js')) return;
@@ -83,9 +111,9 @@ fs.readdirSync(ROOT_PATH, { withFileTypes: true }).forEach(dirent => {
 const comments = jsdoc.explainSync({
     files: fs.readdirSync(SRC_PATH).map(file => path.resolve(SRC_PATH, file)),
 });
-comments.forEach(comment => {
+for (const comment of comments) {
     const fileName = comment.meta?.filename;
-    if (!fileName || updatedFiles.includes(fileName)) return;
+    if (!fileName || updatedFiles.includes(fileName)) continue;
 
     const filePath = path.resolve(comment.meta.path, fileName);
 
@@ -199,7 +227,12 @@ comments.forEach(comment => {
 
     const versionTag = {
         tag: 'version',
-        content: comment.version ?? `${new Date().getFullYear()}.0.0`,
+        content:
+            comment.version ??
+            parseMeta(
+                fs.readFileSync(filePath, 'utf8').match(HEADER_REGEX)?.[0] ?? ''
+            ).version ??
+            getVersion(),
     };
 
     const forumTag = getTag('forum', '');
@@ -269,6 +302,20 @@ comments.forEach(comment => {
         ...getTags('grant'),
     ];
 
+    // check if we need to bump version
+    // has the file been updated within this run (prettier, eslint)?
+    await git.diffSummary(['--numstat', filePath]).then(diff => {
+        if (diff.changed) versionTag.content = getVersion();
+    });
+    // has the file been updated in the last commit and the committer is not the GH Action?
+    await git.log({ file: filePath }).then(({ latest }) => {
+        if (
+            latest.author_email !==
+            'github-actions[bot]@users.noreply.github.com'
+        )
+            versionTag.content = getVersion(latest.date);
+    });
+
     const longestTagLength = Math.max(
         ...userscriptHeaderInformation.map(({ tag }) => tag.length)
     );
@@ -284,7 +331,7 @@ comments.forEach(comment => {
     fs.writeFileSync(
         filePath,
         fs.readFileSync(filePath, 'utf8').replace(
-            /^\/\/ ==UserScript==.*?\/\/ ==\/UserScript==/gs,
+            HEADER_REGEX,
             `
 // ==UserScript==
 ${userscriptTags}
@@ -302,7 +349,7 @@ ${userscriptTags}
     });
 
     updatedFiles.push(fileName);
-});
+}
 
 const centerString = (string, length) => {
     const half = Math.floor((length - string.length) / 2);
