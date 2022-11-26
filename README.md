@@ -17,7 +17,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] ARR Categories Export](#lss-arr-categories-export) `2022.0.0`
 - [[LSS] ARR Counter](#lss-arr-counter) `2022.0.0`
 - [[LSS] Async Prisoners](#lss-async-prisoners) `2022.0.0` (`🇩🇪`)
-- [[LSS] Browsertitle](#lss-browsertitle) `2022.0.0` (`🇩🇪`)
+- [[LSS] Browsertitle](#lss-browsertitle) `2022.0.1` (`🇩🇪`)
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste) `2022.0.0`
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight) `2022.0.0`
 - [[LSS] Chat Hider](#lss-chat-hider) `2022.0.0`
@@ -153,7 +153,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 | Version  | Available in | Alias / Old names |                       Download                        |                Links                |
 |:--------:|:------------:|:-----------------:|:-----------------------------------------------------:|:-----------------------------------:|
-| 2022.0.0 |    `🇩🇪`    |  `browsertitle`   | [browsertitle.user.js][browsertitle.user.js:download] | [Forum][browsertitle.user.js:forum] |
+| 2022.0.1 |    `🇩🇪`    |  `browsertitle`   | [browsertitle.user.js][browsertitle.user.js:download] | [Forum][browsertitle.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Browsertitel</summary>

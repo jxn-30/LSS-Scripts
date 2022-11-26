@@ -8,6 +8,7 @@ const { games } = require('./games');
  * @typedef Comment
  * @property {string} name
  * @property {string} description
+ * @property {string} version
  * @property {Tag[]} tags
  * @property {CommentMeta} meta
  */
@@ -196,7 +197,10 @@ comments.forEach(comment => {
         }
     });
 
-    const versionTag = getTag('version', `${new Date().getFullYear()}.0.0`);
+    const versionTag = {
+        tag: 'version',
+        content: comment.version ?? `${new Date().getFullYear()}.0.0`,
+    };
 
     const forumTag = getTag('forum', '');
 
