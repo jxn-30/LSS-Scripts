@@ -387,12 +387,13 @@ const scriptOverviewMarkdown = sortedScripts
             );
         }
         if (script.alias.length) {
-            headerRow.push('Alias / Old names', 'Download');
+            headerRow.push('Alias / Old names');
             contentRow.push(
-                script.alias.map(alias => `\`${alias}\``).join(', '),
-                `[${script.filename}][${script.filename}:download]`
+                script.alias.map(alias => `\`${alias}\``).join(', ')
             );
         }
+        headerRow.push('Download');
+        contentRow.push(`[${script.filename}][${script.filename}:download]`);
         if (script.forum) {
             headerRow.push('Links');
             contentRow.push(`[Forum][${script.filename}:forum]`);
