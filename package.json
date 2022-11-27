@@ -15,7 +15,7 @@
         "eslint-config-prettier": "8.5.0",
         "eslint-plugin-userscripts": "0.2.10",
         "jsdoc-api": "7.1.1",
-        "prettier": "2.7.1",
+        "prettier": "2.8.0",
         "simple-git": "3.15.0",
         "userscript-meta": "1.0.1"
     }
