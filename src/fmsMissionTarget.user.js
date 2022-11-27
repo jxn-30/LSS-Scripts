@@ -2,7 +2,7 @@
 // @name            [LSS] RadioMessage: Mission Target
 // @name:de         [LSS] FMS: Einsatzziel
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.27+1159
+// @version         2022.11.27+1240
 // @author          Jan (jxn_30)
 // @description     Adds the current mission (including address) to the radio message
 // @description:de  Fügt den aktuellen Einsatz (inklusive Adresse) zur Funkmeldung hinzu
@@ -29,7 +29,7 @@
 // @match           https://www.hatakeskuspeli.com/
 // @match           https://poliisi.hatakeskuspeli.com/
 // @match           https://www.operateur112.fr/
-// @match           https://police.operateur112.fr/ir
+// @match           https://police.operateur112.fr/
 // @match           https://www.operatore112.it/
 // @match           https://polizia.operatore112.it/
 // @match           https://www.missionchief-japan.com/

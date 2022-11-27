@@ -29,6 +29,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
+- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1803`
 - [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.11.26+1803` (`🇩🇪`)
@@ -325,6 +326,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 
 [navToggleLeitstellenansicht.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/navToggleLeitstellenansicht.user.js
+
+### [LSS] RadioMessage: Mission Target
+
+> Adds the current mission (including address) to the radio message
+
+|     Version     | Alias / Old names |                           Download                            |                  Links                  |
+|:---------------:|:-----------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2022.11.27+1240 |   `FMS-Change`    | [fmsMissionTarget.user.js][fmsMissionTarget.user.js:download] | [Forum][fmsMissionTarget.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] FMS: Einsatzziel</summary>
+    Fügt den aktuellen Einsatz (inklusive Adresse) zur Funkmeldung hinzu
+</details>
+
+[fmsMissionTarget.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/fmsMissionTarget.user.js
+[fmsMissionTarget.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/15126-ortsangabe-bei-fms-3-4-und-5/
 
 ### [LSS] Reload list of buildings
 
