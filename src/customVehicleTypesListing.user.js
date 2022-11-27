@@ -187,7 +187,7 @@ GM_addStyle(`
     border: 1px solid black;
     border-radius: 10px;
 }
-body.dark #${modal.id } {
+body.dark #${modal.id} {
     background-color: #505050;
 }
 body.dark #${modal.id} .close {

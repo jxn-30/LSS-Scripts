@@ -41,21 +41,13 @@ jobs:
               run: |
                   yarn install --immutable
 
-            - name: Show git log
-              run: |
-                  git --no-pager log -10
-
             - name: Run CI Script
               run: |
                   yarn ci
 
-            - name: Show git diff
-              run: |
-                  git --no-pager diff --color-words
-
-#            - name: Commit & Push changes
-#              uses: actions-js/push@master
-#              with:
-#                  github_token: ${{ secrets.GITHUB_TOKEN }}
-#                  message: 'chore: updates by CI'
-#                  branch: 'master'
+            - name: Commit & Push changes
+              uses: actions-js/push@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  message: 'chore: updates by CI'
+                  branch: 'master'

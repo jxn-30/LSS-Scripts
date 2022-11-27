@@ -305,14 +305,10 @@ for (const comment of comments) {
     // check if we need to bump version
     // has the file been updated within this run (prettier, eslint)?
     await git.diffSummary(['--numstat', filePath]).then(diff => {
-        console.debug(filePath);
-        console.debug(diff);
         if (diff.changed) versionTag.content = getVersion();
     });
     // has the file been updated in the last commit and the committer is not the GH Action?
     await git.log({ file: filePath }).then(({ latest }) => {
-        console.debug(filePath);
-        console.debug(latest);
         if (
             latest.author_email !==
             'github-actions[bot]@users.noreply.github.com'
