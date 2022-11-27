@@ -289,8 +289,9 @@ for (const comment of comments) {
     // has the file been updated in the last commit and the committer is not the GH Action?
     await git.log({ file: filePath }).then(({ latest }) => {
         if (
+            latest &&
             latest.author_email !==
-            'github-actions[bot]@users.noreply.github.com'
+                'github-actions[bot]@users.noreply.github.com'
         )
             versionTag.content = getVersion(latest.date);
     });
