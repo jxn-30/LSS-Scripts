@@ -85,7 +85,7 @@ const filterTags = (tags, title, defaultContent) => {
 
 /**
  * Gets a Version from current Date
- * @param {number} [time]
+ * @param {number | string | Date} [time]
  * @returns {`${string}.${string}.${string}+${string}${string}`}
  */
 const getVersion = time => {
