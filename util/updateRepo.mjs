@@ -107,9 +107,24 @@ fs.readdirSync(ROOT_PATH, { withFileTypes: true }).forEach(dirent => {
     fs.unlinkSync(path.resolve(ROOT_PATH, dirent.name));
 });
 
+/**
+ * get files recursively
+ * @param dir
+ * @returns {string[]}
+ */
+const getFiles = dir =>
+    fs
+        .readdirSync(dir, { withFileTypes: true })
+        .flatMap(dirent =>
+            dirent.isDirectory()
+                ? getFiles(path.resolve(dir, dirent.name))
+                : path.resolve(dir, dirent.name)
+        )
+        .filter(file => file.endsWith('.user.js'));
+
 /** @type {Comment[]} **/
 const comments = jsdoc.explainSync({
-    files: fs.readdirSync(SRC_PATH).map(file => path.resolve(SRC_PATH, file)),
+    files: getFiles(SRC_PATH),
 });
 for (const comment of comments) {
     const fileName = comment.meta?.filename;
@@ -149,6 +164,7 @@ for (const comment of comments) {
         tag,
         content: content.replace(/\*\\\//g, '*/'),
     }));
+    const subdomain = getTag('subdomain', 'www').content;
 
     const matches = Object.keys(games)
         .filter(
@@ -163,10 +179,10 @@ for (const comment of comments) {
                 pathMatches.forEach(({ content: path }) =>
                     matches.push({
                         tag: 'match',
-                        content: `https://www.${shortURL}${path}`,
+                        content: `https://${subdomain}.${shortURL}${path}`,
                     })
                 );
-                if (police) {
+                if (police && subdomain === 'www') {
                     pathMatches.forEach(({ content: path }) =>
                         matches.push({
                             tag: 'match',
