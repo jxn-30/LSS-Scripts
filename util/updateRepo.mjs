@@ -127,14 +127,17 @@ const comments = jsdoc.explainSync({
     files: getFiles(SRC_PATH),
 });
 for (const comment of comments) {
-    const fileName = comment.meta?.filename;
-    if (!fileName || updatedFiles.includes(fileName)) continue;
+    const metaFileName = comment.meta?.filename;
+    if (!metaFileName) continue;
 
-    const filePath = path.resolve(comment.meta.path, fileName);
+    const filePath = path.resolve(comment.meta.path, metaFileName);
+    const fileName = path.relative(SRC_PATH, filePath);
+
+    if (updatedFiles.includes(fileName)) continue;
 
     const { tags } = comment;
 
-    const updateURL = `https://github.com/jxn-30/LSS-Scripts/raw/master/src/${fileName}`;
+    const updateURL = `${GITHUB}/raw/master/src/${fileName}`;
 
     /**
      * Get a single tag
@@ -368,6 +371,7 @@ ${userscriptTags}
 
     updatedFiles.push(fileName);
 }
+console.log(updatedFiles);
 
 const centerString = (string, length) => {
     const half = Math.floor((length - string.length) / 2);
