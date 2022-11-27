@@ -331,12 +331,12 @@ ${userscriptTags}
             localesAvailable.length === 0
                 ? []
                 : Object.keys(games)
-                    .filter(game =>
-                        localesAvailable.some(
-                            ({ content }) => content === game
-                        )
-                    )
-                    .map(game => games[game].flag),
+                      .filter(game =>
+                          localesAvailable.some(
+                              ({ content }) => content === game
+                          )
+                      )
+                      .map(game => games[game].flag),
         locales: localeTranslations,
         forum: forumTag.content,
     });
