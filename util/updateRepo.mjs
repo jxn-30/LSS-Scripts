@@ -237,27 +237,6 @@ for (const comment of comments) {
 
     const forumTag = getTag('forum', '');
 
-    scriptOverview.push({
-        filename: fileName,
-        name: scriptName,
-        description: comment.description,
-        version: versionTag.content,
-        alias: oldNames.map(({ content }) => content),
-        url: updateURL,
-        flagsAvailable:
-            localesAvailable.length === 0
-                ? []
-                : Object.keys(games)
-                      .filter(game =>
-                          localesAvailable.some(
-                              ({ content }) => content === game
-                          )
-                      )
-                      .map(game => games[game].flag),
-        locales: localeTranslations,
-        forum: forumTag.content,
-    });
-
     // list of tags to add to the userscript
     const userscriptHeaderInformation = [
         {
@@ -339,6 +318,28 @@ ${userscriptTags}
 `.trim()
         )
     );
+
+    // add script for README file
+    scriptOverview.push({
+        filename: fileName,
+        name: scriptName,
+        description: comment.description,
+        version: versionTag.content,
+        alias: oldNames.map(({ content }) => content),
+        url: updateURL,
+        flagsAvailable:
+            localesAvailable.length === 0
+                ? []
+                : Object.keys(games)
+                    .filter(game =>
+                        localesAvailable.some(
+                            ({ content }) => content === game
+                        )
+                    )
+                    .map(game => games[game].flag),
+        locales: localeTranslations,
+        forum: forumTag.content,
+    });
 
     // add hardlinks
     // unfortunately, hardlinks are required because GitHub doesn't support symbolic links
