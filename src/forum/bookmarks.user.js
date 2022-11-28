@@ -28,6 +28,8 @@
  * @old Forum-Bookmarks.min
  */
 
+/* global require */
+
 /**
  * @typedef {HTMLLIElement} Menu
  * @extends {HTMLLIElement}
@@ -48,12 +50,14 @@ class BookmarkManager {
     };
     /**
      * @private
-     * @type {{linkTitle: string, item: string, link: string, dropdown: string}}
+     * @type {{linkTitle: string, item: string, link: string, dropdown: string, wrapper: string, linkIcon: string}}
      */
     static #mobileClasses = {
         item: 'menuOverlayItem',
+        wrapper: 'menuOverlayItemWrapper',
         dropdown: 'menuOverlayItemList',
         link: 'menuOverlayItemLink',
+        linkIcon: 'menuOverlayItemLinkIcon',
         linkTitle: 'menuOverlayItemTitle',
     };
 
@@ -65,22 +69,47 @@ class BookmarkManager {
 
     constructor() {
         this.#menuDesktop = this.#createMenu(false);
+        document.querySelector('.boxMenu')?.prepend(this.#menuDesktop);
         this.#menuMobile = this.#createMenu(true);
         document
-            .querySelector('#pageMainMenuMobile > .menuOverlayItemList')
-            ?.prepend(this.#menuMobile);
+            .querySelector(
+                '#pageMainMenuMobile > .menuOverlayItemList > .menuOverlayTitle'
+            )
+            ?.after(this.#menuMobile);
+        require('WoltLabSuite/Core/Ui/Page/Menu/Main').prototype.init();
     }
 
     /**
      * creates an empty menu item
      * @param {boolean} mobile
+     * @param {string} title
+     * @param {string} [url]
      * @return {HTMLLIElement}
      */
-    #createMenuItem(mobile) {
+    #createMenuItem(mobile, url, title = url) {
         const item = document.createElement('li');
         if (mobile) {
             item.classList.add(BookmarkManager.#mobileClasses.item);
         }
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.classList.add(
+            mobile
+                ? BookmarkManager.#mobileClasses.link
+                : BookmarkManager.#desktopClasses.link
+        );
+
+        const text = document.createElement('span');
+        text.textContent = title;
+        text.classList.add(
+            mobile
+                ? BookmarkManager.#mobileClasses.linkTitle
+                : BookmarkManager.#desktopClasses.linkTitle
+        );
+
+        link.append(text);
+        item.append(link);
         return item;
     }
 
@@ -99,11 +128,16 @@ class BookmarkManager {
         );
 
         if (mobile) {
-            const menuItem = this.#createMenuItem(mobile);
-            menu.append(menuItem);
+            const link = document.createElement('a');
+            link.classList.add(BookmarkManager.#mobileClasses.link);
+            const linkText = document.createElement('span');
+            linkText.classList.add(BookmarkManager.#mobileClasses.linkTitle);
+            linkText.textContent = 'Lesezeichen';
+            link.append(linkText);
+            menu.append(link);
         } else {
             const menuLink = document.createElement('a');
-            menuLink.classList.add('boxMenuLink');
+            menuLink.classList.add(BookmarkManager.#desktopClasses.link);
             const menuIcon = document.createElement('span');
             menuIcon.classList.add('icon', 'icon16', 'fa-bookmark-o');
             menuLink.appendChild(menuIcon);
@@ -111,58 +145,66 @@ class BookmarkManager {
         }
 
         const dropdown = document.createElement('ol');
-        dropdown.classList.add('boxMenuDepth1');
-        dropdown.id = 'jxn-forum-bookmarks-dropdown';
+        dropdown.classList.add(
+            mobile
+                ? BookmarkManager.#mobileClasses.dropdown
+                : BookmarkManager.#desktopClasses.dropdown
+        );
+        dropdown.id = `jxn-forum-bookmarks-dropdown-${
+            mobile ? 'mobile' : 'desktop'
+        }`;
 
         menu.append(dropdown);
 
         // create action buttons
         menu.actionSeparator = document.createElement('li');
-        menu.actionSeparator.append(document.createElement('hr'));
+        if (mobile) menu.actionSeparator.classList.add('menuOverlayItemSpacer');
+        else menu.actionSeparator.append(document.createElement('hr'));
 
-        const setBookmarkWrapper = document.createElement('li');
-        const setBookmarkButton = document.createElement('a');
-        setBookmarkButton.classList.add('boxMenuLink');
-        setBookmarkButton.textContent = 'Lesezeichen setzen';
-        setBookmarkWrapper.appendChild(setBookmarkButton);
-
-        const manageBookmarksWrapper = document.createElement('li');
-        const manageBookmarksButton = document.createElement('a');
-        manageBookmarksButton.classList.add('boxMenuLink');
-        manageBookmarksButton.textContent = 'Lesezeichen verwalten';
-        manageBookmarksWrapper.appendChild(manageBookmarksButton);
-
-        const exportBookmarksWrapper = document.createElement('li');
-        const exportBookmarksButton = document.createElement('a');
-        exportBookmarksButton.classList.add('boxMenuLink');
-        exportBookmarksButton.download = 'lss_forum_lesezeichen.json';
-        exportBookmarksButton.textContent = 'Lesezeichen exportieren';
-        exportBookmarksWrapper.appendChild(exportBookmarksButton);
-
-        const importBookmarksWrapper = document.createElement('li');
-        const importBookmarksButton = document.createElement('a');
-        importBookmarksButton.classList.add('boxMenuLink');
-        importBookmarksButton.textContent = 'Lesezeichen importieren';
-        const importBookmarksInput = document.createElement('input');
-        importBookmarksInput.type = 'file';
-        importBookmarksInput.accept = 'application/json,.json';
-        importBookmarksWrapper.appendChild(importBookmarksButton);
-        importBookmarksWrapper.addEventListener('click', () =>
-            importBookmarksInput.click()
+        const setBookmark = this.#createMenuItem(
+            mobile,
+            '#',
+            'Lesezeichen setzen'
         );
+        //
+        // const setBookmarkWrapper = document.createElement('li');
+        // const setBookmarkButton = document.createElement('a');
+        // setBookmarkButton.classList.add('boxMenuLink');
+        // setBookmarkButton.textContent = 'Lesezeichen setzen';
+        // setBookmarkWrapper.appendChild(setBookmarkButton);
+        //
+        // const manageBookmarksWrapper = document.createElement('li');
+        // const manageBookmarksButton = document.createElement('a');
+        // manageBookmarksButton.classList.add('boxMenuLink');
+        // manageBookmarksButton.textContent = 'Lesezeichen verwalten';
+        // manageBookmarksWrapper.appendChild(manageBookmarksButton);
+        //
+        // const exportBookmarksWrapper = document.createElement('li');
+        // const exportBookmarksButton = document.createElement('a');
+        // exportBookmarksButton.classList.add('boxMenuLink');
+        // exportBookmarksButton.download = 'lss_forum_lesezeichen.json';
+        // exportBookmarksButton.textContent = 'Lesezeichen exportieren';
+        // exportBookmarksWrapper.appendChild(exportBookmarksButton);
+        //
+        // const importBookmarksWrapper = document.createElement('li');
+        // const importBookmarksButton = document.createElement('a');
+        // importBookmarksButton.classList.add('boxMenuLink');
+        // importBookmarksButton.textContent = 'Lesezeichen importieren';
+        // const importBookmarksInput = document.createElement('input');
+        // importBookmarksInput.type = 'file';
+        // importBookmarksInput.accept = 'application/json,.json';
+        // importBookmarksWrapper.appendChild(importBookmarksButton);
+        // importBookmarksWrapper.addEventListener('click', () =>
+        //     importBookmarksInput.click()
+        // );
+        //
+        dropdown.append(menu.actionSeparator, setBookmark);
 
-        dropdown.append(
-            menu.actionSeparator,
-            setBookmarkWrapper,
-            manageBookmarksWrapper,
-            exportBookmarksWrapper,
-            importBookmarksWrapper
-        );
-
-        document.querySelector('.boxMenu')?.prepend(menu);
         return menu;
     }
 }
+
+new BookmarkManager();
 
 // fill dropdown with bookmarks
 /**
@@ -171,18 +213,18 @@ class BookmarkManager {
  * @param {string} [link]
  * @param {string} [title]
  */
-const appendBookmark = (menu, link = '', title = link) => {
-    const bookmarkWrapper = document.createElement('li');
-    const bookmarkLink = document.createElement('a');
-    bookmarkLink.classList.add('boxMenuLink');
-    if (link) bookmarkLink.href = link;
-    bookmarkLink.textContent = title;
-    bookmarkWrapper.appendChild(bookmarkLink);
-    menu.actionSeparator.before(bookmarkWrapper);
-};
-
-appendBookmark(desktopMenu, 'huhu.de', 'Ein Link');
-appendBookmark(desktopMenu, 'example.com');
-
-appendBookmark(mobileMenu, 'huhu.de', 'Ein Link');
-appendBookmark(mobileMenu, 'example.com');
+// const appendBookmark = (menu, link = '', title = link) => {
+//     const bookmarkWrapper = document.createElement('li');
+//     const bookmarkLink = document.createElement('a');
+//     bookmarkLink.classList.add('boxMenuLink');
+//     if (link) bookmarkLink.href = link;
+//     bookmarkLink.textContent = title;
+//     bookmarkWrapper.appendChild(bookmarkLink);
+//     menu.actionSeparator.before(bookmarkWrapper);
+// };
+//
+// appendBookmark(desktopMenu, 'huhu.de', 'Ein Link');
+// appendBookmark(desktopMenu, 'example.com');
+//
+// appendBookmark(mobileMenu, 'huhu.de', 'Ein Link');
+// appendBookmark(mobileMenu, 'example.com');
