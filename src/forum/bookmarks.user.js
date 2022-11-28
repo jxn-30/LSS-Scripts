@@ -171,6 +171,9 @@ class BookmarkManager {
                 case 'set':
                     this.#setBookmark();
                     break;
+                case 'manage':
+                    this.#manageBookmarks();
+                    break;
                 case 'import':
                     this.#importBookmarks();
                     break;
@@ -182,6 +185,9 @@ class BookmarkManager {
     width: 100%;
     max-width: 100%;
     background-color: #000;
+    max-height: calc(100vh - 2em);
+    margin-top: 1em;
+    overflow: auto;
 }
 .${BookmarkManager.#modalClass} .title {
     font-size: 14px;
@@ -193,6 +199,31 @@ class BookmarkManager {
 }
 .${BookmarkManager.#modalClass} input[type="submit"] {
     margin-top: 1em;
+}
+.${BookmarkManager.#modalClass}[data-modal$="-manage"] > div:not(.title) > div {
+    display: flex;
+    justify-content: space-between;
+}
+.${BookmarkManager.#modalClass}[data-modal$="-manage"] .button .icon {
+    width: 0;
+    cursor: pointer;
+}
+.${BookmarkManager.#modalClass}[data-modal$="-manage"] .button .icon::before {
+    transform: translateX(-50%);
+    position: absolute;
+}
+.${BookmarkManager.#modalClass}[data-modal$="-manage"]
+    > div:not(.title)
+    > div:first-child
+    > .button:nth-last-child(2),
+.${BookmarkManager.#modalClass}[data-modal$="-manage"]
+    > div:not(.title)
+    > div:last-child
+    > .button:nth-last-child(1) {
+    pointer-events: none;
+    background-color: #2a2e2f !important;
+    color: #afa89e !important;
+    cursor: not-allowed;
 }
 `);
     }
@@ -371,6 +402,8 @@ class BookmarkManager {
             '#',
             'Lesezeichen verwalten'
         );
+        manageBookmarks.classList.add(BookmarkManager.#actionClass);
+        manageBookmarks.dataset.action = 'manage';
 
         const { item: exportBookmarks, link: exportBookmarksLink } =
             this.#createMenuItem(mobile, '#', 'Lesezeichen exportieren');
@@ -429,9 +462,10 @@ class BookmarkManager {
      * creates and shows a modal
      * @private
      * @param {string} title
+     * @param {string} identifier
      * @return {HTMLDivElement}
      */
-    #createModal(title) {
+    #createModal(title, identifier) {
         const modal = document.createElement('div');
         modal.classList.add(
             'balloonTooltip',
@@ -439,6 +473,7 @@ class BookmarkManager {
             'active',
             BookmarkManager.#modalClass
         );
+        modal.dataset.modal = `jxn-bookmarks-modal-${identifier}`;
 
         const titleElement = document.createElement('div');
         titleElement.classList.add('title');
@@ -454,7 +489,7 @@ class BookmarkManager {
      * @private
      */
     #setBookmark() {
-        const modal = this.#createModal('Lesezeichen setzen');
+        const modal = this.#createModal('Lesezeichen setzen', 'set');
 
         const urlInput = document.createElement('input');
         urlInput.type = 'text';
@@ -488,6 +523,126 @@ class BookmarkManager {
         cancelBtn.addEventListener('click', () => modal.remove());
 
         modal.append(urlInput, titleInput, saveBtn, cancelBtn);
+    }
+
+    /**
+     * manage the bookmarks
+     * @private
+     */
+    #manageBookmarks() {
+        const modal = this.#createModal('Lesezeichen verwalten', 'manage');
+
+        /**
+         * @type {({wrapper: HTMLDivElement, url: HTMLInputElement, title: HTMLInputElement}|null)[]}
+         */
+        const updates = [];
+
+        const bookmarksWrapper = document.createElement('div');
+
+        /**
+         * move a bookmark up one position
+         * @param {number} index
+         */
+        const moveUp = index => {
+            if (index === 0) return;
+
+            let prevIndex = index - 1;
+            while (prevIndex > 0 && updates[prevIndex] === null) {
+                prevIndex--;
+            }
+            if (prevIndex < 0) return;
+
+            updates[prevIndex].wrapper.before(updates[index].wrapper);
+            updates[prevIndex].wrapper.dataset.index = index.toString();
+            updates[index].wrapper.dataset.index = prevIndex.toString();
+            [updates[index], updates[prevIndex]] = [
+                updates[prevIndex],
+                updates[index],
+            ];
+        };
+
+        /**
+         * move a bookmark down one position
+         * @param {number} index
+         */
+        const moveDown = index => {
+            if (index === updates.length - 1) return;
+
+            let nextIndex = index + 1;
+            while (
+                nextIndex < updates.length - 1 &&
+                updates[nextIndex] === null
+            ) {
+                nextIndex++;
+            }
+            moveUp(nextIndex);
+        };
+
+        this.#bookmarks.forEach(({ url, title }, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.dataset.index = index.toString();
+
+            const currentIndex = () => parseInt(wrapper.dataset.index);
+
+            const urlInput = document.createElement('input');
+            urlInput.type = 'text';
+            urlInput.placeholder = 'URL';
+            urlInput.value = url;
+            const titleInput = document.createElement('input');
+            titleInput.type = 'text';
+            titleInput.placeholder = 'Titel';
+            titleInput.value = title;
+
+            const deleteBtn = document.createElement('a');
+            deleteBtn.classList.add('button', 'buttonPrimary');
+            const deleteIcon = document.createElement('span');
+            deleteIcon.classList.add('icon', 'icon16', 'fa-trash');
+            deleteBtn.append(deleteIcon);
+            deleteBtn.addEventListener('click', () => {
+                updates[currentIndex()] = null;
+                wrapper.remove();
+            });
+
+            const upBtn = document.createElement('button');
+            upBtn.classList.add('button', 'buttonPrimary');
+            const upIcon = document.createElement('span');
+            upIcon.classList.add('icon', 'icon16', 'fa-arrow-up');
+            upBtn.append(upIcon);
+            upBtn.addEventListener('click', () => moveUp(currentIndex()));
+
+            const downBtn = document.createElement('button');
+            downBtn.classList.add('button', 'buttonPrimary');
+            const downIcon = document.createElement('span');
+            downIcon.classList.add('icon', 'icon16', 'fa-arrow-down');
+            downBtn.append(downIcon);
+            downBtn.addEventListener('click', () => moveDown(currentIndex()));
+
+            updates.push({ wrapper, url: urlInput, title: titleInput });
+
+            wrapper.append(urlInput, titleInput, deleteBtn, upBtn, downBtn);
+            bookmarksWrapper.append(wrapper);
+        });
+
+        const saveBtn = document.createElement('input');
+        saveBtn.type = 'submit';
+        saveBtn.value = 'Speichern';
+        saveBtn.addEventListener('click', () => {
+            this.#bookmarks = updates
+                .filter(b => !!b)
+                .map(({ url, title }) => ({
+                    url: url.value.trim(),
+                    title: title.value.trim(),
+                }));
+            this.#initMenus();
+            modal.remove();
+        });
+
+        const cancelBtn = document.createElement('input');
+        cancelBtn.type = 'button';
+        cancelBtn.value = 'Abbrechen';
+        cancelBtn.addEventListener('click', () => modal.remove());
+
+        modal.append(bookmarksWrapper, saveBtn, cancelBtn);
     }
 
     /**
