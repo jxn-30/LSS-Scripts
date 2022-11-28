@@ -2,7 +2,7 @@
 // @name            [LSS] Forum: Bookmarks
 // @name:de         [LSS] Forum: Lesezeichen
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.28+1224
+// @version         2022.11.28+1304
 // @author          Jan (jxn_30)
 // @description     An internal Bookmark Manager for the general forum
 // @description:de  Ein interner Lesezeichen-Manager für das allgemeine Forum
@@ -34,9 +34,10 @@
 
 /**
  * @typedef Menu
- * @property {HTMLLIElement} menu
- * @property {HTMLOListElement} list
- * @property {HTMLLIElement} actionSeparator
+ * @property {HTMLLIElement} _menu
+ * @property {function(): Element} menu
+ * @property {function(): Element} list
+ * @property {function(): Element} actionSeparator
  * @property {HTMLAnchorElement} exportLink
  */
 
@@ -54,6 +55,24 @@ class BookmarkManager {
      */
     static get #storageKey() {
         return 'bookmarks';
+    }
+    /**
+     * @static
+     * @constant
+     * @private
+     * @returns {string}
+     */
+    static get #actionClass() {
+        return 'jxn-bookmark-actions';
+    }
+    /**
+     * @static
+     * @constant
+     * @private
+     * @returns {string}
+     */
+    static get #actionSeparatorClass() {
+        return 'jxn-bookmark-action-separator';
     }
     /**
      * @static
@@ -94,19 +113,34 @@ class BookmarkManager {
 
     constructor() {
         this.#menuDesktop = this.#createMenu(false);
-        document.querySelector('.boxMenu')?.prepend(this.#menuDesktop.menu);
+        document.querySelector('.boxMenu')?.prepend(this.#menuDesktop._menu);
         this.#menuMobile = this.#createMenu(true);
         document
             .querySelector(
                 '#pageMainMenuMobile > .menuOverlayItemList > .menuOverlayTitle'
             )
-            ?.after(this.#menuMobile.menu);
+            ?.after(this.#menuMobile._menu);
 
         this.#initMenus();
+
+        // we need to use document here because the forum modifies some items in our menu
+        document.addEventListener('click', e => {
+            const link = e.target.closest(
+                `:where(${[this.#menuDesktop, this.#menuMobile]
+                    .map(({ list }) => `#${list().id}`)
+                    .join(', ')}) .${BookmarkManager.#actionClass}[data-action]`
+            );
+            if (!link) return;
+            switch (link.dataset.action) {
+                case 'import':
+                    this.#importBookmarks();
+                    break;
+            }
+        });
     }
 
     get #bookmarkStorage() {
-        return localStorage.getItem(BookmarkManager.#storageKey);
+        return localStorage.getItem(BookmarkManager.#storageKey) || '{}';
     }
 
     /**
@@ -155,11 +189,16 @@ class BookmarkManager {
     /**
      * delete all bookmark items from a menu
      * @private
-     * @param {Menu} [menu]
+     * @param {Menu} menu
      */
-    #clearMenu(menu = this.#menuDesktop) {
-        while (menu.list.firstChild !== menu.actionSeparator) {
-            menu.list.firstChild.remove();
+    #clearMenu(menu) {
+        const list = menu.list();
+        while (
+            !list.firstElementChild?.classList.contains(
+                BookmarkManager.#actionSeparatorClass
+            )
+        ) {
+            list.firstElementChild.remove();
         }
     }
 
@@ -214,6 +253,7 @@ class BookmarkManager {
      */
     #createMenu(mobile) {
         const menu = document.createElement('li');
+        menu.id = `jxn-forum-bookmarks-menu-${mobile ? 'mobile' : 'desktop'}`;
         menu.classList.add(
             mobile
                 ? BookmarkManager.#mobileClasses.item
@@ -258,6 +298,7 @@ class BookmarkManager {
 
         // create action buttons
         const actionSeparator = document.createElement('li');
+        actionSeparator.classList.add(BookmarkManager.#actionSeparatorClass);
         if (mobile) actionSeparator.classList.add('menuOverlayItemSpacer');
         else actionSeparator.append(document.createElement('hr'));
 
@@ -282,6 +323,8 @@ class BookmarkManager {
             '#',
             'Lesezeichen importieren'
         );
+        importBookmarks.classList.add(BookmarkManager.#actionClass);
+        importBookmarks.dataset.action = 'import';
 
         menu.append(dropdown);
 
@@ -293,10 +336,18 @@ class BookmarkManager {
             importBookmarks
         );
 
+        const getMenu = () => document.querySelector(`#${menu.id}`);
+        const getList = () => getMenu().querySelector(`#${dropdown.id}`);
+        const getActionSeparator = () =>
+            getList().querySelector(
+                `.${BookmarkManager.#actionSeparatorClass}`
+            );
+
         return {
-            menu,
-            list: dropdown,
-            actionSeparator,
+            _menu: menu,
+            menu: getMenu,
+            list: getList,
+            actionSeparator: getActionSeparator,
             exportLink: exportBookmarksLink,
         };
     }
@@ -308,12 +359,33 @@ class BookmarkManager {
      * @param {string} [title]
      */
     #appendBookmark(url, title = url) {
-        this.#menuDesktop.actionSeparator.before(
-            this.#createMenuItem(false, url, title).item
-        );
-        this.#menuMobile.actionSeparator.before(
-            this.#createMenuItem(true, url, title).item
-        );
+        this.#menuDesktop
+            .actionSeparator()
+            .before(this.#createMenuItem(false, url, title).item);
+        this.#menuMobile
+            .actionSeparator()
+            .before(this.#createMenuItem(true, url, title).item);
+    }
+
+    /**
+     * imports bookmarks from a file
+     * @private
+     */
+    #importBookmarks() {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'application/json,.json';
+        fileInput.addEventListener('change', () => {
+            if (!fileInput.files.length) return;
+            const [file] = fileInput.files;
+            const fileReader = new FileReader();
+            fileReader.addEventListener('load', () => {
+                this.#bookmarks = JSON.parse(fileReader.result.toString());
+                this.#initMenus();
+            });
+            fileReader.readAsText(file);
+        });
+        fileInput.click();
     }
 }
 
