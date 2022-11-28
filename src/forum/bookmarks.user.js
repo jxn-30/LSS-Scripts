@@ -2,7 +2,7 @@
 // @name            [LSS] Forum: Bookmarks
 // @name:de         [LSS] Forum: Lesezeichen
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.28+1304
+// @version         2022.11.28+2049
 // @author          Jan (jxn_30)
 // @description     An internal Bookmark Manager for the general forum
 // @description:de  Ein interner Lesezeichen-Manager für das allgemeine Forum
@@ -42,7 +42,17 @@
  */
 
 /**
- * @typedef {Object<string, string>} Bookmarks
+ * @typedef {Object<string, string>} OldBookmarks
+ */
+
+/**
+ * @typedef Bookmark
+ * @property {string} title
+ * @property {string} url
+ */
+
+/**
+ * @typedef {Bookmark[]} Bookmarks
  */
 
 // create menu for navigation
@@ -53,8 +63,17 @@ class BookmarkManager {
      * @private
      * @returns {string}
      */
-    static get #storageKey() {
+    static get #oldStorageKey() {
         return 'bookmarks';
+    }
+    /**
+     * @static
+     * @constant
+     * @private
+     * @returns {string}
+     */
+    static get #storageKey() {
+        return 'jxn-bookmarks';
     }
     /**
      * @static
@@ -73,6 +92,15 @@ class BookmarkManager {
      */
     static get #actionSeparatorClass() {
         return 'jxn-bookmark-action-separator';
+    }
+    /**
+     * @static
+     * @constant
+     * @private
+     * @returns {string}
+     */
+    static get #modalClass() {
+        return 'jxn-bookmark-modal';
     }
     /**
      * @static
@@ -121,6 +149,14 @@ class BookmarkManager {
             )
             ?.after(this.#menuMobile._menu);
 
+        // convert old bookmark storage to new one
+        if (BookmarkManager.#oldStorageKey in localStorage) {
+            this.#bookmarks = Object.entries(
+                JSON.parse(localStorage.getItem(BookmarkManager.#oldStorageKey))
+            ).map(([url, title]) => ({ url, title }));
+            localStorage.removeItem(BookmarkManager.#oldStorageKey);
+        }
+
         this.#initMenus();
 
         // we need to use document here because the forum modifies some items in our menu
@@ -132,11 +168,33 @@ class BookmarkManager {
             );
             if (!link) return;
             switch (link.dataset.action) {
+                case 'set':
+                    this.#setBookmark();
+                    break;
                 case 'import':
                     this.#importBookmarks();
                     break;
             }
         });
+
+        GM_addStyle(`
+.${BookmarkManager.#modalClass} {
+    width: 100%;
+    max-width: 100%;
+    background-color: #000;
+}
+.${BookmarkManager.#modalClass} .title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.${BookmarkManager.#modalClass} input[type="text"] {
+    width: 100%;
+}
+.${BookmarkManager.#modalClass} input[type="submit"] {
+    margin-top: 1em;
+}
+`);
     }
 
     get #bookmarkStorage() {
@@ -180,9 +238,7 @@ class BookmarkManager {
         this.#clearMenu(this.#menuDesktop);
         this.#clearMenu(this.#menuMobile);
         const appendBookmark = this.#appendBookmark.bind(this);
-        Object.entries(this.#bookmarks).forEach(([url, title]) =>
-            appendBookmark(url, title)
-        );
+        this.#bookmarks.forEach(({ url, title }) => appendBookmark(url, title));
         this.#setExportLinks();
     }
 
@@ -307,6 +363,8 @@ class BookmarkManager {
             '#',
             'Lesezeichen setzen'
         );
+        setBookmark.classList.add(BookmarkManager.#actionClass);
+        setBookmark.dataset.action = 'set';
 
         const { item: manageBookmarks } = this.#createMenuItem(
             mobile,
@@ -365,6 +423,71 @@ class BookmarkManager {
         this.#menuMobile
             .actionSeparator()
             .before(this.#createMenuItem(true, url, title).item);
+    }
+
+    /**
+     * creates and shows a modal
+     * @private
+     * @param {string} title
+     * @return {HTMLDivElement}
+     */
+    #createModal(title) {
+        const modal = document.createElement('div');
+        modal.classList.add(
+            'balloonTooltip',
+            'interactive',
+            'active',
+            BookmarkManager.#modalClass
+        );
+
+        const titleElement = document.createElement('div');
+        titleElement.classList.add('title');
+        titleElement.textContent = title;
+        modal.append(titleElement);
+        this.#menuDesktop.menu().after(modal);
+
+        return modal;
+    }
+
+    /**
+     * set a new bookmark
+     * @private
+     */
+    #setBookmark() {
+        const modal = this.#createModal('Lesezeichen setzen');
+
+        const urlInput = document.createElement('input');
+        urlInput.type = 'text';
+        urlInput.placeholder = 'URL';
+        urlInput.value = window.location.href;
+        const titleInput = document.createElement('input');
+        titleInput.type = 'text';
+        titleInput.placeholder = 'Titel';
+        titleInput.value =
+            (
+                document.querySelector('.contentTitle') ??
+                document.querySelector('title')
+            )?.textContent
+                ?.trim()
+                ?.replace(/"/g, '&#34;') ?? '';
+        const saveBtn = document.createElement('input');
+        saveBtn.type = 'submit';
+        saveBtn.value = 'Speichern';
+        saveBtn.addEventListener('click', () => {
+            const url = urlInput.value.trim();
+            const title = titleInput.value.trim();
+            this.#appendBookmark(url, title);
+            const bookmarks = this.#bookmarks;
+            bookmarks.push({ url, title });
+            this.#bookmarks = bookmarks;
+            modal.remove();
+        });
+        const cancelBtn = document.createElement('input');
+        cancelBtn.type = 'button';
+        cancelBtn.value = 'Abbrechen';
+        cancelBtn.addEventListener('click', () => modal.remove());
+
+        modal.append(urlInput, titleInput, saveBtn, cancelBtn);
     }
 
     /**
