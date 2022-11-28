@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         LSS-Forum-Dashboard
-// @version      1.3.4
+// @version      1.3.5
 // @description  Dashboard-Link im LSS-Forum
-// @author       Jan (KBOE2)
-// @include      https://forum.leitstellenspiel.de/*
+// @author       Jan (jxn_30)
+// @match        https://forum.leitstellenspiel.de/*
 // @grant        none
 // ==/UserScript==
 
@@ -12,7 +12,7 @@
     const e = window.location.search.match("dashboard") ? "active" : null;
     let t, l;
     if ($("ol.boxMenu")[0].innerHTML += `<li class="${e}"><a href="/cms/index.php?dashboard/">Dashboard</a></li>`,
-    $(".menuOverlayItemList .menuOverlayItemSpacer").before(`<li class="menuOverlayItem ${e}"><span class="menuOverlayItemWrapper"><a href="/cms/index.php?dashboard/" class="menuOverlayItemLink"><span class="menuOverlayItemTitle">Dashboard</span>`),
+    $("#pageMainMenuMobile > .menuOverlayItemList > .menuOverlayItemSpacer").before(`<li class="menuOverlayItem ${e}"><span class="menuOverlayItemWrapper"><a href="/cms/index.php?dashboard/" class="menuOverlayItemLink"><span class="menuOverlayItemTitle">Dashboard</span>`),
     e) {
         let e = document.createElement("script");
         e.src = "https://www.amcharts.com/lib/3/amcharts.js", document.head.appendChild(e);
