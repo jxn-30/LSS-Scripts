@@ -371,7 +371,6 @@ ${userscriptTags}
 
     updatedFiles.push(fileName);
 }
-console.log(updatedFiles);
 
 const centerString = (string, length) => {
     const half = Math.floor((length - string.length) / 2);

@@ -2,7 +2,7 @@
 // @name            [LSS] Forum: Bookmarks
 // @name:de         [LSS] Forum: Lesezeichen
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.27+2257
+// @version         2022.11.28+1224
 // @author          Jan (jxn_30)
 // @description     An internal Bookmark Manager for the general forum
 // @description:de  Ein interner Lesezeichen-Manager für das allgemeine Forum
@@ -13,7 +13,8 @@
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/bookmarks.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/17627-forum-bookmark-manager/
 // @match           https://forum.leitstellenspiel.de/*
-// @run-at          document-idle
+// @run-at          document-body
+// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
@@ -23,68 +24,160 @@
  * @description:de Ein interner Lesezeichen-Manager für das allgemeine Forum
  * @forum https://forum.leitstellenspiel.de/index.php?thread/17627-forum-bookmark-manager/
  * @match /*
+ * @// required so that the forum inits the mobile menu correctly
+ * @run-at document-body
  * @locale de_DE
  * @subdomain forum
  * @old Forum-Bookmarks.min
+ * @grant GM_addStyle
  */
 
-/* global require */
+/**
+ * @typedef Menu
+ * @property {HTMLLIElement} menu
+ * @property {HTMLOListElement} list
+ * @property {HTMLLIElement} actionSeparator
+ * @property {HTMLAnchorElement} exportLink
+ */
 
 /**
- * @typedef {HTMLLIElement} Menu
- * @extends {HTMLLIElement}
- * @property {HTMLLIElement} actionSeparator
+ * @typedef {Object<string, string>} Bookmarks
  */
 
 // create menu for navigation
 class BookmarkManager {
     /**
+     * @static
+     * @constant
      * @private
-     * @type {{linkTitle: string, link: string, menu: string, dropdown: string}}
+     * @returns {string}
      */
-    static #desktopClasses = {
-        menu: 'boxMenuHasChildren',
-        dropdown: 'boxMenuDepth1',
-        link: 'boxMenuLink',
-        linkTitle: 'boxMenuLinkTitle',
-    };
+    static get #storageKey() {
+        return 'bookmarks';
+    }
     /**
+     * @static
+     * @constant
      * @private
-     * @type {{linkTitle: string, item: string, link: string, dropdown: string, wrapper: string, linkIcon: string}}
+     * @returns {{linkTitle: string, link: string, menu: string, dropdown: string}}
      */
-    static #mobileClasses = {
-        item: 'menuOverlayItem',
-        wrapper: 'menuOverlayItemWrapper',
-        dropdown: 'menuOverlayItemList',
-        link: 'menuOverlayItemLink',
-        linkIcon: 'menuOverlayItemLinkIcon',
-        linkTitle: 'menuOverlayItemTitle',
-    };
+    static get #desktopClasses() {
+        return {
+            menu: 'boxMenuHasChildren',
+            dropdown: 'boxMenuDepth1',
+            link: 'boxMenuLink',
+            linkTitle: 'boxMenuLinkTitle',
+        };
+    }
+    /**
+     * @static
+     * @constant
+     * @private
+     * @returns {{linkTitle: string, item: string, link: string, dropdown: string, wrapper: string, linkIcon: string}}
+     */
+    static get #mobileClasses() {
+        return {
+            item: 'menuOverlayItem',
+            wrapper: 'menuOverlayItemWrapper',
+            dropdown: 'menuOverlayItemList',
+            link: 'menuOverlayItemLink',
+            linkIcon: 'menuOverlayItemLinkIcon',
+            linkTitle: 'menuOverlayItemTitle',
+        };
+    }
 
     /** @type {Menu} */
-    #menuDesktop = null;
+    #menuDesktop;
 
     /** @type {Menu} */
-    #menuMobile = null;
+    #menuMobile;
 
     constructor() {
         this.#menuDesktop = this.#createMenu(false);
-        document.querySelector('.boxMenu')?.prepend(this.#menuDesktop);
+        document.querySelector('.boxMenu')?.prepend(this.#menuDesktop.menu);
         this.#menuMobile = this.#createMenu(true);
         document
             .querySelector(
                 '#pageMainMenuMobile > .menuOverlayItemList > .menuOverlayTitle'
             )
-            ?.after(this.#menuMobile);
-        require('WoltLabSuite/Core/Ui/Page/Menu/Main').prototype.init();
+            ?.after(this.#menuMobile.menu);
+
+        this.#initMenus();
+    }
+
+    get #bookmarkStorage() {
+        return localStorage.getItem(BookmarkManager.#storageKey);
+    }
+
+    /**
+     * @private
+     * @returns {Bookmarks}
+     */
+    get #bookmarks() {
+        return JSON.parse(this.#bookmarkStorage);
+    }
+    /**
+     * @private
+     * @param {Bookmarks} bookmarks
+     */
+    set #bookmarks(bookmarks) {
+        localStorage.setItem(
+            BookmarkManager.#storageKey,
+            JSON.stringify(bookmarks)
+        );
+        this.#setExportLinks();
+    }
+
+    /**
+     * @private
+     * @returns {string}
+     */
+    get #export() {
+        return `data:application/json;charset=utf-8,${encodeURIComponent(
+            this.#bookmarkStorage
+        )}`;
+    }
+
+    /**
+     * empty the menus and refill them with current bookmarks
+     * @private
+     */
+    #initMenus() {
+        this.#clearMenu(this.#menuDesktop);
+        this.#clearMenu(this.#menuMobile);
+        const appendBookmark = this.#appendBookmark.bind(this);
+        Object.entries(this.#bookmarks).forEach(([url, title]) =>
+            appendBookmark(url, title)
+        );
+        this.#setExportLinks();
+    }
+
+    /**
+     * delete all bookmark items from a menu
+     * @private
+     * @param {Menu} [menu]
+     */
+    #clearMenu(menu = this.#menuDesktop) {
+        while (menu.list.firstChild !== menu.actionSeparator) {
+            menu.list.firstChild.remove();
+        }
+    }
+
+    /**
+     * @private
+     */
+    #setExportLinks() {
+        this.#menuDesktop.exportLink.href = this.#menuMobile.exportLink.href =
+            this.#export;
     }
 
     /**
      * creates an empty menu item
+     * @private
      * @param {boolean} mobile
      * @param {string} title
      * @param {string} [url]
-     * @return {HTMLLIElement}
+     * @return {{item: HTMLLIElement, link: HTMLAnchorElement}}
      */
     #createMenuItem(mobile, url, title = url) {
         const item = document.createElement('li');
@@ -110,7 +203,7 @@ class BookmarkManager {
 
         link.append(text);
         item.append(link);
-        return item;
+        return { item, link };
     }
 
     /**
@@ -154,77 +247,74 @@ class BookmarkManager {
             mobile ? 'mobile' : 'desktop'
         }`;
 
-        menu.append(dropdown);
+        if (!mobile) {
+            GM_addStyle(`
+#${dropdown.id} {
+    max-height: calc(100vh - 50px - 1em);
+    overflow: auto;
+}
+`);
+        }
 
         // create action buttons
-        menu.actionSeparator = document.createElement('li');
-        if (mobile) menu.actionSeparator.classList.add('menuOverlayItemSpacer');
-        else menu.actionSeparator.append(document.createElement('hr'));
+        const actionSeparator = document.createElement('li');
+        if (mobile) actionSeparator.classList.add('menuOverlayItemSpacer');
+        else actionSeparator.append(document.createElement('hr'));
 
-        const setBookmark = this.#createMenuItem(
+        const { item: setBookmark } = this.#createMenuItem(
             mobile,
             '#',
             'Lesezeichen setzen'
         );
-        //
-        // const setBookmarkWrapper = document.createElement('li');
-        // const setBookmarkButton = document.createElement('a');
-        // setBookmarkButton.classList.add('boxMenuLink');
-        // setBookmarkButton.textContent = 'Lesezeichen setzen';
-        // setBookmarkWrapper.appendChild(setBookmarkButton);
-        //
-        // const manageBookmarksWrapper = document.createElement('li');
-        // const manageBookmarksButton = document.createElement('a');
-        // manageBookmarksButton.classList.add('boxMenuLink');
-        // manageBookmarksButton.textContent = 'Lesezeichen verwalten';
-        // manageBookmarksWrapper.appendChild(manageBookmarksButton);
-        //
-        // const exportBookmarksWrapper = document.createElement('li');
-        // const exportBookmarksButton = document.createElement('a');
-        // exportBookmarksButton.classList.add('boxMenuLink');
-        // exportBookmarksButton.download = 'lss_forum_lesezeichen.json';
-        // exportBookmarksButton.textContent = 'Lesezeichen exportieren';
-        // exportBookmarksWrapper.appendChild(exportBookmarksButton);
-        //
-        // const importBookmarksWrapper = document.createElement('li');
-        // const importBookmarksButton = document.createElement('a');
-        // importBookmarksButton.classList.add('boxMenuLink');
-        // importBookmarksButton.textContent = 'Lesezeichen importieren';
-        // const importBookmarksInput = document.createElement('input');
-        // importBookmarksInput.type = 'file';
-        // importBookmarksInput.accept = 'application/json,.json';
-        // importBookmarksWrapper.appendChild(importBookmarksButton);
-        // importBookmarksWrapper.addEventListener('click', () =>
-        //     importBookmarksInput.click()
-        // );
-        //
-        dropdown.append(menu.actionSeparator, setBookmark);
 
-        return menu;
+        const { item: manageBookmarks } = this.#createMenuItem(
+            mobile,
+            '#',
+            'Lesezeichen verwalten'
+        );
+
+        const { item: exportBookmarks, link: exportBookmarksLink } =
+            this.#createMenuItem(mobile, '#', 'Lesezeichen exportieren');
+        exportBookmarksLink.download = 'lss_forum_lesezeichen.json';
+
+        const { item: importBookmarks } = this.#createMenuItem(
+            mobile,
+            '#',
+            'Lesezeichen importieren'
+        );
+
+        menu.append(dropdown);
+
+        dropdown.append(
+            actionSeparator,
+            setBookmark,
+            manageBookmarks,
+            exportBookmarks,
+            importBookmarks
+        );
+
+        return {
+            menu,
+            list: dropdown,
+            actionSeparator,
+            exportLink: exportBookmarksLink,
+        };
+    }
+
+    /**
+     * append a bookmark to all menus
+     * @private
+     * @param {string} url
+     * @param {string} [title]
+     */
+    #appendBookmark(url, title = url) {
+        this.#menuDesktop.actionSeparator.before(
+            this.#createMenuItem(false, url, title).item
+        );
+        this.#menuMobile.actionSeparator.before(
+            this.#createMenuItem(true, url, title).item
+        );
     }
 }
 
 new BookmarkManager();
-
-// fill dropdown with bookmarks
-/**
- * Add a bookmark to the dropdown menu
- * @param {Menu} menu
- * @param {string} [link]
- * @param {string} [title]
- */
-// const appendBookmark = (menu, link = '', title = link) => {
-//     const bookmarkWrapper = document.createElement('li');
-//     const bookmarkLink = document.createElement('a');
-//     bookmarkLink.classList.add('boxMenuLink');
-//     if (link) bookmarkLink.href = link;
-//     bookmarkLink.textContent = title;
-//     bookmarkWrapper.appendChild(bookmarkLink);
-//     menu.actionSeparator.before(bookmarkWrapper);
-// };
-//
-// appendBookmark(desktopMenu, 'huhu.de', 'Ein Link');
-// appendBookmark(desktopMenu, 'example.com');
-//
-// appendBookmark(mobileMenu, 'huhu.de', 'Ein Link');
-// appendBookmark(mobileMenu, 'example.com');
