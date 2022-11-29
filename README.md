@@ -28,11 +28,13 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.11.26+1803`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0807` (`🇩🇪`)
+- [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
 - [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2022.11.29+1000`
 - [[LSS] Input max length](#lss-input-max-length) `2022.11.29+1052`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
+- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2022.11.29+2211`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1803`
@@ -322,6 +324,22 @@ This list is auto-generated and contains all scripts that are already ported int
 [forum/bookmarks.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/bookmarks.user.js
 [forum/bookmarks.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17627-forum-bookmark-manager/
 
+### [LSS] Forum: External Links
+
+> Opens external links in the Forum in a new tab / window by default
+
+|     Version     | Available in |    Alias / Old names     |                             Download                              |                   Links                   |
+|:---------------:|:------------:|:------------------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
+| 2022.11.29+2211 |    `🇩🇪`    | `LSS-Forum-ExternalLink` | [forum/externalLink.user.js][forum/externalLink.user.js:download] | [Forum][forum/externalLink.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Forum: External Links</summary>
+    Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
+</details>
+
+[forum/externalLink.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/externalLink.user.js
+[forum/externalLink.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17423-forum-external-link/
+
 ### [LSS] Grüße vom Jan
 
 > Fun-Script: Grüße halt, gelle
@@ -394,6 +412,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 
 [navToggleLeitstellenansicht.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/navToggleLeitstellenansicht.user.js
+
+### [LSS] Lightbox-Lightbox
+
+> Allows opening a lightbox on all sites of the game
+
+|     Version     |  Alias / Old names  |                           Download                            |                  Links                  |
+|:---------------:|:-------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2022.11.29+2211 | `Lightbox-Lightbox` | [lightboxLightbox.user.js][lightboxLightbox.user.js:download] | [Forum][lightboxLightbox.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Lightbox-Lightbox</summary>
+    Erlaubt es, eine Lightbox auf allen Seiten des Spiels zu öffnen
+</details>
+
+[lightboxLightbox.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/lightboxLightbox.user.js
+[lightboxLightbox.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18588-script-lightbox-in-lightbox-in-lightbox-in/
 
 ### [LSS] RadioMessage: Mission Target
 
