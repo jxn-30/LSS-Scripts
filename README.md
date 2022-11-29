@@ -27,6 +27,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.11.26+1803`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.11.26+1803`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
+- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0804` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
@@ -301,6 +302,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [extraAlarmAndCloseBtn.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/extraAlarmAndCloseBtn.user.js
 [extraAlarmAndCloseBtn.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23205-scriptwunsch-alarmieren-und-fenster-schlie%C3%9Fen/
+
+### [LSS] Forum: Bookmarks
+
+> An internal Bookmark Manager for the general forum
+
+|     Version     | Available in |   Alias / Old names   |                          Download                           |                 Links                  |
+|:---------------:|:------------:|:---------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2022.11.29+0804 |    `🇩🇪`    | `Forum-Bookmarks.min` | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Forum: Lesezeichen</summary>
+    Ein interner Lesezeichen-Manager für das allgemeine Forum
+</details>
+
+[forum/bookmarks.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/bookmarks.user.js
+[forum/bookmarks.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17627-forum-bookmark-manager/
 
 ### [LSS] Grüße vom Jan
 
