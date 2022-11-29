@@ -31,6 +31,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
 - [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2022.11.29+1000`
+- [[LSS] Input max length](#lss-input-max-length) `2022.11.29+1052`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
@@ -365,6 +366,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [hideOwnNotSharedMissions.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideOwnNotSharedMissions.user.js
 [hideOwnNotSharedMissions.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/20046-scriptwunsch-nur-freigegebene-eins%C3%A4tze-in-der-liste-anzeigen
+
+### [LSS] Input max length
+
+> Shows a help about minimum and maximum length of text input fields
+
+|     Version     | Alias / Old names |                      Download                       |               Links                |
+|:---------------:|:-----------------:|:---------------------------------------------------:|:----------------------------------:|
+| 2022.11.29+1052 |  `Input-Length`   | [inputMaxLen.user.js][inputMaxLen.user.js:download] | [Forum][inputMaxLen.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Textlänge bei Eingabefeldern prüfen</summary>
+    Zeigt eine Hilfe über die Mindest- und Maximaltextlänge von Eingabefeldern an
+</details>
+
+[inputMaxLen.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/inputMaxLen.user.js
+[inputMaxLen.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/11756-erledigt-textl%C3%A4nge-in-begrenzten-eingabefeldern-schon-bei-eingabe-pr%C3%BCfen/
 
 ### [LSS] Leitstellenansicht Nav-toggle
 

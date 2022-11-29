@@ -2,7 +2,7 @@
 // @name            [LSS] Input max length
 // @name:de         [LSS] Textlänge bei Eingabefeldern prüfen
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.29+1050
+// @version         2022.11.29+1052
 // @author          Jan (jxn_30)
 // @description     Shows a help about minimum and maximum length of text input fields
 // @description:de  Zeigt eine Hilfe über die Mindest- und Maximaltextlänge von Eingabefeldern an
@@ -51,6 +51,7 @@
 // @match           https://www.112-merkez.com/*
 // @match           https://www.dyspetcher101-game.com/*
 // @run-at          document-idle
+// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
