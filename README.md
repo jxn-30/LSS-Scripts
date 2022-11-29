@@ -29,6 +29,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0807` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
+- [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
@@ -331,6 +332,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [gruesse.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/gruesse.user.js
 [gruesse.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16931-%C3%BCbersicht-%C3%BCber-die-scripte/&postID=363928#post363928
+
+### [LSS] Hide Leitstellenansicht btn in building panel
+
+> Hides button to Leitstellenansicht in building panel
+
+|     Version     |              Alias / Old names              |                                                   Download                                                    |                              Links                              |
+|:---------------:|:-------------------------------------------:|:-------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------:|
+| 2022.11.29+0950 | `hide-leitstellenansicht-btn-buildingpanel` | [hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download] | [Forum][hideLeitstellenansichtBtnInBuildingPanel.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden</summary>
+    Blendet den Knopf zur Leitstellenansicht in der Gebäudeliste aus
+</details>
+
+[hideLeitstellenansichtBtnInBuildingPanel.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideLeitstellenansichtBtnInBuildingPanel.user.js
+[hideLeitstellenansichtBtnInBuildingPanel.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23027-leitstellenansicht-ab-jetzt-auch-f%C3%BCr-nicht-premium-nutzer/&postID=458680#post458680
 
 ### [LSS] Leitstellenansicht Nav-toggle
 

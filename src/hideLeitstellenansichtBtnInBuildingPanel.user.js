@@ -2,7 +2,7 @@
 // @name            [LSS] Hide Leitstellenansicht btn in building panel
 // @name:de         [LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.29+0949
+// @version         2022.11.29+0950
 // @author          Jan (jxn_30)
 // @description     Hides button to Leitstellenansicht in building panel
 // @description:de  Blendet den Knopf zur Leitstellenansicht in der Gebäudeliste aus
