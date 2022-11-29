@@ -27,7 +27,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.11.26+1803`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.11.26+1803`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
-- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0804` (`🇩🇪`)
+- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0807` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
@@ -307,9 +307,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > An internal Bookmark Manager for the general forum
 
-|     Version     | Available in |   Alias / Old names   |                          Download                           |                 Links                  |
-|:---------------:|:------------:|:---------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2022.11.29+0804 |    `🇩🇪`    | `Forum-Bookmarks.min` | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
+|     Version     | Available in |            Alias / Old names             |                          Download                           |                 Links                  |
+|:---------------:|:------------:|:----------------------------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2022.11.29+0807 |    `🇩🇪`    | `Forum-Bookmarks.min`, `Forum-Bookmarks` | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Lesezeichen</summary>
