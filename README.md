@@ -30,6 +30,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0807` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
+- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2022.11.29+1000`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
@@ -348,6 +349,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [hideLeitstellenansichtBtnInBuildingPanel.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideLeitstellenansichtBtnInBuildingPanel.user.js
 [hideLeitstellenansichtBtnInBuildingPanel.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23027-leitstellenansicht-ab-jetzt-auch-f%C3%BCr-nicht-premium-nutzer/&postID=458680#post458680
+
+### [LSS] hide own not shared missions
+
+> Hides own missions that are not yet shared with alliance
+
+|     Version     |     Alias / Old names      |                                   Download                                    |                      Links                      |
+|:---------------:|:--------------------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------:|
+| 2022.11.29+1000 | `hideOwnNotSharedMissions` | [hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download] | [Forum][hideOwnNotSharedMissions.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] eigene ungeteilte Einsätze ausblenden</summary>
+    Blendet eigene Einsätze, die nicht im Verband geteilt wurden aus
+</details>
+
+[hideOwnNotSharedMissions.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideOwnNotSharedMissions.user.js
+[hideOwnNotSharedMissions.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/20046-scriptwunsch-nur-freigegebene-eins%C3%A4tze-in-der-liste-anzeigen
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
