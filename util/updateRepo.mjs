@@ -312,8 +312,9 @@ for (const comment of comments) {
             latest &&
             latest.author_email !==
                 'github-actions[bot]@users.noreply.github.com'
-        )
+        ) {
             versionTag.content = getVersion(latest.date);
+        }
     });
 
     const longestTagLength = Math.max(
