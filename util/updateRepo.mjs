@@ -1,9 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import jsdoc from 'jsdoc-api';
-import simpleGit from 'simple-git';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
+import jsdoc from 'jsdoc-api';
 import { parse as parseMeta } from 'userscript-meta';
+import path from 'path';
+import simpleGit from 'simple-git';
 
 import Games from './games.mjs';
 const { games } = Games;
@@ -62,6 +62,7 @@ const git = simpleGit();
 /** @type {Script[]} */
 const scriptOverview = [];
 
+/** @type {string[]} */
 const updatedFiles = [];
 
 /**
