@@ -2,7 +2,7 @@
 // @name            [LSS] Forum: Bookmarks
 // @name:de         [LSS] Forum: Lesezeichen
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.28+2049
+// @version         2022.11.29+0752
 // @author          Jan (jxn_30)
 // @description     An internal Bookmark Manager for the general forum
 // @description:de  Ein interner Lesezeichen-Manager für das allgemeine Forum
@@ -533,7 +533,10 @@ class BookmarkManager {
         const modal = this.#createModal('Lesezeichen verwalten', 'manage');
 
         /**
-         * @type {({wrapper: HTMLDivElement, url: HTMLInputElement, title: HTMLInputElement}|null)[]}
+         * @typedef {{wrapper: HTMLDivElement, url: HTMLInputElement, title: HTMLInputElement}} Update
+         */
+        /**
+         * @type {Array<Update|null>}
          */
         const updates = [];
 
