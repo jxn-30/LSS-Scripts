@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.30+2252
+// @version         2022.12.01+1121
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -76,3 +76,57 @@ const loadDashboard = () => {
 if (isDashboardPage) (() => loadDashboard())();
 
 // Memberlist points diff and posts needed
+if (
+    window.location.search.startsWith('?members-list/') &&
+    window.location.search.match(/sortField=activityPoints/)
+) {
+    /**
+     * parses the element to a number
+     * @param {HTMLElement} [element]
+     * @returns {number}
+     */
+    const readNumberFromEl = element =>
+        parseInt(
+            element?.textContent
+                .trim()
+                .match(/^\d{1,3}(?:[.,]\d{3})*/)[0]
+                .replace(/\D/g, '') ?? '0'
+        );
+
+    let previousPoints;
+    document
+        .querySelectorAll('.userList > li .userInformation .inlineDataList')
+        .forEach(user => {
+            const posts = readNumberFromEl(
+                user.querySelector('dd:nth-of-type(1)')
+            );
+            const likes = readNumberFromEl(
+                user.querySelector('dd:nth-of-type(2)')
+            );
+            const points = readNumberFromEl(
+                user.querySelector('dd:nth-of-type(3)')
+            );
+            const diffTitle = document.createElement('dt');
+            diffTitle.innerText = 'Punkte-Diff';
+            const diffValue = document.createElement('dd');
+            const diff = (previousPoints || points) - points;
+            diffValue.innerText = diff.toLocaleString();
+            const postsTitle = document.createElement('dt');
+            postsTitle.innerText = 'Posts needed';
+            const postsValue = document.createElement('dd');
+            // diff = 5 * posts + lpp * posts <=> posts = diff / (5 + lpp)
+            postsValue.innerText = Math.ceil(
+                diff / (5 + likes / posts)
+            ).toLocaleString();
+            user.append(
+                diffTitle,
+                '\xa0',
+                diffValue,
+                '\xa0',
+                postsTitle,
+                '\xa0',
+                postsValue
+            );
+            previousPoints = points;
+        });
+}
