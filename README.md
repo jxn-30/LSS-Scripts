@@ -39,6 +39,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1803`
 - [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.11.26+1803` (`🇩🇪`)
+- [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2022.11.26+1803`
 - [[LSS] User-ID](#lss-user-id) `2022.11.26+1803`
 
@@ -492,6 +493,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [sonderrechteSwitch.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/sonderrechteSwitch.de.user.js
 [sonderrechteSwitch.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13928-mit-und-ohne-sonderrechte/&postID=463217#post463217
+
+### [LSS] Status 5 colorize
+
+> Allows to set a custom color for any Status 5 radio message by vehicle type
+
+|     Version     |                        Download                         |                Links                 |
+|:---------------:|:-------------------------------------------------------:|:------------------------------------:|
+| 2022.12.03+0016 | [fms5Colorizer.user.js][fms5Colorizer.user.js:download] | [Forum][fms5Colorizer.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] S5-Färber</summary>
+    S5 nach Fahrzeugtyp einfärben
+</details>
+
+[fms5Colorizer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/fms5Colorizer.user.js
+[fms5Colorizer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23490-scriptwunsch-fms-5-in-hiorg-farbe/
 
 ### [LSS] Toplist Distance
 

@@ -2,7 +2,7 @@
 // @name            [LSS] Status 5 colorize
 // @name:de         [LSS] S5-Färber
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.03+0012
+// @version         2022.12.03+0016
 // @author          Jan (jxn_30)
 // @description     Allows to set a custom color for any Status 5 radio message by vehicle type
 // @description:de  S5 nach Fahrzeugtyp einfärben
