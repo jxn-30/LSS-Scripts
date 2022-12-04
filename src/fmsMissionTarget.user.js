@@ -74,7 +74,7 @@ unsafeWindow.radioMessage = t => {
             (statusDescription ? `${t.fms_text} <br>` : '') +
             document
                 .querySelector(`#mission_caption_${t.mission_id}`)
-                .textContent?.trim();
+                ?.textContent?.trim();
     }
     radioMessageOrig(t);
 };
