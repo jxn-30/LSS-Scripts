@@ -35,7 +35,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Input max length](#lss-input-max-length) `2022.11.29+1052`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2022.11.29+2211`
-- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.11.27+1240`
+- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.12.04+1625`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1803`
 - [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.11.26+1803` (`🇩🇪`)
@@ -436,7 +436,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Alias / Old names |                           Download                            |                  Links                  |
 |:---------------:|:-----------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2022.11.27+1240 |   `FMS-Change`    | [fmsMissionTarget.user.js][fmsMissionTarget.user.js:download] | [Forum][fmsMissionTarget.user.js:forum] |
+| 2022.12.04+1625 |   `FMS-Change`    | [fmsMissionTarget.user.js][fmsMissionTarget.user.js:download] | [Forum][fmsMissionTarget.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] FMS: Einsatzziel</summary>
