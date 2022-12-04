@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        LSS Fahrzeugmarkt Zeige Anzahl
-// @version     1.0.3
+// @version     1.0.4
 // @description Zeigt im Fahrzeugmarkt wie viele Fahrzeuge auf der aktuell gebauten Wache bereits vorhanden sind vom jeweiligen Typ.
 // @author      Jan (jxn_30)
 // @match       https://www.operacni-stredisko.cz/buildings/*/vehicles/new
@@ -45,7 +45,7 @@
 // ==/UserScript==
 
 (async () => {
-    let aVehicles = JSON.parse(sessionStorage.aVehicles || '{value: []}').value;
+    let aVehicles = JSON.parse(sessionStorage.aVehicles || '{"value": []}').value;
     if(!sessionStorage.aVehicles || JSON.parse(sessionStorage.aVehicles).lastUpdate < (new Date().getTime() - 5 * 1000 * 60) || JSON.parse(sessionStorage.aVehicles).userId != window.user_id) {
         try {
             aVehicles = await window.$.getJSON('/api/vehicles');
