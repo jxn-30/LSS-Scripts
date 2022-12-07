@@ -76,8 +76,8 @@ const greenOnly = true; // Show countdown on green missions only. Set to `false`
             `#mission_overview_countdown_${t.id}`
         );
         if (timeElement) {
-            timeElement.textContent = window.formatTime(
-                Math.floor(t.date_end_calc - window.unix_timestamp()),
+            timeElement.textContent = unsafeWindow.formatTime(
+                Math.floor(t.date_end_calc - unsafeWindow.unix_timestamp()),
                 false
             );
         }
