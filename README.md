@@ -25,7 +25,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Clickable links](#lss-clickable-links) `2022.11.26+1803`
 - [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2022.11.27+1138`
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.11.26+1803`
-- [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.11.26+1803`
+- [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0807` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
@@ -283,7 +283,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Alias / Old names |                       Download                        |                Links                |
 |:---------------:|:-----------------:|:-----------------------------------------------------:|:-----------------------------------:|
-| 2022.11.26+1803 |  `einsatzdauer`   | [einsatzdauer.user.js][einsatzdauer.user.js:download] | [Forum][einsatzdauer.user.js:forum] |
+| 2022.12.07+2156 |  `einsatzdauer`   | [einsatzdauer.user.js][einsatzdauer.user.js:download] | [Forum][einsatzdauer.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Einsatzdauer</summary>
