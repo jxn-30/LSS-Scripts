@@ -2,8 +2,7 @@ name: '[💚] Build'
 
 on:
     push:
-        branches:
-            - master
+    pull_request:
 
 jobs:
     build:
@@ -47,7 +46,12 @@ jobs:
               run: |
                   yarn ci
 
+            - name: Show changes
+              run: |
+                  git --no-pager diff --color-words
+
             - name: Commit & Push changes
+              if: github.ref == 'refs/heads/master'
               uses: actions-js/push@master
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
