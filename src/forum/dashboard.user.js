@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.11+1406
+// @version         2022.12.11+2306
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -14,7 +14,7 @@
 // @match           https://forum.leitstellenspiel.de/*
 // @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=0f2a92339472ae29d96b7ea915ce76d6842c7140e075b0d9b5fc807895efd5ed
 // @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=a0cfd0673a5a87d1cd30ab9cec69b9a33ae45575f07bd61ec938a6808ec602ac
-// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=266f328af1bc35fb671fb623472847dd548224049a9f4cdb14f33483af0a9e1c
+// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=eae6bca5d470db5b6e18c3fbd7eb745764aa2aeb5a6ec4c4027611aeebad9438
 // @run-at          document-body
 // @grant           GM_getResourceURL
 // ==/UserScript==
@@ -35,6 +35,8 @@
  * @old LSS-Forum-Dashboard
  * @grant GM_getResourceURL
  */
+
+const DARK_THEME = false;
 
 const isDashboardPage = window.location.search.startsWith('?dashboard/');
 
@@ -106,104 +108,154 @@ const loadDashboard = async () => {
     lppDd.textContent = likesPerPost.toFixed(4);
     document.querySelector('.sidebar .containerContent').append(lppDt, lppDd);
 
-    const chartContainer = document.createElement('div');
-    chartContainer.id = 'jxn-dashboard-chart_container';
-    document.querySelector('.sidebar .boxContent').append(chartContainer);
-    chartContainer.style.setProperty(
-        'height',
-        getComputedStyle(chartContainer).width
-    );
+    const amChartModules = ['amchartsXY'];
+    if (DARK_THEME) amChartModules.push('amchartsThemeDark');
 
     await loadScript('amcharts')
-        .then(() =>
-            Promise.all(['amchartsXY', 'amchartsThemeDark'].map(loadScript))
-        )
+        .then(() => Promise.all(amChartModules.map(loadScript)))
         .catch(console.error);
 
     /* global am5, am5xy, am5themes_Dark */ // they are defined by the import
-    if (!am5 || !am5xy || !am5themes_Dark) return;
-    const am5Root = am5.Root.new(chartContainer.id);
-    am5Root.setThemes([am5themes_Dark.new(am5Root)]);
+    if (!am5 || !am5xy) return;
 
-    const addChart = data => {
+    const COLORS = ['#90FF04', '#6F00FB'];
+
+    /**
+     * @typedef ChartData
+     * @property {Array} data
+     * @property {string} valueField
+     * @property {string} [color]
+     */
+
+    /**
+     * creates a chart and adds it to the charts wrapper element
+     * @param {...ChartData} data
+     */
+    const addChart = (...data) => {
+        const chartContainer = document.createElement('div');
+        chartContainer.id = `jxn-dashboard-chart_container${crypto.randomUUID()}`;
+        document.querySelector('.sidebar .boxContent').append(chartContainer);
+
+        const containerSize = parseInt(getComputedStyle(chartContainer).width);
+
+        chartContainer.style.setProperty(
+            'height',
+            `${
+                parseInt(getComputedStyle(chartContainer).height) +
+                containerSize
+            }px`
+        );
+
+        const am5Root = am5.Root.new(chartContainer.id);
+        if (DARK_THEME) am5Root.setThemes([am5themes_Dark.new(am5Root)]);
+
         const chart = am5Root.container.children.push(
             am5xy.XYChart.new(am5Root, {
                 focusable: false,
-                panX: true,
+                panX: false,
                 panY: false,
                 wheelX: 'panX',
+                width: containerSize,
+                height: containerSize,
+                layout: am5Root.verticalLayout,
             })
         );
         const xAxis = chart.xAxes.push(
             am5xy.DateAxis.new(am5Root, {
-                maxDeviation: 0.1,
-                groupData: false,
                 tooltipDateFormat: 'dd.MM HH:mm:ss',
                 baseInterval: {
                     timeUnit: 'second',
                     count: 1,
                 },
-                renderer: am5xy.AxisRendererX.new(am5Root, {
-                    minGridDistance: 50,
-                }),
+                renderer: am5xy.AxisRendererX.new(am5Root, {}),
                 tooltip: am5.Tooltip.new(am5Root, {}),
             })
         );
         const yAxis = chart.yAxes.push(
             am5xy.ValueAxis.new(am5Root, {
-                maxDeviation: 0.1,
                 renderer: am5xy.AxisRendererY.new(am5Root, {}),
             })
         );
 
-        const series = chart.series.push(
-            am5xy.LineSeries.new(am5Root, {
-                minDistance: 10,
-                xAxis,
-                yAxis,
-                valueYField: 'value',
-                valueXField: 'date',
-                tooltip: am5.Tooltip.new(am5Root, {
-                    pointerOrientation: 'horizontal',
-                    labelText: '{valueY}',
-                }),
-                stroke: am5.color('#90FF04'),
-            })
-        );
-        series.strokes.template.setAll({
-            strokeWidth: 1,
-        });
+        const allSeries = [];
 
-        series.data.setAll(data);
+        data.forEach((data, index) => {
+            const series = chart.series.push(
+                am5xy.LineSeries.new(am5Root, {
+                    xAxis,
+                    yAxis,
+                    valueYField: data.valueField,
+                    valueXField: 'date',
+                    tooltip: am5.Tooltip.new(am5Root, {
+                        pointerOrientation: 'horizontal',
+                        labelText: '{valueY}',
+                    }),
+                    stroke: am5.color(
+                        data.color ?? COLORS[index % COLORS.length]
+                    ),
+                })
+            );
+            series.strokes.template.setAll({
+                strokeWidth: 1,
+            });
+
+            series.data.setAll(data.data);
+
+            allSeries.push(series);
+        });
 
         const cursor = chart.set(
             'cursor',
             am5xy.XYCursor.new(am5Root, {
                 xAxis,
+                behavior: 'zoomX',
+                snapToSeries: allSeries,
             })
         );
         cursor.lineY.set('visible', false);
-
-        chart.set(
-            'scrollbarX',
-            am5.Scrollbar.new(am5Root, {
-                orientation: 'horizontal',
-            })
-        );
     };
 
     const storageKey = 'bldiff';
     const storage = JSON.parse(localStorage.getItem(storageKey) || '{}');
 
-    addChart(
-        Object.entries(storage).map(([date, { p: posts, l: likes }]) => ({
+    const chartData = Object.entries(storage).map(
+        ([date, { p: posts, l: likes }]) => ({
             date: parseInt(date),
-            value: posts - likes,
-        }))
+            postLikesDiff: posts - likes,
+            posts,
+            likes,
+            likesPerPost: likes / posts,
+            postsPerLike: posts / likes,
+        })
     );
 
-    // TODO: get storage
-    // TODO: show charts
+    addChart({
+        data: chartData,
+        valueField: 'postLikesDiff',
+    });
+
+    addChart(
+        {
+            data: chartData,
+            valueField: 'posts',
+        },
+        {
+            data: chartData,
+            valueField: 'likes',
+        }
+    );
+
+    addChart(
+        {
+            data: chartData,
+            valueField: 'likesPerPost',
+        },
+        {
+            data: chartData,
+            valueField: 'postsPerLike',
+        }
+    );
+
     // TODO: save current data to storage (if not saved in last 60min)
 };
 
