@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.07+1609
+// @version         2022.12.11+1406
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -12,8 +12,9 @@
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/dashboard.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/16451-forum-dashboard/
 // @match           https://forum.leitstellenspiel.de/*
-// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=2f8fffba1c31c627e341a0755fab716fed4e12f9292deb28e0ce052fa46b9198
+// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=0f2a92339472ae29d96b7ea915ce76d6842c7140e075b0d9b5fc807895efd5ed
 // @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=a0cfd0673a5a87d1cd30ab9cec69b9a33ae45575f07bd61ec938a6808ec602ac
+// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=266f328af1bc35fb671fb623472847dd548224049a9f4cdb14f33483af0a9e1c
 // @run-at          document-body
 // @grant           GM_getResourceURL
 // ==/UserScript==
@@ -30,6 +31,7 @@
  * @subdomain forum
  * @resource amcharts https://cdn.amcharts.com/lib/5/index.js
  * @resource amchartsXY https://cdn.amcharts.com/lib/5/xy.js
+ * @resource amchartsThemeDark https://cdn.amcharts.com/lib/5/themes/Dark.js
  * @old LSS-Forum-Dashboard
  * @grant GM_getResourceURL
  */
@@ -107,69 +109,98 @@ const loadDashboard = async () => {
     const chartContainer = document.createElement('div');
     chartContainer.id = 'jxn-dashboard-chart_container';
     document.querySelector('.sidebar .boxContent').append(chartContainer);
+    chartContainer.style.setProperty(
+        'height',
+        getComputedStyle(chartContainer).width
+    );
 
     await loadScript('amcharts')
-        .then(() => Promise.all(['amchartsXY'].map(loadScript)))
+        .then(() =>
+            Promise.all(['amchartsXY', 'amchartsThemeDark'].map(loadScript))
+        )
         .catch(console.error);
 
-    /* global am5, am5xy */ // they are defined by the import
+    /* global am5, am5xy, am5themes_Dark */ // they are defined by the import
+    if (!am5 || !am5xy || !am5themes_Dark) return;
     const am5Root = am5.Root.new(chartContainer.id);
+    am5Root.setThemes([am5themes_Dark.new(am5Root)]);
 
-    const addChart = (data) => {
-        const chart = am5Root.container.children.push(am5xy.XYChart.new(am5Root, {
-            focusable: false,
-            panX: true,
-            panY: false,
-            wheelX: "panX"
-        }));
+    const addChart = data => {
+        const chart = am5Root.container.children.push(
+            am5xy.XYChart.new(am5Root, {
+                focusable: false,
+                panX: true,
+                panY: false,
+                wheelX: 'panX',
+            })
+        );
         const xAxis = chart.xAxes.push(
             am5xy.DateAxis.new(am5Root, {
                 maxDeviation: 0.1,
                 groupData: false,
+                tooltipDateFormat: 'dd.MM HH:mm:ss',
+                baseInterval: {
+                    timeUnit: 'second',
+                    count: 1,
+                },
                 renderer: am5xy.AxisRendererX.new(am5Root, {
-                    minGridDistance: 50
+                    minGridDistance: 50,
                 }),
-                tooltip: am5.Tooltip.new(am5Root, {})
+                tooltip: am5.Tooltip.new(am5Root, {}),
             })
         );
         const yAxis = chart.yAxes.push(
             am5xy.ValueAxis.new(am5Root, {
                 maxDeviation: 0.1,
-                renderer: am5xy.AxisRendererY.new(am5Root, {})
+                renderer: am5xy.AxisRendererY.new(am5Root, {}),
             })
         );
+
         const series = chart.series.push(
             am5xy.LineSeries.new(am5Root, {
-                minBulletDistance: 10,
+                minDistance: 10,
                 xAxis,
                 yAxis,
-                valueYField: "value",
-                valueXField: "date",
+                valueYField: 'value',
+                valueXField: 'date',
                 tooltip: am5.Tooltip.new(am5Root, {
-                    pointerOrientation: "horizontal",
-                    labelText: "{valueY}"
-                })
+                    pointerOrientation: 'horizontal',
+                    labelText: '{valueY}',
+                }),
+                stroke: am5.color('#90FF04'),
             })
         );
         series.strokes.template.setAll({
-            strokeWidth: 3,
-            templateField: "strokeSettings"
+            strokeWidth: 1,
         });
 
         series.data.setAll(data);
 
-        const cursor = chart.set("cursor", am5xy.XYCursor.new(am5Root, {
-            xAxis
-        }));
-        cursor.lineY.set("visible", false);
+        const cursor = chart.set(
+            'cursor',
+            am5xy.XYCursor.new(am5Root, {
+                xAxis,
+            })
+        );
+        cursor.lineY.set('visible', false);
 
-        chart.set("scrollbarX", am5.Scrollbar.new(am5Root, {
-            orientation: "horizontal"
-        }));
-    }
+        chart.set(
+            'scrollbarX',
+            am5.Scrollbar.new(am5Root, {
+                orientation: 'horizontal',
+            })
+        );
+    };
 
-    addChart([]);
+    const storageKey = 'bldiff';
+    const storage = JSON.parse(localStorage.getItem(storageKey) || '{}');
 
+    addChart(
+        Object.entries(storage).map(([date, { p: posts, l: likes }]) => ({
+            date: parseInt(date),
+            value: posts - likes,
+        }))
+    );
 
     // TODO: get storage
     // TODO: show charts
