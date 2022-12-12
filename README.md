@@ -28,6 +28,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0807` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2022.12.12+1349` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
@@ -324,6 +325,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [forum/bookmarks.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/bookmarks.user.js
 [forum/bookmarks.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17627-forum-bookmark-manager/
+
+### [LSS] Forum: Dashboard
+
+> Adds a link to the dashboard to the navigation and shows some charts on the dashboard
+
+|     Version     | Available in |                          Download                           |                 Links                  |
+|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2022.12.12+1349 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
+    Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
+</details>
+
+[forum/dashboard.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/dashboard.user.js
+[forum/dashboard.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16451-forum-dashboard/
 
 ### [LSS] Forum: External Links
 
