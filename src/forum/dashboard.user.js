@@ -34,6 +34,7 @@
  * @resource amchartsXY https://cdn.amcharts.com/lib/5/xy.js
  * @resource amchartsExport https://cdn.amcharts.com/lib/5/plugins/exporting.js
  * @resource amchartsThemeDark https://cdn.amcharts.com/lib/5/themes/Dark.js
+ * @old LSS-Forum-Dashboard
  * @grant GM_getResourceURL
  */
 
