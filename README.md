@@ -28,7 +28,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2022.11.29+0807` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2022.12.12+1349` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2022.12.12+1354` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
@@ -330,9 +330,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 
-|     Version     | Available in |                          Download                           |                 Links                  |
-|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2022.12.12+1349 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+|     Version     | Available in |   Alias / Old names   |                          Download                           |                 Links                  |
+|:---------------:|:------------:|:---------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2022.12.12+1354 |    `🇩🇪`    | `LSS-Forum-Dashboard` | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
