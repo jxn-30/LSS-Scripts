@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.12+1120
+// @version         2022.12.12+1132
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -14,6 +14,7 @@
 // @match           https://forum.leitstellenspiel.de/*
 // @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=0f2a92339472ae29d96b7ea915ce76d6842c7140e075b0d9b5fc807895efd5ed
 // @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=a0cfd0673a5a87d1cd30ab9cec69b9a33ae45575f07bd61ec938a6808ec602ac
+// @resource        amchartsExport https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsExport.js#sha256=e4d5f69b7397ae9d77c0704e7f0cd8aef5e6ea241aaa051848f25256d663edfc
 // @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=eae6bca5d470db5b6e18c3fbd7eb745764aa2aeb5a6ec4c4027611aeebad9438
 // @run-at          document-body
 // @grant           GM_getResourceURL
@@ -31,6 +32,7 @@
  * @subdomain forum
  * @resource amcharts https://cdn.amcharts.com/lib/5/index.js
  * @resource amchartsXY https://cdn.amcharts.com/lib/5/xy.js
+ * @resource amchartsExport https://cdn.amcharts.com/lib/5/plugins/exporting.js
  * @resource amchartsThemeDark https://cdn.amcharts.com/lib/5/themes/Dark.js
  * @old LSS-Forum-Dashboard
  * @grant GM_getResourceURL
@@ -108,15 +110,15 @@ const loadDashboard = async () => {
     lppDd.textContent = likesPerPost.toFixed(4);
     document.querySelector('.sidebar .containerContent').append(lppDt, lppDd);
 
-    const amChartModules = ['amchartsXY'];
+    const amChartModules = ['amchartsXY', 'amchartsExport'];
     if (DARK_THEME) amChartModules.push('amchartsThemeDark');
 
     await loadScript('amcharts')
         .then(() => Promise.all(amChartModules.map(loadScript)))
         .catch(console.error);
 
-    /* global am5, am5xy, am5themes_Dark */ // they are defined by the import
-    if (!am5 || !am5xy) return;
+    /* global am5, am5xy, am5plugins_exporting, am5themes_Dark */ // they are defined by the import
+    if (!am5 || !am5xy || !am5plugins_exporting) return;
 
     const COLORS = ['#90FF04', '#6F00FB'];
 
@@ -223,6 +225,11 @@ const loadDashboard = async () => {
             const legend = chart.children.push(am5.Legend.new(am5Root, {}));
             legend.data.setAll(chart.series.values);
         }
+
+        am5plugins_exporting.Exporting.new(am5Root, {
+            menu: am5plugins_exporting.ExportingMenu.new(am5Root, {}),
+            dataSource: chart.series.values,
+        });
 
         const cursor = chart.set(
             'cursor',
