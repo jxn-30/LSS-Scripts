@@ -1,3 +1,4 @@
+import { createHash } from 'crypto';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import jsdoc from 'jsdoc-api';
@@ -257,6 +258,50 @@ for (const comment of comments) {
 
     const forumTag = getTag('forum', '');
 
+    /** @type {{tag: string, content: string}[]} */
+    const resources = [];
+    const resourceTags = getTags('resource');
+    for (const { content } of resourceTags) {
+        const [name, url] = content.split(/\s+/).map(s => s.trim());
+        if (!name || !url) continue;
+        const outFilePath = path.resolve(
+            ROOT_PATH,
+            'resources',
+            fileName,
+            `${name}${path.extname(url)}`
+        );
+        fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
+
+        let hash = '';
+        let text = '';
+
+        if (url.match(/^https?:\/\//)) {
+            text = await fetch(url).then(res => res.text());
+        }
+
+        const contentBefore = fs.existsSync(outFilePath)
+            ? fs.readFileSync(outFilePath, {
+                  encoding: 'utf8',
+              })
+            : '';
+        const fileContent =
+            contentBefore.split(/\n/).slice(1).join('\n') === text
+                ? contentBefore
+                : `// fetched from ${url} at ${new Date().toISOString()}\n${text}`;
+
+        fs.writeFileSync(outFilePath, fileContent);
+
+        hash = createHash('sha256').update(fileContent).digest('hex');
+
+        resources.push({
+            tag: 'resource',
+            content: `${name} ${GITHUB}/raw/master/${path.relative(
+                ROOT_PATH,
+                outFilePath
+            )}#sha256=${hash}`,
+        });
+    }
+
     // list of tags to add to the userscript
     const userscriptHeaderInformation = [
         {
@@ -297,6 +342,7 @@ for (const comment of comments) {
             content: forumTag.content || GITHUB,
         },
         ...matches,
+        ...resources,
         ...getTags('run-at', 'document-idle'),
         ...getTags('grant'),
     ];
@@ -368,7 +414,7 @@ ${userscriptTags}
     oldNames.forEach(({ content }) => {
         const linkPath = path.resolve(ROOT_PATH, `${content}.user.js`);
         if (fs.existsSync(linkPath)) fs.rmSync(linkPath);
-        fs.linkSync(`./${path.relative(ROOT_PATH, filePath)}`, linkPath);
+        fs.linkSync(filePath, linkPath);
     });
 
     updatedFiles.push(fileName);
