@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.11+2306
+// @version         2022.12.12+1120
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -125,26 +125,24 @@ const loadDashboard = async () => {
      * @property {Array} data
      * @property {string} valueField
      * @property {string} [color]
+     * @property {string} [name]
      */
 
     /**
      * creates a chart and adds it to the charts wrapper element
+     * @param {string} title
      * @param {...ChartData} data
      */
-    const addChart = (...data) => {
+    const addChart = (title, ...data) => {
         const chartContainer = document.createElement('div');
         chartContainer.id = `jxn-dashboard-chart_container${crypto.randomUUID()}`;
         document.querySelector('.sidebar .boxContent').append(chartContainer);
 
-        const containerSize = parseInt(getComputedStyle(chartContainer).width);
+        const containerWidth = parseInt(getComputedStyle(chartContainer).width);
+        // noinspection JSSuspiciousNameCombination
+        const containerHeight = containerWidth;
 
-        chartContainer.style.setProperty(
-            'height',
-            `${
-                parseInt(getComputedStyle(chartContainer).height) +
-                containerSize
-            }px`
-        );
+        chartContainer.style.setProperty('height', `${containerHeight + 20}px`);
 
         const am5Root = am5.Root.new(chartContainer.id);
         if (DARK_THEME) am5Root.setThemes([am5themes_Dark.new(am5Root)]);
@@ -155,8 +153,8 @@ const loadDashboard = async () => {
                 panX: false,
                 panY: false,
                 wheelX: 'panX',
-                width: containerSize,
-                height: containerSize,
+                width: containerWidth,
+                maxHeight: containerHeight,
                 layout: am5Root.verticalLayout,
             })
         );
@@ -176,12 +174,27 @@ const loadDashboard = async () => {
                 renderer: am5xy.AxisRendererY.new(am5Root, {}),
             })
         );
+        yAxis.axisHeader.children.push(
+            am5.Label.new(am5Root, {
+                text: title,
+                fontWeight: '500',
+                paddingBottom: 0,
+                textAlign: 'center',
+                x: am5.percent(50),
+                centerX: am5.percent(50),
+            })
+        );
+        yAxis.axisHeader.get('background').setAll({
+            fill: am5.color(0x000000),
+            fillOpacity: 0,
+        });
 
         const allSeries = [];
 
         data.forEach((data, index) => {
             const series = chart.series.push(
                 am5xy.LineSeries.new(am5Root, {
+                    name: data.name,
                     xAxis,
                     yAxis,
                     valueYField: data.valueField,
@@ -193,6 +206,8 @@ const loadDashboard = async () => {
                     stroke: am5.color(
                         data.color ?? COLORS[index % COLORS.length]
                     ),
+                    legendLabelText: '{name}',
+                    legendRangeLabelText: '{name}',
                 })
             );
             series.strokes.template.setAll({
@@ -203,6 +218,11 @@ const loadDashboard = async () => {
 
             allSeries.push(series);
         });
+
+        if (data.length > 1) {
+            const legend = chart.children.push(am5.Legend.new(am5Root, {}));
+            legend.data.setAll(chart.series.values);
+        }
 
         const cursor = chart.set(
             'cursor',
@@ -229,30 +249,36 @@ const loadDashboard = async () => {
         })
     );
 
-    addChart({
+    addChart('Abstand Posts – Likes', {
         data: chartData,
         valueField: 'postLikesDiff',
     });
 
     addChart(
+        'Verlauf Posts und Likes',
         {
             data: chartData,
             valueField: 'posts',
+            name: 'Posts',
         },
         {
             data: chartData,
             valueField: 'likes',
+            name: 'Likes',
         }
     );
 
     addChart(
+        'Verlauf Likes pro Post',
         {
             data: chartData,
             valueField: 'likesPerPost',
+            name: 'Likes pro Post',
         },
         {
             data: chartData,
             valueField: 'postsPerLike',
+            name: 'Posts pro Like',
         }
     );
 
