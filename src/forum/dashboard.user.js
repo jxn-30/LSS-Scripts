@@ -136,7 +136,7 @@ const loadDashboard = async () => {
      */
     const addChart = (title, ...data) => {
         const chartContainer = document.createElement('div');
-        chartContainer.id = `jxn-dashboard-chart_container${crypto.randomUUID()}`;
+        chartContainer.id = `jxn-dashboard-chart_container-${crypto.randomUUID()}`;
         document.querySelector('.sidebar .boxContent').append(chartContainer);
 
         const containerWidth = parseInt(getComputedStyle(chartContainer).width);
