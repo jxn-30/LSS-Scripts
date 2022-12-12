@@ -34,7 +34,6 @@
  * @resource amchartsXY https://cdn.amcharts.com/lib/5/xy.js
  * @resource amchartsExport https://cdn.amcharts.com/lib/5/plugins/exporting.js
  * @resource amchartsThemeDark https://cdn.amcharts.com/lib/5/themes/Dark.js
- * @old LSS-Forum-Dashboard
  * @grant GM_getResourceURL
  */
 
@@ -245,16 +244,23 @@ const loadDashboard = async () => {
     const storageKey = 'bldiff';
     const storage = JSON.parse(localStorage.getItem(storageKey) || '{}');
 
-    const chartData = Object.entries(storage).map(
-        ([date, { p: posts, l: likes }]) => ({
+    const chartData = Object.entries(storage)
+        .map(([date, { p: posts, l: likes }]) => ({
             date: parseInt(date),
             postLikesDiff: posts - likes,
             posts,
             likes,
             likesPerPost: likes / posts,
             postsPerLike: posts / likes,
-        })
-    );
+        }))
+        .concat({
+            date: Date.now(),
+            postLikesDiff: posts - likes,
+            posts,
+            likes,
+            likesPerPost,
+            postsPerLike: posts / likes,
+        });
 
     addChart('Abstand Posts – Likes', {
         data: chartData,
@@ -289,7 +295,14 @@ const loadDashboard = async () => {
         }
     );
 
-    // TODO: save current data to storage (if not saved in last 60min)
+    const lastSavedDate = Math.max(
+        ...Object.keys(storage).map(timestamp => parseInt(timestamp))
+    );
+    // last savedDate is more than 1h ago
+    if (lastSavedDate + 1000 * 60 * 60 <= Date.now()) {
+        storage[Date.now()] = { p: posts, l: likes };
+        localStorage.setItem(storageKey, JSON.stringify(storage));
+    }
 };
 
 if (isDashboardPage) (() => loadDashboard())();
