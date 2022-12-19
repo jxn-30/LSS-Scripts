@@ -284,10 +284,15 @@ for (const comment of comments) {
                   encoding: 'utf8',
               })
             : '';
-        const fileContent =
-            contentBefore.split(/\n/).slice(1).join('\n') === text
-                ? contentBefore
-                : `// fetched from ${url} at ${new Date().toISOString()}\n${text}`;
+        const isUpdated =
+            contentBefore.split(/\n/).slice(1).join('\n') !== text;
+        const fileContent = isUpdated
+            ? `// fetched from ${url} at ${new Date().toISOString()}\n${text}`
+            : contentBefore;
+
+        if (isUpdated) {
+            versionTag.content = getVersion();
+        }
 
         fs.writeFileSync(outFilePath, fileContent);
 
