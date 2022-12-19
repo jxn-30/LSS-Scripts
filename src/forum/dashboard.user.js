@@ -15,7 +15,7 @@
 // @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=1c410c3138185f7d46258cb16bd4776fd40db01a73753e0ae51dd6637b28bfa5
 // @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=49eecd231ed0db7892dafe116df4021887be3a6ce5484eac9aa29f71eda71c8a
 // @resource        amchartsExport https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsExport.js#sha256=e4d5f69b7397ae9d77c0704e7f0cd8aef5e6ea241aaa051848f25256d663edfc
-// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=eae6bca5d470db5b6e18c3fbd7eb745764aa2aeb5a6ec4c4027611aeebad9438
+// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=1f6f2c0fabe708291eb3fd3c87320bed7156a64a5a288b147d0fe62b3dbc794d
 // @run-at          document-body
 // @grant           GM_getResourceURL
 // ==/UserScript==
