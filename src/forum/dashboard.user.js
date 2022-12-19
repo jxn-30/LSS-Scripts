@@ -12,8 +12,8 @@
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/dashboard.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/16451-forum-dashboard/
 // @match           https://forum.leitstellenspiel.de/*
-// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=0f2a92339472ae29d96b7ea915ce76d6842c7140e075b0d9b5fc807895efd5ed
-// @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=a0cfd0673a5a87d1cd30ab9cec69b9a33ae45575f07bd61ec938a6808ec602ac
+// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=1c410c3138185f7d46258cb16bd4776fd40db01a73753e0ae51dd6637b28bfa5
+// @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=49eecd231ed0db7892dafe116df4021887be3a6ce5484eac9aa29f71eda71c8a
 // @resource        amchartsExport https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsExport.js#sha256=e4d5f69b7397ae9d77c0704e7f0cd8aef5e6ea241aaa051848f25256d663edfc
 // @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=eae6bca5d470db5b6e18c3fbd7eb745764aa2aeb5a6ec4c4027611aeebad9438
 // @run-at          document-body
