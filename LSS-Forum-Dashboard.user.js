@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.19+0220
+// @version         2022.12.21+0257
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -12,10 +12,10 @@
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/dashboard.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/16451-forum-dashboard/
 // @match           https://forum.leitstellenspiel.de/*
-// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=1c410c3138185f7d46258cb16bd4776fd40db01a73753e0ae51dd6637b28bfa5
-// @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=49eecd231ed0db7892dafe116df4021887be3a6ce5484eac9aa29f71eda71c8a
+// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amcharts.js#sha256=e3cc11896c391908217cc9292772210b18478cf3991878414fb8506db7750154
+// @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsXY.js#sha256=5a51bec267239c9f382e74bf665311a1682f9836d03fe9cafb98403f3c6a0f5a
 // @resource        amchartsExport https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsExport.js#sha256=e4d5f69b7397ae9d77c0704e7f0cd8aef5e6ea241aaa051848f25256d663edfc
-// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=1f6f2c0fabe708291eb3fd3c87320bed7156a64a5a288b147d0fe62b3dbc794d
+// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/master/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=d0d2492b1fab86a1fe0071accab6c8fd7717af8398ba04133dbf093089e2292b
 // @run-at          document-body
 // @grant           GM_getResourceURL
 // ==/UserScript==
