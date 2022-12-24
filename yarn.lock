@@ -20,22 +20,22 @@ __metadata:
   linkType: hard
 
 "@babel/parser@npm:^7.9.4":
-  version: 7.20.5
-  resolution: "@babel/parser@npm:7.20.5"
+  version: 7.20.7
+  resolution: "@babel/parser@npm:7.20.7"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: e8d514ce0aa74d56725bd102919a49fa367afef9cd8208cf52f670f54b061c4672f51b4b7980058ab1f5fe73615fe4dc90720ab47bbcebae07ad08d667eda318
+  checksum: 25b5266e3bd4be837092685f6b7ef886f1308ff72659a24342eb646ae5014f61ed1771ce8fc20636c890fcae19304fc72c069564ca6075207b7fbf3f75367275
   languageName: node
   linkType: hard
 
 "@babel/types@npm:^7.8.3":
-  version: 7.20.5
-  resolution: "@babel/types@npm:7.20.5"
+  version: 7.20.7
+  resolution: "@babel/types@npm:7.20.7"
   dependencies:
     "@babel/helper-string-parser": ^7.19.4
     "@babel/helper-validator-identifier": ^7.19.1
     to-fast-properties: ^2.0.0
-  checksum: 773f0a1ad9f6ca5c5beaf751d1d8d81b9130de87689d1321fc911d73c3b1167326d66f0ae086a27fb5bfc8b4ee3ffebf1339be50d3b4d8015719692468c31f2d
+  checksum: b39af241f0b72bba67fd6d0d23914f6faec8c0eba8015c181cbd5ea92e59fc91a52a1ab490d3520c7dbd19ddb9ebb76c476308f6388764f16d8201e37fae6811
   languageName: node
   linkType: hard
 
@@ -82,11 +82,11 @@ __metadata:
   linkType: hard
 
 "@jsdoc/salty@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@jsdoc/salty@npm:0.2.1"
+  version: 0.2.2
+  resolution: "@jsdoc/salty@npm:0.2.2"
   dependencies:
     lodash: ^4.17.21
-  checksum: 6cedbfe1ba3953b50685eeabea1ecbabb8300f60d47f0523b518a40503ae02ffcc17e8722634b7013fd32461f59c5c8bbd2bacc6e9592ae2dba70ae389ac1839
+  checksum: 1342470c6fda7fdc1c609a3e3b2e827dee21695ceacfb562f75563f93a87125837008075b448e8529a3b5ca5ca872f81e73bb30cc1de69847c890e4506607025
   languageName: node
   linkType: hard
 
@@ -695,9 +695,9 @@ __metadata:
   linkType: hard
 
 "ignore@npm:^5.2.0":
-  version: 5.2.1
-  resolution: "ignore@npm:5.2.1"
-  checksum: 7251d00cba49fe88c4f3565fadeb4aa726ba38294a9a79ffed542edc47bafd989d4b2ccf65700c5b1b26a1e91dfc7218fb23017937c79216025d5caeec0ee9d5
+  version: 5.2.4
+  resolution: "ignore@npm:5.2.4"
+  checksum: 3d4c309c6006e2621659311783eaea7ebcd41fe4ca1d78c91c473157ad6666a57a2df790fe0d07a12300d9aac2888204d7be8d59f9aaf665b1c7fcdb432517ef
   languageName: node
   linkType: hard
 
@@ -924,12 +924,12 @@ __metadata:
   linkType: hard
 
 "markdown-it-anchor@npm:^8.4.1":
-  version: 8.6.5
-  resolution: "markdown-it-anchor@npm:8.6.5"
+  version: 8.6.6
+  resolution: "markdown-it-anchor@npm:8.6.6"
   peerDependencies:
     "@types/markdown-it": "*"
     markdown-it: "*"
-  checksum: 9a466279e52e3c04d67f1e706f2c14df9340e64ddac6eaad22ceaeca777e381103caa942464003e98765a7555bd1ccb5055b624565cb4522a7071dce6ae93460
+  checksum: d67044f132cd94728227e065b2a82063a05ac5fb82a991c190fe48ac5ab308ed85f49a28e859bcf203e882af814902e67dd69724f6761c61709834b075cc6f95
   languageName: node
   linkType: hard
 
@@ -949,11 +949,11 @@ __metadata:
   linkType: hard
 
 "marked@npm:^4.0.10":
-  version: 4.2.4
-  resolution: "marked@npm:4.2.4"
+  version: 4.2.5
+  resolution: "marked@npm:4.2.5"
   bin:
     marked: bin/marked.js
-  checksum: 5eb5bfa6ee4cf85712a3ccbe2a549c397e8886f5d18312a02696c7e3817625a6b91a8ad27a6ed43b06ddbdfb812f471b1270517c4b8fb068a6a9e5b4d555a5aa
+  checksum: dd7da20a3983c66b516463fad5dc8d15dc70e137d20b6dc491e134f671e84bd2ed5f859e2c35f21e56830a122e4356b9e574bcde49b72b7ad6bc121a215a1a98
   languageName: node
   linkType: hard
 
