@@ -284,8 +284,8 @@ for (const comment of comments) {
                   encoding: 'utf8',
               })
             : '';
-        const isUpdated =
-            contentBefore.split(/\n/).slice(1).join('\n') !== text;
+        const isUpdated = contentBefore === '';
+        // contentBefore.split(/\n/).slice(1).join('\n') !== text;
         const fileContent = isUpdated
             ? `// fetched from ${url} at ${new Date().toISOString()}\n${text}`
             : contentBefore;
