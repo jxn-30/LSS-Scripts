@@ -11,6 +11,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO Config Lite](#lss-aao-config-lite) `2022.11.26+1803` (`🇩🇪`)
+- [[LSS] Alarm-Icons](#lss-alarm-icons) `2022.12.29+1900`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2022.11.26+1803`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2022.11.26+1803`
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2022.11.26+1803`
@@ -59,6 +60,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [aaoConfigLite.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 [aaoConfigLite.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
+
+### [LSS] Alarm-Icons
+
+> Allows to show icons on the alarm button based on selected vehicle types
+
+|     Version     |  Alias / Old names   |                     Download                      |               Links               |
+|:---------------:|:--------------------:|:-------------------------------------------------:|:---------------------------------:|
+| 2022.12.29+1900 | `Mission-Alarm-Icon` | [alarmIcons.user.js][alarmIcons.user.js:download] | [Forum][alarmIcons.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Alarm-Icons</summary>
+    Zeigt Icons auf dem Alarmbutton basierend auf ausgewählten Fahrzeugtypen an
+</details>
+
+[alarmIcons.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/alarmIcons.user.js
+[alarmIcons.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18549-erledigt-symbol-beim-alamieren-von-rd/&postID=347223#post347223
 
 ### [LSS] Alliance Distance
 

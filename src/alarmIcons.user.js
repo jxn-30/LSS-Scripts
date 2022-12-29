@@ -2,7 +2,7 @@
 // @name            [LSS] Alarm-Icons
 // @name:de         [LSS] Alarm-Icons
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.29+1858
+// @version         2022.12.29+1900
 // @author          Jan (jxn_30)
 // @description     Allows to show icons on the alarm button based on selected vehicle types
 // @description:de  Zeigt Icons auf dem Alarmbutton basierend auf ausgewählten Fahrzeugtypen an
