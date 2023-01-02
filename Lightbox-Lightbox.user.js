@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Lightbox-Lightbox
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.29+2211
+// @version         2023.01.02+1306
 // @author          Jan (jxn_30)
 // @description     Allows opening a lightbox on all sites of the game
 // @description:de  Erlaubt es, eine Lightbox auf allen Seiten des Spiels zu öffnen
@@ -63,7 +63,12 @@
 (function () {
     'use strict';
 
-    if (document.getElementById('lightbox_background')) return;
+    if (
+        document.getElementById('lightbox_background') ||
+        !window.frameElement?.src?.startsWith('https://')
+    ) {
+        return;
+    }
     const bg = document.createElement('div');
     bg.id = 'lightbox_background';
     bg.addEventListener('click', window.lightboxClose);
