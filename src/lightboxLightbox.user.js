@@ -63,7 +63,12 @@
 (function () {
     'use strict';
 
-    if (document.getElementById('lightbox_background')) return;
+    if (
+        document.getElementById('lightbox_background') ||
+        !window.frameElement?.src?.startsWith('https://')
+    ) {
+        return;
+    }
     const bg = document.createElement('div');
     bg.id = 'lightbox_background';
     bg.addEventListener('click', window.lightboxClose);
