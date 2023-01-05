@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] OSM-MapScale
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.05+1542
+// @version         2023.01.05+1600
 // @author          Jan (jxn_30)
 // @description     Shows a scale on the map
 // @description:de  Zeigt einen Maßstab auf der Karte an
@@ -50,6 +50,7 @@
 // @match           https://www.112-merkez.com/*
 // @match           https://www.dyspetcher101-game.com/*
 // @run-at          document-idle
+// @grant           unsafeWindow
 // ==/UserScript==
 
 /**

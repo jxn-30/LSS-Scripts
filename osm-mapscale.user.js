@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] OSM-MapScale
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.05+1542
+// @version         2023.01.05+1600
 // @author          Jan (jxn_30)
 // @description     Shows a scale on the map
 // @description:de  Zeigt einen Maßstab auf der Karte an
@@ -50,6 +50,7 @@
 // @match           https://www.112-merkez.com/*
 // @match           https://www.dyspetcher101-game.com/*
 // @run-at          document-idle
+// @grant           unsafeWindow
 // ==/UserScript==
 
 /**
@@ -58,9 +59,8 @@
  * @description:de Zeigt einen Maßstab auf der Karte an
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18908-script-osm-mapscale/
  * @old osm-mapscale
+ * @grant unsafeWindow
  */
-
-/* global L */
 
 const position = 'bottomright'; // Mögliche Werte:
 /*                                 'bottomleft'  => Unten links
@@ -69,4 +69,8 @@ const position = 'bottomright'; // Mögliche Werte:
  **                                'topright'    => Oben rechts
  */
 
-if (!('mapkit' in window)) L.control.scale({ position }).addTo(window.map);
+(() => {
+    if ('L' in unsafeWindow) {
+        unsafeWindow.L.control.scale({ position }).addTo(unsafeWindow.map);
+    }
+})();
