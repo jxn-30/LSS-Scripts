@@ -58,9 +58,8 @@
  * @description:de Zeigt einen Maßstab auf der Karte an
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18908-script-osm-mapscale/
  * @old osm-mapscale
+ * @grant unsafeWindow
  */
-
-/* global L */
 
 const position = 'bottomright'; // Mögliche Werte:
 /*                                 'bottomleft'  => Unten links
@@ -69,4 +68,8 @@ const position = 'bottomright'; // Mögliche Werte:
  **                                'topright'    => Oben rechts
  */
 
-if (!('mapkit' in window)) L.control.scale({ position }).addTo(window.map);
+(() => {
+    if ('L' in unsafeWindow) {
+        unsafeWindow.L.control.scale({ position }).addTo(unsafeWindow.map);
+    }
+})();
