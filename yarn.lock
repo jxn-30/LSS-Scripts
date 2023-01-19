@@ -157,10 +157,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/tampermonkey@npm:4.0.8":
-  version: 4.0.8
-  resolution: "@types/tampermonkey@npm:4.0.8"
-  checksum: 666f556330de14fe9506991a4e3e4693fbb2b4f55c329b1e000450be7b7c4ec417c410cf9c84eb546b27fc6ae2ae6a4d034f25723ad8ad58ec3958937a1a3a97
+"@types/tampermonkey@npm:4.0.9":
+  version: 4.0.9
+  resolution: "@types/tampermonkey@npm:4.0.9"
+  checksum: 3c5621c3fa5560c04f7a7e40289f37074f96615a22ca9c26746053755505f5086ef15d33a6f84e804d0eceb73256ada9af80aa0c2dc4b0351aeff4916be69a37
   languageName: node
   linkType: hard
 
@@ -852,7 +852,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jxn_30-lss-scripts@workspace:."
   dependencies:
-    "@types/tampermonkey": 4.0.8
+    "@types/tampermonkey": 4.0.9
     eslint: 8.32.0
     eslint-config-prettier: 8.6.0
     eslint-plugin-userscripts: 0.2.10
