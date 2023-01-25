@@ -2,7 +2,7 @@
 // @name            [LSS] get buildings of Alliance-Members by german county
 // @name:de         [LSS] Verbandsmitgliedergebäude nach Kreis
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.25+2156
+// @version         2023.01.25+2203
 // @author          Jan (jxn_30)
 // @description     This script summarizes how many buildings of each type the alliance members have in each german county.
 // @description:de  Dieses Script fasst zusammen, wie viele Gebäude jeder Art die Verbandsmitglieder in jedem Stadt-/Landkreis haben.
