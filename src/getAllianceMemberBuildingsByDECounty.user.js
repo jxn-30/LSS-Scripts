@@ -80,7 +80,6 @@ const getAllBuildings = async () => {
                     2
                 )}%`
             );
-            break;
         }
         await Promise.all([
             getProfileBuildings(user).then(buildings =>
