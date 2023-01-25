@@ -15,6 +15,7 @@
 // @match           https://www.leitstellenspiel.de/
 // @match           https://polizei.leitstellenspiel.de/
 // @run-at          document-idle
+// @grant           unsafeWindow
 // ==/UserScript==
 
 /**
@@ -24,6 +25,7 @@
  * @description:de Dieses Script fasst zusammen, wie viele Gebäude jeder Art die Verbandsmitglieder in jedem Stadt-/Landkreis haben.
  * @match /
  * @locale de_DE
+ * @grant unsafeWindow
  */
 
 /* ⚠️⚠️⚠️ WARNING ⚠️⚠️⚠️
@@ -37,9 +39,9 @@
  */
 
 const getBuildingTypes = () =>
-    fetch(`https://api.lss-manager.de/${window.I18n.locale}/buildings`).then(
-        res => res.json()
-    );
+    fetch(
+        `https://api.lss-manager.de/${unsafeWindow.I18n.locale}/buildings`
+    ).then(res => res.json());
 
 const getCountyBorders = () =>
     fetch(
@@ -138,7 +140,7 @@ const pointInsidePolygon = ([lat, long], polygon) => {
     return inside;
 };
 
-window.getAllAllianceMemberBuildingLocations = async () =>
+unsafeWindow.getAllAllianceMemberBuildingLocations = async () =>
     Promise.all([getBuildingTypes(), getAllBuildings()])
         .then(([types, buildings]) => [
             types,
