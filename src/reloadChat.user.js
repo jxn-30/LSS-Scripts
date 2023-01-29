@@ -60,6 +60,7 @@
  * @description:de Fügt einen Knopf hinzu, der den Chat separat neu laden lässt
  * @forum https://forum.leitstellenspiel.de/index.php?thread/22974-scriptwunsch-separat-neu-ladbare-einsatzliste-und-chat/
  * @match /
+ * @grant unsafeWindow
  */
 
 // add the reload btn
@@ -98,6 +99,6 @@ reloadBtn.addEventListener('click', () =>
                             ?.remove()
                     )
             );
-            messages.forEach(window.allianceChat);
+            messages.forEach(unsafeWindow.allianceChat);
         })
 );
