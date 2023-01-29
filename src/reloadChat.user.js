@@ -2,7 +2,7 @@
 // @name            [LSS] Reload chat
 // @name:de         [LSS] Chat neu laden
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.29+1210
+// @version         2023.01.29+1235
 // @author          Jan (jxn_30)
 // @description     Adds a button that allows reloading the chat separately
 // @description:de  Fügt einen Knopf hinzu, der den Chat separat neu laden lässt
@@ -51,6 +51,7 @@
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
 // @run-at          document-idle
+// @grant           unsafeWindow
 // ==/UserScript==
 
 /**

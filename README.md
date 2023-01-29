@@ -40,8 +40,9 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.01.02+1306`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.01.05+1600`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.12.04+1625`
-- [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1210`
+- [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
+- [[LSS] Reload missions list](#lss-reload-missions-list) `2023.01.29+1235`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1803`
 - [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
@@ -520,7 +521,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                     Download                      |               Links               |
 |:---------------:|:-------------------------------------------------:|:---------------------------------:|
-| 2023.01.29+1210 | [reloadChat.user.js][reloadChat.user.js:download] | [Forum][reloadChat.user.js:forum] |
+| 2023.01.29+1235 | [reloadChat.user.js][reloadChat.user.js:download] | [Forum][reloadChat.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Chat neu laden</summary>
@@ -545,6 +546,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [reloadBuildinglist.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadBuildinglist.user.js
 [reloadBuildinglist.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23357-script-wunsch-aktualisierung-der-lst-liste/
+
+### [LSS] Reload missions list
+
+> Adds a button that allows reloading the missions list separately
+
+|     Version     |                         Download                          |                 Links                 |
+|:---------------:|:---------------------------------------------------------:|:-------------------------------------:|
+| 2023.01.29+1235 | [reloadMissions.user.js][reloadMissions.user.js:download] | [Forum][reloadMissions.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Einsatzliste neu laden</summary>
+    Fügt einen Knopf hinzu, der die Einsatzliste separat neu laden lässt
+</details>
+
+[reloadMissions.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadMissions.user.js
+[reloadMissions.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22974-scriptwunsch-separat-neu-ladbare-einsatzliste-und-chat/
 
 ### [LSS] Scroll-To-Top buttons
 

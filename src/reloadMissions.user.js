@@ -2,7 +2,7 @@
 // @name            [LSS] Reload missions list
 // @name:de         [LSS] Einsatzliste neu laden
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.29+1224
+// @version         2023.01.29+1235
 // @author          Jan (jxn_30)
 // @description     Adds a button that allows reloading the missions list separately
 // @description:de  Fügt einen Knopf hinzu, der die Einsatzliste separat neu laden lässt
@@ -51,6 +51,7 @@
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
 // @run-at          document-idle
+// @grant           unsafeWindow
 // ==/UserScript==
 
 /**
