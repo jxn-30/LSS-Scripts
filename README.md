@@ -15,6 +15,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2022.11.26+1803`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2022.11.26+1803`
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2022.11.26+1803`
+- [[LSS] Alliance members panel](#lss-alliance-members-panel) `2023.01.29+1834`
 - [[LSS] ARR Categories Export](#lss-arr-categories-export) `2022.11.26+1803`
 - [[LSS] ARR Counter](#lss-arr-counter) `2022.11.26+1803`
 - [[LSS] Async Prisoners](#lss-async-prisoners) `2022.11.26+1803` (`🇩🇪`)
@@ -128,6 +129,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [allianceMemberNotes.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
 [allianceMemberNotes.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18517-scriptwunsch-notizen-bei-mitgliedern
+
+### [LSS] Alliance members panel
+
+> Adds a panel to view the list of alliance members directly on the games main page
+
+|     Version     |                               Download                                |                    Links                    |
+|:---------------:|:---------------------------------------------------------------------:|:-------------------------------------------:|
+| 2023.01.29+1834 | [allianceMembersPanel.user.js][allianceMembersPanel.user.js:download] | [Forum][allianceMembersPanel.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Verbandsmitglieder panel</summary>
+    Fügt ein Panel hinzu, um die Mitgliederliste des Verbands direkt auf der Hauptseite zu sehen
+</details>
+
+[allianceMembersPanel.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMembersPanel.user.js
+[allianceMembersPanel.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23543-skriptwunsch-mitglieder-online-status/
 
 ### [LSS] ARR Categories Export
 
