@@ -40,6 +40,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.01.02+1306`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.01.05+1600`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.12.04+1625`
+- [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1210`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1803`
 - [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.11.26+1803` (`🇩🇪`)
@@ -512,6 +513,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [fmsMissionTarget.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/fmsMissionTarget.user.js
 [fmsMissionTarget.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/15126-ortsangabe-bei-fms-3-4-und-5/
+
+### [LSS] Reload chat
+
+> Adds a button that allows reloading the chat separately
+
+|     Version     |                     Download                      |               Links               |
+|:---------------:|:-------------------------------------------------:|:---------------------------------:|
+| 2023.01.29+1210 | [reloadChat.user.js][reloadChat.user.js:download] | [Forum][reloadChat.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Chat neu laden</summary>
+    Fügt einen Knopf hinzu, der den Chat separat neu laden lässt
+</details>
+
+[reloadChat.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadChat.user.js
+[reloadChat.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22974-scriptwunsch-separat-neu-ladbare-einsatzliste-und-chat/
 
 ### [LSS] Reload list of buildings
 

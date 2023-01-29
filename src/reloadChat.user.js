@@ -2,7 +2,7 @@
 // @name            [LSS] Reload chat
 // @name:de         [LSS] Chat neu laden
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.29+1148
+// @version         2023.01.29+1210
 // @author          Jan (jxn_30)
 // @description     Adds a button that allows reloading the chat separately
 // @description:de  Fügt einen Knopf hinzu, der den Chat separat neu laden lässt
