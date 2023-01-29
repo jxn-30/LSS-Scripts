@@ -71,7 +71,8 @@ reloadIcon.classList.add('glyphicon', 'glyphicon-refresh');
 reloadBtn.append(reloadIcon);
 document.querySelector('#chat_panel_heading > .btn-group')?.append(reloadBtn);
 
-reloadBtn.addEventListener('click', () =>
+reloadBtn.addEventListener('click', () => {
+    reloadBtn.disabled = true;
     fetch('/')
         .then(res => res.text())
         .then(html => new DOMParser().parseFromString(html, 'text/html'))
@@ -101,4 +102,5 @@ reloadBtn.addEventListener('click', () =>
             );
             messages.forEach(unsafeWindow.allianceChat);
         })
-);
+        .then(() => (reloadBtn.disabled = false));
+});
