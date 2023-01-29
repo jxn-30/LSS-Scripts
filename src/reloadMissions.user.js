@@ -77,7 +77,7 @@ reloadBtn.addEventListener('click', () => {
     fetch('/')
         .then(res => res.text())
         .then(html => new DOMParser().parseFromString(html, 'text/html'))
-        .then(doc =>
+        .then(doc => [
             Array.from(doc.scripts)
                 .flatMap(script =>
                     script.textContent?.match(
@@ -85,9 +85,17 @@ reloadBtn.addEventListener('click', () => {
                     )
                 )
                 .filter(m => !!m)
-                .map(m => JSON.parse(m))
-        )
-        .then(markers => {
+                .map(m => JSON.parse(m)),
+            Array.from(doc.scripts)
+                .flatMap(script =>
+                    script.textContent?.match(
+                        /(?<=mission_participation_add\()\d+(?=\);)/gu
+                    )
+                )
+                .filter(m => !!m)
+                .map(m => parseInt(m)),
+        ])
+        .then(([markers, involved]) => {
             markers.forEach(marker => {
                 if ('mtid' in marker) unsafeWindow.missionDelete(marker.id);
                 else unsafeWindow.patientDelete(marker.id);
@@ -100,6 +108,10 @@ reloadBtn.addEventListener('click', () => {
             markers.forEach(marker => {
                 if ('mtid' in marker) unsafeWindow.missionMarkerAdd(marker);
                 else unsafeWindow.patientMarkerAdd(marker);
+            });
+            involved.forEach(id => {
+                unsafeWindow.mission_participation_add(id);
+                unsafeWindow.missionInvolved(id, true);
             });
         })
         .then(() => (reloadBtn.disabled = false));
