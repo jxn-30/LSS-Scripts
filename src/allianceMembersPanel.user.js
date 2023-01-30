@@ -73,6 +73,44 @@
  */
 const mode = 'own'; // chat, radio, own
 
+const roles = {
+    admin: {
+        title: 'Admin',
+        icon: '♛',
+    },
+    coadmin: {
+        title: 'Co-Admin',
+        icon: '♚',
+    },
+    schooling: {
+        title: 'Lehrgangsmeister',
+        icon: '🕮',
+    },
+    finance: {
+        title: 'Finanzminister',
+        icon: '💰',
+    },
+    staff: {
+        title: 'Verbands-Personal',
+        icon: '👤',
+    },
+    transport_requests: {
+        title: 'Sprechwunsch-Admin',
+        icon: '📣',
+    },
+    view_logs: {
+        title: 'Aufsichtsrat',
+        icon: '🔍️',
+    },
+};
+
+const createRoleFlagSpan = role => {
+    const span = document.createElement('span');
+    span.textContent = roles[role].icon;
+    span.title = roles[role].title;
+    return span;
+};
+
 const updateMembersList = () => {
     fetch('/api/allianceinfo')
         .then(res => res.json())
@@ -113,6 +151,17 @@ const updateMembersList = () => {
                     link.href = `/profile/${user.id}`;
                     link.textContent = user.name;
                     nameCell.append(link);
+
+                    if (user.role_flags.admin) {
+                        row.insertCell().append(createRoleFlagSpan('admin'));
+                    } else {
+                        row.insertCell().append(
+                            ...Object.keys(user.role_flags)
+                                .filter(role => user.role_flags[role])
+                                .sort()
+                                .map(createRoleFlagSpan)
+                        );
+                    }
 
                     row.dataset.online = user.online;
                     row.dataset.userName = user.name;
