@@ -15,7 +15,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2022.11.26+1803`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2022.11.26+1803`
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2022.11.26+1803`
-- [[LSS] Alliance members panel](#lss-alliance-members-panel) `2023.01.29+1834`
+- [[LSS] Alliance members panel](#lss-alliance-members-panel) `2023.01.30+1359`
 - [[LSS] ARR Categories Export](#lss-arr-categories-export) `2022.11.26+1803`
 - [[LSS] ARR Counter](#lss-arr-counter) `2022.11.26+1803`
 - [[LSS] Async Prisoners](#lss-async-prisoners) `2022.11.26+1803` (`🇩🇪`)
@@ -136,7 +136,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                               Download                                |                    Links                    |
 |:---------------:|:---------------------------------------------------------------------:|:-------------------------------------------:|
-| 2023.01.29+1834 | [allianceMembersPanel.user.js][allianceMembersPanel.user.js:download] | [Forum][allianceMembersPanel.user.js:forum] |
+| 2023.01.30+1359 | [allianceMembersPanel.user.js][allianceMembersPanel.user.js:download] | [Forum][allianceMembersPanel.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Verbandsmitglieder panel</summary>
