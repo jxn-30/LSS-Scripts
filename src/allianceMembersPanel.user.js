@@ -115,14 +115,18 @@ const updateMembersList = () => {
     fetch('/api/allianceinfo')
         .then(res => res.json())
         .then(allianceinfo => {
-            localStorage.setItem(
-                'aAlliance',
-                JSON.stringify({
-                    lastUpdate: Date.now(),
-                    value: allianceinfo,
-                    userId: unsafeWindow.user_id,
-                })
-            );
+            try {
+                localStorage.setItem(
+                    'aAlliance',
+                    JSON.stringify({
+                        lastUpdate: Date.now(),
+                        value: allianceinfo,
+                        userId: unsafeWindow.user_id,
+                    })
+                );
+            } catch (e) {
+                // could not set the item due to storage overflow => do nothing and do not store
+            }
             return allianceinfo.users;
         })
         .then(users => {
