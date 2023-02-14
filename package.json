@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@types/tampermonkey": "4.0.10",
-        "eslint": "8.33.0",
+        "eslint": "8.34.0",
         "eslint-config-prettier": "8.6.0",
         "eslint-plugin-userscripts": "0.2.10",
         "jsdoc-api": "8.0.0",
