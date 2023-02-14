@@ -313,7 +313,7 @@ class BookmarkManager {
         }
 
         const link = document.createElement('a');
-        link.href = url;
+        link.href = encodeURI(url);
         link.classList.add(
             mobile
                 ? BookmarkManager.#mobileClasses.link
