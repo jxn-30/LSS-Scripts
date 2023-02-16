@@ -412,15 +412,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-userscripts@npm:0.2.10":
-  version: 0.2.10
-  resolution: "eslint-plugin-userscripts@npm:0.2.10"
+"eslint-plugin-userscripts@npm:0.2.11":
+  version: 0.2.11
+  resolution: "eslint-plugin-userscripts@npm:0.2.11"
   dependencies:
     requireindex: ~1.2.0
     semver: ^7.3.5
   peerDependencies:
     eslint: ">=6.0.0 <9"
-  checksum: 7d71c5790aae02091145359a0714659e0ed9c068b865f5e7ad4da710cabb5274e5edbfe2ea28e221a78ae5eba911b5ec37016355dc34421a20651db61318d448
+  checksum: baf16bece978bc18046bac82e488686bc9847b6bbbc27a4de2f367861d9a97036855346b96fa92b6f84165337e7aba99267e3f4b29f8417ddee8f4a0a796ba5b
   languageName: node
   linkType: hard
 
@@ -855,7 +855,7 @@ __metadata:
     "@types/tampermonkey": 4.0.10
     eslint: 8.34.0
     eslint-config-prettier: 8.6.0
-    eslint-plugin-userscripts: 0.2.10
+    eslint-plugin-userscripts: 0.2.11
     jsdoc-api: 8.0.0
     prettier: 2.8.4
     simple-git: 3.16.0
