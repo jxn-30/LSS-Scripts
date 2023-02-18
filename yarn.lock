@@ -520,11 +520,11 @@ __metadata:
   linkType: hard
 
 "esquery@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "esquery@npm:1.4.0"
+  version: 1.4.2
+  resolution: "esquery@npm:1.4.2"
   dependencies:
     estraverse: ^5.1.0
-  checksum: a0807e17abd7fbe5fbd4fab673038d6d8a50675cdae6b04fbaa520c34581be0c5fa24582990e8acd8854f671dd291c78bb2efb9e0ed5b62f33bac4f9cf820210
+  checksum: 2f4ad89c5aafaca61cc2c15e256190f0d6deb4791cae6552d3cb4b1eb8867958cdf27a56aaa3272ff17435e3eaa19ee0d4129fac336ca6373d7354d7b5da7966
   languageName: node
   linkType: hard
 
@@ -810,8 +810,8 @@ __metadata:
   linkType: hard
 
 "jsdoc@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "jsdoc@npm:4.0.0"
+  version: 4.0.1
+  resolution: "jsdoc@npm:4.0.1"
   dependencies:
     "@babel/parser": ^7.9.4
     "@jsdoc/salty": ^0.2.1
@@ -830,7 +830,7 @@ __metadata:
     underscore: ~1.13.2
   bin:
     jsdoc: jsdoc.js
-  checksum: 3aa99ccb13986e07929abda10276caa2b428faeb230563f89b3dea041f97bc9354f70eb4bd1add961b9041cd950fa8c5cdfad15f59e8ac6e6d3a58b153fc7184
+  checksum: 12178e179d478aaff1cf8afd0c4e12c85f9f603a2d3ccc5610fcdb9d198a80f2723f88c09d33acacf14af8a665768f0e6973bef2665bc281a62c278b071bb9e0
   languageName: node
   linkType: hard
 
@@ -924,12 +924,12 @@ __metadata:
   linkType: hard
 
 "markdown-it-anchor@npm:^8.4.1":
-  version: 8.6.6
-  resolution: "markdown-it-anchor@npm:8.6.6"
+  version: 8.6.7
+  resolution: "markdown-it-anchor@npm:8.6.7"
   peerDependencies:
     "@types/markdown-it": "*"
     markdown-it: "*"
-  checksum: d67044f132cd94728227e065b2a82063a05ac5fb82a991c190fe48ac5ab308ed85f49a28e859bcf203e882af814902e67dd69724f6761c61709834b075cc6f95
+  checksum: 828236768ac7f61ed5591393c1b1bfc5dbf2b6d0c58a3deec606c61dddaa12658a34450cbef37ab50a04453e618ce1efd47d86e4e52595024334898fd306225b
   languageName: node
   linkType: hard
 
