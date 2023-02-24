@@ -29,7 +29,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.11.26+1803`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
-- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.02.14+1433` (`🇩🇪`)
+- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.02.24+1727` (`🇩🇪`)
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2022.12.21+0257` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.01.25+2203` (`🇩🇪`)
@@ -354,7 +354,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |            Alias / Old names             |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:----------------------------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.02.14+1433 |    `🇩🇪`    | `Forum-Bookmarks.min`, `Forum-Bookmarks` | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
+| 2023.02.24+1727 |    `🇩🇪`    | `Forum-Bookmarks.min`, `Forum-Bookmarks` | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Lesezeichen</summary>
