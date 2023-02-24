@@ -230,7 +230,7 @@ class BookmarkManager {
     }
 
     get #bookmarkStorage() {
-        return localStorage.getItem(BookmarkManager.#storageKey) || '{}';
+        return localStorage.getItem(BookmarkManager.#storageKey) || '[]';
     }
 
     /**
