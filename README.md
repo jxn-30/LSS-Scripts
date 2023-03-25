@@ -27,6 +27,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Clickable links](#lss-clickable-links) `2022.11.26+1803`
 - [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2022.11.27+1138`
 - [[LSS] Dark OSM](#lss-dark-osm) `2022.11.26+1803`
+- [[LSS] Direct levels for buildings](#lss-direct-levels-for-buildings) `2023.03.25+2004`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.02.24+1727` (`🇩🇪`)
@@ -315,6 +316,22 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [darkOSM.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/darkOSM.user.js
+
+### [LSS] Direct levels for buildings
+
+> update buildings to a certain level without opening the "Expand" menu
+
+|     Version     |                               Download                                |                    Links                    |
+|:---------------:|:---------------------------------------------------------------------:|:-------------------------------------------:|
+| 2023.03.25+2004 | [buildingDirectLevels.user.js][buildingDirectLevels.user.js:download] | [Forum][buildingDirectLevels.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Gebäude-Direktausbau</summary>
+    Gebäude auf eine Stufe direkt ausbauen, ohne erst das Ausbauen-Menü zu öffnen
+</details>
+
+[buildingDirectLevels.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingDirectLevels.user.js
+[buildingDirectLevels.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23881-sktiptwunsch-ausbaustufen-in-der-geb%C3%A4ude%C3%BCbersicht/
 
 ### [LSS] Einsatzdauer
 

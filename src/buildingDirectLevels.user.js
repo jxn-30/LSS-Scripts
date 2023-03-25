@@ -2,7 +2,7 @@
 // @name            [LSS] Direct levels for buildings
 // @name:de         [LSS] Gebäude-Direktausbau
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.03.25+1953
+// @version         2023.03.25+2004
 // @author          Jan (jxn_30)
 // @description     update buildings to a certain level without opening the "Expand" menu
 // @description:de  Gebäude auf eine Stufe direkt ausbauen, ohne erst das Ausbauen-Menü zu öffnen
