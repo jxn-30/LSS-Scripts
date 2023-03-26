@@ -1,89 +1,19 @@
 import { createHash } from 'crypto';
-import { fileURLToPath } from 'url';
 import fs from 'fs';
-import jsdoc from 'jsdoc-api';
 import { parse as parseMeta } from 'userscript-meta';
 import path from 'path';
 import simpleGit from 'simple-git';
 
-import Games from './games.mjs';
-const { games } = Games;
+import { GAMES } from './games.mjs';
 
-/**
- * @typedef Comment
- * @property {string} name
- * @property {string} description
- * @property {string} version
- * @property {Tag[]} tags
- * @property {CommentMeta} meta
- */
+import { forEachFile, GITHUB, ROOT_PATH } from './shared.mjs';
 
-/**
- * @typedef Tag
- * @property {string} originalTitle
- * @property {string} title
- * @property {string} text
- * @property {string} value
- */
-
-/**
- * @typedef CommentMeta
- * @property {string} filename
- * @property {string} path
- */
-
-/**
- * @typedef ScriptLocale
- * @property {string} flag
- * @property {string} name
- * @property {string} description
- */
-
-/**
- * @typedef {ScriptLocale} Script
- * @property {string} filename
- * @property {string} url
- * @property {string} version
- * @property {string} forum
- * @property {string[]} alias
- * @property {string[]} flagsAvailable
- * @property {Object.<string, ScriptLocale>} locales
- */
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const ROOT_PATH = path.resolve(__dirname, '..');
-const SRC_PATH = path.resolve(ROOT_PATH, 'src');
-const GITHUB = 'https://github.com/jxn-30/LSS-Scripts';
 const HEADER_REGEX = /^\/\/ ==UserScript==.*?\/\/ ==\/UserScript==/s;
 
 const git = simpleGit();
 
 /** @type {Script[]} */
 const scriptOverview = [];
-
-/** @type {string[]} */
-const updatedFiles = [];
-
-/**
- * Get Tags and their localized versions
- * @param {Tag[]} tags
- * @param {string} title
- * @param {string} [defaultContent]
- * @returns {{tag: string, content: string}[]}
- */
-const filterTags = (tags, title, defaultContent) => {
-    const matchingTags = tags.filter(
-        tag => tag.title === title || tag.title.startsWith(`${title}:`)
-    );
-    if (!matchingTags.length && !defaultContent) return [];
-    if (!matchingTags.length) return [{ tag: title, content: defaultContent }];
-    return matchingTags.map(({ title, value }) => ({
-        tag: title,
-        content: value,
-    }));
-};
 
 /**
  * Gets a Version from current Date
@@ -109,321 +39,274 @@ fs.readdirSync(ROOT_PATH, { withFileTypes: true }).forEach(dirent => {
     fs.unlinkSync(path.resolve(ROOT_PATH, dirent.name));
 });
 
-/**
- * get files recursively
- * @param dir
- * @returns {string[]}
- */
-const getFiles = dir =>
-    fs
-        .readdirSync(dir, { withFileTypes: true })
-        .flatMap(dirent =>
-            dirent.isDirectory()
-                ? getFiles(path.resolve(dir, dirent.name))
-                : path.resolve(dir, dirent.name)
-        )
-        .filter(file => file.endsWith('.user.js'));
+await forEachFile(
+    async ({ comment, fileName, filePath, tags, getTag, getTags }) => {
+        const updateURL = `${GITHUB}/raw/master/src/${fileName}`;
 
-/** @type {Comment[]} **/
-const comments = jsdoc.explainSync({
-    files: getFiles(SRC_PATH),
-});
-for (const comment of comments) {
-    const metaFileName = comment.meta?.filename;
-    if (!metaFileName) continue;
+        const oldNames = getTags('old');
 
-    const filePath = path.resolve(comment.meta.path, metaFileName);
-    const fileName = path.relative(SRC_PATH, filePath);
+        // get paths to execute on
+        const localesAvailable = getTags('locale');
+        const pathMatches = getTags('match', '/*').map(({ tag, content }) => ({
+            tag,
+            content: content.replace(/\*\\\//g, '*/'),
+        }));
+        const subdomain = getTag('subdomain', 'www').content;
 
-    if (updatedFiles.includes(fileName)) continue;
-
-    const { tags } = comment;
-
-    const updateURL = `${GITHUB}/raw/master/src/${fileName}`;
-
-    /**
-     * Get a single tag
-     * @param {string} title
-     * @param {string} [defaultContent]
-     * @returns {{tag: string, content: string}}
-     */
-    const getTag = (title, defaultContent) => ({
-        tag: title,
-        content: tags.find(tag => tag.title === title)?.value ?? defaultContent,
-    });
-
-    /**
-     * Get Tags and their localized versions
-     * @param {string} title
-     * @param {string} [defaultContent]
-     * @returns {{tag: string, content: string}[]}
-     */
-    const getTags = (title, defaultContent) =>
-        filterTags(tags, title, defaultContent);
-
-    const oldNames = getTags('old');
-
-    // get paths to execute on
-    const localesAvailable = getTags('locale');
-    const pathMatches = getTags('match', '/*').map(({ tag, content }) => ({
-        tag,
-        content: content.replace(/\*\\\//g, '*/'),
-    }));
-    const subdomain = getTag('subdomain', 'www').content;
-
-    const matches = Object.keys(games)
-        .filter(
-            game =>
-                localesAvailable.length === 0 ||
-                localesAvailable.some(({ content }) => content === game)
-        )
-        .flatMap(game => {
-            const { shortURL, police } = games[game];
-            const matches = [];
-            if (shortURL) {
-                pathMatches.forEach(({ content: path }) =>
-                    matches.push({
-                        tag: 'match',
-                        content: `https://${subdomain}.${shortURL}${path}`,
-                    })
-                );
-                if (police && subdomain === 'www') {
+        const matches = Object.keys(GAMES)
+            .filter(
+                game =>
+                    localesAvailable.length === 0 ||
+                    localesAvailable.some(({ content }) => content === game)
+            )
+            .flatMap(game => {
+                const { shortURL, police } = GAMES[game];
+                const matches = [];
+                if (shortURL) {
                     pathMatches.forEach(({ content: path }) =>
                         matches.push({
                             tag: 'match',
-                            content: `https://${police}.${shortURL}${path}`,
+                            content: `https://${subdomain}.${shortURL}${path}`,
                         })
                     );
+                    if (police && subdomain === 'www') {
+                        pathMatches.forEach(({ content: path }) =>
+                            matches.push({
+                                tag: 'match',
+                                content: `https://${police}.${shortURL}${path}`,
+                            })
+                        );
+                    }
                 }
-            }
-            return matches;
-        });
+                return matches;
+            });
 
-    const scriptName = `[LSS] ${comment.name.trim()}`;
-    const localeScriptNames = tags
-        .filter(tag => tag.title.startsWith('name:'))
-        .map(({ title, value }) => ({
-            tag: title,
-            content: `[${
-                Object.entries(games).find(([lang]) =>
-                    lang.startsWith(title.split(':')[1])
-                )?.[1].abbr ?? 'LSS'
-            }] ${value}`,
-        }));
-    const localeDescriptions = getTags('description');
+        const scriptName = `[LSS] ${comment.name.trim()}`;
+        const localeScriptNames = tags
+            .filter(tag => tag.title.startsWith('name:'))
+            .map(({ title, value }) => ({
+                tag: title,
+                content: `[${
+                    Object.entries(GAMES).find(([lang]) =>
+                        lang.startsWith(title.split(':')[1])
+                    )?.[1].abbr ?? 'LSS'
+                }] ${value}`,
+            }));
+        const localeDescriptions = getTags('description');
 
-    /** @type {Object.<string, ScriptLocale>} */
-    const localeTranslations = {};
+        /** @type {Object.<string, ScriptLocale>} */
+        const localeTranslations = {};
 
-    localeScriptNames.forEach(({ tag, content }) => {
-        const locale = tag.split(':')[1];
-        const game = Object.entries(games).find(([lang]) =>
-            lang.startsWith(locale)
-        );
-        if (!game) return;
+        localeScriptNames.forEach(({ tag, content }) => {
+            const locale = tag.split(':')[1];
+            const game = Object.entries(GAMES).find(([lang]) =>
+                lang.startsWith(locale)
+            );
+            if (!game) return;
 
-        localeTranslations[locale] = {
-            flag: game[1].flag,
-            name: content,
-            description: comment.description,
-        };
-    });
-    localeDescriptions.forEach(({ tag, content }) => {
-        const locale = tag.split(':')[1];
-        const game = Object.entries(games).find(([lang]) =>
-            lang.startsWith(locale)
-        );
-        if (!game) return;
-
-        if (localeTranslations[locale]) {
-            localeTranslations[locale].description = content;
-        } else {
             localeTranslations[locale] = {
                 flag: game[1].flag,
-                name: scriptName,
-                description: content,
+                name: content,
+                description: comment.description,
             };
-        }
-    });
-
-    const versionTag = {
-        tag: 'version',
-        content:
-            comment.version ??
-            parseMeta(
-                fs.readFileSync(filePath, 'utf8').match(HEADER_REGEX)?.[0] ?? ''
-            ).version ??
-            getVersion(),
-    };
-
-    const forumTag = getTag('forum', '');
-
-    /** @type {{tag: string, content: string}[]} */
-    const resources = [];
-    const resourceTags = getTags('resource');
-    for (const { content } of resourceTags) {
-        const [name, url] = content.split(/\s+/).map(s => s.trim());
-        if (!name || !url) continue;
-        const outFilePath = path.resolve(
-            ROOT_PATH,
-            'resources',
-            fileName,
-            `${name}${path.extname(url)}`
-        );
-        fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
-
-        let hash = '';
-        let text = '';
-
-        if (url.match(/^https?:\/\//)) {
-            text = await fetch(url).then(res => res.text());
-        }
-
-        const contentBefore = fs.existsSync(outFilePath)
-            ? fs.readFileSync(outFilePath, {
-                  encoding: 'utf8',
-              })
-            : '';
-        const isUpdated = contentBefore === '';
-        // contentBefore.split(/\n/).slice(1).join('\n') !== text;
-        const fileContent = isUpdated
-            ? `// fetched from ${url} at ${new Date().toISOString()}\n${text}`
-            : contentBefore;
-
-        if (isUpdated) {
-            versionTag.content = getVersion();
-        }
-
-        fs.writeFileSync(outFilePath, fileContent);
-
-        hash = createHash('sha256').update(fileContent).digest('hex');
-
-        resources.push({
-            tag: 'resource',
-            content: `${name} ${GITHUB}/raw/master/${path.relative(
-                ROOT_PATH,
-                outFilePath
-            )}#sha256=${hash}`,
         });
-    }
+        localeDescriptions.forEach(({ tag, content }) => {
+            const locale = tag.split(':')[1];
+            const game = Object.entries(GAMES).find(([lang]) =>
+                lang.startsWith(locale)
+            );
+            if (!game) return;
 
-    // list of tags to add to the userscript
-    const userscriptHeaderInformation = [
-        {
-            tag: 'name',
-            content: scriptName,
-        },
-        ...localeScriptNames,
-        {
-            tag: 'namespace',
-            content: 'https://jxn.lss-manager.de',
-        },
-        versionTag,
-        ...getTags('author', 'Jan (jxn_30)'),
-        {
-            tag: 'description',
-            content: comment.description,
-        },
-        ...localeDescriptions,
-        {
-            tag: 'homepage',
-            content: GITHUB,
-        },
-        {
-            tag: 'homepageURL',
-            content: GITHUB,
-        },
-        ...getTags('icon', 'https://www.leitstellenspiel.de/favicon.ico'),
-        {
-            tag: 'updateURL',
-            content: updateURL,
-        },
-        {
-            tag: 'downloadURL',
-            content: updateURL,
-        },
-        {
-            tag: 'supportURL',
-            content: forumTag.content || GITHUB,
-        },
-        ...matches,
-        ...resources,
-        ...getTags('run-at', 'document-idle'),
-        ...getTags('grant'),
-    ];
+            if (localeTranslations[locale]) {
+                localeTranslations[locale].description = content;
+            } else {
+                localeTranslations[locale] = {
+                    flag: game[1].flag,
+                    name: scriptName,
+                    description: content,
+                };
+            }
+        });
 
-    // check if we need to bump version
-    // has the file been updated within this run (prettier, eslint)?
-    await git.diffSummary(['--numstat', filePath]).then(diff => {
-        if (diff.changed) versionTag.content = getVersion();
-    });
-    // has the file been updated in the last commit and the committer is not the GH Action?
-    await git.log({ file: filePath }).then(({ latest }) => {
-        if (
-            latest &&
-            latest.author_email !==
-                'github-actions[bot]@users.noreply.github.com'
-        ) {
-            versionTag.content = getVersion(latest.date);
+        const versionTag = {
+            tag: 'version',
+            content:
+                comment.version ??
+                parseMeta(
+                    fs
+                        .readFileSync(filePath, 'utf8')
+                        .match(HEADER_REGEX)?.[0] ?? ''
+                ).version ??
+                getVersion(),
+        };
+
+        const forumTag = getTag('forum', '');
+
+        /** @type {{tag: string, content: string}[]} */
+        const resources = [];
+        const resourceTags = getTags('resource');
+        for (const { content } of resourceTags) {
+            const [name, url] = content.split(/\s+/).map(s => s.trim());
+            if (!name || !url) continue;
+            const outFilePath = path.resolve(
+                ROOT_PATH,
+                'resources',
+                fileName,
+                `${name}${path.extname(url)}`
+            );
+            fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
+
+            let hash = '';
+            let text = '';
+
+            if (url.match(/^https?:\/\//)) {
+                text = await fetch(url).then(res => res.text());
+            }
+
+            const contentBefore = fs.existsSync(outFilePath)
+                ? fs.readFileSync(outFilePath, {
+                      encoding: 'utf8',
+                  })
+                : '';
+            const isUpdated = contentBefore === '';
+            // contentBefore.split(/\n/).slice(1).join('\n') !== text;
+            const fileContent = isUpdated
+                ? `// fetched from ${url} at ${new Date().toISOString()}\n${text}`
+                : contentBefore;
+
+            if (isUpdated) {
+                versionTag.content = getVersion();
+            }
+
+            fs.writeFileSync(outFilePath, fileContent);
+
+            hash = createHash('sha256').update(fileContent).digest('hex');
+
+            resources.push({
+                tag: 'resource',
+                content: `${name} ${GITHUB}/raw/master/${path.relative(
+                    ROOT_PATH,
+                    outFilePath
+                )}#sha256=${hash}`,
+            });
         }
-    });
 
-    const longestTagLength = Math.max(
-        ...userscriptHeaderInformation.map(({ tag }) => tag.length)
-    );
+        // list of tags to add to the userscript
+        const userscriptHeaderInformation = [
+            {
+                tag: 'name',
+                content: scriptName,
+            },
+            ...localeScriptNames,
+            {
+                tag: 'namespace',
+                content: 'https://jxn.lss-manager.de',
+            },
+            versionTag,
+            ...getTags('author', 'Jan (jxn_30)'),
+            {
+                tag: 'description',
+                content: comment.description,
+            },
+            ...localeDescriptions,
+            {
+                tag: 'homepage',
+                content: GITHUB,
+            },
+            {
+                tag: 'homepageURL',
+                content: GITHUB,
+            },
+            ...getTags('icon', 'https://www.leitstellenspiel.de/favicon.ico'),
+            {
+                tag: 'updateURL',
+                content: updateURL,
+            },
+            {
+                tag: 'downloadURL',
+                content: updateURL,
+            },
+            {
+                tag: 'supportURL',
+                content: forumTag.content || GITHUB,
+            },
+            ...matches,
+            ...resources,
+            ...getTags('run-at', 'document-idle'),
+            ...getTags('grant'),
+        ];
 
-    const userscriptTags = userscriptHeaderInformation
-        .map(
-            ({ tag, content }) =>
-                `// @${tag.padEnd(longestTagLength, ' ')}  ${content}`
-        )
-        .join('\n');
+        // check if we need to bump version
+        // has the file been updated within this run (prettier, eslint)?
+        await git.diffSummary(['--numstat', filePath]).then(diff => {
+            if (diff.changed) versionTag.content = getVersion();
+        });
+        // has the file been updated in the last commit and the committer is not the GH Action?
+        await git.log({ file: filePath }).then(({ latest }) => {
+            if (
+                latest &&
+                latest.author_email !==
+                    'github-actions[bot]@users.noreply.github.com'
+            ) {
+                versionTag.content = getVersion(latest.date);
+            }
+        });
 
-    // write Header to userscript
-    fs.writeFileSync(
-        filePath,
-        fs.readFileSync(filePath, 'utf8').replace(
-            HEADER_REGEX,
-            `
+        const longestTagLength = Math.max(
+            ...userscriptHeaderInformation.map(({ tag }) => tag.length)
+        );
+
+        const userscriptTags = userscriptHeaderInformation
+            .map(
+                ({ tag, content }) =>
+                    `// @${tag.padEnd(longestTagLength, ' ')}  ${content}`
+            )
+            .join('\n');
+
+        // write Header to userscript
+        fs.writeFileSync(
+            filePath,
+            fs.readFileSync(filePath, 'utf8').replace(
+                HEADER_REGEX,
+                `
 // ==UserScript==
 ${userscriptTags}
 // ==/UserScript==
 `.trim()
-        )
-    );
+            )
+        );
 
-    // add script for README file
-    scriptOverview.push({
-        filename: fileName,
-        name: scriptName,
-        description: comment.description,
-        version: versionTag.content,
-        alias: oldNames.map(({ content }) => content),
-        url: updateURL,
-        flagsAvailable:
-            localesAvailable.length === 0
-                ? []
-                : Object.keys(games)
-                      .filter(game =>
-                          localesAvailable.some(
-                              ({ content }) => content === game
+        // add script for README file
+        scriptOverview.push({
+            filename: fileName,
+            name: scriptName,
+            description: comment.description,
+            version: versionTag.content,
+            alias: oldNames.map(({ content }) => content),
+            url: updateURL,
+            flagsAvailable:
+                localesAvailable.length === 0
+                    ? []
+                    : Object.keys(GAMES)
+                          .filter(game =>
+                              localesAvailable.some(
+                                  ({ content }) => content === game
+                              )
                           )
-                      )
-                      .map(game => games[game].flag),
-        locales: localeTranslations,
-        forum: forumTag.content,
-    });
+                          .map(game => GAMES[game].flag),
+            locales: localeTranslations,
+            forum: forumTag.content,
+        });
 
-    // add hardlinks
-    // unfortunately, hardlinks are required because GitHub doesn't support symbolic links
-    oldNames.forEach(({ content }) => {
-        const linkPath = path.resolve(ROOT_PATH, `${content}.user.js`);
-        if (fs.existsSync(linkPath)) fs.rmSync(linkPath);
-        fs.linkSync(filePath, linkPath);
-    });
-
-    updatedFiles.push(fileName);
-}
+        // add hardlinks
+        // unfortunately, hardlinks are required because GitHub doesn't support symbolic links
+        oldNames.forEach(({ content }) => {
+            const linkPath = path.resolve(ROOT_PATH, `${content}.user.js`);
+            if (fs.existsSync(linkPath)) fs.rmSync(linkPath);
+            fs.linkSync(filePath, linkPath);
+        });
+    }
+);
 
 const centerString = (string, length) => {
     const half = Math.floor((length - string.length) / 2);
