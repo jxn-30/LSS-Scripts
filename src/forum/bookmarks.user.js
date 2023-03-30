@@ -83,7 +83,7 @@ class BookmarkManager {
      * @returns {string}
      */
     static get #actionClass() {
-        return 'jxn-bookmark-actions';
+        return this.#prefix('actions');
     }
     /**
      * @static
@@ -92,7 +92,7 @@ class BookmarkManager {
      * @returns {string}
      */
     static get #actionSeparatorClass() {
-        return 'jxn-bookmark-action-separator';
+        return this.#prefix('action-separator');
     }
     /**
      * @static
@@ -101,7 +101,7 @@ class BookmarkManager {
      * @returns {string}
      */
     static get #modalClass() {
-        return 'jxn-bookmark-modal';
+        return this.#prefix('modal');
     }
     /**
      * @static
@@ -132,6 +132,17 @@ class BookmarkManager {
             linkIcon: 'menuOverlayItemLinkIcon',
             linkTitle: 'menuOverlayItemTitle',
         };
+    }
+
+    /**
+     * prefixes a string with the prefix / storage key
+     * @static
+     * @private
+     * @param {string} string the string to prefix
+     * @returns {string}
+     */
+    static #prefix(string) {
+        return `${this.#storageKey}-${string}`;
     }
 
     /** @type {Menu} */
@@ -474,7 +485,7 @@ class BookmarkManager {
             'active',
             BookmarkManager.#modalClass
         );
-        modal.dataset.modal = `jxn-bookmarks-modal-${identifier}`;
+        modal.dataset.modal = BookmarkManager.#prefix(`modal-${identifier}`);
 
         const titleElement = document.createElement('div');
         titleElement.classList.add('title');
