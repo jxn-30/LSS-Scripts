@@ -51,7 +51,7 @@ jobs:
                   git --no-pager diff --color-words
 
             - name: Commit & Push changes
-              if: github.ref == 'refs/heads/master'
+              if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/feat/better-resource-management'
               uses: actions-js/push@master
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}

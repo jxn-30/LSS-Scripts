@@ -1,4 +1,3 @@
-import { createHash } from 'crypto';
 import fs from 'fs';
 import { parse as parseMeta } from 'userscript-meta';
 import path from 'path';
@@ -6,6 +5,7 @@ import simpleGit from 'simple-git';
 
 import { GAMES } from './games.mjs';
 
+import updateResources from './updateResources.mjs';
 import { forEachFile, GITHUB, ROOT_PATH } from './shared.mjs';
 
 const HEADER_REGEX = /^\/\/ ==UserScript==.*?\/\/ ==\/UserScript==/s;
@@ -142,54 +142,15 @@ await forEachFile(
 
         const forumTag = getTag('forum', '');
 
-        /** @type {{tag: string, content: string}[]} */
-        const resources = [];
-        const resourceTags = getTags('resource');
-        for (const { content } of resourceTags) {
-            const [name, url] = content.split(/\s+/).map(s => s.trim());
-            if (!name || !url) continue;
-            const outFilePath = path.resolve(
-                ROOT_PATH,
-                'resources',
-                fileName,
-                `${name}${path.extname(url)}`
-            );
-            fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
+        const resources = await updateResources(fileName, getTags('resource'));
 
-            let hash = '';
-            let text = '';
+        // resources have been updated? new Version!
+        if (resources.updated) versionTag.content = getVersion();
 
-            if (url.match(/^https?:\/\//)) {
-                text = await fetch(url).then(res => res.text());
-            }
-
-            const contentBefore = fs.existsSync(outFilePath)
-                ? fs.readFileSync(outFilePath, {
-                      encoding: 'utf8',
-                  })
-                : '';
-            const isUpdated = contentBefore === '';
-            // contentBefore.split(/\n/).slice(1).join('\n') !== text;
-            const fileContent = isUpdated
-                ? `// fetched from ${url} at ${new Date().toISOString()}\n${text}`
-                : contentBefore;
-
-            if (isUpdated) {
-                versionTag.content = getVersion();
-            }
-
-            fs.writeFileSync(outFilePath, fileContent);
-
-            hash = createHash('sha256').update(fileContent).digest('hex');
-
-            resources.push({
-                tag: 'resource',
-                content: `${name} ${GITHUB}/raw/master/${path.relative(
-                    ROOT_PATH,
-                    outFilePath
-                )}#sha256=${hash}`,
-            });
-        }
+        const resourceTags = resources.resources.map(content => ({
+            tag: 'resource',
+            content,
+        }));
 
         // list of tags to add to the userscript
         const userscriptHeaderInformation = [
@@ -231,7 +192,7 @@ await forEachFile(
                 content: forumTag.content || GITHUB,
             },
             ...matches,
-            ...resources,
+            ...resourceTags,
             ...getTags('run-at', 'document-idle'),
             ...getTags('grant'),
         ];
