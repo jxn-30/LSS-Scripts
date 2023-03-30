@@ -56,4 +56,4 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   message: 'chore: updates by CI'
-                  branch: 'master'
+                  branch: github.ref_name
