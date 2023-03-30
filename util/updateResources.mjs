@@ -78,6 +78,16 @@ const updateResources = async (userscriptName, resourceTags) => {
     const git = simpleGit();
 
     if (updatedFiles.length) {
+        let prevUserName = '';
+        let prevUserEmail = '';
+
+        await git
+            .getConfig('user.name')
+            .then(({ value }) => (prevUserName = value));
+        await git
+            .getConfig('user.email')
+            .then(({ value }) => (prevUserEmail = value));
+
         await git.addConfig('user.name', 'resource-updater [bot]');
         await git.addConfig(
             'user.email',
@@ -87,6 +97,10 @@ const updateResources = async (userscriptName, resourceTags) => {
             `chore(res): Update resources for ${userscriptName}`,
             updatedFiles
         );
+
+        // restore old config
+        await git.addConfig('user.name', prevUserName);
+        await git.addConfig('user.email', prevUserEmail);
     }
 
     let latestCommitHash = '';
