@@ -56,6 +56,13 @@
  * @typedef {Bookmark[]} Bookmarks
  */
 
+/**
+ * @typedef {HTMLDivElement} Modal
+ * @property {HTMLDivElement|null} submitContainer
+ * @property {function(): void} show
+ * @property {function(): void} hide
+ */
+
 // create menu for navigation
 class BookmarkManager {
     /**
@@ -474,24 +481,90 @@ class BookmarkManager {
      * creates and shows a modal
      * @private
      * @param {string} title
-     * @param {string} identifier
-     * @return {HTMLDivElement}
+     * @param {boolean} addSubmitContainer
+     * @return {Modal}
      */
-    #createModal(title, identifier) {
-        const modal = document.createElement('div');
-        modal.classList.add(
-            'balloonTooltip',
-            'interactive',
-            'active',
-            BookmarkManager.#modalClass
-        );
-        modal.dataset.modal = BookmarkManager.#prefix(`modal-${identifier}`);
+    #createModal(title, addSubmitContainer = true) {
+        const overlay = document.querySelector('.dialogOverlay');
 
-        const titleElement = document.createElement('div');
-        titleElement.classList.add('title');
-        titleElement.textContent = title;
-        modal.append(titleElement);
-        this.#menuDesktop.menu().after(modal);
+        const modal = document.createElement('div');
+        modal.classList.add('dialogContainer');
+
+        const headerElement = document.createElement('header');
+        const titleSpan = document.createElement('span');
+        titleSpan.classList.add('dialogTitle');
+        titleSpan.textContent = title;
+
+        const closeButton = document.createElement('a');
+        closeButton.classList.add('dialogCloseButton');
+        closeButton.href = '#';
+        closeButton.role = 'button';
+        closeButton.dataset.tooltip = 'Schließen';
+        closeButton.ariaLabel = 'Schließen';
+        closeButton.addEventListener('click', e => {
+            e.preventDefault();
+            modal.hide();
+        });
+        const closeIcon = document.createElement('span');
+        closeIcon.classList.add('icon', 'icon24', 'fa-times');
+        closeButton.append(closeIcon);
+
+        headerElement.append(titleSpan, closeButton);
+
+        const modalBody = document.createElement('div');
+        modalBody.classList.add('dialogContent');
+        if (addSubmitContainer) modalBody.classList.add('dialogForm');
+
+        if (addSubmitContainer) {
+            const wrapper = document.createElement('div');
+            const submitContainer = document.createElement('div');
+
+            submitContainer.classList.add('formSubmit', 'dialogFormSubmit');
+            modal.submitContainer = submitContainer;
+
+            wrapper.append(submitContainer);
+            modalBody.append(wrapper);
+        }
+
+        modal.append(headerElement, modalBody);
+
+        const hideOnOverlayClick = e => {
+            if (!e.target.closest('.dialogContainer')) modal.hide();
+        };
+
+        modal.show = () => {
+            overlay.addEventListener('click', hideOnOverlayClick);
+            overlay.setAttribute('aria-hidden', 'false');
+            modal.setAttribute('aria-hidden', 'false');
+            overlay.append(modal);
+
+            if (addSubmitContainer) {
+                const submitContainerHeight =
+                    modal.submitContainer.getBoundingClientRect().height;
+                modalBody.style.setProperty(
+                    'margin-bottom',
+                    `${submitContainerHeight}px`
+                );
+                modalBody.style.setProperty(
+                    'max-height',
+                    `${
+                        window.innerHeight * 0.8 -
+                        headerElement.getBoundingClientRect().height -
+                        submitContainerHeight
+                    }px`
+                );
+            }
+        };
+        modal.hide = () => {
+            overlay.removeEventListener('click', hideOnOverlayClick);
+            overlay.setAttribute('aria-hidden', 'true');
+            modal.setAttribute('aria-hidden', 'true');
+            modal.remove();
+        };
+        modal.append = (...elements) => {
+            if (addSubmitContainer) modal.submitContainer.before(...elements);
+            else modalBody.append(...elements);
+        };
 
         return modal;
     }
@@ -501,14 +574,34 @@ class BookmarkManager {
      * @private
      */
     #setBookmark() {
-        const modal = this.#createModal('Lesezeichen setzen', 'set');
+        const modal = this.#createModal('Lesezeichen setzen');
 
+        const urlDl = document.createElement('dl');
+        const urlDt = document.createElement('dt');
+        const urlLabel = document.createElement('label');
+        urlLabel.textContent = 'URL';
+        urlLabel.for = BookmarkManager.#prefix('set-url');
+        urlDt.append(urlLabel);
+        const urlDd = document.createElement('dd');
         const urlInput = document.createElement('input');
-        urlInput.type = 'text';
+        urlInput.type = 'url';
+        urlInput.classList.add('long');
         urlInput.placeholder = 'URL';
         urlInput.value = window.location.href;
+        urlInput.id = urlLabel.for;
+        urlDd.append(urlInput);
+        urlDl.append(urlDt, urlDd);
+
+        const titleDl = document.createElement('dl');
+        const titleDt = document.createElement('dt');
+        const titleLabel = document.createElement('label');
+        titleLabel.textContent = 'Titel';
+        titleLabel.for = BookmarkManager.#prefix('set-title');
+        titleDt.append(titleLabel);
+        const titleDd = document.createElement('dd');
         const titleInput = document.createElement('input');
-        titleInput.type = 'text';
+        titleInput.type = 'url';
+        titleInput.classList.add('long');
         titleInput.placeholder = 'Titel';
         titleInput.value =
             (
@@ -517,24 +610,30 @@ class BookmarkManager {
             )?.textContent
                 ?.trim()
                 ?.replace(/"/g, '&#34;') ?? '';
+        titleInput.id = titleLabel.for;
+        titleDd.append(titleInput);
+        titleDl.append(titleDt, titleDd);
+
         const saveBtn = document.createElement('input');
         saveBtn.type = 'submit';
         saveBtn.value = 'Speichern';
         saveBtn.addEventListener('click', () => {
-            const url = urlInput.value.trim();
+            const url = titleInput.value.trim();
             const title = titleInput.value.trim();
             this.#appendBookmark(url, title);
             const bookmarks = this.#bookmarks;
             bookmarks.push({ url, title });
             this.#bookmarks = bookmarks;
-            modal.remove();
+            modal.hide();
         });
         const cancelBtn = document.createElement('input');
         cancelBtn.type = 'button';
         cancelBtn.value = 'Abbrechen';
-        cancelBtn.addEventListener('click', () => modal.remove());
+        cancelBtn.addEventListener('click', () => modal.hide());
 
-        modal.append(urlInput, titleInput, saveBtn, cancelBtn);
+        modal.append(urlDl, titleDl);
+        modal.submitContainer.append(saveBtn, cancelBtn);
+        modal.show();
     }
 
     /**
@@ -542,7 +641,7 @@ class BookmarkManager {
      * @private
      */
     #manageBookmarks() {
-        const modal = this.#createModal('Lesezeichen verwalten', 'manage');
+        const modal = this.#createModal('Lesezeichen verwalten');
 
         /**
          * @typedef {{wrapper: HTMLDivElement, url: HTMLInputElement, title: HTMLInputElement}} Update
@@ -593,8 +692,11 @@ class BookmarkManager {
             moveUp(nextIndex);
         };
 
+        const wrapperClass = BookmarkManager.#prefix('manage-item-wrapper');
+
         this.#bookmarks.forEach(({ url, title }, index) => {
             const wrapper = document.createElement('div');
+            wrapper.classList.add(wrapperClass);
             wrapper.dataset.index = index.toString();
 
             const currentIndex = () => parseInt(wrapper.dataset.index);
@@ -607,6 +709,8 @@ class BookmarkManager {
             titleInput.type = 'text';
             titleInput.placeholder = 'Titel';
             titleInput.value = title;
+
+            const btnWrapper = document.createElement('div');
 
             const deleteBtn = document.createElement('a');
             deleteBtn.classList.add('button', 'buttonPrimary');
@@ -634,9 +738,23 @@ class BookmarkManager {
 
             updates.push({ wrapper, url: urlInput, title: titleInput });
 
-            wrapper.append(urlInput, titleInput, deleteBtn, upBtn, downBtn);
+            btnWrapper.append(deleteBtn, upBtn, downBtn);
+            wrapper.append(urlInput, titleInput, btnWrapper);
             bookmarksWrapper.append(wrapper);
         });
+
+        GM_addStyle(`
+.${wrapperClass} {
+    display: flex;
+    justify-content: space-between;
+}
+.${wrapperClass} > input {
+    width: 100%;
+}
+.${wrapperClass} > div {
+    flex-shrink: 0;
+}
+`);
 
         const saveBtn = document.createElement('input');
         saveBtn.type = 'submit';
@@ -649,15 +767,18 @@ class BookmarkManager {
                     title: title.value.trim(),
                 }));
             this.#initMenus();
-            modal.remove();
+            modal.hide();
         });
 
         const cancelBtn = document.createElement('input');
         cancelBtn.type = 'button';
         cancelBtn.value = 'Abbrechen';
-        cancelBtn.addEventListener('click', () => modal.remove());
+        cancelBtn.addEventListener('click', () => modal.hide());
 
-        modal.append(bookmarksWrapper, saveBtn, cancelBtn);
+        modal.style.setProperty('min-width', '80%');
+        modal.append(bookmarksWrapper);
+        modal.submitContainer.append(saveBtn, cancelBtn);
+        modal.show();
     }
 
     /**
