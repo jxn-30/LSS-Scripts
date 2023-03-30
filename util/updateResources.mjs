@@ -104,9 +104,11 @@ const updateResources = async (userscriptName, resourceTags) => {
     }
 
     let latestCommitHash = '';
-    await git.log({ maxCount: 1 }).then(({ latest }) => {
-        latestCommitHash = latest.hash.substring(0, 10);
-    });
+    await git
+        .log(['-1', ...resources.map(r => r.absPath)])
+        .then(({ latest }) => {
+            latestCommitHash = latest.hash.substring(0, 10);
+        });
 
     const tags = resources.map(
         ({ relPath, name, hash }) =>
