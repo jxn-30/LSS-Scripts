@@ -187,12 +187,15 @@ class BookmarkManager {
             if (!link) return;
             switch (link.dataset.action) {
                 case 'set':
+                    e.preventDefault();
                     this.#setBookmark();
                     break;
                 case 'manage':
+                    e.preventDefault();
                     this.#manageBookmarks();
                     break;
                 case 'import':
+                    e.preventDefault();
                     this.#importBookmarks();
                     break;
             }
