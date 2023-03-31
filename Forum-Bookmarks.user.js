@@ -2,7 +2,7 @@
 // @name            [LSS] Forum: Bookmarks
 // @name:de         [LSS] Forum: Lesezeichen
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.03.30+2044
+// @version         2023.03.31+1546
 // @author          Jan (jxn_30)
 // @description     An internal Bookmark Manager for the general forum
 // @description:de  Ein interner Lesezeichen-Manager für das allgemeine Forum
@@ -17,6 +17,8 @@
 // @grant           GM_addStyle
 // ==/UserScript==
 
+/* global require */
+
 /**
  * @name Forum: Bookmarks
  * @name:de Forum: Lesezeichen
@@ -28,7 +30,6 @@
  * @run-at document-body
  * @locale de_DE
  * @subdomain forum
- * @old Forum-Bookmarks.min
  * @old Forum-Bookmarks
  * @grant GM_addStyle
  */
@@ -177,6 +178,7 @@ class BookmarkManager {
         }
 
         this.#initMenus();
+        this.#initInsertLinkInvoking();
 
         // we need to use document here because the forum modifies some items in our menu
         document.addEventListener('click', e => {
@@ -188,12 +190,15 @@ class BookmarkManager {
             if (!link) return;
             switch (link.dataset.action) {
                 case 'set':
+                    e.preventDefault();
                     this.#setBookmark();
                     break;
                 case 'manage':
+                    e.preventDefault();
                     this.#manageBookmarks();
                     break;
                 case 'import':
+                    e.preventDefault();
                     this.#importBookmarks();
                     break;
             }
@@ -478,13 +483,26 @@ class BookmarkManager {
     }
 
     /**
+     * @typedef ModalCallback
+     * @param {HTMLDivElement} overlay
+     * @return {void}
+     */
+
+    /**
      * creates and shows a modal
      * @private
      * @param {string} title
      * @param {boolean} addSubmitContainer
+     * @param {ModalCallback} showCallback
+     * @param {ModalCallback} hideCallback
      * @return {Modal}
      */
-    #createModal(title, addSubmitContainer = true) {
+    #createModal(
+        title,
+        addSubmitContainer = true,
+        showCallback = () => void 0,
+        hideCallback = () => void 0
+    ) {
         const overlay = document.querySelector('.dialogOverlay');
 
         const modal = document.createElement('div');
@@ -532,11 +550,14 @@ class BookmarkManager {
             if (!e.target.closest('.dialogContainer')) modal.hide();
         };
 
+        let overlayHiddenState = overlay.getAttribute('aria-hidden');
+
         modal.show = () => {
             overlay.addEventListener('click', hideOnOverlayClick);
+            overlayHiddenState = overlay.getAttribute('aria-hidden') ?? 'true';
             overlay.setAttribute('aria-hidden', 'false');
             modal.setAttribute('aria-hidden', 'false');
-            overlay.append(modal);
+            overlay.prepend(modal);
 
             if (addSubmitContainer) {
                 const submitContainerHeight =
@@ -553,13 +574,24 @@ class BookmarkManager {
                         submitContainerHeight
                     }px`
                 );
+            } else {
+                modalBody.style.setProperty(
+                    'max-height',
+                    `${
+                        window.innerHeight * 0.8 -
+                        headerElement.getBoundingClientRect().height
+                    }px`
+                );
             }
+
+            showCallback(overlay);
         };
         modal.hide = () => {
             overlay.removeEventListener('click', hideOnOverlayClick);
-            overlay.setAttribute('aria-hidden', 'true');
+            overlay.setAttribute('aria-hidden', overlayHiddenState);
             modal.setAttribute('aria-hidden', 'true');
             modal.remove();
+            hideCallback(overlay);
         };
         modal.append = (...elements) => {
             if (addSubmitContainer) modal.submitContainer.before(...elements);
@@ -800,6 +832,117 @@ class BookmarkManager {
             fileReader.readAsText(file);
         });
         fileInput.click();
+    }
+
+    /**
+     * invoke the insert link modal
+     * @private
+     */
+    #initInsertLinkInvoking() {
+        const actionBtnId = 'redactor-modal-button-action';
+
+        const insertBookmarkBtn = document.createElement('button');
+        insertBookmarkBtn.classList.add('buttonSecondary');
+        insertBookmarkBtn.textContent = 'Lesezeichen';
+        insertBookmarkBtn.id = BookmarkManager.#prefix('insert-bookmark');
+
+        const liClass = BookmarkManager.#prefix('insert-bookmark-list-element');
+
+        insertBookmarkBtn.addEventListener('click', () => {
+            const modal = this.#createModal(
+                'Lesezeichen einfügen',
+                false,
+                overlay => (overlay.dataset.closeOnClick = 'false'),
+                overlay => (overlay.dataset.closeOnClick = 'true')
+            );
+
+            const bookmarksWrapper = document.createElement('ul');
+            bookmarksWrapper.classList.add(
+                'wbbBoardListReduced',
+                'wbbBoardList'
+            );
+
+            this.#bookmarks.forEach(({ url, title }) => {
+                const liEl = document.createElement('li');
+                liEl.classList.add('wbbBoardContainer', 'wbbDepth2', liClass);
+                liEl.dataset.title = title;
+                liEl.dataset.url = url;
+
+                const span = document.createElement('span');
+                span.classList.add('wbbBoard', 'wbbBoardNode1');
+
+                const icon = document.createElement('span');
+                icon.classList.add('icon', 'icon16', 'fa-square-o');
+
+                span.append(icon, ' ', title);
+                liEl.append(span);
+                bookmarksWrapper.append(liEl);
+            });
+
+            bookmarksWrapper.addEventListener('click', e => {
+                const target = e.target;
+                if (!(target instanceof HTMLElement)) return;
+                const liEl = target.closest(`.${liClass}`);
+                if (!liEl) return;
+
+                liEl.querySelector('.icon')?.classList.replace(
+                    'fa-square-o',
+                    'fa-check-square-o'
+                );
+
+                const { url, title } = liEl.dataset;
+                const urlInput = document.querySelector('#redactor-link-url');
+                if (urlInput) urlInput.value = url;
+                const textInput = document.querySelector(
+                    '#redactor-link-url-text'
+                );
+                if (textInput) textInput.value = title;
+
+                modal.hide();
+            });
+
+            modal.append(bookmarksWrapper);
+            modal.show();
+        });
+
+        const insertBtn = () => {
+            if (document.getElementById(insertBookmarkBtn.id)) return;
+
+            document.getElementById(actionBtnId)?.before(insertBookmarkBtn);
+            // force recalculating the submitBar so that all fields are visible on mobile devices
+            window.dispatchEvent(new Event('resize'));
+        };
+
+        // manipulate the internal Redactor module to insert the button whenever a new link-dialog is created
+        window.addEventListener('load', () => {
+            require(['WoltLabSuite/Core/Ui/Redactor/Link'], t => {
+                const showDialogOrig = t.showDialog;
+                t.showDialog = (...args) => {
+                    const result = showDialogOrig.call(t, ...args);
+
+                    insertBtn();
+
+                    return result;
+                };
+            });
+        });
+
+        // add some style to make bookmark btn float left and confirm btn float right
+        GM_addStyle(`
+#${insertBookmarkBtn.id} {
+    float: left;
+}
+#${actionBtnId} {
+    float: right;
+}
+
+.${liClass} {
+    cursor: pointer;
+}
+.${liClass} .icon {
+    margin-left: 0 !important;
+}
+`);
     }
 }
 
