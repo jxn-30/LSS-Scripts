@@ -28,7 +28,6 @@
  * @run-at document-body
  * @locale de_DE
  * @subdomain forum
- * @old Forum-Bookmarks.min
  * @old Forum-Bookmarks
  * @grant GM_addStyle
  */
