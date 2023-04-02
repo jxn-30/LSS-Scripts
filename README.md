@@ -31,8 +31,9 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.03.31+1546` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.04.01+1301` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.04.02+1459` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
+- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.02+1459` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.01.25+2203` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
@@ -387,7 +388,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |   Alias / Old names   |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:---------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.04.01+1301 |    `🇩🇪`    | `LSS-Forum-Dashboard` | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2023.04.02+1459 |    `🇩🇪`    | `LSS-Forum-Dashboard` | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -412,6 +413,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [forum/externalLink.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/externalLink.user.js
 [forum/externalLink.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17423-forum-external-link/
+
+### [LSS] Forum: Old Like Style
+
+> Re-enables the old style of likes in the forum (displays summary on top of post & react without opening the reaction menu)
+
+|     Version     | Available in |                             Download                              |                   Links                   |
+|:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
+| 2023.04.02+1459 |    `🇩🇪`    | [forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download] | [Forum][forum/oldLikeStyle.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Forum: Old Like Style</summary>
+    Stellt den alten Like-Style im Forum wieder her (zeigt die Likes oben im Post an und ermöglicht das Liken, ohne das Reaktionen-Menü zu öffnen)
+</details>
+
+[forum/oldLikeStyle.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/oldLikeStyle.user.js
+[forum/oldLikeStyle.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23913-forum-alter-like-style/
 
 ### [LSS] get buildings of Alliance-Members by german county
 
