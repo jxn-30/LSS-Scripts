@@ -157,7 +157,7 @@ require(['WoltLabSuite/Core/Ui/Reaction/Handler'], t => {
         const likesElement = document.querySelector(
             `.${LIKES_ELEMENT_CLASS}[data-likes-object-id="${objectID}"]`
         );
-        if (likesElement) updateLikesElement(likesElement, likesAmount);
+        if (likesElement) updateLikesElement(likesElement, likesAmount ?? 0);
 
         return result;
     };
