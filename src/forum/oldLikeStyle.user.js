@@ -120,6 +120,12 @@ document.querySelectorAll('.reactButton').forEach(reactButton => {
     reactButton
         .querySelector('.icon')
         .classList.replace('fa-smile-o', 'fa-thumbs-o-up');
+    reactButton.title =
+        reactButton.dataset.tooltip =
+        reactButton.ariaLabel =
+            'Gefällt mir! (Like)';
+    const textContainer = reactButton.querySelector('.invisible');
+    if (textContainer) textContainer.textContent = reactButton.title;
 });
 
 // click the Like reaction when clicking the open menu button
