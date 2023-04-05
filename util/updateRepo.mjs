@@ -12,6 +12,10 @@ const HEADER_REGEX = /^\/\/ ==UserScript==.*?\/\/ ==\/UserScript==/s;
 
 const git = simpleGit();
 
+/**
+ * @typedef {import('./shared.mjs').Script} Script
+ */
+
 /** @type {Script[]} */
 const scriptOverview = [];
 
