@@ -42,7 +42,11 @@ const updateResources = async (userscriptName, resourceTags) => {
         let resourceContent = '';
         console.info(`updating resource ${name} from ${url}`);
         if (url.match(/^https?:\/\//)) {
-            resourceContent = await fetch(url).then(res => res.text());
+            resourceContent = await fetch(url)
+                .then(res => res.text())
+                .then(text =>
+                    text.replace(/^\/\/# sourceMappingURL=.*?$/gm, '')
+                );
         }
 
         const contentBefore = fs.existsSync(outFilePath)
