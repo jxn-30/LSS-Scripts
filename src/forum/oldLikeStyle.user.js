@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Old Like Style
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.04.05+1333
+// @version         2023.04.05+1342
 // @author          Jan (jxn_30)
 // @description     Re-enables the old style of likes in the forum (displays summary on top of post & react without opening the reaction menu)
 // @description:de  Stellt den alten Like-Style im Forum wieder her (zeigt die Likes oben im Post an und ermöglicht das Liken, ohne das Reaktionen-Menü zu öffnen)
