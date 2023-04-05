@@ -40,6 +40,7 @@ const updateResources = async (userscriptName, resourceTags) => {
         fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
 
         let resourceContent = '';
+        console.info(`updating resource ${name} from ${url}`);
         if (url.match(/^https?:\/\//)) {
             resourceContent = await fetch(url).then(res => res.text());
         }
