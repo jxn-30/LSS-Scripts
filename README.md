@@ -31,7 +31,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.03.31+1546` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.04.05+1411` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.04.06+1245` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.01.25+2203` (`🇩🇪`)
@@ -388,7 +388,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |   Alias / Old names   |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:---------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.04.05+1411 |    `🇩🇪`    | `LSS-Forum-Dashboard` | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2023.04.06+1245 |    `🇩🇪`    | `LSS-Forum-Dashboard` | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
