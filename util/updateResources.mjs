@@ -45,7 +45,7 @@ const updateResources = async (userscriptName, resourceTags) => {
             resourceContent = await fetch(url)
                 .then(res => res.text())
                 .then(text =>
-                    text.replace(/^\/\/# sourceMappingURL=.*?$/gm, '')
+                    text.replace(/^\/\/# sourceMappingURL=.*?$/gm, '').trim()
                 );
         }
 
