@@ -25,6 +25,7 @@ jobs:
                   yarn set version latest
 
             - name: Get yarn cache directory path
+              id: yarn_cache_dir
               run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
             - name: Restore Cache
