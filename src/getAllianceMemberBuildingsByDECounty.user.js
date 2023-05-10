@@ -115,9 +115,14 @@ const downloadData = ([types, data]) => {
     a.click();
 };
 
-const getCoordinatesOfCounty = geometry => {
-    if (geometry.length === 1) return geometry[0];
-    return geometry.flatMap(c => [...c, c[0], [0, 0]]);
+const getCoordinatesOfCounty = ({ coordinates, type }) => {
+    if (type === 'MultiPolygon') {
+        return coordinates.flatMap(c =>
+            getCoordinatesOfCounty({ coordinates: c, type: 'Polygon' })
+        );
+    }
+    if (coordinates.length === 1) return coordinates[0];
+    return coordinates.flatMap(c => [...c, c[0], [0, 0]]);
 };
 
 const pointInsidePolygon = ([lat, long], polygon) => {
@@ -162,12 +167,11 @@ unsafeWindow.getAllAllianceMemberBuildingLocations = async () =>
             const counties = {};
             console.log(countyBorders);
             buildings.forEach(({ type: buildingType, location }) => {
-                const county = countyBorders.find(
-                    ({ geometry: { coordinates } }) =>
-                        pointInsidePolygon(
-                            location,
-                            getCoordinatesOfCounty(coordinates)
-                        )
+                const county = countyBorders.find(({ geometry }) =>
+                    pointInsidePolygon(
+                        location,
+                        getCoordinatesOfCounty(geometry)
+                    )
                 );
                 if (!county) return;
                 const countyName = `${county.properties.NAME_1} - ${county.properties.NAME_3}`;
