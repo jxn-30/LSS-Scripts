@@ -34,7 +34,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.05.08+0048` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
-- [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.01.25+2203` (`🇩🇪`)
+- [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
 - [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2022.11.29+1000`
@@ -436,7 +436,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                                               Download                                                |
 |:---------------:|:------------:|:-----------------------------------------------------------------------------------------------------:|
-| 2023.01.25+2203 |    `🇩🇪`    | [getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download] |
+| 2023.05.11+0900 |    `🇩🇪`    | [getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Verbandsmitgliedergebäude nach Kreis</summary>
