@@ -36,6 +36,8 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
+- [[LSS] Hide Application Background](#lss-hide-application-background) `2023.05.13+0040`
+- [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.05.13+0040`
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
 - [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2022.11.29+1000`
 - [[LSS] Input max length](#lss-input-max-length) `2022.11.29+1052`
@@ -457,6 +459,36 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [gruesse.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/gruesse.user.js
 [gruesse.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16931-%C3%BCbersicht-%C3%BCber-die-scripte/&postID=363928#post363928
+
+### [LSS] Hide Application Background
+
+> Removes the green background on alliance applications
+
+|     Version     |         Alias / Old names         |                                    Download                                     |
+|:---------------:|:---------------------------------:|:-------------------------------------------------------------------------------:|
+| 2023.05.13+0040 | `lss-hide-application-background` | [hideApplicationBackground.user.js][hideApplicationBackground.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Kein Hintergrund bei Bewerbung</summary>
+    Deaktiviert den grünen Hintergrund, wenn der Verband Bewerbungen hat
+</details>
+
+[hideApplicationBackground.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideApplicationBackground.user.js
+
+### [LSS] Hide Forum Background
+
+> Removes the green background on unread alliance forum threads
+
+|     Version     |                  Alias / Old names                  |                              Download                               |
+|:---------------:|:---------------------------------------------------:|:-------------------------------------------------------------------:|
+| 2023.05.13+0040 | `LSS-ingame-Forum-kein-nerviger-grüner-Hintergrund` | [hideForumBackground.user.js][hideForumBackground.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Kein Hintergrund vom Forum</summary>
+    Deaktiviert den grünen Hintergrund, wenn es ungelesene Threads im Verbandsforum gibt
+</details>
+
+[hideForumBackground.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideForumBackground.user.js
 
 ### [LSS] Hide Leitstellenansicht btn in building panel
 

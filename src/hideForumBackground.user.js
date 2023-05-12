@@ -2,7 +2,7 @@
 // @name            [LSS] Hide Forum Background
 // @name:de         [LSS] Kein Hintergrund vom Forum
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.05.13+0039
+// @version         2023.05.13+0040
 // @author          Jan (jxn_30)
 // @description     Removes the green background on unread alliance forum threads
 // @description:de  Deaktiviert den grünen Hintergrund, wenn es ungelesene Threads im Verbandsforum gibt
