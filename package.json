@@ -13,7 +13,7 @@
         "@types/tampermonkey": "4.0.10",
         "eslint": "8.40.0",
         "eslint-config-prettier": "8.8.0",
-        "eslint-plugin-userscripts": "0.2.13",
+        "eslint-plugin-userscripts": "0.3.0",
         "jsdoc-api": "8.0.0",
         "prettier": "2.8.8",
         "simple-git": "3.18.0",
