@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] AAO Config Lite
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.05.15+0056
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
@@ -122,7 +122,7 @@
         // THW
         'gkw': 1, // Gerätekraftwagen (GKW)
         'thw_mtw': 1, // Mannschaftstransportwagen Technischer Zug (MTW-TZ - THW)
-        'thw_mzkw': 1, // Mehrzweckkraftwagen (MzKW)
+        'thw_mzkw': 1, // Mehrzweck-Gerätewagen (FGr N)
         'thw_lkw': 1, // Lastkraftwagen-Kipper 9 t (LKW K 9)
         'thw_brmg_r': 1, // Radlader groß (BRmG R)
         'thw_dle': 1, // Anhänger Drucklufterzeugung (Anh DLE)
@@ -137,8 +137,12 @@
         'rescue_dogs_thw': 1, // Anhänger Hundetransport
         'pump': 1, // Schmutzwasserpumpen
         'water_damage_pump': 1, // Feuerlöschpumpen
+        'vehicle_type_ids[99]': 1, // LKW 7 Lbw
         'vehicle_type_ids[101]': 1, // Anh SwPu
         'vehicle_type_ids[102]': 1, // Anh 7
+        'vehicle_type_ids[109]': 1, // MzGW SB
+        'energy_supply': 1, // NEA50
+        'energy_supply2': 1, // NEA200
         // SEG
         'ktw_b': 1, // KTW Typ B
         'seg_elw': 1, // ELW 1 (SEG)

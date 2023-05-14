@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-- [[LSS] AAO Config Lite](#lss-aao-config-lite) `2022.11.26+1803` (`🇩🇪`)
+- [[LSS] AAO Config Lite](#lss-aao-config-lite) `2023.05.15+0056` (`🇩🇪`)
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2022.12.29+1900`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2022.11.26+1803`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2022.11.26+1803`
@@ -60,7 +60,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in | Alias / Old names |                           Download                            |                  Links                  |
 |:---------------:|:------------:|:-----------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2022.11.26+1803 |    `🇩🇪`    |   `aao-lite-de`   | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+| 2023.05.15+0056 |    `🇩🇪`    |   `aao-lite-de`   | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Config Lite</summary>
