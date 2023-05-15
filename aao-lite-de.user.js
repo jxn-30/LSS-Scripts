@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] AAO Config Lite
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.05.15+0056
+// @version         2023.05.15+1505
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
@@ -142,7 +142,7 @@
         'vehicle_type_ids[102]': 1, // Anh 7
         'vehicle_type_ids[109]': 1, // MzGW SB
         'energy_supply': 1, // NEA50
-        'energy_supply2': 1, // NEA200
+        'energy_supply_2': 1, // NEA200
         // SEG
         'ktw_b': 1, // KTW Typ B
         'seg_elw': 1, // ELW 1 (SEG)
