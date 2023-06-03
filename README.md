@@ -43,7 +43,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Input max length](#lss-input-max-length) `2022.11.29+1052`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.01.02+1306`
-- [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1437` (`🇩🇪`)
+- [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1443` (`🇩🇪`)
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.01.05+1600`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.12.04+1625`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
@@ -571,9 +571,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > This Script is for leitstellenspiel.de only!
 
-|     Version     | Available in |                             Download                              |
-|:---------------:|:------------:|:-----------------------------------------------------------------:|
-| 2023.06.03+1437 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] |
+|     Version     | Available in |                             Download                              |                   Links                   |
+|:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
+| 2023.06.03+1443 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Limited Vehicles</summary>
@@ -581,6 +581,7 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
+[limitedVehicles.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
 
 ### [LSS] OSM-MapScale
 
