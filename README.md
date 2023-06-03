@@ -43,6 +43,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Input max length](#lss-input-max-length) `2022.11.29+1052`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.01.02+1306`
+- [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1437` (`🇩🇪`)
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.01.05+1600`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.12.04+1625`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
@@ -565,6 +566,21 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [lightboxLightbox.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/lightboxLightbox.user.js
 [lightboxLightbox.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18588-script-lightbox-in-lightbox-in-lightbox-in/
+
+### [LSS] Limited Vehicles
+
+> This Script is for leitstellenspiel.de only!
+
+|     Version     | Available in |                             Download                              |
+|:---------------:|:------------:|:-----------------------------------------------------------------:|
+| 2023.06.03+1437 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Limited Vehicles</summary>
+    Zeigt für limitierte Fahrzeuge (NAW, ITW, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
+</details>
+
+[limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 
 ### [LSS] OSM-MapScale
 
