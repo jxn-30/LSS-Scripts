@@ -10,58 +10,58 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-- [[LSS] AAO Config Lite](#lss-aao-config-lite) `2023.05.15+1505` (`🇩🇪`)
-- [[LSS] Alarm-Icons](#lss-alarm-icons) `2022.12.29+1900`
-- [[LSS] Alliance Distance](#lss-alliance-distance) `2022.11.26+1803`
-- [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2022.11.26+1803`
-- [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2022.11.26+1803`
+- [[LSS] AAO Config Lite](#lss-aao-config-lite) `2023.06.03+1511` (`🇩🇪`)
+- [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
+- [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
+- [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2023.06.03+1511`
+- [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2023.06.03+1511`
 - [[LSS] Alliance members panel](#lss-alliance-members-panel) `2023.02.14+1425`
-- [[LSS] ARR Categories Export](#lss-arr-categories-export) `2022.11.26+1803`
-- [[LSS] ARR Counter](#lss-arr-counter) `2022.11.26+1803`
-- [[LSS] Async Prisoners](#lss-async-prisoners) `2022.11.26+1803` (`🇩🇪`)
-- [[LSS] Browsertitle](#lss-browsertitle) `2022.11.26+1803` (`🇩🇪`)
-- [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste) `2022.11.26+1803`
-- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight) `2022.11.26+1803`
-- [[LSS] Chat Hider](#lss-chat-hider) `2022.11.26+1803`
-- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2022.11.26+1803`
-- [[LSS] Clickable links](#lss-clickable-links) `2022.11.26+1803`
+- [[LSS] ARR Categories Export](#lss-arr-categories-export) `2023.06.03+1511`
+- [[LSS] ARR Counter](#lss-arr-counter) `2023.06.03+1511`
+- [[LSS] Async Prisoners](#lss-async-prisoners) `2023.06.03+1511` (`🇩🇪`)
+- [[LSS] Browsertitle](#lss-browsertitle) `2023.06.03+1511` (`🇩🇪`)
+- [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste) `2023.06.03+1511`
+- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight) `2023.06.03+1511`
+- [[LSS] Chat Hider](#lss-chat-hider) `2023.06.03+1511`
+- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2023.06.03+1511`
+- [[LSS] Clickable links](#lss-clickable-links) `2023.06.03+1511`
 - [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2022.11.27+1138`
-- [[LSS] Dark OSM](#lss-dark-osm) `2022.11.26+1803`
+- [[LSS] Dark OSM](#lss-dark-osm) `2023.06.03+1511`
 - [[LSS] Direct levels for buildings](#lss-direct-levels-for-buildings) `2023.03.25+2004`
-- [[LSS] Einsatzdauer](#lss-einsatzdauer) `2022.12.07+2156`
-- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2022.11.26+1803`
-- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.03.31+1546` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.06.02+0928` (`🇩🇪`)
-- [[LSS] Forum: External Links](#lss-forum-external-links) `2022.11.29+2211` (`🇩🇪`)
+- [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
+- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2023.06.03+1511`
+- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.06.03+1511` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.06.03+1511` (`🇩🇪`)
+- [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
-- [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2022.11.26+1803` (`🇩🇪`)
-- [[LSS] Hide Application Background](#lss-hide-application-background) `2023.05.13+0040`
-- [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.05.13+0040`
-- [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2022.11.29+0950`
-- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2022.11.29+1000`
-- [[LSS] Input max length](#lss-input-max-length) `2022.11.29+1052`
-- [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2022.11.26+1803`
-- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.01.02+1306`
+- [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2023.06.03+1511` (`🇩🇪`)
+- [[LSS] Hide Application Background](#lss-hide-application-background) `2023.06.03+1511`
+- [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.06.03+1511`
+- [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2023.06.03+1512`
+- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2023.06.03+1512`
+- [[LSS] Input max length](#lss-input-max-length) `2023.06.03+1512`
+- [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
+- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1443` (`🇩🇪`)
-- [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.01.05+1600`
-- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2022.12.04+1625`
+- [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
+- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
-- [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2022.11.26+1803`
+- [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2023.06.03+1512`
 - [[LSS] Reload missions list](#lss-reload-missions-list) `2023.01.29+1900`
-- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2022.11.26+1803`
-- [[LSS] SoSi-Switch](#lss-sosi-switch) `2022.11.26+1803` (`🇩🇪`)
+- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2023.06.03+1512`
+- [[LSS] SoSi-Switch](#lss-sosi-switch) `2023.06.03+1512` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
-- [[LSS] Toplist Distance](#lss-toplist-distance) `2022.11.26+1803`
-- [[LSS] User-ID](#lss-user-id) `2022.11.26+1803`
+- [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
+- [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
 
 ### [LSS] AAO Config Lite
 
 > This Script is for leitstellenspiel.de only!
 
-|     Version     | Available in | Alias / Old names |                           Download                            |                  Links                  |
-|:---------------:|:------------:|:-----------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.05.15+1505 |    `🇩🇪`    |   `aao-lite-de`   | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+|     Version     | Available in |                           Download                            |                  Links                  |
+|:---------------:|:------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2023.06.03+1511 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Config Lite</summary>
@@ -75,9 +75,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Allows to show icons on the alarm button based on selected vehicle types
 
-|     Version     |  Alias / Old names   |                     Download                      |               Links               |
-|:---------------:|:--------------------:|:-------------------------------------------------:|:---------------------------------:|
-| 2022.12.29+1900 | `Mission-Alarm-Icon` | [alarmIcons.user.js][alarmIcons.user.js:download] | [Forum][alarmIcons.user.js:forum] |
+|     Version     |                     Download                      |               Links               |
+|:---------------:|:-------------------------------------------------:|:---------------------------------:|
+| 2023.06.03+1511 | [alarmIcons.user.js][alarmIcons.user.js:download] | [Forum][alarmIcons.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Alarm-Icons</summary>
@@ -91,9 +91,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows difference of total earned credits to the next alliance
 
-|     Version     |  Alias / Old names  |                           Download                            |                  Links                  |
-|:---------------:|:-------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2022.11.26+1803 | `Alliance-Distance` | [allianceDistance.user.js][allianceDistance.user.js:download] | [Forum][allianceDistance.user.js:forum] |
+|     Version     |                           Download                            |                  Links                  |
+|:---------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2023.06.03+1511 | [allianceDistance.user.js][allianceDistance.user.js:download] | [Forum][allianceDistance.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Alliance Distance</summary>
@@ -107,9 +107,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows difference of total earned credits to the next alliance member
 
-|     Version     |     Alias / Old names      |                                 Download                                  |                     Links                     |
-|:---------------:|:--------------------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
-| 2022.11.26+1803 | `Alliance-Member-Distance` | [allianceMemberDistance.user.js][allianceMemberDistance.user.js:download] | [Forum][allianceMemberDistance.user.js:forum] |
+|     Version     |                                 Download                                  |                     Links                     |
+|:---------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
+| 2023.06.03+1511 | [allianceMemberDistance.user.js][allianceMemberDistance.user.js:download] | [Forum][allianceMemberDistance.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Alliance Member Distance</summary>
@@ -123,9 +123,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Customizable Notes for each alliance member
 
-|     Version     |    Alias / Old names    |                              Download                               |                   Links                    |
-|:---------------:|:-----------------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
-| 2022.11.26+1803 | `Alliance-Member-Notes` | [allianceMemberNotes.user.js][allianceMemberNotes.user.js:download] | [Forum][allianceMemberNotes.user.js:forum] |
+|     Version     |                              Download                               |                   Links                    |
+|:---------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
+| 2023.06.03+1511 | [allianceMemberNotes.user.js][allianceMemberNotes.user.js:download] | [Forum][allianceMemberNotes.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Alliance Member Notes</summary>
@@ -155,9 +155,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Allows exporting and importing custom ARR Categories
 
-|     Version     |    Alias / Old names    |                              Download                               |                   Links                    |
-|:---------------:|:-----------------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
-| 2022.11.26+1803 | `arr_categories_export` | [arrCategoriesExport.user.js][arrCategoriesExport.user.js:download] | [Forum][arrCategoriesExport.user.js:forum] |
+|     Version     |                              Download                               |                   Links                    |
+|:---------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
+| 2023.06.03+1511 | [arrCategoriesExport.user.js][arrCategoriesExport.user.js:download] | [Forum][arrCategoriesExport.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO-Kategorien Export</summary>
@@ -171,9 +171,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Counts how often an ARR is clicked
 
-|     Version     |    Alias / Old names     |                     Download                      |               Links               |
-|:---------------:|:------------------------:|:-------------------------------------------------:|:---------------------------------:|
-| 2022.11.26+1803 | `arr-counter-standalone` | [arrCounter.user.js][arrCounter.user.js:download] | [Forum][arrCounter.user.js:forum] |
+|     Version     |                     Download                      |               Links               |
+|:---------------:|:-------------------------------------------------:|:---------------------------------:|
+| 2023.06.03+1511 | [arrCounter.user.js][arrCounter.user.js:download] | [Forum][arrCounter.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO-Zähler</summary>
@@ -187,9 +187,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > [Currently DE only] transport prisoners without reloading the mission window
 
-|     Version     | Available in | Alias / Old names |                         Download                          |                 Links                 |
-|:---------------:|:------------:|:-----------------:|:---------------------------------------------------------:|:-------------------------------------:|
-| 2022.11.26+1803 |    `🇩🇪`    | `Async-Prisoners` | [asyncPrisoners.user.js][asyncPrisoners.user.js:download] | [Forum][asyncPrisoners.user.js:forum] |
+|     Version     | Available in |                         Download                          |                 Links                 |
+|:---------------:|:------------:|:---------------------------------------------------------:|:-------------------------------------:|
+| 2023.06.03+1511 |    `🇩🇪`    | [asyncPrisoners.user.js][asyncPrisoners.user.js:download] | [Forum][asyncPrisoners.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Asynchrone Gefangene</summary>
@@ -203,9 +203,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > [Currently DE only] Shows the current page as title in the browser
 
-|     Version     | Available in | Alias / Old names |                       Download                        |                Links                |
-|:---------------:|:------------:|:-----------------:|:-----------------------------------------------------:|:-----------------------------------:|
-| 2022.11.26+1803 |    `🇩🇪`    |  `browsertitle`   | [browsertitle.user.js][browsertitle.user.js:download] | [Forum][browsertitle.user.js:forum] |
+|     Version     | Available in |                       Download                        |                Links                |
+|:---------------:|:------------:|:-----------------------------------------------------:|:-----------------------------------:|
+| 2023.06.03+1511 |    `🇩🇪`    | [browsertitle.user.js][browsertitle.user.js:download] | [Forum][browsertitle.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Browsertitel</summary>
@@ -219,9 +219,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Macht die AAO über die Fahrzeugliste in Bereitstellungsräumen
 
-|     Version     |   Alias / Old names   |                                 Download                                  |
-|:---------------:|:---------------------:|:-------------------------------------------------------------------------:|
-| 2022.11.26+1803 | `bsr-aao-vehiclelist` | [bsrAAOAboveVehiclelist.user.js][bsrAAOAboveVehiclelist.user.js:download] |
+|     Version     |                                 Download                                  |
+|:---------------:|:-------------------------------------------------------------------------:|
+| 2023.06.03+1511 | [bsrAAOAboveVehiclelist.user.js][bsrAAOAboveVehiclelist.user.js:download] |
 
 
 
@@ -231,9 +231,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Colors the gift-icon green, if the daily login has not been collected yet.
 
-|     Version     |     Alias / Old names     |                                Download                                 |
-|:---------------:|:-------------------------:|:-----------------------------------------------------------------------:|
-| 2022.11.26+1803 | `Calendar-Gift-Highlight` | [calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download] |
+|     Version     |                                Download                                 |
+|:---------------:|:-----------------------------------------------------------------------:|
+| 2023.06.03+1511 | [calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Calendar-Gift-Highlight</summary>
@@ -246,9 +246,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Hides chat messages by type
 
-|     Version     | Alias / Old names |                    Download                     |              Links               |
-|:---------------:|:-----------------:|:-----------------------------------------------:|:--------------------------------:|
-| 2022.11.26+1803 |    `chathider`    | [chatHider.user.js][chatHider.user.js:download] | [Forum][chatHider.user.js:forum] |
+|     Version     |                    Download                     |              Links               |
+|:---------------:|:-----------------------------------------------:|:--------------------------------:|
+| 2023.06.03+1511 | [chatHider.user.js][chatHider.user.js:download] | [Forum][chatHider.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Chat Hider</summary>
@@ -262,9 +262,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Allows to select multiple checkbox in a row by pressing the shift key
 
-|     Version     |   Alias / Old names    |                              Download                               |                   Links                    |
-|:---------------:|:----------------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
-| 2022.11.26+1803 | `checkbox-multiselect` | [checkboxMultiselect.user.js][checkboxMultiselect.user.js:download] | [Forum][checkboxMultiselect.user.js:forum] |
+|     Version     |                              Download                               |                   Links                    |
+|:---------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
+| 2023.06.03+1511 | [checkboxMultiselect.user.js][checkboxMultiselect.user.js:download] | [Forum][checkboxMultiselect.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Checkbox-multiselect</summary>
@@ -278,9 +278,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Allows to click any link in text messages in game
 
-|     Version     | Alias / Old names |                         Download                          |                 Links                 |
-|:---------------:|:-----------------:|:---------------------------------------------------------:|:-------------------------------------:|
-| 2022.11.26+1803 | `clickable-links` | [clickableLinks.user.js][clickableLinks.user.js:download] | [Forum][clickableLinks.user.js:forum] |
+|     Version     |                         Download                          |                 Links                 |
+|:---------------:|:---------------------------------------------------------:|:-------------------------------------:|
+| 2023.06.03+1511 | [clickableLinks.user.js][clickableLinks.user.js:download] | [Forum][clickableLinks.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Clickable links</summary>
@@ -310,9 +310,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Darkens the OSM Map
 
-|     Version     | Alias / Old names |                  Download                   |
-|:---------------:|:-----------------:|:-------------------------------------------:|
-| 2022.11.26+1803 |    `dark-osm`     | [darkOSM.user.js][darkOSM.user.js:download] |
+|     Version     |                  Download                   |
+|:---------------:|:-------------------------------------------:|
+| 2023.06.03+1511 | [darkOSM.user.js][darkOSM.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Dark OSM</summary>
@@ -341,9 +341,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows the remaining time for each mission in the missions list
 
-|     Version     | Alias / Old names |                       Download                        |                Links                |
-|:---------------:|:-----------------:|:-----------------------------------------------------:|:-----------------------------------:|
-| 2022.12.07+2156 |  `einsatzdauer`   | [einsatzdauer.user.js][einsatzdauer.user.js:download] | [Forum][einsatzdauer.user.js:forum] |
+|     Version     |                       Download                        |                Links                |
+|:---------------:|:-----------------------------------------------------:|:-----------------------------------:|
+| 2023.06.03+1511 | [einsatzdauer.user.js][einsatzdauer.user.js:download] | [Forum][einsatzdauer.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Einsatzdauer</summary>
@@ -357,9 +357,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > adds an extra button for closing the alarm window after alarming
 
-|     Version     |      Alias / Old names      |                                Download                                 |                    Links                     |
-|:---------------:|:---------------------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
-| 2022.11.26+1803 | `extra-alarm-and-close-btn` | [extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download] | [Forum][extraAlarmAndCloseBtn.user.js:forum] |
+|     Version     |                                Download                                 |                    Links                     |
+|:---------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
+| 2023.06.03+1511 | [extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download] | [Forum][extraAlarmAndCloseBtn.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] extra alarm & close button</summary>
@@ -373,9 +373,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > An internal Bookmark Manager for the general forum
 
-|     Version     | Available in | Alias / Old names |                          Download                           |                 Links                  |
-|:---------------:|:------------:|:-----------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.03.31+1546 |    `🇩🇪`    | `Forum-Bookmarks` | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
+|     Version     | Available in |                          Download                           |                 Links                  |
+|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2023.06.03+1511 |    `🇩🇪`    | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Lesezeichen</summary>
@@ -389,9 +389,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 
-|     Version     | Available in |   Alias / Old names   |                          Download                           |                 Links                  |
-|:---------------:|:------------:|:---------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.06.02+0928 |    `🇩🇪`    | `LSS-Forum-Dashboard` | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+|     Version     | Available in |                          Download                           |                 Links                  |
+|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2023.06.03+1511 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -405,9 +405,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Opens external links in the Forum in a new tab / window by default
 
-|     Version     | Available in |    Alias / Old names     |                             Download                              |                   Links                   |
-|:---------------:|:------------:|:------------------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2022.11.29+2211 |    `🇩🇪`    | `LSS-Forum-ExternalLink` | [forum/externalLink.user.js][forum/externalLink.user.js:download] | [Forum][forum/externalLink.user.js:forum] |
+|     Version     | Available in |                             Download                              |                   Links                   |
+|:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
+| 2023.06.03+1511 |    `🇩🇪`    | [forum/externalLink.user.js][forum/externalLink.user.js:download] | [Forum][forum/externalLink.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: External Links</summary>
@@ -452,9 +452,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Fun-Script: Grüße halt, gelle
 
-|     Version     | Available in | Alias / Old names |                  Download                   |             Links              |
-|:---------------:|:------------:|:-----------------:|:-------------------------------------------:|:------------------------------:|
-| 2022.11.26+1803 |    `🇩🇪`    |     `gruesse`     | [gruesse.user.js][gruesse.user.js:download] | [Forum][gruesse.user.js:forum] |
+|     Version     | Available in |                  Download                   |             Links              |
+|:---------------:|:------------:|:-------------------------------------------:|:------------------------------:|
+| 2023.06.03+1511 |    `🇩🇪`    | [gruesse.user.js][gruesse.user.js:download] | [Forum][gruesse.user.js:forum] |
 
 
 
@@ -465,9 +465,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Removes the green background on alliance applications
 
-|     Version     |         Alias / Old names         |                                    Download                                     |
-|:---------------:|:---------------------------------:|:-------------------------------------------------------------------------------:|
-| 2023.05.13+0040 | `lss-hide-application-background` | [hideApplicationBackground.user.js][hideApplicationBackground.user.js:download] |
+|     Version     |                                    Download                                     |
+|:---------------:|:-------------------------------------------------------------------------------:|
+| 2023.06.03+1511 | [hideApplicationBackground.user.js][hideApplicationBackground.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Kein Hintergrund bei Bewerbung</summary>
@@ -480,9 +480,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Removes the green background on unread alliance forum threads
 
-|     Version     |                  Alias / Old names                  |                              Download                               |
-|:---------------:|:---------------------------------------------------:|:-------------------------------------------------------------------:|
-| 2023.05.13+0040 | `LSS-ingame-Forum-kein-nerviger-grüner-Hintergrund` | [hideForumBackground.user.js][hideForumBackground.user.js:download] |
+|     Version     |                              Download                               |
+|:---------------:|:-------------------------------------------------------------------:|
+| 2023.06.03+1511 | [hideForumBackground.user.js][hideForumBackground.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Kein Hintergrund vom Forum</summary>
@@ -495,9 +495,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Hides button to Leitstellenansicht in building panel
 
-|     Version     |              Alias / Old names              |                                                   Download                                                    |                              Links                              |
-|:---------------:|:-------------------------------------------:|:-------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------:|
-| 2022.11.29+0950 | `hide-leitstellenansicht-btn-buildingpanel` | [hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download] | [Forum][hideLeitstellenansichtBtnInBuildingPanel.user.js:forum] |
+|     Version     |                                                   Download                                                    |                              Links                              |
+|:---------------:|:-------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------:|
+| 2023.06.03+1512 | [hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download] | [Forum][hideLeitstellenansichtBtnInBuildingPanel.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden</summary>
@@ -511,9 +511,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Hides own missions that are not yet shared with alliance
 
-|     Version     |     Alias / Old names      |                                   Download                                    |                      Links                      |
-|:---------------:|:--------------------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------:|
-| 2022.11.29+1000 | `hideOwnNotSharedMissions` | [hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download] | [Forum][hideOwnNotSharedMissions.user.js:forum] |
+|     Version     |                                   Download                                    |                      Links                      |
+|:---------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------:|
+| 2023.06.03+1512 | [hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download] | [Forum][hideOwnNotSharedMissions.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] eigene ungeteilte Einsätze ausblenden</summary>
@@ -527,9 +527,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows a help about minimum and maximum length of text input fields
 
-|     Version     | Alias / Old names |                      Download                       |               Links                |
-|:---------------:|:-----------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2022.11.29+1052 |  `Input-Length`   | [inputMaxLen.user.js][inputMaxLen.user.js:download] | [Forum][inputMaxLen.user.js:forum] |
+|     Version     |                      Download                       |               Links                |
+|:---------------:|:---------------------------------------------------:|:----------------------------------:|
+| 2023.06.03+1512 | [inputMaxLen.user.js][inputMaxLen.user.js:download] | [Forum][inputMaxLen.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Textlänge bei Eingabefeldern prüfen</summary>
@@ -543,9 +543,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Adds a button to show/hide navbar in Leitstellenansicht
 
-|     Version     |        Alias / Old names        |                                      Download                                       |
-|:---------------:|:-------------------------------:|:-----------------------------------------------------------------------------------:|
-| 2022.11.26+1803 | `Leitstellenansicht-Nav-toggle` | [navToggleLeitstellenansicht.user.js][navToggleLeitstellenansicht.user.js:download] |
+|     Version     |                                      Download                                       |
+|:---------------:|:-----------------------------------------------------------------------------------:|
+| 2023.06.03+1512 | [navToggleLeitstellenansicht.user.js][navToggleLeitstellenansicht.user.js:download] |
 
 
 
@@ -555,9 +555,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Allows opening a lightbox on all sites of the game
 
-|     Version     |  Alias / Old names  |                           Download                            |                  Links                  |
-|:---------------:|:-------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.01.02+1306 | `Lightbox-Lightbox` | [lightboxLightbox.user.js][lightboxLightbox.user.js:download] | [Forum][lightboxLightbox.user.js:forum] |
+|     Version     |                           Download                            |                  Links                  |
+|:---------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2023.06.03+1512 | [lightboxLightbox.user.js][lightboxLightbox.user.js:download] | [Forum][lightboxLightbox.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Lightbox-Lightbox</summary>
@@ -587,9 +587,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows a scale on the map
 
-|     Version     | Alias / Old names |                      Download                       |               Links                |
-|:---------------:|:-----------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2023.01.05+1600 |  `osm-mapscale`   | [osmMapscale.user.js][osmMapscale.user.js:download] | [Forum][osmMapscale.user.js:forum] |
+|     Version     |                      Download                       |               Links                |
+|:---------------:|:---------------------------------------------------:|:----------------------------------:|
+| 2023.06.03+1512 | [osmMapscale.user.js][osmMapscale.user.js:download] | [Forum][osmMapscale.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] OSM-MapScale</summary>
@@ -603,9 +603,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Adds the current mission (including address) to the radio message
 
-|     Version     | Alias / Old names |                           Download                            |                  Links                  |
-|:---------------:|:-----------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2022.12.04+1625 |   `FMS-Change`    | [fmsMissionTarget.user.js][fmsMissionTarget.user.js:download] | [Forum][fmsMissionTarget.user.js:forum] |
+|     Version     |                           Download                            |                  Links                  |
+|:---------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2023.06.03+1511 | [fmsMissionTarget.user.js][fmsMissionTarget.user.js:download] | [Forum][fmsMissionTarget.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] FMS: Einsatzziel</summary>
@@ -635,9 +635,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Adds a button to the map to reload the list of buildings
 
-|     Version     |   Alias / Old names   |                             Download                              |                   Links                   |
-|:---------------:|:---------------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2022.11.26+1803 | `reload-buildinglist` | [reloadBuildinglist.user.js][reloadBuildinglist.user.js:download] | [Forum][reloadBuildinglist.user.js:forum] |
+|     Version     |                             Download                              |                   Links                   |
+|:---------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
+| 2023.06.03+1512 | [reloadBuildinglist.user.js][reloadBuildinglist.user.js:download] | [Forum][reloadBuildinglist.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Gebäudeliste neu laden</summary>
@@ -667,9 +667,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows a scroll-to-top button on all scrollable elements
 
-|     Version     | Alias / Old names |                      Download                       |               Links                |
-|:---------------:|:-----------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2022.11.26+1803 |  `scroll-to-top`  | [scrollToTop.user.js][scrollToTop.user.js:download] | [Forum][scrollToTop.user.js:forum] |
+|     Version     |                      Download                       |               Links                |
+|:---------------:|:---------------------------------------------------:|:----------------------------------:|
+| 2023.06.03+1512 | [scrollToTop.user.js][scrollToTop.user.js:download] | [Forum][scrollToTop.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Scroll-To-Top buttons</summary>
@@ -683,9 +683,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > This Script is for leitstellenspiel.de only!
 
-|     Version     | Available in | Alias / Old names |                                Download                                 |                    Links                     |
-|:---------------:|:------------:|:-----------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
-| 2022.11.26+1803 |    `🇩🇪`    |     `de-sosi`     | [sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download] | [Forum][sonderrechteSwitch.de.user.js:forum] |
+|     Version     | Available in |                                Download                                 |                    Links                     |
+|:---------------:|:------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
+| 2023.06.03+1512 |    `🇩🇪`    | [sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download] | [Forum][sonderrechteSwitch.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] SoSi-Switch</summary>
@@ -715,9 +715,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows difference of total earned credits to the next user
 
-|     Version     | Alias / Old names  |                          Download                           |                 Links                  |
-|:---------------:|:------------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2022.11.26+1803 | `Toplist-Distance` | [toplistDistance.user.js][toplistDistance.user.js:download] | [Forum][toplistDistance.user.js:forum] |
+|     Version     |                          Download                           |                 Links                  |
+|:---------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2023.06.03+1512 | [toplistDistance.user.js][toplistDistance.user.js:download] | [Forum][toplistDistance.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Toplist Distance</summary>
@@ -731,9 +731,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows the own User-ID in navbar on main page and a users ID on their respective profile page
 
-|     Version     |  Alias / Old names   |                 Download                  |             Links             |
-|:---------------:|:--------------------:|:-----------------------------------------:|:-----------------------------:|
-| 2022.11.26+1803 | `user_id_in_profile` | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
+|     Version     |                 Download                  |             Links             |
+|:---------------:|:-----------------------------------------:|:-----------------------------:|
+| 2023.06.03+1512 | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] User-ID</summary>

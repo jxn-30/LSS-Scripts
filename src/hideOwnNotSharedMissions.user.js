@@ -2,7 +2,7 @@
 // @name            [LSS] hide own not shared missions
 // @name:de         [LSS] eigene ungeteilte Einsätze ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1509
+// @version         2023.06.03+1512
 // @author          Jan (jxn_30)
 // @description     Hides own missions that are not yet shared with alliance
 // @description:de  Blendet eigene Einsätze, die nicht im Verband geteilt wurden aus

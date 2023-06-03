@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] User-ID
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1509
+// @version         2023.06.03+1512
 // @author          Jan (jxn_30)
 // @description     Shows the own User-ID in navbar on main page and a users ID on their respective profile page
 // @description:de  Zeigt die eigene Nutzer-ID in der Navigationsleiste auf der Hauptseite und die ID eines Nutzers auf dessen Profilseite an

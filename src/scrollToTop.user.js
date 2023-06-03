@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Scroll-To-Top buttons
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1509
+// @version         2023.06.03+1512
 // @author          Jan (jxn_30)
 // @description     Shows a scroll-to-top button on all scrollable elements
 // @description:de  Zeigt einen Knopf, um in Elementen nach oben zu scrollen

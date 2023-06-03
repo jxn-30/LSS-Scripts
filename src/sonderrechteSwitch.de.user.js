@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] SoSi-Switch
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1509
+// @version         2023.06.03+1512
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Zeigt einen Knopf zum Umschalten der Sonderrechte im Einsatzfenster an

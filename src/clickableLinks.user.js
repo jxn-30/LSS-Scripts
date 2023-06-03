@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Clickable links
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1509
+// @version         2023.06.03+1511
 // @author          Jan (jxn_30)
 // @description     Allows to click any link in text messages in game
 // @description:de  Erlaubt es, alle Links in Textnachrichten im Spiel anzuklicken

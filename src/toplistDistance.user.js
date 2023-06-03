@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Toplist Distance
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1509
+// @version         2023.06.03+1512
 // @author          Jan (jxn_30)
 // @description     Shows difference of total earned credits to the next user
 // @description:de  Zeigt die fehlenden verdienten Credits zum nächsten Spieler an

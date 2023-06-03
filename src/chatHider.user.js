@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Chat Hider
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1509
+// @version         2023.06.03+1511
 // @author          Jan (jxn_30)
 // @description     Hides chat messages by type
 // @description:de  Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus
