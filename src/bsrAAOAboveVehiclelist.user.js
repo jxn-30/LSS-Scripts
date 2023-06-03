@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] BSR AAO über Fahrzeugliste
 // @namespace    https://jxn.lss-manager.de
-// @version      2022.11.26+1803
+// @version      2023.06.03+1509
 // @author       Jan (jxn_30)
 // @description  Macht die AAO über die Fahrzeugliste in Bereitstellungsräumen
 // @homepage     https://github.com/jxn-30/LSS-Scripts
@@ -55,7 +55,6 @@
  * @name BSR AAO über Fahrzeugliste
  * @description Macht die AAO über die Fahrzeugliste in Bereitstellungsräumen
  * @match /buildings/*
- * @old bsr-aao-vehiclelist
  */
 
 document

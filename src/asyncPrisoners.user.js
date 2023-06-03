@@ -2,7 +2,7 @@
 // @name            [LSS] Async Prisoners
 // @name:de         [LSS] Asynchrone Gefangene
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     [Currently DE only] transport prisoners without reloading the mission window
 // @description:de  Verhindert das Neuladen der Einsatzseite beim Abtransportieren von Gefangenen
@@ -25,7 +25,6 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18769-gefangene-ohne-seite-neu-zu-laden-abschicken/
  * @locale de_DE
  * @match /missions/*
- * @old Async-Prisoners
  */
 
 (function () {

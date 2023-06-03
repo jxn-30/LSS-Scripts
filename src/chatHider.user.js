@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Chat Hider
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Hides chat messages by type
 // @description:de  Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus
@@ -59,7 +59,6 @@
  * @description:de Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18991-chat-hider/
  * @match /
- * @old chathider
  * @grant unsafeWindow
  */
 

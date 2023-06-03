@@ -2,7 +2,7 @@
 // @name            [LSS] Browsertitle
 // @name:de         [LSS] Browsertitel
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     [Currently DE only] Shows the current page as title in the browser
 // @description:de  Zeigt die aktuelle Seite als Titel im Browser an
@@ -25,7 +25,6 @@
  * @description:de Zeigt die aktuelle Seite als Titel im Browser an
  * @forum https://forum.leitstellenspiel.de/index.php?thread/16784-script-browsertitle/
  * @locale de_DE
- * @old browsertitle
  * @grant unsafeWindow
  */
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] User-ID
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Shows the own User-ID in navbar on main page and a users ID on their respective profile page
 // @description:de  Zeigt die eigene Nutzer-ID in der Navigationsleiste auf der Hauptseite und die ID eines Nutzers auf dessen Profilseite an
@@ -97,7 +97,6 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/12513-user-id-anzeiger/
  * @match /
  * @match /profile/*
- * @old user_id_in_profile
  */
 
 const showInNavbar = true;

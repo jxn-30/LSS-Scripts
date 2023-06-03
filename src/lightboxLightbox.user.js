@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Lightbox-Lightbox
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.02+1306
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Allows opening a lightbox on all sites of the game
 // @description:de  Erlaubt es, eine Lightbox auf allen Seiten des Spiels zu öffnen
@@ -57,7 +57,6 @@
  * @description Allows opening a lightbox on all sites of the game
  * @description:de Erlaubt es, eine Lightbox auf allen Seiten des Spiels zu öffnen
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18588-script-lightbox-in-lightbox-in-lightbox-in/
- * @old Lightbox-Lightbox
  */
 
 (function () {

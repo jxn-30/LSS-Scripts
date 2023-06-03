@@ -2,7 +2,7 @@
 // @name            [LSS] Forum: Bookmarks
 // @name:de         [LSS] Forum: Lesezeichen
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.03.31+1546
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     An internal Bookmark Manager for the general forum
 // @description:de  Ein interner Lesezeichen-Manager für das allgemeine Forum
@@ -30,7 +30,6 @@
  * @run-at document-body
  * @locale de_DE
  * @subdomain forum
- * @old Forum-Bookmarks
  * @grant GM_addStyle
  */
 

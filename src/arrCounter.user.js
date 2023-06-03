@@ -2,7 +2,7 @@
 // @name            [LSS] ARR Counter
 // @name:de         [LSS] AAO-Zähler
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Counts how often an ARR is clicked
 // @description:de  Zeigt einen Zähler an, wie oft eine AAO geklickt wurde
@@ -60,7 +60,6 @@
  * @description:de Zeigt einen Zähler an, wie oft eine AAO geklickt wurde
  * @forum https://forum.leitstellenspiel.de/index.php?thread/19317-script-aao-z%C3%A4hler-standalone/
  * @match /missions/*
- * @old arr-counter-standalone
  */
 
 (function () {

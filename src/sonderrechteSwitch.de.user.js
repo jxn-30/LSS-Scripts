@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] SoSi-Switch
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Zeigt einen Knopf zum Umschalten der Sonderrechte im Einsatzfenster an
@@ -23,7 +23,6 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/13928-mit-und-ohne-sonderrechte/&postID=463217#post463217
  * @locale de_DE
  * @match /missions/*
- * @old de-sosi
  */
 
 (function () {

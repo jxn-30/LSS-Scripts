@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Grüße vom Jan
 // @namespace    https://jxn.lss-manager.de
-// @version      2022.11.26+1803
+// @version      2023.06.03+1509
 // @author       Jan (jxn_30)
 // @description  Fun-Script: Grüße halt, gelle
 // @homepage     https://github.com/jxn-30/LSS-Scripts
@@ -20,7 +20,6 @@
  * @description Fun-Script: Grüße halt, gelle
  * @forum https://forum.leitstellenspiel.de/index.php?thread/16931-%C3%BCbersicht-%C3%BCber-die-scripte/&postID=363928#post363928
  * @match /profile/205976/
- * @old gruesse
  * @locale de_DE
  */
 

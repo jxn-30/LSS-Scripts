@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Alliance Member Notes
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Customizable Notes for each alliance member
 // @description:de  Frei anpassbare Notizen für jedes Verbandsmitglied
@@ -97,7 +97,6 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18517-scriptwunsch-notizen-bei-mitgliedern
  * @match /verband/mitglieder
  * @match /verband/mitglieder/*
- * @old Alliance-Member-Notes
  */
 
 (function () {

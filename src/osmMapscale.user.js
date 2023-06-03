@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] OSM-MapScale
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.05+1600
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Shows a scale on the map
 // @description:de  Zeigt einen Maßstab auf der Karte an
@@ -58,7 +58,6 @@
  * @description Shows a scale on the map
  * @description:de Zeigt einen Maßstab auf der Karte an
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18908-script-osm-mapscale/
- * @old osm-mapscale
  * @grant unsafeWindow
  */
 

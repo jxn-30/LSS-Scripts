@@ -2,7 +2,7 @@
 // @name            [LSS] Input max length
 // @name:de         [LSS] Textlänge bei Eingabefeldern prüfen
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.29+1052
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Shows a help about minimum and maximum length of text input fields
 // @description:de  Zeigt eine Hilfe über die Mindest- und Maximaltextlänge von Eingabefeldern an
@@ -60,7 +60,6 @@
  * @description Shows a help about minimum and maximum length of text input fields
  * @description:de Zeigt eine Hilfe über die Mindest- und Maximaltextlänge von Eingabefeldern an
  * @forum https://forum.leitstellenspiel.de/index.php?thread/11756-erledigt-textl%C3%A4nge-in-begrenzten-eingabefeldern-schon-bei-eingabe-pr%C3%BCfen/
- * @old Input-Length
  * @grant GM_addStyle
  */
 

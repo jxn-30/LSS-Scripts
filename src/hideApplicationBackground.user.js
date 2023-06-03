@@ -2,7 +2,7 @@
 // @name            [LSS] Hide Application Background
 // @name:de         [LSS] Kein Hintergrund bei Bewerbung
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.05.13+0040
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Removes the green background on alliance applications
 // @description:de  Deaktiviert den grünen Hintergrund, wenn der Verband Bewerbungen hat
@@ -59,7 +59,6 @@
  * @name:de Kein Hintergrund bei Bewerbung
  * @description Removes the green background on alliance applications
  * @description:de Deaktiviert den grünen Hintergrund, wenn der Verband Bewerbungen hat
- * @old lss-hide-application-background
  * @grant GM_addStyle
  */
 

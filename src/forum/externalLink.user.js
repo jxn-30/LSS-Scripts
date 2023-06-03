@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: External Links
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.29+2211
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Opens external links in the Forum in a new tab / window by default
 // @description:de  Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
@@ -23,7 +23,6 @@
  * @match /*
  * @locale de_DE
  * @subdomain forum
- * @old LSS-Forum-ExternalLink
  */
 
 (function () {

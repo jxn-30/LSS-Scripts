@@ -2,7 +2,7 @@
 // @name            [LSS] Hide Forum Background
 // @name:de         [LSS] Kein Hintergrund vom Forum
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.05.13+0040
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Removes the green background on unread alliance forum threads
 // @description:de  Deaktiviert den grünen Hintergrund, wenn es ungelesene Threads im Verbandsforum gibt
@@ -59,7 +59,6 @@
  * @name:de Kein Hintergrund vom Forum
  * @description Removes the green background on unread alliance forum threads
  * @description:de Deaktiviert den grünen Hintergrund, wenn es ungelesene Threads im Verbandsforum gibt
- * @old LSS-ingame-Forum-kein-nerviger-grüner-Hintergrund
  * @grant GM_addStyle
  */
 

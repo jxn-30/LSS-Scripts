@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] extra alarm & close button
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     adds an extra button for closing the alarm window after alarming
 // @description:de  Zeigt im Einsatzfenster einen zusätzlichen Knopf zum alarmieren und schließen an.
@@ -58,7 +58,6 @@
  * @description:de Zeigt im Einsatzfenster einen zusätzlichen Knopf zum alarmieren und schließen an.
  * @forum https://forum.leitstellenspiel.de/index.php?thread/23205-scriptwunsch-alarmieren-und-fenster-schlie%C3%9Fen/
  * @match /missions/*
- * @old extra-alarm-and-close-btn
  */
 
 const btnText = 'Alarmieren & Schließen';

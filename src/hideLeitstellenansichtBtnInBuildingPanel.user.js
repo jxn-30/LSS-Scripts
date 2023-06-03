@@ -2,7 +2,7 @@
 // @name            [LSS] Hide Leitstellenansicht btn in building panel
 // @name:de         [LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.29+0950
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Hides button to Leitstellenansicht in building panel
 // @description:de  Blendet den Knopf zur Leitstellenansicht in der Gebäudeliste aus
@@ -61,7 +61,6 @@
  * @description:de Blendet den Knopf zur Leitstellenansicht in der Gebäudeliste aus
  * @forum https://forum.leitstellenspiel.de/index.php?thread/23027-leitstellenansicht-ab-jetzt-auch-f%C3%BCr-nicht-premium-nutzer/&postID=458680#post458680
  * @match /
- * @old hide-leitstellenansicht-btn-buildingpanel
  * @grant GM_addStyle
  */
 

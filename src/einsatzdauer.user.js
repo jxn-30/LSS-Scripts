@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Einsatzdauer
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.12.07+2156
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Shows the remaining time for each mission in the missions list
 // @description:de  Zeigt die verbleibende Einsatzdauer in der Einsatzliste an
@@ -59,7 +59,6 @@
  * @description:de Zeigt die verbleibende Einsatzdauer in der Einsatzliste an
  * @forum https://forum.leitstellenspiel.de/index.php?thread/13913-script-einsatzdauer-in-der-einsatzliste/
  * @match /
- * @old einsatzdauer
  * @grant unsafeWindow
  */
 

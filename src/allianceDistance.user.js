@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Alliance Distance
 // @namespace       https://jxn.lss-manager.de
-// @version         2022.11.26+1803
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Shows difference of total earned credits to the next alliance
 // @description:de  Zeigt die fehlenden verdienten Credits zum nächsten Verband an
@@ -97,7 +97,6 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
  * @match /alliances
  * @match /alliances?page=*
- * @old Alliance-Distance
  */
 
 /* global AmCharts */

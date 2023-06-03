@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.02+0928
+// @version         2023.06.03+1509
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -34,7 +34,6 @@
  * @resource amchartsXY https://cdn.amcharts.com/lib/5/xy.js
  * @resource amchartsExport https://cdn.amcharts.com/lib/5/plugins/exporting.js
  * @resource amchartsThemeDark https://cdn.amcharts.com/lib/5/themes/Dark.js
- * @old LSS-Forum-Dashboard
  * @grant GM_getResourceURL
  */
 
