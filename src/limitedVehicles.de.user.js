@@ -10,7 +10,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
 // @match           https://www.leitstellenspiel.de/
 // @match           https://polizei.leitstellenspiel.de/
 // @run-at          document-idle
@@ -20,7 +20,7 @@
  * @name  Limited Vehicles (DE)
  * @description This Script is for leitstellenspiel.de only!
  * @description:de Zeigt für limitierte Fahrzeuge (NAW, ITW, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
- * @author Jan (jxn_30)
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
  * @locale de_DE
  * @match /
  */
