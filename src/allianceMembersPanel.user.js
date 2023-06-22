@@ -71,7 +71,19 @@
  * 'own': add a new panel (recommended for window design or wide screens only)
  *  In window design, will always be 'own'!
  */
-const mode = 'own'; // chat, radio, own
+const MODE = 'own'; // chat, radio, own
+/**
+ * Whether to highlight friends with a 🫂 Prefix: *CAVE: works only for friends that are in the same alliance as you*
+ * true: friends will be highlighted
+ * false: friends will appear in the list as normal alliance members
+ */
+const HIGHLIGHT_FRIENDS = false;
+/**
+ * Whether to show on top of the list: *CAVE: works only for friends that are in the same alliance as you*
+ * true: friends will be shown on top of the members list
+ * false: friends will appear in the list as normal alliance members
+ */
+const FRIENDS_ON_TOP = false;
 
 const roles = {
     admin: {
@@ -111,6 +123,35 @@ const createRoleFlagSpan = role => {
     return span;
 };
 
+/**
+ * @param {string[]} friendsList
+ * @returns {function(string, string): number}
+ */
+const getSortingFn = friendsList => (nameA, nameB) => {
+    if (FRIENDS_ON_TOP) {
+        if (friendsList.includes(nameA) && friendsList.includes(nameB)) {
+            return nameA.localeCompare(nameB);
+        }
+        if (friendsList.includes(nameA)) return -1;
+        if (friendsList.includes(nameB)) return 1;
+    }
+    return nameA.localeCompare(nameB);
+};
+
+/**
+ * @returns {Promise<string[]>}
+ */
+const getFriendsList = () =>
+    fetch('/freunde')
+        .then(res => res.text())
+        .then(html =>
+            Array.from(
+                new DOMParser()
+                    .parseFromString(html, 'text/html')
+                    .querySelectorAll('table tbody tr td a[href^="/profile/"]')
+            ).map(a => a.textContent.trim())
+        );
+
 const updateMembersList = () => {
     fetch('/api/allianceinfo')
         .then(res => res.json())
@@ -130,14 +171,25 @@ const updateMembersList = () => {
             return allianceinfo.users;
         })
         .then(users => {
+            if (HIGHLIGHT_FRIENDS || FRIENDS_ON_TOP) {
+                return getFriendsList().then(friendsList => [
+                    users,
+                    friendsList,
+                ]);
+            }
+            return [users, []];
+        })
+        .then(([users, friendsList]) => {
             // empty the table
             tableBody.replaceChildren();
 
             let onlineCounter = 0;
 
+            const sortingFn = getSortingFn(friendsList);
+
             users
                 .sort(({ name: nameA }, { name: nameB }) =>
-                    nameA.localeCompare(nameB)
+                    sortingFn(nameA, nameB)
                 )
                 .forEach(user => {
                     const row = tableBody.insertRow();
@@ -154,6 +206,9 @@ const updateMembersList = () => {
                     link.classList.add('lightbox-open');
                     link.href = `/profile/${user.id}`;
                     link.textContent = user.name;
+                    if (HIGHLIGHT_FRIENDS && friendsList.includes(user.name)) {
+                        link.textContent = `🫂 ${link.textContent}`;
+                    }
                     nameCell.append(link);
 
                     if (user.role_flags.admin) {
@@ -281,7 +336,7 @@ wrapper.classList.add('overview_outer', 'bigMapWindow');
 
 wrapper.append(panel);
 
-if (mode === 'own' || bigMapMenu) {
+if (MODE === 'own' || bigMapMenu) {
     wrapper.classList.add('col-sm-3');
     document
         .querySelector('#buildings_outer')
@@ -354,7 +409,7 @@ if (mode === 'own' || bigMapMenu) {
 } else {
     wrapper.classList.add('col-sm-4', 'hidden');
 
-    const switchWrapper = document.querySelector(`#${mode}_outer`);
+    const switchWrapper = document.querySelector(`#${MODE}_outer`);
     if (switchWrapper) {
         const heading = switchWrapper.querySelector('.panel-heading');
         const toggleBtn = document.createElement('button');
@@ -366,7 +421,7 @@ if (mode === 'own' || bigMapMenu) {
         toggleBtn.append(offlineImg, toggleSpan);
 
         const toggleWrapper =
-            mode === 'chat'
+            MODE === 'chat'
                 ? heading?.querySelector('.btn-group')
                 : heading?.querySelector('.row > div:first-child');
 
