@@ -2,7 +2,7 @@
 // @name            [LSS] Mobile Layout
 // @name:de         [LSS] Mobiles Layout
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.29+1321
+// @version         2023.06.29+1345
 // @author          Jan (jxn_30)
 // @description     Enables the mobile layout on desktop devices
 // @description:de  Aktiviert das mobile Layout auf Desktop-Geräten
@@ -11,6 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/mobileLayout.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/mobileLayout.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/19297-kann-man-das-mobile-layout-auch-auf-dem-pc-haben/
 // @match           https://www.operacni-stredisko.cz/*
 // @match           https://policie.operacni-stredisko.cz/*
 // @match           https://www.alarmcentral-spil.dk/*

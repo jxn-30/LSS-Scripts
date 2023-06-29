@@ -31,7 +31,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2023.06.03+1511`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.06.03+1511` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.06.17+1218` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.06.29+1345` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
@@ -44,6 +44,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1443` (`🇩🇪`)
+- [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
@@ -391,7 +392,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.06.17+1218 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2023.06.29+1345 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -582,6 +583,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
+
+### [LSS] Mobile Layout
+
+> Enables the mobile layout on desktop devices
+
+|     Version     |                       Download                        |                Links                |
+|:---------------:|:-----------------------------------------------------:|:-----------------------------------:|
+| 2023.06.29+1345 | [mobileLayout.user.js][mobileLayout.user.js:download] | [Forum][mobileLayout.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Mobiles Layout</summary>
+    Aktiviert das mobile Layout auf Desktop-Geräten
+</details>
+
+[mobileLayout.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/mobileLayout.user.js
+[mobileLayout.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/19297-kann-man-das-mobile-layout-auch-auf-dem-pc-haben/
 
 ### [LSS] OSM-MapScale
 
