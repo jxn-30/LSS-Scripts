@@ -96,7 +96,12 @@ const missionMarkerAddOrig = unsafeWindow.missionMarkerAdd;
  */
 unsafeWindow.missionMarkerAdd = mission => {
     missionMarkerAddOrig(mission);
-    updateTooltip(mission.id, false);
+    updateTooltip(
+        mission.id,
+        !!document.querySelector(
+            `#mission_participant_${mission.id}:not(.hidden)`
+        )
+    );
 };
 
 // overwrite missionInvolved to update the tooltip
