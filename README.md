@@ -45,6 +45,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1443` (`🇩🇪`)
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
+- [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.07.08+1055`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
@@ -599,6 +600,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [mobileLayout.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/mobileLayout.user.js
 [mobileLayout.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/19297-kann-man-das-mobile-layout-auch-auf-dem-pc-haben/
+
+### [LSS] No Seasonal Navbar
+
+> Removes any seasonal navbar background to the standard plain one.
+
+|     Version     | Alias / Old names  |                           Download                            |                  Links                  |
+|:---------------:|:------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2023.07.08+1055 | `noseasonalnavbar` | [noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download] | [Forum][noSeasonalNavbar.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Keine Saisonale Navbar</summary>
+    Entfernt jegliche saisonale Hintergründe der Navbar und setzt den Standard-Hintergrund.
+</details>
+
+[noSeasonalNavbar.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/noSeasonalNavbar.user.js
+[noSeasonalNavbar.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22232-scriptwunsch-wasserzeichen-entfernen/
 
 ### [LSS] OSM-MapScale
 
