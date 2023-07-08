@@ -44,6 +44,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1443` (`🇩🇪`)
+- [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1411`
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
 - [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.07.08+1055`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
@@ -584,6 +585,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
+
+### [LSS] Mission Participation State on Map
+
+> Shows the participation state of missions on the map in their respective tooltip.
+
+|     Version     |                                         Download                                          |                         Links                         |
+|:---------------:|:-----------------------------------------------------------------------------------------:|:-----------------------------------------------------:|
+| 2023.07.08+1411 | [missionParticipationStateOnMap.user.js][missionParticipationStateOnMap.user.js:download] | [Forum][missionParticipationStateOnMap.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Einsatzbeteiligung auf der Karte</summary>
+    Zeigt den Beteiligungsstatus von Einsätzen auf der Karte im jeweiligen Tooltip an.
+</details>
+
+[missionParticipationStateOnMap.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionParticipationStateOnMap.user.js
+[missionParticipationStateOnMap.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24293-einsatzteilnahme-auf-karte-anzeigen-lassen/
 
 ### [LSS] Mobile Layout
 
