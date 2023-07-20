@@ -45,6 +45,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1443` (`🇩🇪`)
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
+- [[LSS] Mission Sort](#lss-mission-sort) `2023.07.20+2352`
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
 - [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.07.08+1055`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
@@ -601,6 +602,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [missionParticipationStateOnMap.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionParticipationStateOnMap.user.js
 [missionParticipationStateOnMap.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24293-einsatzteilnahme-auf-karte-anzeigen-lassen/
+
+### [LSS] Mission Sort
+
+> Sorts the mission list by credits (and allows sorted buttons in missions window. [WIP])
+
+|     Version     |                      Download                       |               Links                |
+|:---------------:|:---------------------------------------------------:|:----------------------------------:|
+| 2023.07.20+2352 | [missionSort.user.js][missionSort.user.js:download] | [Forum][missionSort.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Einsatzsortierung</summary>
+    Sortiert die Einsatzliste nach Credits (und ermöglicht sortierte Buttons im Einsatzfenster. [Feature noch in Arbeit])
+</details>
+
+[missionSort.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionSort.user.js
+[missionSort.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24358-script-sortierung-der-einsatzliste/
 
 ### [LSS] Mobile Layout
 

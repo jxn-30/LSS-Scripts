@@ -2,15 +2,16 @@
 // @name            [LSS] Mission Sort
 // @name:de         [LSS] Einsatzsortierung
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.07.20+2335
+// @version         2023.07.20+2352
 // @author          Jan (jxn_30)
-// @description     Sorts the mission list by credits and allows sorted buttons in missions window.
-// @description:de  Sortiert die Einsatzliste nach Credits und ermöglicht sortierte Buttons im Einsatzfenster.
+// @description     Sorts the mission list by credits (and allows sorted buttons in missions window. [WIP])
+// @description:de  Sortiert die Einsatzliste nach Credits (und ermöglicht sortierte Buttons im Einsatzfenster. [Feature noch in Arbeit])
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionSort.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionSort.user.js
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/24358-script-sortierung-der-einsatzliste/
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://www.operacni-stredisko.cz/missions/*
 // @match           https://policie.operacni-stredisko.cz/
