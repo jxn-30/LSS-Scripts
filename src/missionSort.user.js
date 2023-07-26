@@ -290,9 +290,9 @@ if (document.location.pathname === '/') {
     const missionSelectionActiveOrig = unsafeWindow.missionSelectionActive;
     unsafeWindow.missionSelectionActive = (...args) => {
         missionSelectionActiveOrig(...args);
-        document.querySelector(
-            `#${args[0].getAttribute('classShow')}`
-        ).style.display = 'flex';
+        document
+            .querySelector(`#${args[0].attr('classShow')}`)
+            ?.style.setProperty('display', 'flex');
     };
 
     Promise.all(
