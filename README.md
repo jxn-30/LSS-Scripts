@@ -45,7 +45,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.06.03+1443` (`🇩🇪`)
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
-- [[LSS] Mission Sort](#lss-mission-sort) `2023.07.26+2143`
+- [[LSS] Mission Sort](#lss-mission-sort) `2023.07.26+2149`
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
 - [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.07.08+1055`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
@@ -609,7 +609,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                      Download                       |               Links                |
 |:---------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2023.07.26+2143 | [missionSort.user.js][missionSort.user.js:download] | [Forum][missionSort.user.js:forum] |
+| 2023.07.26+2149 | [missionSort.user.js][missionSort.user.js:download] | [Forum][missionSort.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Einsatzsortierung</summary>
