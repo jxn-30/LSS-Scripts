@@ -108,6 +108,7 @@
 const PREFIX = 'jxn_missionSort';
 const ORDER_STORAGE_KEY = `${PREFIX}_order`;
 const MISSION_TYPES_STORAGE_KEY = 'aMissions';
+const ORDER = 'desc'; // 'asc' for ascending (aufsteigend) or 'desc' for descending (absteigend)
 
 /** // only relevant properties are listed here
  * @typedef MissionTypeDef
@@ -118,7 +119,10 @@ const MISSION_TYPES_STORAGE_KEY = 'aMissions';
 GM_addStyle(`
 #missions-panel-body > #mission_list, #missions-panel-body > [id^="mission_list_"] {
     display: flex;             /* allows sorting by CSS */
-    flex-flow: column-reverse; /* sort descending */
+${
+    ORDER === 'asc'
+        ? `    flex-flow: column;         /* sort ascending  */`
+        : `    flex-flow: column-reverse; /* sort descending */`
 }
 `);
 
