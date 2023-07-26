@@ -93,11 +93,6 @@
 // @grant           GM_addStyle
 // ==/UserScript==
 
-// Settings:
-const ORDER = 'desc'; // 'asc' for ascending (aufsteigend) or 'desc' for descending (absteigend)
-
-// End of Settings. Do not edit below this line if you don't know exactly what you're doing!
-
 /**
  * @name  Mission Sort
  * @name:de Einsatzsortierung
@@ -109,6 +104,11 @@ const ORDER = 'desc'; // 'asc' for ascending (aufsteigend) or 'desc' for descend
  * @grant unsafeWindow
  * @grant GM_addStyle
  */
+
+// Settings:
+const ORDER = 'desc'; // 'asc' for ascending (aufsteigend) or 'desc' for descending (absteigend)
+
+// End of Settings. Do not edit below this line if you don't know exactly what you're doing!
 
 const PREFIX = 'jxn_missionSort';
 const ORDER_STORAGE_KEY = `${PREFIX}_order`;
