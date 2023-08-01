@@ -649,7 +649,7 @@ class BookmarkManager {
         saveBtn.type = 'submit';
         saveBtn.value = 'Speichern';
         saveBtn.addEventListener('click', () => {
-            const url = titleInput.value.trim();
+            const url = urlInput.value.trim();
             const title = titleInput.value.trim();
             this.#appendBookmark(url, title);
             const bookmarks = this.#bookmarks;
