@@ -743,14 +743,14 @@ class BookmarkManager {
 
             const btnWrapper = document.createElement('div');
 
-            const deleteBtn = document.createElement('a');
+            const deleteBtn = document.createElement('button');
             deleteBtn.classList.add('button', 'buttonPrimary');
             const deleteIcon = document.createElement('span');
             deleteIcon.classList.add('icon', 'icon16', 'fa-trash');
             deleteBtn.append(deleteIcon);
             deleteBtn.addEventListener('click', () => {
+                wrapper.classList.add('deleted');
                 updates[currentIndex()] = null;
-                wrapper.remove();
             });
 
             const upBtn = document.createElement('button');
@@ -778,6 +778,11 @@ class BookmarkManager {
 .${wrapperClass} {
     display: flex;
     justify-content: space-between;
+}
+.${wrapperClass}.deleted {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 .${wrapperClass} > input {
     width: 100%;
