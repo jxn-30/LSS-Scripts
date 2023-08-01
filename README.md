@@ -30,7 +30,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Direct levels for buildings](#lss-direct-levels-for-buildings) `2023.03.25+2004`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2023.06.03+1511`
-- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.06.03+1511` (`🇩🇪`)
+- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.08.01+1152` (`🇩🇪`)
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.07.19+0053` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
@@ -379,7 +379,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.06.03+1511 |    `🇩🇪`    | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
+| 2023.08.01+1152 |    `🇩🇪`    | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Lesezeichen</summary>
