@@ -32,11 +32,36 @@ const limits = {
         name: 'RTH',
         // one per 25 buildings but minimum 4
         limit: buildings => Math.max(4, Math.floor(buildings.length / 25)),
+        limitText: 'Pro 25 Gebäude ein RTH, mindestens jedoch 4 Stück',
+        next: (buildings, limit) => {
+            const nextAt = (limit + 1) * 25;
+            const toNext = nextAt - buildings.length;
+            return [
+                'Nächster RTH bei',
+                nextAt,
+                'Gebäuden, noch',
+                toNext,
+                'Gebäude bis dahin.',
+            ];
+        },
     },
     61: {
         name: 'Polizeihubschrauber',
         // one per 25 buildings but minimum 4
         limit: buildings => Math.max(4, Math.floor(buildings.length / 25)),
+        limitText:
+            'Pro 25 Gebäude ein Polizeihubschrauber, mindestens jedoch 4 Stück',
+        next: (buildings, limit) => {
+            const nextAt = (limit + 1) * 25;
+            const toNext = nextAt - buildings.length;
+            return [
+                'Nächster Polizeihubschrauber bei',
+                nextAt,
+                'Gebäuden, noch',
+                toNext,
+                'Gebäude bis dahin.',
+            ];
+        },
     },
     73: {
         name: 'GRTW',
@@ -53,6 +78,29 @@ const limits = {
                             ))
                 ).length / (premium ? 15 : 20)
             ),
+        limitText:
+            'Pro 20 (15 mit Premium) Rettungswachen und aktiven RD-Erweiterungen ein GRTW',
+        next: (buildings, limit) => {
+            const nextAt = (limit + 1) * (premium ? 15 : 20);
+            const toNext =
+                nextAt -
+                buildings.filter(
+                    ({ building_type, extensions }) =>
+                        building_type === 2 ||
+                        (building_type === 0 &&
+                            extensions.some(
+                                ({ available, enabled, type_id }) =>
+                                    type_id === 0 && available && enabled
+                            ))
+                ).length;
+            return [
+                'Nächster GRTW bei',
+                nextAt,
+                'Rettungswachen / RD-Erweiterungen, noch',
+                toNext,
+                'Stück bis dahin.',
+            ];
+        },
     },
     74: {
         name: 'NAW',
@@ -67,6 +115,18 @@ const limits = {
                                 type_id === 0 && available && enabled
                         ))
             ).length,
+        limitText: 'Pro Rettungswache und aktiver RD-Erweiterung ein NAW',
+        next: (buildings, limit) => {
+            const nextAt = limit + 1;
+            const toNext = nextAt - limit;
+            return [
+                'Nächster NAW bei',
+                nextAt,
+                'Rettungswachen / RD-Erweiterungen, noch',
+                toNext,
+                'Stück bis dahin.',
+            ];
+        },
     },
     97: {
         name: 'ITW',
@@ -83,6 +143,29 @@ const limits = {
                             ))
                 ).length / (premium ? 10 : 15)
             ),
+        limitText:
+            'Pro 15 (10 mit Premium) Rettungswachen und aktiven RD-Erweiterungen ein ITW',
+        next: (buildings, limit) => {
+            const nextAt = (limit + 1) * (premium ? 10 : 15);
+            const toNext =
+                nextAt -
+                buildings.filter(
+                    ({ building_type, extensions }) =>
+                        building_type === 2 ||
+                        (building_type === 0 &&
+                            extensions.some(
+                                ({ available, enabled, type_id }) =>
+                                    type_id === 0 && available && enabled
+                            ))
+                ).length;
+            return [
+                'Nächster ITW bei',
+                nextAt,
+                'Rettungswachen / RD-Erweiterungen, noch',
+                toNext,
+                'Stück bis dahin.',
+            ];
+        },
     },
     103: {
         name: 'FuStW (DGL)',
@@ -95,6 +178,18 @@ const limits = {
                         ({ available, type_id }) => type_id === 12 && available
                     )
             ).length,
+        limitText: 'Pro verfügbarer DGL-Erweiterung ein FuStW (DGL)',
+        next: (buildings, limit) => {
+            const nextAt = limit + 1;
+            const toNext = nextAt - limit;
+            return [
+                'Nächster FuStW (DGL) bei',
+                nextAt,
+                'DGL-Erweiterungen, noch',
+                toNext,
+                'Stück bis dahin.',
+            ];
+        },
     },
 };
 
@@ -128,6 +223,7 @@ const createModal = () => {
 
     const body = document.createElement('div');
     body.classList.add('modal-body');
+    body.style.setProperty('overflow', 'auto');
 
     const close = document.createElement('span');
     close.classList.add('close');
@@ -155,30 +251,37 @@ const createModal = () => {
     currentTh.textContent = 'Aktuell';
     const availableTh = document.createElement('th');
     availableTh.textContent = 'Kaufbar';
-    headRow.append(typeTh, currentTh, availableTh);
+    const nextTh = document.createElement('th');
+    nextTh.textContent = 'Nächstes Fahrzeug';
+    headRow.append(typeTh, currentTh, availableTh, nextTh);
 
     const tbody = document.createElement('tbody');
+
+    const calcBtns = [];
 
     Object.entries(limits)
         .sort(([, { name: nameA }], [, { name: nameB }]) =>
             nameA.localeCompare(nameB)
         )
-        .forEach(([vehicleTypeId, { name, limit }]) => {
+        .forEach(([vehicleTypeId, { name, limit, limitText, next }]) => {
             const row = tbody.insertRow();
             row.insertCell().textContent = name;
 
             const currentTd = row.insertCell();
             const availableTd = row.insertCell();
+            const nextTd = row.insertCell();
 
-            currentTd.setAttribute('colspan', '2');
+            currentTd.setAttribute('colspan', '3');
             availableTd.style.setProperty('display', 'none');
+            nextTd.style.setProperty('display', 'none');
 
             const calculateBtn = document.createElement('button');
+            calcBtns.push(calculateBtn);
             calculateBtn.classList.add('btn', 'btn-xs', 'btn-default');
             calculateBtn.textContent = 'Berechnen';
             calculateBtn.addEventListener('click', event => {
                 event.preventDefault();
-                calculateBtn.classList.add('disabled');
+                calcBtns.forEach(btn => btn.classList.add('disabled'));
                 Promise.all([getVehicles(), getBuildings()]).then(
                     ([vehicles, buildings]) => {
                         const current = vehicles.filter(
@@ -191,9 +294,31 @@ const createModal = () => {
 
                         const available = limit(buildings);
                         availableTd.textContent = available.toLocaleString();
+                        const availableText = document.createElement('small');
+                        availableText.textContent = limitText;
+                        availableTd.append(
+                            document.createElement('br'),
+                            availableText
+                        );
                         availableTd.style.removeProperty('display');
 
+                        nextTd.append(
+                            ...next(buildings, available).flatMap(text => {
+                                if (typeof text !== 'number') {
+                                    return [text, ' '];
+                                }
+                                const bold = document.createElement('strong');
+                                bold.textContent = text.toLocaleString();
+                                return [bold, ' '];
+                            })
+                        );
+                        nextTd.style.removeProperty('display');
+
                         calculateBtn.remove();
+
+                        calcBtns.forEach(btn =>
+                            btn.classList.remove('disabled')
+                        );
                     }
                 );
             });
