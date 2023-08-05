@@ -106,12 +106,16 @@ const createModal = () => {
     const getVehicles = () =>
         vehicles
             ? Promise.resolve(vehicles)
-            : fetch('/api/vehicles').then(res => res.json());
+            : fetch('/api/vehicles')
+                  .then(res => res.json())
+                  .then(v => (vehicles = v));
 
     const getBuildings = () =>
         buildings
             ? Promise.resolve(buildings)
-            : fetch('/api/buildings').then(res => res.json());
+            : fetch('/api/buildings')
+                  .then(res => res.json())
+                  .then(b => (buildings = b));
 
     const modal = document.createElement('div');
     modal.classList.add('modal', 'fade');
