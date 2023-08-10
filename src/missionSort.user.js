@@ -146,7 +146,7 @@ const cssMaxInteger = (() => {
 let creditsByMissionType;
 
 /** @type {number} */
-let updateOrderListTimeout;
+let updateStorageTimeout;
 
 /** @type {Record<string, Record<number, {credits: number, panel: HTMLDivElement}>>} */
 const missionsOrder = JSON.parse(
@@ -255,7 +255,7 @@ const setMissionOrder = async panel => {
 
     const list = panel.parentElement?.id?.replace(/^mission_list_?/u, '') ?? '';
     if (!(list in missionsOrder)) {
-        missionsOrder[list] = [];
+        missionsOrder[list] = {};
     }
     if (panel.classList.contains('mission_deleted')) {
         delete missionsOrder[list][missionId];
@@ -267,10 +267,10 @@ const setMissionOrder = async panel => {
             credits,
             panel,
         };
-        if (updateOrderListTimeout) {
-            window.clearTimeout(updateOrderListTimeout);
+        if (updateStorageTimeout) {
+            window.clearTimeout(updateStorageTimeout);
         }
-        updateOrderListTimeout = window.setTimeout(updateStorage, 100);
+        updateStorageTimeout = window.setTimeout(updateStorage, 100);
     }
 };
 
