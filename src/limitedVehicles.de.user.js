@@ -14,6 +14,7 @@
 // @match           https://www.leitstellenspiel.de/
 // @match           https://polizei.leitstellenspiel.de/
 // @run-at          document-idle
+// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
@@ -23,6 +24,7 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
  * @locale de_DE
  * @match /
+ * @grant GM_addStyle
  */
 
 /* global premium */
@@ -193,6 +195,26 @@ const limits = {
     },
 };
 
+const modalId = 'jxn-limited_vehicles-modal';
+
+// remove modal style added by Traxx
+GM_addStyle(`
+#${modalId} {
+    position: fixed;
+    padding-top: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1050;
+}
+#${modalId} .modal-body {
+    height: unset;
+    overflow-y: unset;
+}
+`);
+
 // create a modal
 const createModal = () => {
     let vehicles;
@@ -214,6 +236,7 @@ const createModal = () => {
 
     const modal = document.createElement('div');
     modal.classList.add('modal', 'fade');
+    modal.id = modalId;
 
     const dialog = document.createElement('div');
     dialog.classList.add('modal-dialog');
