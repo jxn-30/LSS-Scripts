@@ -217,6 +217,7 @@ const createModal = () => {
 
     const dialog = document.createElement('div');
     dialog.classList.add('modal-dialog');
+    dialog.style.setProperty('width', 'fit-content');
 
     const content = document.createElement('div');
     content.classList.add('modal-content');
@@ -224,6 +225,7 @@ const createModal = () => {
     const body = document.createElement('div');
     body.classList.add('modal-body');
     body.style.setProperty('overflow', 'auto');
+    body.style.setProperty('box-sizing', 'content-box');
 
     const close = document.createElement('span');
     close.classList.add('close');
