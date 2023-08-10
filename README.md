@@ -43,6 +43,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Input max length](#lss-input-max-length) `2023.06.03+1512`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
+- [[LSS] Limited Buildings](#lss-limited-buildings) `2023.08.10+1909` (`🇩🇪`)
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.08.10+1357` (`🇩🇪`)
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
 - [[LSS] Mission Sort](#lss-mission-sort) `2023.08.10+1254`
@@ -570,6 +571,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [lightboxLightbox.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/lightboxLightbox.user.js
 [lightboxLightbox.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18588-script-lightbox-in-lightbox-in-lightbox-in/
+
+### [LSS] Limited Buildings
+
+> This Script is for leitstellenspiel.de only!
+
+|     Version     | Available in |                              Download                               |                   Links                    |
+|:---------------:|:------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
+| 2023.08.10+1909 |    `🇩🇪`    | [limitedBuildings.de.user.js][limitedBuildings.de.user.js:download] | [Forum][limitedBuildings.de.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Limited Buildings</summary>
+    Zeigt für limitierte Gebäude und Ausbauten (Heli-Standplätze, Großwachen, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
+</details>
+
+[limitedBuildings.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedBuildings.de.user.js
+[limitedBuildings.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24446-script-limitedbuildings-schnelle-%C3%BCbersicht-wie-viele-limitierte-geb%C3%A4ude-ausbauen/
 
 ### [LSS] Limited Vehicles
 
