@@ -2,7 +2,7 @@
 // @name            [LSS] Mission Sort
 // @name:de         [LSS] Einsatzsortierung
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.07.26+2149
+// @version         2023.08.10+1254
 // @author          Jan (jxn_30)
 // @description     Sorts the mission list by credits (and allows sorted buttons in missions window. [WIP])
 // @description:de  Sortiert die Einsatzliste nach Credits (und ermöglicht sortierte Buttons im Einsatzfenster. [Feature noch in Arbeit])
