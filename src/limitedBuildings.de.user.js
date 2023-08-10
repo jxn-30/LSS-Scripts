@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Limited Buildings
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.08.10+1909
+// @version         2023.08.10+1920
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Zeigt für limitierte Gebäude und Ausbauten (Heli-Standplätze, Großwachen, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
