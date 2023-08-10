@@ -43,7 +43,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Input max length](#lss-input-max-length) `2023.06.03+1512`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
-- [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.08.10+1254` (`🇩🇪`)
+- [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.08.10+1357` (`🇩🇪`)
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
 - [[LSS] Mission Sort](#lss-mission-sort) `2023.08.10+1254`
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
@@ -577,7 +577,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                             Download                              |                   Links                   |
 |:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2023.08.10+1254 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
+| 2023.08.10+1357 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Limited Vehicles</summary>
