@@ -290,7 +290,7 @@ const limits = [
     },
 ];
 
-const modalId = 'jxn-limited_vehicles-modal';
+const modalId = 'jxn-limited_buildings-modal';
 
 // remove modal style added by Traxx
 GM_addStyle(`
