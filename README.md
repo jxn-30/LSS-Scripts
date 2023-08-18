@@ -49,6 +49,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
 - [[LSS] Mission Sort](#lss-mission-sort) `2023.08.10+1254`
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
+- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker) `2023.08.18+0356`
 - [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.07.08+1055`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
@@ -668,6 +669,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [mobileLayout.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/mobileLayout.user.js
 [mobileLayout.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/19297-kann-man-das-mobile-layout-auch-auf-dem-pc-haben/
+
+### [LSS] Nav Tab Clicker
+
+> Auto opens a tab if its hash is in URL
+
+|     Version     | Alias / Old names |                        Download                         |                Links                 |
+|:---------------:|:-----------------:|:-------------------------------------------------------:|:------------------------------------:|
+| 2023.08.18+0356 |  `NavTabClicker`  | [navTabClicker.user.js][navTabClicker.user.js:download] | [Forum][navTabClicker.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Nav Tab Clicker</summary>
+    Öffnet automatisch einen Tab, wenn der entsprechende Hash in der URL ist
+</details>
+
+[navTabClicker.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/navTabClicker.user.js
+[navTabClicker.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18546-script-navtabclicker/
 
 ### [LSS] No Seasonal Navbar
 
