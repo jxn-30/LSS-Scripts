@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Mission Alarm Time
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.08.18+0347
+// @version         2023.08.18+0350
 // @author          Jan (jxn_30)
 // @description     Shows maximum travel time on alarm button
 // @description:de  Zeigt die maximale Anfahrtszeit auf dem Alarmierungsknopf an

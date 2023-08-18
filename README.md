@@ -45,6 +45,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
 - [[LSS] Limited Buildings](#lss-limited-buildings) `2023.08.10+1920` (`🇩🇪`)
 - [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.08.10+1357` (`🇩🇪`)
+- [[LSS] Mission Alarm Time](#lss-mission-alarm-time) `2023.08.18+0350`
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
 - [[LSS] Mission Sort](#lss-mission-sort) `2023.08.10+1254`
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
@@ -603,6 +604,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
+
+### [LSS] Mission Alarm Time
+
+> Shows maximum travel time on alarm button
+
+|     Version     |  Alias / Old names   |                           Download                            |                  Links                  |
+|:---------------:|:--------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2023.08.18+0350 | `Mission-Alarm-Time` | [missionAlarmTime.user.js][missionAlarmTime.user.js:download] | [Forum][missionAlarmTime.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Mission Alarm Time</summary>
+    Zeigt die maximale Anfahrtszeit auf dem Alarmierungsknopf an
+</details>
+
+[missionAlarmTime.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionAlarmTime.user.js
+[missionAlarmTime.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16776-script-mission-alarm-time/
 
 ### [LSS] Mission Participation State on Map
 
