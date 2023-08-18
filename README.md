@@ -61,6 +61,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
 - [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
+- [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.18+0802`
 
 ### [LSS] AAO Config Lite
 
@@ -861,5 +862,21 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [userId.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/userId.user.js
 [userId.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/12513-user-id-anzeiger/
+
+### [LSS] Vehicle market: Show amount
+
+> Shows in the vehicle market how many vehicles of the respective type are already available on the currently built station.
+
+|     Version     |      Alias / Old names      |                                  Download                                   |                     Links                      |
+|:---------------:|:---------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
+| 2023.08.18+0802 | `vehiclemarket-show-amount` | [vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download] | [Forum][vehicleMarketShowAmount.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Fahrzeugmarkt: Anzahl anzeigen</summary>
+    Zeigt im Fahrzeugmarkt wie viele Fahrzeuge auf der aktuell gebauten Wache bereits vorhanden sind vom jeweiligen Typ.
+</details>
+
+[vehicleMarketShowAmount.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/vehicleMarketShowAmount.user.js
+[vehicleMarketShowAmount.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/21816-fahrzeuganzahl-im-markt-anzeigen
 <!-- ## END SCRIPT-OVERVIEW ## -->
 <!-- prettier-ignore-end -->
