@@ -12,44 +12,44 @@
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/vehicleMarketShowAmount.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/vehicleMarketShowAmount.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/21816-fahrzeuganzahl-im-markt-anzeigen
-// @match           https://www.operacni-stredisko.cz/*
-// @match           https://policie.operacni-stredisko.cz/*
-// @match           https://www.alarmcentral-spil.dk/*
-// @match           https://politi.alarmcentral-spil.dk/*
-// @match           https://www.leitstellenspiel.de/*
-// @match           https://polizei.leitstellenspiel.de/*
-// @match           https://www.missionchief-australia.com/*
-// @match           https://police.missionchief-australia.com/*
-// @match           https://www.missionchief.co.uk/*
-// @match           https://police.missionchief.co.uk/*
-// @match           https://www.missionchief.com/*
-// @match           https://police.missionchief.com/*
-// @match           https://www.centro-de-mando.es/*
-// @match           https://www.centro-de-mando.mx/*
-// @match           https://www.hatakeskuspeli.com/*
-// @match           https://poliisi.hatakeskuspeli.com/*
-// @match           https://www.operateur112.fr/*
-// @match           https://police.operateur112.fr/*
-// @match           https://www.operatore112.it/*
-// @match           https://polizia.operatore112.it/*
-// @match           https://www.missionchief-japan.com/*
-// @match           https://www.missionchief-korea.com/*
-// @match           https://www.nodsentralspillet.com/*
-// @match           https://politiet.nodsentralspillet.com/*
-// @match           https://www.meldkamerspel.com/*
-// @match           https://politie.meldkamerspel.com/*
-// @match           https://www.operatorratunkowy.pl/*
-// @match           https://policja.operatorratunkowy.pl/*
-// @match           https://www.operador193.com/*
-// @match           https://www.jogo-operador112.com/*
-// @match           https://policia.jogo-operador112.com/*
-// @match           https://www.jocdispecerat112.com/*
-// @match           https://www.dispetcher112.ru/*
-// @match           https://www.dispecerske-centrum.com/*
-// @match           https://www.larmcentralen-spelet.se/*
-// @match           https://polis.larmcentralen-spelet.se/*
-// @match           https://www.112-merkez.com/*
-// @match           https://www.dyspetcher101-game.com/*
+// @match           https://www.operacni-stredisko.cz/buildings/*/vehicles/new
+// @match           https://policie.operacni-stredisko.cz/buildings/*/vehicles/new
+// @match           https://www.alarmcentral-spil.dk/buildings/*/vehicles/new
+// @match           https://politi.alarmcentral-spil.dk/buildings/*/vehicles/new
+// @match           https://www.leitstellenspiel.de/buildings/*/vehicles/new
+// @match           https://polizei.leitstellenspiel.de/buildings/*/vehicles/new
+// @match           https://www.missionchief-australia.com/buildings/*/vehicles/new
+// @match           https://police.missionchief-australia.com/buildings/*/vehicles/new
+// @match           https://www.missionchief.co.uk/buildings/*/vehicles/new
+// @match           https://police.missionchief.co.uk/buildings/*/vehicles/new
+// @match           https://www.missionchief.com/buildings/*/vehicles/new
+// @match           https://police.missionchief.com/buildings/*/vehicles/new
+// @match           https://www.centro-de-mando.es/buildings/*/vehicles/new
+// @match           https://www.centro-de-mando.mx/buildings/*/vehicles/new
+// @match           https://www.hatakeskuspeli.com/buildings/*/vehicles/new
+// @match           https://poliisi.hatakeskuspeli.com/buildings/*/vehicles/new
+// @match           https://www.operateur112.fr/buildings/*/vehicles/new
+// @match           https://police.operateur112.fr/buildings/*/vehicles/new
+// @match           https://www.operatore112.it/buildings/*/vehicles/new
+// @match           https://polizia.operatore112.it/buildings/*/vehicles/new
+// @match           https://www.missionchief-japan.com/buildings/*/vehicles/new
+// @match           https://www.missionchief-korea.com/buildings/*/vehicles/new
+// @match           https://www.nodsentralspillet.com/buildings/*/vehicles/new
+// @match           https://politiet.nodsentralspillet.com/buildings/*/vehicles/new
+// @match           https://www.meldkamerspel.com/buildings/*/vehicles/new
+// @match           https://politie.meldkamerspel.com/buildings/*/vehicles/new
+// @match           https://www.operatorratunkowy.pl/buildings/*/vehicles/new
+// @match           https://policja.operatorratunkowy.pl/buildings/*/vehicles/new
+// @match           https://www.operador193.com/buildings/*/vehicles/new
+// @match           https://www.jogo-operador112.com/buildings/*/vehicles/new
+// @match           https://policia.jogo-operador112.com/buildings/*/vehicles/new
+// @match           https://www.jocdispecerat112.com/buildings/*/vehicles/new
+// @match           https://www.dispetcher112.ru/buildings/*/vehicles/new
+// @match           https://www.dispecerske-centrum.com/buildings/*/vehicles/new
+// @match           https://www.larmcentralen-spelet.se/buildings/*/vehicles/new
+// @match           https://polis.larmcentralen-spelet.se/buildings/*/vehicles/new
+// @match           https://www.112-merkez.com/buildings/*/vehicles/new
+// @match           https://www.dyspetcher101-game.com/buildings/*/vehicles/new
 // @run-at          document-idle
 // ==/UserScript==
 
@@ -59,6 +59,7 @@
  * @description Shows in the vehicle market how many vehicles of the respective type are already available on the currently built station.
  * @description:de Zeigt im Fahrzeugmarkt wie viele Fahrzeuge auf der aktuell gebauten Wache bereits vorhanden sind vom jeweiligen Typ.
  * @forum https://forum.leitstellenspiel.de/index.php?thread/21816-fahrzeuganzahl-im-markt-anzeigen
+ * @match /buildings/*\/vehicles/new
  * @old vehiclemarket-show-amount
  */
 
