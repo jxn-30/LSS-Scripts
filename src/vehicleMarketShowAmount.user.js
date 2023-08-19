@@ -65,24 +65,26 @@
 
 const buildingId = window.location.pathname.split('/')[2];
 
-fetch(`/api/buildings/${buildingId}/vehicles`)
-    .then(res => res.json())
-    .then(vehicles =>
-        document
-            .querySelectorAll(
-                `a[href^="/buildings/${buildingId}/vehicle/${buildingId}/"][href*="/credits?building=${buildingId}"]`
-            )
-            .forEach(creditsBtn => {
-                const vehicleType = parseInt(
-                    new URL(creditsBtn.href).pathname.split('/')[5]
-                );
-                const amountSpan = document.createElement('span');
-                amountSpan.textContent = `Haben: ${
-                    vehicles.filter(
-                        ({ vehicle_type }) => vehicle_type === vehicleType
-                    ).length
-                }`;
-                amountSpan.classList.add('pull-right');
-                creditsBtn.parentElement.prepend(amountSpan);
-            })
-    );
+if (buildingId) {
+    fetch(`/api/buildings/${buildingId}/vehicles`)
+        .then(res => res.json())
+        .then(vehicles =>
+            document
+                .querySelectorAll(
+                    `a[href^="/buildings/${buildingId}/vehicle/${buildingId}/"][href*="/credits?building=${buildingId}"]`
+                )
+                .forEach(creditsBtn => {
+                    const vehicleType = parseInt(
+                        new URL(creditsBtn.href).pathname.split('/')[5]
+                    );
+                    const amountSpan = document.createElement('span');
+                    amountSpan.textContent = `Haben: ${
+                        vehicles.filter(
+                            ({ vehicle_type }) => vehicle_type === vehicleType
+                        ).length
+                    }`;
+                    amountSpan.classList.add('pull-right');
+                    creditsBtn.parentElement.prepend(amountSpan);
+                })
+        );
+}
