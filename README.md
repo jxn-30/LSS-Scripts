@@ -31,7 +31,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2023.06.03+1511`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.08.01+1152` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.08.16+0804` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.08.19+1151` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
@@ -61,7 +61,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
 - [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
-- [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.18+0802`
+- [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
 
 ### [LSS] AAO Config Lite
 
@@ -399,7 +399,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.08.16+0804 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2023.08.19+1151 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -869,7 +869,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |      Alias / Old names      |                                  Download                                   |                     Links                      |
 |:---------------:|:---------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
-| 2023.08.18+0802 | `vehiclemarket-show-amount` | [vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download] | [Forum][vehicleMarketShowAmount.user.js:forum] |
+| 2023.08.19+1151 | `vehiclemarket-show-amount` | [vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download] | [Forum][vehicleMarketShowAmount.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Fahrzeugmarkt: Anzahl anzeigen</summary>
