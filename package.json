@@ -10,7 +10,7 @@
         "ci": "yarn lint:fix && yarn prettier:write && yarn update"
     },
     "devDependencies": {
-        "@types/tampermonkey": "4.0.11",
+        "@types/tampermonkey": "4.20.1",
         "eslint": "8.47.0",
         "eslint-config-prettier": "9.0.0",
         "eslint-plugin-userscripts": "0.4.0",
