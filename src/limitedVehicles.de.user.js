@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            [LSS] Limited Vehicles
+// @name            [LSS] Limited Vehicles (DE)
 // @namespace       https://jxn.lss-manager.de
 // @version         2023.08.10+1357
 // @author          Jan (jxn_30)

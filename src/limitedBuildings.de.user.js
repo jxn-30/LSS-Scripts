@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            [LSS] Limited Buildings
+// @name            [LSS] Limited Buildings (DE)
 // @namespace       https://jxn.lss-manager.de
 // @version         2023.08.10+1920
 // @author          Jan (jxn_30)

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            [LSS] SoSi-Switch
+// @name            [LSS] SoSi-Switch (DE)
 // @namespace       https://jxn.lss-manager.de
 // @version         2023.06.03+1512
 // @author          Jan (jxn_30)

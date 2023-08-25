@@ -13,6 +13,7 @@ export const GITHUB = 'https://github.com/jxn-30/LSS-Scripts';
 /**
  * @typedef Comment
  * @property {string} name
+ * @property {string} longname
  * @property {string} description
  * @property {string} version
  * @property {Tag[]} tags

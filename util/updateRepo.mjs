@@ -85,7 +85,7 @@ await forEachFile(
                 return matches;
             });
 
-        const scriptName = `[LSS] ${comment.name.trim()}`;
+        const scriptName = `[LSS] ${comment.longname.trim()}`;
         const localeScriptNames = tags
             .filter(tag => tag.title.startsWith('name:'))
             .map(({ title, value }) => ({
@@ -168,7 +168,10 @@ await forEachFile(
                 content: 'https://jxn.lss-manager.de',
             },
             versionTag,
-            ...getTags('author', 'Jan (jxn_30)'),
+            {
+                tag: 'author',
+                content: comment.author?.join(' & ') ?? 'Jan (jxn_30)',
+            },
             {
                 tag: 'description',
                 content: comment.description,
