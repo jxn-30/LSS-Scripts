@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-- [[LSS] AAO Config Lite](#lss-aao-config-lite) `2023.08.25+0954` (`🇩🇪`)
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2023.06.03+1511`
@@ -43,8 +43,8 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Input max length](#lss-input-max-length) `2023.06.03+1512`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
-- [[LSS] Limited Buildings](#lss-limited-buildings) `2023.08.10+1920` (`🇩🇪`)
-- [[LSS] Limited Vehicles](#lss-limited-vehicles) `2023.08.10+1357` (`🇩🇪`)
+- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de) `2023.08.25+1029` (`🇩🇪`)
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time) `2023.08.18+0350`
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
 - [[LSS] Mission Sort](#lss-mission-sort) `2023.08.10+1254`
@@ -57,22 +57,22 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2023.06.03+1512`
 - [[LSS] Reload missions list](#lss-reload-missions-list) `2023.01.29+1900`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2023.06.03+1512`
-- [[LSS] SoSi-Switch](#lss-sosi-switch) `2023.06.03+1512` (`🇩🇪`)
+- [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
 - [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
 
-### [LSS] AAO Config Lite
+### [LSS] AAO Config Lite (DE)
 
 > This Script is for leitstellenspiel.de only!
 
 |     Version     | Available in |                           Download                            |                  Links                  |
 |:---------------:|:------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.08.25+0954 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+| 2023.08.25+1029 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
-    <summary>🇩🇪 [LSS] AAO Config Lite</summary>
+    <summary>🇩🇪 [LSS] AAO Config Lite (DE)</summary>
     Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
 </details>
 
@@ -575,32 +575,32 @@ This list is auto-generated and contains all scripts that are already ported int
 [lightboxLightbox.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/lightboxLightbox.user.js
 [lightboxLightbox.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18588-script-lightbox-in-lightbox-in-lightbox-in/
 
-### [LSS] Limited Buildings
+### [LSS] Limited Buildings (DE)
 
 > This Script is for leitstellenspiel.de only!
 
 |     Version     | Available in |                              Download                               |                   Links                    |
 |:---------------:|:------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
-| 2023.08.10+1920 |    `🇩🇪`    | [limitedBuildings.de.user.js][limitedBuildings.de.user.js:download] | [Forum][limitedBuildings.de.user.js:forum] |
+| 2023.08.25+1029 |    `🇩🇪`    | [limitedBuildings.de.user.js][limitedBuildings.de.user.js:download] | [Forum][limitedBuildings.de.user.js:forum] |
 
 <details>
-    <summary>🇩🇪 [LSS] Limited Buildings</summary>
+    <summary>🇩🇪 [LSS] Limited Buildings (DE)</summary>
     Zeigt für limitierte Gebäude und Ausbauten (Heli-Standplätze, Großwachen, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
 </details>
 
 [limitedBuildings.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedBuildings.de.user.js
 [limitedBuildings.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24446-script-limitedbuildings-schnelle-%C3%BCbersicht-wie-viele-limitierte-geb%C3%A4ude-ausbauen/
 
-### [LSS] Limited Vehicles
+### [LSS] Limited Vehicles (DE)
 
 > This Script is for leitstellenspiel.de only!
 
 |     Version     | Available in |                             Download                              |                   Links                   |
 |:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2023.08.10+1357 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
+| 2023.08.25+1029 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
 
 <details>
-    <summary>🇩🇪 [LSS] Limited Vehicles</summary>
+    <summary>🇩🇪 [LSS] Limited Vehicles (DE)</summary>
     Zeigt für limitierte Fahrzeuge (NAW, ITW, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
 </details>
 
@@ -799,16 +799,16 @@ This list is auto-generated and contains all scripts that are already ported int
 [scrollToTop.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
 [scrollToTop.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22254-scriptwunsch-pfeil-oder-button-zum-seitenanfang-bzw-seitenende/
 
-### [LSS] SoSi-Switch
+### [LSS] SoSi-Switch (DE)
 
 > This Script is for leitstellenspiel.de only!
 
 |     Version     | Available in |                                Download                                 |                    Links                     |
 |:---------------:|:------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
-| 2023.06.03+1512 |    `🇩🇪`    | [sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download] | [Forum][sonderrechteSwitch.de.user.js:forum] |
+| 2023.08.25+1029 |    `🇩🇪`    | [sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download] | [Forum][sonderrechteSwitch.de.user.js:forum] |
 
 <details>
-    <summary>🇩🇪 [LSS] SoSi-Switch</summary>
+    <summary>🇩🇪 [LSS] SoSi-Switch (DE)</summary>
     Zeigt einen Knopf zum Umschalten der Sonderrechte im Einsatzfenster an
 </details>
 
