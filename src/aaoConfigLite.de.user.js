@@ -40,6 +40,8 @@
         'tlf_only': 1, // Tanklöschfahrzeuge
         'wasser_amount': 1, // Liter Wasser
         'wasser_amount_tlf': 1, // Liter Wasser - Nur TLF
+        'water_amount_water_carrier': 1, // Liter Wasser - Nur Großtankfahrzeuge
+        'water_amount_tlf_water_carrier': 1, // Liter Wasser - Nur TLF oder Großtankfahrzeuge
         'water_damage_pump_value': 1, // Pumpenleistung
         'water_damage_pump_value_only_pumps': 1, // Pumpenleistung - Nur Schmutzwasserpumpen
         'elw': 1, // Einsatzleitfahrzeuge 1
@@ -62,9 +64,9 @@
         'ab_oel_only': 1, // AB-Öl
         'gw_oel_only': 1, // GW-Öl
         'gwl2wasser': 1, // Schlauchwagen oder AB-Schlauch
-        'gwl2wasser_only': 1, // Schlauchwagen
+        'gwl2wasser_only': 1, // Nur Schlauchwagen
         'abl2wasser_only': 1, // AB-Schlauch
-        'gwl2wasser_all': 1, // Alle Schlauchwagen
+        'gwl2wasser_all': 1, // Alle Schlauchfahrzeuge
         'gwmesstechnik': 1, // GW-Messtechnik
         'gwgefahrgut': 1, // GW-Gefahrgut oder AB-Gefahrgut
         'gw_gefahrgut_only': 1, // GW-Gefahrgut
@@ -81,6 +83,17 @@
         'tm50': 1, // TM 50
         'ulf': 1, // ULF mit Löscharm
         'gw_werkfeuerwehr': 1, // GW-Werkfeuerwehr
+        'ventilation': 1, // Lüfter
+        'vehicle_type_ids[104]': 1, // GW-L1
+        'vehicle_type_ids[105]': 1, // GW-L2
+        'vehicle_type_ids[106]': 1, // MTF-L
+        'water_carrier': 1, // Beliebiges Großtankfahrzeug
+        'vehicle_type_ids[118]': 1, // Kleintankwagen
+        'vehicle_type_ids[120]': 1, // Tankwagen
+        'vehicle_type_ids[121]': 1, // GTLF
+        'vehicle_type_ids[117]': 1, // AB-Tank
+        'vehicle_type_ids[119]': 1, // AB-Lösch
+
         // Rettungsdienst
         'rtw': 1, // Rettungswagen
         'ktw': 1, // Krankentransportwagen
@@ -99,6 +112,7 @@
         'grtw': 1, // GRTW
         'grtw0': 1, // GRTW (7 Patienten - ohne Notarzt)
         'grtw1': 1, // GRTW (3 Patienten - inkl. Notarzt)
+
         // Polizei
         'fustw': 1, // Funkstreifenwagen
         'lebefkw': 1, // Leichter Befehlskraftwagen (leBefKw)
@@ -118,10 +132,12 @@
         'vehicle_type_ids[98]': 1, // Zivilstreifenwagen
         'vehicle_type_ids[103]': 1, // FuStW (DGL)
         'police_car_or_service_group_leader': 1, // FuStW oder FuStW (DGL)
+
         // THW
         'gkw': 1, // Gerätekraftwagen (GKW)
         'thw_mtw': 1, // Mannschaftstransportwagen Technischer Zug (MTW-TZ - THW)
         'thw_mzkw': 1, // Mehrzweck-Gerätewagen (FGr N)
+        'vehicle_type_ids[124]': 1, // MTW-OV
         'thw_lkw': 1, // Lastkraftwagen-Kipper 9 t (LKW K 9)
         'thw_brmg_r': 1, // Radlader groß (BRmG R)
         'thw_dle': 1, // Anhänger Drucklufterzeugung (Anh DLE)
@@ -136,22 +152,26 @@
         'rescue_dogs_thw': 1, // Anhänger Hundetransport
         'pump': 1, // Schmutzwasserpumpen
         'water_damage_pump': 1, // Feuerlöschpumpen
-        'vehicle_type_ids[99]': 1, // LKW 7 Lbw
+        'vehicle_type_ids[123]': 1, // LKW 7 Lbw (FGr WP)
         'vehicle_type_ids[101]': 1, // Anh SwPu
         'vehicle_type_ids[102]': 1, // Anh 7
         'vehicle_type_ids[109]': 1, // MzGW SB
+        'vehicle_type_ids[122]': 1, // LKW 7 Lbw (FGr E)
         'energy_supply': 1, // NEA50
         'energy_supply_2': 1, // NEA200
+
         // SEG
         'ktw_b': 1, // KTW Typ B
         'seg_elw': 1, // ELW 1 (SEG)
         'gw_san': 1, // GW-San
         'rescue_dogs_seg': 1, // Rettungshundefahrzeug
+
         // Wasserrettung
         'gw_taucher': 1, // GW-Taucher
         'gw_wasserrettung': 1, // GW-Wasserrettung
         'boot': 1, // Boote (Allgemein)
         'mzb': 1, // Mehrzweckboot
+
         // Rettungshundestaffel
         'rescue_dogs': 1, // Anhänger Hundetransport oder Rettungshundefahrzeug
     };
@@ -165,3 +185,25 @@
                 )
     );
 })();
+
+// Code to generate the list:
+/*
+Array.from(document.querySelectorAll('#tabs > li > a'))
+    .map(tab =>
+        [
+            `// ${tab.textContent.trim()}`,
+            ...Array.from(
+                document.querySelectorAll(`${new URL(tab.href).hash} label`)
+            ).map(
+                label =>
+                    `'${label
+                        .getAttribute('for')
+                        .replace(
+                            /^aao_/,
+                            ''
+                        )}': 1, // ${label.textContent.trim()}`
+            ),
+        ].join('\n')
+    )
+    .join('\n\n');
+*/
