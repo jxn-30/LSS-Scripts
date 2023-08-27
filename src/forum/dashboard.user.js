@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: Dashboard
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.08.19+1151
+// @version         2023.08.27+1817
 // @author          Jan (jxn_30)
 // @description     Adds a link to the dashboard to the navigation and shows some charts on the dashboard
 // @description:de  Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
@@ -12,10 +12,10 @@
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/dashboard.user.js
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/16451-forum-dashboard/
 // @match           https://forum.leitstellenspiel.de/*
-// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/f25b36bced/resources/forum/dashboard.user.js/amcharts.js#sha256=83959f72e9d335b93efa7a9274394ba092cf94fd56c62265a7ec484bd9b5c4d2
-// @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/f25b36bced/resources/forum/dashboard.user.js/amchartsXY.js#sha256=e2cd511f224c7f989e843766cf9a8f37f26f3bd3994121ec07c673a7e5c4b0d6
-// @resource        amchartsExport https://github.com/jxn-30/LSS-Scripts/raw/f25b36bced/resources/forum/dashboard.user.js/amchartsExport.js#sha256=6b3c9b92fded06c25e5d324a573be2066ce852e5da6fc54dc0fc022e1f265fc9
-// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/f25b36bced/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=a8e6534baad20a07e76f094302df013777146d069174862ac46b4c378b3798dd
+// @resource        amcharts https://github.com/jxn-30/LSS-Scripts/raw/9576ad9a29/resources/forum/dashboard.user.js/amcharts.js#sha256=e9e1644154edae704fdc8df526493c6ef8c5fd8d9e90747c2a78d9c3db4885fb
+// @resource        amchartsXY https://github.com/jxn-30/LSS-Scripts/raw/9576ad9a29/resources/forum/dashboard.user.js/amchartsXY.js#sha256=40c42b201bd785b8d8d8b55108afc8536a7df76ac1ed42471ff60ee545f8b9ed
+// @resource        amchartsExport https://github.com/jxn-30/LSS-Scripts/raw/9576ad9a29/resources/forum/dashboard.user.js/amchartsExport.js#sha256=6b3c9b92fded06c25e5d324a573be2066ce852e5da6fc54dc0fc022e1f265fc9
+// @resource        amchartsThemeDark https://github.com/jxn-30/LSS-Scripts/raw/9576ad9a29/resources/forum/dashboard.user.js/amchartsThemeDark.js#sha256=a8e6534baad20a07e76f094302df013777146d069174862ac46b4c378b3798dd
 // @run-at          document-body
 // @grant           GM_getResourceURL
 // ==/UserScript==
