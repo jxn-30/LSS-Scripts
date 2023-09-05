@@ -56,7 +56,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2023.06.03+1512`
 - [[LSS] Reload missions list](#lss-reload-missions-list) `2023.01.29+1900`
-- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2023.06.03+1512`
+- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2023.09.05+1447`
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
@@ -789,7 +789,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                      Download                       |               Links                |
 |:---------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2023.06.03+1512 | [scrollToTop.user.js][scrollToTop.user.js:download] | [Forum][scrollToTop.user.js:forum] |
+| 2023.09.05+1447 | [scrollToTop.user.js][scrollToTop.user.js:download] | [Forum][scrollToTop.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Scroll-To-Top buttons</summary>
