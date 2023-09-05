@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Scroll-To-Top buttons
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1512
+// @version         2023.09.05+1443
 // @author          Jan (jxn_30)
 // @description     Shows a scroll-to-top button on all scrollable elements
 // @description:de  Zeigt einen Knopf, um in Elementen nach oben zu scrollen
@@ -50,6 +50,7 @@
 // @match           https://www.112-merkez.com/*
 // @match           https://www.dyspetcher101-game.com/*
 // @run-at          document-idle
+// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
@@ -57,76 +58,91 @@
  * @description Shows a scroll-to-top button on all scrollable elements
  * @description:de Zeigt einen Knopf, um in Elementen nach oben zu scrollen
  * @forum https://forum.leitstellenspiel.de/index.php?thread/22254-scriptwunsch-pfeil-oder-button-zum-seitenanfang-bzw-seitenende/
+ * @grant GM_addStyle
  */
 
 const hideTimeouts = {};
 const hideAfter = 1;
 
-document.addEventListener(
-    'scroll',
-    e => {
-        const target = e.target;
-        const targetIsDocument = target instanceof Document;
-        if (!(target instanceof HTMLElement) && !targetIsDocument) return;
-        if (target instanceof HTMLInputElement) return;
+GM_addStyle(`
+.scroll-to-top-btn {
+    position: sticky;
+    bottom: 1em;
+    right: 1em;
+    z-index: 10000;
+    float: right;
+}
+`);
 
-        const targetOrDocEl = targetIsDocument
-            ? document.documentElement
-            : target;
+if (!window.frameElement || window.frameElement?.src?.startsWith('https://')) {
+    document.addEventListener(
+        'scroll',
+        e => {
+            const target = e.target;
+            const targetIsDocument = target instanceof HTMLDocument;
+            if (!(target instanceof HTMLElement) && !targetIsDocument) return;
+            if (target instanceof HTMLInputElement) return;
 
-        const showScrollToTop = targetOrDocEl.scrollTop > 50;
-        let scrollToTopBtn = (
-            targetIsDocument ? document.body : target
-        ).querySelector(':scope > .scroll-to-top-btn');
-        if (!scrollToTopBtn) {
-            scrollToTopBtn = document.createElement('button');
-            scrollToTopBtn.classList.add(
-                'scroll-to-top-btn',
-                'btn',
-                'btn-default'
-            );
-            scrollToTopBtn.textContent = '↑';
-            scrollToTopBtn.addEventListener('click', e => {
-                e.preventDefault();
-                targetOrDocEl.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            if (targetIsDocument) document.body.append(scrollToTopBtn);
-            else target.append(scrollToTopBtn);
-            let translateY = parseFloat(
-                getComputedStyle(targetOrDocEl).paddingBottom
-            );
-            if (
-                targetIsDocument &&
-                document.querySelector(
-                    '.navbar-fixed-bottom:not(#navbar-mobile-footer)'
-                )
-            ) {
-                translateY -= 50;
+            const targetOrDocEl = targetIsDocument
+                ? document.documentElement
+                : target;
+
+            const showScrollToTop = targetOrDocEl.scrollTop > 50;
+            let scrollToTopBtn = (
+                targetIsDocument ? document.body : target
+            ).querySelector(':scope > .scroll-to-top-btn');
+            if (!scrollToTopBtn) {
+                scrollToTopBtn = document.createElement('button');
+                scrollToTopBtn.classList.add(
+                    'scroll-to-top-btn',
+                    'btn',
+                    'btn-default'
+                );
+                scrollToTopBtn.textContent = '↑';
+                scrollToTopBtn.addEventListener('click', e => {
+                    e.preventDefault();
+                    targetOrDocEl.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                if (targetIsDocument) document.body.append(scrollToTopBtn);
+                else target.append(scrollToTopBtn);
+                let translateY = parseFloat(
+                    getComputedStyle(targetOrDocEl).paddingBottom
+                );
+                if (
+                    targetIsDocument &&
+                    document.querySelector(
+                        '.navbar-fixed-bottom:not(#navbar-mobile-footer)'
+                    )
+                ) {
+                    translateY -= 50;
+                }
+                const personalOvertakeCounter = document.querySelector(
+                    '#personal_hire_overtake_counter'
+                );
+                const translateX =
+                    0 -
+                    (personalOvertakeCounter
+                        ? parseFloat(
+                              getComputedStyle(personalOvertakeCounter).width
+                          )
+                        : 0);
+                scrollToTopBtn.style.setProperty(
+                    'transform',
+                    `translate(${translateX}px, ${translateY}px)`
+                );
             }
-            const personalOvertakeCounter = document.querySelector(
-                '#personal_hire_overtake_counter'
+            scrollToTopBtn.classList[showScrollToTop ? 'remove' : 'add'](
+                'hidden'
             );
-            const translateX =
-                0 -
-                (personalOvertakeCounter
-                    ? parseFloat(
-                          getComputedStyle(personalOvertakeCounter).width
-                      )
-                    : 0);
-            scrollToTopBtn.style.setProperty(
-                'transform',
-                `translate(${translateX}px, ${translateY}px)`
-            );
-        }
-        scrollToTopBtn.classList[showScrollToTop ? 'remove' : 'add']('hidden');
 
-        if (hideTimeouts[targetOrDocEl]) {
-            window.clearTimeout(hideTimeouts[targetOrDocEl]);
-        }
-        hideTimeouts[targetOrDocEl] = window.setTimeout(
-            () => scrollToTopBtn.classList.add('hidden'),
-            hideAfter * 1000
-        );
-    },
-    { capture: true }
-);
+            if (hideTimeouts[targetOrDocEl]) {
+                window.clearTimeout(hideTimeouts[targetOrDocEl]);
+            }
+            hideTimeouts[targetOrDocEl] = window.setTimeout(
+                () => scrollToTopBtn.classList.add('hidden'),
+                hideAfter * 1000
+            );
+        },
+        { capture: true }
+    );
+}
