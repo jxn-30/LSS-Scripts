@@ -19,30 +19,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-identifier@npm:^7.22.5":
-  version: 7.22.5
-  resolution: "@babel/helper-validator-identifier@npm:7.22.5"
-  checksum: 7f0f30113474a28298c12161763b49de5018732290ca4de13cdaefd4fd0d635a6fe3f6686c37a02905fb1e64f21a5ee2b55140cf7b070e729f1bd66866506aea
+"@babel/helper-validator-identifier@npm:^7.22.15":
+  version: 7.22.15
+  resolution: "@babel/helper-validator-identifier@npm:7.22.15"
+  checksum: eb0bee4bda664c0959924bc1ad5611eacfce806f46612202dd164fef1df8fef1a11682a1e7615288987100e9fb304982b6e2a4ff07ffe842ab8765b95ed1118c
   languageName: node
   linkType: hard
 
 "@babel/parser@npm:^7.20.15":
-  version: 7.22.11
-  resolution: "@babel/parser@npm:7.22.11"
+  version: 7.22.16
+  resolution: "@babel/parser@npm:7.22.16"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: 332079ed09794d3685343e9fc39c6a12dcb6ea589119f2135952cdef2424296786bb609a33f6dfa9be271797bbf8339f1865118418ea50b32a0c701734c96664
+  checksum: 944c756b5bdeb07b9fec16ecef6b3c61aff9d4c4b924abadcf01afa1840a740b8e2357ae00482b5b37daad6d2bfd848c947f27ad65138d687b6fdc924bc59edd
   languageName: node
   linkType: hard
 
 "@babel/types@npm:^7.8.3":
-  version: 7.22.11
-  resolution: "@babel/types@npm:7.22.11"
+  version: 7.22.17
+  resolution: "@babel/types@npm:7.22.17"
   dependencies:
     "@babel/helper-string-parser": ^7.22.5
-    "@babel/helper-validator-identifier": ^7.22.5
+    "@babel/helper-validator-identifier": ^7.22.15
     to-fast-properties: ^2.0.0
-  checksum: 431a6446896adb62c876d0fe75263835735d3c974aae05356a87eb55f087c20a777028cf08eadcace7993e058bbafe3b21ce2119363222c6cef9eedd7a204810
+  checksum: 7382220f6eb2548f2c867a98916c3aa8a6063498d5372e5d21d8d184ba354033defb72aeba5858c1b2b42177058b896a34a7dcbae5eccd47fb0104721efa909d
   languageName: node
   linkType: hard
 
@@ -89,13 +89,13 @@ __metadata:
   linkType: hard
 
 "@humanwhocodes/config-array@npm:^0.11.10":
-  version: 0.11.10
-  resolution: "@humanwhocodes/config-array@npm:0.11.10"
+  version: 0.11.11
+  resolution: "@humanwhocodes/config-array@npm:0.11.11"
   dependencies:
     "@humanwhocodes/object-schema": ^1.2.1
     debug: ^4.1.1
     minimatch: ^3.0.5
-  checksum: 1b1302e2403d0e35bc43e66d67a2b36b0ad1119efc704b5faff68c41f791a052355b010fb2d27ef022670f550de24cd6d08d5ecf0821c16326b7dcd0ee5d5d8a
+  checksum: db84507375ab77b8ffdd24f498a5b49ad6b64391d30dd2ac56885501d03964d29637e05b1ed5aefa09d57ac667e28028bc22d2da872bfcd619652fbdb5f4ca19
   languageName: node
   linkType: hard
 
@@ -166,9 +166,9 @@ __metadata:
   linkType: hard
 
 "@types/linkify-it@npm:*":
-  version: 3.0.2
-  resolution: "@types/linkify-it@npm:3.0.2"
-  checksum: dff8f10fafb885422474e456596f12d518ec4cdd6c33cca7a08e7c86b912d301ed91cf5a7613e148c45a12600dc9ab3d85ad16d5b48dc1aaeda151a68f16b536
+  version: 3.0.3
+  resolution: "@types/linkify-it@npm:3.0.3"
+  checksum: a734becc4e7476833b0e6951ec133c006a34809639c722d3e28b7cf88f5f6ccbb433f195788be5e56209b1e9e6e0778879291dd2db401acee3bb585c44dcc329
   languageName: node
   linkType: hard
 
