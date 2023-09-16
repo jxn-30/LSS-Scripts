@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Limited Vehicles (DE)
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.08.25+1029
+// @version         2023.09.16+2217
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Zeigt für limitierte Fahrzeuge (NAW, ITW, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
