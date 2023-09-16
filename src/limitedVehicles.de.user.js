@@ -27,7 +27,7 @@
  * @grant GM_addStyle
  */
 
-/* global premium */
+/* global user_premium */
 
 const limits = {
     31: {
@@ -78,12 +78,12 @@ const limits = {
                                 ({ available, enabled, type_id }) =>
                                     type_id === 0 && available && enabled
                             ))
-                ).length / (premium ? 15 : 20)
+                ).length / (user_premium ? 15 : 20)
             ),
         limitText:
             'Pro 20 (15 mit Premium) Rettungswachen und aktiven RD-Erweiterungen ein GRTW',
         next: (buildings, limit) => {
-            const nextAt = (limit + 1) * (premium ? 15 : 20);
+            const nextAt = (limit + 1) * (user_premium ? 15 : 20);
             const toNext =
                 nextAt -
                 buildings.filter(
@@ -143,12 +143,12 @@ const limits = {
                                 ({ available, enabled, type_id }) =>
                                     type_id === 0 && available && enabled
                             ))
-                ).length / (premium ? 10 : 15)
+                ).length / (user_premium ? 10 : 15)
             ),
         limitText:
             'Pro 15 (10 mit Premium) Rettungswachen und aktiven RD-Erweiterungen ein ITW',
         next: (buildings, limit) => {
-            const nextAt = (limit + 1) * (premium ? 10 : 15);
+            const nextAt = (limit + 1) * (user_premium ? 10 : 15);
             const toNext =
                 nextAt -
                 buildings.filter(
