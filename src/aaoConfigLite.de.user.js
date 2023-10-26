@@ -94,6 +94,8 @@
         'vehicle_type_ids[121]': 1, // GTLF
         'vehicle_type_ids[117]': 1, // AB-Tank
         'vehicle_type_ids[119]': 1, // AB-Lösch
+        'vehicle_type_ids[126]': 1, // MTF Drohne
+        'vehicle_type_ids[128]': 1, // ELW Drohne
 
         // Rettungsdienst
         'rtw': 1, // Rettungswagen
@@ -160,12 +162,15 @@
         'vehicle_type_ids[122]': 1, // LKW 7 Lbw (FGr E)
         'energy_supply': 1, // NEA50
         'energy_supply_2': 1, // NEA200
+        'drone': 1, // Beliebige Drohneneinheit
+        'vehicle_type_ids[125]': 1, // MTW-Tr UL
 
         // SEG
         'ktw_b': 1, // KTW Typ B
         'seg_elw': 1, // ELW 1 (SEG)
         'gw_san': 1, // GW-San
         'rescue_dogs_seg': 1, // Rettungshundefahrzeug
+        'vehicle_type_ids[127]': 1, // GW UAS
 
         // Wasserrettung
         'gw_taucher': 1, // GW-Taucher
