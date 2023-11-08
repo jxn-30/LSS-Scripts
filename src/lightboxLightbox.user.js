@@ -64,7 +64,8 @@
 
     if (
         document.getElementById('lightbox_background') ||
-        !window.frameElement?.src?.startsWith('https://')
+        (window.frameElement &&
+            !window.frameElement.src?.startsWith('https://'))
     ) {
         return;
     }
