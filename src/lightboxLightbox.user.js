@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Lightbox-Lightbox
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1512
+// @version         2023.11.08+2103
 // @author          Jan (jxn_30)
 // @description     Allows opening a lightbox on all sites of the game
 // @description:de  Erlaubt es, eine Lightbox auf allen Seiten des Spiels zu öffnen

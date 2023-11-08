@@ -42,7 +42,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2023.06.03+1512`
 - [[LSS] Input max length](#lss-input-max-length) `2023.06.03+1512`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
-- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.06.03+1512`
+- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.11.08+2103`
 - [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de) `2023.09.16+2217` (`🇩🇪`)
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time) `2023.08.18+0350`
@@ -565,7 +565,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                           Download                            |                  Links                  |
 |:---------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.06.03+1512 | [lightboxLightbox.user.js][lightboxLightbox.user.js:download] | [Forum][lightboxLightbox.user.js:forum] |
+| 2023.11.08+2103 | [lightboxLightbox.user.js][lightboxLightbox.user.js:download] | [Forum][lightboxLightbox.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Lightbox-Lightbox</summary>
