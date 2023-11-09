@@ -64,16 +64,5 @@
  * @grant GM_addStyle
  * @old noseasonalnavbar
  */
-     
-(function() {
-    'use strict';
 
-    // Navbar-Element abrufen
-    var navbar = document.getElementById('main_navbar');
-
-    // Überprüfen, ob das Navbar-Element vorhanden ist
-    if(navbar) {
-        // Klasse der Navbar ändern
-        navbar.className = 'navbar navbar-default navbar-static-top';
-    }
-})();
+GM_addStyle('.seasonalbar{background-image: none !important;}');
