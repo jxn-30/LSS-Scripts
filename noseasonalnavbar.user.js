@@ -54,6 +54,17 @@
 // @grant           GM_addStyle
 // ==/UserScript==
 
+**
+ * @name No Seasonal Navbar
+ * @name:de Keine Saisonale Navbar
+ * @description Removes any seasonal navbar background to the standard plain one.
+ * @description:de Entfernt jegliche saisonale Hintergründe der Navbar und setzt den Standard-Hintergrund.
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/22232-scriptwunsch-wasserzeichen-entfernen/
+ * @match /
+ * @grant GM_addStyle
+ * @old noseasonalnavbar
+ */
+     
 (function() {
     'use strict';
 
