@@ -50,6 +50,8 @@
         'elw1_or_elw2': 1, // ELW 1, ELW 2 oder AB-Einsatzleitung
         'ab_einsatzleitung_only': 1, // AB-Einsatzleitung
         'elw2_or_ab_elw': 1, // ELW 2 oder AB-Einsatzleitung
+        'elw1_or_elw_drone': 1, // ELW1 oder ELW Drohne
+        'elw2_or_elw2_drone': 1, // ELW2 oder ELW2 Drohne
         'dlk': 1, // Drehleitern
         'dlk_or_tm50': 1, // DLK oder TM 50
         'hlf_only': 1, // HLF
@@ -96,6 +98,7 @@
         'vehicle_type_ids[119]': 1, // AB-Lösch
         'vehicle_type_ids[126]': 1, // MTF Drohne
         'vehicle_type_ids[128]': 1, // ELW Drohne
+        'vehicle_type_ids[129]': 1, // ELW2 Drohne
 
         // Rettungsdienst
         'rtw': 1, // Rettungswagen
