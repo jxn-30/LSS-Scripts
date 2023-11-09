@@ -54,7 +54,7 @@
 // @grant           GM_addStyle
 // ==/UserScript==
 
-**
+/**
  * @name No Seasonal Navbar
  * @name:de Keine Saisonale Navbar
  * @description Removes any seasonal navbar background to the standard plain one.
@@ -63,7 +63,7 @@
  * @match /
  * @grant GM_addStyle
  * @old noseasonalnavbar
- *//
+ */
      
 (function() {
     'use strict';
