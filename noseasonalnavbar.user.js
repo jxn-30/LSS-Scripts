@@ -2,7 +2,7 @@
 // @name            [LSS] No Seasonal Navbar
 // @name:de         [LSS] Keine Saisonale Navbar
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.07.08+1055
+// @version         2023.11.09+2010
 // @author          Jan (jxn_30)
 // @description     Removes any seasonal navbar background to the standard plain one.
 // @description:de  Entfernt jegliche saisonale Hintergründe der Navbar und setzt den Standard-Hintergrund.
@@ -65,4 +65,15 @@
  * @old noseasonalnavbar
  */
 
-GM_addStyle('.seasonalbar{background-image: none !important;}');
+(function () {
+    'use strict';
+
+    // Navbar-Element abrufen
+    const navbar = document.getElementById('main_navbar');
+
+    // Überprüfen, ob das Navbar-Element vorhanden ist
+    if (navbar) {
+        // Klasse der Navbar ändern
+        navbar.className = 'navbar navbar-default navbar-static-top';
+    }
+})();

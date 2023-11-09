@@ -50,7 +50,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Mission Sort](#lss-mission-sort) `2023.08.10+1254`
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker) `2023.08.18+0356`
-- [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.07.08+1055`
+- [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.11.09+2010`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
@@ -693,7 +693,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Alias / Old names  |                           Download                            |                  Links                  |
 |:---------------:|:------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.07.08+1055 | `noseasonalnavbar` | [noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download] | [Forum][noSeasonalNavbar.user.js:forum] |
+| 2023.11.09+2010 | `noseasonalnavbar` | [noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download] | [Forum][noSeasonalNavbar.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Keine Saisonale Navbar</summary>
