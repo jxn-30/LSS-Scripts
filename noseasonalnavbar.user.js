@@ -63,7 +63,7 @@
  * @match /
  * @grant GM_addStyle
  * @old noseasonalnavbar
- */
+ *//
      
 (function() {
     'use strict';
