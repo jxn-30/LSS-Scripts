@@ -59,6 +59,8 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18588-script-lightbox-in-lightbox-in-lightbox-in/
  */
 
+/* global lightboxClose */
+
 (function () {
     'use strict';
 
@@ -71,7 +73,7 @@
     }
     const bg = document.createElement('div');
     bg.id = 'lightbox_background';
-    bg.addEventListener('click', window.lightboxClose);
+    bg.addEventListener('click', lightboxClose);
     const box = document.createElement('div');
     box.id = 'lightbox_box';
     const close = document.createElement('button');
@@ -81,7 +83,7 @@
     const times = document.createElement('span');
     times.innerHTML = '&times;';
     close.appendChild(times);
-    close.addEventListener('click', window.lightboxClose);
+    close.addEventListener('click', lightboxClose);
     box.appendChild(close);
     document.body.appendChild(bg);
     document.body.appendChild(box);
