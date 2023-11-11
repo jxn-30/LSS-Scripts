@@ -27,22 +27,22 @@ __metadata:
   linkType: hard
 
 "@babel/parser@npm:^7.20.15":
-  version: 7.23.0
-  resolution: "@babel/parser@npm:7.23.0"
+  version: 7.23.3
+  resolution: "@babel/parser@npm:7.23.3"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: ab4ea9360ed4ba3c728c5a9bf33035103ebde20a7e943c4ae1d42becb02a313d731d12a93c795c5a19777031e4022e64b92a52262eda902522a1a18649826283
+  checksum: 0fe11eadd4146a9155305b5bfece0f8223a3b1b97357ffa163c0156940de92e76cd0e7a173de819b8692767147e62f33389b312d1537f84cede51092672df6ef
   languageName: node
   linkType: hard
 
 "@babel/types@npm:^7.8.3":
-  version: 7.23.0
-  resolution: "@babel/types@npm:7.23.0"
+  version: 7.23.3
+  resolution: "@babel/types@npm:7.23.3"
   dependencies:
     "@babel/helper-string-parser": "npm:^7.22.5"
     "@babel/helper-validator-identifier": "npm:^7.22.20"
     to-fast-properties: "npm:^2.0.0"
-  checksum: 70e4db41acb6793d0eb8d81a2fa88f19ee661219b84bd5f703dbdb54eb3a4d3c0dfc55e69034c945b479df9f43fd4b1376480aaccfc19797ce5af1c5d2576b36
+  checksum: 371a10dd9c8d8ebf48fc5d9e1b327dafd74453f8ea582dcbddd1cee5ae34e8881b743e783a86c08c04dcd1849b1842455472a911ae8a1c185484fe9b7b5f1595
   languageName: node
   linkType: hard
 
@@ -166,9 +166,9 @@ __metadata:
   linkType: hard
 
 "@types/linkify-it@npm:*":
-  version: 3.0.4
-  resolution: "@types/linkify-it@npm:3.0.4"
-  checksum: da692444e1d4c0ee8433d7543572636d7b47c24b0c2ab80ceebf62b2a46690e07359e863136dee3b0440efc62b52b0259a48dbc2c096032fe6a913a022669685
+  version: 3.0.5
+  resolution: "@types/linkify-it@npm:3.0.5"
+  checksum: 696e09975991c649ba37c5585714929fdebf5c64a8bfb99910613ef838337dbbba6c608fccdfa03d6347432586ef12e139bc0e947ae6fec569096fef5cc1c550
   languageName: node
   linkType: hard
 
@@ -183,9 +183,9 @@ __metadata:
   linkType: hard
 
 "@types/mdurl@npm:*":
-  version: 1.0.4
-  resolution: "@types/mdurl@npm:1.0.4"
-  checksum: 8329e967d124ae1d3dc2470051963f9ba1b13cfb0739cef891af534fc2881b195c66c18d514af769409843a0b81094f60134f4bdbadc43dfbc7020afa089a2b6
+  version: 1.0.5
+  resolution: "@types/mdurl@npm:1.0.5"
+  checksum: 8991c781eb94fb3621e48e191251a94057908fc14be60f52bdd7c48684af923ffa77559ea979450a0475f85c08f8a472f99ff9c2ca4308961b9b9d35fd7584f7
   languageName: node
   linkType: hard
 
