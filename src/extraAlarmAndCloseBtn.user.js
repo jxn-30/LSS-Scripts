@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] extra alarm & close button
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1511
+// @version         2023.11.15+1530
 // @author          Jan (jxn_30)
 // @description     adds an extra button for closing the alarm window after alarming
 // @description:de  Zeigt im Einsatzfenster einen zusätzlichen Knopf zum alarmieren und schließen an.
@@ -71,8 +71,8 @@ const adjustCloseSetting = async (close = true) => {
             key === 'mission_alarmed_successfull_close_window'
                 ? Number(close)
                 : typeof value === 'boolean'
-                ? Number(value)
-                : value
+                  ? Number(value)
+                  : value
         )
     );
     formData.append('utf8', '✓');

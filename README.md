@@ -29,7 +29,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Dark OSM](#lss-dark-osm) `2023.06.03+1511`
 - [[LSS] Direct levels for buildings](#lss-direct-levels-for-buildings) `2023.03.25+2004`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
-- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2023.06.03+1511`
+- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2023.11.15+1530`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.08.01+1152` (`🇩🇪`)
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.11.11+0147` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
@@ -367,7 +367,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                                Download                                 |                    Links                     |
 |:---------------:|:-----------------------------------------------------------------------:|:--------------------------------------------:|
-| 2023.06.03+1511 | [extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download] | [Forum][extraAlarmAndCloseBtn.user.js:forum] |
+| 2023.11.15+1530 | [extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download] | [Forum][extraAlarmAndCloseBtn.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] extra alarm & close button</summary>
