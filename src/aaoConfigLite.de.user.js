@@ -174,6 +174,10 @@
         'gw_san': 1, // GW-San
         'rescue_dogs_seg': 1, // Rettungshundefahrzeug
         'vehicle_type_ids[127]': 1, // GW UAS
+        'vehicle_type_ids[131]': 1, // Bt-Kombi
+        'care_service_equipment': 1, // Betreuungs- und Verpflegungsausstattung
+        'vehicle_type_ids[130]': 1, // GW-Bt
+        'vehicle_type_ids[132]': 1, // FKH
 
         // Wasserrettung
         'gw_taucher': 1, // GW-Taucher
