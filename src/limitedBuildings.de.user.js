@@ -36,7 +36,7 @@ const limits = [
         limit: buildings => Math.max(1, Math.ceil(buildings.length / 25)),
         limitText: 'Pro 25 Gebäude eine Leitstelle.',
         next: (buildings, limit) => {
-            const nextAt = (limit + 1) * 25;
+            const nextAt = limit * 25;
             const toNext = nextAt - buildings.length;
             return [
                 'Nächste Leitstelle bei',
