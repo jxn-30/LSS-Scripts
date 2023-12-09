@@ -10,6 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
+- [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2023.12.09+2357`
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.11.20+1131` (`🇩🇪`)
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
@@ -62,6 +63,22 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
 - [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
+
+### [LSS] AAO All vehicle types
+
+> Allows to select all vehicle types in ARRs.
+
+|     Version     |                             Download                              |                   Links                   |
+|:---------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
+| 2023.12.09+2357 | [aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download] | [Forum][aaoAllVehicleTypes.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] AAO Alle Fahrzeugtypen</summary>
+    Erlaubt es, alle Fahrzeugtypen in der AAO auszuwählen, nicht nur die vom Spiel vorgegebenen.
+</details>
+
+[aaoAllVehicleTypes.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoAllVehicleTypes.user.js
+[aaoAllVehicleTypes.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
 
 ### [LSS] AAO Config Lite (DE)
 
