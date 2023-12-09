@@ -114,11 +114,11 @@ __metadata:
   linkType: hard
 
 "@jsdoc/salty@npm:^0.2.1":
-  version: 0.2.6
-  resolution: "@jsdoc/salty@npm:0.2.6"
+  version: 0.2.7
+  resolution: "@jsdoc/salty@npm:0.2.7"
   dependencies:
     lodash: "npm:^4.17.21"
-  checksum: b9d5d3c148386d92bd2dcf53b1554eda7efbd8a6998b10612d8607eccb43a21f6825a9e53ca5b28e05d33239baa23f7dbc0e4dd29ca059335c49e617bea14041
+  checksum: 12af140143ff4b3fdd9451f9d89cb5f4cb254e9ca91ac9dbd7ece1b338c490e602819965059e7fe2d9337d4cb44c9fe4fb27b88e65ac3821fed23ab88219f546
   languageName: node
   linkType: hard
 
