@@ -2,7 +2,7 @@
 // @name            [LSS] Alliance members panel
 // @name:de         [LSS] Verbandsmitglieder panel
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.22+1244
+// @version         2023.12.11+1436
 // @author          Jan (jxn_30)
 // @description     Adds a panel to view the list of alliance members directly on the games main page
 // @description:de  Fügt ein Panel hinzu, um die Mitgliederliste des Verbands direkt auf der Hauptseite zu sehen
