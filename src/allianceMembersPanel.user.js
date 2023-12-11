@@ -423,9 +423,14 @@ if (MODE === 'own' || bigMapMenu) {
         const toggleWrapper =
             MODE === 'chat'
                 ? heading?.querySelector('.btn-group')
-                : heading?.querySelector('.row > div:first-child');
+                : heading?.querySelector('.flex-fixed-size');
 
-        toggleWrapper.append(toggleBtn);
+        if (MODE === 'chat') {
+            toggleWrapper.append(toggleBtn);
+        } else {
+            toggleBtn.classList.add('flex-fixed-size');
+            toggleWrapper.before(toggleBtn);
+        }
 
         switchWrapper.after(wrapper);
 
