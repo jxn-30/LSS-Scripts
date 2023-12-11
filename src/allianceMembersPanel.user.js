@@ -425,12 +425,16 @@ if (MODE === 'own' || bigMapMenu) {
                 ? heading?.querySelector('.btn-group')
                 : heading?.querySelector('.flex-fixed-size');
 
-        if (MODE === 'chat') {
-            toggleWrapper.append(toggleBtn);
-        } else {
-            toggleBtn.classList.add('flex-fixed-size');
-            toggleWrapper.before(toggleBtn);
-        }
+        const addToWrapper = () => {
+            if (MODE === 'chat') {
+                toggleWrapper.append(toggleBtn);
+            } else {
+                toggleBtn.classList.add('flex-fixed-size');
+                toggleWrapper.before(toggleBtn);
+            }
+        };
+
+        addToWrapper();
 
         switchWrapper.after(wrapper);
 
@@ -439,7 +443,7 @@ if (MODE === 'own' || bigMapMenu) {
             wrapper.classList.toggle('hidden');
 
             if (wrapper.classList.contains('hidden')) {
-                toggleWrapper.append(toggleBtn);
+                addToWrapper();
                 offlineImg.classList.remove('hidden');
                 toggleSpan.classList.add('hidden');
             } else {
