@@ -12,7 +12,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2023.12.09+2357`
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.11.20+1131` (`🇩🇪`)
-- [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.12+2159`
+- [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.12+2210`
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2023.06.03+1511`
@@ -103,7 +103,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                      Download                       |
 |:---------------:|:---------------------------------------------------:|
-| 2023.12.12+2159 | [aaoReplacer.user.js][aaoReplacer.user.js:download] |
+| 2023.12.12+2210 | [aaoReplacer.user.js][aaoReplacer.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Replacer</summary>
