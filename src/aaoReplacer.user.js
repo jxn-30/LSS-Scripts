@@ -148,7 +148,7 @@ const getAAORequirements = () =>
 
 GM_addStyle(`
 .progress-bar[data-current][data-total]::before {
-    content: attr(data-current)" / "attr(data-total);
+    content: attr(data-current)" / "attr(data-total)" ("attr(data-extra-text)")";
 }
 `);
 
@@ -264,6 +264,7 @@ GM_addStyle(`
             );
             progressBar.dataset.current = '0';
             progressBar.dataset.total = '0';
+            progressBar.dataset.extraText = '0\xa0ersetzt';
             progressWrapper.append(progressBar);
 
             const aaos = document.querySelectorAll(AAO_LINK_SELECTOR);
@@ -276,12 +277,14 @@ GM_addStyle(`
             statusBox.append(progressWrapper);
 
             let counter = 0;
+            let replacedCounter = 0;
 
             // update the counter and the progress bar
             const inc = () => {
                 counter++;
 
                 progressBar.dataset.current = counter.toLocaleString();
+                progressBar.dataset.extraText = `${replacedCounter.toLocaleString()}\xa0ersetzt`;
                 progressBar.style.setProperty(
                     'width',
                     `${((counter / aaos.length) * 100).toString()}%`
@@ -321,6 +324,7 @@ GM_addStyle(`
                         body: formData,
                     })
                 );
+                replacedCounter++;
 
                 // update counter and progress bar
                 inc();
