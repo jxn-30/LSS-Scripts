@@ -12,6 +12,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2023.12.09+2357`
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.11.20+1131` (`🇩🇪`)
+- [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.12+2159`
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2023.06.03+1511`
@@ -95,6 +96,21 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [aaoConfigLite.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 [aaoConfigLite.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
+
+### [LSS] AAO Replacer
+
+> Allows to replace a requirement in all ARRs with another one.
+
+|     Version     |                      Download                       |
+|:---------------:|:---------------------------------------------------:|
+| 2023.12.12+2159 | [aaoReplacer.user.js][aaoReplacer.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] AAO Replacer</summary>
+    Ersetze alle Anforderungen in allen AAOs mit einer anderen.
+</details>
+
+[aaoReplacer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoReplacer.user.js
 
 ### [LSS] Alarm-Icons
 

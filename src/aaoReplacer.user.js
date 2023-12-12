@@ -2,7 +2,7 @@
 // @name            [LSS] AAO Replacer
 // @name:de         [LSS] AAO Replacer
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.12.12+2158
+// @version         2023.12.12+2159
 // @author          Jan (jxn_30)
 // @description     Allows to replace a requirement in all ARRs with another one.
 // @description:de  Ersetze alle Anforderungen in allen AAOs mit einer anderen.
