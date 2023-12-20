@@ -2,7 +2,7 @@
 // @name            [LSS] Limited Radio History
 // @name:de         [LSS] Verkürzte Funk-Historie
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.12.21+0035
+// @version         2023.12.21+0058
 // @author          Jan (jxn_30)
 // @description     Limits the amount of radio messages shown in the radio history.
 // @description:de  Begrenzt die Anzahl der Funknachrichten in der Funk-Historie.

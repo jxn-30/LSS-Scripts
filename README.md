@@ -33,7 +33,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2023.11.15+1530`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2023.08.01+1152` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.12.18+0906` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2023.12.21+0058` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
@@ -46,6 +46,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.11.11+1223`
 - [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de) `2023.12.08+2241` (`🇩🇪`)
+- [[LSS] Limited Radio History](#lss-limited-radio-history) `2023.12.21+0058`
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de) `2023.09.16+2217` (`🇩🇪`)
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time) `2023.08.18+0350`
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
@@ -432,7 +433,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2023.12.18+0906 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2023.12.21+0058 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -623,6 +624,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [limitedBuildings.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedBuildings.de.user.js
 [limitedBuildings.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24446-script-limitedbuildings-schnelle-%C3%BCbersicht-wie-viele-limitierte-geb%C3%A4ude-ausbauen/
+
+### [LSS] Limited Radio History
+
+> Limits the amount of radio messages shown in the radio history.
+
+|     Version     |                              Download                               |                   Links                    |
+|:---------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
+| 2023.12.21+0058 | [limitedRadioHistory.user.js][limitedRadioHistory.user.js:download] | [Forum][limitedRadioHistory.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Verkürzte Funk-Historie</summary>
+    Begrenzt die Anzahl der Funknachrichten in der Funk-Historie.
+</details>
+
+[limitedRadioHistory.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedRadioHistory.user.js
+[limitedRadioHistory.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25179-script-limited-radio-history-angezeigte-funk-historie-beschr%C3%A4nken/
 
 ### [LSS] Limited Vehicles (DE)
 
