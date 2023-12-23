@@ -162,7 +162,7 @@ const getAAORequirements = () =>
                         ([key, amount]) => [`aao[${key}]`, amount]
                     ),
                     ...Object.entries(vehicle_types ?? {}).map(
-                        ([id, amount]) => [`vehicle_type_ids[${id}]"]`, amount]
+                        ([id, amount]) => [`vehicle_type_ids[${id}]`, amount]
                     ),
                 ]),
             ])
@@ -190,6 +190,7 @@ const getAAORequirements = () =>
 
     Promise.all([getPossibleAAORequirements(), getAAORequirements()]).then(
         ([tabs, reqs]) => {
+            console.log(reqs);
             Object.entries(tabs).forEach(([tab, tabReqs]) => {
                 const group = document.createElement('optgroup');
                 group.label = tab;
