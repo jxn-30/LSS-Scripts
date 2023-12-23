@@ -2,7 +2,7 @@
 // @name            [LSS] AAO Replacer
 // @name:de         [LSS] AAO Replacer
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.12.12+2210
+// @version         2023.12.23+1944
 // @author          Jan (jxn_30)
 // @description     Allows to replace a requirement in all ARRs with another one.
 // @description:de  Ersetze alle Anforderungen in allen AAOs mit einer anderen.
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoReplacer.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoReplacer.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
 // @match           https://www.operacni-stredisko.cz/aaos
 // @match           https://www.operacni-stredisko.cz/aaos/
 // @match           https://policie.operacni-stredisko.cz/aaos

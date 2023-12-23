@@ -12,7 +12,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2023.12.23+1820`
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.11.20+1131` (`🇩🇪`)
-- [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.12+2210`
+- [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.23+1944`
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
 - [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2023.06.03+1511`
@@ -102,9 +102,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Allows to replace a requirement in all ARRs with another one.
 
-|     Version     |                      Download                       |
-|:---------------:|:---------------------------------------------------:|
-| 2023.12.12+2210 | [aaoReplacer.user.js][aaoReplacer.user.js:download] |
+|     Version     |                      Download                       |               Links                |
+|:---------------:|:---------------------------------------------------:|:----------------------------------:|
+| 2023.12.23+1944 | [aaoReplacer.user.js][aaoReplacer.user.js:download] | [Forum][aaoReplacer.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Replacer</summary>
@@ -112,6 +112,7 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [aaoReplacer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoReplacer.user.js
+[aaoReplacer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
 
 ### [LSS] Alarm-Icons
 
