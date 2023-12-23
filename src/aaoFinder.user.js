@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoFinder.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoFinder.user.js
-// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/25194-script-aao-finder-finde-aaos-die-bestimmte-anforderungen-enthalten/
 // @match           https://www.operacni-stredisko.cz/aaos
 // @match           https://www.operacni-stredisko.cz/aaos/
 // @match           https://policie.operacni-stredisko.cz/aaos

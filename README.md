@@ -113,7 +113,7 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [aaoFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoFinder.user.js
-[aaoFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
+[aaoFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25194-script-aao-finder-finde-aaos-die-bestimmte-anforderungen-enthalten/
 
 ### [LSS] AAO Replacer
 
