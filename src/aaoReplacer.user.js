@@ -97,6 +97,7 @@
  * @name:de AAO Replacer
  * @description Allows to replace a requirement in all ARRs with another one.
  * @description:de Ersetze alle Anforderungen in allen AAOs mit einer anderen.
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
  * @match /aaos
  * @match /aaos/
  * @grant GM_addStyle
@@ -118,7 +119,7 @@ const getDoc = url =>
  * read the available AAO categories and requirements for each AAO
  * @returns {Promise<Record<string, Record<string, string>>>}
  */
-const getAAORequirements = () =>
+const getPossibleAAORequirements = () =>
     new Promise((resolve, reject) => {
         const aaoEditLink = document.querySelector(AAO_LINK_SELECTOR)?.href;
         if (!aaoEditLink) reject();
@@ -146,9 +147,31 @@ const getAAORequirements = () =>
             .then(resolve);
     });
 
+/**
+ * get all the set requirements per AAO from the API
+ * @returns {Promise<Record<string, string[]>>}
+ */
+const getAAORequirements = () =>
+    fetch('/api/v1/aaos')
+        .then(res => res.json())
+        .then(aaos =>
+            aaos.map(({ id, vehicle_classes, vehicle_types }) => [
+                id.toString(),
+                [
+                    ...Object.keys(vehicle_classes ?? {}).map(
+                        key => `aao[${key}]`
+                    ),
+                    ...Object.keys(vehicle_types ?? {}).map(
+                        id => `vehicle_type_ids[${id}]"]`
+                    ),
+                ],
+            ])
+        )
+        .then(Object.fromEntries);
+
 GM_addStyle(`
 .progress-bar[data-current][data-total]::before {
-    content: attr(data-current)" / "attr(data-total)" ("attr(data-extra-text)")";
+    content: attr(data-current)" / "attr(data-total);
 }
 `);
 
@@ -205,7 +228,7 @@ GM_addStyle(`
             'Status: Lese mögliche Anforderungen aus, bitte habe einen Moment Geduld...';
 
         // let's fill the selects with possible AAO requirements
-        getAAORequirements().then(tabs => {
+        getPossibleAAORequirements().then(tabs => {
             statusBox.textContent =
                 'Status: Bitte wähle nun, welche Anforderung du mit welcher ersetzen möchtest.';
 
@@ -264,27 +287,38 @@ GM_addStyle(`
             );
             progressBar.dataset.current = '0';
             progressBar.dataset.total = '0';
-            progressBar.dataset.extraText = '0\xa0ersetzt';
             progressWrapper.append(progressBar);
 
-            const aaos = document.querySelectorAll(AAO_LINK_SELECTOR);
+            const from = fromReqSelect.value;
+            const to = toReqSelect.value;
+
+            statusBox.textContent =
+                'Status: Erfassen, welche AAOs ersetzt werden müssen';
+
+            const aaoRequirements = await getAAORequirements();
+
+            const aaos = Array.from(
+                document.querySelectorAll(AAO_LINK_SELECTOR)
+            ).filter(aao =>
+                aaoRequirements[
+                    aao.href.match(/(?<=\/aaos\/)\d+(?=\/edit)/)?.[0]
+                ]?.includes(from)
+            );
 
             progressBar.dataset.total = aaos.length.toLocaleString();
 
-            statusBox.textContent = `Status: Die AAO-Einträge werden nun ersetzt. Bitte habe einen Moment Geduld. Bitte plane ca. 0,2 Sekunden pro AAO ein, das heißt der Prozess braucht vermutlich mindestens ${(
-                aaos.length * 0.2
+            statusBox.textContent = `Status: Die AAO-Einträge werden nun ersetzt. Bitte habe einen Moment Geduld. Bitte plane ca. 0,3 Sekunden pro AAO ein, das heißt der Prozess braucht vermutlich mindestens ${(
+                aaos.length * 0.3
             ).toLocaleString()} Sekunden. Abbrechen kannst du den Prozess, indem du das Fenster neu lädst.`;
             statusBox.append(progressWrapper);
 
             let counter = 0;
-            let replacedCounter = 0;
 
             // update the counter and the progress bar
             const inc = () => {
                 counter++;
 
                 progressBar.dataset.current = counter.toLocaleString();
-                progressBar.dataset.extraText = `${replacedCounter.toLocaleString()}\xa0ersetzt`;
                 progressBar.style.setProperty(
                     'width',
                     `${((counter / aaos.length) * 100).toString()}%`
@@ -298,8 +332,7 @@ GM_addStyle(`
                     new Promise(resolve => setTimeout(() => resolve(), 100)),
                 ]).then(([result]) => result);
 
-            // iterate over all AAOs
-            // TODO: Optimize by using mission to change relevant AAOs only
+            // iterate over all AAOs that do have that requirement
             for (const aao of aaos) {
                 // get the form data of this AAO
                 const doc = await timeoutReq(getDoc(aao.href));
@@ -308,14 +341,8 @@ GM_addStyle(`
                 const reqs = Object.fromEntries(formData.entries());
 
                 // update formData
-                const fromReq = reqs[fromReqSelect.value];
-                const toReq = reqs[toReqSelect.value];
-                if (!fromReq || fromReq === '0' || !toReq) {
-                    inc();
-                    continue;
-                }
-                formData.set(toReqSelect.value, fromReq);
-                formData.set(fromReqSelect.value, '0');
+                formData.set(to, reqs[from]);
+                formData.set(from, '0');
 
                 // send the updated form data
                 await timeoutReq(
@@ -324,7 +351,6 @@ GM_addStyle(`
                         body: formData,
                     })
                 );
-                replacedCounter++;
 
                 // update counter and progress bar
                 inc();
