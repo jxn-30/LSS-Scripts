@@ -2,7 +2,7 @@
 // @name            [LSS] AAO Finder
 // @name:de         [LSS] AAO Finder
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.12.24+0038
+// @version         2023.12.24+0051
 // @author          Jan (jxn_30)
 // @description     Find all ARRs that contain a certain requirement.
 // @description:de  Finde alle AAOs, die eine bestimmte Anforderung enthalten.
