@@ -127,6 +127,20 @@ const getVehicleTypes = lang =>
             vehicles.sort((a, b) => a.caption.localeCompare(b.caption))
         );
 
+/**
+ * reads the vehicle types from AAO-API
+ * @returns {Promise<Record<number, number>>}
+ */
+const getAAOVehicleTypes = () => {
+    const id = document.location.pathname.match(
+        /(?<=\/aaos\/)\d+(?=\/edit)/
+    )?.[0];
+    if (!id) return Promise.resolve({});
+    return fetch(`/api/v1/aaos/${id}`)
+        .then(res => res.json())
+        .then(({ vehicle_types }) => vehicle_types ?? {});
+};
+
 (async () => {
     const tabs = document.querySelector('#tabs');
     if (!tabs) return;
@@ -137,13 +151,8 @@ const getVehicleTypes = lang =>
     const tabLink = document.createElement('li');
     const tabLinkA = document.createElement('a');
     tabLinkA.dataset.toggle = 'tab';
-    // The ⚠️ should remind that values will not be loaded but have to be set each time the ARR-entry is edited.
-    tabLinkA.textContent = 'Alle Fahrzeugtypen ⚠️';
+    tabLinkA.textContent = 'Alle Fahrzeugtypen';
     tabLink.append(tabLinkA);
-
-    tabs.before(
-        `Hinweis: Die unter "${tabLinkA.textContent}" festgelegten Werte müssen neu gesetzt werden, da sie nicht vom Spiel geladen werden.`
-    );
     tabs.append(tabLink);
 
     const tab = document.createElement('div');
@@ -151,6 +160,9 @@ const getVehicleTypes = lang =>
     tabLinkA.href = `#${tab.id}`;
     tab.className = 'tab-pane';
     document.querySelector('.tab-content').append(tab);
+
+    /** @type {HTMLInputElement[]} */
+    const inputs = [];
 
     vehicleTypes.forEach(({ id, caption }) => {
         const div = document.createElement('div');
@@ -177,12 +189,24 @@ const getVehicleTypes = lang =>
             document.querySelector(`input[name="vehicle_type_ids[${id}]"]`)
                 ?.value ?? '0';
         label.setAttribute('for', input.id);
+        input.disabled = true;
 
+        inputs.push(input);
         divInput.append(input);
 
         div.append(divLabel, divInput);
         tab.append(div);
     });
+
+    getAAOVehicleTypes()
+        .then(types =>
+            Object.entries(types).forEach(([type, amount]) =>
+                document
+                    .querySelectorAll(`input[name="vehicle_type_ids[${type}]"]`)
+                    .forEach(input => (input.value = amount))
+            )
+        )
+        .then(() => inputs.forEach(input => (input.disabled = false)));
 
     /**
      * updates all inputs with the same name as the target
