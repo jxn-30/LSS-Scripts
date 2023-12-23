@@ -97,7 +97,7 @@
  * @name:de AAO Finder
  * @description Find all ARRs that contain a certain requirement.
  * @description:de Finde alle AAOs, die eine bestimmte Anforderung enthalten.
- * @forum https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/25194-script-aao-finder-finde-aaos-die-bestimmte-anforderungen-enthalten/
  * @match /aaos
  * @match /aaos/
  * @grant GM_addStyle
