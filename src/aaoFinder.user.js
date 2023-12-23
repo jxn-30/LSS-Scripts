@@ -190,7 +190,6 @@ const getAAORequirements = () =>
 
     Promise.all([getPossibleAAORequirements(), getAAORequirements()]).then(
         ([tabs, reqs]) => {
-            console.log(reqs);
             Object.entries(tabs).forEach(([tab, tabReqs]) => {
                 const group = document.createElement('optgroup');
                 group.label = tab;
