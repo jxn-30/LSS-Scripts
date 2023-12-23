@@ -12,6 +12,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2023.12.23+1820`
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.11.20+1131` (`🇩🇪`)
+- [[LSS] AAO Finder](#lss-aao-finder) `2023.12.24+0038`
 - [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.23+1944`
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
 - [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
@@ -97,6 +98,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [aaoConfigLite.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 [aaoConfigLite.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
+
+### [LSS] AAO Finder
+
+> Find all ARRs that contain a certain requirement.
+
+|     Version     |                    Download                     |              Links               |
+|:---------------:|:-----------------------------------------------:|:--------------------------------:|
+| 2023.12.24+0038 | [aaoFinder.user.js][aaoFinder.user.js:download] | [Forum][aaoFinder.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] AAO Finder</summary>
+    Finde alle AAOs, die eine bestimmte Anforderung enthalten.
+</details>
+
+[aaoFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoFinder.user.js
+[aaoFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
 
 ### [LSS] AAO Replacer
 
