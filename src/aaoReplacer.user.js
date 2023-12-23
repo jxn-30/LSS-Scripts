@@ -162,7 +162,7 @@ const getAAORequirements = () =>
                         key => `aao[${key}]`
                     ),
                     ...Object.keys(vehicle_types ?? {}).map(
-                        id => `vehicle_type_ids[${id}]"]`
+                        id => `vehicle_type_ids[${id}]`
                     ),
                 ],
             ])
