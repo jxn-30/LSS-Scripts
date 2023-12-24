@@ -155,17 +155,27 @@ const getAAORequirements = () =>
     fetch('/api/v1/aaos')
         .then(res => res.json())
         .then(aaos =>
-            aaos.map(({ id, vehicle_classes, vehicle_types }) => [
-                id.toString(),
-                [
-                    ...Object.keys(vehicle_classes ?? {}).map(
-                        key => `aao[${key}]`
-                    ),
-                    ...Object.keys(vehicle_types ?? {}).map(
-                        id => `vehicle_type_ids[${id}]`
-                    ),
-                ],
-            ])
+            aaos.map(
+                ({
+                    id,
+                    vehicle_classes,
+                    vehicle_types,
+                    vehicle_type_captions,
+                }) => [
+                    id.toString(),
+                    [
+                        ...Object.keys(vehicle_classes ?? {}).map(
+                            key => `aao[${key}]`
+                        ),
+                        ...Object.keys(vehicle_types ?? {}).map(
+                            id => `vehicle_type_ids[${id}]`
+                        ),
+                        ...Object.keys(vehicle_type_captions ?? {}).map(
+                            caption => `vehicle_type_caption[${caption}]`
+                        ),
+                    ],
+                ]
+            )
         )
         .then(Object.fromEntries);
 
