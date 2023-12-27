@@ -201,6 +201,12 @@ const createModal = async () => {
     footer.append(progressWrapper);
 
     GM_addStyle(`
+#${modalId} .nav-tabs.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+    
 #${modalId} .progress {
     margin-bottom: 0;
 }
@@ -418,6 +424,7 @@ const createModal = async () => {
             buildingTypeSelect.addEventListener('change', updateTable);
 
             calcBtn.addEventListener('click', async () => {
+                tabList.classList.add('disabled');
                 progressWrapper.classList.remove('hidden');
                 schoolSelect.disabled = true;
                 buildingTypeSelect.disabled = true;
@@ -494,6 +501,7 @@ const createModal = async () => {
                 ${totalCurrent.toLocaleString()} Angestellte sind in Ausbildung zum gewählten Lehrgang und
                 ${totalFinished.toLocaleString()} bereits ausgebildet.`;
 
+                tabList.classList.remove('disabled');
                 progressWrapper.classList.add('hidden');
                 schoolSelect.disabled = false;
                 buildingTypeSelect.disabled = false;
