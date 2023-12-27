@@ -24,6 +24,8 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/24446-script-limitedbuildings-schnelle-%C3%BCbersicht-wie-viele-limitierte-geb%C3%A4ude-ausbauen/
  * @locale de_DE
  * @match /
+ * @// icon taken from https://icons8.com/icon/BZkd70RB5zN3/home-safety
+ * @resource icon /resources/limitedBuildings.de.user.js/icon.png
  * @grant GM_addStyle
  */
 
@@ -441,9 +443,13 @@ const createModal = () => {
 // create a trigger-element
 const triggerLi = document.createElement('li');
 const triggerA = document.createElement('a');
+const triggerImg = document.createElement('img');
+triggerImg.src = GM_getResourceURL('icon');
+triggerImg.width = 24;
+triggerImg.height = 24;
 triggerA.href = '#';
-triggerA.textContent = 'Limited Buildings';
-triggerLi.appendChild(triggerA);
+triggerA.append(triggerImg, '\xa0Limited Buildings');
+triggerLi.append(triggerA);
 
 triggerLi.addEventListener('click', event => {
     event.preventDefault();

@@ -41,12 +41,17 @@ const updateResources = async (userscriptName, resourceTags) => {
 
         let resourceContent = '';
         console.info(`updating resource ${name} from ${url}`);
+        let addFetchNote = true;
         if (url.match(/^https?:\/\//)) {
             resourceContent = await fetch(url)
                 .then(res => res.text())
                 .then(text =>
                     text.replace(/^\/\/# sourceMappingURL=.*?$/gm, '').trim()
                 );
+        } else if (url.match(/^\//)) {
+            addFetchNote = false;
+            const absPath = path.resolve(ROOT_PATH, url.substring(1));
+            resourceContent = fs.readFileSync(absPath);
         }
 
         const contentBefore = fs.existsSync(outFilePath)
@@ -64,7 +69,9 @@ const updateResources = async (userscriptName, resourceTags) => {
         if (isUpdated) {
             updatedFiles.push(outFilePath);
 
-            const fileContent = `// fetched from ${url} at ${new Date().toISOString()}\n${resourceContent}`;
+            const fileContent = addFetchNote
+                ? `// fetched from ${url} at ${new Date().toISOString()}\n${resourceContent}`
+                : resourceContent;
             fs.writeFileSync(outFilePath, fileContent);
 
             hash = createHashFromString(fileContent);
