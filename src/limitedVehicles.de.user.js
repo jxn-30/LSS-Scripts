@@ -13,7 +13,7 @@
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
 // @match           https://www.leitstellenspiel.de/
 // @match           https://polizei.leitstellenspiel.de/
-// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/d78e145611/resources/limitedVehicles.de.user.js/icon.png#sha256=b16f7c986ee0f857541c8d1d2b562390fedeef90799a2de78949ccc9acff6251
+// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/d78e145611/resources/limitedVehicles.de.user.js/icon.png#sha256=d646596a61e833db3b2315a4705058de678705cb15aa4788f4f6a32ed447bd88
 // @run-at          document-idle
 // @grant           GM_addStyle
 // @grant           GM_getResourceURL
