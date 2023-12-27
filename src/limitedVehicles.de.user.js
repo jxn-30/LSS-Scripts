@@ -24,6 +24,8 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
  * @locale de_DE
  * @match /
+ * @// icon taken from https://icons8.com/icon/xxIxkJ2lO-YR/steering-lock-warning
+ * @resource icon /resources/limitedVehicles.de.user.js/icon.png
  * @grant GM_addStyle
  */
 
@@ -365,9 +367,13 @@ const createModal = () => {
 // create a trigger-element
 const triggerLi = document.createElement('li');
 const triggerA = document.createElement('a');
+const triggerImg = document.createElement('img');
+triggerImg.src = GM_getResourceURL('icon');
+triggerImg.width = 24;
+triggerImg.height = 24;
 triggerA.href = '#';
-triggerA.textContent = 'Limited Vehicles';
-triggerLi.appendChild(triggerA);
+triggerA.append(triggerImg, '\xa0Limited Vehicles');
+triggerLi.append(triggerA);
 
 triggerLi.addEventListener('click', event => {
     event.preventDefault();
