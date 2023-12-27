@@ -213,7 +213,19 @@ const createModal = async () => {
     progressBar.dataset.current = '0';
     progressBar.dataset.total = '0';
     progressWrapper.append(progressBar);
-    footer.append(progressWrapper);
+
+    const scrollToTop = document.createElement('button');
+    scrollToTop.classList.add('btn', 'btn-default', 'btn-xs');
+    scrollToTop.style.setProperty('position', 'absolute');
+    scrollToTop.style.setProperty('bottom', '15px');
+    scrollToTop.style.setProperty('right', '15px');
+    scrollToTop.textContent = '↑';
+
+    scrollToTop.addEventListener('click', () =>
+        body.scrollTo({ top: 0, behavior: 'smooth' })
+    );
+
+    footer.append(progressWrapper, scrollToTop);
 
     GM_addStyle(`
 #${modalId} .nav-tabs.disabled {
