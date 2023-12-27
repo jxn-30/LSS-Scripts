@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Limited Vehicles (DE)
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.09.16+2217
+// @version         2023.12.27+1801
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Zeigt für limitierte Fahrzeuge (NAW, ITW, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
@@ -13,6 +13,7 @@
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
 // @match           https://www.leitstellenspiel.de/
 // @match           https://polizei.leitstellenspiel.de/
+// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/b4aba052aa/resources/limitedVehicles.de.user.js/icon.png#sha256=202130c53c9e3607efd42c6d055e3ab8f823429810849718d741fd9c3aeb8e32
 // @run-at          document-idle
 // @grant           GM_addStyle
 // ==/UserScript==
