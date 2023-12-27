@@ -28,6 +28,7 @@
  * @// icon taken from https://icons8.com/icon/xxIxkJ2lO-YR/steering-lock-warning
  * @resource icon /resources/limitedVehicles.de.user.js/icon.png
  * @grant GM_addStyle
+ * @grant GM_getResourceURL
  */
 
 /* global user_premium */

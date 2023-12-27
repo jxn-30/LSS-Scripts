@@ -28,6 +28,7 @@
  * @// icon taken from https://icons8.com/icon/BZkd70RB5zN3/home-safety
  * @resource icon /resources/limitedBuildings.de.user.js/icon.png
  * @grant GM_addStyle
+ * @grant GM_getResourceURL
  */
 
 const limits = [
