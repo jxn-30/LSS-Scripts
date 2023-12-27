@@ -2,7 +2,7 @@
 // @name            [LSS] Training Finder
 // @name:de         [LSS] Ausbildungsfinder
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.12.27+1824
+// @version         2023.12.27+1837
 // @author          Jan (jxn_30)
 // @description     Lists all buildings and amount of staff with a specific training
 // @description:de  Listet alle Gebäude und die Anzahl an Personal mit einer bestimmten Ausbildung auf
@@ -50,7 +50,7 @@
 // @match           https://polis.larmcentralen-spelet.se/
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
-// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/7b3146d15a/resources/trainingFinder.user.js/icon.png#sha256=d746f4a5a87115767f1a0759f80f710df3c1d116357f2e30f7bd2f53e2a53e95
+// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/3bba6194f1/resources/trainingFinder.user.js/icon.png#sha256=d746f4a5a87115767f1a0759f80f710df3c1d116357f2e30f7bd2f53e2a53e95
 // @run-at          document-idle
 // @grant           GM_addStyle
 // @grant           GM_getResourceURL

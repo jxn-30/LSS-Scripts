@@ -46,9 +46,9 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Input max length](#lss-input-max-length) `2023.06.03+1512`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.11.11+1223`
-- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de) `2023.12.27+1824` (`🇩🇪`)
+- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de) `2023.12.27+1837` (`🇩🇪`)
 - [[LSS] Limited Radio History](#lss-limited-radio-history) `2023.12.21+0058`
-- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de) `2023.12.27+1824` (`🇩🇪`)
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de) `2023.12.27+1837` (`🇩🇪`)
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time) `2023.08.18+0350`
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2023.07.08+1509`
 - [[LSS] Mission Sort](#lss-mission-sort) `2023.08.10+1254`
@@ -64,7 +64,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
-- [[LSS] Training Finder](#lss-training-finder) `2023.12.27+1824`
+- [[LSS] Training Finder](#lss-training-finder) `2023.12.27+1837`
 - [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
 
@@ -634,7 +634,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                              Download                               |                   Links                    |
 |:---------------:|:------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
-| 2023.12.27+1824 |    `🇩🇪`    | [limitedBuildings.de.user.js][limitedBuildings.de.user.js:download] | [Forum][limitedBuildings.de.user.js:forum] |
+| 2023.12.27+1837 |    `🇩🇪`    | [limitedBuildings.de.user.js][limitedBuildings.de.user.js:download] | [Forum][limitedBuildings.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Limited Buildings (DE)</summary>
@@ -666,7 +666,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                             Download                              |                   Links                   |
 |:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2023.12.27+1824 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
+| 2023.12.27+1837 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Limited Vehicles (DE)</summary>
@@ -922,7 +922,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                         Download                          |
 |:---------------:|:---------------------------------------------------------:|
-| 2023.12.27+1824 | [trainingFinder.user.js][trainingFinder.user.js:download] |
+| 2023.12.27+1837 | [trainingFinder.user.js][trainingFinder.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Ausbildungsfinder</summary>

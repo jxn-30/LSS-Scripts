@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Limited Buildings (DE)
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.12.27+1824
+// @version         2023.12.27+1837
 // @author          Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Zeigt für limitierte Gebäude und Ausbauten (Heli-Standplätze, Großwachen, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
@@ -13,7 +13,7 @@
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/24446-script-limitedbuildings-schnelle-%C3%BCbersicht-wie-viele-limitierte-geb%C3%A4ude-ausbauen/
 // @match           https://www.leitstellenspiel.de/
 // @match           https://polizei.leitstellenspiel.de/
-// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/37307df8e3/resources/limitedBuildings.de.user.js/icon.png#sha256=8f16b24b2106050d6eb777b78b75b43453fa9c2919ad7a265b31f746a8be6b57
+// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/d78e145611/resources/limitedBuildings.de.user.js/icon.png#sha256=8f16b24b2106050d6eb777b78b75b43453fa9c2919ad7a265b31f746a8be6b57
 // @run-at          document-idle
 // @grant           GM_addStyle
 // @grant           GM_getResourceURL
