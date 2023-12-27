@@ -163,7 +163,7 @@ const timeoutReq = promise =>
 
 // create a modal and fill it with Data
 const createModal = async () => {
-    let modalIsClosed = false;
+    let fetchAborted = false;
 
     await getBuildingTypes(I18n.locale);
     await getSchoolingTypes(I18n.locale);
@@ -195,7 +195,7 @@ const createModal = async () => {
         modal.classList.remove('in');
         modal.style.setProperty('display', 'none');
         modal.remove();
-        modalIsClosed = true;
+        fetchAborted = true;
     };
 
     close.addEventListener('click', event => {
@@ -351,9 +351,18 @@ const createModal = async () => {
             const calcBtn = document.createElement('button');
             calcBtn.classList.add('btn', 'btn-success', 'btn-sm');
             calcBtn.style.setProperty('margin-left', '10px');
-            calcBtn.style.setProperty('margin-right', '10px');
+            calcBtn.style.setProperty('margin-right', '5px');
             calcBtn.textContent = 'Angestellte finden';
             calcBtn.disabled = true;
+
+            const abortBtn = document.createElement('button');
+            abortBtn.classList.add('btn', 'btn-danger', 'btn-sm');
+            abortBtn.style.setProperty('margin-left', '5px');
+            abortBtn.style.setProperty('margin-right', '10px');
+            abortBtn.textContent = 'Abbrechen';
+            abortBtn.disabled = true;
+
+            abortBtn.addEventListener('click', () => (fetchAborted = true));
 
             const table = document.createElement('table');
             table.classList.add('table', 'table-striped', 'table-hover');
@@ -456,6 +465,7 @@ const createModal = async () => {
                 schoolSelect.disabled = true;
                 buildingTypeSelect.disabled = true;
                 calcBtn.disabled = true;
+                abortBtn.disabled = false;
 
                 let counter = 0;
                 progressBar.dataset.total =
@@ -464,8 +474,11 @@ const createModal = async () => {
                 let totalCurrent = 0;
                 let totalFinished = 0;
 
+                infoSpan.textContent =
+                    'Bitte warten, die Daten werden abgerufen...';
+
                 for (const building of selectedBuildings) {
-                    if (modalIsClosed) return;
+                    if (fetchAborted) break;
 
                     const answer = await timeoutReq(
                         fetch(
@@ -526,15 +539,25 @@ const createModal = async () => {
                     );
                 }
 
-                infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.
+                if (fetchAborted) {
+                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.`;
+                    table
+                        .querySelectorAll('span:not(.hidden)[data-building-id]')
+                        .forEach(el => el.classList.add('hidden'));
+                } else {
+                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.
                 ${totalCurrent.toLocaleString()} Angestellte sind in Ausbildung zum gewählten Lehrgang und
                 ${totalFinished.toLocaleString()} bereits ausgebildet.`;
+                }
+
+                fetchAborted = false;
 
                 tabList.classList.remove('disabled');
                 progressWrapper.classList.add('hidden');
                 schoolSelect.disabled = false;
                 buildingTypeSelect.disabled = false;
                 calcBtn.disabled = false;
+                abortBtn.disabled = true;
             });
 
             tabPane.append(
@@ -542,6 +565,7 @@ const createModal = async () => {
                 buildingTypeSelect,
                 infoSpan,
                 calcBtn,
+                abortBtn,
                 table
             );
         });
