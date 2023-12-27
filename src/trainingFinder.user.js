@@ -141,7 +141,8 @@ const modalId = 'jxn-training_finder-modal';
 const createSelect = (placeholder = '') => {
     const select = document.createElement('select');
     select.classList.add('form-control');
-    select.style.setProperty('margin-top', '10px');
+    select.style.setProperty('margin-top', '5px');
+    select.style.setProperty('margin-bottom', '5px');
 
     const placeholderOption = document.createElement('option');
     placeholderOption.textContent = placeholder;
@@ -326,6 +327,7 @@ const createModal = async () => {
             }
 
             const schoolSelect = createSelect('Lehrgang auswählen');
+            schoolSelect.style.setProperty('margin-top', '10px');
 
             schoolingTypes[schoolingType].forEach((schooling, index) => {
                 const option = document.createElement('option');
@@ -559,6 +561,12 @@ const createModal = async () => {
                 calcBtn.disabled = false;
                 abortBtn.disabled = true;
             });
+
+            if (relevantBuildingTypes.length === 1) {
+                buildingTypeSelect.value = relevantBuildingTypes[0];
+                buildingTypeSelect.classList.add('hidden');
+                updateTable();
+            }
 
             tabPane.append(
                 schoolSelect,
