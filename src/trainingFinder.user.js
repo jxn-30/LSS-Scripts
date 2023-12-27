@@ -163,6 +163,8 @@ const timeoutReq = promise =>
 
 // create a modal and fill it with Data
 const createModal = async () => {
+    let modalIsClosed = false;
+
     await getBuildingTypes(I18n.locale);
     await getSchoolingTypes(I18n.locale);
 
@@ -186,11 +188,17 @@ const createModal = async () => {
     const close = document.createElement('span');
     close.classList.add('close');
     close.textContent = '×';
-    close.addEventListener('click', event => {
-        event.preventDefault();
+
+    const closeModal = () => {
         modal.classList.remove('in');
         modal.style.setProperty('display', 'none');
         modal.remove();
+        modalIsClosed = true;
+    };
+
+    close.addEventListener('click', event => {
+        event.preventDefault();
+        closeModal();
     });
 
     const footer = document.createElement('div');
@@ -443,6 +451,8 @@ const createModal = async () => {
                 let totalFinished = 0;
 
                 for (const building of selectedBuildings) {
+                    if (modalIsClosed) return;
+
                     const answer = await timeoutReq(
                         fetch(
                             `/buildings/${anyFittingSchool.id}/schoolingEducationCheck?education=${schoolSelect.value}&only_building_id=${building.id}`
