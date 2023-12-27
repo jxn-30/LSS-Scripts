@@ -58,7 +58,6 @@ const updateResources = async (userscriptName, resourceTags) => {
             ? fs.readFileSync(outFilePath).toString()
             : '';
 
-        let hash = '';
         const processedContentBefore = addFetchNote
             ? contentBefore.split(/\n/).slice(1).join('\n')
             : contentBefore;
@@ -74,11 +73,9 @@ const updateResources = async (userscriptName, resourceTags) => {
                 ? `// fetched from ${url} at ${new Date().toISOString()}\n${resourceContent}`
                 : resourceContent;
             fs.writeFileSync(outFilePath, fileContent);
-
-            hash = createHashFromString(fileContent);
-        } else {
-            hash = createHashFromString(contentBefore);
         }
+
+        const hash = createHashFromString(fs.readFileSync(outFilePath));
 
         resources.push({
             absPath: outFilePath,
