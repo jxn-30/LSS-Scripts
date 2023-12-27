@@ -60,7 +60,10 @@
  * @description Lists all buildings and amount of staff with a specific training
  * @description:de Listet alle Gebäude und die Anzahl an Personal mit einer bestimmten Ausbildung auf
  * @match /
+ * @// icon taken from https://icons8.com/icon/7BHYSrE6cAZk/library-building
+ * @resource icon /resources/trainingFinder.user.js/icon.png
  * @grant GM_addStyle
+ * @grant GM_getResourceURL
  */
 
 /* global I18n */
@@ -523,9 +526,13 @@ const createModal = async () => {
 // create a trigger-element
 const triggerLi = document.createElement('li');
 const triggerA = document.createElement('a');
+const triggerImg = document.createElement('img');
+triggerImg.src = GM_getResourceURL('icon');
+triggerImg.width = 24;
+triggerImg.height = 24;
 triggerA.href = '#';
-triggerA.textContent = 'Ausbildungsfinder';
-triggerLi.appendChild(triggerA);
+triggerA.append(triggerImg, '\xa0Ausbildungsfinder');
+triggerLi.append(triggerA);
 
 triggerLi.addEventListener('click', event => {
     event.preventDefault();
