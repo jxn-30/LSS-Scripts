@@ -50,7 +50,7 @@
 // @match           https://polis.larmcentralen-spelet.se/
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
-// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/3bba6194f1/resources/trainingFinder.user.js/icon.png#sha256=d746f4a5a87115767f1a0759f80f710df3c1d116357f2e30f7bd2f53e2a53e95
+// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/3bba6194f1/resources/trainingFinder.user.js/icon.png#sha256=d4e98f21462a09cfc381aa3dfc6eeee6ada272ba900ce118dec70a6471b51e96
 // @run-at          document-idle
 // @grant           GM_addStyle
 // @grant           GM_getResourceURL

@@ -51,20 +51,21 @@ const updateResources = async (userscriptName, resourceTags) => {
         } else if (url.match(/^\//)) {
             addFetchNote = false;
             const absPath = path.resolve(ROOT_PATH, url.substring(1));
-            resourceContent = fs.readFileSync(absPath);
+            resourceContent = fs.readFileSync(absPath).toString();
         }
 
         const contentBefore = fs.existsSync(outFilePath)
-            ? fs
-                  .readFileSync(outFilePath, {
-                      encoding: 'utf8',
-                  })
-                  .toString()
+            ? fs.readFileSync(outFilePath).toString()
             : '';
 
         let hash = '';
-        const isUpdated =
-            contentBefore.split(/\n/).slice(1).join('\n') !== resourceContent;
+        const processedContentBefore = addFetchNote
+            ? contentBefore.split(/\n/).slice(1).join('\n')
+            : contentBefore;
+        const hashContentBefore = createHashFromString(processedContentBefore);
+        const hashResourceContent = createHashFromString(resourceContent);
+        const isUpdated = hashContentBefore !== hashResourceContent;
+        console.log(isUpdated, hashContentBefore, hashResourceContent);
 
         if (isUpdated) {
             updatedFiles.push(outFilePath);

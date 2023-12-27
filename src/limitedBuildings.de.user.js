@@ -13,7 +13,7 @@
 // @supportURL      https://forum.leitstellenspiel.de/index.php?thread/24446-script-limitedbuildings-schnelle-%C3%BCbersicht-wie-viele-limitierte-geb%C3%A4ude-ausbauen/
 // @match           https://www.leitstellenspiel.de/
 // @match           https://polizei.leitstellenspiel.de/
-// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/d78e145611/resources/limitedBuildings.de.user.js/icon.png#sha256=8f16b24b2106050d6eb777b78b75b43453fa9c2919ad7a265b31f746a8be6b57
+// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/d78e145611/resources/limitedBuildings.de.user.js/icon.png#sha256=63c5fbbdf692ad0b39339a5109e3aecc3117241788593a985dd89943345bf1a6
 // @run-at          document-idle
 // @grant           GM_addStyle
 // @grant           GM_getResourceURL
