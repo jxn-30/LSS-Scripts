@@ -223,13 +223,11 @@ const createModal = async () => {
 
     const dialog = document.createElement('div');
     dialog.classList.add('modal-dialog');
-    dialog.style.setProperty('width', 'fit-content');
-    dialog.style.setProperty('min-width', 'min(calc(1200px + 10vw), 100%)');
+    dialog.style.setProperty('min-width', '90%');
+    dialog.style.setProperty('max-width', '90%');
 
     const content = document.createElement('div');
     content.classList.add('modal-content');
-    content.style.setProperty('margin-left', '5vw');
-    content.style.setProperty('margin-right', '5vw');
 
     const body = document.createElement('div');
     body.classList.add('modal-body');
