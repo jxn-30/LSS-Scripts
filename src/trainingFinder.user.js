@@ -156,8 +156,6 @@ const getBuildings = () => fetch('/api/buildings').then(res => res.json());
 const getAllianceBuildings = () =>
     fetch('/api/alliance_buildings').then(res => res.json());
 
-const modalId = 'jxn-training_finder-modal';
-
 /*
  * create a select element with optional fake placeholder
  * @param {string} [placeholder]
@@ -186,6 +184,30 @@ const timeoutReq = promise =>
         promise,
         new Promise(resolve => setTimeout(() => resolve(), 100)),
     ]).then(([result]) => result);
+
+const modalId = 'jxn-training_finder-modal';
+const processedBuildingClass = 'building-processed';
+
+// add some stiles that are used in the modal
+GM_addStyle(`
+#${modalId} .nav-tabs.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+    
+#${modalId} .progress {
+    margin-bottom: 0;
+}
+
+#${modalId} .progress-bar[data-current][data-total]::before {
+    content: attr(data-current)" / "attr(data-total);
+}
+
+#${modalId} tr.${processedBuildingClass} + :not(.${processedBuildingClass}) {
+    border-top: 2px solid red;
+}
+`);
 
 // create a modal and fill it with Data
 const createModal = async () => {
@@ -253,22 +275,6 @@ const createModal = async () => {
     );
 
     footer.append(progressWrapper, scrollToTop);
-
-    GM_addStyle(`
-#${modalId} .nav-tabs.disabled {
-    pointer-events: none;
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-    
-#${modalId} .progress {
-    margin-bottom: 0;
-}
-
-#${modalId} .progress-bar[data-current][data-total]::before {
-    content: attr(data-current)" / "attr(data-total);
-}
-`);
 
     dialog.append(content);
     modal.append(dialog);
@@ -436,6 +442,7 @@ const createModal = async () => {
 
                 selectedBuildings.forEach(({ caption, id, personal_count }) => {
                     const tr = tbody.insertRow();
+                    tr.dataset.buildingId = id.toString();
 
                     const name = tr.insertCell();
                     const link = document.createElement('a');
@@ -462,7 +469,6 @@ const createModal = async () => {
 
                     const currentSpan = document.createElement('span');
                     currentSpan.classList.add('label', 'label-info', 'hidden');
-                    currentSpan.dataset.buildingId = id.toString();
 
                     const finishedSpan = document.createElement('span');
                     finishedSpan.classList.add(
@@ -470,7 +476,6 @@ const createModal = async () => {
                         'label-success',
                         'hidden'
                     );
-                    finishedSpan.dataset.buildingId = id.toString();
 
                     const totalSpan = document.createElement('span');
                     totalSpan.classList.add('label', 'label-default');
@@ -508,12 +513,20 @@ const createModal = async () => {
                 infoSpan.textContent =
                     'Bitte warten, die Daten werden abgerufen...';
 
-                for (const building of selectedBuildings) {
+                table
+                    .querySelectorAll(`tr.${processedBuildingClass}`)
+                    .forEach(row =>
+                        row.classList.remove(processedBuildingClass)
+                    );
+
+                let currentBuilding;
+
+                for (currentBuilding of selectedBuildings) {
                     if (fetchAborted) break;
 
                     const answer = await timeoutReq(
                         fetch(
-                            `/buildings/${anyFittingSchool.id}/schoolingEducationCheck?education=${schoolSelect.value}&only_building_id=${building.id}`
+                            `/buildings/${anyFittingSchool.id}/schoolingEducationCheck?education=${schoolSelect.value}&only_building_id=${currentBuilding.id}`
                         )
                             .then(res => res.text())
                             .then(html =>
@@ -536,9 +549,13 @@ const createModal = async () => {
                     );
                     totalFinished += finished;
 
-                    const currentSpan = table.querySelector(
-                        `span.label-info[data-building-id="${building.id}"]`
+                    const row = table.querySelector(
+                        `tr[data-building-id="${currentBuilding.id}"]`
                     );
+
+                    row?.classList.add(processedBuildingClass);
+
+                    const currentSpan = row?.querySelector('span.label-info');
 
                     if (current && currentSpan) {
                         currentSpan.textContent = `${current.toLocaleString()}\xa0in Ausbildung`;
@@ -547,9 +564,8 @@ const createModal = async () => {
                         currentSpan?.classList.add('hidden');
                     }
 
-                    const finishedSpan = table.querySelector(
-                        `span.label-success[data-building-id="${building.id}"]`
-                    );
+                    const finishedSpan =
+                        row?.querySelector('span.label-success');
 
                     if (finished && finishedSpan) {
                         finishedSpan.textContent = `${finished.toLocaleString()}\xa0ausgebildet`;
@@ -570,15 +586,13 @@ const createModal = async () => {
                     );
                 }
 
-                if (fetchAborted) {
-                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.`;
-                    table
-                        .querySelectorAll('span:not(.hidden)[data-building-id]')
-                        .forEach(el => el.classList.add('hidden'));
-                } else {
-                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.
+                infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.
                 ${totalCurrent.toLocaleString()} Angestellte sind in Ausbildung zum gewählten Lehrgang und
                 ${totalFinished.toLocaleString()} bereits ausgebildet.`;
+
+                if (fetchAborted) {
+                    infoSpan.textContent +=
+                        ' (vorzeitig Abgebrochen, bis zur roten Linie wurden alle Gebäude abgefragt)';
                 }
 
                 fetchAborted = false;
