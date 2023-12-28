@@ -111,12 +111,37 @@ const getSchoolingTypes = lang =>
         .then(res => res.json())
         .then(schoolings => (schoolingTypes = schoolings));
 
+/** @type {Record<number, number>} */
+let smallBuildingTypes;
+
+/**
+ * fetches the mapping building => small building from LSSM API
+ * @param {string} lang
+ * @returns {Record<number, number> | Promise<Record<number, number>>}
+ */
+const getSmallBuildingTypes = lang =>
+    smallBuildingTypes ??
+    fetch(`https://api.lss-manager.de/${lang}/small_buildings`)
+        .then(res => res.json())
+        .then(smallBuildings => (smallBuildingTypes = smallBuildings));
+
+/**
+ *
+ * @param {Building} building
+ * @returns {number}
+ */
+const getBuildingType = building =>
+    (building.small_building
+        ? smallBuildingTypes[building.building_type]
+        : undefined) ?? building.building_type;
+
 /**
  * @typedef {Object} Building A partial building as returned by the Game API
  * @property {number} id
  * @property {string} caption
  * @property {number} building_type
  * @property {number} personal_count
+ * @property {boolean} [small_building]
  */
 
 /**
@@ -168,6 +193,7 @@ const createModal = async () => {
 
     await getBuildingTypes(I18n.locale);
     await getSchoolingTypes(I18n.locale);
+    await getSmallBuildingTypes(I18n.locale);
 
     const modal = document.createElement('div');
     modal.classList.add('modal', 'fade');
@@ -307,12 +333,14 @@ const createModal = async () => {
 
             const anyFittingSchool =
                 buildings.find(
-                    ({ building_type }) =>
-                        building_type === parseInt(schoolBuildingType)
+                    building =>
+                        getBuildingType(building) ===
+                        parseInt(schoolBuildingType)
                 ) ??
                 allianceBuildings.find(
-                    ({ building_type }) =>
-                        building_type === parseInt(schoolBuildingType)
+                    building =>
+                        getBuildingType(building) ===
+                        parseInt(schoolBuildingType)
                 );
 
             if (!anyFittingSchool) {
@@ -348,7 +376,7 @@ const createModal = async () => {
 
             const infoSpan = document.createElement('span');
             infoSpan.textContent =
-                'Bitte wähle einen Lehrgang und eine Gebäudeart aus. Kleinwachen können momentan leider nicht von normalen Gebäuden unterschieden werden.';
+                'Bitte wähle einen Lehrgang und eine Gebäudeart aus.';
 
             const calcBtn = document.createElement('button');
             calcBtn.classList.add('btn', 'btn-success', 'btn-sm');
@@ -393,8 +421,9 @@ const createModal = async () => {
 
                 selectedBuildings = buildings
                     .filter(
-                        ({ building_type }) =>
-                            building_type === parseInt(buildingTypeSelect.value)
+                        building =>
+                            getBuildingType(building) ===
+                            parseInt(buildingTypeSelect.value)
                     )
                     .sort((a, b) => a.caption.localeCompare(b.caption));
 
