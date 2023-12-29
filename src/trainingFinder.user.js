@@ -237,6 +237,9 @@ const createModal = async () => {
     const close = document.createElement('span');
     close.classList.add('close');
     close.textContent = '×';
+    close.style.setProperty('position', 'sticky');
+    close.style.setProperty('top', '0');
+    close.style.setProperty('right', '0');
 
     const closeModal = () => {
         modal.classList.remove('in');
