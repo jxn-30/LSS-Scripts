@@ -64,7 +64,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
-- [[LSS] Training Finder](#lss-training-finder) `2023.12.29+1034`
+- [[LSS] Training Finder](#lss-training-finder) `2023.12.29+2334`
 - [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
 
@@ -922,7 +922,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                         Download                          |
 |:---------------:|:---------------------------------------------------------:|
-| 2023.12.29+1034 | [trainingFinder.user.js][trainingFinder.user.js:download] |
+| 2023.12.29+2334 | [trainingFinder.user.js][trainingFinder.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Ausbildungsfinder</summary>
