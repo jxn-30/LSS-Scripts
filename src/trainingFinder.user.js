@@ -419,10 +419,7 @@ const createModal = async () => {
             let selectedBuildings = [];
 
             const updateTable = () => {
-                if (
-                    schoolSelect.value === '' ||
-                    buildingTypeSelect.value === ''
-                ) {
+                if (buildingTypeSelect.value === '') {
                     return;
                 }
 
@@ -436,7 +433,11 @@ const createModal = async () => {
 
                 infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.`;
 
-                calcBtn.disabled = false;
+                calcBtn.disabled = schoolSelect.value === '';
+
+                if (schoolSelect.value === '') {
+                    infoSpan.textContent += ' Bitte wähle einen Lehrgang aus.';
+                }
 
                 // empty the table body
                 tbody.replaceChildren();
