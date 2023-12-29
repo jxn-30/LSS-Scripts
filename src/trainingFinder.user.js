@@ -204,8 +204,15 @@ GM_addStyle(`
     content: attr(data-current)" / "attr(data-total);
 }
 
-#${modalId} tr.${processedBuildingClass} + :not(.${processedBuildingClass}) {
-    border-top: 2px solid red;
+#${modalId} th input[type="search"] {
+    margin-left: 1em;
+    font-size:12px;
+    border:1px solid #ccc;
+    border-radius:4px
+}
+
+#${modalId} tbody:has(.${processedBuildingClass}) tr:not(.${processedBuildingClass}) {
+    opacity: 0.5;
 }
 `);
 
@@ -418,6 +425,35 @@ const createModal = async () => {
             /** @type {Building[]} */
             let selectedBuildings = [];
 
+            const searchInput = document.createElement('input');
+            searchInput.classList.add('search_input_field');
+            searchInput.type = 'search';
+            searchInput.placeholder = 'Gebäude suchen...';
+            theadName.append(searchInput);
+
+            const searchStyle = document.createElement('style');
+            document.head.append(searchStyle);
+
+            const getSearchInput = () => searchInput.value.toLowerCase();
+
+            let searchTimeout;
+            const updateSearch = () => {
+                if (searchTimeout) clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(
+                    () =>
+                        (searchStyle.textContent = getSearchInput()
+                            ? `
+#${tabPane.id} tbody tr:not([data-building-caption*="${getSearchInput()}"i]) {
+    display: none;
+}`
+                            : ''),
+                    100
+                );
+            };
+
+            searchInput.addEventListener('input', updateSearch);
+            searchInput.addEventListener('change', updateSearch);
+
             const updateTable = () => {
                 if (buildingTypeSelect.value === '') {
                     return;
@@ -445,6 +481,7 @@ const createModal = async () => {
                 selectedBuildings.forEach(({ caption, id, personal_count }) => {
                     const tr = tbody.insertRow();
                     tr.dataset.buildingId = id.toString();
+                    tr.dataset.buildingCaption = caption.toLowerCase();
 
                     const name = tr.insertCell();
                     const link = document.createElement('a');
@@ -505,9 +542,14 @@ const createModal = async () => {
                 calcBtn.disabled = true;
                 abortBtn.disabled = false;
 
+                const filteredBuildings = selectedBuildings.filter(
+                    ({ caption }) =>
+                        caption.toLowerCase().includes(getSearchInput())
+                );
+
                 let counter = 0;
                 progressBar.dataset.total =
-                    selectedBuildings.length.toLocaleString();
+                    filteredBuildings.length.toLocaleString();
 
                 let totalCurrent = 0;
                 let totalFinished = 0;
@@ -523,7 +565,7 @@ const createModal = async () => {
 
                 let currentBuilding;
 
-                for (currentBuilding of selectedBuildings) {
+                for (currentBuilding of filteredBuildings) {
                     if (fetchAborted) break;
 
                     const answer = await timeoutReq(
@@ -582,19 +624,28 @@ const createModal = async () => {
                     progressBar.style.setProperty(
                         'width',
                         `${(
-                            (counter / selectedBuildings.length) *
+                            (counter / filteredBuildings.length) *
                             100
                         ).toString()}%`
                     );
                 }
 
-                infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.
-                ${totalCurrent.toLocaleString()} Angestellte sind in Ausbildung zum gewählten Lehrgang und
+                if (filteredBuildings.length !== selectedBuildings.length) {
+                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.
+                    Davon wurden ${filteredBuildings.length.toLocaleString()} abgefragt.`;
+                } else {
+                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.`;
+                }
+
+                infoSpan.textContent += ` ${totalCurrent.toLocaleString()} Angestellte sind in Ausbildung zum gewählten Lehrgang und
                 ${totalFinished.toLocaleString()} bereits ausgebildet.`;
 
-                if (fetchAborted) {
+                if (
+                    fetchAborted ||
+                    filteredBuildings.length !== selectedBuildings.length
+                ) {
                     infoSpan.textContent +=
-                        ' (vorzeitig Abgebrochen, bis zur roten Linie wurden alle Gebäude abgefragt)';
+                        ' (halbtransparente Gebäude wurden nicht abgefragt)';
                 }
 
                 fetchAborted = false;
