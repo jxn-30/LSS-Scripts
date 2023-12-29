@@ -190,6 +190,28 @@ const processedBuildingClass = 'building-processed';
 
 // add some stiles that are used in the modal
 GM_addStyle(`
+#${modalId} .modal-dialog {
+    min-width: min(1250px, 90%);
+    max-width: min(1250px, 90%);
+}
+
+#${modalId} .modal-body {
+    overflow: auto;
+    box-sizing: content-box;
+}
+
+#${modalId} .close {
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+
+#${modalId} .scroll-to-top {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 #${modalId} .nav-tabs.disabled {
     pointer-events: none;
     opacity: 0.5;
@@ -230,23 +252,16 @@ const createModal = async () => {
 
     const dialog = document.createElement('div');
     dialog.classList.add('modal-dialog');
-    dialog.style.setProperty('min-width', '90%');
-    dialog.style.setProperty('max-width', '90%');
 
     const content = document.createElement('div');
     content.classList.add('modal-content');
 
     const body = document.createElement('div');
     body.classList.add('modal-body');
-    body.style.setProperty('overflow', 'auto');
-    body.style.setProperty('box-sizing', 'content-box');
 
     const close = document.createElement('span');
     close.classList.add('close');
     close.textContent = '×';
-    close.style.setProperty('position', 'sticky');
-    close.style.setProperty('top', '0');
-    close.style.setProperty('right', '0');
 
     const closeModal = () => {
         modal.classList.remove('in');
@@ -272,10 +287,7 @@ const createModal = async () => {
     progressWrapper.append(progressBar);
 
     const scrollToTop = document.createElement('button');
-    scrollToTop.classList.add('btn', 'btn-default', 'btn-xs');
-    scrollToTop.style.setProperty('position', 'absolute');
-    scrollToTop.style.setProperty('bottom', '15px');
-    scrollToTop.style.setProperty('right', '15px');
+    scrollToTop.classList.add('btn', 'btn-default', 'btn-xs', 'scroll-to-top');
     scrollToTop.textContent = '↑';
 
     scrollToTop.addEventListener('click', () =>
