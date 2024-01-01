@@ -420,10 +420,18 @@ const createModal = async () => {
             dispatchCenterSelect.classList.add('flex-grow-1');
 
             const allDispatchCentersOption = document.createElement('option');
-            allDispatchCentersOption.textContent = 'Alle Leitstellen';
+            allDispatchCentersOption.textContent = '[Alle Leitstellen]';
             allDispatchCentersOption.value = '';
             allDispatchCentersOption.selected = true;
-            dispatchCenterSelect.append(allDispatchCentersOption);
+
+            const noDispatchCenterOption = document.createElement('option');
+            noDispatchCenterOption.textContent = '[Keine Leitstelle]';
+            noDispatchCenterOption.value = '-1';
+
+            dispatchCenterSelect.append(
+                allDispatchCentersOption,
+                noDispatchCenterOption
+            );
 
             buildings
                 .filter(building =>
@@ -546,8 +554,9 @@ const createModal = async () => {
                         const tr = tbody.insertRow();
                         tr.dataset.buildingId = id.toString();
                         tr.dataset.buildingCaption = caption.toLowerCase();
-                        tr.dataset.dispatchCenter =
-                            leitstelle_building_id.toString();
+                        tr.dataset.dispatchCenter = (
+                            leitstelle_building_id ?? -1
+                        ).toString();
 
                         const name = tr.insertCell();
                         const link = document.createElement('a');
