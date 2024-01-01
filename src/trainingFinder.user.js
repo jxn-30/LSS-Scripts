@@ -204,6 +204,7 @@ GM_addStyle(`
     position: sticky;
     top: 0;
     right: 0;
+    z-index: 2;
 }
 
 #${modalId} .scroll-to-top {
@@ -219,7 +220,10 @@ GM_addStyle(`
 }
     
 #${modalId} .progress {
-    margin-bottom: 0;
+    margin: 0 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 #${modalId} .progress-bar[data-current][data-total]::before {
@@ -275,9 +279,6 @@ const createModal = async () => {
         closeModal();
     });
 
-    const footer = document.createElement('div');
-    footer.classList.add('modal-footer');
-
     const progressWrapper = document.createElement('div');
     progressWrapper.classList.add('progress', 'hidden');
     const progressBar = document.createElement('div');
@@ -293,8 +294,6 @@ const createModal = async () => {
     scrollToTop.addEventListener('click', () =>
         body.scrollTo({ top: 0, behavior: 'smooth' })
     );
-
-    footer.append(progressWrapper, scrollToTop);
 
     dialog.append(content);
     modal.append(dialog);
@@ -313,7 +312,7 @@ const createModal = async () => {
     const tabContent = document.createElement('div');
     tabContent.classList.add('tab-content');
 
-    body.append(close, tabList, tabContent);
+    body.append(close, tabList, progressWrapper, tabContent, scrollToTop);
 
     Object.keys(schoolingTypes)
         .sort()
@@ -686,7 +685,7 @@ const createModal = async () => {
             );
         });
 
-    content.append(body, footer);
+    content.append(body);
 };
 
 // create a trigger-element
