@@ -209,7 +209,7 @@ GM_addStyle(`
 }
 
 #${modalId} .scroll-to-top {
-    position: absolute;
+    position: fixed;
     bottom: 15px;
     right: 15px;
 }
