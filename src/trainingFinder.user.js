@@ -242,6 +242,9 @@ GM_addStyle(`
 }
 `);
 
+/** @type {Record<string, Record<number, {current: number; finished: number}[]>>} */
+const storage = {};
+
 // create a modal and fill it with Data
 const createModal = async () => {
     let fetchAborted = false;
@@ -321,6 +324,8 @@ const createModal = async () => {
                 id => buildingTypes[id]?.school === schoolingType
             );
             if (!schoolBuildingType) return;
+
+            storage[schoolingType] ??= {};
 
             const relevantBuildingTypes = Object.keys(buildingTypes)
                 .filter(id =>
@@ -520,6 +525,15 @@ const createModal = async () => {
                     const currentSpan = document.createElement('span');
                     currentSpan.classList.add('label', 'label-info', 'hidden');
 
+                    const current =
+                        storage[schoolingType][id]?.[schoolSelect.value]
+                            ?.current;
+
+                    if (current) {
+                        currentSpan.textContent = `${current.toLocaleString()}\xa0in Ausbildung`;
+                        currentSpan.classList.remove('hidden');
+                    }
+
                     const finishedSpan = document.createElement('span');
                     finishedSpan.classList.add(
                         'label',
@@ -527,9 +541,18 @@ const createModal = async () => {
                         'hidden'
                     );
 
+                    const finished =
+                        storage[schoolingType][id]?.[schoolSelect.value]
+                            ?.finished;
+
+                    if (finished) {
+                        finishedSpan.textContent = `${finished.toLocaleString()}\xa0ausgebildet`;
+                        finishedSpan.classList.remove('hidden');
+                    }
+
                     const totalSpan = document.createElement('span');
                     totalSpan.classList.add('label', 'label-default');
-                    totalSpan.textContent = `${personal_count.toLocaleString()}\xa0Angestellte`;
+                    totalSpan.textContent = `${personal_count.toLocaleString()}\xa0ausgebildet`;
 
                     amount.append(
                         currentSpan,
@@ -628,6 +651,11 @@ const createModal = async () => {
                     } else {
                         finishedSpan?.classList.add('hidden');
                     }
+
+                    storage[schoolingType][currentBuilding.id] ??= [];
+                    storage[schoolingType][currentBuilding.id][
+                        schoolSelect.value
+                    ] = { current, finished };
 
                     counter++;
 
