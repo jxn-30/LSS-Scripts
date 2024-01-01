@@ -75,6 +75,7 @@
  * @property {string} caption
  * @property {number[]} [schools]
  * @property {string} [school]
+ * @property {boolean} [isDispatchCenter]
  */
 
 /** @type {Record<number, BuildingType>} */
@@ -141,6 +142,7 @@ const getBuildingType = building =>
  * @property {string} caption
  * @property {number} building_type
  * @property {number} personal_count
+ * @property {number} leitstelle_building_id
  * @property {boolean} [small_building]
  */
 
@@ -164,8 +166,7 @@ const getAllianceBuildings = () =>
 const createSelect = (placeholder = '') => {
     const select = document.createElement('select');
     select.classList.add('form-control');
-    select.style.setProperty('margin-top', '5px');
-    select.style.setProperty('margin-bottom', '5px');
+    select.style.setProperty('flex-basis', '200px');
 
     const placeholderOption = document.createElement('option');
     placeholderOption.textContent = placeholder;
@@ -259,6 +260,10 @@ const createModal = async () => {
     await getBuildingTypes(I18n.locale);
     await getSchoolingTypes(I18n.locale);
     await getSmallBuildingTypes(I18n.locale);
+
+    const dispatchCenterTypes = Object.entries(buildingTypes)
+        .filter(([, { isDispatchCenter }]) => isDispatchCenter)
+        .map(([id]) => parseInt(id));
 
     const modal = document.createElement('div');
     modal.classList.add('modal', 'fade');
@@ -392,7 +397,7 @@ const createModal = async () => {
             }
 
             const schoolSelect = createSelect('Lehrgang auswählen');
-            schoolSelect.style.setProperty('margin-top', '10px');
+            schoolSelect.classList.add('flex-grow-1');
 
             schoolingTypes[schoolingType].forEach((schooling, index) => {
                 const option = document.createElement('option');
@@ -402,7 +407,7 @@ const createModal = async () => {
             });
 
             const buildingTypeSelect = createSelect('Gebäudeart auswählen');
-            buildingTypeSelect.style.setProperty('margin-bottom', '10px');
+            buildingTypeSelect.classList.add('flex-grow-1');
 
             relevantBuildingTypes.forEach(buildingTypeId => {
                 const option = document.createElement('option');
@@ -410,6 +415,27 @@ const createModal = async () => {
                 option.value = buildingTypeId;
                 buildingTypeSelect.append(option);
             });
+
+            const dispatchCenterSelect = createSelect();
+            dispatchCenterSelect.classList.add('flex-grow-1');
+
+            const allDispatchCentersOption = document.createElement('option');
+            allDispatchCentersOption.textContent = 'Alle Leitstellen';
+            allDispatchCentersOption.value = '';
+            allDispatchCentersOption.selected = true;
+            dispatchCenterSelect.append(allDispatchCentersOption);
+
+            buildings
+                .filter(building =>
+                    dispatchCenterTypes.includes(getBuildingType(building))
+                )
+                .sort((a, b) => a.caption.localeCompare(b.caption))
+                .forEach(building => {
+                    const option = document.createElement('option');
+                    option.textContent = building.caption;
+                    option.value = building.id.toString();
+                    dispatchCenterSelect.append(option);
+                });
 
             const infoSpan = document.createElement('span');
             infoSpan.textContent =
@@ -454,8 +480,8 @@ const createModal = async () => {
             searchInput.placeholder = 'Gebäude suchen...';
             theadName.append(searchInput);
 
-            const searchStyle = document.createElement('style');
-            document.head.append(searchStyle);
+            const filterStyle = document.createElement('style');
+            document.head.append(filterStyle);
 
             const getSearchInput = () => searchInput.value.toLowerCase();
 
@@ -464,18 +490,27 @@ const createModal = async () => {
                 if (searchTimeout) clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(
                     () =>
-                        (searchStyle.textContent = getSearchInput()
-                            ? `
+                        (filterStyle.textContent =
+                            (getSearchInput()
+                                ? `
 #${tabPane.id} tbody tr:not([data-building-caption*="${getSearchInput()}"i]) {
     display: none;
 }`
-                            : ''),
+                                : '') +
+                            (dispatchCenterSelect.value
+                                ? `
+#${tabPane.id} tbody tr:not([data-dispatch-center="${dispatchCenterSelect.value}"]) {
+    display: none;
+}
+`
+                                : '')),
                     100
                 );
             };
 
             searchInput.addEventListener('input', updateSearch);
             searchInput.addEventListener('change', updateSearch);
+            dispatchCenterSelect.addEventListener('change', updateSearch);
 
             const updateTable = () => {
                 if (buildingTypeSelect.value === '') {
@@ -501,75 +536,88 @@ const createModal = async () => {
                 // empty the table body
                 tbody.replaceChildren();
 
-                selectedBuildings.forEach(({ caption, id, personal_count }) => {
-                    const tr = tbody.insertRow();
-                    tr.dataset.buildingId = id.toString();
-                    tr.dataset.buildingCaption = caption.toLowerCase();
+                selectedBuildings.forEach(
+                    ({
+                        caption,
+                        id,
+                        personal_count,
+                        leitstelle_building_id,
+                    }) => {
+                        const tr = tbody.insertRow();
+                        tr.dataset.buildingId = id.toString();
+                        tr.dataset.buildingCaption = caption.toLowerCase();
+                        tr.dataset.dispatchCenter =
+                            leitstelle_building_id.toString();
 
-                    const name = tr.insertCell();
-                    const link = document.createElement('a');
-                    link.classList.add('lightbox-open');
-                    link.href = `/buildings/${id}`;
-                    link.textContent = caption;
+                        const name = tr.insertCell();
+                        const link = document.createElement('a');
+                        link.classList.add('lightbox-open');
+                        link.href = `/buildings/${id}`;
+                        link.textContent = caption;
 
-                    const staffLink = document.createElement('a');
-                    staffLink.classList.add(
-                        'lightbox-open',
-                        'btn',
-                        'btn-xs',
-                        'btn-default',
-                        'pull-right'
-                    );
-                    staffLink.href = `/buildings/${id}/personals`;
-                    const staffIcon = document.createElement('span');
-                    staffIcon.classList.add('glyphicon', 'glyphicon-user');
-                    staffLink.append(staffIcon);
+                        const staffLink = document.createElement('a');
+                        staffLink.classList.add(
+                            'lightbox-open',
+                            'btn',
+                            'btn-xs',
+                            'btn-default',
+                            'pull-right'
+                        );
+                        staffLink.href = `/buildings/${id}/personals`;
+                        const staffIcon = document.createElement('span');
+                        staffIcon.classList.add('glyphicon', 'glyphicon-user');
+                        staffLink.append(staffIcon);
 
-                    name.append(link, staffLink);
+                        name.append(link, staffLink);
 
-                    const amount = tr.insertCell();
+                        const amount = tr.insertCell();
 
-                    const currentSpan = document.createElement('span');
-                    currentSpan.classList.add('label', 'label-info', 'hidden');
+                        const currentSpan = document.createElement('span');
+                        currentSpan.classList.add(
+                            'label',
+                            'label-info',
+                            'hidden'
+                        );
 
-                    const current =
-                        storage[schoolingType][id]?.[schoolSelect.value]
-                            ?.current;
+                        const current =
+                            storage[schoolingType][id]?.[schoolSelect.value]
+                                ?.current;
 
-                    if (current) {
-                        currentSpan.textContent = `${current.toLocaleString()}\xa0in Ausbildung`;
-                        currentSpan.classList.remove('hidden');
+                        if (current) {
+                            currentSpan.textContent = `${current.toLocaleString()}\xa0in Ausbildung`;
+                            currentSpan.classList.remove('hidden');
+                        }
+
+                        const finishedSpan = document.createElement('span');
+                        finishedSpan.classList.add(
+                            'label',
+                            'label-success',
+                            'hidden'
+                        );
+
+                        const finished =
+                            storage[schoolingType][id]?.[schoolSelect.value]
+                                ?.finished;
+
+                        if (finished) {
+                            finishedSpan.textContent = `${finished.toLocaleString()}\xa0ausgebildet`;
+                            finishedSpan.classList.remove('hidden');
+                        }
+
+                        const totalSpan = document.createElement('span');
+                        totalSpan.classList.add('label', 'label-default');
+                        totalSpan.textContent = `${personal_count.toLocaleString()}\xa0ausgebildet`;
+
+                        amount.append(
+                            currentSpan,
+                            '\xa0',
+                            finishedSpan,
+                            '\xa0',
+                            totalSpan
+                        );
+                        amount.style.setProperty('text-align', 'right');
                     }
-
-                    const finishedSpan = document.createElement('span');
-                    finishedSpan.classList.add(
-                        'label',
-                        'label-success',
-                        'hidden'
-                    );
-
-                    const finished =
-                        storage[schoolingType][id]?.[schoolSelect.value]
-                            ?.finished;
-
-                    if (finished) {
-                        finishedSpan.textContent = `${finished.toLocaleString()}\xa0ausgebildet`;
-                        finishedSpan.classList.remove('hidden');
-                    }
-
-                    const totalSpan = document.createElement('span');
-                    totalSpan.classList.add('label', 'label-default');
-                    totalSpan.textContent = `${personal_count.toLocaleString()}\xa0ausgebildet`;
-
-                    amount.append(
-                        currentSpan,
-                        '\xa0',
-                        finishedSpan,
-                        '\xa0',
-                        totalSpan
-                    );
-                    amount.style.setProperty('text-align', 'right');
-                });
+                );
             };
 
             schoolSelect.addEventListener('change', updateTable);
@@ -584,7 +632,11 @@ const createModal = async () => {
                 abortBtn.disabled = false;
 
                 const filteredBuildings = selectedBuildings.filter(
-                    ({ caption }) =>
+                    ({ caption, leitstelle_building_id }) =>
+                        (dispatchCenterSelect.value
+                            ? leitstelle_building_id ===
+                              parseInt(dispatchCenterSelect.value)
+                            : true) &&
                         caption.toLowerCase().includes(getSearchInput())
                 );
 
@@ -710,14 +762,23 @@ const createModal = async () => {
                 updateTable();
             }
 
-            tabPane.append(
+            const selectWrapper = document.createElement('div');
+            selectWrapper.classList.add(
+                'flex-row',
+                'justify-between',
+                'align-items-center'
+            );
+            selectWrapper.style.setProperty('margin-top', '10px');
+            selectWrapper.style.setProperty('margin-bottom', '10px');
+            selectWrapper.style.setProperty('gap', '10px');
+            selectWrapper.style.setProperty('flex-wrap', 'wrap');
+            selectWrapper.append(
                 schoolSelect,
                 buildingTypeSelect,
-                infoSpan,
-                calcBtn,
-                abortBtn,
-                table
+                dispatchCenterSelect
             );
+
+            tabPane.append(selectWrapper, infoSpan, calcBtn, abortBtn, table);
         });
 
     content.append(body);
