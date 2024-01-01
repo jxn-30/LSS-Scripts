@@ -198,6 +198,7 @@ GM_addStyle(`
 #${modalId} .modal-body {
     overflow: auto;
     box-sizing: content-box;
+    max-height: calc(100vh - 2 * 30px - 2 * 15px);
 }
 
 #${modalId} .close {
