@@ -243,7 +243,13 @@ GM_addStyle(`
 }
 `);
 
-/** @type {Record<string, Record<number, {current: number; finished: number}[]>>} */
+/**
+ * @typedef {Object} StorageEntry
+ * @property {number} current
+ * @property {number} finished
+ */
+
+/** @type {Record<string, Record<number, StorageEntry[]>>} */
 const storage = {};
 
 // create a modal and fill it with Data
