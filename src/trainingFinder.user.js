@@ -555,7 +555,7 @@ const createModal = async () => {
                     );
                 } else {
                     texts.push(
-                        `Angezeigte Gebäude: ${filteredBuildings.length.toLocaleString()} (${selectedBuildings.length.toLocaleString()} diesen Typs)`
+                        `Angezeigte Gebäude: ${filteredBuildings.length.toLocaleString()} (Gesamt: ${selectedBuildings.length.toLocaleString()})`
                     );
                 }
 
