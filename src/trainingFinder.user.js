@@ -559,9 +559,9 @@ const createModal = async () => {
                     );
                 }
 
-                if (
-                    processedBuildings[schoolingType][schoolSelect.value].size
-                ) {
+                const processed =
+                    processedBuildings[schoolingType][schoolSelect.value].size;
+                if (processed > 0 && processed < filteredBuildings.length) {
                     texts.push(
                         'Nicht-abgefragte Gebäude sind halbtransparent.'
                     );
