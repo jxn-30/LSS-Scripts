@@ -179,6 +179,27 @@ const createSelect = (placeholder = '') => {
     return select;
 };
 
+/**
+ * sets the text of a span and hides it if amount is 0
+ * @param {HTMLSpanElement} span
+ * @param {number} amount
+ * @param {"total" | "current" | "finished"} type
+ */
+const setStaffSpan = (span, amount, type) => {
+    const texts = {
+        total: 'Angestellte',
+        current: 'in Ausbildung',
+        finished: 'ausgebildet',
+    };
+
+    span.textContent = `${amount.toLocaleString()}\xa0${texts[type]}`;
+    if (amount) {
+        span.classList.remove('hidden');
+    } else {
+        span.classList.add('hidden');
+    }
+};
+
 // each request should take at least 100ms
 const timeoutReq = promise =>
     Promise.all([
@@ -223,8 +244,9 @@ GM_addStyle(`
     
 #${modalId} .progress {
     margin: 0 15px;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: calc(100% - 2 * 15px - 2 * 15px);
+    top: 15px;
     z-index: 1;
 }
 
@@ -252,6 +274,8 @@ GM_addStyle(`
 
 /** @type {Record<string, Record<number, StorageEntry[]>>} */
 const storage = {};
+/** @type {Record<string, Record<number, Set<number>>>} */
+const processedBuildings = {};
 
 // create a modal and fill it with Data
 const createModal = async () => {
@@ -338,6 +362,7 @@ const createModal = async () => {
             if (!schoolBuildingType) return;
 
             storage[schoolingType] ??= {};
+            processedBuildings[schoolingType] ??= {};
 
             const relevantBuildingTypes = Object.keys(buildingTypes)
                 .filter(id =>
@@ -457,7 +482,7 @@ const createModal = async () => {
             calcBtn.disabled = true;
 
             const abortBtn = document.createElement('button');
-            abortBtn.classList.add('btn', 'btn-danger', 'btn-sm');
+            abortBtn.classList.add('btn', 'btn-danger', 'btn-sm', 'hidden');
             abortBtn.style.setProperty('margin-left', '5px');
             abortBtn.style.setProperty('margin-right', '10px');
             abortBtn.textContent = 'Abbrechen';
@@ -481,6 +506,12 @@ const createModal = async () => {
 
             /** @type {Building[]} */
             let selectedBuildings = [];
+            /** @type {Building[]} */
+            let filteredBuildings = [];
+
+            let totalStaff = 0;
+            let totalStaffCurrent = 0;
+            let totalStaffFinished = 0;
 
             const searchInput = document.createElement('input');
             searchInput.classList.add('search_input_field');
@@ -488,37 +519,68 @@ const createModal = async () => {
             searchInput.placeholder = 'Gebäude suchen...';
             theadName.append(searchInput);
 
-            const filterStyle = document.createElement('style');
-            document.head.append(filterStyle);
-
             const getSearchInput = () => searchInput.value.toLowerCase();
 
             let searchTimeout;
             const updateSearch = () => {
                 if (searchTimeout) clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(
-                    () =>
-                        (filterStyle.textContent =
-                            (getSearchInput()
-                                ? `
-#${tabPane.id} tbody tr:not([data-building-caption*="${getSearchInput()}"i]) {
-    display: none;
-}`
-                                : '') +
-                            (dispatchCenterSelect.value
-                                ? `
-#${tabPane.id} tbody tr:not([data-dispatch-center="${dispatchCenterSelect.value}"]) {
-    display: none;
-}
-`
-                                : '')),
-                    100
-                );
+                searchTimeout = setTimeout(updateTable, 100);
             };
 
-            searchInput.addEventListener('input', updateSearch);
-            searchInput.addEventListener('change', updateSearch);
-            dispatchCenterSelect.addEventListener('change', updateSearch);
+            const setInfoText = () => {
+                if (
+                    schoolSelect.value === '' &&
+                    buildingTypeSelect.value === ''
+                ) {
+                    infoSpan.textContent =
+                        'Bitte wähle einen Lehrgangstyp und eine Gebäudeart aus.';
+                    return;
+                }
+                if (schoolSelect.value === '') {
+                    infoSpan.textContent =
+                        'Bitte wähle einen Lehrgangstyp aus.';
+                    return;
+                }
+                if (buildingTypeSelect.value === '') {
+                    infoSpan.textContent = 'Bitte wähle eine Gebäudeart aus.';
+                    return;
+                }
+
+                /** @type {string[]} */
+                const texts = [];
+
+                if (selectedBuildings.length === filteredBuildings.length) {
+                    texts.push(
+                        `Angezeigte Gebäude: ${selectedBuildings.length.toLocaleString()}`
+                    );
+                } else {
+                    texts.push(
+                        `Angezeigte Gebäude: ${filteredBuildings.length.toLocaleString()} (${selectedBuildings.length.toLocaleString()} diesen Typs)`
+                    );
+                }
+
+                if (
+                    processedBuildings[schoolingType][schoolSelect.value].size
+                ) {
+                    texts.push(
+                        'Nicht-abgefragte Gebäude sind halbtransparent.'
+                    );
+                }
+
+                if (totalStaff) {
+                    texts.push(`Personal: ${totalStaff.toLocaleString()}`);
+                }
+
+                if (totalStaffCurrent || totalStaffFinished) {
+                    texts.push(
+                        `Personal in Ausbildung: ${totalStaffCurrent.toLocaleString()}`,
+                        `Personal ausgebildet: ${totalStaffFinished.toLocaleString()}`
+                    );
+                }
+
+                infoSpan.textContent = texts.join(' | ');
+            };
+            setInfoText();
 
             const updateTable = () => {
                 if (buildingTypeSelect.value === '') {
@@ -533,18 +595,25 @@ const createModal = async () => {
                     )
                     .sort((a, b) => a.caption.localeCompare(b.caption));
 
-                infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.`;
+                filteredBuildings = selectedBuildings.filter(
+                    ({ caption, leitstelle_building_id }) =>
+                        (dispatchCenterSelect.value
+                            ? leitstelle_building_id ===
+                              parseInt(dispatchCenterSelect.value)
+                            : true) &&
+                        caption.toLowerCase().includes(getSearchInput())
+                );
 
                 calcBtn.disabled = schoolSelect.value === '';
-
-                if (schoolSelect.value === '') {
-                    infoSpan.textContent += ' Bitte wähle einen Lehrgang aus.';
-                }
 
                 // empty the table body
                 tbody.replaceChildren();
 
-                selectedBuildings.forEach(
+                totalStaff = 0;
+                totalStaffCurrent = 0;
+                totalStaffFinished = 0;
+
+                filteredBuildings.forEach(
                     ({
                         caption,
                         id,
@@ -557,6 +626,18 @@ const createModal = async () => {
                         tr.dataset.dispatchCenter = (
                             leitstelle_building_id ?? -1
                         ).toString();
+
+                        processedBuildings[schoolingType][
+                            schoolSelect.value
+                        ] ??= new Set();
+
+                        if (
+                            processedBuildings[schoolingType][
+                                schoolSelect.value
+                            ].has(id)
+                        ) {
+                            tr.classList.add(processedBuildingClass);
+                        }
 
                         const name = tr.insertCell();
                         const link = document.createElement('a');
@@ -590,12 +671,9 @@ const createModal = async () => {
 
                         const current =
                             storage[schoolingType][id]?.[schoolSelect.value]
-                                ?.current;
+                                ?.current ?? 0;
 
-                        if (current) {
-                            currentSpan.textContent = `${current.toLocaleString()}\xa0in Ausbildung`;
-                            currentSpan.classList.remove('hidden');
-                        }
+                        setStaffSpan(currentSpan, current, 'current');
 
                         const finishedSpan = document.createElement('span');
                         finishedSpan.classList.add(
@@ -606,16 +684,17 @@ const createModal = async () => {
 
                         const finished =
                             storage[schoolingType][id]?.[schoolSelect.value]
-                                ?.finished;
+                                ?.finished ?? 0;
 
-                        if (finished) {
-                            finishedSpan.textContent = `${finished.toLocaleString()}\xa0ausgebildet`;
-                            finishedSpan.classList.remove('hidden');
-                        }
+                        setStaffSpan(finishedSpan, finished, 'finished');
 
                         const totalSpan = document.createElement('span');
                         totalSpan.classList.add('label', 'label-default');
-                        totalSpan.textContent = `${personal_count.toLocaleString()}\xa0ausgebildet`;
+                        setStaffSpan(totalSpan, personal_count, 'total');
+
+                        totalStaff += personal_count;
+                        totalStaffCurrent += current;
+                        totalStaffFinished += finished;
 
                         amount.append(
                             currentSpan,
@@ -627,10 +706,17 @@ const createModal = async () => {
                         amount.style.setProperty('text-align', 'right');
                     }
                 );
+
+                setInfoText();
             };
 
             schoolSelect.addEventListener('change', updateTable);
             buildingTypeSelect.addEventListener('change', updateTable);
+            dispatchCenterSelect.addEventListener('change', updateTable);
+
+            searchInput.addEventListener('input', updateSearch);
+            searchInput.addEventListener('change', updateSearch);
+            dispatchCenterSelect.addEventListener('change', updateSearch);
 
             calcBtn.addEventListener('click', async () => {
                 tabList.classList.add('disabled');
@@ -638,23 +724,18 @@ const createModal = async () => {
                 schoolSelect.disabled = true;
                 buildingTypeSelect.disabled = true;
                 calcBtn.disabled = true;
+                calcBtn.classList.add('hidden');
                 abortBtn.disabled = false;
-
-                const filteredBuildings = selectedBuildings.filter(
-                    ({ caption, leitstelle_building_id }) =>
-                        (dispatchCenterSelect.value
-                            ? leitstelle_building_id ===
-                              parseInt(dispatchCenterSelect.value)
-                            : true) &&
-                        caption.toLowerCase().includes(getSearchInput())
-                );
+                abortBtn.classList.remove('hidden');
 
                 let counter = 0;
                 progressBar.dataset.total =
                     filteredBuildings.length.toLocaleString();
 
-                let totalCurrent = 0;
-                let totalFinished = 0;
+                totalStaffCurrent = 0;
+                totalStaffFinished = 0;
+
+                processedBuildings[schoolingType][schoolSelect.value].clear();
 
                 infoSpan.textContent =
                     'Bitte warten, die Daten werden abgerufen...';
@@ -687,38 +768,31 @@ const createModal = async () => {
                             .querySelector('span.label-info')
                             ?.textContent?.trim() ?? '0'
                     );
-                    totalCurrent += current;
+                    totalStaffCurrent += current;
                     const finished = parseInt(
                         answer
                             .querySelector('span.label-success')
                             ?.textContent?.trim() ?? '0'
                     );
-                    totalFinished += finished;
+                    totalStaffFinished += finished;
 
                     const row = table.querySelector(
                         `tr[data-building-id="${currentBuilding.id}"]`
                     );
 
                     row?.classList.add(processedBuildingClass);
+                    processedBuildings[schoolingType][schoolSelect.value].add(
+                        currentBuilding.id
+                    );
 
                     const currentSpan = row?.querySelector('span.label-info');
 
-                    if (current && currentSpan) {
-                        currentSpan.textContent = `${current.toLocaleString()}\xa0in Ausbildung`;
-                        currentSpan.classList.remove('hidden');
-                    } else {
-                        currentSpan?.classList.add('hidden');
-                    }
+                    setStaffSpan(currentSpan, current, 'current');
 
                     const finishedSpan =
                         row?.querySelector('span.label-success');
 
-                    if (finished && finishedSpan) {
-                        finishedSpan.textContent = `${finished.toLocaleString()}\xa0ausgebildet`;
-                        finishedSpan.classList.remove('hidden');
-                    } else {
-                        finishedSpan?.classList.add('hidden');
-                    }
+                    setStaffSpan(finishedSpan, finished, 'finished');
 
                     storage[schoolingType][currentBuilding.id] ??= [];
                     storage[schoolingType][currentBuilding.id][
@@ -737,23 +811,7 @@ const createModal = async () => {
                     );
                 }
 
-                if (filteredBuildings.length !== selectedBuildings.length) {
-                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.
-                    Davon wurden ${filteredBuildings.length.toLocaleString()} abgefragt.`;
-                } else {
-                    infoSpan.textContent = `Du hast ${selectedBuildings.length.toLocaleString()} dieser Gebäude.`;
-                }
-
-                infoSpan.textContent += ` ${totalCurrent.toLocaleString()} Angestellte sind in Ausbildung zum gewählten Lehrgang und
-                ${totalFinished.toLocaleString()} bereits ausgebildet.`;
-
-                if (
-                    fetchAborted ||
-                    filteredBuildings.length !== selectedBuildings.length
-                ) {
-                    infoSpan.textContent +=
-                        ' (halbtransparente Gebäude wurden nicht abgefragt)';
-                }
+                setInfoText();
 
                 fetchAborted = false;
 
@@ -762,7 +820,9 @@ const createModal = async () => {
                 schoolSelect.disabled = false;
                 buildingTypeSelect.disabled = false;
                 calcBtn.disabled = false;
+                calcBtn.classList.remove('hidden');
                 abortBtn.disabled = true;
+                abortBtn.classList.add('hidden');
             });
 
             if (relevantBuildingTypes.length === 1) {
