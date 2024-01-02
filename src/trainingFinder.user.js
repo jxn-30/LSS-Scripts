@@ -243,10 +243,10 @@ GM_addStyle(`
 }
     
 #${modalId} .progress {
-    margin: 0 15px;
+    margin: 0;
     position: fixed;
-    width: calc(100% - 2 * 15px - 2 * 15px);
-    top: 15px;
+    width: calc(100% - 2 * 15px);
+    bottom: 15px;
     z-index: 1;
 }
 
@@ -351,7 +351,7 @@ const createModal = async () => {
     const tabContent = document.createElement('div');
     tabContent.classList.add('tab-content');
 
-    body.append(close, tabList, progressWrapper, tabContent, scrollToTop);
+    body.append(close, tabList, tabContent, progressWrapper, scrollToTop);
 
     Object.keys(schoolingTypes)
         .sort()
