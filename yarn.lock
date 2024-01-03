@@ -451,15 +451,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-userscripts@npm:0.4.0":
-  version: 0.4.0
-  resolution: "eslint-plugin-userscripts@npm:0.4.0"
+"eslint-plugin-userscripts@npm:0.5.0":
+  version: 0.5.0
+  resolution: "eslint-plugin-userscripts@npm:0.5.0"
   dependencies:
-    requireindex: "npm:~1.2.0"
     semver: "npm:^7.3.8"
   peerDependencies:
-    eslint: ">=8.0.0 <9"
-  checksum: 8cd56cc57be9aee1bcb131b4c109c3ae05ffa8b08a6c8346d9d342919175f198bb0aa4cd1589daf148622a1832bca3cc1e6ff9ca41950a608adead95d3421c2f
+    eslint: ">=8.40.0 <10"
+  checksum: 69b57062f0d122de4c09fe8f00d10d0d3ba75e7402d5509d8ff540482383c1fd70b4f2091792520d3d74330e8710f77e6afe2c2b255f221024e7e3a0743ae67a
   languageName: node
   linkType: hard
 
@@ -876,7 +875,7 @@ __metadata:
     "@types/tampermonkey": "npm:5.0.2"
     eslint: "npm:8.56.0"
     eslint-config-prettier: "npm:9.1.0"
-    eslint-plugin-userscripts: "npm:0.4.0"
+    eslint-plugin-userscripts: "npm:0.5.0"
     jsdoc-api: "npm:8.0.0"
     prettier: "npm:3.1.1"
     simple-git: "npm:3.22.0"
@@ -1138,13 +1137,6 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
-  languageName: node
-  linkType: hard
-
-"requireindex@npm:~1.2.0":
-  version: 1.2.0
-  resolution: "requireindex@npm:1.2.0"
-  checksum: 7fb42aed73bf8de9acc4d6716cf07acc7fbe180e58729433bafcf702e76e7bb10e54f8266c06bfec62d752e0ac14d50e8758833de539e6f4e2cd642077866153
   languageName: node
   linkType: hard
 
