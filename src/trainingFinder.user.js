@@ -532,12 +532,18 @@ const createModal = async () => {
                 searchTimeout = setTimeout(updateTable, 100);
             };
 
+            const minTrainingInput = document.createElement('input');
+            minTrainingInput.classList.add('pull-right');
+            minTrainingInput.type = 'number';
+            minTrainingInput.min = '0';
+            minTrainingInput.placeholder = 'insg. min ausgebildet';
+
             const maxTrainingInput = document.createElement('input');
             maxTrainingInput.classList.add('pull-right');
             maxTrainingInput.type = 'number';
             maxTrainingInput.min = '0';
             maxTrainingInput.placeholder = 'insg. max ausgebildet';
-            theadAmount.append(maxTrainingInput);
+            theadAmount.append(maxTrainingInput, minTrainingInput);
 
             const maxStaffInput = document.createElement('input');
             maxStaffInput.classList.add('pull-right');
@@ -624,7 +630,15 @@ const createModal = async () => {
                         (maxStaffInput.value // is the max staff input set and is staff at the building not greater?
                             ? parseInt(maxStaffInput.value) >= personal_count
                             : true) &&
-                        (maxTrainingInput.value // is the max staff input set and is trained staff at the building not greater?
+                        (minTrainingInput.value // is the min training input set and is trained staff at the building not smaller?
+                            ? parseInt(minTrainingInput.value) <=
+                              (storage[schoolingType][id]?.[schoolSelect.value]
+                                  ?.current ?? 0) +
+                                  (storage[schoolingType][id]?.[
+                                      schoolSelect.value
+                                  ]?.finished ?? 0)
+                            : true) &&
+                        (maxTrainingInput.value // is the max training input set and is trained staff at the building not greater?
                             ? parseInt(maxTrainingInput.value) >=
                               (storage[schoolingType][id]?.[schoolSelect.value]
                                   ?.current ?? 0) +
@@ -744,10 +758,26 @@ const createModal = async () => {
             searchInput.addEventListener('change', updateSearch);
             dispatchCenterSelect.addEventListener('change', updateSearch);
 
+            const updateMinTraining = () => {
+                maxTrainingInput.min = minTrainingInput.value ?? '0';
+                if (minTrainingInput.value === '0') {
+                    minTrainingInput.value = null;
+                } else if (
+                    parseInt(maxTrainingInput.value) < minTrainingInput.value
+                ) {
+                    maxTrainingInput.value = minTrainingInput.value;
+                }
+                updateSearch();
+            };
+            minTrainingInput.addEventListener('input', updateMinTraining);
+            minTrainingInput.addEventListener('change', updateMinTraining);
             const updateMaxTraining = () => {
+                minTrainingInput.max = maxTrainingInput.value ?? '0';
+
                 if (maxTrainingInput.value === '0') {
                     maxTrainingInput.value = null;
                 }
+
                 updateSearch();
             };
             maxTrainingInput.addEventListener('input', updateMaxTraining);
@@ -773,6 +803,7 @@ const createModal = async () => {
                 abortBtn.classList.remove('hidden');
 
                 searchInput.disabled = true;
+                minTrainingInput.disabled = true;
                 maxTrainingInput.disabled = true;
                 maxStaffInput.disabled = true;
 
@@ -874,6 +905,7 @@ const createModal = async () => {
                 abortBtn.classList.add('hidden');
 
                 searchInput.disabled = false;
+                minTrainingInput.disabled = false;
                 maxTrainingInput.disabled = false;
                 maxStaffInput.disabled = false;
             });
