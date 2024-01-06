@@ -832,6 +832,7 @@ const createModal = async () => {
                 progressWrapper.classList.remove('hidden');
                 schoolSelect.disabled = true;
                 buildingTypeSelect.disabled = true;
+                dispatchCenterSelect.disabled = true;
                 calcBtn.disabled = true;
                 calcBtn.classList.add('hidden');
                 abortBtn.disabled = false;
@@ -934,6 +935,7 @@ const createModal = async () => {
                 progressWrapper.classList.add('hidden');
                 schoolSelect.disabled = false;
                 buildingTypeSelect.disabled = false;
+                dispatchCenterSelect.disabled = false;
                 calcBtn.disabled = false;
                 calcBtn.classList.remove('hidden');
                 abortBtn.disabled = true;
