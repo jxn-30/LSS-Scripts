@@ -762,6 +762,7 @@ const createModal = async () => {
             maxStaffInput.addEventListener('change', updateMaxStaff);
 
             calcBtn.addEventListener('click', async () => {
+                body.style.setProperty('overflow', 'hidden');
                 tabList.classList.add('disabled');
                 progressWrapper.classList.remove('hidden');
                 schoolSelect.disabled = true;
@@ -862,6 +863,7 @@ const createModal = async () => {
 
                 fetchAborted = false;
 
+                body.style.removeProperty('overflow');
                 tabList.classList.remove('disabled');
                 progressWrapper.classList.add('hidden');
                 schoolSelect.disabled = false;
