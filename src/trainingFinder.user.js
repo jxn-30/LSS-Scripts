@@ -2,7 +2,7 @@
 // @name            [LSS] Training Finder
 // @name:de         [LSS] Ausbildungsfinder
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.01.06+2304
+// @version         2024.01.06+2313
 // @author          Jan (jxn_30)
 // @description     Lists all buildings and amount of staff with a specific training
 // @description:de  Listet alle Gebäude und die Anzahl an Personal mit einer bestimmten Ausbildung auf
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingFinder.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingFinder.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/25273-script-ausbildungsfinder/
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://policie.operacni-stredisko.cz/
 // @match           https://www.alarmcentral-spil.dk/

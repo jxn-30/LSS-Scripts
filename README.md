@@ -64,7 +64,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
-- [[LSS] Training Finder](#lss-training-finder) `2024.01.06+2304`
+- [[LSS] Training Finder](#lss-training-finder) `2024.01.06+2313`
 - [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
 
@@ -920,9 +920,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Lists all buildings and amount of staff with a specific training
 
-|     Version     |                         Download                          |
-|:---------------:|:---------------------------------------------------------:|
-| 2024.01.06+2304 | [trainingFinder.user.js][trainingFinder.user.js:download] |
+|     Version     |                         Download                          |                 Links                 |
+|:---------------:|:---------------------------------------------------------:|:-------------------------------------:|
+| 2024.01.06+2313 | [trainingFinder.user.js][trainingFinder.user.js:download] | [Forum][trainingFinder.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Ausbildungsfinder</summary>
@@ -930,6 +930,7 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [trainingFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingFinder.user.js
+[trainingFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25273-script-ausbildungsfinder/
 
 ### [LSS] User-ID
 
