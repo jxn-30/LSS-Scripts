@@ -254,11 +254,15 @@ GM_addStyle(`
     content: attr(data-current)" / "attr(data-total);
 }
 
-#${modalId} th input[type="search"] {
+#${modalId} th input {
     margin-left: 1em;
     font-size:12px;
     border:1px solid #ccc;
     border-radius:4px
+}
+
+#${modalId} table tbody td:not(:first-child) {
+    text-align: right;
 }
 
 #${modalId} tbody:has(.${processedBuildingClass}) tr:not(.${processedBuildingClass}) {
@@ -500,7 +504,8 @@ const createModal = async () => {
             theadName.textContent = 'Gebäude';
             const theadAmount = document.createElement('th');
             theadAmount.textContent = 'Personal';
-            theadTr.append(theadName, theadAmount);
+            const theadTotal = document.createElement('th');
+            theadTr.append(theadName, theadAmount, theadTotal);
 
             const tbody = table.createTBody();
 
@@ -526,6 +531,20 @@ const createModal = async () => {
                 if (searchTimeout) clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(updateTable, 100);
             };
+
+            const maxTrainingInput = document.createElement('input');
+            maxTrainingInput.classList.add('pull-right');
+            maxTrainingInput.type = 'number';
+            maxTrainingInput.min = '0';
+            maxTrainingInput.placeholder = 'insg. max ausgebildet';
+            theadAmount.append(maxTrainingInput);
+
+            const maxStaffInput = document.createElement('input');
+            maxStaffInput.classList.add('pull-right');
+            maxStaffInput.type = 'number';
+            maxStaffInput.min = '0';
+            maxStaffInput.placeholder = 'max Angestellt';
+            theadTotal.append(maxStaffInput);
 
             const setInfoText = () => {
                 if (
@@ -596,12 +615,23 @@ const createModal = async () => {
                     .sort((a, b) => a.caption.localeCompare(b.caption));
 
                 filteredBuildings = selectedBuildings.filter(
-                    ({ caption, leitstelle_building_id }) =>
-                        (dispatchCenterSelect.value
+                    ({ caption, leitstelle_building_id, personal_count, id }) =>
+                        (dispatchCenterSelect.value // does the building belong to the selected dispatch center?
                             ? leitstelle_building_id ===
                               parseInt(dispatchCenterSelect.value)
                             : true) &&
-                        caption.toLowerCase().includes(getSearchInput())
+                        caption.toLowerCase().includes(getSearchInput()) && // does the building name match the search input?
+                        (maxStaffInput.value // is the max staff input set and is staff at the building not greater?
+                            ? parseInt(maxStaffInput.value) >= personal_count
+                            : true) &&
+                        (maxTrainingInput.value // is the max staff input set and is trained staff at the building not greater?
+                            ? parseInt(maxTrainingInput.value) >=
+                              (storage[schoolingType][id]?.[schoolSelect.value]
+                                  ?.current ?? 0) +
+                                  (storage[schoolingType][id]?.[
+                                      schoolSelect.value
+                                  ]?.finished ?? 0)
+                            : true)
                 );
 
                 calcBtn.disabled = schoolSelect.value === '';
@@ -696,14 +726,10 @@ const createModal = async () => {
                         totalStaffCurrent += current;
                         totalStaffFinished += finished;
 
-                        amount.append(
-                            currentSpan,
-                            '\xa0',
-                            finishedSpan,
-                            '\xa0',
-                            totalSpan
-                        );
-                        amount.style.setProperty('text-align', 'right');
+                        amount.append(currentSpan, '\xa0', finishedSpan);
+
+                        const total = tr.insertCell();
+                        total.append(totalSpan);
                     }
                 );
 
@@ -718,6 +744,23 @@ const createModal = async () => {
             searchInput.addEventListener('change', updateSearch);
             dispatchCenterSelect.addEventListener('change', updateSearch);
 
+            const updateMaxTraining = () => {
+                if (maxTrainingInput.value === '0') {
+                    maxTrainingInput.value = null;
+                }
+                updateSearch();
+            };
+            maxTrainingInput.addEventListener('input', updateMaxTraining);
+            maxTrainingInput.addEventListener('change', updateMaxTraining);
+            const updateMaxStaff = () => {
+                if (maxStaffInput.value === '0') {
+                    maxStaffInput.value = null;
+                }
+                updateSearch();
+            };
+            maxStaffInput.addEventListener('input', updateMaxStaff);
+            maxStaffInput.addEventListener('change', updateMaxStaff);
+
             calcBtn.addEventListener('click', async () => {
                 tabList.classList.add('disabled');
                 progressWrapper.classList.remove('hidden');
@@ -727,6 +770,10 @@ const createModal = async () => {
                 calcBtn.classList.add('hidden');
                 abortBtn.disabled = false;
                 abortBtn.classList.remove('hidden');
+
+                searchInput.disabled = true;
+                maxTrainingInput.disabled = true;
+                maxStaffInput.disabled = true;
 
                 let counter = 0;
                 progressBar.dataset.total =
@@ -811,7 +858,7 @@ const createModal = async () => {
                     );
                 }
 
-                setInfoText();
+                updateTable();
 
                 fetchAborted = false;
 
@@ -823,6 +870,10 @@ const createModal = async () => {
                 calcBtn.classList.remove('hidden');
                 abortBtn.disabled = true;
                 abortBtn.classList.add('hidden');
+
+                searchInput.disabled = false;
+                maxTrainingInput.disabled = false;
+                maxStaffInput.disabled = false;
             });
 
             if (relevantBuildingTypes.length === 1) {
