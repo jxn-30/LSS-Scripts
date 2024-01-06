@@ -200,6 +200,24 @@ const setStaffSpan = (span, amount, type) => {
     }
 };
 
+const createFlexDiv = () => {
+    const div = document.createElement('div');
+    div.classList.add(
+        'flex-row',
+        'flex-nowrap',
+        'justify-between',
+        'align-items-center',
+        flexRowClass
+    );
+    return div;
+};
+
+const createFlexSpacing = () => {
+    const div = document.createElement('div');
+    div.classList.add('flex-grow-1');
+    return div;
+};
+
 // each request should take at least 100ms
 const timeoutReq = promise =>
     Promise.all([
@@ -209,6 +227,7 @@ const timeoutReq = promise =>
 
 const modalId = 'jxn-training_finder-modal';
 const processedBuildingClass = 'building-processed';
+const flexRowClass = 'flexed-row';
 
 // add some stiles that are used in the modal
 GM_addStyle(`
@@ -255,7 +274,6 @@ GM_addStyle(`
 }
 
 #${modalId} th input {
-    margin-left: 1em;
     font-size:12px;
     border:1px solid #ccc;
     border-radius:4px
@@ -267,6 +285,10 @@ GM_addStyle(`
 
 #${modalId} tbody:has(.${processedBuildingClass}) tr:not(.${processedBuildingClass}) {
     opacity: 0.5;
+}
+
+#${modalId} .${flexRowClass} {
+    gap: 10px;
 }
 `);
 
@@ -501,10 +523,13 @@ const createModal = async () => {
             const thead = table.createTHead();
             const theadTr = thead.insertRow();
             const theadName = document.createElement('th');
-            theadName.textContent = 'Gebäude';
+            const theadNameFlex = createFlexDiv();
+            theadName.append(theadNameFlex);
             const theadAmount = document.createElement('th');
-            theadAmount.textContent = 'Personal';
+            const theadAmountFlex = createFlexDiv();
+            theadAmount.append(theadAmountFlex);
             const theadTotal = document.createElement('th');
+            theadTotal.style.setProperty('width', '0');
             theadTr.append(theadName, theadAmount, theadTotal);
 
             const tbody = table.createTBody();
@@ -522,7 +547,7 @@ const createModal = async () => {
             searchInput.classList.add('search_input_field');
             searchInput.type = 'search';
             searchInput.placeholder = 'Gebäude suchen...';
-            theadName.append(searchInput);
+            theadNameFlex.append('Gebäude', createFlexSpacing(), searchInput);
 
             const getSearchInput = () => searchInput.value.toLowerCase();
 
@@ -533,17 +558,20 @@ const createModal = async () => {
             };
 
             const minTrainingInput = document.createElement('input');
-            minTrainingInput.classList.add('pull-right');
             minTrainingInput.type = 'number';
             minTrainingInput.min = '0';
             minTrainingInput.placeholder = 'insg. min ausgebildet';
 
             const maxTrainingInput = document.createElement('input');
-            maxTrainingInput.classList.add('pull-right');
             maxTrainingInput.type = 'number';
             maxTrainingInput.min = '0';
             maxTrainingInput.placeholder = 'insg. max ausgebildet';
-            theadAmount.append(maxTrainingInput, minTrainingInput);
+            theadAmountFlex.append(
+                'Personal',
+                createFlexSpacing(),
+                minTrainingInput,
+                maxTrainingInput
+            );
 
             const maxStaffInput = document.createElement('input');
             maxStaffInput.classList.add('pull-right');
@@ -694,15 +722,16 @@ const createModal = async () => {
                             'lightbox-open',
                             'btn',
                             'btn-xs',
-                            'btn-default',
-                            'pull-right'
+                            'btn-default'
                         );
                         staffLink.href = `/buildings/${id}/personals`;
                         const staffIcon = document.createElement('span');
                         staffIcon.classList.add('glyphicon', 'glyphicon-user');
                         staffLink.append(staffIcon);
 
-                        name.append(link, staffLink);
+                        const nameFlex = createFlexDiv();
+                        nameFlex.append(link, createFlexSpacing(), staffLink);
+                        name.append(nameFlex);
 
                         const amount = tr.insertCell();
 
@@ -740,7 +769,13 @@ const createModal = async () => {
                         totalStaffCurrent += current;
                         totalStaffFinished += finished;
 
-                        amount.append(currentSpan, '\xa0', finishedSpan);
+                        const amountFlex = createFlexDiv();
+                        amountFlex.append(
+                            createFlexSpacing(),
+                            currentSpan,
+                            finishedSpan
+                        );
+                        amount.append(amountFlex);
 
                         const total = tr.insertCell();
                         total.append(totalSpan);
