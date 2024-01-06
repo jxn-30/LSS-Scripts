@@ -716,6 +716,9 @@ const createModal = async () => {
                         link.classList.add('lightbox-open');
                         link.href = `/buildings/${id}`;
                         link.textContent = caption;
+                        name.append(link);
+
+                        const amount = tr.insertCell();
 
                         const staffLink = document.createElement('a');
                         staffLink.classList.add(
@@ -728,12 +731,6 @@ const createModal = async () => {
                         const staffIcon = document.createElement('span');
                         staffIcon.classList.add('glyphicon', 'glyphicon-user');
                         staffLink.append(staffIcon);
-
-                        const nameFlex = createFlexDiv();
-                        nameFlex.append(link, createFlexSpacing(), staffLink);
-                        name.append(nameFlex);
-
-                        const amount = tr.insertCell();
 
                         const currentSpan = document.createElement('span');
                         currentSpan.classList.add(
@@ -771,6 +768,7 @@ const createModal = async () => {
 
                         const amountFlex = createFlexDiv();
                         amountFlex.append(
+                            staffLink,
                             createFlexSpacing(),
                             currentSpan,
                             finishedSpan
