@@ -292,6 +292,14 @@ GM_addStyle(`
 }
 `);
 
+// These are the fallback schools for each schooling type. They are schools of LSSM Test alliance
+const fallbackSchools = {
+    Feuerwehr: 10733232,
+    Polizei: 19706325,
+    Rettungsdienst: 19706323,
+    THW: 19706327,
+};
+
 /**
  * @typedef {Object} StorageEntry
  * @property {number} current
@@ -424,28 +432,18 @@ const createModal = async () => {
                 tabPane.classList.add('active');
             }
 
-            const anyFittingSchool =
+            const anyFittingSchoolId =
                 buildings.find(
                     building =>
                         getBuildingType(building) ===
                         parseInt(schoolBuildingType)
-                ) ??
+                )?.id ??
                 allianceBuildings.find(
                     building =>
                         getBuildingType(building) ===
                         parseInt(schoolBuildingType)
-                );
-
-            if (!anyFittingSchool) {
-                const infoAlert = document.createElement('div');
-                infoAlert.classList.add('alert', 'alert-info');
-                // TODO:  manuell ID einer Schule eines Verbandsmitglieds nutzen?
-                infoAlert.textContent =
-                    'Mist, leider hast du keine passende Schule und auch dein Verband hat keine passende Schule aus der Verbandskasse gebaut. ' +
-                    'Daher können die Informationen leider nicht ausgelesen werden. Sorry!';
-                tabPane.append(infoAlert);
-                return;
-            }
+                )?.id ??
+                fallbackSchools[schoolingType];
 
             const schoolSelect = createSelect('Lehrgang auswählen');
             schoolSelect.classList.add('flex-grow-1');
@@ -866,7 +864,7 @@ const createModal = async () => {
 
                     const answer = await timeoutReq(
                         fetch(
-                            `/buildings/${anyFittingSchool.id}/schoolingEducationCheck?education=${schoolSelect.value}&only_building_id=${currentBuilding.id}`
+                            `/buildings/${anyFittingSchoolId}/schoolingEducationCheck?education=${schoolSelect.value}&only_building_id=${currentBuilding.id}`
                         )
                             .then(res => res.text())
                             .then(html =>
