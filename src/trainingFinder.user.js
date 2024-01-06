@@ -61,6 +61,7 @@
  * @name:de Ausbildungsfinder
  * @description Lists all buildings and amount of staff with a specific training
  * @description:de Listet alle Gebäude und die Anzahl an Personal mit einer bestimmten Ausbildung auf
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/25273-script-ausbildungsfinder/
  * @match /
  * @// icon taken from https://icons8.com/icon/7BHYSrE6cAZk/library-building
  * @resource icon /resources/trainingFinder.user.js/icon.png
