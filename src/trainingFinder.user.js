@@ -2,7 +2,7 @@
 // @name            [LSS] Training Finder
 // @name:de         [LSS] Ausbildungsfinder
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.01.06+2218
+// @version         2024.01.06+2304
 // @author          Jan (jxn_30)
 // @description     Lists all buildings and amount of staff with a specific training
 // @description:de  Listet alle Gebäude und die Anzahl an Personal mit einer bestimmten Ausbildung auf
