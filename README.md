@@ -65,7 +65,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
 - [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
 - [[LSS] Training Finder](#lss-training-finder) `2024.01.06+2313`
-- [[LSS] User-ID](#lss-user-id) `2023.06.03+1512`
+- [[LSS] User-ID](#lss-user-id) `2024.01.07+1848`
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
 
 ### [LSS] AAO All vehicle types
@@ -938,7 +938,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                 Download                  |             Links             |
 |:---------------:|:-----------------------------------------:|:-----------------------------:|
-| 2023.06.03+1512 | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
+| 2024.01.07+1848 | [userId.user.js][userId.user.js:download] | [Forum][userId.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] User-ID</summary>
