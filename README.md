@@ -28,7 +28,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Chat Hider](#lss-chat-hider) `2023.06.03+1511`
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2023.06.03+1511`
 - [[LSS] Clickable links](#lss-clickable-links) `2023.06.03+1511`
-- [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2022.11.27+1138`
+- [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2024.01.07+1821`
 - [[LSS] Dark OSM](#lss-dark-osm) `2023.06.03+1511`
 - [[LSS] Direct levels for buildings](#lss-direct-levels-for-buildings) `2023.03.25+2004`
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
@@ -357,7 +357,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                                    Download                                     |                      Links                       |
 |:---------------:|:-------------------------------------------------------------------------------:|:------------------------------------------------:|
-| 2022.11.27+1138 | [customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download] | [Forum][customVehicleTypesListing.user.js:forum] |
+| 2024.01.07+1821 | [customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download] | [Forum][customVehicleTypesListing.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Auflistung eigener Fahrzeugtypen</summary>
