@@ -99,6 +99,8 @@
  * @match /profile/*
  */
 
+/* global user_id */
+
 const showInNavbar = true;
 const showInProfile = true;
 
@@ -107,7 +109,7 @@ if (window.location.pathname === '/' && showInNavbar) {
         .querySelector('#navbar-main-collapse > ul')
         ?.insertAdjacentHTML(
             'beforeend',
-            `<li><a class="lightbox-open" href="/profile/${window.user_id}">${window.user_id}</a></li>`
+            `<li><a class="lightbox-open" href="/profile/${user_id}">${user_id}</a></li>`
         );
 }
 
