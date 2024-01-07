@@ -169,8 +169,8 @@ const openListLi = document.createElement('li');
 openListLi.append(openListLink);
 
 document
-    .querySelector('#vehicle_label_switch')
-    ?.parentElement?.before(openListLi);
+    .querySelector('#menu_profile + .dropdown-menu > li.divider')
+    ?.before(openListLi);
 
 GM_addStyle(`
 #${modal.id} {
