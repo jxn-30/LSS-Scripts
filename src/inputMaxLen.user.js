@@ -2,7 +2,7 @@
 // @name            [LSS] Input max length
 // @name:de         [LSS] Textlänge bei Eingabefeldern prüfen
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1512
+// @version         2024.01.17+1128
 // @author          Jan (jxn_30)
 // @description     Shows a help about minimum and maximum length of text input fields
 // @description:de  Zeigt eine Hilfe über die Mindest- und Maximaltextlänge von Eingabefeldern an

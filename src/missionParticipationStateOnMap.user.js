@@ -2,7 +2,7 @@
 // @name            [LSS] Mission Participation State on Map
 // @name:de         [LSS] Einsatzbeteiligung auf der Karte
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.07.08+1509
+// @version         2024.01.17+1128
 // @author          Jan (jxn_30)
 // @description     Shows the participation state of missions on the map in their respective tooltip.
 // @description:de  Zeigt den Beteiligungsstatus von Einsätzen auf der Karte im jeweiligen Tooltip an.
