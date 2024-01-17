@@ -42,7 +42,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Hide Application Background](#lss-hide-application-background) `2023.06.03+1511`
 - [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.06.03+1511`
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2023.06.03+1512`
-- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2023.06.03+1512`
+- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2024.01.17+1102`
 - [[LSS] Input max length](#lss-input-max-length) `2023.06.03+1512`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.11.11+1223`
@@ -574,7 +574,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                                   Download                                    |                      Links                      |
 |:---------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------:|
-| 2023.06.03+1512 | [hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download] | [Forum][hideOwnNotSharedMissions.user.js:forum] |
+| 2024.01.17+1102 | [hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download] | [Forum][hideOwnNotSharedMissions.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] eigene ungeteilte Einsätze ausblenden</summary>
