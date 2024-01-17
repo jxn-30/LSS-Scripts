@@ -133,9 +133,9 @@ const getSmallBuildingTypes = lang =>
  * @returns {number}
  */
 const getBuildingType = building =>
-    (building.small_building
-        ? smallBuildingTypes[building.building_type]
-        : undefined) ?? building.building_type;
+    (building.small_building ?
+        smallBuildingTypes[building.building_type]
+    :   undefined) ?? building.building_type;
 
 /**
  * @typedef {Object} Building A partial building as returned by the Game API
@@ -649,30 +649,38 @@ const createModal = async () => {
 
                 filteredBuildings = selectedBuildings.filter(
                     ({ caption, leitstelle_building_id, personal_count, id }) =>
-                        (dispatchCenterSelect.value // does the building belong to the selected dispatch center?
-                            ? leitstelle_building_id ===
-                              parseInt(dispatchCenterSelect.value)
-                            : true) &&
+                        ((
+                            dispatchCenterSelect.value // does the building belong to the selected dispatch center?
+                        ) ?
+                            leitstelle_building_id ===
+                            parseInt(dispatchCenterSelect.value)
+                        :   true) &&
                         caption.toLowerCase().includes(getSearchInput()) && // does the building name match the search input?
-                        (maxStaffInput.value // is the max staff input set and is staff at the building not greater?
-                            ? parseInt(maxStaffInput.value) >= personal_count
-                            : true) &&
-                        (minTrainingInput.value // is the min training input set and is trained staff at the building not smaller?
-                            ? parseInt(minTrainingInput.value) <=
-                              (storage[schoolingType][id]?.[schoolSelect.value]
-                                  ?.current ?? 0) +
-                                  (storage[schoolingType][id]?.[
-                                      schoolSelect.value
-                                  ]?.finished ?? 0)
-                            : true) &&
-                        (maxTrainingInput.value // is the max training input set and is trained staff at the building not greater?
-                            ? parseInt(maxTrainingInput.value) >=
-                              (storage[schoolingType][id]?.[schoolSelect.value]
-                                  ?.current ?? 0) +
-                                  (storage[schoolingType][id]?.[
-                                      schoolSelect.value
-                                  ]?.finished ?? 0)
-                            : true)
+                        ((
+                            maxStaffInput.value // is the max staff input set and is staff at the building not greater?
+                        ) ?
+                            parseInt(maxStaffInput.value) >= personal_count
+                        :   true) &&
+                        ((
+                            minTrainingInput.value // is the min training input set and is trained staff at the building not smaller?
+                        ) ?
+                            parseInt(minTrainingInput.value) <=
+                            (storage[schoolingType][id]?.[schoolSelect.value]
+                                ?.current ?? 0) +
+                                (storage[schoolingType][id]?.[
+                                    schoolSelect.value
+                                ]?.finished ?? 0)
+                        :   true) &&
+                        ((
+                            maxTrainingInput.value // is the max training input set and is trained staff at the building not greater?
+                        ) ?
+                            parseInt(maxTrainingInput.value) >=
+                            (storage[schoolingType][id]?.[schoolSelect.value]
+                                ?.current ?? 0) +
+                                (storage[schoolingType][id]?.[
+                                    schoolSelect.value
+                                ]?.finished ?? 0)
+                        :   true)
                 );
 
                 calcBtn.disabled = schoolSelect.value === '';

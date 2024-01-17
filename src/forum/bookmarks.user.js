@@ -337,17 +337,17 @@ class BookmarkManager {
         const link = document.createElement('a');
         link.href = encodeURI(url);
         link.classList.add(
-            mobile
-                ? BookmarkManager.#mobileClasses.link
-                : BookmarkManager.#desktopClasses.link
+            mobile ?
+                BookmarkManager.#mobileClasses.link
+            :   BookmarkManager.#desktopClasses.link
         );
 
         const text = document.createElement('span');
         text.textContent = title;
         text.classList.add(
-            mobile
-                ? BookmarkManager.#mobileClasses.linkTitle
-                : BookmarkManager.#desktopClasses.linkTitle
+            mobile ?
+                BookmarkManager.#mobileClasses.linkTitle
+            :   BookmarkManager.#desktopClasses.linkTitle
         );
 
         link.append(text);
@@ -365,9 +365,9 @@ class BookmarkManager {
         const menu = document.createElement('li');
         menu.id = `jxn-forum-bookmarks-menu-${mobile ? 'mobile' : 'desktop'}`;
         menu.classList.add(
-            mobile
-                ? BookmarkManager.#mobileClasses.item
-                : BookmarkManager.#desktopClasses.menu
+            mobile ?
+                BookmarkManager.#mobileClasses.item
+            :   BookmarkManager.#desktopClasses.menu
         );
 
         if (mobile) {
@@ -389,9 +389,9 @@ class BookmarkManager {
 
         const dropdown = document.createElement('ol');
         dropdown.classList.add(
-            mobile
-                ? BookmarkManager.#mobileClasses.dropdown
-                : BookmarkManager.#desktopClasses.dropdown
+            mobile ?
+                BookmarkManager.#mobileClasses.dropdown
+            :   BookmarkManager.#desktopClasses.dropdown
         );
         dropdown.id = `jxn-forum-bookmarks-dropdown-${
             mobile ? 'mobile' : 'desktop'

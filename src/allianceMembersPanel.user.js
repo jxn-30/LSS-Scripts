@@ -278,9 +278,10 @@ search.style.setProperty('margin-left', '1em');
 
 search.addEventListener('keyup', () => {
     const filter = search.value.trim().toLowerCase();
-    filterStyle.textContent = filter
-        ? `#${tableBody.id} tr:not([data-user-name*="${filter}"i]) { display: none; }`
-        : '';
+    filterStyle.textContent =
+        filter ?
+            `#${tableBody.id} tr:not([data-user-name*="${filter}"i]) { display: none; }`
+        :   '';
 });
 
 panelHeading.append(panelTitle, search);
@@ -318,9 +319,10 @@ offlineBtn.append(offlineImg);
 
 offlineBtn.addEventListener('click', () => {
     const offline = offlineStyle.textContent;
-    offlineStyle.textContent = offline
-        ? ''
-        : `#${tableBody.id} tr[data-online="false"] { display: none; }`;
+    offlineStyle.textContent =
+        offline ? '' : (
+            `#${tableBody.id} tr[data-online="false"] { display: none; }`
+        );
 });
 offlineBtn.click();
 
@@ -421,9 +423,9 @@ if (MODE === 'own' || bigMapMenu) {
         toggleBtn.append(offlineImg, toggleSpan);
 
         const toggleWrapper =
-            MODE === 'chat'
-                ? heading?.querySelector('.btn-group')
-                : heading?.querySelector('.flex-fixed-size');
+            MODE === 'chat' ?
+                heading?.querySelector('.btn-group')
+            :   heading?.querySelector('.flex-fixed-size');
 
         const addToWrapper = () => {
             if (MODE === 'chat') {

@@ -83,14 +83,14 @@ if (!window.frameElement || window.frameElement?.src?.startsWith('https://')) {
             if (!(target instanceof HTMLElement) && !targetIsDocument) return;
             if (target instanceof HTMLInputElement) return;
 
-            const targetOrDocEl = targetIsDocument
-                ? document.documentElement
-                : target;
+            const targetOrDocEl =
+                targetIsDocument ? document.documentElement : target;
 
             const showScrollToTop = targetOrDocEl.scrollTop > 50;
             let scrollToTopBtn = (
-                targetIsDocument ? document.body : target
-            ).querySelector(':scope > .scroll-to-top-btn');
+                targetIsDocument ?
+                    document.body
+                :   target).querySelector(':scope > .scroll-to-top-btn');
             if (!scrollToTopBtn) {
                 scrollToTopBtn = document.createElement('button');
                 scrollToTopBtn.classList.add(
@@ -121,11 +121,11 @@ if (!window.frameElement || window.frameElement?.src?.startsWith('https://')) {
                 );
                 const translateX =
                     0 -
-                    (personalOvertakeCounter
-                        ? parseFloat(
-                              getComputedStyle(personalOvertakeCounter).width
-                          )
-                        : 0);
+                    (personalOvertakeCounter ?
+                        parseFloat(
+                            getComputedStyle(personalOvertakeCounter).width
+                        )
+                    :   0);
                 scrollToTopBtn.style.setProperty(
                     'transform',
                     `translate(${translateX}px, ${translateY}px)`

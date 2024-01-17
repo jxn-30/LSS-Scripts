@@ -68,11 +68,9 @@ const adjustCloseSetting = async (close = true) => {
     Object.entries(settings).forEach(([key, value]) =>
         formData.append(
             `user[${key}]`,
-            key === 'mission_alarmed_successfull_close_window'
-                ? Number(close)
-                : typeof value === 'boolean'
-                  ? Number(value)
-                  : value
+            key === 'mission_alarmed_successfull_close_window' ? Number(close)
+            : typeof value === 'boolean' ? Number(value)
+            : value
         )
     );
     formData.append('utf8', '✓');

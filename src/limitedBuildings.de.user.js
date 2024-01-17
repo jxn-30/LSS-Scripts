@@ -320,11 +320,11 @@ const createModal = () => {
     let buildings;
 
     const getBuildings = () =>
-        buildings
-            ? Promise.resolve(buildings)
-            : fetch('/api/buildings')
-                  .then(res => res.json())
-                  .then(b => (buildings = b));
+        buildings ?
+            Promise.resolve(buildings)
+        :   fetch('/api/buildings')
+                .then(res => res.json())
+                .then(b => (buildings = b));
 
     const modal = document.createElement('div');
     modal.classList.add('modal', 'fade');

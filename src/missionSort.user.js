@@ -124,9 +124,9 @@ GM_addStyle(`
 #missions-panel-body > #mission_list, #missions-panel-body > [id^="mission_list_"] {
     display: flex;             /* allows sorting by CSS */
 ${
-    ORDER === 'asc'
-        ? `    flex-flow: column;         /* sort ascending  */`
-        : `    flex-flow: column-reverse; /* sort descending */`
+    ORDER === 'asc' ?
+        `    flex-flow: column;         /* sort ascending  */`
+    :   `    flex-flow: column-reverse; /* sort descending */`
 }
 `);
 
@@ -225,11 +225,15 @@ const updateStorage = () =>
                                     0;
                                 const panelAIsFirst =
                                     position & Node.DOCUMENT_POSITION_FOLLOWING;
-                                return creditsB === creditsA
-                                    ? panelAIsFirst // if both do have same credits, sort by position in DOM
-                                        ? -1
-                                        : 1
-                                    : creditsB - creditsA; // otherwise sort by credits (descending)
+                                return (
+                                    creditsB === creditsA ?
+                                        (
+                                            panelAIsFirst // if both do have same credits, sort by position in DOM
+                                        ) ?
+                                            -1
+                                        :   1
+                                    :   creditsB - creditsA
+                                ); // otherwise sort by credits (descending)
                             }
                         )
                         .map(([mission]) => mission),
@@ -247,9 +251,9 @@ const setMissionOrder = async panel => {
     if (!creditsByMissionType) await getCreditsByMissionType();
     const missionType = getMissionTypeFromPanel(panel);
     const credits =
-        missionType in creditsByMissionType
-            ? creditsByMissionType[missionType] ?? 0
-            : cssMaxInteger;
+        missionType in creditsByMissionType ?
+            creditsByMissionType[missionType] ?? 0
+        :   cssMaxInteger;
 
     panel.style.setProperty('order', credits.toString());
 

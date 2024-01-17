@@ -61,9 +61,9 @@ const getUserscriptFiles = dir =>
     fs
         .readdirSync(dir, { withFileTypes: true })
         .flatMap(dirent =>
-            dirent.isDirectory()
-                ? getUserscriptFiles(path.resolve(dir, dirent.name))
-                : path.resolve(dir, dirent.name)
+            dirent.isDirectory() ?
+                getUserscriptFiles(path.resolve(dir, dirent.name))
+            :   path.resolve(dir, dirent.name)
         )
         .filter(file => file.endsWith('.user.js'));
 

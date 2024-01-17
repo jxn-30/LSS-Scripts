@@ -104,9 +104,9 @@ if (expandBtn && unsafeWindow.location.pathname.split('/').length === 3) {
         const currentLevel = building.level;
         const { maxLevel, levelPrices } =
             buildingTypes[
-                building.small_building
-                    ? smallBuildings[building.building_type]
-                    : building.building_type
+                building.small_building ?
+                    smallBuildings[building.building_type]
+                :   building.building_type
             ];
 
         if (currentLevel >= maxLevel) return;

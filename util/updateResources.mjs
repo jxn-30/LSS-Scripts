@@ -54,13 +54,15 @@ const updateResources = async (userscriptName, resourceTags) => {
             resourceContent = fs.readFileSync(absPath).toString();
         }
 
-        const contentBefore = fs.existsSync(outFilePath)
-            ? fs.readFileSync(outFilePath).toString()
-            : '';
+        const contentBefore =
+            fs.existsSync(outFilePath) ?
+                fs.readFileSync(outFilePath).toString()
+            :   '';
 
-        const processedContentBefore = addFetchNote
-            ? contentBefore.split(/\n/).slice(1).join('\n')
-            : contentBefore;
+        const processedContentBefore =
+            addFetchNote ?
+                contentBefore.split(/\n/).slice(1).join('\n')
+            :   contentBefore;
         const hashContentBefore = createHashFromString(processedContentBefore);
         const hashResourceContent = createHashFromString(resourceContent);
         const isUpdated = hashContentBefore !== hashResourceContent;
@@ -69,9 +71,10 @@ const updateResources = async (userscriptName, resourceTags) => {
         if (isUpdated) {
             updatedFiles.push(outFilePath);
 
-            const fileContent = addFetchNote
-                ? `// fetched from ${url} at ${new Date().toISOString()}\n${resourceContent}`
-                : resourceContent;
+            const fileContent =
+                addFetchNote ?
+                    `// fetched from ${url} at ${new Date().toISOString()}\n${resourceContent}`
+                :   resourceContent;
             fs.writeFileSync(outFilePath, fileContent);
         }
 

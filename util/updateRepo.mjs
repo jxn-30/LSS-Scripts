@@ -253,15 +253,15 @@ ${userscriptTags}
             alias: oldNames.map(({ content }) => content),
             url: updateURL,
             flagsAvailable:
-                localesAvailable.length === 0
-                    ? []
-                    : Object.keys(GAMES)
-                          .filter(game =>
-                              localesAvailable.some(
-                                  ({ content }) => content === game
-                              )
-                          )
-                          .map(game => GAMES[game].flag),
+                localesAvailable.length === 0 ?
+                    []
+                :   Object.keys(GAMES)
+                        .filter(game =>
+                            localesAvailable.some(
+                                ({ content }) => content === game
+                            )
+                        )
+                        .map(game => GAMES[game].flag),
             locales: localeTranslations,
             forum: forumTag.content,
         });
@@ -292,9 +292,9 @@ const scriptTOCMarkdown = sortedScripts
             .replace(/[^a-z0-9-]/g, '-')
             .replace(/-+/g, '-')
             .replace(/^-+|-+$/g, '')}) \`${version}\` ${
-            flagsAvailable.length
-                ? `(${flagsAvailable.map(flag => `\`${flag}\``).join(', ')})`
-                : ''
+            flagsAvailable.length ?
+                `(${flagsAvailable.map(flag => `\`${flag}\``).join(', ')})`
+            :   ''
         }`.trim()
     )
     .join('\n');

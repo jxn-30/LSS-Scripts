@@ -70,12 +70,11 @@
  */
 const updateTooltip = (missionIdOrMarker, participating) => {
     const tooltip = (
-        typeof missionIdOrMarker === 'number'
-            ? unsafeWindow.mission_markers.find(
-                  m => m.mission_id === missionIdOrMarker
-              )
-            : missionIdOrMarker
-    )?.getTooltip();
+        typeof missionIdOrMarker === 'number' ?
+            unsafeWindow.mission_markers.find(
+                m => m.mission_id === missionIdOrMarker
+            )
+        :   missionIdOrMarker)?.getTooltip();
     if (!tooltip) return;
     tooltip.setContent(
         `<!--start-participation--><span class="glyphicon glyphicon-${

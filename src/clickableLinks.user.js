@@ -133,9 +133,9 @@ unsafeWindow.allianceChat = e => {
         const link = links.shift();
         if (link) {
             e.message += `<a href="${link}" target="_blank">${
-                showImg
-                    ? `<img src="${link}" alt="${link}" style="max-width: 10%;"/>`
-                    : link
+                showImg ?
+                    `<img src="${link}" alt="${link}" style="max-width: 10%;"/>`
+                :   link
             }</a>`;
         }
     });
