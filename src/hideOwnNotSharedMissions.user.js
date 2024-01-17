@@ -64,4 +64,35 @@
  * @grant GM_addStyle
  */
 
-GM_addStyle('#mission_list .panel:not(.panel-success) {display: none;}');
+// Funktion zum Ein- und Ausschalten der Panels
+function togglePanels() {
+    const missionListPanels = document.querySelectorAll('#mission_list .panel:not(.panel-success)');
+    missionListPanels.forEach(panel => {
+        panel.style.display = panel.style.display === 'none' ? '' : 'none';
+    });
+
+    const button = document.getElementById('toggle-panels-btn');
+    const isActive = missionListPanels[0].style.display !== 'none';
+
+    button.textContent = isActive ? 'Alle Einsätze' : 'Nur Freigaben';
+    button.classList.toggle('btn-danger', !isActive);
+    button.classList.toggle('btn-success', isActive);
+}
+
+// Erstellen und Hinzufügen des Buttons
+const btnGroupMissionSelect = document.getElementById('btn-group-mission-select');
+const togglePanelsBtn = document.createElement('button');
+togglePanelsBtn.id = 'toggle-panels-btn';
+togglePanelsBtn.classList.add('btn', 'btn-xs', 'btn-success');
+togglePanelsBtn.textContent = 'Alle Einsätze';
+togglePanelsBtn.addEventListener('click', togglePanels);
+btnGroupMissionSelect.appendChild(togglePanelsBtn);
+
+// Funktion zum Initialisieren des Skripts
+function initializeScript() {
+    // Verstecke Panels und setze Button-Text und -Klasse entsprechend
+    togglePanels();
+}
+
+// Führe die Initialisierung aus, sobald das Dokument bereit ist
+document.addEventListener('DOMContentLoaded', initializeScript);
