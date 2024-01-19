@@ -69,7 +69,7 @@ const position = 'bottomright'; // Mögliche Werte:
  */
 
 (() => {
-    if ('L' in unsafeWindow) {
+    if ('L' in unsafeWindow && 'map' in unsafeWindow && unsafeWindow.map) {
         unsafeWindow.L.control.scale({ position }).addTo(unsafeWindow.map);
     }
 })();
