@@ -55,7 +55,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker) `2023.08.18+0356`
 - [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.11.09+2010`
-- [[LSS] OSM-MapScale](#lss-osm-mapscale) `2023.06.03+1512`
+- [[LSS] OSM-MapScale](#lss-osm-mapscale) `2024.01.19+2109`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2023.06.03+1512`
@@ -778,7 +778,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                      Download                       |               Links                |
 |:---------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2023.06.03+1512 | [osmMapscale.user.js][osmMapscale.user.js:download] | [Forum][osmMapscale.user.js:forum] |
+| 2024.01.19+2109 | [osmMapscale.user.js][osmMapscale.user.js:download] | [Forum][osmMapscale.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] OSM-MapScale</summary>

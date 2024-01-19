@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] OSM-MapScale
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.06.03+1512
+// @version         2024.01.19+2109
 // @author          Jan (jxn_30)
 // @description     Shows a scale on the map
 // @description:de  Zeigt einen Maßstab auf der Karte an
