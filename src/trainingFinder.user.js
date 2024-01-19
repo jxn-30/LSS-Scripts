@@ -232,6 +232,10 @@ const flexRowClass = 'flexed-row';
 
 // add some stiles that are used in the modal
 GM_addStyle(`
+#${modalId} {
+    z-index: 3000; /* This is to fix Ausbildungsfinder appearing below navbar and the panel-windows in window-design */
+}
+
 #${modalId} .modal-dialog {
     min-width: min(1250px, 90%);
     max-width: min(1250px, 90%);
