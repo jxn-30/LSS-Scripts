@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-- [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2023.12.23+1820`
+- [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2024.01.29+1610`
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.11.20+1131` (`🇩🇪`)
 - [[LSS] AAO Finder](#lss-aao-finder) `2023.12.25+0046`
 - [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.25+0046`
@@ -74,7 +74,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                             Download                              |                   Links                   |
 |:---------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2023.12.23+1820 | [aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download] | [Forum][aaoAllVehicleTypes.user.js:forum] |
+| 2024.01.29+1610 | [aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download] | [Forum][aaoAllVehicleTypes.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Alle Fahrzeugtypen</summary>
