@@ -99,6 +99,7 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
  * @match /aaos/new
  * @match /aaos/*\/edit
+ * @match /aaos/*\/copy
  */
 
 /* global I18n */
