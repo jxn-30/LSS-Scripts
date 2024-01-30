@@ -11,7 +11,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2024.01.29+1610`
-- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2023.11.20+1131` (`🇩🇪`)
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2024.01.30+1857` (`🇩🇪`)
 - [[LSS] AAO Finder](#lss-aao-finder) `2023.12.25+0046`
 - [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.25+0046`
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
@@ -90,7 +90,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                           Download                            |                  Links                  |
 |:---------------:|:------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.11.20+1131 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+| 2024.01.30+1857 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Config Lite (DE)</summary>
