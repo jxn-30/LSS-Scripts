@@ -200,12 +200,29 @@ const getAAOVehicleTypes = () => {
     tab.className = 'tab-pane';
     document.querySelector('.tab-content').append(tab);
 
+    const searchWrapper = document.createElement('div');
+    searchWrapper.classList.add('form-group', 'optional');
+    const searchBar = document.createElement('input');
+    searchBar.type = 'search';
+    searchBar.placeholder = 'Suchen...';
+    searchBar.classList.add('form-control');
+    searchBar.addEventListener('input', () => {
+        const value = searchBar.value.toLowerCase();
+        tab.querySelectorAll(`div[data-caption]`).forEach(div => {
+            div.style.display =
+                div.dataset.caption.includes(value) ? '' : 'none';
+        });
+    });
+    searchWrapper.append(searchBar);
+    tab.append(searchWrapper);
+
     /** @type {HTMLInputElement[]} */
     const inputs = [];
 
     vehicleTypes.forEach(({ id, caption }) => {
         const div = document.createElement('div');
         div.classList.add('form-group', 'integer', 'optional');
+        div.dataset.caption = caption.toLowerCase();
 
         const divLabel = document.createElement('div');
         divLabel.classList.add('col-sm-3', 'control-label');
