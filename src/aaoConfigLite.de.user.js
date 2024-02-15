@@ -183,6 +183,7 @@
         'vehicle_type_ids[131]': 1, // Bt-Kombi
         'care_service_equipment': 1, // Betreuungs- und Verpflegungsausstattung
         'vehicle_type_ids[130]': 1, // GW-Bt
+        'vehicle_type_ids[133]': 1, // Bt LKW
         'vehicle_type_ids[132]': 1, // FKH
 
         // Wasserrettung
