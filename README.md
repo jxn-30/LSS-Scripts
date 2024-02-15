@@ -11,7 +11,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2024.02.14+1250`
-- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2024.01.30+1857` (`🇩🇪`)
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2024.02.15+1139` (`🇩🇪`)
 - [[LSS] AAO Finder](#lss-aao-finder) `2023.12.25+0046`
 - [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.25+0046`
 - [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
@@ -34,7 +34,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2024.01.17+1128`
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2024.01.17+1128` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.02.02+1255` (`🇩🇪`)
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.02.15+1139` (`🇩🇪`)
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
@@ -90,7 +90,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                           Download                            |                  Links                  |
 |:---------------:|:------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2024.01.30+1857 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+| 2024.02.15+1139 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Config Lite (DE)</summary>
@@ -452,7 +452,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.02.02+1255 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2024.02.15+1139 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
