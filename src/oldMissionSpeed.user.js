@@ -2,7 +2,7 @@
 // @name            [LSS] Old mission speed
 // @name:de         [LSS] Alte Einsatzgeschwindigkeit
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2024.02.28+1639
 // @author          Jan (jxn_30)
 // @description     Replaces links to open the old mission speed settings instead of new ones
 // @description:de  Ersetzt Links, sodass die alten Einsatzgeschwindigkeit-Einstellungen anstelle der neuen angezeigt werden

@@ -55,6 +55,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker) `2023.08.18+0356`
 - [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.11.09+2010`
+- [[LSS] Old mission speed](#lss-old-mission-speed) `2024.02.28+1639`
 - [[LSS] OSM-MapScale](#lss-osm-mapscale) `2024.01.19+2109`
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
@@ -771,6 +772,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [noSeasonalNavbar.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/noSeasonalNavbar.user.js
 [noSeasonalNavbar.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22232-scriptwunsch-wasserzeichen-entfernen/
+
+### [LSS] Old mission speed
+
+> Replaces links to open the old mission speed settings instead of new ones
+
+|     Version     |                          Download                           |                 Links                  |
+|:---------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2024.02.28+1639 | [oldMissionSpeed.user.js][oldMissionSpeed.user.js:download] | [Forum][oldMissionSpeed.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Alte Einsatzgeschwindigkeit</summary>
+    Ersetzt Links, sodass die alten Einsatzgeschwindigkeit-Einstellungen anstelle der neuen angezeigt werden
+</details>
+
+[oldMissionSpeed.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/oldMissionSpeed.user.js
+[oldMissionSpeed.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25526-script-oldmissionspeed-das-alte-einsatzgenerierungsgeschwindigkeiteinstellungsfe/
 
 ### [LSS] OSM-MapScale
 
