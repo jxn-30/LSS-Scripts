@@ -2,7 +2,7 @@
 // @name            [LSS] Reload missions list
 // @name:de         [LSS] Einsatzliste neu laden
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.01.29+1900
+// @version         2024.03.02+1539
 // @author          Jan (jxn_30)
 // @description     Adds a button that allows reloading the missions list separately
 // @description:de  Fügt einen Knopf hinzu, der die Einsatzliste separat neu laden lässt

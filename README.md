@@ -42,7 +42,8 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Hide Application Background](#lss-hide-application-background) `2023.06.03+1511`
 - [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.06.03+1511`
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2023.06.03+1512`
-- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2024.01.17+1102`
+- [[LSS] Hide Map Search](#lss-hide-map-search) `2024.03.02+1539`
+- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2024.03.02+1539`
 - [[LSS] Input max length](#lss-input-max-length) `2024.01.17+1128`
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.11.11+1223`
@@ -60,7 +61,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
 - [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
 - [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2023.06.03+1512`
-- [[LSS] Reload missions list](#lss-reload-missions-list) `2023.01.29+1900`
+- [[LSS] Reload missions list](#lss-reload-missions-list) `2024.03.02+1539`
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2024.01.17+1128`
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)
 - [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
@@ -569,13 +570,29 @@ This list is auto-generated and contains all scripts that are already ported int
 [hideLeitstellenansichtBtnInBuildingPanel.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideLeitstellenansichtBtnInBuildingPanel.user.js
 [hideLeitstellenansichtBtnInBuildingPanel.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23027-leitstellenansicht-ab-jetzt-auch-f%C3%BCr-nicht-premium-nutzer/&postID=458680#post458680
 
+### [LSS] Hide Map Search
+
+> Hides Map Search on the main page
+
+|     Version     |                        Download                         |                Links                 |
+|:---------------:|:-------------------------------------------------------:|:------------------------------------:|
+| 2024.03.02+1539 | [hideMapSearch.user.js][hideMapSearch.user.js:download] | [Forum][hideMapSearch.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Kartensuche ausblenden</summary>
+    Blendet die Kartensuche auf der Hauptseite aus
+</details>
+
+[hideMapSearch.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideMapSearch.user.js
+[hideMapSearch.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25553-scriptwunsch-ausblendung-der-ortssuche-in-navbar/
+
 ### [LSS] hide own not shared missions
 
 > Hides own missions that are not yet shared with alliance
 
 |     Version     |                                   Download                                    |                      Links                      |
 |:---------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------:|
-| 2024.01.17+1102 | [hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download] | [Forum][hideOwnNotSharedMissions.user.js:forum] |
+| 2024.03.02+1539 | [hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download] | [Forum][hideOwnNotSharedMissions.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] eigene ungeteilte Einsätze ausblenden</summary>
@@ -859,7 +876,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                         Download                          |                 Links                 |
 |:---------------:|:---------------------------------------------------------:|:-------------------------------------:|
-| 2023.01.29+1900 | [reloadMissions.user.js][reloadMissions.user.js:download] | [Forum][reloadMissions.user.js:forum] |
+| 2024.03.02+1539 | [reloadMissions.user.js][reloadMissions.user.js:download] | [Forum][reloadMissions.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Einsatzliste neu laden</summary>

@@ -2,7 +2,7 @@
 // @name            [LSS] Hide Map Search
 // @name:de         [LSS] Kartensuche ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.03.02+1534
+// @version         2024.03.02+1539
 // @author          Jan (jxn_30)
 // @description     Hides Map Search on the main page
 // @description:de  Blendet die Kartensuche auf der Hauptseite aus
