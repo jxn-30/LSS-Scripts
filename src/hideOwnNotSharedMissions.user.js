@@ -2,7 +2,7 @@
 // @name            [LSS] hide own not shared missions
 // @name:de         [LSS] eigene ungeteilte Einsätze ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.03.02+1539
+// @version         2024.03.02+1558
 // @author          Jan (jxn_30)
 // @description     Hides own missions that are not yet shared with alliance
 // @description:de  Blendet eigene Einsätze, die nicht im Verband geteilt wurden aus
@@ -51,7 +51,6 @@
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
 // @run-at          document-idle
-// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
