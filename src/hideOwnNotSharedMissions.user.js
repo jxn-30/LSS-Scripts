@@ -82,15 +82,14 @@ function togglePanels() {
 }
 
 // Erstellen und Hinzufügen des Buttons
-const btnGroupMissionSelect = document.getElementById(
-    'btn-group-mission-select'
-);
 const togglePanelsBtn = document.createElement('button');
 togglePanelsBtn.id = 'toggle-panels-btn';
 togglePanelsBtn.classList.add('btn', 'btn-xs', 'btn-success');
 togglePanelsBtn.textContent = 'Alle Einsätze';
 togglePanelsBtn.addEventListener('click', togglePanels);
-btnGroupMissionSelect.appendChild(togglePanelsBtn);
+document
+    .querySelector('#missions .mission-filters .mission-filters-row')
+    ?.append(togglePanelsBtn);
 
 // Funktion zum Initialisieren des Skripts
 function initializeScript() {
