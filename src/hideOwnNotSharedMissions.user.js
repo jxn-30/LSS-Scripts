@@ -61,41 +61,39 @@
  * @description:de Blendet eigene Einsätze, die nicht im Verband geteilt wurden aus
  * @forum https://forum.leitstellenspiel.de/index.php?thread/20046-scriptwunsch-nur-freigegebene-eins%C3%A4tze-in-der-liste-anzeigen
  * @match /
- * @grant GM_addStyle
  */
+
+let isActive = false;
+
+const styleEl = document.createElement('style');
+styleEl.id = 'hideOwnNotSharedMissionsStyle';
+document.head.append(styleEl);
 
 // Funktion zum Ein- und Ausschalten der Panels
 function togglePanels() {
-    const missionListPanels = document.querySelectorAll(
-        '#mission_list .panel:not(.panel-success)'
-    );
-    missionListPanels.forEach(panel => {
-        panel.style.display = panel.style.display === 'none' ? '' : 'none';
-    });
+    isActive = !isActive;
+
+    if (isActive) {
+        styleEl.textContent = `
+    #mission_list .panel:not(.panel-success) {
+        display: none !important;
+    }
+`;
+    } else styleEl.textContent = '';
 
     const button = document.getElementById('toggle-panels-btn');
-    const isActive = missionListPanels[0].style.display !== 'none';
 
-    button.textContent = isActive ? 'Alle Einsätze' : 'Nur Freigaben';
-    button.classList.toggle('btn-danger', !isActive);
-    button.classList.toggle('btn-success', isActive);
+    button.textContent = isActive ? 'Nur Freigaben' : 'Alle Einsätze';
+    button.classList.toggle('btn-danger');
+    button.classList.toggle('btn-success');
 }
 
 // Erstellen und Hinzufügen des Buttons
 const togglePanelsBtn = document.createElement('button');
 togglePanelsBtn.id = 'toggle-panels-btn';
 togglePanelsBtn.classList.add('btn', 'btn-xs', 'btn-success');
-togglePanelsBtn.textContent = 'Alle Einsätze';
 togglePanelsBtn.addEventListener('click', togglePanels);
+togglePanelsBtn.textContent = 'Alle Einsätze';
 document
     .querySelector('#missions .mission-filters .mission-filters-row')
     ?.append(togglePanelsBtn);
-
-// Funktion zum Initialisieren des Skripts
-function initializeScript() {
-    // Verstecke Panels und setze Button-Text und -Klasse entsprechend
-    togglePanels();
-}
-
-// Führe die Initialisierung aus, sobald das Dokument bereit ist
-document.addEventListener('DOMContentLoaded', initializeScript);
