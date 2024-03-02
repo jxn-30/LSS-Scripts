@@ -70,7 +70,9 @@ reloadBtn.classList.add('btn', 'btn-xs', 'btn-warning');
 const reloadIcon = document.createElement('span');
 reloadIcon.classList.add('glyphicon', 'glyphicon-refresh');
 reloadBtn.append(reloadIcon);
-document.querySelector('#btn-group-mission-select')?.prepend(reloadBtn);
+document
+    .querySelector('#missions .mission-filters .mission-filters-row')
+    ?.prepend(reloadBtn);
 
 reloadBtn.addEventListener('click', () => {
     reloadBtn.disabled = true;
