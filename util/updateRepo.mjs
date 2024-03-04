@@ -280,13 +280,12 @@ const centerString = (string, length) => {
     const half = Math.floor((length - string.length) / 2);
     return string.padStart(half + string.length, ' ').padEnd(length, ' ');
 };
-
-const sortedScripts = scriptOverview.sort((a, b) =>
+const sortedScripts = scriptOverview.toSorted((a, b) =>
     a.name.toLowerCase().localeCompare(b.name.toLowerCase())
 );
 
 const scriptTOCMarkdown = sortedScripts
-    .map(({ name, version, flagsAvailable }) =>
+    .flatMap(({ name, version, flagsAvailable, locales }) => [
         `- [${name}](#${name
             .toLowerCase()
             .replace(/[^a-z0-9-]/g, '-')
@@ -295,8 +294,11 @@ const scriptTOCMarkdown = sortedScripts
             flagsAvailable.length ?
                 `(${flagsAvailable.map(flag => `\`${flag}\``).join(', ')})`
             :   ''
-        }`.trim()
-    )
+        }<br/>`.trim(),
+        ...Object.values(locales).map(
+            ({ flag, name }) => `&nbsp;&nbsp;${flag}: ${name}`
+        ),
+    ])
     .join('\n');
 
 const scriptOverviewMarkdown = sortedScripts
