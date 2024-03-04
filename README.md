@@ -40,6 +40,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2023.06.03+1511` (`🇩🇪`)
 - [[LSS] Hide Application Background](#lss-hide-application-background) `2023.06.03+1511`
+- [[LSS] Hide blue Missionlist boxes](#lss-hide-blue-missionlist-boxes) `2024.03.04+1640`
 - [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.06.03+1511`
 - [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2023.06.03+1512`
 - [[LSS] Hide Map Search](#lss-hide-map-search) `2024.03.02+1539`
@@ -538,6 +539,22 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [hideApplicationBackground.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideApplicationBackground.user.js
+
+### [LSS] Hide blue Missionlist boxes
+
+> Hides the blue boxes in the missionlist (that inform about how to get missions)
+
+|     Version     |                                   Download                                    |                      Links                      |
+|:---------------:|:-----------------------------------------------------------------------------:|:-----------------------------------------------:|
+| 2024.03.04+1640 | [hideBlueMissionListBoxes.user.js][hideBlueMissionListBoxes.user.js:download] | [Forum][hideBlueMissionListBoxes.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Blaue Kästen in der Einsatzliste ausblenden</summary>
+    Blendet die blauen Kästen in der Einsatzliste aus (die über das Erhalten von Einsätzen informieren)
+</details>
+
+[hideBlueMissionListBoxes.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideBlueMissionListBoxes.user.js
+[hideBlueMissionListBoxes.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/20518-erledigt-danke-kleiner-wunsch-f%C3%BCr-ein-besonderes-script
 
 ### [LSS] Hide Forum Background
 
