@@ -10,66 +10,123 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-- [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2024.02.14+1250`
-- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2024.02.15+1139` (`🇩🇪`)
-- [[LSS] AAO Finder](#lss-aao-finder) `2023.12.25+0046`
-- [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.25+0046`
-- [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511`
-- [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511`
-- [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2023.06.03+1511`
-- [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2023.06.03+1511`
-- [[LSS] Alliance members panel](#lss-alliance-members-panel) `2024.01.17+1128`
-- [[LSS] ARR Categories Export](#lss-arr-categories-export) `2023.06.03+1511`
-- [[LSS] ARR Counter](#lss-arr-counter) `2023.06.03+1511`
-- [[LSS] Async Prisoners](#lss-async-prisoners) `2023.06.03+1511` (`🇩🇪`)
-- [[LSS] Browsertitle](#lss-browsertitle) `2023.06.03+1511` (`🇩🇪`)
-- [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste) `2023.06.03+1511`
-- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight) `2023.06.03+1511`
-- [[LSS] Chat Hider](#lss-chat-hider) `2023.06.03+1511`
-- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2023.06.03+1511`
-- [[LSS] Clickable links](#lss-clickable-links) `2024.01.17+1128`
-- [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2024.01.07+1821`
-- [[LSS] Dark OSM](#lss-dark-osm) `2023.06.03+1511`
-- [[LSS] Direct levels for buildings](#lss-direct-levels-for-buildings) `2024.01.17+1128`
-- [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511`
-- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2024.01.17+1128`
-- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2024.01.17+1128` (`🇩🇪`)
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.02.24+1157` (`🇩🇪`)
-- [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)
-- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)
-- [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)
-- [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2023.06.03+1511` (`🇩🇪`)
-- [[LSS] Hide Application Background](#lss-hide-application-background) `2023.06.03+1511`
-- [[LSS] Hide blue Missionlist boxes](#lss-hide-blue-missionlist-boxes) `2024.03.04+1640`
-- [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.06.03+1511`
-- [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2023.06.03+1512`
-- [[LSS] Hide Map Search](#lss-hide-map-search) `2024.03.02+1539`
-- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2024.03.02+1558`
-- [[LSS] Input max length](#lss-input-max-length) `2024.01.17+1128`
-- [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512`
-- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.11.11+1223`
-- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de) `2024.01.17+1128` (`🇩🇪`)
-- [[LSS] Limited Radio History](#lss-limited-radio-history) `2023.12.21+0058`
-- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de) `2024.01.17+1128` (`🇩🇪`)
-- [[LSS] Mission Alarm Time](#lss-mission-alarm-time) `2023.08.18+0350`
-- [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2024.01.17+1128`
-- [[LSS] Mission Sort](#lss-mission-sort) `2024.01.17+1128`
-- [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345`
-- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker) `2023.08.18+0356`
-- [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.11.09+2010`
-- [[LSS] Old mission speed](#lss-old-mission-speed) `2024.02.28+1639`
-- [[LSS] OSM-MapScale](#lss-osm-mapscale) `2024.01.19+2109`
-- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511`
-- [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235`
-- [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2023.06.03+1512`
-- [[LSS] Reload missions list](#lss-reload-missions-list) `2024.03.02+1539`
-- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2024.01.17+1128`
-- [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)
-- [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016`
-- [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512`
-- [[LSS] Training Finder](#lss-training-finder) `2024.01.19+1234`
-- [[LSS] User-ID](#lss-user-id) `2024.01.07+1848`
-- [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151`
+- [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2024.02.14+1250` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2024.02.15+1139` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] AAO Config Lite (DE)
+- [[LSS] AAO Finder](#lss-aao-finder) `2023.12.25+0046` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] AAO Finder
+- [[LSS] AAO Replacer](#lss-aao-replacer) `2023.12.25+0046` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] AAO Replacer
+- [[LSS] Alarm-Icons](#lss-alarm-icons) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Alarm-Icons
+- [[LSS] Alliance Distance](#lss-alliance-distance) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Alliance Distance
+- [[LSS] Alliance Member Distance](#lss-alliance-member-distance) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Alliance Member Distance
+- [[LSS] Alliance Member Notes](#lss-alliance-member-notes) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Alliance Member Notes
+- [[LSS] Alliance members panel](#lss-alliance-members-panel) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Verbandsmitglieder panel
+- [[LSS] ARR Categories Export](#lss-arr-categories-export) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] AAO-Kategorien Export
+- [[LSS] ARR Counter](#lss-arr-counter) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] AAO-Zähler
+- [[LSS] Async Prisoners](#lss-async-prisoners) `2023.06.03+1511` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Asynchrone Gefangene
+- [[LSS] Browsertitle](#lss-browsertitle) `2023.06.03+1511` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Browsertitel
+- [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste) `2023.06.03+1511` <br/>
+- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Calendar-Gift-Highlight
+- [[LSS] Chat Hider](#lss-chat-hider) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
+- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Checkbox-multiselect
+- [[LSS] Clickable links](#lss-clickable-links) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Clickable links
+- [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing) `2024.01.07+1821` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Auflistung eigener Fahrzeugtypen
+- [[LSS] Dark OSM](#lss-dark-osm) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Dark OSM
+- [[LSS] Direct levels for buildings](#lss-direct-levels-for-buildings) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Gebäude-Direktausbau
+- [[LSS] Einsatzdauer](#lss-einsatzdauer) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Einsatzdauer
+- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
+- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2024.01.17+1128` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.02.24+1157` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
+- [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
+- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style) `2023.04.05+1342` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Forum: Old Like Style
+- [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county) `2023.05.11+0900` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Verbandsmitgliedergebäude nach Kreis
+- [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan) `2023.06.03+1511` (`🇩🇪`)<br/>
+- [[LSS] Hide Application Background](#lss-hide-application-background) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Kein Hintergrund bei Bewerbung
+- [[LSS] Hide blue Missionlist boxes](#lss-hide-blue-missionlist-boxes) `2024.03.04+1640` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Blaue Kästen in der Einsatzliste ausblenden
+- [[LSS] Hide Forum Background](#lss-hide-forum-background) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Kein Hintergrund vom Forum
+- [[LSS] Hide Leitstellenansicht btn in building panel](#lss-hide-leitstellenansicht-btn-in-building-panel) `2023.06.03+1512` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden
+- [[LSS] Hide Map Search](#lss-hide-map-search) `2024.03.02+1539` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Kartensuche ausblenden
+- [[LSS] hide own not shared missions](#lss-hide-own-not-shared-missions) `2024.03.02+1558` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] eigene ungeteilte Einsätze ausblenden
+- [[LSS] Input max length](#lss-input-max-length) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Textlänge bei Eingabefeldern prüfen
+- [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle) `2023.06.03+1512` <br/>
+- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox) `2023.11.11+1223` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Lightbox-Lightbox
+- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de) `2024.01.17+1128` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Limited Buildings (DE)
+- [[LSS] Limited Radio History](#lss-limited-radio-history) `2023.12.21+0058` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Verkürzte Funk-Historie
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de) `2024.01.17+1128` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Limited Vehicles (DE)
+- [[LSS] Mission Alarm Time](#lss-mission-alarm-time) `2023.08.18+0350` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Mission Alarm Time
+- [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Einsatzbeteiligung auf der Karte
+- [[LSS] Mission Sort](#lss-mission-sort) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Einsatzsortierung
+- [[LSS] Mobile Layout](#lss-mobile-layout) `2023.06.29+1345` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Mobiles Layout
+- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker) `2023.08.18+0356` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Nav Tab Clicker
+- [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar) `2023.11.09+2010` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Keine Saisonale Navbar
+- [[LSS] Old mission speed](#lss-old-mission-speed) `2024.02.28+1639` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Alte Einsatzgeschwindigkeit
+- [[LSS] OSM-MapScale](#lss-osm-mapscale) `2024.01.19+2109` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] OSM-MapScale
+- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target) `2023.06.03+1511` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] FMS: Einsatzziel
+- [[LSS] Reload chat](#lss-reload-chat) `2023.01.29+1235` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Chat neu laden
+- [[LSS] Reload list of buildings](#lss-reload-list-of-buildings) `2023.06.03+1512` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Gebäudeliste neu laden
+- [[LSS] Reload missions list](#lss-reload-missions-list) `2024.03.02+1539` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Einsatzliste neu laden
+- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons) `2024.01.17+1128` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Scroll-To-Top buttons
+- [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de) `2023.08.25+1029` (`🇩🇪`)<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] SoSi-Switch (DE)
+- [[LSS] Status 5 colorize](#lss-status-5-colorize) `2022.12.03+0016` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] S5-Färber
+- [[LSS] Toplist Distance](#lss-toplist-distance) `2023.06.03+1512` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
+- [[LSS] Training Finder](#lss-training-finder) `2024.01.19+1234` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Ausbildungsfinder
+- [[LSS] User-ID](#lss-user-id) `2024.01.07+1848` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] User-ID
+- [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Fahrzeugmarkt: Anzahl anzeigen
 
 ### [LSS] AAO All vehicle types
 
