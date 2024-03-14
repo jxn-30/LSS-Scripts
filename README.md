@@ -37,6 +37,8 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Browsertitle](#lss-browsertitle) `2023.06.03+1511` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Browsertitel
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste) `2023.06.03+1511` <br/>
+- [[LSS] Building cost calculator](#lss-building-cost-calculator) `2024.03.14+2005` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Baukostenrechner
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight) `2023.06.03+1511` <br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Calendar-Gift-Highlight
 - [[LSS] Chat Hider](#lss-chat-hider) `2023.06.03+1511` <br/>
@@ -347,6 +349,21 @@ This list is auto-generated and contains all scripts that are already ported int
 
 
 [bsrAAOAboveVehiclelist.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/bsrAAOAboveVehiclelist.user.js
+
+### [LSS] Building cost calculator
+
+> Calculates the costs of the next buildings including a sum
+
+|     Version     |                                 Download                                  |
+|:---------------:|:-------------------------------------------------------------------------:|
+| 2024.03.14+2005 | [buildingCostCalculator.user.js][buildingCostCalculator.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Baukostenrechner</summary>
+    Berechnet die Kosten der nächsten Gebäude inklusive einer Summe
+</details>
+
+[buildingCostCalculator.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingCostCalculator.user.js
 
 ### [LSS] Calendar-Gift-Highlight
 
