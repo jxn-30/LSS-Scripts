@@ -11,6 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingCostCalculator.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingCostCalculator.user.js
+// @supportURL      https://github.com/jxn-30/LSS-Scripts
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://policie.operacni-stredisko.cz/
 // @match           https://www.alarmcentral-spil.dk/
@@ -49,6 +50,7 @@
 // @match           https://polis.larmcentralen-spelet.se/
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
+// @resource        icon https://github.com/jxn-30/LSS-Scripts/raw/2ee767e5d0/resources/buildingCostCalculator.user.js/icon.png#sha256=15d6aeef7fe507a8ffd570ea176531d5a203c33f0138127c252621267ed55a5b
 // @run-at          document-idle
 // @grant           GM_getResourceURL
 // @grant           GM_addStyle
@@ -88,7 +90,13 @@ GM_addStyle(`
 }
 `);
 
-/** @type {Record<string, (nth: number) => number>} */
+/**
+ * @callback Formula
+ * @param {number} nth
+ * @return {number}
+ */
+
+/** @type {Record<string, Formula>} */
 const buildingPriceFormulas = {
     Feuerwehr: nth =>
         Math.ceil(100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))),
