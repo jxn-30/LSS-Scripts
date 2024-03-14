@@ -12,7 +12,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types) `2024.02.14+1250` <br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
-- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2024.02.15+1139` (`🇩🇪`)<br/>
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de) `2024.03.14+1832` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Config Lite (DE)
 - [[LSS] AAO Finder](#lss-aao-finder) `2023.12.25+0046` <br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Finder
@@ -150,7 +150,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                           Download                            |                  Links                  |
 |:---------------:|:------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2024.02.15+1139 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+| 2024.03.14+1832 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Config Lite (DE)</summary>
