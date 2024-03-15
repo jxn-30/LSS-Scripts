@@ -98,11 +98,25 @@ GM_addStyle(`
 
 /** @type {Record<string, Formula>} */
 const buildingPriceFormulas = {
-    Feuerwehr: nth =>
+    'Feuerwehr': nth =>
         Math.ceil(100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))),
-    Polizei: nth =>
+    'Feuerwehr (Kleinwache)': nth =>
+        Math.min(
+            Math.ceil(
+                (100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))) / 2
+            ),
+            1_000_000
+        ),
+    'Polizei': nth =>
         Math.ceil(100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))),
-    THW: nth => Math.ceil(200_000 + 100_000 * Math.log2(nth + 1)),
+    'Polizei (Kleinwache)': nth =>
+        Math.min(
+            Math.ceil(
+                (100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))) / 2
+            ),
+            1_000_000
+        ),
+    'THW': nth => Math.ceil(200_000 + 100_000 * Math.log2(nth + 1)),
 };
 
 // create a modal
