@@ -169,7 +169,16 @@ const createModal = () => {
     const endInput = document.createElement('input');
     endInput.type = 'number';
     endInput.min = '1';
+    endInput.max = '50001';
     endInput.placeholder = 'Letztes Gebäude';
+
+    const calcBtn = document.createElement('button');
+    calcBtn.classList.add('btn', 'btn-success');
+    calcBtn.textContent = 'Berechnen';
+    calcBtn.addEventListener('click', e => {
+        e.preventDefault();
+        update();
+    });
 
     const summary = document.createElement('span');
 
@@ -191,21 +200,6 @@ const createModal = () => {
 
     const tbody = table.createTBody();
 
-    startInput.addEventListener('change', () => {
-        if (parseInt(startInput.value) < 1) startInput.value = '1';
-        endInput.min = startInput.value;
-        if (parseInt(endInput.value) < parseInt(startInput.value)) {
-            endInput.value = startInput.value;
-        }
-    });
-    endInput.addEventListener('change', () => {
-        if (parseInt(endInput.value) < 1) endInput.value = '1';
-        startInput.max = endInput.value;
-        if (parseInt(startInput.value) > parseInt(endInput.value)) {
-            startInput.value = endInput.value;
-        }
-    });
-
     const tfoot = table.createTFoot();
     const footRow = tfoot.insertRow();
     const amountTh = document.createElement('th');
@@ -222,12 +216,37 @@ const createModal = () => {
     inputWrapper.style.setProperty('margin-bottom', '10px');
     inputWrapper.style.setProperty('gap', '10px');
     inputWrapper.style.setProperty('flex-wrap', 'nowrap');
-    inputWrapper.append(select, startInput, endInput);
+    inputWrapper.append(select, startInput, endInput, calcBtn);
+
+    const fixValues = () => {
+        let startValue = parseInt(startInput.value);
+        let endValue = parseInt(endInput.value);
+
+        // 1 is minimum
+        if (startValue < 1) startValue = 1;
+
+        const maxEnd = startValue + 5000;
+        if (endValue < startValue) endValue = startValue;
+        if (endValue > maxEnd) endValue = maxEnd;
+
+        startInput.value = startValue.toString();
+        endInput.value = endValue.toString();
+
+        startInput.min = Math.max(1, endValue - 5000).toString();
+        startInput.max = endValue.toString();
+        endInput.min = startValue.toString();
+        endInput.max = maxEnd.toString();
+    };
+
+    startInput.addEventListener('input', fixValues);
+    endInput.addEventListener('input', fixValues);
 
     const update = () => {
+        fixValues();
+
         tbody.replaceChildren();
 
-        const start = parseInt(startInput.value ?? '1');
+        const start = parseInt(startInput.value ?? '1') || 1;
         const end = parseInt(endInput.value ?? '0') || start;
         const formula = buildingPriceFormulas[select.value];
 
@@ -249,9 +268,6 @@ const createModal = () => {
     [select, startInput, endInput].forEach(input => {
         input.classList.add('flex-grow-1', 'form-control');
         input.style.setProperty('flex-basis', '200px');
-
-        input.addEventListener('input', update);
-        input.addEventListener('change', update);
     });
 
     body.append(close, inputWrapper, summary, table);
