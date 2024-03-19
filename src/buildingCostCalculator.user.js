@@ -172,6 +172,11 @@ const createModal = () => {
     endInput.max = '50001';
     endInput.placeholder = 'Letztes Gebäude';
 
+    const additionalCosts = document.createElement('input');
+    additionalCosts.type = 'number';
+    additionalCosts.min = '0';
+    additionalCosts.placeholder = 'Zusätzliche Kosten (HLF, Ausbauten, etc.)';
+
     const calcBtn = document.createElement('button');
     calcBtn.classList.add('btn', 'btn-success');
     calcBtn.textContent = 'Berechnen';
@@ -216,7 +221,7 @@ const createModal = () => {
     inputWrapper.style.setProperty('margin-bottom', '10px');
     inputWrapper.style.setProperty('gap', '10px');
     inputWrapper.style.setProperty('flex-wrap', 'nowrap');
-    inputWrapper.append(select, startInput, endInput, calcBtn);
+    inputWrapper.append(select, startInput, endInput, additionalCosts, calcBtn);
 
     const fixValues = () => {
         let startValue = parseInt(startInput.value);
@@ -238,8 +243,8 @@ const createModal = () => {
         endInput.max = maxEnd.toString();
     };
 
-    startInput.addEventListener('input', fixValues);
-    endInput.addEventListener('input', fixValues);
+    startInput.addEventListener('change', fixValues);
+    endInput.addEventListener('change', fixValues);
 
     const update = () => {
         fixValues();
@@ -251,6 +256,7 @@ const createModal = () => {
         const formula = buildingPriceFormulas[select.value];
 
         let sum = 0;
+        const amount = end - start + 1;
 
         for (let nth = start; nth <= end; nth++) {
             const row = tbody.insertRow();
@@ -260,14 +266,24 @@ const createModal = () => {
             row.insertCell().textContent = `${price.toLocaleString()}\xa0Credits`;
         }
 
-        amountTh.textContent = `Zahl der Gebäude: ${(end - start + 1).toLocaleString()}`;
-        sumTh.textContent = `Summe der Baukosten: ${sum.toLocaleString()}`;
-        summary.textContent = `Diese ${(end - start + 1).toLocaleString()} Gebäude kosten zusammen ${sum.toLocaleString()} Credits.`;
+        const additional =
+            Math.max(0, parseInt(additionalCosts.value ?? '0') || 0) * amount;
+        const total = sum + additional;
+
+        const amountStr = amount.toLocaleString();
+        const sumStr = sum.toLocaleString();
+        const additionalStr = additional.toLocaleString();
+        const totalStr = total.toLocaleString();
+
+        amountTh.textContent = `Zahl der Gebäude: ${amountStr}`;
+        sumTh.textContent = `Summe der Baukosten: ${sumStr} + ${additionalStr} = ${totalStr} Credits`;
+        summary.textContent = `Diese ${amountStr} Gebäude kosten zusammen ${sumStr} Credits. Dazu kommen noch ${additionalStr} Credits für zusätzliche Kosten. Insgesamt sind das dann ${totalStr} Credits.`;
     };
 
-    [select, startInput, endInput].forEach(input => {
+    [select, startInput, endInput, additionalCosts].forEach(input => {
         input.classList.add('flex-grow-1', 'form-control');
         input.style.setProperty('flex-basis', '200px');
+        input.title = input.placeholder;
     });
 
     body.append(close, inputWrapper, summary, table);
