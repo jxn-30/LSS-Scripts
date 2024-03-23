@@ -59,7 +59,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2024.01.17+1128` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.03.15+1951` (`🇩🇪`)<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.03.23+0139` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -529,7 +529,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.03.15+1951 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2024.03.23+0139 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
