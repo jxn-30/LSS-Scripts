@@ -59,7 +59,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks) `2024.01.17+1128` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.03.23+0139` (`🇩🇪`)<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard) `2024.03.27+2210` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links) `2023.06.03+1511` (`🇩🇪`)<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -125,6 +125,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
 - [[LSS] Training Finder](#lss-training-finder) `2024.01.19+1234` <br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungsfinder
+- [[LSS] Training Mouse Protector](#lss-training-mouse-protector) `2024.03.24+1143` <br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Ausbildungs-Mausschoner
 - [[LSS] User-ID](#lss-user-id) `2024.01.07+1848` <br/>
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount) `2023.08.19+1151` <br/>
@@ -529,7 +531,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.03.23+0139 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2024.03.27+2210 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -1056,6 +1058,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [trainingFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingFinder.user.js
 [trainingFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25273-script-ausbildungsfinder/
+
+### [LSS] Training Mouse Protector
+
+> Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
+
+|     Version     |                                 Download                                  |                     Links                     |
+|:---------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
+| 2024.03.24+1143 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] | [Forum][trainingMouseProtector.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Ausbildungs-Mausschoner</summary>
+    Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
+</details>
+
+[trainingMouseProtector.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingMouseProtector.user.js
+[trainingMouseProtector.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
 
 ### [LSS] User-ID
 
