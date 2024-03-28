@@ -406,6 +406,9 @@ new Promise((resolve, reject) => {
         }
         // create the `selectAvailable` function
         unsafeWindow.selectAvailable ??= (buildingId, withoutEducation) => {
+            const free = parseInt(
+                document.querySelector('#schooling_free')?.textContent ?? '0'
+            );
             Array.from(
                 document.querySelectorAll(
                     `#personal_table_${buildingId} .schooling_checkbox:not(:disabled):not(:checked)`
@@ -421,7 +424,7 @@ new Promise((resolve, reject) => {
                             ?.textContent?.trim() ?? '') === ''
                     );
                 })
-                .slice(0, unsafeWindow.free_space_for_personnel_selection())
+                .slice(0, free)
                 .forEach(checkbox => (checkbox.checked = true));
             unsafeWindow.update_personnel_counter_navbar();
         };
