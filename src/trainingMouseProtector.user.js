@@ -612,6 +612,9 @@ new Promise((resolve, reject) => {
             });
         };
 
+        const reqOr100ms = req =>
+            Promise.all([req, new Promise(r => setTimeout(r, 100))]);
+
         form.addEventListener('submit', async e => {
             e.preventDefault();
 
@@ -663,15 +666,16 @@ new Promise((resolve, reject) => {
             if (isAllianceSchool) {
                 for (const [schoolId, staff] of Object.entries(schools)) {
                     const staffForSchool = staff.flat();
-                    const schoolDoc = await openSchool(
-                        schoolId,
-                        [],
-                        staff.length
-                    )
-                        .then(res => res.text())
-                        .then(html =>
-                            new DOMParser().parseFromString(html, 'text/html')
-                        );
+                    const schoolDoc = await reqOr100ms(
+                        openSchool(schoolId, [], staff.length)
+                            .then(res => res.text())
+                            .then(html =>
+                                new DOMParser().parseFromString(
+                                    html,
+                                    'text/html'
+                                )
+                            )
+                    );
                     const schoolingIds = Array.from(
                         schoolDoc.querySelectorAll(
                             'td:has(.label-warning) + td[sortvalue="10"] + td span[id^="education_schooling_"]'
@@ -683,19 +687,17 @@ new Promise((resolve, reject) => {
                             )
                         )
                         .toSorted((a, b) => b - a);
-                    await new Promise(r => setTimeout(r, 1000));
 
                     let roomNum = 0;
 
                     for (const room of staff) {
                         roomNum++;
                         if (!room.length) continue;
-                        await fillRoom(schoolingIds.shift(), room);
+                        await reqOr100ms(fillRoom(schoolingIds.shift(), room));
                         progressBar.style.setProperty(
                             'width',
                             `${((progress + roomNum / staff.length) / totalSchools) * 100}%`
                         );
-                        await new Promise(r => setTimeout(r, 1000));
                     }
                     doProgress(schoolId, staffForSchool.length);
                 }
@@ -703,10 +705,10 @@ new Promise((resolve, reject) => {
                 // this is an own school
                 for (const [schoolId, staff] of Object.entries(schools)) {
                     const staffForSchool = staff.flat();
-                    await Promise.all([
-                        openSchool(schoolId, staffForSchool, staff.length),
-                        new Promise(r => setTimeout(r, 1000)),
-                    ]).then(() => doProgress(schoolId, staffForSchool.length));
+                    await reqOr100ms(
+                        openSchool(schoolId, staffForSchool, staff.length)
+                    );
+                    doProgress(schoolId, staffForSchool.length);
                 }
             }
 
