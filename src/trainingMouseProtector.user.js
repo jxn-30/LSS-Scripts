@@ -689,6 +689,7 @@ new Promise((resolve, reject) => {
 
                     for (const room of staff) {
                         roomNum++;
+                        if (!room.length) continue;
                         await fillRoom(schoolingIds.shift(), room);
                         progressBar.style.setProperty(
                             'width',
