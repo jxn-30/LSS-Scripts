@@ -370,19 +370,18 @@ new Promise((resolve, reject) => {
         // create the `is_free_place_available` function
         unsafeWindow.is_free_place_available ??= () =>
             parseInt(
-                document.querySelector('#schooling_free').dataset.available ??
-                    '0'
+                document.querySelector('#schooling_free')?.textContent ?? '0'
             ) > 0;
         // create the `update_personnel_counter_navbar` function
         unsafeWindow.update_personnel_counter_navbar ??= () => {
             const max = unsafeWindow.free_space_for_personnel_selection();
-            const free =
-                max -
-                document.querySelectorAll('.schooling_checkbox:checked').length;
+            const selected = document.querySelectorAll(
+                '.schooling_checkbox:checked'
+            ).length;
+            const free = max - selected;
             const freeSpan = document.querySelector('#schooling_free');
             if (freeSpan) {
                 freeSpan.textContent = free.toString();
-                freeSpan.dataset.available = free.toString();
             }
             const duration = parseInt(
                 document
@@ -392,7 +391,7 @@ new Promise((resolve, reject) => {
                     ?.textContent?.trim()
                     .match(/(?<=\()\d+(?=[^)]*\)$)/u)?.[0] ?? '0'
             );
-            educationCosts.textContent = `${((max - free) * parseInt(form['alliance[cost]'].value ?? '0') * duration).toLocaleString()}\xa0Credits`;
+            educationCosts.textContent = `${(selected * parseInt(form['alliance[cost]'].value ?? '0') * duration).toLocaleString()}\xa0Credits`;
         };
         unsafeWindow.update_personnel_counter_navbar();
         if (neededToAddOwnRoomsSelection) {
@@ -423,6 +422,8 @@ new Promise((resolve, reject) => {
             unsafeWindow.update_personnel_counter_navbar();
         };
         unsafeWindow.update_schooling_free ??= () => {};
+        unsafeWindow.update_costs =
+            unsafeWindow.update_personnel_counter_navbar;
 
         // open a building when clicking on the heading
         document.addEventListener('click', e => {
