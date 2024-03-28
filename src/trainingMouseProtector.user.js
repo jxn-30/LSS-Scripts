@@ -489,10 +489,7 @@ new Promise((resolve, reject) => {
         // update the total costs when price per day per staff changes
         document
             .querySelector('#alliance_cost')
-            ?.addEventListener(
-                'change',
-                window.update_personnel_counter_navbar
-            );
+            ?.addEventListener('change', unsafeWindow.update_costs);
 
         document.dispatchEvent(
             new CustomEvent('lehrgangszuweiser:render-personnel-selectors')
