@@ -674,7 +674,7 @@ new Promise((resolve, reject) => {
                         );
                     const schoolingIds = Array.from(
                         schoolDoc.querySelectorAll(
-                            'span[id^="education_schooling_"]'
+                            'td:has(.label-warning) + td[sortvalue="10"] + td span[id^="education_schooling_"]'
                         )
                     )
                         .map(span =>
