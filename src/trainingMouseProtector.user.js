@@ -614,7 +614,9 @@ new Promise((resolve, reject) => {
         };
 
         const reqOr100ms = req =>
-            Promise.all([req, new Promise(r => setTimeout(r, 100))]);
+            Promise.all([req, new Promise(r => setTimeout(r, 100))]).then(
+                ([res]) => res
+            );
 
         form.addEventListener('submit', async e => {
             e.preventDefault();
