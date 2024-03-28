@@ -669,28 +669,40 @@ new Promise((resolve, reject) => {
             if (isAllianceSchool) {
                 for (const [schoolId, staff] of Object.entries(schools)) {
                     const staffForSchool = staff.flat();
-                    const schoolDoc = await reqOr100ms(
+                    /** @type {Response} */
+                    const res = await reqOr100ms(
                         openSchool(schoolId, [], staff.length)
-                            .then(res => res.text())
+                    );
+                    /** @type {number[]} */
+                    const schoolingIds = [];
+                    if (res.url.includes('/schoolings/')) {
+                        schoolingIds.push(
+                            parseInt(new URL(res.url).pathname.split('/')[2])
+                        );
+                    } else {
+                        const schoolDoc = await res
+                            .text()
                             .then(html =>
                                 new DOMParser().parseFromString(
                                     html,
                                     'text/html'
                                 )
+                            );
+                        schoolingIds.push(
+                            ...Array.from(
+                                schoolDoc.querySelectorAll(
+                                    'td:has(.label-warning) + td[sortvalue="10"] + td span[id^="education_schooling_"]'
+                                )
                             )
-                    );
-                    const schoolingIds = Array.from(
-                        schoolDoc.querySelectorAll(
-                            'td:has(.label-warning) + td[sortvalue="10"] + td span[id^="education_schooling_"]'
-                        )
-                    )
-                        .map(span =>
-                            parseInt(
-                                span.id.split('_').pop()?.toString() ?? '-1'
-                            )
-                        )
-                        .toSorted((a, b) => b - a);
-
+                                .map(span =>
+                                    parseInt(
+                                        span.id.split('_').pop()?.toString() ??
+                                            '-1'
+                                    )
+                                )
+                                .toSorted((a, b) => b - a)
+                        );
+                    }
                     let roomNum = 0;
 
                     for (const room of staff) {
