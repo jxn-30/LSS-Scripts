@@ -332,12 +332,16 @@ new Promise((resolve, reject) => {
                         })
                         .catch(console.error);
                 });
-        document.addEventListener('scrollend', () => {
+        const scrollEvent = () => {
             // if no education is selected, abort
             if (!form.education.value) return;
             if (scrollTimeout) clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(loadVisibleEducatedCounters, 100);
-        });
+        };
+        document
+            .querySelector('#iframe-inside-container')
+            ?.addEventListener('scroll', scrollEvent);
+        unsafeWindow.addEventListener('scroll', scrollEvent);
 
         // create the `schooling_disable` function
         unsafeWindow.schooling_disable ??= educationKey => {
