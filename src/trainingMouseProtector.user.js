@@ -101,7 +101,7 @@ spinner.style.setProperty('height', '1lh');
 
 // checkbox to (dis-)allow opening empty schools
 const allowEmptyLabel = document.createElement('label');
-allowEmptyLabel.textContent = '\xa0Leere Schulen öffnen?';
+allowEmptyLabel.textContent = '\xa0Leere Klassenzimmer öffnen?';
 const allowEmptyCheckbox = document.createElement('input');
 allowEmptyCheckbox.type = 'checkbox';
 allowEmptyCheckbox.id = allowEmptyLabel.htmlFor = 'allow_empty_schools';
