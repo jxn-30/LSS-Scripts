@@ -641,24 +641,28 @@ new Promise((resolve, reject) => {
          * @param {number|string} schoolId
          * @param {string[]} staff
          * @param {number} rooms
+         * @param {string} education
+         * @param {string} duration
+         * @param {string} cost
          * @returns {Promise<Response>}
          */
-        const openSchool = (schoolId, staff, rooms) => {
+        const openSchool = (
+            schoolId,
+            staff,
+            rooms,
+            education,
+            duration,
+            cost
+        ) => {
             const schoolUrl = new URL(
                 `/buildings/${schoolId}`,
                 unsafeWindow.location.href
             );
             schoolUrl.searchParams.set('utf8', '✓');
             schoolUrl.searchParams.set('authenticity_token', authToken);
-            schoolUrl.searchParams.set('education', form.education.value);
-            schoolUrl.searchParams.set(
-                'alliance[duration]',
-                form['alliance[duration]'].value
-            );
-            schoolUrl.searchParams.set(
-                'alliance[cost]',
-                form['alliance[cost]'].value
-            );
+            schoolUrl.searchParams.set('education', education);
+            schoolUrl.searchParams.set('alliance[duration]', duration);
+            schoolUrl.searchParams.set('alliance[cost]', cost);
             schoolUrl.searchParams.set('building_rooms_use', rooms.toString());
             staff.forEach(id =>
                 schoolUrl.searchParams.append('personal_ids[]', id)
@@ -712,9 +716,14 @@ new Promise((resolve, reject) => {
         form.addEventListener('submit', async e => {
             e.preventDefault();
 
-            form.querySelectorAll('input[type=submit]').forEach(
-                submit => (submit.disabled = true)
+            // disable all form elements and submission fields to prevent edits and double submissions
+            form.querySelectorAll('input, select').forEach(
+                input => (input.disabled = true)
             );
+
+            const education = form.education.value;
+            const duration = form['alliance[duration]'].value;
+            const cost = form['alliance[cost]'].value;
 
             const currentStateSpan = document.createElement('span');
             currentStateSpan.classList.add('label', 'label-warning');
@@ -762,7 +771,14 @@ new Promise((resolve, reject) => {
                     const staffForSchool = staff.flat();
                     /** @type {Response} */
                     const res = await reqOr100ms(
-                        openSchool(schoolId, [], staff.length)
+                        openSchool(
+                            schoolId,
+                            [],
+                            staff.length,
+                            education,
+                            duration,
+                            cost
+                        )
                     );
                     /** @type {number[]} */
                     const schoolingIds = [];
@@ -812,7 +828,14 @@ new Promise((resolve, reject) => {
                 for (const [schoolId, staff] of Object.entries(roomPlan)) {
                     const staffForSchool = staff.flat();
                     await reqOr100ms(
-                        openSchool(schoolId, staffForSchool, staff.length)
+                        openSchool(
+                            schoolId,
+                            staffForSchool,
+                            staff.length,
+                            education,
+                            duration,
+                            cost
+                        )
                     );
                     doProgress(schoolId, staffForSchool.length);
                 }
