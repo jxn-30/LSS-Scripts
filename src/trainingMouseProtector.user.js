@@ -424,9 +424,7 @@ const checkMultipleSchools = setInterval(() => {
     if (document.querySelector('#multipleClassesSelect')) {
         const pre = document.createElement('pre');
         pre.textContent = multipleSchoolsAlert;
-        document
-            .querySelector('#schooling :where(.alert.alert-info, .alert)')
-            ?.append(pre);
+        document.querySelector('#schooling')?.prepend(pre);
         alert(multipleSchoolsAlert);
         abortedDueToMultipleSchools = true;
         clearInterval(checkMultipleSchools);
