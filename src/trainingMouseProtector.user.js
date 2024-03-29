@@ -73,6 +73,11 @@
 
 /* global $ */
 
+// EINSTELLUNG: Soll ein Bestätigungsdialog vor dem Ausbilden angezeigt werden?
+const SETTING_SHOW_CONFIRM_DIALOG = true; // true: Bestätigungsdialog vor dem Ausbilden anzeigen.
+//                                           false: Keinen Bestätigungsdialog anzeigen, sondern direkt ausbilden.
+// ENDE DER EINSTELLUNGEN! DA DRUNTER LIEBER NICHTS ÄNDERN!
+
 const isAllianceSchool =
     document.querySelector('dl > dd > a[href^="/alliances/"]') !== null;
 const buildingType = parseInt(
@@ -249,6 +254,158 @@ const setRoomSelection = schools => {
     }
 
     roomsSelection.dispatchEvent(new InputEvent('change'));
+};
+
+const getTrainingDuration = () =>
+    parseInt(
+        document
+            .querySelector(`label[for="education_${form.education.value}"]`)
+            ?.textContent?.trim()
+            .match(/(?<=\()\d+(?=[^)]*\)$)/u)?.[0] ?? '0'
+    );
+
+const confirmDialogId = 'jxn-training_mouse-protector_confirm-dialog';
+
+// remove modal style added by Traxx
+GM_addStyle(`
+#${confirmDialogId} {
+    position: fixed;
+    padding-top: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1050;
+}
+#${confirmDialogId} .modal-dialog {
+    max-width: 500px;
+}
+#${confirmDialogId} .modal-body {
+    height: unset;
+    overflow-y: unset;
+}
+
+#${confirmDialogId} u {
+    text-decoration-color: #aaa;
+}
+
+#${confirmDialogId} .buttons {
+    text-align: center;
+    margin: -15px;
+    margin-top: 15px;
+    border-top: 1px solid;
+}
+
+#${confirmDialogId} .buttons > a {
+    width: 50%;
+    display: inline-block;
+    color: inherit;
+    cursor: pointer;
+    padding: 15px;
+}
+
+#${confirmDialogId} .buttons > a:hover {
+    background-color: #aaa;
+    text-decoration: none;
+}
+
+#${confirmDialogId} .buttons > a:not(:last-child) {
+    border-right: 1px solid;
+}
+`);
+
+/**
+ * @param {string} educationName
+ * @param {number} staffAmount
+ * @param {number} schoolsAmount
+ * @param {number} duration
+ * @param {number} emptyRooms
+ * @param {number} emptySchools
+ * @param {number} pricePerSeatPerDay
+ * @param {string} openDuration
+ * @returns {Promise<boolean>}
+ */
+const confirmDialog = (
+    educationName,
+    staffAmount,
+    schoolsAmount,
+    duration,
+    emptyRooms,
+    emptySchools,
+    pricePerSeatPerDay,
+    openDuration
+) => {
+    const modal = document.createElement('div');
+    modal.classList.add('modal', 'fade');
+    modal.id = confirmDialogId;
+
+    const dialog = document.createElement('div');
+    dialog.classList.add('modal-dialog');
+    dialog.style.setProperty('width', 'fit-content');
+
+    const content = document.createElement('div');
+    content.classList.add('modal-content');
+
+    const body = document.createElement('div');
+    body.classList.add('modal-body');
+    body.style.setProperty('overflow', 'auto');
+    body.style.setProperty('box-sizing', 'content-box');
+
+    /**
+     * @param {number} num
+     * @returns {string}
+     */
+    const str = num => num.toLocaleString('de');
+
+    const trainingP = document.createElement('p');
+    trainingP.innerHTML = `Ausbildung: <b>${educationName}</b>`;
+    body.append(trainingP);
+
+    if (staffAmount) {
+        const staffAmountP = document.createElement('p');
+        staffAmountP.innerHTML = `Es werden <b>${str(staffAmount)}&nbsp;Personen</b> in <b>${str(Math.ceil(staffAmount / 10))}&nbsp;Zimmern</b> (<b>${str(schoolsAmount)}&nbsp;Schulen</b>) ausgebildet.`; // <br/>Die Ausbildung dauert <b>${duration}&nbsp;Tage</b>.
+        if (pricePerSeatPerDay && isAllianceSchool) {
+            staffAmountP.innerHTML += `<br/>Die Kosten betragen <b>${str(pricePerSeatPerDay)}&nbsp;*&nbsp;${str(staffAmount)}&nbsp;*&nbsp;${duration}&nbsp;=&nbsp;<u>${str(pricePerSeatPerDay * staffAmount * duration)}&nbsp;Credits</u></b>.`;
+        }
+        body.append(staffAmountP);
+    }
+    if (emptyRooms) {
+        const emptyRoomsP = document.createElement('p');
+        emptyRoomsP.innerHTML = `Es werden <b>${str(emptyRooms)}&nbsp;leere&nbsp;Zimmer</b> in <b>${str(emptySchools)}&nbsp;Schulen</b> zum Preis von <b>${str(pricePerSeatPerDay)}&nbsp;Credits</b> pro Person pro Tag für die Dauer von <b>${openDuration}</b> im Verband freigegeben.`;
+        body.append(emptyRoomsP);
+    }
+
+    const buttons = document.createElement('div');
+    buttons.classList.add('buttons');
+    const abortBtn = document.createElement('a');
+    abortBtn.href = '#';
+    abortBtn.textContent = 'Abbrechen';
+    const confirmBtn = document.createElement('a');
+    confirmBtn.textContent = 'Fortfahren';
+
+    buttons.append(abortBtn, confirmBtn);
+    body.append(buttons);
+    content.append(body);
+    dialog.append(content);
+    modal.append(dialog);
+    document.body.append(modal);
+
+    modal.classList.add('in');
+    modal.style.setProperty('display', 'block');
+
+    return new Promise(resolve => {
+        abortBtn.addEventListener('click', event => {
+            event.preventDefault();
+            modal.remove();
+            resolve(false);
+        });
+        confirmBtn.addEventListener('click', event => {
+            event.preventDefault();
+            modal.remove();
+            resolve(true);
+        });
+    });
 };
 
 new Promise((resolve, reject) => {
@@ -474,14 +631,7 @@ new Promise((resolve, reject) => {
             if (freeSpan) {
                 freeSpan.textContent = free.toString();
             }
-            const duration = parseInt(
-                document
-                    .querySelector(
-                        `label[for="education_${form.education.value}"]`
-                    )
-                    ?.textContent?.trim()
-                    .match(/(?<=\()\d+(?=[^)]*\)$)/u)?.[0] ?? '0'
-            );
+            const duration = getTrainingDuration();
             educationCosts.textContent = `${(selected * parseInt(form['alliance[cost]'].value ?? '0') * duration).toLocaleString()}\xa0Credits`;
         };
         unsafeWindow.update_personnel_counter_navbar();
@@ -716,18 +866,58 @@ new Promise((resolve, reject) => {
         form.addEventListener('submit', async e => {
             e.preventDefault();
 
+            const education = form.education.value;
+            const duration = form['alliance[duration]'].value;
+            const cost = form['alliance[cost]'].value;
+
+            const roomPlan = assignRoomsToSchools(getRooms());
+            const totalSchools = Object.keys(roomPlan).length;
+            let totalStaff = 0;
+            let filledSchools = 0;
+            let emptyRooms = 0;
+            let emptySchools = 0;
+            for (const rooms of Object.values(roomPlan)) {
+                const staff = rooms.flat().length;
+                totalStaff += staff;
+
+                if (staff) filledSchools++;
+
+                const emptyRoomsInSchool = rooms.length - Math.ceil(staff / 10);
+                emptyRooms += emptyRoomsInSchool;
+                if (emptyRoomsInSchool) emptySchools++;
+            }
+
+            if (
+                SETTING_SHOW_CONFIRM_DIALOG &&
+                !(await confirmDialog(
+                    document
+                        .querySelector(`label:has([name="education"]:checked)`)
+                        ?.textContent?.trim() ?? '',
+                    totalStaff,
+                    filledSchools,
+                    getTrainingDuration(),
+                    emptyRooms,
+                    emptySchools,
+                    parseInt(cost),
+                    document
+                        .querySelector(
+                            `#alliance_duration option[value="${duration}"]`
+                        )
+                        ?.textContent?.trim() ?? ''
+                ))
+            ) {
+                return;
+            }
+
             // disable all form elements and submission fields to prevent edits and double submissions
             form.querySelectorAll('input, select').forEach(
                 input => (input.disabled = true)
             );
 
-            const education = form.education.value;
-            const duration = form['alliance[duration]'].value;
-            const cost = form['alliance[cost]'].value;
-
             const currentStateSpan = document.createElement('span');
             currentStateSpan.classList.add('label', 'label-warning');
             currentStateSpan.style.setProperty('font-size', '14px');
+            currentStateSpan.textContent = `0/${totalSchools.toLocaleString()} Schulen verarbeitet`;
             const progressWrapper = document.createElement('div');
             progressWrapper.classList.add('progress');
             progressWrapper.style.setProperty('margin-bottom', '0');
@@ -747,9 +937,6 @@ new Promise((resolve, reject) => {
                 )
                 .after(currentStateSpan, progressWrapper);
 
-            const roomPlan = assignRoomsToSchools(getRooms());
-            const totalSchools = Object.keys(roomPlan).length;
-            currentStateSpan.textContent = `0/${totalSchools.toLocaleString()} Schulen verarbeitet`;
             let progress = 0;
 
             const doProgress = (schoolId, staffAmount) => {
