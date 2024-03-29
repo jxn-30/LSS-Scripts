@@ -2,7 +2,7 @@
 // @name            [LSS] Training Mouse Protector
 // @name:de         [LSS] Ausbildungs-Mausschoner
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.03.28+1503
+// @version         2024.03.29+1217
 // @author          Jan (jxn_30)
 // @description     Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
 // @description:de  Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingMouseProtector.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingMouseProtector.user.js
-// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
+// @supportURL      https://github.com/jxn-30/LSS-Scripts
 // @match           https://www.operacni-stredisko.cz/buildings/*
 // @match           https://policie.operacni-stredisko.cz/buildings/*
 // @match           https://www.alarmcentral-spil.dk/buildings/*
