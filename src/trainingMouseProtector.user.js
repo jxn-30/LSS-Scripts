@@ -738,8 +738,8 @@ new Promise((resolve, reject) => {
                 )
                 .after(currentStateSpan, progressWrapper);
 
-            const schools = assignRoomsToSchools(getRooms());
-            const totalSchools = Object.keys(schools).length;
+            const roomPlan = assignRoomsToSchools(getRooms());
+            const totalSchools = Object.keys(roomPlan).length;
             currentStateSpan.textContent = `0/${totalSchools.toLocaleString()} Schulen verarbeitet`;
             let progress = 0;
 
@@ -756,9 +756,9 @@ new Promise((resolve, reject) => {
                 );
             };
 
-            if (!Object.keys(schools).length) return;
+            if (!Object.keys(roomPlan).length) return;
             if (isAllianceSchool) {
-                for (const [schoolId, staff] of Object.entries(schools)) {
+                for (const [schoolId, staff] of Object.entries(roomPlan)) {
                     const staffForSchool = staff.flat();
                     /** @type {Response} */
                     const res = await reqOr100ms(
@@ -809,7 +809,7 @@ new Promise((resolve, reject) => {
                 }
             } else {
                 // this is an own school
-                for (const [schoolId, staff] of Object.entries(schools)) {
+                for (const [schoolId, staff] of Object.entries(roomPlan)) {
                     const staffForSchool = staff.flat();
                     await reqOr100ms(
                         openSchool(schoolId, staffForSchool, staff.length)
@@ -822,7 +822,7 @@ new Promise((resolve, reject) => {
                 'label-warning',
                 'label-success'
             );
-            currentStateSpan.textContent = 'Schulen erfolgreich gefüllt! 😊';
+            currentStateSpan.textContent = `${totalSchools.toLocaleString()} Schulen erfolgreich gefüllt! 😊`;
 
             setTimeout(() => window.location.reload(), 2000);
         });
