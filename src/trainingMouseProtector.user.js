@@ -53,6 +53,7 @@
 // @run-at          document-idle
 // @grant           GM_getValue
 // @grant           GM_setValue
+// @grant           GM_addStyle
 // @grant           unsafeWindow
 // ==/UserScript==
 
@@ -62,10 +63,11 @@
  * @description Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
  * @description:de Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
  * @// TODO
- * @forum https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
+ * @//forum
  * @match /buildings/*
  * @grant GM_getValue
  * @grant GM_setValue
+ * @grant GM_addStyle
  * @grant unsafeWindow
  */
 
@@ -99,7 +101,7 @@ spinner.style.setProperty('height', '1lh');
 
 // checkbox to (dis-)allow opening empty schools
 const allowEmptyLabel = document.createElement('label');
-allowEmptyLabel.textContent = 'Leere Schulen öffnen?';
+allowEmptyLabel.textContent = '\xa0Leere Schulen öffnen?';
 const allowEmptyCheckbox = document.createElement('input');
 allowEmptyCheckbox.type = 'checkbox';
 allowEmptyCheckbox.id = allowEmptyLabel.htmlFor = 'allow_empty_schools';
@@ -116,10 +118,52 @@ allowEmptyCheckbox.addEventListener('change', () =>
 );
 allowEmptyLabel.prepend(allowEmptyCheckbox);
 
-// TODO: Option to select special schools only
+// checkbox to toggle whether only specific schools should be used
+const useSpecificSchoolsLabel = document.createElement('label');
+useSpecificSchoolsLabel.textContent = '\xa0Nur spezielle Schulen nutzen?';
+const useSpecificSchoolsCheckbox = document.createElement('input');
+useSpecificSchoolsCheckbox.type = 'checkbox';
+useSpecificSchoolsCheckbox.id = useSpecificSchoolsLabel.htmlFor =
+    'use_specific_schools';
+useSpecificSchoolsCheckbox.dataset.storageKey = 'useSpecificSchools';
+useSpecificSchoolsCheckbox.checked = GM_getValue(
+    useSpecificSchoolsCheckbox.dataset.storageKey,
+    false
+);
+useSpecificSchoolsCheckbox.addEventListener('change', () =>
+    GM_setValue(
+        useSpecificSchoolsCheckbox.dataset.storageKey,
+        useSpecificSchoolsCheckbox.checked
+    )
+);
+useSpecificSchoolsLabel.prepend(useSpecificSchoolsCheckbox);
+
+GM_addStyle(`
+label:has(#${useSpecificSchoolsCheckbox.id}:not(:checked)) + select[multiple],
+label:has(#${useSpecificSchoolsCheckbox.id}:not(:checked)) + select[multiple] + .help-block {
+    display: none;
+}`);
+
+const specificSchoolSelection = document.createElement('select');
+specificSchoolSelection.classList.add('form-control');
+specificSchoolSelection.multiple = true;
+specificSchoolSelection.size = 7;
+
+const specificSchoolsHelp = document.createElement('p');
+specificSchoolsHelp.classList.add('help-block');
+specificSchoolsHelp.textContent =
+    'Durch das Drücken von Strg können mehrere Schulen einzeln ausgewählt werden.';
 
 document.querySelector('form > h3')?.before(roomsSelection);
-roomsSelection.after(spinner, document.createElement('br'), allowEmptyLabel);
+roomsSelection.after(
+    spinner,
+    document.createElement('br'),
+    allowEmptyLabel,
+    ' | ',
+    useSpecificSchoolsLabel,
+    specificSchoolSelection,
+    specificSchoolsHelp
+);
 
 // create a label if none exists
 if (roomsSelection.labels.length === 0) {
@@ -173,6 +217,40 @@ const getFreeRooms = school => {
     return total - (school.schoolings?.length ?? 0);
 };
 
+/**
+ * @param {Building[]} schools
+ */
+const getUsableSchools = schools => {
+    if (!useSpecificSchoolsCheckbox.checked) return schools;
+    const selectedSchools = Array.from(
+        specificSchoolSelection.selectedOptions
+    ).map(option => option.value);
+    return schools.filter(({ id }) => selectedSchools.includes(id.toString()));
+};
+
+/**
+ * @param {Building[]} schools
+ */
+const setRoomSelection = schools => {
+    const filteredSchools = getUsableSchools(schools);
+
+    const totalFreeRooms = filteredSchools.reduce(
+        (acc, school) => acc + getFreeRooms(school),
+        0
+    );
+
+    // fill rooms selection with available rooms
+    roomsSelection.replaceChildren();
+    for (let i = 1; i <= totalFreeRooms; i++) {
+        const option = document.createElement('option');
+        option.value = i.toString();
+        option.textContent = i.toString();
+        roomsSelection.append(option);
+    }
+
+    roomsSelection.dispatchEvent(new InputEvent('change'));
+};
+
 new Promise((resolve, reject) => {
     // only continue if we're in a school and the school has free classrooms
     if (form) resolve();
@@ -210,19 +288,28 @@ new Promise((resolve, reject) => {
         })
     )
     .then(({ buildings, schools, buildingTypes }) => {
-        const totalFreeRooms = schools.reduce(
-            (acc, school) => acc + getFreeRooms(school),
-            0
+        setRoomSelection(schools);
+
+        // fill specific school selection with available schools
+        specificSchoolSelection.replaceChildren();
+        schools.forEach(school => {
+            const freeRooms = getFreeRooms(school);
+            if (!freeRooms) return;
+            const option = document.createElement('option');
+            option.value = school.id.toString();
+            option.textContent = `${school.caption} (${freeRooms} Zimmer frei)`;
+            specificSchoolSelection.append(option);
+        });
+
+        useSpecificSchoolsCheckbox.addEventListener('change', () =>
+            setRoomSelection(schools)
         );
 
-        // fill rooms selection with available rooms
-        roomsSelection.replaceChildren();
-        for (let i = 1; i <= totalFreeRooms; i++) {
-            const option = document.createElement('option');
-            option.value = i.toString();
-            option.textContent = i.toString();
-            roomsSelection.appendChild(option);
-        }
+        let updateTimeout;
+        specificSchoolSelection.addEventListener('change', () => {
+            if (updateTimeout) clearTimeout(updateTimeout);
+            setTimeout(() => setRoomSelection(schools), 500);
+        });
 
         return { buildings, buildingTypes, schools };
     })
@@ -540,7 +627,7 @@ new Promise((resolve, reject) => {
          */
         const assignRoomsToSchools = rooms => {
             const roomsBySchool = {};
-            for (const school of schools) {
+            for (const school of getUsableSchools(schools)) {
                 schoolNameMap.set(school.id.toString(), school.caption);
                 const freeRooms = getFreeRooms(school);
                 if (!freeRooms) continue;
