@@ -445,6 +445,22 @@ new Promise((resolve, reject) => {
         })
     )
     .then(({ buildings, schools, buildingTypes }) => {
+        if (document.querySelector('#multipleClassesSelect')) {
+            alert(
+                `
+⚠️🚨 𝐀𝐜𝐡𝐭𝐮𝐧𝐠 𝐀𝐜𝐡𝐭𝐮𝐧𝐠. 𝐄𝐢𝐧𝐞 𝐰𝐢𝐜𝐡𝐭𝐢𝐠𝐞 𝐃𝐮𝐫𝐜𝐡𝐬𝐚𝐠𝐞! 🚨⚠️
+
+Das Script "Ausbildungs-Mausschoner" ist NICHT mit dem Script "MultipleSchools" von Allure149 kompatibel. Bitte deaktiviere das Script "MultipleSchools", um dieses Script hier verwenden zu können.
+
+Andernfalls kann es zu unerwartetem Verhalten kommen, für dieses übernimmt der Autor dieses Scriptes keine Haftung.
+
+Viele Grüße
+Euer Tutorial-Polizist mit dem langen Zeigefinger! 👮👆
+`.trim()
+            );
+            return;
+        }
+
         setRoomSelection(schools);
 
         // fill specific school selection with available schools
