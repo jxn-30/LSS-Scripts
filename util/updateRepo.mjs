@@ -285,16 +285,16 @@ const sortedScripts = scriptOverview.toSorted((a, b) =>
 );
 
 const scriptTOCMarkdown = sortedScripts
-    .flatMap(({ name, version, flagsAvailable, locales }) => [
+    .flatMap(({ name, version, flagsAvailable, locales, filename }) => [
         `- [${name}](#${name
             .toLowerCase()
             .replace(/[^a-z0-9-]/g, '-')
             .replace(/-+/g, '-')
-            .replace(/^-+|-+$/g, '')}) \`${version}\` ${
+            .replace(/^-+|-+$/g, '')})&nbsp;\`${version}\`&nbsp;${
             flagsAvailable.length ?
                 `(${flagsAvailable.map(flag => `\`${flag}\``).join(', ')})`
             :   ''
-        }<br/>`.trim(),
+        } &nbsp; [📥️:&nbsp;${filename}][${filename}:download]<br/>`.trim(),
         ...Object.values(locales).map(
             ({ flag, name }) => `&nbsp;&nbsp;${flag}: ${name}`
         ),
