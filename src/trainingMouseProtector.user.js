@@ -408,6 +408,31 @@ const confirmDialog = (
     });
 };
 
+let abortedDueToMultipleSchools = false;
+const multipleSchoolsAlert = `
+⚠️🚨 𝐀𝐜𝐡𝐭𝐮𝐧𝐠 𝐀𝐜𝐡𝐭𝐮𝐧𝐠. 𝐄𝐢𝐧𝐞 𝐰𝐢𝐜𝐡𝐭𝐢𝐠𝐞 𝐃𝐮𝐫𝐜𝐡𝐬𝐚𝐠𝐞! 🚨⚠️
+
+Das Script "Ausbildungs-Mausschoner" ist NICHT mit dem Script "MultipleSchools" von Allure149 kompatibel. Bitte deaktiviere das Script "MultipleSchools", um dieses Script hier verwenden zu können.
+
+Andernfalls kann es zu unerwartetem Verhalten kommen, für dieses übernimmt der Autor dieses Scriptes keine Haftung.
+
+Viele Grüße
+Euer Tutorial-Polizist mit dem langen Zeigefinger! 👮👆
+`.trim();
+
+const checkMultipleSchools = setInterval(() => {
+    if (document.querySelector('#multipleClassesSelect')) {
+        const pre = document.createElement('pre');
+        pre.textContent = multipleSchoolsAlert;
+        document
+            .querySelector('#schooling :where(.alert.alert-info, .alert)')
+            ?.append(pre);
+        alert(multipleSchoolsAlert);
+        abortedDueToMultipleSchools = true;
+        clearInterval(checkMultipleSchools);
+    }
+}, 1000);
+
 new Promise((resolve, reject) => {
     // only continue if we're in a school and the school has free classrooms
     if (form) resolve();
@@ -445,22 +470,6 @@ new Promise((resolve, reject) => {
         })
     )
     .then(({ buildings, schools, buildingTypes }) => {
-        if (document.querySelector('#multipleClassesSelect')) {
-            alert(
-                `
-⚠️🚨 𝐀𝐜𝐡𝐭𝐮𝐧𝐠 𝐀𝐜𝐡𝐭𝐮𝐧𝐠. 𝐄𝐢𝐧𝐞 𝐰𝐢𝐜𝐡𝐭𝐢𝐠𝐞 𝐃𝐮𝐫𝐜𝐡𝐬𝐚𝐠𝐞! 🚨⚠️
-
-Das Script "Ausbildungs-Mausschoner" ist NICHT mit dem Script "MultipleSchools" von Allure149 kompatibel. Bitte deaktiviere das Script "MultipleSchools", um dieses Script hier verwenden zu können.
-
-Andernfalls kann es zu unerwartetem Verhalten kommen, für dieses übernimmt der Autor dieses Scriptes keine Haftung.
-
-Viele Grüße
-Euer Tutorial-Polizist mit dem langen Zeigefinger! 👮👆
-`.trim()
-            );
-            return;
-        }
-
         setRoomSelection(schools);
 
         // fill specific school selection with available schools
@@ -881,6 +890,8 @@ Euer Tutorial-Polizist mit dem langen Zeigefinger! 👮👆
 
         form.addEventListener('submit', async e => {
             e.preventDefault();
+
+            if (abortedDueToMultipleSchools) return alert(multipleSchoolsAlert);
 
             const education = form.education.value;
             const duration = form['alliance[duration]'].value;
