@@ -125,7 +125,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
 - [[LSS] Training Finder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp; &nbsp; [📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungsfinder
-- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2024.03.29+1217`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
+- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2024.03.29+1247`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungs-Mausschoner
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp; &nbsp; [📥️:&nbsp;userId.user.js][userId.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
@@ -1065,7 +1065,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                                 Download                                  |
 |:---------------:|:-------------------------------------------------------------------------:|
-| 2024.03.29+1217 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] |
+| 2024.03.29+1247 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Ausbildungs-Mausschoner</summary>
