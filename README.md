@@ -125,7 +125,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
 - [[LSS] Training Finder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp; &nbsp; [📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungsfinder
-- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2024.03.29+2039`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
+- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2024.03.31+2321`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungs-Mausschoner
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp; &nbsp; [📥️:&nbsp;userId.user.js][userId.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
@@ -1063,9 +1063,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
 
-|     Version     |                                 Download                                  |
-|:---------------:|:-------------------------------------------------------------------------:|
-| 2024.03.29+2039 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] |
+|     Version     |                                 Download                                  |                     Links                     |
+|:---------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
+| 2024.03.31+2321 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] | [Forum][trainingMouseProtector.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Ausbildungs-Mausschoner</summary>
@@ -1073,6 +1073,7 @@ This list is auto-generated and contains all scripts that are already ported int
 </details>
 
 [trainingMouseProtector.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingMouseProtector.user.js
+[trainingMouseProtector.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25707-script-ausbildungs-mausschoner-endlich-machen-massen-ausbildungen-wieder-spa%C3%9F/
 
 ### [LSS] User-ID
 
