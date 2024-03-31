@@ -62,8 +62,7 @@
  * @name:de Ausbildungs-Mausschoner
  * @description Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
  * @description:de Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
- * @// TODO
- * @//forum
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/25707-script-ausbildungs-mausschoner-endlich-machen-massen-ausbildungen-wieder-spa%C3%9F/
  * @match /buildings/*
  * @grant GM_getValue
  * @grant GM_setValue
