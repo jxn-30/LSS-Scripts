@@ -163,7 +163,7 @@ specificSchoolsHelp.classList.add('help-block');
 specificSchoolsHelp.textContent =
     'Durch das Drücken von Strg können mehrere Schulen einzeln ausgewählt werden.';
 
-document.querySelector('form > h3')?.before(roomsSelection);
+form.querySelector(':scope > h3')?.before(roomsSelection);
 roomsSelection.after(
     spinner,
     document.createElement('br'),
