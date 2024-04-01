@@ -759,6 +759,9 @@ new Promise((resolve, reject) => {
         document.dispatchEvent(
             new CustomEvent('lehrgangszuweiser:render-personnel-selectors')
         );
+        document.dispatchEvent(
+            new CustomEvent('ausbildungs-mausschoner:buildings-appended')
+        );
 
         return schools;
     })
