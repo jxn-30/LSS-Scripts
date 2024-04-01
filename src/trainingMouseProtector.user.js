@@ -92,10 +92,15 @@ const roomsSelection =
     document.querySelector('#building_rooms_use') ??
     document.createElement('select');
 
-const neededToAddOwnRoomsSelection = !roomsSelection.id;
+if (!roomsSelection.id) {
+    roomsSelection.addEventListener(
+        'change',
+        unsafeWindow.update_personnel_counter_navbar
+    );
+}
 
-roomsSelection.id ??= 'building_rooms_use';
-roomsSelection.name ??= 'building_rooms_use';
+roomsSelection.id ||= 'building_rooms_use';
+roomsSelection.name ||= 'building_rooms_use';
 
 // disable selection and show spinner until total available rooms are calculated
 roomsSelection.disabled = true;
@@ -657,12 +662,6 @@ new Promise((resolve, reject) => {
             educationCosts.textContent = `${(selected * parseInt(form['alliance[cost]'].value ?? '0') * duration).toLocaleString()}\xa0Credits`;
         };
         unsafeWindow.update_personnel_counter_navbar();
-        if (neededToAddOwnRoomsSelection) {
-            roomsSelection.addEventListener(
-                'change',
-                unsafeWindow.update_personnel_counter_navbar
-            );
-        }
         // create the `selectAvailable` function
         unsafeWindow.selectAvailable ??= (buildingId, withoutEducation) => {
             const free = parseInt(
