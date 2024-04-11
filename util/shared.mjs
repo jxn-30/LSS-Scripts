@@ -65,7 +65,11 @@ const getUserscriptFiles = dir =>
                 getUserscriptFiles(path.resolve(dir, dirent.name))
             :   path.resolve(dir, dirent.name)
         )
-        .filter(file => file.endsWith('.user.js'));
+        .filter(
+            file =>
+                file.endsWith('.user.js') &&
+                !path.basename(file).startsWith('.')
+        );
 
 /** @type {Comment[]} **/
 const comments = jsdoc.explainSync({
