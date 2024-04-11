@@ -2,7 +2,7 @@
 // @name            [LSS] Mission Vehicle Highlight
 // @name:de         [LSS] Fahrzeuge im Einsatz farblich hervorheben
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.04.11+1107
+// @version         2024.04.11+1111
 // @author          Jan (jxn_30)
 // @description     Highlights vehicles in the mission window with different colors
 // @description:de  Hebt Fahrzeuge im Einsatzfenster farblich hervor

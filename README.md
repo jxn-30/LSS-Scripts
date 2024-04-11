@@ -98,7 +98,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzbeteiligung auf der Karte
 - [[LSS] Mission Sort](#lss-mission-sort)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzsortierung
-- [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1107`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
+- [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge im Einsatz farblich hervorheben
 - [[LSS] Mobile Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp; &nbsp; [📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mobiles Layout
@@ -844,7 +844,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |      Alias / Old names      |                                  Download                                   |                     Links                      |
 |:---------------:|:---------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
-| 2024.04.11+1107 | `Mission-Vehicle-Highlight` | [missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download] | [Forum][missionVehicleHighlight.user.js:forum] |
+| 2024.04.11+1111 | `Mission-Vehicle-Highlight` | [missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download] | [Forum][missionVehicleHighlight.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Fahrzeuge im Einsatz farblich hervorheben</summary>
