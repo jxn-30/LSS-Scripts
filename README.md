@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 62 userscripts*
+*Total: 63 userscripts*
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2024.02.14+1250`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.03.14+1832`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
@@ -98,6 +98,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzbeteiligung auf der Karte
 - [[LSS] Mission Sort](#lss-mission-sort)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzsortierung
+- [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1107`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge im Einsatz farblich hervorheben
 - [[LSS] Mobile Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp; &nbsp; [📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mobiles Layout
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2023.08.18+0356`&nbsp; &nbsp; [📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]<br/>
@@ -835,6 +837,22 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [missionSort.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionSort.user.js
 [missionSort.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24358-script-sortierung-der-einsatzliste/
+
+### [LSS] Mission Vehicle Highlight
+
+> Highlights vehicles in the mission window with different colors
+
+|     Version     |      Alias / Old names      |                                  Download                                   |                     Links                      |
+|:---------------:|:---------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
+| 2024.04.11+1107 | `Mission-Vehicle-Highlight` | [missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download] | [Forum][missionVehicleHighlight.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Fahrzeuge im Einsatz farblich hervorheben</summary>
+    Hebt Fahrzeuge im Einsatzfenster farblich hervor
+</details>
+
+[missionVehicleHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionVehicleHighlight.user.js
+[missionVehicleHighlight.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17868-fahrzeuge-farblich-hervorheben/
 
 ### [LSS] Mobile Layout
 
