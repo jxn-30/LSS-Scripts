@@ -387,6 +387,7 @@ fs.writeFileSync(
         ),
         `
 ${startComment}
+*Total: ${sortedScripts.length} userscripts*
 ${scriptTOCMarkdown}
 
 ${scriptOverviewMarkdown}

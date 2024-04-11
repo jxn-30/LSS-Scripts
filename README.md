@@ -10,6 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
+*Total: 62 userscripts*
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2024.02.14+1250`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.03.14+1832`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
