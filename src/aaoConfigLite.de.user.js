@@ -69,6 +69,7 @@
         'gwl2wasser': 1, // Schlauchwagen oder AB-Schlauch
         'gwl2wasser_only': 1, // Nur Schlauchwagen
         'abl2wasser_only': 1, // AB-Schlauch
+        'vehicle_type_ids[143]': 1, // Anh Schlauch
         'gwl2wasser_all': 1, // Alle Schlauchfahrzeuge
         'gwmesstechnik': 1, // GW-Messtechnik
         'gwgefahrgut': 1, // GW-Gefahrgut oder AB-Gefahrgut
@@ -127,7 +128,7 @@
         // Polizei
         'fustw': 1, // Funkstreifenwagen
         'lebefkw': 1, // Leichter Befehlskraftwagen (leBefKw)
-        'fukw': 1, // FüKw (Führungskraftwagen)
+        'fukw': 1, // FüKw (Führungskraftwagen - Polizei)
         'grukw': 1, // GruKw (Gruppenkraftwagen)
         'gefkw': 1, // GefKw (Gefangenenkraftwagen)
         'polizeihubschrauber': 1, // Polizeihubschrauber
@@ -178,6 +179,11 @@
         'energy_supply_2': 1, // NEA200
         'drone': 1, // Beliebige Drohneneinheit
         'vehicle_type_ids[125]': 1, // MTW-Tr UL
+        'vehicle_type_ids[144]': 1, // FüKw (THW)
+        'vehicle_type_ids[145]': 1, // FüKomKW
+        'vehicle_type_ids[146]': 1, // Anh FüLa
+        'vehicle_type_ids[147]': 1, // FmKW
+        'vehicle_type_ids[148]': 1, // MTW FGr K
 
         // SEG
         'ktw_b': 1, // KTW Typ B
