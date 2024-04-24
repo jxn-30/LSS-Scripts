@@ -13,7 +13,7 @@ This list is auto-generated and contains all scripts that are already ported int
 *Total: 63 userscripts*
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2024.02.14+1250`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
-- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.03.14+1832`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.04.24+0845`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Config Lite (DE)
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp; &nbsp; [📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Finder
@@ -60,7 +60,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.04.20+1125`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.04.24+0845`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -157,7 +157,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                           Download                            |                  Links                  |
 |:---------------:|:------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2024.03.14+1832 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+| 2024.04.24+0845 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Config Lite (DE)</summary>
@@ -534,7 +534,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.04.20+1125 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2024.04.24+0845 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
