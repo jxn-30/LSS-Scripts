@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 63 userscripts*
+*Total: 64 userscripts*
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2024.02.14+1250`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.04.24+0845`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
@@ -46,6 +46,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;checkboxMultiselect.user.js][checkboxMultiselect.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Checkbox-multiselect
+- [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.05.03+1004`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Aufgeräumter Fahrzeugmarkt
 - [[LSS] Clickable links](#lss-clickable-links)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;clickableLinks.user.js][clickableLinks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Clickable links
 - [[LSS] Custom Vehicle Types Listing](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp; &nbsp; [📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]<br/>
@@ -60,7 +62,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.04.27+0827`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.05.03+1005`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -417,6 +419,21 @@ This list is auto-generated and contains all scripts that are already ported int
 [checkboxMultiselect.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/checkboxMultiselect.user.js
 [checkboxMultiselect.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22814-script-checkbox-multiselect/
 
+### [LSS] Cleaner Vehicle Market
+
+> Hides vehicles currently not available for purchase on the vehicle market.
+
+|     Version     |                               Download                                |
+|:---------------:|:---------------------------------------------------------------------:|
+| 2024.05.03+1004 | [cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Aufgeräumter Fahrzeugmarkt</summary>
+    Blendet aktuell nicht kaufbare Fahrzeuge im Fahrzeugmarkt aus.
+</details>
+
+[cleanerVehicleMarket.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/cleanerVehicleMarket.user.js
+
 ### [LSS] Clickable links
 
 > Allows to click any link in text messages in game
@@ -534,7 +551,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.04.27+0827 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2024.05.03+1005 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
