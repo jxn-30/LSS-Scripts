@@ -70,6 +70,7 @@ const emptyTabs = Array.from(
 
 const hideStyle = document.createElement('style');
 hideStyle.textContent = `
+.vehicle-market-subcategory:not(:has(.buy-vehicle-btn:not(.disabled))),
 .col-sm-3:not(:has(.buy-vehicle-btn:not(.disabled))),
 #tabs :where(${emptyTabs.map(tab => `li:has(a[href="#${tab}"])`).join(',')}) {
     display: none;
