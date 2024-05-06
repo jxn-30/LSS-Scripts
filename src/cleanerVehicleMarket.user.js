@@ -62,10 +62,17 @@
  * @match /buildings/*\/vehicles/new
  */
 
+const emptyTabs = Array.from(
+    document.querySelectorAll(
+        '.tab-pane:has(.buy-vehicle-btn):not(:has(.buy-vehicle-btn:not(.disabled)))'
+    )
+).map(pane => pane.id);
+
 const hideStyle = document.createElement('style');
 hideStyle.textContent = `
-.col-sm-3:not(:has(.buy-vehicle-btn:not(.disabled))) {
-  display: none;
+.col-sm-3:not(:has(.buy-vehicle-btn:not(.disabled))),
+#tabs :where(${emptyTabs.map(tab => `li:has(a[href="#${tab}"])`).join(',')}) {
+    display: none;
 }
 `;
 
