@@ -2,7 +2,7 @@
 // @name            [LSS] Cleaner Vehicle Market
 // @name:de         [LSS] Aufgeräumter Fahrzeugmarkt
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.05.03+1004
+// @version         2024.05.06+1025
 // @author          Jan (jxn_30)
 // @description     Hides vehicles currently not available for purchase on the vehicle market.
 // @description:de  Blendet aktuell nicht kaufbare Fahrzeuge im Fahrzeugmarkt aus.

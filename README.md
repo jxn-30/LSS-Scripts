@@ -46,7 +46,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;checkboxMultiselect.user.js][checkboxMultiselect.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Checkbox-multiselect
-- [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.05.03+1004`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
+- [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.05.06+1025`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Aufgeräumter Fahrzeugmarkt
 - [[LSS] Clickable links](#lss-clickable-links)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;clickableLinks.user.js][clickableLinks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Clickable links
@@ -425,7 +425,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                               Download                                |
 |:---------------:|:---------------------------------------------------------------------:|
-| 2024.05.03+1004 | [cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download] |
+| 2024.05.06+1025 | [cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Aufgeräumter Fahrzeugmarkt</summary>
