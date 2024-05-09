@@ -165,6 +165,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/eslint@npm:8.56.10":
+  version: 8.56.10
+  resolution: "@types/eslint@npm:8.56.10"
+  dependencies:
+    "@types/estree": "npm:*"
+    "@types/json-schema": "npm:*"
+  checksum: 10c0/674349d6c342c3864d70f4d5a9965f96fb253801532752c8c500ad6a1c2e8b219e01ccff5dc8791dcb58b5483012c495708bb9f3ff929f5c9322b3da126c15d3
+  languageName: node
+  linkType: hard
+
+"@types/estree@npm:*":
+  version: 1.0.5
+  resolution: "@types/estree@npm:1.0.5"
+  checksum: 10c0/b3b0e334288ddb407c7b3357ca67dbee75ee22db242ca7c56fe27db4e1a31989cb8af48a84dd401deb787fe10cc6b2ab1ee82dc4783be87ededbe3d53c79c70d
+  languageName: node
+  linkType: hard
+
+"@types/json-schema@npm:*":
+  version: 7.0.15
+  resolution: "@types/json-schema@npm:7.0.15"
+  checksum: 10c0/a996a745e6c5d60292f36731dd41341339d4eeed8180bb09226e5c8d23759067692b1d88e5d91d72ee83dfc00d3aca8e7bd43ea120516c17922cbcb7c3e252db
+  languageName: node
+  linkType: hard
+
 "@types/linkify-it@npm:^5":
   version: 5.0.0
   resolution: "@types/linkify-it@npm:5.0.0"
@@ -670,6 +694,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globals@npm:15.1.0":
+  version: 15.1.0
+  resolution: "globals@npm:15.1.0"
+  checksum: 10c0/ae9cd15057dc6a21d6dbafe9f47b66bd063c6d3c9215fa1e8294bd130d89f188c48370a11a9525a5a33bd8689fc4fdfd3f474d930692d7abb7459cd982503336
+  languageName: node
+  linkType: hard
+
 "globals@npm:^14.0.0":
   version: 14.0.0
   resolution: "globals@npm:14.0.0"
@@ -849,10 +880,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jxn_30-lss-scripts@workspace:."
   dependencies:
+    "@eslint/js": "npm:9.2.0"
+    "@types/eslint": "npm:8.56.10"
     "@types/tampermonkey": "npm:5.0.2"
     eslint: "npm:9.2.0"
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-userscripts: "npm:0.5.2"
+    globals: "npm:15.1.0"
     jsdoc-api: "npm:8.0.0"
     prettier: "npm:3.2.5"
     simple-git: "npm:3.24.0"

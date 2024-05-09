@@ -1,1 +1,5 @@
-.eslintignore
+node_modules/*
+.yarn/*
+
+*.user.js
+!src/**/*.user.js
