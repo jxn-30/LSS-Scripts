@@ -225,6 +225,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Erlaubt es, alle Fahrzeugtypen in der AAO auszuwählen, nicht nur die vom Spiel vorgegebenen.
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [aaoAllVehicleTypes.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoAllVehicleTypes.user.js
 [aaoAllVehicleTypes.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
 
@@ -240,6 +242,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] AAO Config Lite (DE)</summary>
     Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [aaoConfigLite.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoConfigLite.de.user.js
 [aaoConfigLite.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/14751-aao-config-lite/
@@ -257,6 +261,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Finde alle AAOs, die eine bestimmte Anforderung enthalten.
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [aaoFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoFinder.user.js
 [aaoFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25194-script-aao-finder-finde-aaos-die-bestimmte-anforderungen-enthalten/
 
@@ -272,6 +278,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] AAO Replacer</summary>
     Ersetze alle Anforderungen in allen AAOs mit einer anderen.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [aaoReplacer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoReplacer.user.js
 [aaoReplacer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
@@ -289,6 +297,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt Icons auf dem Alarmbutton basierend auf ausgewählten Fahrzeugtypen an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [alarmIcons.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/alarmIcons.user.js
 [alarmIcons.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18549-erledigt-symbol-beim-alamieren-von-rd/&postID=347223#post347223
 
@@ -304,6 +314,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Alliance Distance</summary>
     Zeigt die fehlenden verdienten Credits zum nächsten Verband an
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [allianceDistance.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceDistance.user.js
 [allianceDistance.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
@@ -321,6 +333,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt die fehlenden verdienten Credits zum nächsten Verbandsmitglied an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [allianceMemberDistance.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberDistance.user.js
 [allianceMemberDistance.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
 
@@ -336,6 +350,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Alliance Member Notes</summary>
     Frei anpassbare Notizen für jedes Verbandsmitglied
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [allianceMemberNotes.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMemberNotes.user.js
 [allianceMemberNotes.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18517-scriptwunsch-notizen-bei-mitgliedern
@@ -353,6 +369,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Fügt ein Panel hinzu, um die Mitgliederliste des Verbands direkt auf der Hauptseite zu sehen
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [allianceMembersPanel.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/allianceMembersPanel.user.js
 [allianceMembersPanel.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23543-skriptwunsch-mitglieder-online-status/
 
@@ -368,6 +386,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] AAO-Kategorien Export</summary>
     Eigenen AAO-Kategorien in eine Datei exportieren und diese wieder importieren
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [arrCategoriesExport.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCategoriesExport.user.js
 [arrCategoriesExport.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/20531-aao-kategorien-exportieren-und-importieren/
@@ -385,6 +405,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt einen Zähler an, wie oft eine AAO geklickt wurde
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [arrCounter.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/arrCounter.user.js
 [arrCounter.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/19317-script-aao-z%C3%A4hler-standalone/
 
@@ -401,6 +423,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Verhindert das Neuladen der Einsatzseite beim Abtransportieren von Gefangenen
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [asyncPrisoners.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/asyncPrisoners.user.js
 [asyncPrisoners.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18769-gefangene-ohne-seite-neu-zu-laden-abschicken/
 
@@ -416,6 +440,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Browsertitel</summary>
     Zeigt die aktuelle Seite als Titel im Browser an
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [browsertitle.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/browsertitle.user.js
 [browsertitle.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16784-script-browsertitle/
@@ -445,6 +471,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Berechnet die Kosten der nächsten Gebäude inklusive einer Summe
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [buildingCostCalculator.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingCostCalculator.user.js
 
 ### [LSS] Calendar-Gift-Highlight
@@ -460,6 +488,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Färbt das Geschenk-Icon grün, wenn der tägliche Login noch nicht abgeholt wurde.
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [calendarGiftHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/calendarGiftHighlight.user.js
 
 ### [LSS] Chat Hider
@@ -474,6 +504,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Chat Hider</summary>
     Blendet einzelne Chatnachrichten entsprechend dem eingestellten Filter aus
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [chatHider.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/chatHider.user.js
 [chatHider.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18991-chat-hider/
@@ -491,6 +523,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Erlaubt es, eine Reihe an Checkboxen durch halten der Umschalt-Taste auf einmal auszuwählen
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [checkboxMultiselect.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/checkboxMultiselect.user.js
 [checkboxMultiselect.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22814-script-checkbox-multiselect/
 
@@ -507,6 +541,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Blendet aktuell nicht kaufbare Fahrzeuge im Fahrzeugmarkt aus.
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [cleanerVehicleMarket.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/cleanerVehicleMarket.user.js
 
 ### [LSS] Clickable links
@@ -521,6 +557,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Clickable links</summary>
     Erlaubt es, alle Links in Textnachrichten im Spiel anzuklicken
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [clickableLinks.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/clickableLinks.user.js
 [clickableLinks.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18350-clickable-links/
@@ -538,6 +576,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Listet eigene Fahrzeugtypen nach Wache gruppiert auf
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [customVehicleTypesListing.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/customVehicleTypesListing.user.js
 [customVehicleTypesListing.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/640-sammelthread-f%C3%BCr-einfache-fragen-und-antworten/&postID=467115#post467115
 
@@ -554,6 +594,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Färbt die OSM-Karte im Spiel dunkel ein
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [darkOSM.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/darkOSM.user.js
 
 ### [LSS] Direct levels for buildings
@@ -568,6 +610,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Gebäude-Direktausbau</summary>
     Gebäude auf eine Stufe direkt ausbauen, ohne erst das Ausbauen-Menü zu öffnen
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [buildingDirectLevels.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingDirectLevels.user.js
 [buildingDirectLevels.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23881-sktiptwunsch-ausbaustufen-in-der-geb%C3%A4ude%C3%BCbersicht/
@@ -585,6 +629,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt die verbleibende Einsatzdauer in der Einsatzliste an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [einsatzdauer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/einsatzdauer.user.js
 [einsatzdauer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13913-script-einsatzdauer-in-der-einsatzliste/
 
@@ -600,6 +646,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] extra alarm & close button</summary>
     Zeigt im Einsatzfenster einen zusätzlichen Knopf zum alarmieren und schließen an.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [extraAlarmAndCloseBtn.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/extraAlarmAndCloseBtn.user.js
 [extraAlarmAndCloseBtn.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23205-scriptwunsch-alarmieren-und-fenster-schlie%C3%9Fen/
@@ -617,6 +665,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Ein interner Lesezeichen-Manager für das allgemeine Forum
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [forum/bookmarks.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/bookmarks.user.js
 [forum/bookmarks.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17627-forum-bookmark-manager/
 
@@ -632,6 +682,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
     Fügt der Navigation einen Link zum Dashboard hinzu und zeigt einige Charts auf dem Dashboard an
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [forum/dashboard.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/dashboard.user.js
 [forum/dashboard.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16451-forum-dashboard/
@@ -649,6 +701,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [forum/externalLink.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/externalLink.user.js
 [forum/externalLink.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17423-forum-external-link/
 
@@ -665,6 +719,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Stellt den alten Like-Style im Forum wieder her (zeigt die Likes oben im Post an und ermöglicht das Liken, ohne das Reaktionen-Menü zu öffnen)
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [forum/oldLikeStyle.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/oldLikeStyle.user.js
 [forum/oldLikeStyle.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23913-forum-alter-like-style/
 
@@ -680,6 +736,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Verbandsmitgliedergebäude nach Kreis</summary>
     Dieses Script fasst zusammen, wie viele Gebäude jeder Art die Verbandsmitglieder in jedem Stadt-/Landkreis haben.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [getAllianceMemberBuildingsByDECounty.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/getAllianceMemberBuildingsByDECounty.user.js
 
@@ -709,6 +767,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Deaktiviert den grünen Hintergrund, wenn der Verband Bewerbungen hat
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [hideApplicationBackground.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideApplicationBackground.user.js
 
 ### [LSS] Hide blue Missionlist boxes
@@ -723,6 +783,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Blaue Kästen in der Einsatzliste ausblenden</summary>
     Blendet die blauen Kästen in der Einsatzliste aus (die über das Erhalten von Einsätzen informieren)
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [hideBlueMissionListBoxes.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideBlueMissionListBoxes.user.js
 [hideBlueMissionListBoxes.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/20518-erledigt-danke-kleiner-wunsch-f%C3%BCr-ein-besonderes-script
@@ -740,6 +802,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Deaktiviert den grünen Hintergrund, wenn es ungelesene Threads im Verbandsforum gibt
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [hideForumBackground.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideForumBackground.user.js
 
 ### [LSS] Hide Leitstellenansicht btn in building panel
@@ -754,6 +818,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden</summary>
     Blendet den Knopf zur Leitstellenansicht in der Gebäudeliste aus
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [hideLeitstellenansichtBtnInBuildingPanel.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideLeitstellenansichtBtnInBuildingPanel.user.js
 [hideLeitstellenansichtBtnInBuildingPanel.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23027-leitstellenansicht-ab-jetzt-auch-f%C3%BCr-nicht-premium-nutzer/&postID=458680#post458680
@@ -771,6 +837,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Blendet die Kartensuche auf der Hauptseite aus
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [hideMapSearch.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideMapSearch.user.js
 [hideMapSearch.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25553-scriptwunsch-ausblendung-der-ortssuche-in-navbar/
 
@@ -787,6 +855,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Blendet eigene Einsätze, die nicht im Verband geteilt wurden aus
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [hideOwnNotSharedMissions.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/hideOwnNotSharedMissions.user.js
 [hideOwnNotSharedMissions.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/20046-scriptwunsch-nur-freigegebene-eins%C3%A4tze-in-der-liste-anzeigen
 
@@ -802,6 +872,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Textlänge bei Eingabefeldern prüfen</summary>
     Zeigt eine Hilfe über die Mindest- und Maximaltextlänge von Eingabefeldern an
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [inputMaxLen.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/inputMaxLen.user.js
 [inputMaxLen.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/11756-erledigt-textl%C3%A4nge-in-begrenzten-eingabefeldern-schon-bei-eingabe-pr%C3%BCfen/
@@ -831,6 +903,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Erlaubt es, eine Lightbox auf allen Seiten des Spiels zu öffnen
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [lightboxLightbox.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/lightboxLightbox.user.js
 [lightboxLightbox.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18588-script-lightbox-in-lightbox-in-lightbox-in/
 
@@ -846,6 +920,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Limited Buildings (DE)</summary>
     Zeigt für limitierte Gebäude und Ausbauten (Heli-Standplätze, Großwachen, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [limitedBuildings.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedBuildings.de.user.js
 [limitedBuildings.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24446-script-limitedbuildings-schnelle-%C3%BCbersicht-wie-viele-limitierte-geb%C3%A4ude-ausbauen/
@@ -863,6 +939,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Begrenzt die Anzahl der Funknachrichten in der Funk-Historie.
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [limitedRadioHistory.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedRadioHistory.user.js
 [limitedRadioHistory.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25179-script-limited-radio-history-angezeigte-funk-historie-beschr%C3%A4nken/
 
@@ -878,6 +956,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Limited Vehicles (DE)</summary>
     Zeigt für limitierte Fahrzeuge (NAW, ITW, etc.) an, wie viele vorhanden und wie viele aktuell kaufbar sind.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
@@ -895,6 +975,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt die maximale Anfahrtszeit auf dem Alarmierungsknopf an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [missionAlarmTime.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionAlarmTime.user.js
 [missionAlarmTime.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16776-script-mission-alarm-time/
 
@@ -910,6 +992,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Einsatzbeteiligung auf der Karte</summary>
     Zeigt den Beteiligungsstatus von Einsätzen auf der Karte im jeweiligen Tooltip an.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [missionParticipationStateOnMap.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionParticipationStateOnMap.user.js
 [missionParticipationStateOnMap.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24293-einsatzteilnahme-auf-karte-anzeigen-lassen/
@@ -927,6 +1011,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Sortiert die Einsatzliste nach Credits (und ermöglicht sortierte Buttons im Einsatzfenster. [Feature noch in Arbeit])
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [missionSort.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionSort.user.js
 [missionSort.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24358-script-sortierung-der-einsatzliste/
 
@@ -942,6 +1028,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Fahrzeuge im Einsatz farblich hervorheben</summary>
     Hebt Fahrzeuge im Einsatzfenster farblich hervor
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [missionVehicleHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionVehicleHighlight.user.js
 [missionVehicleHighlight.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17868-fahrzeuge-farblich-hervorheben/
@@ -959,6 +1047,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Aktiviert das mobile Layout auf Desktop-Geräten
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [mobileLayout.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/mobileLayout.user.js
 [mobileLayout.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/19297-kann-man-das-mobile-layout-auch-auf-dem-pc-haben/
 
@@ -974,6 +1064,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Nav Tab Clicker</summary>
     Öffnet automatisch einen Tab, wenn der entsprechende Hash in der URL ist
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [navTabClicker.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/navTabClicker.user.js
 [navTabClicker.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18546-script-navtabclicker/
@@ -991,6 +1083,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Entfernt jegliche saisonale Hintergründe der Navbar und setzt den Standard-Hintergrund.
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [noSeasonalNavbar.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/noSeasonalNavbar.user.js
 [noSeasonalNavbar.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22232-scriptwunsch-wasserzeichen-entfernen/
 
@@ -1006,6 +1100,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Alte Einsatzgeschwindigkeit</summary>
     Ersetzt Links, sodass die alten Einsatzgeschwindigkeit-Einstellungen anstelle der neuen angezeigt werden
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [oldMissionSpeed.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/oldMissionSpeed.user.js
 [oldMissionSpeed.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25526-script-oldmissionspeed-das-alte-einsatzgenerierungsgeschwindigkeiteinstellungsfe/
@@ -1023,6 +1119,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt einen Maßstab auf der Karte an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [osmMapscale.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/osmMapscale.user.js
 [osmMapscale.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18908-script-osm-mapscale/
 
@@ -1038,6 +1136,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] FMS: Einsatzziel</summary>
     Fügt den aktuellen Einsatz (inklusive Adresse) zur Funkmeldung hinzu
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [fmsMissionTarget.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/fmsMissionTarget.user.js
 [fmsMissionTarget.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/15126-ortsangabe-bei-fms-3-4-und-5/
@@ -1055,6 +1155,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Fügt einen Knopf hinzu, der den Chat separat neu laden lässt
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [reloadChat.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadChat.user.js
 [reloadChat.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22974-scriptwunsch-separat-neu-ladbare-einsatzliste-und-chat/
 
@@ -1070,6 +1172,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Gebäudeliste neu laden</summary>
     Fügt der Karte einen Knopf hinzu, über den sich die Gebäudeliste neu laden lässt.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [reloadBuildinglist.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadBuildinglist.user.js
 [reloadBuildinglist.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23357-script-wunsch-aktualisierung-der-lst-liste/
@@ -1087,6 +1191,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Fügt einen Knopf hinzu, der die Einsatzliste separat neu laden lässt
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [reloadMissions.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/reloadMissions.user.js
 [reloadMissions.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22974-scriptwunsch-separat-neu-ladbare-einsatzliste-und-chat/
 
@@ -1102,6 +1208,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Scroll-To-Top buttons</summary>
     Zeigt einen Knopf, um in Elementen nach oben zu scrollen
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [scrollToTop.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/scrollToTop.user.js
 [scrollToTop.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22254-scriptwunsch-pfeil-oder-button-zum-seitenanfang-bzw-seitenende/
@@ -1119,6 +1227,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt einen Knopf zum Umschalten der Sonderrechte im Einsatzfenster an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [sonderrechteSwitch.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/sonderrechteSwitch.de.user.js
 [sonderrechteSwitch.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13928-mit-und-ohne-sonderrechte/&postID=463217#post463217
 
@@ -1134,6 +1244,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] S5-Färber</summary>
     S5 nach Fahrzeugtyp einfärben
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [fms5Colorizer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/fms5Colorizer.user.js
 [fms5Colorizer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23490-scriptwunsch-fms-5-in-hiorg-farbe/
@@ -1151,6 +1263,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt die fehlenden verdienten Credits zum nächsten Spieler an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [toplistDistance.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/toplistDistance.user.js
 [toplistDistance.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
 
@@ -1166,6 +1280,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Ausbildungsfinder</summary>
     Listet alle Gebäude und die Anzahl an Personal mit einer bestimmten Ausbildung auf
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [trainingFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingFinder.user.js
 [trainingFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25273-script-ausbildungsfinder/
@@ -1183,6 +1299,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [trainingMouseProtector.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingMouseProtector.user.js
 [trainingMouseProtector.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25707-script-ausbildungs-mausschoner-endlich-machen-massen-ausbildungen-wieder-spa%C3%9F/
 
@@ -1199,6 +1317,8 @@ This list is auto-generated and contains all scripts that are already ported int
     Zeigt die eigene Nutzer-ID in der Navigationsleiste auf der Hauptseite und die ID eines Nutzers auf dessen Profilseite an
 </details>
 
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
 [userId.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/userId.user.js
 [userId.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/12513-user-id-anzeiger/
 
@@ -1214,6 +1334,8 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 [LSS] Fahrzeugmarkt: Anzahl anzeigen</summary>
     Zeigt im Fahrzeugmarkt wie viele Fahrzeuge auf der aktuell gebauten Wache bereits vorhanden sind vom jeweiligen Typ.
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [vehicleMarketShowAmount.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/vehicleMarketShowAmount.user.js
 [vehicleMarketShowAmount.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/21816-fahrzeuganzahl-im-markt-anzeigen
