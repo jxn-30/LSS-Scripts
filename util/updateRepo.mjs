@@ -403,6 +403,8 @@ ${Object.values(script.locales)
     <summary>${flag} ${name}</summary>
     ${description}
 </details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 `.trim()
     )
     .join('\n')}
