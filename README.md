@@ -11,6 +11,9 @@ This list is auto-generated and contains all scripts that are already ported int
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
 *Total: 64 userscripts*
+<details>
+    <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
+    
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2024.02.14+1250`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.04.24+0845`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
@@ -136,6 +139,78 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount)&nbsp;`2023.08.19+1151`&nbsp; &nbsp; [📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeugmarkt: Anzahl anzeigen
+    
+</details>
+
+<details>
+    <summary>🇩🇪 <b>Inhaltsverzeichnis</b> <em>Klicken zum Ein- / Ausklappen</em></summary>
+    
+- [[LSS] AAO Alle Fahrzeugtypen](#lss-aao-all-vehicle-types)&nbsp;`2024.02.14+1250`&nbsp;&nbsp;[📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.04.24+0845`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
+- [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]
+- [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]
+- [[LSS] AAO-Kategorien Export](#lss-arr-categories-export)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCategoriesExport.user.js][arrCategoriesExport.user.js:download]
+- [[LSS] AAO-Zähler](#lss-arr-counter)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCounter.user.js][arrCounter.user.js:download]
+- [[LSS] Alarm-Icons](#lss-alarm-icons)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;alarmIcons.user.js][alarmIcons.user.js:download]
+- [[LSS] Alliance Distance](#lss-alliance-distance)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;allianceDistance.user.js][allianceDistance.user.js:download]
+- [[LSS] Alliance Member Distance](#lss-alliance-member-distance)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;allianceMemberDistance.user.js][allianceMemberDistance.user.js:download]
+- [[LSS] Alliance Member Notes](#lss-alliance-member-notes)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;allianceMemberNotes.user.js][allianceMemberNotes.user.js:download]
+- [[LSS] Alte Einsatzgeschwindigkeit](#lss-old-mission-speed)&nbsp;`2024.02.28+1639`&nbsp;&nbsp;[📥️:&nbsp;oldMissionSpeed.user.js][oldMissionSpeed.user.js:download]
+- [[LSS] Asynchrone Gefangene](#lss-async-prisoners)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;asyncPrisoners.user.js][asyncPrisoners.user.js:download]
+- [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.05.06+1025`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
+- [[LSS] Auflistung eigener Fahrzeugtypen](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp;&nbsp;[📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]
+- [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2024.04.01+1208`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
+- [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
+- [[LSS] Baukostenrechner](#lss-building-cost-calculator)&nbsp;`2024.03.14+2005`&nbsp;&nbsp;[📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]
+- [[LSS] Blaue Kästen in der Einsatzliste ausblenden](#lss-hide-blue-missionlist-boxes)&nbsp;`2024.03.04+1640`&nbsp;&nbsp;[📥️:&nbsp;hideBlueMissionListBoxes.user.js][hideBlueMissionListBoxes.user.js:download]
+- [[LSS] Browsertitel](#lss-browsertitle)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;browsertitle.user.js][browsertitle.user.js:download]
+- [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;bsrAAOAboveVehiclelist.user.js][bsrAAOAboveVehiclelist.user.js:download]
+- [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download]
+- [[LSS] Chat Hider](#lss-chat-hider)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;chatHider.user.js][chatHider.user.js:download]
+- [[LSS] Chat neu laden](#lss-reload-chat)&nbsp;`2023.01.29+1235`&nbsp;&nbsp;[📥️:&nbsp;reloadChat.user.js][reloadChat.user.js:download]
+- [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;checkboxMultiselect.user.js][checkboxMultiselect.user.js:download]
+- [[LSS] Clickable links](#lss-clickable-links)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;clickableLinks.user.js][clickableLinks.user.js:download]
+- [[LSS] Dark OSM](#lss-dark-osm)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;darkOSM.user.js][darkOSM.user.js:download]
+- [[LSS] eigene ungeteilte Einsätze ausblenden](#lss-hide-own-not-shared-missions)&nbsp;`2024.03.02+1558`&nbsp;&nbsp;[📥️:&nbsp;hideOwnNotSharedMissions.user.js][hideOwnNotSharedMissions.user.js:download]
+- [[LSS] Einsatzbeteiligung auf der Karte](#lss-mission-participation-state-on-map)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;missionParticipationStateOnMap.user.js][missionParticipationStateOnMap.user.js:download]
+- [[LSS] Einsatzdauer](#lss-einsatzdauer)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;einsatzdauer.user.js][einsatzdauer.user.js:download]
+- [[LSS] Einsatzliste neu laden](#lss-reload-missions-list)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;reloadMissions.user.js][reloadMissions.user.js:download]
+- [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
+- [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
+- [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
+- [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2023.08.19+1151`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
+- [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.05.09+1144`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
+- [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
+- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
+- [[LSS] Gebäude-Direktausbau](#lss-direct-levels-for-buildings)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;buildingDirectLevels.user.js][buildingDirectLevels.user.js:download]
+- [[LSS] Gebäudeliste neu laden](#lss-reload-list-of-buildings)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;reloadBuildinglist.user.js][reloadBuildinglist.user.js:download]
+- [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;gruesse.user.js][gruesse.user.js:download]
+- [[LSS] Kartensuche ausblenden](#lss-hide-map-search)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;hideMapSearch.user.js][hideMapSearch.user.js:download]
+- [[LSS] Kein Hintergrund bei Bewerbung](#lss-hide-application-background)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;hideApplicationBackground.user.js][hideApplicationBackground.user.js:download]
+- [[LSS] Kein Hintergrund vom Forum](#lss-hide-forum-background)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;hideForumBackground.user.js][hideForumBackground.user.js:download]
+- [[LSS] Keine Saisonale Navbar](#lss-no-seasonal-navbar)&nbsp;`2023.11.09+2010`&nbsp;&nbsp;[📥️:&nbsp;noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download]
+- [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;navToggleLeitstellenansicht.user.js][navToggleLeitstellenansicht.user.js:download]
+- [[LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden](#lss-hide-leitstellenansicht-btn-in-building-panel)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download]
+- [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp;&nbsp;[📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]
+- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
+- [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2023.08.18+0350`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
+- [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
+- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2023.08.18+0356`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
+- [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp;&nbsp;[📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]
+- [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
+- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
+- [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
+- [[LSS] Textlänge bei Eingabefeldern prüfen](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]
+- [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]
+- [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp;&nbsp;[📥️:&nbsp;userId.user.js][userId.user.js:download]
+- [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
+- [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
+- [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
+    
+</details>
 
 ### [LSS] AAO All vehicle types
 

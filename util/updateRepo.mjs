@@ -43,6 +43,10 @@ fs.readdirSync(ROOT_PATH, { withFileTypes: true }).forEach(dirent => {
     fs.unlinkSync(path.resolve(ROOT_PATH, dirent.name));
 });
 
+/** @type {Map<string, string>} */
+const langFlagMap = new Map();
+langFlagMap.set('', '');
+
 await forEachFile(
     async ({ comment, fileName, filePath, tags, getTag, getTags }) => {
         const updateURL = `${GITHUB}/raw/master/src/${fileName}`;
@@ -120,6 +124,8 @@ await forEachFile(
                 lang.startsWith(locale)
             );
             if (!game) return;
+
+            langFlagMap.set(locale, game[1].flag);
 
             if (localeTranslations[locale]) {
                 localeTranslations[locale].description = content;
@@ -280,28 +286,69 @@ const centerString = (string, length) => {
     const half = Math.floor((length - string.length) / 2);
     return string.padStart(half + string.length, ' ').padEnd(length, ' ');
 };
-const sortedScripts = scriptOverview.toSorted((a, b) =>
-    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
-);
 
-const scriptTOCMarkdown = sortedScripts
-    .flatMap(({ name, version, flagsAvailable, locales, filename }) => [
-        `- [${name}](#${name
-            .toLowerCase()
-            .replace(/[^a-z0-9-]/g, '-')
-            .replace(/-+/g, '-')
-            .replace(/^-+|-+$/g, '')})&nbsp;\`${version}\`&nbsp;${
-            flagsAvailable.length ?
-                `(${flagsAvailable.map(flag => `\`${flag}\``).join(', ')})`
-            :   ''
-        } &nbsp; [📥️:&nbsp;${filename}][${filename}:download]<br/>`.trim(),
-        ...Object.values(locales).map(
-            ({ flag, name }) => `&nbsp;&nbsp;${flag}: ${name}`
-        ),
-    ])
-    .join('\n');
+/** @type {Map<string, Script[]>} */
+const sortedScriptsLocalized = new Map();
+langFlagMap.forEach((flag, lang) => {
+    const getName = script => script.locales[lang]?.name ?? script.name;
+    sortedScriptsLocalized.set(
+        lang,
+        scriptOverview.toSorted((a, b) =>
+            getName(a).toLowerCase().localeCompare(getName(b).toLowerCase())
+        )
+    );
+});
 
-const scriptOverviewMarkdown = sortedScripts
+const tocTitles = {
+    '': ['Table of Contents', 'Click to expand / collapse'],
+    'de': ['Inhaltsverzeichnis', 'Klicken zum Ein- / Ausklappen'],
+};
+
+const getScriptAnchor = name =>
+    name
+        .toLowerCase()
+        .replace(/[^a-z0-9-]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
+const getFullTOC = () =>
+    sortedScriptsLocalized
+        .get('')
+        .flatMap(({ name, version, flagsAvailable, locales, filename }) => [
+            `- [${name}](#${getScriptAnchor(name)})&nbsp;\`${version}\`&nbsp;${
+                flagsAvailable.length ?
+                    `(${flagsAvailable.map(flag => `\`${flag}\``).join(', ')})`
+                :   ''
+            } &nbsp; [📥️:&nbsp;${filename}][${filename}:download]<br/>`.trim(),
+            ...Object.values(locales).map(
+                ({ flag, name }) => `&nbsp;&nbsp;${flag}: ${name}`
+            ),
+        ])
+        .join('\n');
+
+const getTOC = lang =>
+    sortedScriptsLocalized
+        .get(lang)
+        .flatMap(({ name, version, locales, filename }) => [
+            `- [${locales[lang]?.name ?? name}](#${getScriptAnchor(name)})&nbsp;\`${version}\`&nbsp;&nbsp;[📥️:&nbsp;${filename}][${filename}:download]`.trim(),
+        ])
+        .join('\n');
+
+const scriptTOCLocalizedMarkdown = Object.entries(tocTitles)
+    .map(([lang, [title, collapse]]) =>
+        `
+<details>
+    <summary>${langFlagMap.get(lang)} <b>${title}</b> <em>${collapse}</em></summary>
+    
+${lang ? getTOC(lang) : getFullTOC()}
+    
+</details>
+`.trim()
+    )
+    .join('\n\n');
+
+const scriptOverviewMarkdown = sortedScriptsLocalized
+    .get('')
     .map(script => {
         const headerRow = ['Version'];
         const contentRow = [script.version];
@@ -387,8 +434,8 @@ fs.writeFileSync(
         ),
         `
 ${startComment}
-*Total: ${sortedScripts.length} userscripts*
-${scriptTOCMarkdown}
+*Total: ${sortedScriptsLocalized.get('').length} userscripts*
+${scriptTOCLocalizedMarkdown}
 
 ${scriptOverviewMarkdown}
 ${endComment}
