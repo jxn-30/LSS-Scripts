@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 64 userscripts*
+*Total: 65 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -61,6 +61,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Gebäude-Direktausbau
 - [[LSS] Einsatzdauer](#lss-einsatzdauer)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;einsatzdauer.user.js][einsatzdauer.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzdauer
+- [[LSS] Empty ARR](#lss-empty-arr)&nbsp;`2024.05.18+1213`&nbsp; &nbsp; [📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] AAO leeren
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
@@ -148,6 +150,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] AAO Alle Fahrzeugtypen](#lss-aao-all-vehicle-types)&nbsp;`2024.02.14+1250`&nbsp;&nbsp;[📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.04.24+0845`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]
+- [[LSS] AAO leeren](#lss-empty-arr)&nbsp;`2024.05.18+1213`&nbsp;&nbsp;[📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]
 - [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]
 - [[LSS] AAO-Kategorien Export](#lss-arr-categories-export)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCategoriesExport.user.js][arrCategoriesExport.user.js:download]
 - [[LSS] AAO-Zähler](#lss-arr-counter)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCounter.user.js][arrCounter.user.js:download]
@@ -633,6 +636,24 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [einsatzdauer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/einsatzdauer.user.js
 [einsatzdauer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13913-script-einsatzdauer-in-der-einsatzliste/
+
+### [LSS] Empty ARR
+
+> Adds a button to ARR edit windows to empty all numeric inputs
+
+|     Version     |                   Download                    |              Links              |
+|:---------------:|:---------------------------------------------:|:-------------------------------:|
+| 2024.05.18+1213 | [emptyAAO.user.js][emptyAAO.user.js:download] | [Forum][emptyAAO.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] AAO leeren</summary>
+    Fügt einen Knopf im AAO-Editor hinzu, um alle Anforderungen auf 0 zu setzen.
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[emptyAAO.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/emptyAAO.user.js
+[emptyAAO.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/26414-script-aao-leeren-alle-anforderungen-in-einer-aao-auf-0-setzen/
 
 ### [LSS] extra alarm & close button
 

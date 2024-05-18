@@ -2,7 +2,7 @@
 // @name            [LSS] Empty ARR
 // @name:de         [LSS] AAO leeren
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.05.18+1212
+// @version         2024.05.18+1213
 // @author          Jan (jxn_30)
 // @description     Adds a button to ARR edit windows to empty all numeric inputs
 // @description:de  Fügt einen Knopf im AAO-Editor hinzu, um alle Anforderungen auf 0 zu setzen.
