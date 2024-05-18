@@ -101,7 +101,7 @@
  * @match /aaos/*\/copy
  */
 
-const btn = document.createElement('button');
+const btn = document.createElement('a');
 btn.classList.add('btn', 'btn-danger', 'btn-sm', 'pull-right');
 btn.textContent = 'Reset';
 btn.addEventListener('click', e => {
