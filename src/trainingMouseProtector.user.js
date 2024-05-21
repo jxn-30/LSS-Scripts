@@ -963,6 +963,7 @@ new Promise((resolve, reject) => {
                 )
                 .after(currentStateSpan, progressWrapper);
 
+            const start = Date.now();
             let progress = 0;
 
             const doProgress = (schoolId, staffAmount) => {
@@ -972,10 +973,12 @@ new Promise((resolve, reject) => {
                 progress++;
 
                 currentStateSpan.textContent = `${progress.toLocaleString()}/${totalSchools.toLocaleString()} Schulen verarbeitet [${schoolNameMap.get(schoolId)}]`;
-                progressBar.style.setProperty(
-                    'width',
-                    `${(progress / totalSchools) * 100}%`
-                );
+                const percentage = progress / totalSchools;
+                progressBar.style.setProperty('width', `${percentage * 100}%`);
+                const elapsed = Date.now() - start;
+                const remaining =
+                    (elapsed / progress) * (totalSchools - progress);
+                progressBar.textContent = `${percentage.toLocaleString('de', { style: 'percent' })} abgeschlossen, [ca. ${Math.ceil(remaining / 1000).toLocaleString('de')}\xa0Sekunden verbleibend]`;
             };
 
             if (!Object.keys(roomPlan).length) return;
