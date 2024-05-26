@@ -15,7 +15,7 @@
         "@types/tampermonkey": "5.0.3",
         "eslint": "9.3.0",
         "eslint-config-prettier": "9.1.0",
-        "eslint-plugin-userscripts": "0.5.2",
+        "eslint-plugin-userscripts": "0.5.3",
         "globals": "15.3.0",
         "jsdoc-api": "8.0.0",
         "prettier": "3.2.5",
