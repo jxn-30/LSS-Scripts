@@ -93,3 +93,8 @@ toggleBtn.addEventListener('click', e => {
 });
 
 document.querySelector('h1')?.append(' ', toggleBtn);
+document
+    .querySelector(
+        `#tabs a${emptyTabs.map(tab => `:not(a[href="#${tab}"])`).join('')}`
+    )
+    ?.click();
