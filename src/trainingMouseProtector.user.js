@@ -978,7 +978,12 @@ new Promise((resolve, reject) => {
                 const elapsed = Date.now() - start;
                 const remaining =
                     (elapsed / progress) * (totalSchools - progress);
-                progressBar.textContent = `${percentage.toLocaleString('de', { style: 'percent' })} abgeschlossen, [ca. ${Math.ceil(remaining / 1000).toLocaleString('de')}\xa0Sekunden verbleibend]`;
+                const endDate = new Date(Date.now() + remaining);
+                progressBar.textContent = [
+                    `${percentage.toLocaleString('de', { style: 'percent' })}`,
+                    `${Math.ceil(remaining / 1000).toLocaleString('de')}\xa0s`,
+                    `ETA: ${endDate.toLocaleTimeString('de')}`,
+                ].join(' / ');
             };
 
             if (!Object.keys(roomPlan).length) return;
