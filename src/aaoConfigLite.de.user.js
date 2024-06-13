@@ -127,6 +127,16 @@
         'grtw': 1, // GRTW
         'grtw0': 1, // GRTW (7 Patienten - ohne Notarzt)
         'grtw1': 1, // GRTW (3 Patienten - inkl. Notarzt)
+        'vehicle_type_ids[150]': 1, // GW Bergrettung
+        'vehicle_type_ids[149]': 1, // GW Bergrettung (NEF)
+        'vehicle_type_ids[151]': 1, // ELW Bergrettung
+        'vehicle_type_ids[152]': 1, // ATV
+        'vehicle_type_ids[153]': 1, // Hundestaffel (Bergrettung)
+        'vehicle_type_ids[154]': 1, // Schneefahrzeug
+        'mountain_height_rescue': 1, // Höhenrettung (Bergrettung)
+        'vehicle_type_ids[158]': 1, // GW-Höhenrettung (Bergrettung)
+        'vehicle_type_ids[155]': 1, // Anh Höhenrettung (Bergrettung)
+        'lift': 1, // Hubschrauber mit Winde
 
         // Polizei
         'fustw': 1, // Funkstreifenwagen
