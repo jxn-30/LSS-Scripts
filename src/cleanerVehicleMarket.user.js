@@ -2,7 +2,7 @@
 // @name            [LSS] Cleaner Vehicle Market
 // @name:de         [LSS] Aufgeräumter Fahrzeugmarkt
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.05.27+1300
+// @version         2024.07.02+1119
 // @author          Jan (jxn_30)
 // @description     Hides vehicles currently not available for purchase on the vehicle market.
 // @description:de  Blendet aktuell nicht kaufbare Fahrzeuge im Fahrzeugmarkt aus.
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/cleanerVehicleMarket.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/cleanerVehicleMarket.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/26670-script-aufger%C3%A4umter-fahrzeugmarkt/
 // @match           https://www.operacni-stredisko.cz/buildings/*/vehicles/new
 // @match           https://policie.operacni-stredisko.cz/buildings/*/vehicles/new
 // @match           https://www.alarmcentral-spil.dk/buildings/*/vehicles/new

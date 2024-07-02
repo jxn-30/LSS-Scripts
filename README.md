@@ -49,7 +49,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;checkboxMultiselect.user.js][checkboxMultiselect.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Checkbox-multiselect
-- [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.05.27+1300`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
+- [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.07.02+1119`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Aufgeräumter Fahrzeugmarkt
 - [[LSS] Clickable links](#lss-clickable-links)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;clickableLinks.user.js][clickableLinks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Clickable links
@@ -160,7 +160,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;allianceMemberNotes.user.js][allianceMemberNotes.user.js:download]
 - [[LSS] Alte Einsatzgeschwindigkeit](#lss-old-mission-speed)&nbsp;`2024.02.28+1639`&nbsp;&nbsp;[📥️:&nbsp;oldMissionSpeed.user.js][oldMissionSpeed.user.js:download]
 - [[LSS] Asynchrone Gefangene](#lss-async-prisoners)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;asyncPrisoners.user.js][asyncPrisoners.user.js:download]
-- [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.05.27+1300`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
+- [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.07.02+1119`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
 - [[LSS] Auflistung eigener Fahrzeugtypen](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp;&nbsp;[📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]
 - [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2024.06.07+1154`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
 - [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
@@ -535,9 +535,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Hides vehicles currently not available for purchase on the vehicle market.
 
-|     Version     |                               Download                                |
-|:---------------:|:---------------------------------------------------------------------:|
-| 2024.05.27+1300 | [cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download] |
+|     Version     |                               Download                                |                    Links                    |
+|:---------------:|:---------------------------------------------------------------------:|:-------------------------------------------:|
+| 2024.07.02+1119 | [cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download] | [Forum][cleanerVehicleMarket.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Aufgeräumter Fahrzeugmarkt</summary>
@@ -547,6 +547,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [cleanerVehicleMarket.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/cleanerVehicleMarket.user.js
+[cleanerVehicleMarket.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/26670-script-aufger%C3%A4umter-fahrzeugmarkt/
 
 ### [LSS] Clickable links
 
