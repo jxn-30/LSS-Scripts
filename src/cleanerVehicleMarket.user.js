@@ -58,7 +58,7 @@
  * @name:de Aufgeräumter Fahrzeugmarkt
  * @description Hides vehicles currently not available for purchase on the vehicle market.
  * @description:de Blendet aktuell nicht kaufbare Fahrzeuge im Fahrzeugmarkt aus.
- * @//forum
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/26670-script-aufger%C3%A4umter-fahrzeugmarkt/
  * @match /buildings/*\/vehicles/new
  */
 
