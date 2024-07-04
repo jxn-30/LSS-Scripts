@@ -62,23 +62,30 @@
  * @match /buildings/*\/vehicles/new
  */
 
+const TABS_AUFLOESEN = false; // true: Tabs auflösen, false: Tabs beibehalten
+
+// find all tabs with unavailable vehicles
 const emptyTabs = Array.from(
     document.querySelectorAll(
         '.tab-pane:has(.buy-vehicle-btn):not(:has(.buy-vehicle-btn:not(.disabled)))'
     )
 ).map(pane => pane.id);
 
+// a style to hide stuff
 const hideStyle = document.createElement('style');
 hideStyle.textContent = `
-.vehicle-market-subcategory:not(:has(.buy-vehicle-btn:not(.disabled))),
-.col-sm-3:not(:has(.buy-vehicle-btn:not(.disabled))),
-#tabs :where(${emptyTabs.map(tab => `li:has(a[href="#${tab}"])`).join(',')}) {
-    display: none;
+.vehicle-market-subcategory:not(:has(.buy-vehicle-btn:not(.disabled))), /* Hide subcategories without available vehicles */
+.col-sm-3:not(:has(.buy-vehicle-btn:not(.disabled))), /* Hide unavailable vehicles */
+#tabs :where(${emptyTabs.map(tab => `li:has(a[href="#${tab}"])`).join(',')}), /* Hide empty tabs in the tablist */
+.tab-content :where(${emptyTabs.map(tab => `#${tab}`).join(',')}) /* Hide empty tabs */
+{
+    display: none !important;
 }
 `;
 
 document.head.appendChild(hideStyle);
 
+// add the button to toggle normal / cleaner view
 const toggleBtn = document.createElement('span');
 toggleBtn.classList.add('glyphicon', 'glyphicon-eye-open');
 toggleBtn.style.setProperty('cursor', 'pointer');
@@ -93,8 +100,23 @@ toggleBtn.addEventListener('click', e => {
 });
 
 document.querySelector('h1')?.append(' ', toggleBtn);
+// open first non-empty tab
 document
     .querySelector(
         `#tabs a${emptyTabs.map(tab => `:not(a[href="#${tab}"])`).join('')}`
     )
     ?.click();
+
+if (TABS_AUFLOESEN) {
+    document.querySelectorAll('.tab-pane').forEach(pane => {
+        pane.classList.add('active');
+        const title =
+            document
+                .querySelector(`#tabs a[href="#${pane.id}"]`)
+                ?.textContent?.trim() ?? '';
+        const h2 = document.createElement('h2');
+        h2.textContent = title;
+        pane.prepend(h2);
+    });
+    document.getElementById('tabs').classList.add('hidden');
+}
