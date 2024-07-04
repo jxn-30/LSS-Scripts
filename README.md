@@ -49,7 +49,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;checkboxMultiselect.user.js][checkboxMultiselect.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Checkbox-multiselect
-- [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.07.02+1119`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
+- [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.07.04+1021`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Aufgeräumter Fahrzeugmarkt
 - [[LSS] Clickable links](#lss-clickable-links)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;clickableLinks.user.js][clickableLinks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Clickable links
@@ -67,7 +67,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.06.13+0930`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.07.04+1021`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -160,7 +160,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;allianceMemberNotes.user.js][allianceMemberNotes.user.js:download]
 - [[LSS] Alte Einsatzgeschwindigkeit](#lss-old-mission-speed)&nbsp;`2024.02.28+1639`&nbsp;&nbsp;[📥️:&nbsp;oldMissionSpeed.user.js][oldMissionSpeed.user.js:download]
 - [[LSS] Asynchrone Gefangene](#lss-async-prisoners)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;asyncPrisoners.user.js][asyncPrisoners.user.js:download]
-- [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.07.02+1119`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
+- [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.07.04+1021`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
 - [[LSS] Auflistung eigener Fahrzeugtypen](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp;&nbsp;[📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]
 - [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2024.06.07+1154`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
 - [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
@@ -183,7 +183,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2023.08.19+1151`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.06.13+0930`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.07.04+1021`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -537,7 +537,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                               Download                                |                    Links                    |
 |:---------------:|:---------------------------------------------------------------------:|:-------------------------------------------:|
-| 2024.07.02+1119 | [cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download] | [Forum][cleanerVehicleMarket.user.js:forum] |
+| 2024.07.04+1021 | [cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download] | [Forum][cleanerVehicleMarket.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Aufgeräumter Fahrzeugmarkt</summary>
@@ -698,7 +698,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.06.13+0930 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2024.07.04+1021 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
