@@ -99,7 +99,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Verkürzte Funk-Historie
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Vehicles (DE)
-- [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2023.08.18+0350`&nbsp; &nbsp; [📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]<br/>
+- [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mission Alarm Time
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;missionParticipationStateOnMap.user.js][missionParticipationStateOnMap.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzbeteiligung auf der Karte
@@ -109,9 +109,9 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge im Einsatz farblich hervorheben
 - [[LSS] Mobile Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp; &nbsp; [📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mobiles Layout
-- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2023.08.18+0356`&nbsp; &nbsp; [📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]<br/>
+- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Nav Tab Clicker
-- [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar)&nbsp;`2023.11.09+2010`&nbsp; &nbsp; [📥️:&nbsp;noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download]<br/>
+- [[LSS] No Seasonal Navbar](#lss-no-seasonal-navbar)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Keine Saisonale Navbar
 - [[LSS] Old mission speed](#lss-old-mission-speed)&nbsp;`2024.02.28+1639`&nbsp; &nbsp; [📥️:&nbsp;oldMissionSpeed.user.js][oldMissionSpeed.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Alte Einsatzgeschwindigkeit
@@ -139,7 +139,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungs-Mausschoner
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp; &nbsp; [📥️:&nbsp;userId.user.js][userId.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
-- [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount)&nbsp;`2023.08.19+1151`&nbsp; &nbsp; [📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]<br/>
+- [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeugmarkt: Anzahl anzeigen
     
 </details>
@@ -181,7 +181,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
-- [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2023.08.19+1151`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
+- [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.07.04+1021`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
@@ -193,15 +193,15 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Kartensuche ausblenden](#lss-hide-map-search)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;hideMapSearch.user.js][hideMapSearch.user.js:download]
 - [[LSS] Kein Hintergrund bei Bewerbung](#lss-hide-application-background)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;hideApplicationBackground.user.js][hideApplicationBackground.user.js:download]
 - [[LSS] Kein Hintergrund vom Forum](#lss-hide-forum-background)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;hideForumBackground.user.js][hideForumBackground.user.js:download]
-- [[LSS] Keine Saisonale Navbar](#lss-no-seasonal-navbar)&nbsp;`2023.11.09+2010`&nbsp;&nbsp;[📥️:&nbsp;noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download]
+- [[LSS] Keine Saisonale Navbar](#lss-no-seasonal-navbar)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download]
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;navToggleLeitstellenansicht.user.js][navToggleLeitstellenansicht.user.js:download]
 - [[LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden](#lss-hide-leitstellenansicht-btn-in-building-panel)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download]
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp;&nbsp;[📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]
 - [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
-- [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2023.08.18+0350`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
+- [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
 - [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
-- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2023.08.18+0356`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
+- [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
 - [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp;&nbsp;[📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]
 - [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
@@ -988,9 +988,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows maximum travel time on alarm button
 
-|     Version     |  Alias / Old names   |                           Download                            |                  Links                  |
-|:---------------:|:--------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.08.18+0350 | `Mission-Alarm-Time` | [missionAlarmTime.user.js][missionAlarmTime.user.js:download] | [Forum][missionAlarmTime.user.js:forum] |
+|     Version     |                           Download                            |                  Links                  |
+|:---------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2024.07.06+1514 | [missionAlarmTime.user.js][missionAlarmTime.user.js:download] | [Forum][missionAlarmTime.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Mission Alarm Time</summary>
@@ -1078,9 +1078,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Auto opens a tab if its hash is in URL
 
-|     Version     | Alias / Old names |                        Download                         |                Links                 |
-|:---------------:|:-----------------:|:-------------------------------------------------------:|:------------------------------------:|
-| 2023.08.18+0356 |  `NavTabClicker`  | [navTabClicker.user.js][navTabClicker.user.js:download] | [Forum][navTabClicker.user.js:forum] |
+|     Version     |                        Download                         |                Links                 |
+|:---------------:|:-------------------------------------------------------:|:------------------------------------:|
+| 2024.07.06+1514 | [navTabClicker.user.js][navTabClicker.user.js:download] | [Forum][navTabClicker.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Nav Tab Clicker</summary>
@@ -1096,9 +1096,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Removes any seasonal navbar background to the standard plain one.
 
-|     Version     | Alias / Old names  |                           Download                            |                  Links                  |
-|:---------------:|:------------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2023.11.09+2010 | `noseasonalnavbar` | [noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download] | [Forum][noSeasonalNavbar.user.js:forum] |
+|     Version     |                           Download                            |                  Links                  |
+|:---------------:|:-------------------------------------------------------------:|:---------------------------------------:|
+| 2024.07.06+1514 | [noSeasonalNavbar.user.js][noSeasonalNavbar.user.js:download] | [Forum][noSeasonalNavbar.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Keine Saisonale Navbar</summary>
@@ -1348,9 +1348,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Shows in the vehicle market how many vehicles of the respective type are already available on the currently built station.
 
-|     Version     |      Alias / Old names      |                                  Download                                   |                     Links                      |
-|:---------------:|:---------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
-| 2023.08.19+1151 | `vehiclemarket-show-amount` | [vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download] | [Forum][vehicleMarketShowAmount.user.js:forum] |
+|     Version     |                                  Download                                   |                     Links                      |
+|:---------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
+| 2024.07.06+1514 | [vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download] | [Forum][vehicleMarketShowAmount.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Fahrzeugmarkt: Anzahl anzeigen</summary>

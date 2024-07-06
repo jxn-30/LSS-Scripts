@@ -2,7 +2,7 @@
 // @name            [LSS] Vehicle market: Show amount
 // @name:de         [LSS] Fahrzeugmarkt: Anzahl anzeigen
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.08.19+1151
+// @version         2024.07.06+1514
 // @author          Jan (jxn_30)
 // @description     Shows in the vehicle market how many vehicles of the respective type are already available on the currently built station.
 // @description:de  Zeigt im Fahrzeugmarkt wie viele Fahrzeuge auf der aktuell gebauten Wache bereits vorhanden sind vom jeweiligen Typ.
