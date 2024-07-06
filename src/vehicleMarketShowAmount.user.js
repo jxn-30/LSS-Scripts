@@ -60,7 +60,6 @@
  * @description:de Zeigt im Fahrzeugmarkt wie viele Fahrzeuge auf der aktuell gebauten Wache bereits vorhanden sind vom jeweiligen Typ.
  * @forum https://forum.leitstellenspiel.de/index.php?thread/21816-fahrzeuganzahl-im-markt-anzeigen
  * @match /buildings/*\/vehicles/new
- * @old vehiclemarket-show-amount
  */
 
 const buildingId = window.location.pathname.split('/')[2];

@@ -62,7 +62,6 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/22232-scriptwunsch-wasserzeichen-entfernen/
  * @match /
  * @grant GM_addStyle
- * @old noseasonalnavbar
  */
 
 (function () {

@@ -60,7 +60,6 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/16776-script-mission-alarm-time/
  * @match /missions/*
  * @grant GM_addStyle
- * @old Mission-Alarm-Time
  */
 
 (() => {

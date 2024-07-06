@@ -57,7 +57,6 @@
  * @description Auto opens a tab if its hash is in URL
  * @description:de Öffnet automatisch einen Tab, wenn der entsprechende Hash in der URL ist
  * @forum https://forum.leitstellenspiel.de/index.php?thread/18546-script-navtabclicker/
- * @old NavTabClicker
  */
 
 document.querySelector(`.nav-tabs a[href="${window.location.hash}"]`)?.click();
