@@ -63,6 +63,14 @@
  */
 
 const TABS_AUFLOESEN = false; // true: Tabs auflösen, false: Tabs beibehalten
+const REMOVE_COINS_BUTTONS = false; // true: Knöpfe zum Kaufen mit Coins entfernen, false: Knöpfe zum Kaufen mit Coins beibehalten
+
+// remove coins buttons
+if (REMOVE_COINS_BUTTONS) {
+    document
+        .querySelectorAll('.buy-vehicle-btn[href*="coins"]')
+        .forEach(btn => btn.remove());
+}
 
 // find all tabs with unavailable vehicles
 const emptyTabs = Array.from(
