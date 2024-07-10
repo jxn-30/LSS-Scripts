@@ -17,9 +17,9 @@
 // ==/UserScript==
 
 /**
- * @name Forum: External Links
- * @description Opens external links in the Forum in a new tab / window by default
- * @description:de Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
+ * @name Forum: Custom Navbar
+ * @description Allows to remove some unnecessary links from the forum navbar
+ * @description:de Ermöglicht das Entfernen einiger unnötiger Links aus der Foren-Navigationsleiste
  * @forum https://forum.leitstellenspiel.de/index.php?thread/26726-script-forum-navigationsleiste-anpassen/
  * @match /*
  * @locale de_DE
