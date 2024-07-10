@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name            [LSS] Forum: External Links
+// @name            [LSS] Forum: Custom Navbar
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.07.10+1408
+// @version         2024.07.10+1411
 // @author          Jan (jxn_30)
-// @description     Opens external links in the Forum in a new tab / window by default
-// @description:de  Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
+// @description     Allows to remove some unnecessary links from the forum navbar
+// @description:de  Ermöglicht das Entfernen einiger unnötiger Links aus der Foren-Navigationsleiste
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @icon            https://www.leitstellenspiel.de/favicon.ico
