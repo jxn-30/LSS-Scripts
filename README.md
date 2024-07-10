@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 65 userscripts*
+*Total: 66 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -69,6 +69,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.07.04+1021`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
+- [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2024.07.10+1408`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]<br/>
@@ -184,6 +186,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.07.04+1021`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2024.07.10+1408`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -709,6 +712,24 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [forum/dashboard.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/dashboard.user.js
 [forum/dashboard.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16451-forum-dashboard/
+
+### [LSS] Forum: External Links
+
+> Opens external links in the Forum in a new tab / window by default
+
+|     Version     | Available in |                             Download                              |                   Links                   |
+|:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
+| 2024.07.10+1408 |    `🇩🇪`    | [forum/customNavbar.user.js][forum/customNavbar.user.js:download] | [Forum][forum/customNavbar.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Forum: External Links</summary>
+    Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[forum/customNavbar.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/customNavbar.user.js
+[forum/customNavbar.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/26726-script-forum-navigationsleiste-anpassen/
 
 ### [LSS] Forum: External Links
 

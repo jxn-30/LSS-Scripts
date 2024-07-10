@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Forum: External Links
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.07.10+1404
+// @version         2024.07.10+1408
 // @author          Jan (jxn_30)
 // @description     Opens external links in the Forum in a new tab / window by default
 // @description:de  Externe Links automatisch standardmäßig in neuem Tab / Fenster öffnen
@@ -10,7 +10,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/customNavbar.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/customNavbar.user.js
-// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/17423-forum-external-link/
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/26726-script-forum-navigationsleiste-anpassen/
 // @match           https://forum.leitstellenspiel.de/*
 // @run-at          document-idle
 // @grant           GM_addStyle
