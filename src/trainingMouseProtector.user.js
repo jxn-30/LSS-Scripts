@@ -183,6 +183,68 @@ if (roomsSelection.labels.length === 0) {
     roomsSelection.before(label);
 }
 
+/** @type {Set<{select: HTMLSelectElement, input: HTMLInputElement}>} */
+const schoolingRoomSelections = new Set();
+
+const roomsSelectionClass = 'jxn-training_mouse_protector-rooms_use';
+const lastShownOptionClass = 'jxn-training_mouse_protector-last_shown';
+
+const selectStyle = document.createElement('style');
+form?.append(selectStyle);
+
+const updateSelectStyle = () => {
+    roomsSelection.disabled = allowEmptyCheckbox.checked;
+
+    const remainingRooms =
+        parseInt(roomsSelection.lastElementChild.value) -
+        Array.from(schoolingRoomSelections.values()).reduce(
+            (acc, { select }) => acc + parseInt(select.value),
+            0
+        );
+
+    form?.querySelectorAll(
+        `.${roomsSelectionClass} .${lastShownOptionClass}`
+    ).forEach(option => option.classList.remove(lastShownOptionClass));
+
+    schoolingRoomSelections.forEach(({ select }) => {
+        select.disabled = !allowEmptyCheckbox.checked;
+        const current = parseInt(select.value);
+        select
+            .querySelector(
+                `option[value="${Math.max(remainingRooms + current, current)}"]`
+            )
+            ?.classList.add(lastShownOptionClass);
+    });
+
+    selectStyle.textContent = `
+.${roomsSelectionClass} .${lastShownOptionClass} ~ option {
+    display: none;
+    pointer-events: none;
+}
+
+body:has(#${allowEmptyCheckbox.id}:checked) #accordion > .panel {
+    opacity: 0.5;
+    pointer-events: none;
+}
+`.trim();
+};
+
+form?.querySelectorAll('label[for^="education_"]').forEach(label => {
+    /** @type {HTMLInputElement} */
+    const input = document.getElementById(label.htmlFor);
+    const select = document.createElement('select');
+    select.disabled = true;
+    select.classList.add(roomsSelectionClass);
+    label.after(select);
+
+    select.addEventListener('change', updateSelectStyle);
+
+    schoolingRoomSelections.add({ select, input });
+});
+
+roomsSelection.addEventListener('change', updateSelectStyle);
+allowEmptyCheckbox.addEventListener('change', updateSelectStyle);
+
 /**
  * @typedef {Object} Schooling
  * @property {number} id
@@ -250,11 +312,22 @@ const setRoomSelection = schools => {
 
     // fill rooms selection with available rooms
     roomsSelection.replaceChildren();
+
+    const zeroOption = document.createElement('option');
+    zeroOption.value = '0';
+    zeroOption.textContent = '0';
+    schoolingRoomSelections.forEach(({ select }) =>
+        select.replaceChildren(zeroOption.cloneNode(true))
+    );
+
     for (let i = 1; i <= totalFreeRooms; i++) {
         const option = document.createElement('option');
         option.value = i.toString();
         option.textContent = i.toString();
         roomsSelection.append(option);
+        schoolingRoomSelections.forEach(({ select }) =>
+            select.append(option.cloneNode(true))
+        );
     }
 
     roomsSelection.dispatchEvent(new InputEvent('change'));
@@ -777,21 +850,28 @@ new Promise((resolve, reject) => {
         // 3. if alliance school: for each school create trainings and fill them
         const schoolNameMap = new Map();
         const getRooms = () => {
+            /** @type {string[][]} */
+            const allRooms = [];
+
+            const firstNonEmpty = Array.from(schoolingRoomSelections).find(
+                ({ select }) => select.value !== '0'
+            );
+            if (allowEmptyCheckbox.checked && firstNonEmpty) {
+                for (let i = 0; i < parseInt(firstNonEmpty.select.value); i++) {
+                    allRooms.push([]);
+                }
+                firstNonEmpty.input.click();
+                form.education.value = firstNonEmpty.input.value;
+                return allRooms;
+            }
+
             /** @type {string[]} */
             const allStaff = Array.from(
                 document.querySelectorAll('.schooling_checkbox:checked')
             ).map(checkbox => checkbox.value);
             // slice staff into rooms of 10 peeps each
-            /** @type {string[][]} */
-            const allRooms = [];
             for (let i = 0; i < allStaff.length; i += 10) {
                 allRooms.push(allStaff.slice(i, i + 10));
-            }
-            const missingRooms =
-                parseInt(roomsSelection.value) - allRooms.length;
-            // if we're allowed to open empty schools, add empty rooms
-            if (allowEmptyCheckbox.checked && missingRooms > 0) {
-                for (let i = 0; i < missingRooms; i++) allRooms.push([]);
             }
             return allRooms;
         };
@@ -842,6 +922,10 @@ new Promise((resolve, reject) => {
                 schoolUrl.searchParams.append('personal_ids[]', id)
             );
             schoolUrl.searchParams.set('commit', 'Ausbilden');
+            const school = schools.find(
+                s => s.id.toString() === schoolId.toString()
+            );
+            for (let i = 0; i < rooms; i++) school.schoolings.push(undefined);
             return fetch(`/buildings/${schoolId}/education`, {
                 credentials: 'include',
                 headers: {
@@ -887,14 +971,8 @@ new Promise((resolve, reject) => {
                 ([res]) => res
             );
 
-        form.addEventListener('submit', async e => {
-            e.preventDefault();
-
+        const doTheDurchschloedeln = async () => {
             if (abortedDueToMultipleSchools) return alert(multipleSchoolsAlert);
-
-            const education = form.education.value;
-            const duration = form['alliance[duration]'].value;
-            const cost = form['alliance[cost]'].value;
 
             const roomPlan = assignRoomsToSchools(getRooms());
             const totalSchools = Object.keys(roomPlan).length;
@@ -912,6 +990,10 @@ new Promise((resolve, reject) => {
                 emptyRooms += emptyRoomsInSchool;
                 if (emptyRoomsInSchool) emptySchools++;
             }
+
+            const education = form.education.value;
+            const duration = form['alliance[duration]'].value;
+            const cost = form['alliance[cost]'].value;
 
             if (
                 SETTING_SHOW_CONFIRM_DIALOG &&
@@ -966,10 +1048,7 @@ new Promise((resolve, reject) => {
             const start = Date.now();
             let progress = 0;
 
-            const doProgress = (schoolId, staffAmount) => {
-                console.log(
-                    `sent ${staffAmount} staff to ${schoolNameMap.get(schoolId)}`
-                );
+            const doProgress = schoolId => {
                 progress++;
 
                 currentStateSpan.textContent = `${progress.toLocaleString()}/${totalSchools.toLocaleString()} Schulen verarbeitet [${schoolNameMap.get(schoolId)}]`;
@@ -1068,10 +1147,29 @@ new Promise((resolve, reject) => {
             );
             currentStateSpan.textContent = `${totalSchools.toLocaleString()} Schulen erfolgreich gefüllt! 😊`;
 
-            setTimeout(() => window.location.reload(), 2000);
+            setTimeout(() => {
+                const nonEmpties = Array.from(schoolingRoomSelections).filter(
+                    ({ select }) => select.value !== '0'
+                );
+                const firstEmpty = nonEmpties.shift();
+                if (firstEmpty) firstEmpty.select.value = '0';
+                if (allowEmptyCheckbox.checked && nonEmpties.length) {
+                    currentStateSpan.remove();
+                    progressWrapper.remove();
+                    doTheDurchschloedeln();
+                } else {
+                    window.location.reload();
+                }
+            }, 2000);
+        };
+
+        form.addEventListener('submit', async e => {
+            e.preventDefault();
+
+            await doTheDurchschloedeln();
         });
     })
     .finally(() => {
-        roomsSelection.disabled = false;
         spinner.remove();
+        updateSelectStyle();
     });
