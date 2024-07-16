@@ -105,7 +105,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Mission Alarm Time
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;missionParticipationStateOnMap.user.js][missionParticipationStateOnMap.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzbeteiligung auf der Karte
-- [[LSS] Mission Sort](#lss-mission-sort)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]<br/>
+- [[LSS] Mission Sort](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp; &nbsp; [📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzsortierung
 - [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge im Einsatz farblich hervorheben
@@ -180,7 +180,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzbeteiligung auf der Karte](#lss-mission-participation-state-on-map)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;missionParticipationStateOnMap.user.js][missionParticipationStateOnMap.user.js:download]
 - [[LSS] Einsatzdauer](#lss-einsatzdauer)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;einsatzdauer.user.js][einsatzdauer.user.js:download]
 - [[LSS] Einsatzliste neu laden](#lss-reload-missions-list)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;reloadMissions.user.js][reloadMissions.user.js:download]
-- [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
+- [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
@@ -1047,7 +1047,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                      Download                       |               Links                |
 |:---------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2024.01.17+1128 | [missionSort.user.js][missionSort.user.js:download] | [Forum][missionSort.user.js:forum] |
+| 2024.07.16+1139 | [missionSort.user.js][missionSort.user.js:download] | [Forum][missionSort.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Einsatzsortierung</summary>

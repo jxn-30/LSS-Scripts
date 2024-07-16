@@ -2,7 +2,7 @@
 // @name            [LSS] Mission Sort
 // @name:de         [LSS] Einsatzsortierung
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.01.17+1128
+// @version         2024.07.16+1139
 // @author          Jan (jxn_30)
 // @description     Sorts the mission list by credits (and allows sorted buttons in missions window. [WIP])
 // @description:de  Sortiert die Einsatzliste nach Credits (und ermöglicht sortierte Buttons im Einsatzfenster. [Feature noch in Arbeit])
@@ -252,7 +252,7 @@ const setMissionOrder = async panel => {
     const missionType = getMissionTypeFromPanel(panel);
     const credits =
         missionType in creditsByMissionType ?
-            creditsByMissionType[missionType] ?? 0
+            (creditsByMissionType[missionType] ?? 0)
         :   cssMaxInteger;
 
     panel.style.setProperty('order', credits.toString());
