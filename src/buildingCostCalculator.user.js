@@ -117,6 +117,10 @@ const buildingPriceFormulas = {
             1_000_000
         ),
     'THW': nth => Math.ceil(200_000 + 100_000 * Math.log2(nth + 1)),
+    'Bergrettung': nth =>
+        Math.round(
+            100_000 + 100_000 * (Math.log(Math.max(1, nth - 10)) / Math.log(5)) // ln(x)/ln(5) = log5(x)
+        ),
 };
 
 // create a modal
