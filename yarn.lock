@@ -165,13 +165,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:8.56.10":
-  version: 8.56.10
-  resolution: "@types/eslint@npm:8.56.10"
+"@types/eslint@npm:9.6.0":
+  version: 9.6.0
+  resolution: "@types/eslint@npm:9.6.0"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
-  checksum: 10c0/674349d6c342c3864d70f4d5a9965f96fb253801532752c8c500ad6a1c2e8b219e01ccff5dc8791dcb58b5483012c495708bb9f3ff929f5c9322b3da126c15d3
+  checksum: 10c0/69301356bc73b85e381ae00931291de2e96d1cc49a112c592c74ee32b2f85412203dea6a333b4315fd9839bb14f364f265cbfe7743fc5a78492ee0326dd6a2c1
   languageName: node
   linkType: hard
 
@@ -881,7 +881,7 @@ __metadata:
   resolution: "jxn_30-lss-scripts@workspace:."
   dependencies:
     "@eslint/js": "npm:9.7.0"
-    "@types/eslint": "npm:8.56.10"
+    "@types/eslint": "npm:9.6.0"
     "@types/tampermonkey": "npm:5.0.3"
     eslint: "npm:9.7.0"
     eslint-config-prettier: "npm:9.1.0"
