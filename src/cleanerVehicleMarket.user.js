@@ -2,7 +2,7 @@
 // @name            [LSS] Cleaner Vehicle Market
 // @name:de         [LSS] Aufgeräumter Fahrzeugmarkt
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.07.07+0000
+// @version         2024.08.10+1455
 // @author          Jan (jxn_30)
 // @description     Hides vehicles currently not available for purchase on the vehicle market.
 // @description:de  Blendet aktuell nicht kaufbare Fahrzeuge im Fahrzeugmarkt aus.
@@ -51,6 +51,9 @@
 // @match           https://www.112-merkez.com/buildings/*/vehicles/new
 // @match           https://www.dyspetcher101-game.com/buildings/*/vehicles/new
 // @run-at          document-idle
+// @grant           GM_setValue
+// @grant           GM_getValue
+// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
@@ -60,10 +63,19 @@
  * @description:de Blendet aktuell nicht kaufbare Fahrzeuge im Fahrzeugmarkt aus.
  * @forum https://forum.leitstellenspiel.de/index.php?thread/26670-script-aufger%C3%A4umter-fahrzeugmarkt/
  * @match /buildings/*\/vehicles/new
+ * @grant GM_setValue
+ * @grant GM_getValue
+ * @grant GM_addStyle
  */
 
+// ****************************************************************************
+// Beginn der Konfiguration: Hier dürfen die Werte hinter dem = geändert werden
+// ****************************************************************************
 const TABS_AUFLOESEN = false; // true: Tabs auflösen, false: Tabs beibehalten
 const REMOVE_COINS_BUTTONS = false; // true: Knöpfe zum Kaufen mit Coins entfernen, false: Knöpfe zum Kaufen mit Coins beibehalten
+// ****************************************************************************
+// Ende der Konfiguration: Ab hier lieber nichts mehr ändern!
+// ****************************************************************************
 
 // remove coins buttons
 if (REMOVE_COINS_BUTTONS) {
@@ -72,10 +84,67 @@ if (REMOVE_COINS_BUTTONS) {
         .forEach(btn => btn.remove());
 }
 
-// find all tabs with unavailable vehicles
-const emptyTabs = Array.from(
+// add a class to manually hidden vehicles
+const HIDDEN_VEHICLES_STORAGE = 'hidden_vehicles';
+const hiddenVehicles = new Set(GM_getValue(HIDDEN_VEHICLES_STORAGE, []));
+const manuallyHiddenClass = 'manually-hidden';
+hiddenVehicles.forEach(vehicleType =>
+    document
+        .querySelectorAll(
+            `.vehicle_type:has(.buy-vehicle-btn[href*="/${vehicleType}/"])`
+        )
+        .forEach(el => {
+            el.classList.add(manuallyHiddenClass);
+        })
+);
+
+GM_addStyle(`
+.vehicle_type h3 {
+    pointer-events: none;
+}
+.vehicle_type h3::before {
+    content: "\\e105";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+    font-size: medium;
+}
+.vehicle_type.${manuallyHiddenClass} h3::before {
+    content: "\\e106";
+}
+`);
+document.addEventListener('click', e => {
+    const target = e.target;
+    if (target instanceof HTMLElement && target.matches('.vehicle_type h3')) {
+        const vehicleWell = target.closest('.vehicle_type');
+        if (!vehicleWell) return;
+
+        const vehicleType = vehicleWell
+            .querySelector('.buy-vehicle-btn')
+            .getAttribute('href')
+            .split('/')[5];
+        if (vehicleWell.classList.contains(manuallyHiddenClass)) {
+            hiddenVehicles.delete(vehicleType);
+        } else {
+            hiddenVehicles.add(vehicleType);
+        }
+
+        GM_setValue(HIDDEN_VEHICLES_STORAGE, Array.from(hiddenVehicles));
+
+        target.closest('.vehicle_type').classList.toggle(manuallyHiddenClass);
+    }
+});
+
+// find all tabs with available vehicles
+const nonEmptyTabs = Array.from(
     document.querySelectorAll(
-        '.tab-pane:has(.buy-vehicle-btn):not(:has(.buy-vehicle-btn:not(.disabled)))'
+        '.tab-pane:has(.vehicle_type:not(.manually-hidden) .buy-vehicle-btn:not(.disabled))'
     )
 ).map(pane => pane.id);
 
@@ -84,8 +153,9 @@ const hideStyle = document.createElement('style');
 hideStyle.textContent = `
 .vehicle-market-subcategory:not(:has(.buy-vehicle-btn:not(.disabled))), /* Hide subcategories without available vehicles */
 .col-sm-3:not(:has(.buy-vehicle-btn:not(.disabled))), /* Hide unavailable vehicles */
-#tabs :where(${emptyTabs.map(tab => `li:has(a[href="#${tab}"])`).join(',')}), /* Hide empty tabs in the tablist */
-.tab-content :where(${emptyTabs.map(tab => `#${tab}`).join(',')}) /* Hide empty tabs */
+#tabs li:has(a:not(${nonEmptyTabs.map(tab => `[href="#${tab}"]`).join(',')})), /* Hide empty tabs in the tablist */
+.tab-content > :not(${nonEmptyTabs.map(tab => `#${tab}`).join(',')}), /* Hide empty tabs */
+.col-sm-3:has(.vehicle_type.${manuallyHiddenClass}) /* Hide manually hidden vehicles */
 {
     display: none !important;
 }
@@ -111,7 +181,7 @@ document.querySelector('h1')?.append(' ', toggleBtn);
 // open first non-empty tab
 document
     .querySelector(
-        `#tabs a${emptyTabs.map(tab => `:not(a[href="#${tab}"])`).join('')}`
+        `#tabs a:not(${nonEmptyTabs.map(tab => `:not(a[href="#${tab}"])`).join('')})`
     )
     ?.click();
 
