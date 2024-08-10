@@ -159,6 +159,10 @@ hideStyle.textContent = `
 {
     display: none !important;
 }
+
+.tab-pane .row:has(+ .row)::after {
+    clear: unset;
+}
 `;
 
 document.head.appendChild(hideStyle);
