@@ -153,14 +153,20 @@ const hideStyle = document.createElement('style');
 hideStyle.textContent = `
 .vehicle-market-subcategory:not(:has(.buy-vehicle-btn:not(.disabled))), /* Hide subcategories without available vehicles */
 .col-sm-3:not(:has(.buy-vehicle-btn:not(.disabled))), /* Hide unavailable vehicles */
+${
+    nonEmptyTabs.length ?
+        `
 #tabs li:has(a:not(${nonEmptyTabs.map(tab => `[href="#${tab}"]`).join(',')})), /* Hide empty tabs in the tablist */
 .tab-content > :not(${nonEmptyTabs.map(tab => `#${tab}`).join(',')}), /* Hide empty tabs */
+`
+    :   ''
+}
 .col-sm-3:has(.vehicle_type.${manuallyHiddenClass}) /* Hide manually hidden vehicles */
 {
     display: none !important;
 }
 
-.tab-pane .row:has(+ .row)::after {
+.row:has(+ .row)::after {
     clear: unset;
 }
 `;
