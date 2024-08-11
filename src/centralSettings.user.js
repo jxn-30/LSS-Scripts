@@ -69,7 +69,7 @@
  * @grant GM_getResourceURL
  */
 
-/* global I18n */
+/* global I18n, user_id */
 
 const modalId = 'jxn-centralSettings-modal';
 
@@ -106,9 +106,28 @@ const getVehicleTypes = () =>
 let vehicles;
 const getVehicles = () =>
     vehicles ??
-    fetch(`/api/vehicles`)
+    fetch('/api/vehicles')
         .then(res => res.json())
         .then(v => (vehicles = v));
+
+let roleFlags;
+const getRoleFlags = () =>
+    roleFlags ??
+    fetch('/api/allianceinfo')
+        .then(res => (res.ok ? res.json() : Promise.reject()))
+        .then(
+            allianceInfo =>
+                (roleFlags =
+                    allianceInfo?.users?.find(({ id }) => id === user_id)
+                        ?.role_flags ?? {})
+        )
+        .catch(() => (roleFlags = {}));
+
+const hasFinanceRights = () =>
+    roleFlags?.owner ||
+    roleFlags?.admin ||
+    roleFlags?.coadmin ||
+    roleFlags?.finance;
 
 // add some stiles that are used in the modal
 GM_addStyle(`
@@ -134,12 +153,49 @@ GM_addStyle(`
     z-index: 2;
 }
 
-#${modalId} .list-group-item {
+body.dark #${modalId} .list-group-item {
     background: linear-gradient(to bottom, #505050 0, #000 100%);
     border-color: black;
     color: white;
 }
 `);
+
+const createListGroupWrapper = () => {
+    const listWrapper = document.createElement('div');
+    listWrapper.classList.add('flex-row');
+    listWrapper.style.setProperty('column-gap', '1em');
+    return listWrapper;
+};
+
+const createListGroup = () => {
+    const listGroup = document.createElement('ul');
+    listGroup.classList.add('list-group', 'flex-grow-1');
+    return listGroup;
+};
+
+const addListGroupItem = (listGroup, badge, ...content) => {
+    const item = document.createElement('li');
+    item.classList.add('list-group-item');
+    const badgeSpan = document.createElement('span');
+    badgeSpan.classList.add('badge');
+    badgeSpan.textContent = badge;
+    item.append(badgeSpan);
+    if (!badge) badgeSpan.classList.add('hidden');
+    item.append(...content);
+    listGroup.append(item);
+
+    return { item, badge: badgeSpan };
+};
+
+const createListGroupSummary = (listGroup, title) => {
+    const summary = document.createElement('li');
+    summary.classList.add('list-group-item');
+    summary.textContent = title.replace(
+        '%s',
+        listGroup.children.length.toLocaleString()
+    );
+    listGroup.prepend(summary);
+};
 
 const getTowingVehicle = (trailer, towingType) => {
     const romanNum = trailer.caption.match(/ [IVXLCDM]+$/)?.[0] ?? '';
@@ -233,8 +289,35 @@ const fillModal = body => {
         'Krankenhäuser',
         'beds'
     );
+    bedsTab.classList.add('active');
+    bedsTabPane.classList.add('active');
     tabList.append(bedsTab);
-    bedsTabPane.append('Noch nicht verfügbar :)');
+    const { tab: ownBedsTab, tabPane: ownBedsPane } = createTab(
+        'Eigene Krankenhäuser',
+        'beds_own'
+    );
+    ownBedsPane.append('Noch nicht verfügbar :)');
+    if (hasFinanceRights()) {
+        ownBedsTab.classList.add('active');
+        ownBedsPane.classList.add('active');
+        const bedsTabList = document.createElement('ul');
+        bedsTabList.classList.add('nav', 'nav-tabs');
+        bedsTabList.setAttribute('role', 'tablist');
+        const bedsContent = document.createElement('div');
+        bedsContent.classList.add('tab-content');
+        bedsTabPane.append(bedsTabList, bedsContent);
+
+        const { tab: allianceBedsTab, tabPane: allianceBedsPane } = createTab(
+            'Verbands-Krankenhäuser',
+            'beds_alliance'
+        );
+        allianceBedsPane.append('Noch nicht verfügbar :)');
+
+        bedsTabList.append(ownBedsTab, allianceBedsTab);
+        bedsContent.append(ownBedsPane, allianceBedsPane);
+    } else {
+        bedsTabPane.append(ownBedsPane);
+    }
     tabContent.append(bedsTabPane);
     // endregion
 
@@ -244,7 +327,30 @@ const fillModal = body => {
         'cells'
     );
     tabList.append(cellsTab);
-    cellsTabPane.append('Noch nicht verfügbar :)');
+    const { tab: ownCellsTab, tabPane: ownCellsPane } = createTab(
+        'Eigene Zellen',
+        'cells_own'
+    );
+    ownCellsPane.append('Noch nicht verfügbar :)');
+    if (hasFinanceRights()) {
+        const cellsTabList = document.createElement('ul');
+        cellsTabList.classList.add('nav', 'nav-tabs');
+        cellsTabList.setAttribute('role', 'tablist');
+        const cellsContent = document.createElement('div');
+        cellsContent.classList.add('tab-content');
+        cellsTabPane.append(cellsTabList, cellsContent);
+
+        const { tab: allianceCellsTab, tabPane: allianceCellsPane } = createTab(
+            'Verbands-Zellen',
+            'cells_alliance'
+        );
+        allianceCellsPane.append('Noch nicht verfügbar :)');
+
+        cellsTabList.append(ownCellsTab, allianceCellsTab);
+        cellsContent.append(ownCellsPane, allianceCellsPane);
+    } else {
+        cellsTabPane.append(ownCellsPane);
+    }
     tabContent.append(cellsTabPane);
     // endregion
 
@@ -334,12 +440,8 @@ const fillModal = body => {
     });
 
     const updateTowingList = () => {
-        listWrapper.classList.add('flex-row');
-        listWrapper.style.setProperty('column-gap', '1em');
-        const correctList = document.createElement('ul');
-        correctList.classList.add('list-group', 'flex-grow-1');
-        const wrongList = document.createElement('ul');
-        wrongList.classList.add('list-group', 'flex-grow-1');
+        const correctList = createListGroup();
+        const wrongList = createListGroup();
         listWrapper.replaceChildren(correctList, wrongList);
 
         if (
@@ -353,12 +455,9 @@ const fillModal = body => {
             ({ vehicle_type }) => vehicle_type === Number(trailerSelect.value)
         );
         trailers.forEach(vehicle => {
-            const li = document.createElement('li');
-            li.classList.add('list-group-item');
             const link = document.createElement('a');
             link.href = `/vehicles/${vehicle.id}`;
             link.textContent = vehicle.caption;
-            li.append(link, '\xa0➡️\xa0');
             const towingVehicle = getTowingVehicle(
                 vehicle,
                 Number(towingSelect.value)
@@ -367,33 +466,35 @@ const fillModal = body => {
                 randomTowingCheckbox.checked ?
                     vehicle.tractive_random
                 :   vehicle.tractive_vehicle_id === towingVehicle?.id;
-            if (randomTowingCheckbox.checked) li.append('🎲');
-            else {
-                const towingLink = document.createElement('a');
-                towingLink.href = `/vehicles/${towingVehicle?.id}`;
-                towingLink.textContent = towingVehicle?.caption;
-                li.append(towingLink);
-            }
-            if (isCorrect) correctList.append(li);
-            else wrongList.append(li);
+            const targetContent =
+                randomTowingCheckbox.checked ? '🎲' : (
+                    (() => {
+                        const towingLink = document.createElement('a');
+                        towingLink.href = `/vehicles/${towingVehicle?.id}`;
+                        towingLink.textContent = towingVehicle?.caption;
+                        return towingLink;
+                    })()
+                );
+            addListGroupItem(
+                isCorrect ? correctList : wrongList,
+                '',
+                link,
+                '\xa0➡️\xa0',
+                targetContent
+            );
         });
 
-        const correctLi = document.createElement('li');
-        correctLi.classList.add('list-group-item');
-        correctLi.textContent = `Korrektes Zugfahrzeug: ${correctList.children.length.toLocaleString()} Fahrzeuge`;
-        correctList.prepend(correctLi);
-
-        const wrongLi = document.createElement('li');
-        wrongLi.classList.add('list-group-item');
-        wrongLi.textContent = `Falsches Zugfahrzeug: ${wrongList.children.length.toLocaleString()} Fahrzeuge`;
-        wrongList.prepend(wrongLi);
-
-        towingTabPane.append(listWrapper);
+        createListGroupSummary(
+            correctList,
+            'Korrektes Zugfahrzeug: %s Fahrzeuge'
+        );
+        createListGroupSummary(wrongList, 'Falsches Zugfahrzeug: %s Fahrzeuge');
     };
 
     towingForm.addEventListener('change', updateTowingList);
 
-    const listWrapper = document.createElement('div');
+    const listWrapper = createListGroupWrapper();
+    towingTabPane.append(listWrapper);
 
     towingForm.append(trailerSelect, randomTowingLabel, towingSelect);
     towingTabPane.append(
@@ -421,7 +522,7 @@ triggerLi.addEventListener('click', event => {
     event.preventDefault();
     const { body, finish } = createModal();
 
-    Promise.all([getVehicleTypes(), getVehicles()]).then(() => {
+    Promise.all([getVehicleTypes(), getVehicles(), getRoleFlags()]).then(() => {
         fillModal(body);
         finish();
     });
