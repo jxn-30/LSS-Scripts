@@ -127,8 +127,9 @@
         'grtw': 1, // GRTW
         'grtw0': 1, // GRTW (7 Patienten - ohne Notarzt)
         'grtw1': 1, // GRTW (3 Patienten - inkl. Notarzt)
-        'vehicle_type_ids[150]': 1, // GW Bergrettung
-        'vehicle_type_ids[149]': 1, // GW Bergrettung (NEF)
+        'vehicle_type_ids[[150, 149]]': 1, // Beliebiger GW-Bergrettung
+        'vehicle_type_ids[150]': 1, // GW-Bergrettung
+        'vehicle_type_ids[149]': 1, // GW-Bergrettung (NEF)
         'vehicle_type_ids[151]': 1, // ELW Bergrettung
         'vehicle_type_ids[152]': 1, // ATV
         'vehicle_type_ids[153]': 1, // Hundestaffel (Bergrettung)
@@ -144,12 +145,16 @@
         'fukw': 1, // FüKW (Führungskraftwagen - Polizei)
         'grukw': 1, // GruKw (Gruppenkraftwagen)
         'gefkw': 1, // GefKw (Gefangenenkraftwagen)
+        'vehicle_type_ids[[61, 156]]': 1, // Beliebiger Polizeihubschrauber
         'polizeihubschrauber': 1, // Polizeihubschrauber
+        'vehicle_type_ids[156]': 1, // Polizeihubschrauber mit verbauter Winde
         'wasserwerfer': 1, // Wasserwerfer
         'sek_zf': 1, // SEK - ZF
         'sek_mtf': 1, // SEK - MTF
+        'vehicle_type_ids[[79, 80]]': 1, // SEK-ZF oder SEK-MTF
         'mek_zf': 1, // MEK - ZF
         'mek_mtf': 1, // MEK - MTF
+        'vehicle_type_ids[[81, 82]]': 1, // MEK-ZF oder MEK-MTF
         'k9': 1, // Diensthundeführerkraftwagen
         'police_motorcycle': 1, // Polizeimotorrad
         'fustw_or_police_motorcycle': 1, // Funkstreifenwagen oder Polizeimotorrad
@@ -203,7 +208,7 @@
         'seg_elw': 1, // ELW 1 (SEG)
         'gw_san': 1, // GW-San
         'rescue_dogs_seg': 1, // Rettungshundefahrzeug
-        'vehicle_type_ids[127]': 1, // GW UAS
+        'vehicle_type_ids[127]': 1, // GW-UAS
         'vehicle_type_ids[131]': 1, // Bt-Kombi
         'care_service_equipment': 1, // Betreuungs- und Verpflegungsausstattung
         'vehicle_type_ids[130]': 1, // GW-Bt
