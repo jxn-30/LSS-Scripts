@@ -189,11 +189,13 @@ toggleBtn.addEventListener('click', e => {
 
 document.querySelector('h1')?.append(' ', toggleBtn);
 // open first non-empty tab
-document
-    .querySelector(
-        `#tabs a:not(${nonEmptyTabs.map(tab => `:not(a[href="#${tab}"])`).join('')})`
-    )
-    ?.click();
+if (nonEmptyTabs.length) {
+    document
+        .querySelector(
+            `#tabs a:not(${nonEmptyTabs.map(tab => `:not(a[href="#${tab}"])`).join('')})`
+        )
+        ?.click();
+}
 
 if (TABS_AUFLOESEN) {
     document.querySelectorAll('.tab-pane').forEach(pane => {
