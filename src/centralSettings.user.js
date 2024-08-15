@@ -276,6 +276,82 @@ const createModal = () => {
     return { body, finish: () => loadingSpan.remove() };
 };
 
+const createCheckbox = text => {
+    const label = document.createElement('label');
+    label.classList.add('flex-grow-1', 'form-check-label', 'text-right');
+    label.style.setProperty('flex-basis', '0');
+    label.textContent = `\xa0${text}`;
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('form-check-input');
+    label.prepend(checkbox);
+    return { label, checkbox };
+};
+
+const createTaxGroup = () => {
+    const taxGroup = document.createElement('div');
+    taxGroup.classList.add('btn-group');
+    for (let i = 0; i <= 0.5; i += 0.1) {
+        const btn = document.createElement('button');
+        btn.classList.add('btn', 'btn-xs');
+        btn.dataset.tax = (i * 100).toString();
+        if (i) btn.classList.add('btn-default');
+        else btn.classList.add('btn-success');
+        btn.textContent =
+            i ? i.toLocaleString('de', { style: 'percent' }) : 'Kostenlos';
+        taxGroup.append(btn);
+    }
+
+    taxGroup.addEventListener('click', event => {
+        event.preventDefault();
+        taxGroup
+            .querySelector('.btn-success')
+            ?.classList.replace('btn-success', 'btn-default');
+        const newBtn = event.target.closest('.btn');
+        newBtn?.classList.replace('btn-default', 'btn-success');
+        taxGroup.value = parseInt(newBtn.dataset?.tax ?? '0');
+        taxGroup
+            .closest('.form-control-static')
+            ?.dispatchEvent(new Event('change'));
+    });
+
+    return taxGroup;
+};
+
+const createTabPaneContent = (
+    correctSummaryText,
+    wrongSummaryText,
+    formElements,
+    updateCallback
+) => {
+    const form = document.createElement('div');
+    form.classList.add(
+        'flex-row',
+        'justify-between',
+        'align-items-center',
+        'form-control-static'
+    );
+    form.style.setProperty('column-gap', '1em');
+    form.append(...formElements);
+
+    const listWrapper = createListGroupWrapper();
+
+    const update = () => {
+        const correctList = createListGroup();
+        const wrongList = createListGroup();
+        listWrapper.replaceChildren(correctList, wrongList);
+
+        updateCallback(correctList, wrongList);
+
+        createListGroupSummary(correctList, correctSummaryText);
+        createListGroupSummary(wrongList, wrongSummaryText);
+    };
+
+    form.addEventListener('change', update);
+
+    return [form, listWrapper];
+};
+
 const fillModal = body => {
     const tabList = document.createElement('ul');
     tabList.classList.add('nav', 'nav-tabs');
@@ -296,7 +372,30 @@ const fillModal = body => {
         'Eigene Krankenhäuser',
         'beds_own'
     );
-    ownBedsPane.append('Noch nicht verfügbar :)');
+    const { label: shareBedsLabel, checkbox: shareBedsCheckbox } =
+        createCheckbox('Betten freigeben?');
+    shareBedsCheckbox.checked = true;
+    const ownBedsTaxGroup = createTaxGroup();
+    ownBedsTaxGroup.classList.add('flex-grow-1');
+    shareBedsCheckbox.addEventListener('change', () =>
+        ownBedsTaxGroup
+            .querySelectorAll('button')
+            .forEach(btn => (btn.disabled = !shareBedsCheckbox.checked))
+    );
+
+    const [ownBedsForm, ownBedsListWrapper] = createTabPaneContent(
+        'Passend eingestellte Krankenhäuser: %s',
+        'Falsch eingestellte Krankenhäuser: %s',
+        [shareBedsLabel, ownBedsTaxGroup],
+        () => void 0
+    );
+
+    ownBedsPane.append(
+        ownBedsForm,
+        'Bislang noch nicht fertig!',
+        ownBedsListWrapper
+    );
+
     if (hasFinanceRights()) {
         ownBedsTab.classList.add('active');
         ownBedsPane.classList.add('active');
@@ -311,7 +410,21 @@ const fillModal = body => {
             'Verbands-Krankenhäuser',
             'beds_alliance'
         );
-        allianceBedsPane.append('Noch nicht verfügbar :)');
+
+        const allianceBedsTaxGroup = createTaxGroup();
+        const [allianceBedsForm, allianceBedsListWrapper] =
+            createTabPaneContent(
+                'Passend eingestellte Krankenhäuser: %s',
+                'Falsch eingestellte Krankenhäuser: %s',
+                [allianceBedsTaxGroup],
+                () => void 0
+            );
+
+        allianceBedsPane.append(
+            allianceBedsForm,
+            'Bislang noch nicht fertig!',
+            allianceBedsListWrapper
+        );
 
         bedsTabList.append(ownBedsTab, allianceBedsTab);
         bedsContent.append(ownBedsPane, allianceBedsPane);
@@ -331,8 +444,33 @@ const fillModal = body => {
         'Eigene Zellen',
         'cells_own'
     );
-    ownCellsPane.append('Noch nicht verfügbar :)');
+    const { label: shareCellsLabel, checkbox: shareCellsCheckbox } =
+        createCheckbox('Zellen freigeben?');
+    shareCellsCheckbox.checked = true;
+    const ownCellsTaxGroup = createTaxGroup();
+    ownCellsTaxGroup.classList.add('flex-grow-1');
+    shareCellsCheckbox.addEventListener('change', () =>
+        ownCellsTaxGroup
+            .querySelectorAll('button')
+            .forEach(btn => (btn.disabled = !shareCellsCheckbox.checked))
+    );
+
+    const [ownCellsForm, ownCellsListWrapper] = createTabPaneContent(
+        'Passend eingestellte Gebäude: %s',
+        'Falsch eingestellte Gebäude: %s',
+        [shareCellsLabel, ownCellsTaxGroup],
+        () => void 0
+    );
+
+    ownCellsPane.append(
+        ownCellsForm,
+        'Bislang noch nicht fertig!',
+        ownCellsListWrapper
+    );
+
     if (hasFinanceRights()) {
+        ownCellsTab.classList.add('active');
+        ownCellsPane.classList.add('active');
         const cellsTabList = document.createElement('ul');
         cellsTabList.classList.add('nav', 'nav-tabs');
         cellsTabList.setAttribute('role', 'tablist');
@@ -344,7 +482,21 @@ const fillModal = body => {
             'Verbands-Zellen',
             'cells_alliance'
         );
-        allianceCellsPane.append('Noch nicht verfügbar :)');
+
+        const allianceCellsTaxGroup = createTaxGroup();
+        const [allianceCellsForm, allianceCellsListWrapper] =
+            createTabPaneContent(
+                'Passend eingestellte Gebäude: %s',
+                'Falsch eingestellte Gebäude: %s',
+                [allianceCellsTaxGroup],
+                () => void 0
+            );
+
+        allianceCellsPane.append(
+            allianceCellsForm,
+            'Bislang noch nicht fertig!',
+            allianceCellsListWrapper
+        );
 
         cellsTabList.append(ownCellsTab, allianceCellsTab);
         cellsContent.append(ownCellsPane, allianceCellsPane);
@@ -386,14 +538,6 @@ const fillModal = body => {
         v => vehicleTypes[v].isTrailer
     );
 
-    const towingForm = document.createElement('div');
-    towingForm.classList.add(
-        'flex-row',
-        'justify-between',
-        'align-items-center',
-        'form-control-static'
-    );
-    towingForm.style.setProperty('column-gap', '1em');
     const trailerSelect = document.createElement('select');
     trailerSelect.style.setProperty('flex-basis', '0');
     trailerSelect.classList.add('flex-grow-1', 'form-control');
@@ -404,22 +548,11 @@ const fillModal = body => {
         trailerSelect.append(new Option(vehicleTypes[v].caption, v))
     );
 
-    const randomTowingLabel = document.createElement('label');
-    randomTowingLabel.classList.add(
-        'flex-grow-1',
-        'form-check-label',
-        'text-right'
-    );
-    randomTowingLabel.style.setProperty('flex-basis', '0');
-    randomTowingLabel.textContent = '\xa0Zufälliges Zugfahrzeug?';
-    const randomTowingCheckbox = document.createElement('input');
-    randomTowingCheckbox.type = 'checkbox';
-    randomTowingCheckbox.classList.add('form-check-input');
+    const { label: randomTowingLabel, checkbox: randomTowingCheckbox } =
+        createCheckbox('Zufälliges Zugfahrzeug?');
     randomTowingCheckbox.addEventListener('change', () => {
         towingSelect.disabled = randomTowingCheckbox.checked;
     });
-    randomTowingLabel.prepend(randomTowingCheckbox);
-    towingForm.append(randomTowingLabel);
 
     const towingSelect = document.createElement('select');
     towingSelect.classList.add('flex-grow-1', 'form-control');
@@ -439,68 +572,58 @@ const fillModal = body => {
         );
     });
 
-    const updateTowingList = () => {
-        const correctList = createListGroup();
-        const wrongList = createListGroup();
-        listWrapper.replaceChildren(correctList, wrongList);
+    const [towingForm, towingListWrapper] = createTabPaneContent(
+        'Korrektes Zugfahrzeug: %s Fahrzeuge',
+        'Falsches Zugfahrzeug: %s Fahrzeuge',
+        [trailerSelect, randomTowingLabel, towingSelect],
+        (correctList, wrongList) => {
+            if (
+                trailerSelect.value === '-1' ||
+                (!randomTowingCheckbox.checked && towingSelect.value === '-1')
+            ) {
+                return;
+            }
 
-        if (
-            trailerSelect.value === '-1' ||
-            (!randomTowingCheckbox.checked && towingSelect.value === '-1')
-        ) {
-            return;
-        }
-
-        const trailers = vehicles.filter(
-            ({ vehicle_type }) => vehicle_type === Number(trailerSelect.value)
-        );
-        trailers.forEach(vehicle => {
-            const link = document.createElement('a');
-            link.href = `/vehicles/${vehicle.id}`;
-            link.textContent = vehicle.caption;
-            const towingVehicle = getTowingVehicle(
-                vehicle,
-                Number(towingSelect.value)
+            const trailers = vehicles.filter(
+                ({ vehicle_type }) =>
+                    vehicle_type === Number(trailerSelect.value)
             );
-            const isCorrect =
-                randomTowingCheckbox.checked ?
-                    vehicle.tractive_random
-                :   vehicle.tractive_vehicle_id === towingVehicle?.id;
-            const targetContent =
-                randomTowingCheckbox.checked ? '🎲' : (
-                    (() => {
-                        const towingLink = document.createElement('a');
-                        towingLink.href = `/vehicles/${towingVehicle?.id}`;
-                        towingLink.textContent = towingVehicle?.caption;
-                        return towingLink;
-                    })()
+            trailers.forEach(vehicle => {
+                const link = document.createElement('a');
+                link.href = `/vehicles/${vehicle.id}`;
+                link.textContent = vehicle.caption;
+                const towingVehicle = getTowingVehicle(
+                    vehicle,
+                    Number(towingSelect.value)
                 );
-            addListGroupItem(
-                isCorrect ? correctList : wrongList,
-                '',
-                link,
-                '\xa0➡️\xa0',
-                targetContent
-            );
-        });
+                const isCorrect =
+                    randomTowingCheckbox.checked ?
+                        vehicle.tractive_random
+                    :   vehicle.tractive_vehicle_id === towingVehicle?.id;
+                const targetContent =
+                    randomTowingCheckbox.checked ? '🎲' : (
+                        (() => {
+                            const towingLink = document.createElement('a');
+                            towingLink.href = `/vehicles/${towingVehicle?.id}`;
+                            towingLink.textContent = towingVehicle?.caption;
+                            return towingLink;
+                        })()
+                    );
+                addListGroupItem(
+                    isCorrect ? correctList : wrongList,
+                    '',
+                    link,
+                    ' ➡️ ',
+                    targetContent
+                );
+            });
+        }
+    );
 
-        createListGroupSummary(
-            correctList,
-            'Korrektes Zugfahrzeug: %s Fahrzeuge'
-        );
-        createListGroupSummary(wrongList, 'Falsches Zugfahrzeug: %s Fahrzeuge');
-    };
-
-    towingForm.addEventListener('change', updateTowingList);
-
-    const listWrapper = createListGroupWrapper();
-    towingTabPane.append(listWrapper);
-
-    towingForm.append(trailerSelect, randomTowingLabel, towingSelect);
     towingTabPane.append(
         towingForm,
         'Irgendwann wird man hier sicherlich auch noch das Einstellen der Zugfahrzeuge durchführen lassen können :)',
-        listWrapper
+        towingListWrapper
     );
     // endregion
 
