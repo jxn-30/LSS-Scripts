@@ -108,7 +108,46 @@ const getVehicles = () =>
     vehicles ??
     fetch('/api/vehicles')
         .then(res => res.json())
-        .then(v => (vehicles = v));
+        .then(
+            v =>
+                (vehicles = v.toSorted((a, b) =>
+                    a.caption.localeCompare(b.caption)
+                ))
+        );
+
+/**
+ * @typedef {Object} Building A partial building as returned by the API
+ *  @property {number} id
+ *  @property {number} building_type
+ *  @property {boolean} [is_alliance_shared]
+ *  @property {number} [alliance_share_credits_percentage]
+ */
+
+/** @type {Building[]} */
+let buildings;
+const getBuildings = () =>
+    buildings ??
+    fetch('/api/buildings')
+        .then(res => res.json())
+        .then(
+            b =>
+                (buildings = b.toSorted((a, b) =>
+                    a.caption.localeCompare(b.caption)
+                ))
+        );
+
+/** @type {Building[]} */
+let allianceBuildings;
+const getAllianceBuildings = () =>
+    allianceBuildings ??
+    fetch('/api/alliance_buildings')
+        .then(res => res.json())
+        .then(
+            b =>
+                (allianceBuildings = b.toSorted((a, b) =>
+                    a.caption.localeCompare(b.caption)
+                ))
+        );
 
 let roleFlags;
 const getRoleFlags = () =>
@@ -207,6 +246,14 @@ const getTowingVehicle = (trailer, towingType) => {
     );
 };
 
+const createLink = (href, text) => {
+    const link = document.createElement('a');
+    link.classList.add('lightbox-open');
+    link.href = href;
+    link.textContent = text;
+    return link;
+};
+
 /**
  * @param {string} title
  * @param {string|number} id
@@ -291,14 +338,17 @@ const createCheckbox = text => {
 const createTaxGroup = () => {
     const taxGroup = document.createElement('div');
     taxGroup.classList.add('btn-group');
-    for (let i = 0; i <= 0.5; i += 0.1) {
+    taxGroup.dataset.value = '0';
+    for (let i = 0; i <= 50; i += 10) {
         const btn = document.createElement('button');
         btn.classList.add('btn', 'btn-xs');
-        btn.dataset.tax = (i * 100).toString();
+        btn.dataset.tax = i.toString();
         if (i) btn.classList.add('btn-default');
         else btn.classList.add('btn-success');
         btn.textContent =
-            i ? i.toLocaleString('de', { style: 'percent' }) : 'Kostenlos';
+            i ?
+                (i / 100).toLocaleString('de', { style: 'percent' })
+            :   'Kostenlos';
         taxGroup.append(btn);
     }
 
@@ -309,7 +359,7 @@ const createTaxGroup = () => {
             ?.classList.replace('btn-success', 'btn-default');
         const newBtn = event.target.closest('.btn');
         newBtn?.classList.replace('btn-default', 'btn-success');
-        taxGroup.value = parseInt(newBtn.dataset?.tax ?? '0');
+        taxGroup.dataset.value = newBtn.dataset?.tax ?? '0';
         taxGroup
             .closest('.form-control-static')
             ?.dispatchEvent(new Event('change'));
@@ -348,6 +398,7 @@ const createTabPaneContent = (
     };
 
     form.addEventListener('change', update);
+    update();
 
     return [form, listWrapper];
 };
@@ -383,11 +434,44 @@ const fillModal = body => {
             .forEach(btn => (btn.disabled = !shareBedsCheckbox.checked))
     );
 
+    const createHospitalsLists = (buildings, tax, correctList, wrongList) => {
+        const hospitals = buildings.filter(b => b.building_type === 4);
+        hospitals.forEach(hospital => {
+            const link = createLink(
+                `/buildings/${hospital.id}`,
+                hospital.caption
+            );
+            const isCorrect =
+                shareBedsCheckbox.checked ?
+                    hospital.is_alliance_shared &&
+                    hospital.alliance_share_credits_percentage === tax
+                :   !hospital.is_alliance_shared;
+            const targetContent =
+                shareBedsCheckbox.checked ?
+                    tax ? (tax / 100).toLocaleString('de', { style: 'percent' })
+                    :   'Kostenlos'
+                :   'nicht geteilt';
+            addListGroupItem(
+                isCorrect ? correctList : wrongList,
+                '',
+                link,
+                ' ➡️ ',
+                targetContent
+            );
+        });
+    };
+
     const [ownBedsForm, ownBedsListWrapper] = createTabPaneContent(
         'Passend eingestellte Krankenhäuser: %s',
         'Falsch eingestellte Krankenhäuser: %s',
         [shareBedsLabel, ownBedsTaxGroup],
-        () => void 0
+        (correctList, wrongList) =>
+            createHospitalsLists(
+                buildings,
+                parseInt(ownBedsTaxGroup.dataset.value),
+                correctList,
+                wrongList
+            )
     );
 
     ownBedsPane.append(
@@ -417,7 +501,13 @@ const fillModal = body => {
                 'Passend eingestellte Krankenhäuser: %s',
                 'Falsch eingestellte Krankenhäuser: %s',
                 [allianceBedsTaxGroup],
-                () => void 0
+                (correctList, wrongList) =>
+                    createHospitalsLists(
+                        allianceBuildings,
+                        parseInt(allianceBedsTaxGroup.dataset.value),
+                        correctList,
+                        wrongList
+                    )
             );
 
         allianceBedsPane.append(
@@ -455,11 +545,46 @@ const fillModal = body => {
             .forEach(btn => (btn.disabled = !shareCellsCheckbox.checked))
     );
 
+    const createCellsLists = (buildings, tax, correctList, wrongList) => {
+        const cellBuildings = buildings.filter(b =>
+            [6, 16, 19].includes(b.building_type)
+        );
+        cellBuildings.forEach(cellBuilding => {
+            const link = createLink(
+                `/buildings/${cellBuilding.id}`,
+                cellBuilding.caption
+            );
+            const isCorrect =
+                shareBedsCheckbox.checked ?
+                    cellBuilding.is_alliance_shared &&
+                    cellBuilding.alliance_share_credits_percentage === tax
+                :   !cellBuilding.is_alliance_shared;
+            const targetContent =
+                shareBedsCheckbox.checked ?
+                    tax ? (tax / 100).toLocaleString('de', { style: 'percent' })
+                    :   'Kostenlos'
+                :   'nicht geteilt';
+            addListGroupItem(
+                isCorrect ? correctList : wrongList,
+                '',
+                link,
+                ' ➡️ ',
+                targetContent
+            );
+        });
+    };
+
     const [ownCellsForm, ownCellsListWrapper] = createTabPaneContent(
         'Passend eingestellte Gebäude: %s',
         'Falsch eingestellte Gebäude: %s',
         [shareCellsLabel, ownCellsTaxGroup],
-        () => void 0
+        (correctList, wrongList) =>
+            createCellsLists(
+                buildings,
+                parseInt(ownCellsTaxGroup.dataset.value),
+                correctList,
+                wrongList
+            )
     );
 
     ownCellsPane.append(
@@ -489,7 +614,13 @@ const fillModal = body => {
                 'Passend eingestellte Gebäude: %s',
                 'Falsch eingestellte Gebäude: %s',
                 [allianceCellsTaxGroup],
-                () => void 0
+                (correctList, wrongList) =>
+                    createCellsLists(
+                        allianceBuildings,
+                        parseInt(allianceCellsTaxGroup.dataset.value),
+                        correctList,
+                        wrongList
+                    )
             );
 
         allianceCellsPane.append(
@@ -589,9 +720,10 @@ const fillModal = body => {
                     vehicle_type === Number(trailerSelect.value)
             );
             trailers.forEach(vehicle => {
-                const link = document.createElement('a');
-                link.href = `/vehicles/${vehicle.id}`;
-                link.textContent = vehicle.caption;
+                const link = createLink(
+                    `/vehicles/${vehicle.id}`,
+                    vehicle.caption
+                );
                 const towingVehicle = getTowingVehicle(
                     vehicle,
                     Number(towingSelect.value)
@@ -602,12 +734,10 @@ const fillModal = body => {
                     :   vehicle.tractive_vehicle_id === towingVehicle?.id;
                 const targetContent =
                     randomTowingCheckbox.checked ? '🎲' : (
-                        (() => {
-                            const towingLink = document.createElement('a');
-                            towingLink.href = `/vehicles/${towingVehicle?.id}`;
-                            towingLink.textContent = towingVehicle?.caption;
-                            return towingLink;
-                        })()
+                        createLink(
+                            `/vehicles/${towingVehicle?.id}`,
+                            towingVehicle?.caption
+                        )
                     );
                 addListGroupItem(
                     isCorrect ? correctList : wrongList,
@@ -645,7 +775,13 @@ triggerLi.addEventListener('click', event => {
     event.preventDefault();
     const { body, finish } = createModal();
 
-    Promise.all([getVehicleTypes(), getVehicles(), getRoleFlags()]).then(() => {
+    Promise.all([
+        getVehicleTypes(),
+        getVehicles(),
+        getBuildings(),
+        getAllianceBuildings(),
+        getRoleFlags(),
+    ]).then(() => {
         fillModal(body);
         finish();
     });
