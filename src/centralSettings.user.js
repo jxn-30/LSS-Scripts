@@ -234,6 +234,7 @@ const createListGroupSummary = (listGroup, title) => {
         listGroup.children.length.toLocaleString()
     );
     listGroup.prepend(summary);
+    return summary;
 };
 
 const getTowingVehicle = (trailer, towingType) => {
@@ -411,7 +412,15 @@ const createTabPaneContent = (
         updateCallback(correctList, wrongList);
 
         createListGroupSummary(correctList, correctSummaryText);
-        createListGroupSummary(wrongList, wrongSummaryText);
+        const wrongSummary = createListGroupSummary(
+            wrongList,
+            wrongSummaryText
+        );
+        const processBtn = document.createElement('button');
+        processBtn.classList.add('btn', 'btn-success', 'btn-xs', 'pull-right');
+        processBtn.disabled = true;
+        processBtn.textContent = 'Einstellungen übernehmen';
+        wrongSummary.append(processBtn);
     };
 
     form.addEventListener('change', update);
