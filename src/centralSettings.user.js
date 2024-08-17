@@ -689,7 +689,7 @@ const fillModal = body => {
         createCheckbox('Nur Krankenhäuser mit passender Erweiterung?');
     const [elw1TaxSelect] = createSelect(
         'Maximale Verbandsabgabe',
-        new Array(5).fill(1).map((_, i) => ({
+        new Array(6).fill(1).map((_, i) => ({
             value: (i * 10).toString(),
             text: i ? percent(i / 10) : 'Kostenlos',
         }))
@@ -727,12 +727,47 @@ const fillModal = body => {
             elw1DistanceSelect,
             elw1FreeSelect,
         ],
-        () => void 0
+        (correctList, wrongList) => {
+            if (
+                elw1EnabledCheckbox.checked &&
+                (elw1TaxSelect.value === '-1' ||
+                    elw1DistanceSelect.value === '-1' ||
+                    elw1FreeSelect.value === '-1')
+            ) {
+                return;
+            }
+
+            const elw1Vehicles = vehicles.filter(
+                ({ vehicle_type }) => vehicle_type === 59
+            );
+
+            elw1Vehicles.forEach(vehicle => {
+                const link = createLink(
+                    `/vehicles/${vehicle.id}`,
+                    vehicle.caption
+                );
+
+                addListGroupItem(
+                    wrongList,
+                    '',
+                    link,
+                    ': ➡️ ',
+                    [
+                        elw1EnabledCheckbox,
+                        elw1OwnCheckbox,
+                        elw1ExtensionCheckbox,
+                    ]
+                        .map(c => (c.checked ? '✅' : ''))
+                        .join(''),
+                    ` ${elw1TaxSelect.value}\xa0%; ${elw1DistanceSelect.value}\xa0km; ${elw1FreeSelect.value}\xa0Plätze`
+                );
+            });
+        }
     );
 
     elw1TabPane.append(
         elw1Form,
-        'Leider ist aktuell nicht feststellbar, welche Fahrzeuge neu konfiguriert werden müssen, daher werden alle Fahrzeuge konfiguriert.',
+        'Leider ist aktuell nicht feststellbar, welche Fahrzeuge neu konfiguriert werden müssen, daher werden alle Fahrzeuge konfiguriert und unter falsch gelistet.',
         elw1ListWrapper
     );
     tabContent.append(elw1TabPane);
@@ -752,7 +787,7 @@ const fillModal = body => {
         createCheckbox('Nur eigene Zellen?');
     const [fustwDglTaxSelect] = createSelect(
         'Maximale Verbandsabgabe',
-        new Array(5).fill(1).map((_, i) => ({
+        new Array(6).fill(1).map((_, i) => ({
             value: (i * 10).toString(),
             text: i ? percent(i / 10) : 'Kostenlos',
         }))
@@ -797,12 +832,46 @@ const fillModal = body => {
             fustwDglFreeSelect,
             fustwDglDelay,
         ],
-        () => void 0
+        (correctList, wrongList) => {
+            if (
+                fustwDglEnabledCheckbox.checked &&
+                (fustwDglTaxSelect.value === '-1' ||
+                    fustwDglDistanceSelect.value === '-1' ||
+                    fustwDglFreeSelect.value === '-1')
+            ) {
+                return;
+            }
+
+            const fustwDglVehicles = vehicles.filter(
+                ({ vehicle_type }) => vehicle_type === 103
+            );
+
+            fustwDglVehicles.forEach(vehicle => {
+                const link = createLink(
+                    `/vehicles/${vehicle.id}`,
+                    vehicle.caption
+                );
+
+                addListGroupItem(
+                    wrongList,
+                    '',
+                    link,
+                    ': ➡️ ',
+                    [fustwDglEnabledCheckbox, fustwDglOwnCheckbox]
+                        .map(c => (c.checked ? '✅' : '❌'))
+                        .join(''),
+                    ` ${fustwDglTaxSelect.value}\xa0%; ${fustwDglDistanceSelect.value}\xa0km; ${fustwDglFreeSelect.value}\xa0Plätze; `,
+                    fustwDglDelay.value === '' ?
+                        'Standard-Verzögerung'
+                    :   `${fustwDglDelay.value}\xa0min`
+                );
+            });
+        }
     );
 
     fustwTabPane.append(
         fustwDglForm,
-        'Leider ist aktuell nicht feststellbar, welche Fahrzeuge neu konfiguriert werden müssen, daher werden alle Fahrzeuge konfiguriert.',
+        'Leider ist aktuell nicht feststellbar, welche Fahrzeuge neu konfiguriert werden müssen, daher werden alle Fahrzeuge konfiguriert und unter falsch gelistet.',
         fustwDglListWrapper
     );
     tabContent.append(fustwTabPane);
