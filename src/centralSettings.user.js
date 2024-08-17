@@ -468,11 +468,20 @@ const fillModal = body => {
                     tax ? percent(tax / 100)
                     :   'Kostenlos'
                 :   'nicht geteilt';
+            const currentContent =
+                hospital.is_alliance_shared ?
+                    hospital.alliance_share_credits_percentage ?
+                        percent(
+                            hospital.alliance_share_credits_percentage / 100
+                        )
+                    :   'Kostenlos'
+                :   'nicht geteilt';
             addListGroupItem(
                 isCorrect ? correctList : wrongList,
                 '',
                 link,
-                ' ➡️ ',
+                ': ',
+                ...(isCorrect ? [] : [currentContent, ' ➡️ ']),
                 targetContent
             );
         });
@@ -581,11 +590,20 @@ const fillModal = body => {
                     tax ? percent(tax / 100)
                     :   'Kostenlos'
                 :   'nicht geteilt';
+            const currentContent =
+                cellBuilding.is_alliance_shared ?
+                    cellBuilding.alliance_share_credits_percentage ?
+                        percent(
+                            cellBuilding.alliance_share_credits_percentage / 100
+                        )
+                    :   'Kostenlos'
+                :   'nicht geteilt';
             addListGroupItem(
                 isCorrect ? correctList : wrongList,
                 '',
                 link,
-                ' ➡️ ',
+                ': ',
+                ...(isCorrect ? [] : [currentContent, ' ➡️ ']),
                 targetContent
             );
         });
@@ -865,11 +883,21 @@ const fillModal = body => {
                             towingVehicle?.caption
                         )
                     );
+                const currentContent =
+                    vehicle.tractive_random ? '🎲' : (
+                        createLink(
+                            `/vehicles/${vehicle.tractive_vehicle_id}`,
+                            vehicles.find(
+                                ({ id }) => id === vehicle.tractive_vehicle_id
+                            )?.caption
+                        )
+                    );
                 addListGroupItem(
                     isCorrect ? correctList : wrongList,
                     '',
                     link,
-                    ' ➡️ ',
+                    ': ',
+                    ...(isCorrect ? [] : [currentContent, ' ➡️ ']),
                     targetContent
                 );
             });
