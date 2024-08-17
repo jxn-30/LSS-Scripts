@@ -371,12 +371,13 @@ const createTaxGroup = () => {
 
     taxGroup.addEventListener('click', event => {
         event.preventDefault();
+        const newBtn = event.target.closest('.btn');
+        if (event.target.closest('.btn.btn-success') || !newBtn) return;
         taxGroup
             .querySelector('.btn-success')
             ?.classList.replace('btn-success', 'btn-default');
-        const newBtn = event.target.closest('.btn');
         newBtn?.classList.replace('btn-default', 'btn-success');
-        taxGroup.dataset.value = newBtn.dataset?.tax ?? '0';
+        taxGroup.dataset.value = newBtn?.dataset?.tax ?? '0';
         taxGroup
             .closest('.form-control-static')
             ?.dispatchEvent(new Event('change'));
