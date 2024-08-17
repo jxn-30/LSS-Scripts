@@ -395,7 +395,8 @@ const createTabPaneContent = (
         'flex-row',
         'justify-between',
         'align-items-center',
-        'form-control-static'
+        'form-control-static',
+        'flex-wrap'
     );
     form.style.setProperty('column-gap', '1em');
     form.append(...formElements);
@@ -725,7 +726,67 @@ const fillModal = body => {
         'fustw'
     );
     tabList.append(fustwTab);
-    fustwTabPane.append('Noch nicht verfügbar :)');
+
+    const { label: fustwDglEnabledLabel, checkbox: fustwDglEnabledCheckbox } =
+        createCheckbox('Sprechwünsche automatisch bearbeiten?');
+    fustwDglEnabledCheckbox.checked = true;
+    const { label: fustwDglOwnLabel, checkbox: fustwDglOwnCheckbox } =
+        createCheckbox('Nur eigene Zellen?');
+    const [fustwDglTaxSelect] = createSelect(
+        'Maximale Verbandsabgabe',
+        new Array(5).fill(1).map((_, i) => ({
+            value: (i * 10).toString(),
+            text: i ? percent(i / 10) : 'Kostenlos',
+        }))
+    );
+    const [fustwDglDistanceSelect] = createSelect(
+        'Maximale Entfernung',
+        [1, 5, 20, 50, 100, 200].map(i => ({
+            value: i.toString(),
+            text: `${i}\xa0km`,
+        }))
+    );
+    const [fustwDglFreeSelect] = createSelect(
+        'Plätze freilassen',
+        [0, 1, 2, 3, 4, 5]
+    );
+    const fustwDglDelay = document.createElement('input');
+    fustwDglDelay.type = 'number';
+    fustwDglDelay.classList.add('flex-grow-1', 'form-control', 'w-100');
+    fustwDglDelay.min = '0';
+    fustwDglDelay.max = '240';
+    fustwDglDelay.placeholder = fustwDglDelay.title =
+        'Verzögerung in Minuten (leer = globaler Standardwert)';
+
+    fustwDglEnabledCheckbox.addEventListener('change', () => {
+        [
+            fustwDglOwnCheckbox,
+            fustwDglTaxSelect,
+            fustwDglDistanceSelect,
+            fustwDglFreeSelect,
+            fustwDglDelay,
+        ].forEach(el => (el.disabled = !fustwDglEnabledCheckbox.checked));
+    });
+
+    const [fustwDglForm, fustwDglListWrapper] = createTabPaneContent(
+        'Korrekt konfigurierte FuStW (DGL): %s Fahrzeuge',
+        'Falsch konfigurierte FuStW (DGL): %s Fahrzeuge',
+        [
+            fustwDglEnabledLabel,
+            fustwDglOwnLabel,
+            fustwDglTaxSelect,
+            fustwDglDistanceSelect,
+            fustwDglFreeSelect,
+            fustwDglDelay,
+        ],
+        () => void 0
+    );
+
+    fustwTabPane.append(
+        fustwDglForm,
+        'Leider ist aktuell nicht feststellbar, welche Fahrzeuge neu konfiguriert werden müssen, daher werden alle Fahrzeuge konfiguriert.',
+        fustwDglListWrapper
+    );
     tabContent.append(fustwTabPane);
     // endregion
 
