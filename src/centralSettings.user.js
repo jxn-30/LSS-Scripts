@@ -323,6 +323,8 @@ const createModal = () => {
     return { body, finish: () => loadingSpan.remove() };
 };
 
+const percent = value => value.toLocaleString('de', { style: 'percent' });
+
 const createCheckbox = text => {
     const label = document.createElement('label');
     label.classList.add('flex-grow-1', 'form-check-label', 'text-right');
@@ -335,6 +337,23 @@ const createCheckbox = text => {
     return { label, checkbox };
 };
 
+const createSelect = (title, options = []) => {
+    const select = document.createElement('select');
+    select.classList.add('flex-grow-1', 'form-control');
+    select.style.setProperty('flex-basis', '0');
+    const titleOption = new Option(title, '-1', true, true);
+    titleOption.disabled = true;
+    select.append(titleOption);
+    options.forEach(option =>
+        select.append(
+            typeof option === 'object' ?
+                new Option(option.text, option.value)
+            :   new Option(option, option)
+        )
+    );
+    return [select, titleOption];
+};
+
 const createTaxGroup = () => {
     const taxGroup = document.createElement('div');
     taxGroup.classList.add('btn-group');
@@ -345,10 +364,7 @@ const createTaxGroup = () => {
         btn.dataset.tax = i.toString();
         if (i) btn.classList.add('btn-default');
         else btn.classList.add('btn-success');
-        btn.textContent =
-            i ?
-                (i / 100).toLocaleString('de', { style: 'percent' })
-            :   'Kostenlos';
+        btn.textContent = i ? percent(i / 100) : 'Kostenlos';
         taxGroup.append(btn);
     }
 
@@ -448,7 +464,7 @@ const fillModal = body => {
                 :   !hospital.is_alliance_shared;
             const targetContent =
                 shareBedsCheckbox.checked ?
-                    tax ? (tax / 100).toLocaleString('de', { style: 'percent' })
+                    tax ? percent(tax / 100)
                     :   'Kostenlos'
                 :   'nicht geteilt';
             addListGroupItem(
@@ -561,7 +577,7 @@ const fillModal = body => {
                 :   !cellBuilding.is_alliance_shared;
             const targetContent =
                 shareBedsCheckbox.checked ?
-                    tax ? (tax / 100).toLocaleString('de', { style: 'percent' })
+                    tax ? percent(tax / 100)
                     :   'Kostenlos'
                 :   'nicht geteilt';
             addListGroupItem(
@@ -643,7 +659,63 @@ const fillModal = body => {
         'elw1'
     );
     tabList.append(elw1Tab);
-    elw1TabPane.append('Noch nicht verfügbar :)');
+
+    const { label: elw1EnabledLabel, checkbox: elw1EnabledCheckbox } =
+        createCheckbox('Sprechwünsche automatisch bearbeiten?');
+    elw1EnabledCheckbox.checked = true;
+    const { label: elw1OwnLabel, checkbox: elw1OwnCheckbox } = createCheckbox(
+        'Nur eigene Krankenhäuser?'
+    );
+    const { label: elw1ExtensionLabel, checkbox: elw1ExtensionCheckbox } =
+        createCheckbox('Nur Krankenhäuser mit passender Erweiterung?');
+    const [elw1TaxSelect] = createSelect(
+        'Maximale Verbandsabgabe',
+        new Array(5).fill(1).map((_, i) => ({
+            value: (i * 10).toString(),
+            text: i ? percent(i / 10) : 'Kostenlos',
+        }))
+    );
+    const [elw1DistanceSelect] = createSelect(
+        'Maximale Entfernung',
+        [1, 5, 20, 50, 100, 200].map(i => ({
+            value: i.toString(),
+            text: `${i}\xa0km`,
+        }))
+    );
+    const [elw1FreeSelect] = createSelect(
+        'Plätze freilassen',
+        [0, 1, 2, 3, 4, 5]
+    );
+
+    elw1EnabledCheckbox.addEventListener('change', () => {
+        [
+            elw1OwnCheckbox,
+            elw1ExtensionCheckbox,
+            elw1TaxSelect,
+            elw1DistanceSelect,
+            elw1FreeSelect,
+        ].forEach(el => (el.disabled = !elw1EnabledCheckbox.checked));
+    });
+
+    const [elw1Form, elw1ListWrapper] = createTabPaneContent(
+        'Korrekt konfigurierte ELW 1 (SEG): %s Fahrzeuge',
+        'Falsch konfigurierte ELW 1 (SEG): %s Fahrzeuge',
+        [
+            elw1EnabledLabel,
+            elw1OwnLabel,
+            elw1ExtensionLabel,
+            elw1TaxSelect,
+            elw1DistanceSelect,
+            elw1FreeSelect,
+        ],
+        () => void 0
+    );
+
+    elw1TabPane.append(
+        elw1Form,
+        'Leider ist aktuell nicht feststellbar, welche Fahrzeuge neu konfiguriert werden müssen, daher werden alle Fahrzeuge konfiguriert.',
+        elw1ListWrapper
+    );
     tabContent.append(elw1TabPane);
     // endregion
 
@@ -669,14 +741,12 @@ const fillModal = body => {
         v => vehicleTypes[v].isTrailer
     );
 
-    const trailerSelect = document.createElement('select');
-    trailerSelect.style.setProperty('flex-basis', '0');
-    trailerSelect.classList.add('flex-grow-1', 'form-control');
-    const option = new Option('Anhänger auswählen', '-1', true, true);
-    option.disabled = true;
-    trailerSelect.append(option);
-    trailers.forEach(v =>
-        trailerSelect.append(new Option(vehicleTypes[v].caption, v))
+    const [trailerSelect] = createSelect(
+        'Anhänger auswählen',
+        trailers.map(v => ({
+            value: v,
+            text: vehicleTypes[v].caption,
+        }))
     );
 
     const { label: randomTowingLabel, checkbox: randomTowingCheckbox } =
@@ -685,12 +755,7 @@ const fillModal = body => {
         towingSelect.disabled = randomTowingCheckbox.checked;
     });
 
-    const towingSelect = document.createElement('select');
-    towingSelect.classList.add('flex-grow-1', 'form-control');
-    towingSelect.style.setProperty('flex-basis', '0');
-    const towingOption = new Option('Zugfahrzeug auswählen', '-1', true, true);
-    towingOption.disabled = true;
-    towingSelect.append(towingOption);
+    const [towingSelect, towingOption] = createSelect('Zugfahrzeug auswählen');
     trailerSelect.addEventListener('change', () => {
         towingSelect.replaceChildren();
         towingSelect.append(towingOption);
