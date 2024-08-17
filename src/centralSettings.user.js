@@ -54,6 +54,8 @@
 // @run-at          document-idle
 // @grant           GM_addStyle
 // @grant           GM_getResourceURL
+// @grant           GM_setValue
+// @grant           GM_getValue
 // ==/UserScript==
 
 /**
@@ -67,6 +69,8 @@
  * @resource icon /resources/centralSettings.user.js/icon.png
  * @grant GM_addStyle
  * @grant GM_getResourceURL
+ * @grant GM_setValue
+ * @grant GM_getValue
  */
 
 /* global I18n, user_id */
@@ -326,32 +330,49 @@ const createModal = () => {
 
 const percent = value => value.toLocaleString('de', { style: 'percent' });
 
-const createCheckbox = text => {
+const createCheckbox = (text, id) => {
     const label = document.createElement('label');
     label.classList.add('flex-grow-1', 'form-check-label', 'text-right');
     label.style.setProperty('flex-basis', '0');
     label.textContent = `\xa0${text}`;
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.checked = GM_getValue(id, false);
+    checkbox.addEventListener('change', () =>
+        GM_setValue(id, checkbox.checked)
+    );
     checkbox.classList.add('form-check-input');
     label.prepend(checkbox);
     return { label, checkbox };
 };
 
-const createSelect = (title, options = []) => {
+const createSelect = (id, title, options = []) => {
     const select = document.createElement('select');
     select.classList.add('flex-grow-1', 'form-control');
     select.style.setProperty('flex-basis', '0');
-    const titleOption = new Option(title, '-1', true, true);
+    const savedValue = GM_getValue(id, -1);
+    const firstTime = savedValue === -1;
+    const titleOption = new Option(title, '-1', firstTime, firstTime);
     titleOption.disabled = true;
     select.append(titleOption);
     options.forEach(option =>
         select.append(
             typeof option === 'object' ?
-                new Option(option.text, option.value)
-            :   new Option(option, option)
+                new Option(
+                    option.text,
+                    option.value,
+                    savedValue === option.value,
+                    savedValue === option.value
+                )
+            :   new Option(
+                    option,
+                    option,
+                    savedValue === option,
+                    savedValue === option
+                )
         )
     );
+    select.addEventListener('change', () => GM_setValue(id, select.value));
     return [select, titleOption];
 };
 
@@ -451,7 +472,7 @@ const fillModal = body => {
         'beds_own'
     );
     const { label: shareBedsLabel, checkbox: shareBedsCheckbox } =
-        createCheckbox('Betten freigeben?');
+        createCheckbox('Betten freigeben?', 'shareBeds');
     shareBedsCheckbox.checked = true;
     const ownBedsTaxGroup = createTaxGroup();
     ownBedsTaxGroup.classList.add('flex-grow-1');
@@ -571,7 +592,7 @@ const fillModal = body => {
         'cells_own'
     );
     const { label: shareCellsLabel, checkbox: shareCellsCheckbox } =
-        createCheckbox('Zellen freigeben?');
+        createCheckbox('Zellen freigeben?', 'shareCells');
     shareCellsCheckbox.checked = true;
     const ownCellsTaxGroup = createTaxGroup();
     ownCellsTaxGroup.classList.add('flex-grow-1');
@@ -690,14 +711,19 @@ const fillModal = body => {
     tabList.append(elw1Tab);
 
     const { label: elw1EnabledLabel, checkbox: elw1EnabledCheckbox } =
-        createCheckbox('Sprechwünsche automatisch bearbeiten?');
+        createCheckbox('Sprechwünsche automatisch bearbeiten?', 'elw1Enabled');
     elw1EnabledCheckbox.checked = true;
     const { label: elw1OwnLabel, checkbox: elw1OwnCheckbox } = createCheckbox(
-        'Nur eigene Krankenhäuser?'
+        'Nur eigene Krankenhäuser?',
+        'elw1Own'
     );
     const { label: elw1ExtensionLabel, checkbox: elw1ExtensionCheckbox } =
-        createCheckbox('Nur Krankenhäuser mit passender Erweiterung?');
+        createCheckbox(
+            'Nur Krankenhäuser mit passender Erweiterung?',
+            'elw1Extension'
+        );
     const [elw1TaxSelect] = createSelect(
+        'elw1Tax',
         'Maximale Verbandsabgabe',
         new Array(6).fill(1).map((_, i) => ({
             value: (i * 10).toString(),
@@ -705,6 +731,7 @@ const fillModal = body => {
         }))
     );
     const [elw1DistanceSelect] = createSelect(
+        'elw1Distance',
         'Maximale Entfernung',
         [1, 5, 20, 50, 100, 200].map(i => ({
             value: i.toString(),
@@ -712,6 +739,7 @@ const fillModal = body => {
         }))
     );
     const [elw1FreeSelect] = createSelect(
+        'elw1Free',
         'Plätze freilassen',
         [0, 1, 2, 3, 4, 5]
     );
@@ -791,11 +819,15 @@ const fillModal = body => {
     tabList.append(fustwTab);
 
     const { label: fustwDglEnabledLabel, checkbox: fustwDglEnabledCheckbox } =
-        createCheckbox('Sprechwünsche automatisch bearbeiten?');
+        createCheckbox(
+            'Sprechwünsche automatisch bearbeiten?',
+            'fustwDglEnabled'
+        );
     fustwDglEnabledCheckbox.checked = true;
     const { label: fustwDglOwnLabel, checkbox: fustwDglOwnCheckbox } =
-        createCheckbox('Nur eigene Zellen?');
+        createCheckbox('Nur eigene Zellen?', 'fustwDglOwn');
     const [fustwDglTaxSelect] = createSelect(
+        'fustwDglTax',
         'Maximale Verbandsabgabe',
         new Array(6).fill(1).map((_, i) => ({
             value: (i * 10).toString(),
@@ -803,6 +835,7 @@ const fillModal = body => {
         }))
     );
     const [fustwDglDistanceSelect] = createSelect(
+        'fustwDglDistance',
         'Maximale Entfernung',
         [1, 5, 20, 50, 100, 200].map(i => ({
             value: i.toString(),
@@ -810,6 +843,7 @@ const fillModal = body => {
         }))
     );
     const [fustwDglFreeSelect] = createSelect(
+        'fustwDglFree',
         'Plätze freilassen',
         [0, 1, 2, 3, 4, 5]
     );
@@ -900,6 +934,7 @@ const fillModal = body => {
     );
 
     const [trailerSelect] = createSelect(
+        'trailer',
         'Anhänger auswählen',
         trailers.map(v => ({
             value: v,
@@ -908,12 +943,15 @@ const fillModal = body => {
     );
 
     const { label: randomTowingLabel, checkbox: randomTowingCheckbox } =
-        createCheckbox('Zufälliges Zugfahrzeug?');
+        createCheckbox('Zufälliges Zugfahrzeug?', 'randomTowing');
     randomTowingCheckbox.addEventListener('change', () => {
         towingSelect.disabled = randomTowingCheckbox.checked;
     });
 
-    const [towingSelect, towingOption] = createSelect('Zugfahrzeug auswählen');
+    const [towingSelect, towingOption] = createSelect(
+        'towing',
+        'Zugfahrzeug auswählen'
+    );
     trailerSelect.addEventListener('change', () => {
         towingSelect.replaceChildren();
         towingSelect.append(towingOption);
