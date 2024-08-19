@@ -214,6 +214,10 @@ GM_addStyle(`
     z-index: 2;
 }
 
+#${modalId}:has(.list-group-item .progress-bar.active) .close {
+    display: none;
+}
+
 body.dark #${modalId} .list-group-item {
     background: linear-gradient(to bottom, #505050 0, #000 100%);
     border-color: black;
