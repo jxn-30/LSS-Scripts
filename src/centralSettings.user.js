@@ -415,7 +415,7 @@ const createSelect = (id, title, options = []) => {
     const select = document.createElement('select');
     select.classList.add('flex-grow-1', 'form-control');
     select.style.setProperty('flex-basis', '0');
-    const savedValue = GM_getValue(id, '-1');
+    const savedValue = id ? GM_getValue(id, '-1') : '-1';
     const firstTime = savedValue === '-1';
     const titleOption = new Option(title, '-1', firstTime, firstTime);
     titleOption.disabled = true;
@@ -562,9 +562,13 @@ const createTabPaneContent = (
                 if (aborted) break;
                 badge.textContent = '⏳️';
                 badge.classList.remove('hidden');
-                await updateFn();
-                badge.textContent = '✅';
-                correctSummary.after(item);
+                try {
+                    await updateFn();
+                    badge.textContent = '✅';
+                    correctSummary.after(item);
+                } catch {
+                    badge.textContent = '❌';
+                }
                 width += step;
                 progressBar.style.setProperty('width', `${width}%`);
             }
@@ -1128,7 +1132,7 @@ const fillModal = body => {
     );
 
     const [trailerSelect] = createSelect(
-        'trailer',
+        '',
         'Anhänger auswählen',
         trailers.map(v => ({
             value: v,
@@ -1143,7 +1147,7 @@ const fillModal = body => {
     });
 
     const [towingSelect, towingOption] = createSelect(
-        'towing',
+        '',
         'Zugfahrzeug auswählen'
     );
     trailerSelect.addEventListener('change', () => {
@@ -1212,18 +1216,20 @@ const fillModal = body => {
                     targetContent
                 );
 
-                const data = {
-                    'vehicle[tractive_random]': Number(
-                        randomTowingCheckbox.checked
-                    ),
-                };
-                if (towingVehicle) {
-                    data['vehicle[tractive_vehicle_id]'] = towingVehicle.id;
+                if (!isCorrect) {
+                    const data = {
+                        'vehicle[tractive_random]': Number(
+                            randomTowingCheckbox.checked
+                        ),
+                    };
+                    if (towingVehicle) {
+                        data['vehicle[tractive_vehicle_id]'] = towingVehicle.id;
+                    }
+                    currentWrongList.set(vehicle.id, {
+                        ...item,
+                        updateFn: () => editVehicle(vehicle.id, data),
+                    });
                 }
-                currentWrongList.set(vehicle.id, {
-                    ...item,
-                    updateFn: () => editVehicle(vehicle.id, data),
-                });
             });
         },
         [reGetVehicles]
@@ -1231,7 +1237,7 @@ const fillModal = body => {
 
     towingTabPane.append(
         towingForm,
-        'Irgendwann wird man hier sicherlich auch noch das Einstellen der Zugfahrzeuge durchführen lassen können :)',
+        'Die Zugfahrzeugerkennung kann aktuell nur erkennen, wenn die Fahrzeuge auf die gleiche römische Ziffer (oder eben auf keinen Inhalt) enden.',
         towingListWrapper
     );
     // endregion
