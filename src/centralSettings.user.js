@@ -219,9 +219,14 @@ GM_addStyle(`
 }
 
 body.dark #${modalId} .list-group-item {
-    background: linear-gradient(to bottom, #505050 0, #000 100%);
+    background-image: linear-gradient(to bottom, #505050 0, #000 100%);
     border-color: black;
     color: white;
+}
+
+body.dark #${modalId} .list-group-item.list-group-item-danger {
+    background-image: unset;
+    background-color: rgb(67, 26, 26);
 }
 `);
 
@@ -263,14 +268,21 @@ const createListGroupSummary = (listGroup, title) => {
     return summary;
 };
 
+const usedTowingVehicles = new Set();
+
 const getTowingVehicle = (trailer, towingType) => {
-    const romanNum = trailer.caption.match(/ [IVXLCDM]+$/)?.[0] ?? '';
-    return cache.vehicles.find(
+    const romanNum = trailer.caption.match(/\s[IVXLCDM]+$/)?.[0] ?? '';
+    const arabicNum = trailer.caption.match(/\s\d+$/)?.[0] ?? '';
+    const vehicle = cache.vehicles.find(
         v =>
+            !usedTowingVehicles.has(v.id) && // not used yet
             v.vehicle_type === towingType && // correct vehicle type
             v.building_id === trailer.building_id && // same building
-            (romanNum ? v.caption.endsWith(romanNum) : true) // same roman number (if any)
+            (romanNum ? v.caption.endsWith(romanNum) : true) && // same roman number (if any)
+            (arabicNum ? v.caption.endsWith(arabicNum) : true) // same arabic number (if any)
     );
+    if (vehicle) usedTowingVehicles.add(vehicle);
+    return vehicle;
 };
 
 const createLink = (href, text) => {
@@ -523,7 +535,7 @@ const createTabPaneContent = (
         );
         const processBtn = document.createElement('button');
         processBtn.classList.add('btn', 'btn-success', 'btn-xs', 'pull-right');
-        processBtn.disabled = wrongList.childElementCount === 1;
+        processBtn.disabled = !currentWrongList.size;
         processBtn.textContent = 'Einstellungen übernehmen';
 
         const progressWrapper = document.createElement('div');
@@ -1199,6 +1211,7 @@ const fillModal = body => {
                 ({ vehicle_type }) =>
                     vehicle_type === Number(trailerSelect.value)
             );
+            usedTowingVehicles.clear();
             trailers.forEach(vehicle => {
                 const link = createLink(
                     `/vehicles/${vehicle.id}`,
@@ -1229,15 +1242,22 @@ const fillModal = body => {
                         )
                     );
 
+                const incorrectButNoTowing =
+                    !randomTowingCheckbox.checked &&
+                    !isCorrect &&
+                    !towingVehicle;
+
                 const item = addListGroupItem(
                     isCorrect ? correctList : wrongList,
                     link,
                     ': ',
                     ...(isCorrect ? [] : [currentContent, ' ➡️ ']),
-                    targetContent
+                    incorrectButNoTowing ?
+                        '⚠️ Kein passendes Zugfahrzeug gefunden!'
+                    :   targetContent
                 );
 
-                if (!isCorrect) {
+                if (!isCorrect && !incorrectButNoTowing) {
                     const data = {
                         'vehicle[tractive_random]': Number(
                             randomTowingCheckbox.checked
@@ -1250,6 +1270,10 @@ const fillModal = body => {
                         ...item,
                         updateFn: () => editVehicle(vehicle.id, data),
                     });
+                } else if (!isCorrect && incorrectButNoTowing) {
+                    item.badge.textContent = '❌';
+                    item.badge.classList.remove('hidden');
+                    item.item.classList.add('list-group-item-danger');
                 }
             });
         },
