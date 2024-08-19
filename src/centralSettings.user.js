@@ -1263,9 +1263,11 @@ const fillModal = body => {
     );
     // endregion
 
-    tabList.append(
-        'Wenn Werte offensichtlich falsch sind, kann es helfen, das Spiel einmal neu zu laden.'
-    );
+    const reloadHint = document.createElement('li');
+    reloadHint.style.setProperty('padding', '10px');
+    reloadHint.textContent =
+        'Wenn Werte offensichtlich falsch sind, kann es helfen, das Spiel einmal neu zu laden.';
+    tabList.append(reloadHint);
     body.append(tabList, tabContent);
 };
 
