@@ -376,16 +376,17 @@ const createSelect = (id, title, options = []) => {
     return [select, titleOption];
 };
 
-const createTaxGroup = () => {
+const createTaxGroup = id => {
     const taxGroup = document.createElement('div');
     taxGroup.classList.add('btn-group');
-    taxGroup.dataset.value = '0';
+    const stored = GM_getValue(id, 0);
+    taxGroup.dataset.value = stored.toString();
     for (let i = 0; i <= 50; i += 10) {
         const btn = document.createElement('button');
         btn.classList.add('btn', 'btn-xs');
         btn.dataset.tax = i.toString();
-        if (i) btn.classList.add('btn-default');
-        else btn.classList.add('btn-success');
+        if (i === stored) btn.classList.add('btn-success');
+        else btn.classList.add('btn-default');
         btn.textContent = i ? percent(i / 100) : 'Kostenlos';
         taxGroup.append(btn);
     }
@@ -399,6 +400,7 @@ const createTaxGroup = () => {
             ?.classList.replace('btn-success', 'btn-default');
         newBtn?.classList.replace('btn-default', 'btn-success');
         taxGroup.dataset.value = newBtn?.dataset?.tax ?? '0';
+        GM_setValue(id, parseInt(taxGroup.dataset.value));
         taxGroup
             .closest('.form-control-static')
             ?.dispatchEvent(new Event('change'));
@@ -474,7 +476,7 @@ const fillModal = body => {
     const { label: shareBedsLabel, checkbox: shareBedsCheckbox } =
         createCheckbox('Betten freigeben?', 'shareBeds');
     shareBedsCheckbox.checked = true;
-    const ownBedsTaxGroup = createTaxGroup();
+    const ownBedsTaxGroup = createTaxGroup('ownBedsTax');
     ownBedsTaxGroup.classList.add('flex-grow-1');
     shareBedsCheckbox.addEventListener('change', () =>
         ownBedsTaxGroup
@@ -552,7 +554,7 @@ const fillModal = body => {
             'beds_alliance'
         );
 
-        const allianceBedsTaxGroup = createTaxGroup();
+        const allianceBedsTaxGroup = createTaxGroup('allianceBedsTax');
         const [allianceBedsForm, allianceBedsListWrapper] =
             createTabPaneContent(
                 'Passend eingestellte Krankenhäuser: %s',
@@ -594,7 +596,7 @@ const fillModal = body => {
     const { label: shareCellsLabel, checkbox: shareCellsCheckbox } =
         createCheckbox('Zellen freigeben?', 'shareCells');
     shareCellsCheckbox.checked = true;
-    const ownCellsTaxGroup = createTaxGroup();
+    const ownCellsTaxGroup = createTaxGroup('ownCellsTax');
     ownCellsTaxGroup.classList.add('flex-grow-1');
     shareCellsCheckbox.addEventListener('change', () =>
         ownCellsTaxGroup
@@ -674,7 +676,7 @@ const fillModal = body => {
             'cells_alliance'
         );
 
-        const allianceCellsTaxGroup = createTaxGroup();
+        const allianceCellsTaxGroup = createTaxGroup('allianceCellsTax');
         const [allianceCellsForm, allianceCellsListWrapper] =
             createTabPaneContent(
                 'Passend eingestellte Gebäude: %s',
