@@ -567,6 +567,7 @@ const createTabPaneContent = (
 
             wrongSummary.textContent = '';
             wrongSummary.replaceChildren(progressWrapper);
+            const startTime = Date.now();
             let width = 0;
             const step = 100 / currentWrongList.size;
             for (const [_, { item, badge, updateFn }] of currentWrongList) {
@@ -582,6 +583,15 @@ const createTabPaneContent = (
                 }
                 width += step;
                 progressBar.style.setProperty('width', `${width}%`);
+                const elapsedTime = Date.now() - startTime;
+                const totalTime = (elapsedTime / width) * 100;
+                const remainingTime = totalTime - elapsedTime;
+                const endDate = new Date(Date.now() + remainingTime);
+                progressBar.textContent = [
+                    percent(width / 100),
+                    `${Math.ceil(remainingTime / 1000).toLocaleString('de')}\xa0s`,
+                    `ETA:\xa0${endDate.toLocaleTimeString('de')}`,
+                ].join(' / ');
             }
             setTimeout(
                 () =>
