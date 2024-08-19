@@ -115,7 +115,14 @@ const getVehicleTypes = () =>
  */
 
 /**
- * @type {{vehicles?: Vehicle[], buildings?: Building[], allianceBuildings?: Building[]}}
+ * @typedef {Object} APICache
+ * @property {Vehicle[]} [vehicles]
+ * @property {Building[]} [buildings]
+ * @property {Building[]} [allianceBuildings]
+ */
+
+/**
+ * @type {APICache}
  */
 const cache = {};
 
