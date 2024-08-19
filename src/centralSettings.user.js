@@ -73,7 +73,7 @@
  * @grant GM_getValue
  */
 
-/* global I18n, user_id */
+/* global I18n, user_id, $ */
 
 const modalId = 'jxn-centralSettings-modal';
 
@@ -106,19 +106,6 @@ const getVehicleTypes = () =>
  *  @property {number} tractive_vehicle_id
  */
 
-/** @type {Vehicle[]} */
-let vehicles;
-const getVehicles = () =>
-    vehicles ??
-    fetch('/api/vehicles')
-        .then(res => res.json())
-        .then(
-            v =>
-                (vehicles = v.toSorted((a, b) =>
-                    a.caption.localeCompare(b.caption)
-                ))
-        );
-
 /**
  * @typedef {Object} Building A partial building as returned by the API
  *  @property {number} id
@@ -127,31 +114,55 @@ const getVehicles = () =>
  *  @property {number} [alliance_share_credits_percentage]
  */
 
-/** @type {Building[]} */
-let buildings;
+/**
+ * @type {{vehicles?: Vehicle[], buildings?: Building[], allianceBuildings?: Building[]}}
+ */
+const cache = {};
+
+const getVehicles = () =>
+    cache.vehicles ??
+    fetch('/api/vehicles')
+        .then(res => res.json())
+        .then(
+            v =>
+                (cache.vehicles = v.toSorted((a, b) =>
+                    a.caption.localeCompare(b.caption)
+                ))
+        );
+const reGetVehicles = () => {
+    delete cache.vehicles;
+    return getVehicles();
+};
+
 const getBuildings = () =>
-    buildings ??
+    cache.buildings ??
     fetch('/api/buildings')
         .then(res => res.json())
         .then(
             b =>
-                (buildings = b.toSorted((a, b) =>
+                (cache.buildings = b.toSorted((a, b) =>
                     a.caption.localeCompare(b.caption)
                 ))
         );
+const reGetBuildings = () => {
+    delete cache.buildings;
+    return getBuildings();
+};
 
-/** @type {Building[]} */
-let allianceBuildings;
 const getAllianceBuildings = () =>
-    allianceBuildings ??
+    cache.allianceBuildings ??
     fetch('/api/alliance_buildings')
         .then(res => res.json())
         .then(
             b =>
-                (allianceBuildings = b.toSorted((a, b) =>
+                (cache.allianceBuildings = b.toSorted((a, b) =>
                     a.caption.localeCompare(b.caption)
                 ))
         );
+const reGetAllianceBuildings = () => {
+    delete cache.allianceBuildings;
+    return getAllianceBuildings();
+};
 
 let roleFlags;
 const getRoleFlags = () =>
@@ -210,24 +221,24 @@ const createListGroupWrapper = () => {
     return listWrapper;
 };
 
+const currentWrongList = new Map();
+
 const createListGroup = () => {
     const listGroup = document.createElement('ul');
     listGroup.classList.add('list-group', 'flex-grow-1');
     return listGroup;
 };
 
-const addListGroupItem = (listGroup, badge, ...content) => {
+const addListGroupItem = (listGroup, ...content) => {
     const item = document.createElement('li');
     item.classList.add('list-group-item');
-    const badgeSpan = document.createElement('span');
-    badgeSpan.classList.add('badge');
-    badgeSpan.textContent = badge;
-    item.append(badgeSpan);
-    if (!badge) badgeSpan.classList.add('hidden');
+    const badge = document.createElement('span');
+    badge.classList.add('badge', 'hidden');
+    item.append(badge);
     item.append(...content);
     listGroup.append(item);
 
-    return { item, badge: badgeSpan };
+    return { item, badge };
 };
 
 const createListGroupSummary = (listGroup, title) => {
@@ -243,7 +254,7 @@ const createListGroupSummary = (listGroup, title) => {
 
 const getTowingVehicle = (trailer, towingType) => {
     const romanNum = trailer.caption.match(/ [IVXLCDM]+$/)?.[0] ?? '';
-    return vehicles.find(
+    return cache.vehicles.find(
         v =>
             v.vehicle_type === towingType && // correct vehicle type
             v.building_id === trailer.building_id && // same building
@@ -257,6 +268,54 @@ const createLink = (href, text) => {
     link.href = href;
     link.textContent = text;
     return link;
+};
+
+const doTimedRequest = request =>
+    Promise.all([
+        ...(Array.isArray(request) ? request : [request]),
+        new Promise(resolve => setTimeout(resolve, 100)),
+    ]).then(([res]) => res);
+
+const modifyForm = async (url, modifier) => {
+    const form = await doTimedRequest(fetch(url))
+        .then(res => res.text())
+        .then(html => new DOMParser().parseFromString(html, 'text/html'))
+        .then(doc => doc.querySelector('form'));
+    const formData = new FormData(form);
+    modifier(formData);
+    return doTimedRequest(
+        fetch(form.action, { method: form.method, body: formData })
+    );
+};
+
+const editVehicle = async (id, data) =>
+    modifyForm(`/vehicles/${id}/edit`, formData => {
+        Object.entries(data).forEach(([key, value]) =>
+            formData.set(key, value.toString())
+        );
+    });
+
+const editBuilding = async (id, { toggleShare, tax }) => {
+    const requests = [];
+    if (toggleShare) {
+        requests.push(
+            fetch(`/buildings/${id}/alliance`, {
+                credentials: 'include',
+                method: 'GET',
+                mode: 'cors',
+            })
+        );
+    }
+
+    requests.push(
+        fetch(`/buildings/${id}/alliance_costs/${tax / 10}`, {
+            credentials: 'include',
+            method: 'GET',
+            mode: 'cors',
+        })
+    );
+
+    return doTimedRequest(requests);
 };
 
 /**
@@ -278,6 +337,12 @@ const createTab = (title, id) => {
     tabPane.id = `${modalId}-tab-${id}`;
     tabA.href = `#${tabPane.id}`;
     tabA.setAttribute('aria-controls', tabPane.id);
+
+    $(tabA).on('shown.bs.tab', () =>
+        tabPane
+            .querySelector('.form-control-static')
+            ?.dispatchEvent(new Event('change'))
+    );
 
     return { tab, tabPane };
 };
@@ -350,8 +415,8 @@ const createSelect = (id, title, options = []) => {
     const select = document.createElement('select');
     select.classList.add('flex-grow-1', 'form-control');
     select.style.setProperty('flex-basis', '0');
-    const savedValue = GM_getValue(id, -1);
-    const firstTime = savedValue === -1;
+    const savedValue = GM_getValue(id, '-1');
+    const firstTime = savedValue === '-1';
     const titleOption = new Option(title, '-1', firstTime, firstTime);
     titleOption.disabled = true;
     select.append(titleOption);
@@ -367,8 +432,8 @@ const createSelect = (id, title, options = []) => {
             :   new Option(
                     option,
                     option,
-                    savedValue === option,
-                    savedValue === option
+                    savedValue === option.toString(),
+                    savedValue === option.toString()
                 )
         )
     );
@@ -413,7 +478,8 @@ const createTabPaneContent = (
     correctSummaryText,
     wrongSummaryText,
     formElements,
-    updateCallback
+    updateCallback,
+    updatesAfterFix = []
 ) => {
     const form = document.createElement('div');
     form.classList.add(
@@ -433,22 +499,92 @@ const createTabPaneContent = (
         const wrongList = createListGroup();
         listWrapper.replaceChildren(correctList, wrongList);
 
+        currentWrongList.clear();
         updateCallback(correctList, wrongList);
 
-        createListGroupSummary(correctList, correctSummaryText);
+        const correctSummary = createListGroupSummary(
+            correctList,
+            correctSummaryText
+        );
         const wrongSummary = createListGroupSummary(
             wrongList,
             wrongSummaryText
         );
         const processBtn = document.createElement('button');
         processBtn.classList.add('btn', 'btn-success', 'btn-xs', 'pull-right');
-        processBtn.disabled = true;
+        processBtn.disabled = wrongList.childElementCount === 1;
         processBtn.textContent = 'Einstellungen übernehmen';
+
+        const progressWrapper = document.createElement('div');
+        progressWrapper.classList.add('progress');
+        progressWrapper.style.setProperty('margin-bottom', '0');
+        const progressBar = document.createElement('div');
+        progressBar.classList.add(
+            'progress-bar',
+            'progress-bar-striped',
+            'active'
+        );
+        progressBar.style.setProperty('width', '0%');
+        progressWrapper.append(progressBar);
+
+        processBtn.addEventListener('click', async e => {
+            e.preventDefault();
+            let aborted = false;
+            const abortBtn = document.createElement('button');
+            abortBtn.classList.add('btn', 'btn-danger', 'btn-xs', 'pull-right');
+            abortBtn.textContent = 'Abbrechen';
+            abortBtn.addEventListener('click', e => {
+                e.preventDefault();
+                abortBtn.disabled = true;
+                aborted = true;
+            });
+            correctSummary.append(abortBtn);
+
+            const tablistPlaceholders = [];
+            const tablists = Array.from(
+                form
+                    .closest('.modal-body')
+                    ?.querySelectorAll('ul[role=tablist]') ?? []
+            );
+            tablists.forEach(list => {
+                const placeholder = document.createElement('div');
+                list.replaceWith(placeholder);
+                tablistPlaceholders.push(placeholder);
+            });
+            const formPlaceholder = document.createElement('div');
+            form.replaceWith(formPlaceholder);
+
+            wrongSummary.textContent = '';
+            wrongSummary.replaceChildren(progressWrapper);
+            let width = 0;
+            const step = 100 / currentWrongList.size;
+            for (const [_, { item, badge, updateFn }] of currentWrongList) {
+                if (aborted) break;
+                badge.textContent = '⏳️';
+                badge.classList.remove('hidden');
+                await updateFn();
+                badge.textContent = '✅';
+                correctSummary.after(item);
+                width += step;
+                progressBar.style.setProperty('width', `${width}%`);
+            }
+            setTimeout(
+                () =>
+                    Promise.all(updatesAfterFix.map(fn => fn())).then(() => {
+                        formPlaceholder.replaceWith(form);
+                        tablistPlaceholders.forEach((placeholder, i) =>
+                            placeholder.replaceWith(tablists[i])
+                        );
+                        update();
+                    }),
+                1000
+            );
+        });
+
         wrongSummary.append(processBtn);
     };
 
     form.addEventListener('change', update);
-    update();
 
     return [form, listWrapper];
 };
@@ -509,14 +645,25 @@ const fillModal = body => {
                         )
                     :   'Kostenlos'
                 :   'nicht geteilt';
-            addListGroupItem(
+            const item = addListGroupItem(
                 isCorrect ? correctList : wrongList,
-                '',
                 link,
                 ': ',
                 ...(isCorrect ? [] : [currentContent, ' ➡️ ']),
                 targetContent
             );
+            if (!isCorrect) {
+                currentWrongList.set(hospital.id, {
+                    ...item,
+                    updateFn: () =>
+                        editBuilding(hospital.id, {
+                            toggleShare:
+                                hospital.is_alliance_shared !==
+                                shareBedsCheckbox.checked,
+                            tax,
+                        }),
+                });
+            }
         });
     };
 
@@ -526,18 +673,17 @@ const fillModal = body => {
         [shareBedsLabel, ownBedsTaxGroup],
         (correctList, wrongList) =>
             createHospitalsLists(
-                buildings,
+                cache.buildings,
                 parseInt(ownBedsTaxGroup.dataset.value),
                 correctList,
                 wrongList
-            )
+            ),
+        [reGetBuildings]
     );
 
-    ownBedsPane.append(
-        ownBedsForm,
-        'Bislang noch nicht fertig!',
-        ownBedsListWrapper
-    );
+    ownBedsPane.append(ownBedsForm, ownBedsListWrapper);
+
+    ownBedsForm.dispatchEvent(new Event('change'));
 
     if (hasFinanceRights()) {
         ownBedsTab.classList.add('active');
@@ -562,18 +708,15 @@ const fillModal = body => {
                 [allianceBedsTaxGroup],
                 (correctList, wrongList) =>
                     createHospitalsLists(
-                        allianceBuildings,
+                        cache.allianceBuildings,
                         parseInt(allianceBedsTaxGroup.dataset.value),
                         correctList,
                         wrongList
-                    )
+                    ),
+                [reGetAllianceBuildings]
             );
 
-        allianceBedsPane.append(
-            allianceBedsForm,
-            'Bislang noch nicht fertig!',
-            allianceBedsListWrapper
-        );
+        allianceBedsPane.append(allianceBedsForm, allianceBedsListWrapper);
 
         bedsTabList.append(ownBedsTab, allianceBedsTab);
         bedsContent.append(ownBedsPane, allianceBedsPane);
@@ -614,12 +757,12 @@ const fillModal = body => {
                 cellBuilding.caption
             );
             const isCorrect =
-                shareBedsCheckbox.checked ?
+                shareCellsCheckbox.checked ?
                     cellBuilding.is_alliance_shared &&
                     cellBuilding.alliance_share_credits_percentage === tax
                 :   !cellBuilding.is_alliance_shared;
             const targetContent =
-                shareBedsCheckbox.checked ?
+                shareCellsCheckbox.checked ?
                     tax ? percent(tax / 100)
                     :   'Kostenlos'
                 :   'nicht geteilt';
@@ -631,14 +774,25 @@ const fillModal = body => {
                         )
                     :   'Kostenlos'
                 :   'nicht geteilt';
-            addListGroupItem(
+            const item = addListGroupItem(
                 isCorrect ? correctList : wrongList,
-                '',
                 link,
                 ': ',
                 ...(isCorrect ? [] : [currentContent, ' ➡️ ']),
                 targetContent
             );
+            if (!isCorrect) {
+                currentWrongList.set(cellBuilding.id, {
+                    ...item,
+                    updateFn: () =>
+                        editBuilding(cellBuilding.id, {
+                            toggleShare:
+                                cellBuilding.is_alliance_shared !==
+                                shareCellsCheckbox.checked,
+                            tax,
+                        }),
+                });
+            }
         });
     };
 
@@ -648,18 +802,15 @@ const fillModal = body => {
         [shareCellsLabel, ownCellsTaxGroup],
         (correctList, wrongList) =>
             createCellsLists(
-                buildings,
+                cache.buildings,
                 parseInt(ownCellsTaxGroup.dataset.value),
                 correctList,
                 wrongList
-            )
+            ),
+        [reGetBuildings]
     );
 
-    ownCellsPane.append(
-        ownCellsForm,
-        'Bislang noch nicht fertig!',
-        ownCellsListWrapper
-    );
+    ownCellsPane.append(ownCellsForm, ownCellsListWrapper);
 
     if (hasFinanceRights()) {
         ownCellsTab.classList.add('active');
@@ -684,18 +835,15 @@ const fillModal = body => {
                 [allianceCellsTaxGroup],
                 (correctList, wrongList) =>
                     createCellsLists(
-                        allianceBuildings,
+                        cache.allianceBuildings,
                         parseInt(allianceCellsTaxGroup.dataset.value),
                         correctList,
                         wrongList
-                    )
+                    ),
+                [reGetAllianceBuildings]
             );
 
-        allianceCellsPane.append(
-            allianceCellsForm,
-            'Bislang noch nicht fertig!',
-            allianceCellsListWrapper
-        );
+        allianceCellsPane.append(allianceCellsForm, allianceCellsListWrapper);
 
         cellsTabList.append(ownCellsTab, allianceCellsTab);
         cellsContent.append(ownCellsPane, allianceCellsPane);
@@ -777,7 +925,7 @@ const fillModal = body => {
                 return;
             }
 
-            const elw1Vehicles = vehicles.filter(
+            const elw1Vehicles = cache.vehicles.filter(
                 ({ vehicle_type }) => vehicle_type === 59
             );
 
@@ -787,9 +935,8 @@ const fillModal = body => {
                     vehicle.caption
                 );
 
-                addListGroupItem(
+                const item = addListGroupItem(
                     wrongList,
-                    '',
                     link,
                     ': ➡️ ',
                     [
@@ -797,12 +944,37 @@ const fillModal = body => {
                         elw1OwnCheckbox,
                         elw1ExtensionCheckbox,
                     ]
-                        .map(c => (c.checked ? '✅' : ''))
+                        .map(c => (c.checked ? '✅' : '❌'))
                         .join(''),
                     ` ${elw1TaxSelect.value}\xa0%; ${elw1DistanceSelect.value}\xa0km; ${elw1FreeSelect.value}\xa0Plätze`
                 );
+
+                currentWrongList.set(vehicle.id, {
+                    ...item,
+                    updateFn: () =>
+                        editVehicle(vehicle.id, {
+                            'vehicle[hospital_automatic]': Number(
+                                elw1EnabledCheckbox.checked
+                            ),
+                            'vehicle[hospital_own]': Number(
+                                elw1OwnCheckbox.checked
+                            ),
+                            'vehicle[hospital_right_building_extension]':
+                                Number(elw1ExtensionCheckbox.checked),
+                            'vehicle[hospital_max_price]': Number(
+                                elw1TaxSelect.value
+                            ),
+                            'vehicle[hospital_max_distance]': Number(
+                                elw1DistanceSelect.value
+                            ),
+                            'vehicle[hospital_free_space]': Number(
+                                elw1FreeSelect.value
+                            ),
+                        }),
+                });
             });
-        }
+        },
+        [reGetVehicles]
     );
 
     elw1TabPane.append(
@@ -888,7 +1060,7 @@ const fillModal = body => {
                 return;
             }
 
-            const fustwDglVehicles = vehicles.filter(
+            const fustwDglVehicles = cache.vehicles.filter(
                 ({ vehicle_type }) => vehicle_type === 103
             );
 
@@ -898,9 +1070,8 @@ const fillModal = body => {
                     vehicle.caption
                 );
 
-                addListGroupItem(
+                const item = addListGroupItem(
                     wrongList,
-                    '',
                     link,
                     ': ➡️ ',
                     [fustwDglEnabledCheckbox, fustwDglOwnCheckbox]
@@ -911,8 +1082,29 @@ const fillModal = body => {
                         'Standard-Verzögerung'
                     :   `${fustwDglDelay.value}\xa0min`
                 );
+
+                currentWrongList.set(vehicle.id, {
+                    ...item,
+                    updateFn: () =>
+                        editVehicle(vehicle.id, {
+                            'vehicle[vehicle_extra_information_attributes][police_cell_automatic]':
+                                Number(fustwDglEnabledCheckbox.checked),
+                            'vehicle[vehicle_extra_information_attributes][police_cell_own]':
+                                Number(fustwDglOwnCheckbox.checked),
+                            'vehicle[vehicle_extra_information_attributes][police_cell_max_price]':
+                                Number(fustwDglTaxSelect.value),
+                            'vehicle[vehicle_extra_information_attributes][police_cell_max_distance]':
+                                Number(fustwDglDistanceSelect.value),
+                            'vehicle[vehicle_extra_information_attributes][police_cell_free_space]':
+                                Number(fustwDglFreeSelect.value),
+                            'vehicle[prisoner_transportation_delay]': Number(
+                                fustwDglDelay.value
+                            ),
+                        }),
+                });
             });
-        }
+        },
+        [reGetVehicles]
     );
 
     fustwTabPane.append(
@@ -978,7 +1170,7 @@ const fillModal = body => {
                 return;
             }
 
-            const trailers = vehicles.filter(
+            const trailers = cache.vehicles.filter(
                 ({ vehicle_type }) =>
                     vehicle_type === Number(trailerSelect.value)
             );
@@ -1006,21 +1198,35 @@ const fillModal = body => {
                     vehicle.tractive_random ? '🎲' : (
                         createLink(
                             `/vehicles/${vehicle.tractive_vehicle_id}`,
-                            vehicles.find(
+                            cache.vehicles.find(
                                 ({ id }) => id === vehicle.tractive_vehicle_id
                             )?.caption
                         )
                     );
-                addListGroupItem(
+
+                const item = addListGroupItem(
                     isCorrect ? correctList : wrongList,
-                    '',
                     link,
                     ': ',
                     ...(isCorrect ? [] : [currentContent, ' ➡️ ']),
                     targetContent
                 );
+
+                const data = {
+                    'vehicle[tractive_random]': Number(
+                        randomTowingCheckbox.checked
+                    ),
+                };
+                if (towingVehicle) {
+                    data['vehicle[tractive_vehicle_id]'] = towingVehicle.id;
+                }
+                currentWrongList.set(vehicle.id, {
+                    ...item,
+                    updateFn: () => editVehicle(vehicle.id, data),
+                });
             });
-        }
+        },
+        [reGetVehicles]
     );
 
     towingTabPane.append(
@@ -1030,6 +1236,9 @@ const fillModal = body => {
     );
     // endregion
 
+    tabList.append(
+        'Wenn Werte offensichtlich falsch sind, kann es helfen, das Spiel einmal neu zu laden.'
+    );
     body.append(tabList, tabContent);
 };
 
