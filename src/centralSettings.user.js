@@ -2,7 +2,7 @@
 // @name            [LSS] Central Settings
 // @name:de         [LSS] Zentrale Einstellungen
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.08.20+1109
+// @version         2024.08.20+1728
 // @author          Jan (jxn_30)
 // @description     Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
 // @description:de  Hält Einstellungen für Gebäude (Zellen- und Bettenfreigabe) und Fahrzeuge (automatische Transporte und Zugfahrzeuge) an einem Ort.
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/centralSettings.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/centralSettings.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/26968-script-zentrale-einstellungen-endlich-wieder-krankenh%C3%A4user-zellen-elw-1-seg-und/
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://policie.operacni-stredisko.cz/
 // @match           https://www.alarmcentral-spil.dk/

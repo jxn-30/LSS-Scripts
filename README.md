@@ -45,7 +45,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Baukostenrechner
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Calendar-Gift-Highlight
-- [[LSS] Central Settings](#lss-central-settings)&nbsp;`2024.08.20+1109`&nbsp; &nbsp; [📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]<br/>
+- [[LSS] Central Settings](#lss-central-settings)&nbsp;`2024.08.20+1728`&nbsp; &nbsp; [📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Zentrale Einstellungen
 - [[LSS] Chat Hider](#lss-chat-hider)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;chatHider.user.js][chatHider.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
@@ -217,7 +217,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
 - [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
-- [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2024.08.20+1109`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
+- [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2024.08.20+1728`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
     
 </details>
 
@@ -505,9 +505,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
 
-|     Version     |                          Download                           |
-|:---------------:|:-----------------------------------------------------------:|
-| 2024.08.20+1109 | [centralSettings.user.js][centralSettings.user.js:download] |
+|     Version     |                          Download                           |                 Links                  |
+|:---------------:|:-----------------------------------------------------------:|:--------------------------------------:|
+| 2024.08.20+1728 | [centralSettings.user.js][centralSettings.user.js:download] | [Forum][centralSettings.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Zentrale Einstellungen</summary>
@@ -517,6 +517,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [centralSettings.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/centralSettings.user.js
+[centralSettings.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/26968-script-zentrale-einstellungen-endlich-wieder-krankenh%C3%A4user-zellen-elw-1-seg-und/
 
 ### [LSS] Chat Hider
 
