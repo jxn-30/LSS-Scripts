@@ -63,7 +63,7 @@
  * @name:de Zentrale Einstellungen
  * @description Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
  * @description:de Hält Einstellungen für Gebäude (Zellen- und Bettenfreigabe) und Fahrzeuge (automatische Transporte und Zugfahrzeuge) an einem Ort.
- * @//forum https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/26968-script-zentrale-einstellungen-endlich-wieder-krankenh%C3%A4user-zellen-elw-1-seg-und/
  * @match /
  * @// icon taken from https://icons8.com/icon/o4J5uguoduDW/share-settings
  * @resource icon /resources/centralSettings.user.js/icon.png
