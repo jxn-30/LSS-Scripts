@@ -1227,7 +1227,8 @@ const fillModal = body => {
                 const isCorrect =
                     randomTowingCheckbox.checked ?
                         vehicle.tractive_random
-                    :   vehicle.tractive_vehicle_id === towingVehicle?.id;
+                    :   !vehicle.tractive_random &&
+                        vehicle.tractive_vehicle_id === towingVehicle?.id;
                 const targetContent =
                     randomTowingCheckbox.checked ? '🎲' : (
                         createLink(
@@ -1285,7 +1286,7 @@ const fillModal = body => {
 
     towingTabPane.append(
         towingForm,
-        'Die Zugfahrzeugerkennung kann aktuell nur erkennen, wenn die Fahrzeuge auf die gleiche römische Ziffer (oder eben auf keinen Inhalt) enden.',
+        'Die Zugfahrzeugerkennung arbeitet aktuell sehr primitiv und arbeitet größtenteils mit den Namen und vergleicht, ob Anhänger & Zugfahrzeug auf die gleiche (römische oder arabische) Zahl enden. Wenn nein, wird stattdessen das erste Fahrzeug des Types, welches noch nicht verwendet wurde, auf dieser Wache gewählt.',
         towingListWrapper
     );
     // endregion
