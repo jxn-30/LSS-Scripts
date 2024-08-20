@@ -637,6 +637,11 @@ const fillModal = body => {
     const tabContent = document.createElement('div');
     tabContent.classList.add('tab-content');
 
+    const selectionHint = document.createElement('div');
+    selectionHint.classList.add('w-100');
+    selectionHint.textContent =
+        'Bitte wähle in allen Auswahlfeldern eine Option aus.';
+
     // region Beds
     const { tab: bedsTab, tabPane: bedsTabPane } = createTab(
         'Krankenhäuser',
@@ -962,8 +967,9 @@ const fillModal = body => {
                     elw1DistanceSelect.value === '-1' ||
                     elw1FreeSelect.value === '-1')
             ) {
-                return;
+                return elw1ListWrapper.after(selectionHint);
             }
+            selectionHint.remove();
 
             const elw1Vehicles = cache.vehicles.filter(
                 ({ vehicle_type }) => vehicle_type === 59
@@ -1097,8 +1103,9 @@ const fillModal = body => {
                     fustwDglDistanceSelect.value === '-1' ||
                     fustwDglFreeSelect.value === '-1')
             ) {
-                return;
+                return fustwDglListWrapper.after(selectionHint);
             }
+            selectionHint.remove();
 
             const fustwDglVehicles = cache.vehicles.filter(
                 ({ vehicle_type }) => vehicle_type === 103
@@ -1207,8 +1214,9 @@ const fillModal = body => {
                 trailerSelect.value === '-1' ||
                 (!randomTowingCheckbox.checked && towingSelect.value === '-1')
             ) {
-                return;
+                return towingListWrapper.after(selectionHint);
             }
+            selectionHint.remove();
 
             const trailers = cache.vehicles.filter(
                 ({ vehicle_type }) =>
