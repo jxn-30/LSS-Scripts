@@ -111,7 +111,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzbeteiligung auf der Karte
 - [[LSS] Mission Sort](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp; &nbsp; [📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzsortierung
-- [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
+- [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge im Einsatz farblich hervorheben
 - [[LSS] Mobile Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp; &nbsp; [📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mobiles Layout
@@ -186,7 +186,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzliste neu laden](#lss-reload-missions-list)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;reloadMissions.user.js][reloadMissions.user.js:download]
 - [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
-- [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.04.11+1111`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
+- [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
@@ -1106,9 +1106,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Highlights vehicles in the mission window with different colors
 
-|     Version     |      Alias / Old names      |                                  Download                                   |                     Links                      |
-|:---------------:|:---------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
-| 2024.04.11+1111 | `Mission-Vehicle-Highlight` | [missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download] | [Forum][missionVehicleHighlight.user.js:forum] |
+|     Version     |                                  Download                                   |                     Links                      |
+|:---------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
+| 2024.08.21+0156 | [missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download] | [Forum][missionVehicleHighlight.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Fahrzeuge im Einsatz farblich hervorheben</summary>
