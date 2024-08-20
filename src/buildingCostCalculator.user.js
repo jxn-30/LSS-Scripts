@@ -61,8 +61,7 @@
  * @name:de Baukostenrechner
  * @description Calculates the costs of the next buildings including a sum
  * @description:de Berechnet die Kosten der nächsten Gebäude inklusive einer Summe
- * @// TODO
- * @// forum https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/26969-script-baukostenrechner-wie-viel-w%C3%BCrde-es-mich-denn-kosten-die-n%C3%A4chsten-1234-feu/
  * @match /
  * @// icon taken from https://icons8.com/icon/25993/mortgage
  * @resource icon /resources/buildingCostCalculator.user.js/icon.png
