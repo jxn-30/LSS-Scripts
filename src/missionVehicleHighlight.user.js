@@ -60,7 +60,6 @@
  * @description:de Hebt Fahrzeuge im Einsatzfenster farblich hervor
  * @forum https://forum.leitstellenspiel.de/index.php?thread/17868-fahrzeuge-farblich-hervorheben/
  * @match /missions/*
- * @old Mission-Vehicle-Highlight
  */
 
 // EINSTELLUNGEN
@@ -101,9 +100,14 @@ document
     });
 
 if (alerted) {
-    alert(
-        `Guten Tag. Es wurden insgesamt ${alerted.toLocaleString()} Fahrzeuge farblich hervorgehoben.`
+    const alertSpan = document.createElement('span');
+    alertSpan.textContent = `⚠️${alerted.toLocaleString()}⚠️`;
+    alertSpan.addEventListener('click', () =>
+        alert(
+            `Guten Tag. Es wurden insgesamt ${alerted.toLocaleString()} Fahrzeuge farblich hervorgehoben.`
+        )
     );
+    document.getElementById('missionH1')?.append(alertSpan);
 }
 
 /** @typedef {Array<string|number>} SimpleConfigEntry */
