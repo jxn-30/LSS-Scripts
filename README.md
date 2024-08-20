@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 67 userscripts*
+*Total: 68 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -67,6 +67,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] AAO leeren
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
+- [[LSS] Faster ARR Availability Check](#lss-faster-arr-availability-check)&nbsp;`2024.08.20+1905`&nbsp; &nbsp; [📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Schnellere AAO-Verfügbarkeitsprüfung
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
@@ -209,6 +211,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
 - [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp;&nbsp;[📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]
 - [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
+- [[LSS] Schnellere AAO-Verfügbarkeitsprüfung](#lss-faster-arr-availability-check)&nbsp;`2024.08.20+1905`&nbsp;&nbsp;[📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
 - [[LSS] Textlänge bei Eingabefeldern prüfen](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]
@@ -698,6 +701,24 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [extraAlarmAndCloseBtn.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/extraAlarmAndCloseBtn.user.js
 [extraAlarmAndCloseBtn.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23205-scriptwunsch-alarmieren-und-fenster-schlie%C3%9Fen/
+
+### [LSS] Faster ARR Availability Check
+
+> This script speeds up the availability check of AAOs and vehicle groups.
+
+|     Version     |                                     Download                                      |                       Links                       |
+|:---------------:|:---------------------------------------------------------------------------------:|:-------------------------------------------------:|
+| 2024.08.20+1905 | [fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download] | [Forum][fasterAAOAvailabilityCheck.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Schnellere AAO-Verfügbarkeitsprüfung</summary>
+    Dieses Skript beschleunigt die Verfügbarkeitsprüfung von AAOs und Zügen.
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[fasterAAOAvailabilityCheck.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/fasterAAOAvailabilityCheck.user.js
+[fasterAAOAvailabilityCheck.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/22896-aaos-nur-pro-kategorie-laden/
 
 ### [LSS] Forum: Bookmarks
 
