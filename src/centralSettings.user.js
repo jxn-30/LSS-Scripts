@@ -271,17 +271,20 @@ const createListGroupSummary = (listGroup, title) => {
 const usedTowingVehicles = new Set();
 
 const getTowingVehicle = (trailer, towingType) => {
-    const romanNum = trailer.caption.match(/\s[IVXLCDM]+$/)?.[0] ?? '';
-    const arabicNum = trailer.caption.match(/\s\d+$/)?.[0] ?? '';
-    const vehicle = cache.vehicles.find(
-        v =>
-            !usedTowingVehicles.has(v.id) && // not used yet
-            v.vehicle_type === towingType && // correct vehicle type
-            v.building_id === trailer.building_id && // same building
-            (romanNum ? v.caption.endsWith(romanNum) : true) && // same roman number (if any)
-            (arabicNum ? v.caption.endsWith(arabicNum) : true) // same arabic number (if any)
-    );
-    if (vehicle) usedTowingVehicles.add(vehicle);
+    const romanNum = trailer.caption.match(/[^IVXLCDM][IVXLCDM]+$/)?.[0] ?? '';
+    const arabicNum = trailer.caption.match(/\D\d+$/)?.[0] ?? '';
+    const fitsFormal = v =>
+        !usedTowingVehicles.has(v.id) && // not used yet
+        v.vehicle_type === towingType && // correct vehicle type
+        v.building_id === trailer.building_id; // same building
+    const vehicle =
+        cache.vehicles.find(
+            v =>
+                fitsFormal(v) && // formal aspects
+                (romanNum ? v.caption.endsWith(romanNum) : true) && // same roman number (if any)
+                (arabicNum ? v.caption.endsWith(arabicNum) : true) // same arabic number (if any)
+        ) ?? cache.vehicles.find(fitsFormal); // If no vehicle was found with the same number, just take the first one that fits
+    if (vehicle) usedTowingVehicles.add(vehicle.id);
     return vehicle;
 };
 
