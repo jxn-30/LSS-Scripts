@@ -2,7 +2,7 @@
 // @name            [LSS] Building cost calculator
 // @name:de         [LSS] Baukostenrechner
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.07.21+1213
+// @version         2024.08.20+1754
 // @author          Jan (jxn_30)
 // @description     Calculates the costs of the next buildings including a sum
 // @description:de  Berechnet die Kosten der nächsten Gebäude inklusive einer Summe
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingCostCalculator.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/buildingCostCalculator.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/26969-script-baukostenrechner-wie-viel-w%C3%BCrde-es-mich-denn-kosten-die-n%C3%A4chsten-1234-feu/
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://policie.operacni-stredisko.cz/
 // @match           https://www.alarmcentral-spil.dk/
