@@ -2,7 +2,7 @@
 // @name            [LSS] Faster ARR Availability Check
 // @name:de         [LSS] Schnellere AAO-Verfügbarkeitsprüfung
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.08.20+1905
+// @version         2024.08.21+1208
 // @author          Jan (jxn_30)
 // @description     This script speeds up the availability check of AAOs and vehicle groups.
 // @description:de  Dieses Skript beschleunigt die Verfügbarkeitsprüfung von AAOs und Zügen.
