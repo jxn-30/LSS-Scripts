@@ -70,15 +70,13 @@
 unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // mark all AAO-Tabs as unchecked
     document
-        .querySelectorAll(
-            '.tab-pane:not(.active)[data-aaos-availability-checked]'
-        )
+        .querySelectorAll('.tab-pane[data-aaos-availability-checked]')
         .forEach(pane => delete pane.dataset.aaosAvailabilityChecked);
 
     // check availability of all AAOs without category and within current category
     document
         .querySelectorAll(
-            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active:not([data-aaos-availability-checked])) .aao_btn'
+            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active) .aao_btn'
         )
         .forEach(btn =>
             aao_available(Number(btn.getAttribute('aao_id')), calculateTime)
@@ -86,7 +84,7 @@ unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // check availability of all vehicle groups within current category
     document
         .querySelectorAll(
-            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active:not([data-aaos-availability-checked])) .vehicle_group'
+            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active) .vehicle_group'
         )
         .forEach(btn =>
             vehicle_group_available(
