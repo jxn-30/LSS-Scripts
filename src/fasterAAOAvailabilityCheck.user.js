@@ -66,6 +66,7 @@
 
 /* global $, aao_available, vehicle_group_available */
 
+// update the aaoCheckAvailable to only check visible AAOs and vehicle groups.
 unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // mark all AAO-Tabs as unchecked
     document
@@ -97,6 +98,61 @@ unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // mark current category as checked
     document.querySelector('.tab-pane.active').dataset.aaosAvailabilityChecked =
         '';
+};
+
+// update the vehicle_group_available to be more performant
+unsafeWindow.vehicle_group_available = (id, calculateTime = false) => {
+    const groupEl = document.getElementById(`vehicle_group_${id}`);
+    const vehicles = JSON.parse(groupEl.getAttribute('vehicles') ?? '[]');
+    let maxTime = -1;
+    let allOk = true;
+    for (const [vehicleId] of vehicles) {
+        const vehicleEl = document.getElementById(
+            `vehicle_checkbox_${vehicleId}`
+        );
+        if (!vehicleEl || vehicleEl.disabled) {
+            allOk = false;
+            break;
+        }
+        if (!calculateTime) continue;
+        const time = parseInt(
+            document
+                .getElementById(`vehicle_sort_${vehicleId}`)
+                ?.getAttribute('timevalue')
+        );
+        if (!Number.isNaN(time)) {
+            maxTime = window.aao_maxtime({ max_time: time });
+        }
+    }
+
+    const availableEl = document.getElementById(`available_${id}`);
+    availableEl?.classList.remove(
+        'label-success',
+        'label-default',
+        'label-danger'
+    );
+
+    const availableSpan = document.createElement('span');
+    availableSpan.classList.add('glyphicon');
+    availableSpan.ariaHidden = 'true';
+    availableEl?.replaceChildren(availableSpan);
+
+    const timeEl =
+        calculateTime ?
+            document.getElementById(`vehicle_group_timer_${id}`)
+        :   undefined;
+
+    if (allOk) {
+        availableEl?.classList.add('label-success');
+        availableSpan.classList.add('glyphicon-ok');
+        if (calculateTime && maxTime > 0) {
+            timeEl?.replaceChildren(window.formatTime(maxTime));
+        }
+    } else {
+        availableEl?.classList.add('label-danger');
+        availableSpan.classList.add('glyphicon-remove');
+        if (calculateTime) timeEl?.replaceChildren('-');
+    }
 };
 
 const CALCULATE_TIME = !!document.querySelector('.aao_timer');
