@@ -1162,6 +1162,75 @@ const fillModal = body => {
     tabContent.append(fustwTabPane);
     // endregion
 
+    // region GRTW
+    const { tab: grtwTab, tabPane: grtwTabPane } = createTab('GRTW', 'grtw');
+    tabList.append(grtwTab);
+
+    const grtwModes = {
+        0: 'Max. 7 leichtverletzte Patienten',
+        1: 'Max. 3 Patienten (auch Schwerverletzte), Notarzt als Besatzung nötig',
+    };
+
+    const [grtwModeSelect] = createSelect('grtwMode', 'Modus auswählen', [
+        {
+            value: 0,
+            text: grtwModes[0],
+        },
+        {
+            value: 1,
+            text: grtwModes[1],
+        },
+    ]);
+
+    const [grtwForm, grtwListWrapper] = createTabPaneContent(
+        'Korrekt konfigurierte GRTW: %s Fahrzeuge',
+        'Falsch konfigurierte GRTW: %s Fahrzeuge',
+        [grtwModeSelect],
+        (correctList, wrongList) => {
+            if (grtwModeSelect.value === '-1') {
+                return grtwModeSelect.after(selectionHint);
+            }
+            selectionHint.remove();
+
+            const grtwVehicles = cache.vehicles.filter(
+                ({ vehicle_type }) => vehicle_type === 73
+            );
+
+            grtwVehicles.forEach(vehicle => {
+                const link = createLink(
+                    `/vehicles/${vehicle.id}`,
+                    vehicle.caption
+                );
+
+                const item = addListGroupItem(
+                    wrongList,
+                    link,
+                    ': ➡️ ',
+                    grtwModes[grtwModeSelect.value]
+                );
+
+                currentWrongList.set(vehicle.id, {
+                    ...item,
+                    updateFn: () =>
+                        editVehicle(vehicle.id, {
+                            'vehicle[vehicle_mode]': Number(
+                                grtwModeSelect.value
+                            ),
+                        }),
+                });
+            });
+        },
+        [reGetVehicles]
+    );
+
+    grtwTabPane.append(
+        grtwForm,
+        'Leider ist aktuell nicht feststellbar, welche Fahrzeuge neu konfiguriert werden müssen, daher werden alle Fahrzeuge konfiguriert und unter falsch gelistet.',
+        grtwListWrapper
+    );
+    tabContent.append(grtwTabPane);
+    // endregion
+
     // region Zugfahrzeuge
     const { tab: towingTab, tabPane: towingTabPane } = createTab(
         'Zugfahrzeuge',
