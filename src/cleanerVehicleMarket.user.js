@@ -164,10 +164,10 @@ document.addEventListener('click', e => {
         const vehicleWell = target.closest('.vehicle_type');
         if (!vehicleWell) return;
 
-        const vehicleType = vehicleWell
+        const link = vehicleWell
             .querySelector('.buy-vehicle-btn')
-            .getAttribute('href')
-            .split('/')[5];
+            .getAttribute('href');
+        const vehicleType = link.split('/')[link.includes('equipment') ? 4 : 5];
         if (vehicleWell.classList.contains(manuallyHiddenClass)) {
             hiddenVehicles.delete(vehicleType);
         } else {
