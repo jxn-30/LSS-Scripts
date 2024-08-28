@@ -72,7 +72,7 @@ const getUserscriptFiles = dir =>
         );
 
 /** @type {Comment[]} **/
-const comments = jsdoc.explainSync({
+const comments = await jsdoc.explain({
     files: getUserscriptFiles(SRC_PATH),
 });
 
