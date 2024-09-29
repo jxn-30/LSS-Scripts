@@ -127,6 +127,7 @@
 // @match           https://www.dyspetcher101-game.com/aaos/*/edit
 // @match           https://www.dyspetcher101-game.com/aaos/*/copy
 // @run-at          document-idle
+// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
@@ -138,6 +139,7 @@
  * @match /aaos/new
  * @match /aaos/*\/edit
  * @match /aaos/*\/copy
+ * @grant GM_addStyle
  */
 
 /* global I18n */
@@ -180,25 +182,71 @@ const getAAOVehicleTypes = () => {
         .then(({ vehicle_types }) => vehicle_types ?? {});
 };
 
+const createFormRow = () => {
+    const row = document.createElement('div');
+    row.classList.add('form-group', 'integer', 'optional');
+
+    const labelWrapper = document.createElement('div');
+    labelWrapper.classList.add('col-sm-3', 'control-label');
+    const label = document.createElement('label');
+    label.classList.add('integer', 'optional');
+    labelWrapper.append(label);
+
+    const inputWrapper = document.createElement('div');
+    inputWrapper.classList.add('col-sm-9');
+
+    row.append(labelWrapper, inputWrapper);
+
+    return { row, label, inputWrapper };
+};
+
+const vehicleTypesCheckboxWrapperClass = 'jxn30-aao-vehicle-types-checkboxes';
+
+GM_addStyle(`
+.${vehicleTypesCheckboxWrapperClass} label {
+    margin-left: 1em;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+`);
+
 (async () => {
     const tabs = document.querySelector('#tabs');
     if (!tabs) return;
 
     const lang = I18n.locale;
     const vehicleTypes = await getVehicleTypes(lang);
+    const vehicleTypesById = Object.fromEntries(
+        vehicleTypes.map(v => [v.id, v])
+    );
 
-    const tabLink = document.createElement('li');
-    const tabLinkA = document.createElement('a');
-    tabLinkA.dataset.toggle = 'tab';
-    tabLinkA.textContent = 'Alle Fahrzeugtypen';
-    tabLink.append(tabLinkA);
-    tabs.append(tabLink);
+    const individualTabLink = document.createElement('li');
+    const individualTabLinkA = document.createElement('a');
+    individualTabLinkA.dataset.toggle = 'tab';
+    individualTabLinkA.textContent = 'Alle Fahrzeugtypen';
+    individualTabLink.append(individualTabLinkA);
+    tabs.append();
 
-    const tab = document.createElement('div');
-    tab.id = 'jxn30-aao-all-vehicle-types';
-    tabLinkA.href = `#${tab.id}`;
-    tab.className = 'tab-pane';
-    document.querySelector('.tab-content').append(tab);
+    const individualTab = document.createElement('div');
+    individualTab.id = 'jxn30-aao-all-vehicle-types';
+    individualTabLinkA.href = `#${individualTab.id}`;
+    individualTab.className = 'tab-pane';
+
+    const combinationsTabLink = document.createElement('li');
+    const combinationsLinkA = document.createElement('a');
+    combinationsLinkA.dataset.toggle = 'tab';
+    combinationsLinkA.textContent = 'Beliebige ODER-Kombinationen';
+    combinationsTabLink.append(combinationsLinkA);
+
+    const combinationsTab = document.createElement('div');
+    combinationsTab.id = 'jxn30-aao-all-vehicle-types-or-combinations';
+    combinationsLinkA.href = `#${combinationsTab.id}`;
+    combinationsTab.className = 'tab-pane';
+
+    tabs.append(individualTabLink, combinationsTabLink);
+    document
+        .querySelector('.tab-content')
+        .append(individualTab, combinationsTab);
 
     const searchWrapper = document.createElement('div');
     searchWrapper.classList.add('form-group', 'optional');
@@ -208,59 +256,140 @@ const getAAOVehicleTypes = () => {
     searchBar.classList.add('form-control');
     searchBar.addEventListener('input', () => {
         const value = searchBar.value.toLowerCase();
-        tab.querySelectorAll(`div[data-caption]`).forEach(div => {
+        individualTab.querySelectorAll(`div[data-caption]`).forEach(div => {
             div.style.display =
                 div.dataset.caption.includes(value) ? '' : 'none';
         });
     });
     searchWrapper.append(searchBar);
-    tab.append(searchWrapper);
+    individualTab.append(searchWrapper);
 
     /** @type {HTMLInputElement[]} */
     const inputs = [];
 
     vehicleTypes.forEach(({ id, caption }) => {
-        const div = document.createElement('div');
-        div.classList.add('form-group', 'integer', 'optional');
-        div.dataset.caption = caption.toLowerCase();
+        const { row, label, inputWrapper } = createFormRow();
+        row.dataset.caption = caption.toLowerCase();
 
-        const divLabel = document.createElement('div');
-        divLabel.classList.add('col-sm-3', 'control-label');
-        const label = document.createElement('label');
-        label.classList.add('integer', 'optional');
-        label.setAttribute('for', `aao_${id}`);
         label.textContent = caption;
-        divLabel.append(label);
 
-        const divInput = document.createElement('div');
-        divInput.classList.add('col-sm-9');
         const input = document.createElement('input');
         input.classList.add('numeric', 'integer', 'optional', 'form-control');
         input.type = 'number';
         input.name = `vehicle_type_ids[${id}]`;
         input.min = '0';
         input.max = '100';
-        input.id = `jxn30-aao-${id}`;
         input.value =
             document.querySelector(`input[name="vehicle_type_ids[${id}]"]`)
                 ?.value ?? '0';
-        label.setAttribute('for', input.id);
+        label.htmlFor = input.id = `jxn30-aao-${id}`;
         input.disabled = true;
-
+        inputWrapper.append(input);
         inputs.push(input);
-        divInput.append(input);
 
-        div.append(divLabel, divInput);
-        tab.append(div);
+        individualTab.append(row);
     });
+
+    const baseTypesSelect = document.createElement('div');
+    baseTypesSelect.classList.add(vehicleTypesCheckboxWrapperClass);
+    vehicleTypes.forEach(({ id, caption }) => {
+        const option = document.createElement('input');
+        option.type = 'checkbox';
+        option.dataset.type = id.toString();
+        option.disabled = true;
+        const label = document.createElement('label');
+        label.textContent = caption.replace(/ /g, '\u00A0');
+        label.prepend(option);
+        baseTypesSelect.append(label);
+    });
+
+    /**
+     * @param {number[]} vehicles
+     * @param {number} [value]
+     */
+    const createOrCombination = (vehicles, value = 0) => {
+        const { row, label, inputWrapper } = createFormRow();
+
+        const amountInput = document.createElement('input');
+        amountInput.classList.add(
+            'numeric',
+            'integer',
+            'optional',
+            'form-control'
+        );
+        amountInput.type = 'number';
+        amountInput.min = '0';
+        amountInput.max = '100';
+        amountInput.value = value.toString();
+        amountInput.disabled = true;
+
+        const typesSelect = baseTypesSelect.cloneNode(true);
+        const checkboxes = Array.from(
+            typesSelect.querySelectorAll('input[type="checkbox"]')
+        );
+        checkboxes
+            .filter(c => vehicles.includes(Number(c.dataset.type)))
+            .forEach(c => (c.checked = true));
+
+        inputWrapper.append(amountInput, typesSelect);
+        inputs.push(amountInput, ...checkboxes);
+
+        typesSelect.addEventListener('change', () => {
+            const amount = amountInput.value;
+            document
+                .querySelectorAll(`input[name="${amountInput.name}"]`)
+                .forEach(input => (input.value = '0'));
+            amountInput.value = amount;
+
+            const selectedVehicles = checkboxes
+                .filter(c => c.checked)
+                .map(c => Number(c.dataset.type));
+            label.textContent = selectedVehicles
+                .map(vehicle =>
+                    vehicleTypesById[vehicle].caption.replace(/ /g, '\u00A0')
+                )
+                .join(' oder ');
+            amountInput.name = `vehicle_type_ids[${JSON.stringify(selectedVehicles).replace(/,/g, ', ')}]`;
+            label.htmlFor =
+                amountInput.id = `jxn30-aao-${selectedVehicles.join('-')}`;
+
+            document
+                .querySelectorAll(`input[name="${amountInput.name}"]`)
+                .forEach(input => (input.value = amount));
+        });
+
+        typesSelect.dispatchEvent(new Event('change'));
+
+        addCombinationButton.after(row);
+
+        return { amountInput, checkboxes };
+    };
+
+    const addCombinationButton = document.createElement('button');
+    addCombinationButton.type = 'button';
+    addCombinationButton.classList.add('btn', 'btn-success', 'btn-block');
+    addCombinationButton.textContent =
+        'Weitere anpassbare ODER-Kombination hinzufügen';
+    addCombinationButton.addEventListener('click', e => {
+        e.preventDefault();
+        const { amountInput, checkboxes } = createOrCombination([]);
+        amountInput.disabled = false;
+        checkboxes.forEach(c => (c.disabled = false));
+    });
+    combinationsTab.append(addCombinationButton);
 
     getAAOVehicleTypes()
         .then(types =>
-            Object.entries(types).forEach(([type, amount]) =>
+            Object.entries(types).forEach(([type, amount]) => {
                 document
                     .querySelectorAll(`input[name="vehicle_type_ids[${type}]"]`)
-                    .forEach(input => (input.value = amount))
-            )
+                    .forEach(input => (input.value = amount));
+
+                // OR-Combinations
+                if (/^\[\d+(?:,\s*\d+)*]$/.test(type)) {
+                    createOrCombination(JSON.parse(type), amount);
+                }
+            })
         )
         .then(() => inputs.forEach(input => (input.disabled = false)));
 
@@ -270,6 +399,7 @@ const getAAOVehicleTypes = () => {
      */
     const updateAllSimilar = ({ target }) => {
         if (!target || !(target instanceof HTMLInputElement)) return;
+        if (target.type === 'checkbox') return;
         const name = target.name;
         document
             .querySelectorAll(`input[name="${name}"]`)
