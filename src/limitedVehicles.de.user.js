@@ -32,7 +32,7 @@
  * @grant GM_getResourceURL
  */
 
-/* global user_premium */
+/* global user_premium, I18n */
 
 const limits = {
     31: {
@@ -218,26 +218,80 @@ GM_addStyle(`
     height: unset;
     overflow-y: unset;
 }
+
+#${modalId} .modal-body details {
+    summary {
+        display: list-item;
+    }
+    
+    li:not(:first-of-type) {
+        list-style: disc !important;
+        display: inline list-item;
+    }
+}
 `);
+
+let vehicleTypes;
+const fetchVehicleTypes = () =>
+    vehicleTypes ??
+    fetch(`https://api.lss-manager.de/${I18n.locale}/vehicles`)
+        .then(res => res.json())
+        .then(res => (vehicleTypes = res));
 
 // create a modal
 const createModal = () => {
     let vehicles;
     let buildings;
+    /** @type {Map<number, Map<string, Set>>} */
+    const vehiclesByTypeByBuilding = new Map();
+    /** @type {Map<number, Set>} */
+    const buildingsByType = new Map();
 
     const getVehicles = () =>
         vehicles ?
             Promise.resolve(vehicles)
         :   fetch('/api/vehicles')
                 .then(res => res.json())
-                .then(v => (vehicles = v));
+                .then(v => (vehicles = v))
+                .then(v => {
+                    vehiclesByTypeByBuilding.clear();
+                    v.forEach(vehicle => {
+                        const { building_id, vehicle_type } = vehicle;
+                        const type = vehicle_type.toString();
+                        if (!vehiclesByTypeByBuilding.has(building_id)) {
+                            vehiclesByTypeByBuilding.set(
+                                building_id,
+                                new Map()
+                            );
+                        }
+                        const vehiclesByType =
+                            vehiclesByTypeByBuilding.get(building_id);
+
+                        if (!vehiclesByType.has(type)) {
+                            vehiclesByType.set(type, new Set());
+                        }
+                        vehiclesByType.get(type).add(vehicle);
+                    });
+                    return v;
+                });
 
     const getBuildings = () =>
         buildings ?
             Promise.resolve(buildings)
         :   fetch('/api/buildings')
                 .then(res => res.json())
-                .then(b => (buildings = b));
+                .then(b => (buildings = b))
+                .then(b => {
+                    buildingsByType.clear();
+                    b.forEach(building => {
+                        const { building_type } = building;
+                        if (!buildingsByType.has(building_type)) {
+                            buildingsByType.set(building_type, new Set());
+                        }
+                        buildingsByType.get(building_type).add(building);
+                    });
+                    return b;
+                });
 
     const modal = document.createElement('div');
     modal.classList.add('modal', 'fade');
@@ -283,7 +337,18 @@ const createModal = () => {
     availableTh.textContent = 'Kaufbar';
     const nextTh = document.createElement('th');
     nextTh.textContent = 'Nächstes Fahrzeug';
-    headRow.append(typeTh, currentTh, availableTh, nextTh);
+    const buildingsWithTh = document.createElement('th');
+    buildingsWithTh.textContent = 'Gebäude mit';
+    const buildingsWithoutTh = document.createElement('th');
+    buildingsWithoutTh.textContent = 'Gebäude mit ohne';
+    headRow.append(
+        typeTh,
+        currentTh,
+        availableTh,
+        nextTh,
+        buildingsWithTh,
+        buildingsWithoutTh
+    );
 
     const tbody = document.createElement('tbody');
 
@@ -300,10 +365,8 @@ const createModal = () => {
             const currentTd = row.insertCell();
             const availableTd = row.insertCell();
             const nextTd = row.insertCell();
-
-            currentTd.setAttribute('colspan', '3');
-            availableTd.style.setProperty('display', 'none');
-            nextTd.style.setProperty('display', 'none');
+            const withTd = row.insertCell();
+            const withoutTd = row.insertCell();
 
             const calculateBtn = document.createElement('button');
             calcBtns.push(calculateBtn);
@@ -312,6 +375,11 @@ const createModal = () => {
             calculateBtn.addEventListener('click', event => {
                 event.preventDefault();
                 calcBtns.forEach(btn => btn.classList.add('disabled'));
+
+                /** @type {number[]} */
+                const buildingTypes =
+                    vehicleTypes[vehicleTypeId].possibleBuildings;
+
                 Promise.all([getVehicles(), getBuildings()]).then(
                     ([vehicles, buildings]) => {
                         const current = vehicles.filter(
@@ -330,7 +398,6 @@ const createModal = () => {
                             document.createElement('br'),
                             availableText
                         );
-                        availableTd.style.removeProperty('display');
 
                         nextTd.append(
                             ...next(buildings, available).flatMap(text => {
@@ -342,7 +409,80 @@ const createModal = () => {
                                 return [bold, ' '];
                             })
                         );
-                        nextTd.style.removeProperty('display');
+
+                        const possibleBuildings = buildingTypes.reduce(
+                            (acc, type) =>
+                                (acc ?? new Set()).union(
+                                    buildingsByType.get(type) ?? new Set()
+                                ),
+                            new Set()
+                        );
+
+                        const buildingsWith = new Set();
+                        const buildingsWithout = new Set();
+                        possibleBuildings.forEach(building => {
+                            const { id } = building;
+                            if (
+                                vehiclesByTypeByBuilding
+                                    .get(id)
+                                    ?.has(vehicleTypeId)
+                            ) {
+                                buildingsWith.add(building);
+                            } else {
+                                buildingsWithout.add(building);
+                            }
+                        });
+
+                        const withDetails = document.createElement('details');
+                        const withSummary = document.createElement('summary');
+                        withSummary.textContent = `${buildingsWith.size.toLocaleString()} Gebäude`;
+                        const withList = document.createElement('ul');
+                        withList.classList.add('list-inline');
+                        withList.append(
+                            ...Array.from(buildingsWith)
+                                .sort((a, b) =>
+                                    a.caption.localeCompare(b.caption)
+                                )
+                                .map(({ id, caption }) => {
+                                    const li = document.createElement('li');
+                                    const anchor = document.createElement('a');
+                                    anchor.href = `/buildings/${id}`;
+                                    anchor.classList.add('lightbox-open');
+                                    anchor.textContent = caption;
+                                    const amountSpan =
+                                        document.createElement('em');
+                                    amountSpan.textContent = ` (${vehiclesByTypeByBuilding.get(id).get(vehicleTypeId).size.toLocaleString()})`;
+                                    li.append(anchor, amountSpan);
+                                    return li;
+                                })
+                        );
+                        withDetails.append(withSummary, withList);
+                        withTd.append(withDetails);
+
+                        const withoutDetails =
+                            document.createElement('details');
+                        const withoutSummary =
+                            document.createElement('summary');
+                        withoutSummary.textContent = `${buildingsWithout.size.toLocaleString()} Gebäude`;
+                        const withoutList = document.createElement('ul');
+                        withoutList.classList.add('list-inline');
+                        withoutList.append(
+                            ...Array.from(buildingsWithout)
+                                .sort((a, b) =>
+                                    a.caption.localeCompare(b.caption)
+                                )
+                                .map(({ id, caption }) => {
+                                    const li = document.createElement('li');
+                                    const anchor = document.createElement('a');
+                                    anchor.href = `/buildings/${id}`;
+                                    anchor.classList.add('lightbox-open');
+                                    anchor.textContent = caption;
+                                    li.append(anchor);
+                                    return li;
+                                })
+                        );
+                        withoutDetails.append(withoutSummary, withoutList);
+                        withoutTd.append(withoutDetails);
 
                         calculateBtn.remove();
 
@@ -380,7 +520,7 @@ triggerLi.append(triggerA);
 
 triggerLi.addEventListener('click', event => {
     event.preventDefault();
-    createModal();
+    fetchVehicleTypes().then(createModal);
 });
 
 // insert the trigger-element to the DOM
