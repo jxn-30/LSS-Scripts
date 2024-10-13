@@ -73,7 +73,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.10.12+1227`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.10.13+1400`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -103,7 +103,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Buildings (DE)
 - [[LSS] Limited Radio History](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp; &nbsp; [📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Verkürzte Funk-Historie
-- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]<br/>
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.13+1400`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Vehicles (DE)
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mission Alarm Time
@@ -190,7 +190,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.10.12+1227`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.10.13+1400`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -205,7 +205,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden](#lss-hide-leitstellenansicht-btn-in-building-panel)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download]
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp;&nbsp;[📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]
 - [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
-- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.13+1400`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
 - [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
@@ -762,7 +762,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.10.12+1227 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2024.10.13+1400 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -1036,7 +1036,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                             Download                              |                   Links                   |
 |:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2024.01.17+1128 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
+| 2024.10.13+1400 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Limited Vehicles (DE)</summary>
