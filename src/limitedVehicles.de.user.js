@@ -233,10 +233,11 @@ GM_addStyle(`
 
 let vehicleTypes;
 const fetchVehicleTypes = () =>
-    vehicleTypes ??
-    fetch(`https://api.lss-manager.de/${I18n.locale}/vehicles`)
-        .then(res => res.json())
-        .then(res => (vehicleTypes = res));
+    vehicleTypes ?
+        Promise.resolve()
+    :   fetch(`https://api.lss-manager.de/${I18n.locale}/vehicles`)
+            .then(res => res.json())
+            .then(res => (vehicleTypes = res));
 
 // create a modal
 const createModal = () => {
