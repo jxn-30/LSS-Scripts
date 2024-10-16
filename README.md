@@ -99,7 +99,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)&nbsp;`2023.06.03+1512`&nbsp; &nbsp; [📥️:&nbsp;navToggleLeitstellenansicht.user.js][navToggleLeitstellenansicht.user.js:download]<br/>
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp; &nbsp; [📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Lightbox-Lightbox
-- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]<br/>
+- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.10.16+1715`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Buildings (DE)
 - [[LSS] Limited Radio History](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp; &nbsp; [📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Verkürzte Funk-Historie
@@ -204,7 +204,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;navToggleLeitstellenansicht.user.js][navToggleLeitstellenansicht.user.js:download]
 - [[LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden](#lss-hide-leitstellenansicht-btn-in-building-panel)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download]
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp;&nbsp;[📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]
-- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
+- [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.10.16+1715`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.13+1400`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
 - [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
@@ -1000,7 +1000,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                              Download                               |                   Links                    |
 |:---------------:|:------------:|:-------------------------------------------------------------------:|:------------------------------------------:|
-| 2024.01.17+1128 |    `🇩🇪`    | [limitedBuildings.de.user.js][limitedBuildings.de.user.js:download] | [Forum][limitedBuildings.de.user.js:forum] |
+| 2024.10.16+1715 |    `🇩🇪`    | [limitedBuildings.de.user.js][limitedBuildings.de.user.js:download] | [Forum][limitedBuildings.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Limited Buildings (DE)</summary>
