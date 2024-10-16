@@ -37,11 +37,11 @@ const limits = [
         name: 'Leitstelle',
         current: buildings =>
             buildings.filter(({ building_type }) => building_type === 7).length,
-        // one per 25 buildings but minimum 1
-        limit: buildings => Math.max(1, Math.ceil(buildings.length / 25)),
-        limitText: 'Pro 25 Gebäude eine Leitstelle.',
+        // one per 10 buildings but minimum 1
+        limit: buildings => Math.max(1, Math.ceil(buildings.length / 10)),
+        limitText: 'Pro 10 Gebäude eine Leitstelle.',
         next: (buildings, limit) => {
-            const nextAt = limit * 25;
+            const nextAt = limit * 10;
             const toNext = nextAt - buildings.length;
             return [
                 'Nächste Leitstelle bei',
