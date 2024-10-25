@@ -223,6 +223,12 @@
 
         // Rettungshundestaffel
         'rescue_dogs': 1, // Anhänger Hundetransport oder Rettungshundefahrzeug
+
+        // Seenotrettung
+        'vehicle_type_ids[[160, 159]]': 1, // Beliebiges Seenotrettungsschiff
+        'vehicle_type_ids[160]': 1, // Seenotrettungsboot
+        'vehicle_type_ids[159]': 1, // Seenotrettungskreuzer
+        'vehicle_type_ids[161]': 1, // Hubschrauber (Seenotrettung)
     };
     Object.entries(aaos).forEach(
         ([key, show]) =>
