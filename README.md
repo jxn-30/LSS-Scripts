@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 68 userscripts*
+*Total: 69 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -113,6 +113,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzsortierung
 - [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge im Einsatz farblich hervorheben
+- [[LSS] Mission vehicle status highlight](#lss-mission-vehicle-status-highlight)&nbsp;`2024.10.25+1322`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben
 - [[LSS] Mobile Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp; &nbsp; [📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mobiles Layout
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]<br/>
@@ -187,6 +189,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
+- [[LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben](#lss-mission-vehicle-status-highlight)&nbsp;`2024.10.25+1322`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
@@ -1119,6 +1122,23 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [missionVehicleHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionVehicleHighlight.user.js
 [missionVehicleHighlight.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17868-fahrzeuge-farblich-hervorheben/
+
+### [LSS] Mission vehicle status highlight
+
+> Highlights vehicles based on their current status in the mission window
+
+|     Version     |     Alias / Old names      |                                        Download                                         |
+|:---------------:|:--------------------------:|:---------------------------------------------------------------------------------------:|
+| 2024.10.25+1322 | `Mission-Status-Highlight` | [missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben</summary>
+    Hebt Fahrzeuge im Einsatzfenster basierend auf ihrem aktuellen Status hervor
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[missionVehicleStatusHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionVehicleStatusHighlight.user.js
 
 ### [LSS] Mobile Layout
 

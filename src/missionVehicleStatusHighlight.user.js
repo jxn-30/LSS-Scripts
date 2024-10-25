@@ -2,7 +2,7 @@
 // @name            [LSS] Mission vehicle status highlight
 // @name:de         [LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.10.25+1316
+// @version         2024.10.25+1322
 // @author          Jan (jxn_30)
 // @description     Highlights vehicles based on their current status in the mission window
 // @description:de  Hebt Fahrzeuge im Einsatzfenster basierend auf ihrem aktuellen Status hervor
