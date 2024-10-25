@@ -16,7 +16,7 @@ This list is auto-generated and contains all scripts that are already ported int
     
 - [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2024.09.29+1849`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
-- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.08.13+1409`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.10.25+1231`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Config Lite (DE)
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp; &nbsp; [📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Finder
@@ -103,7 +103,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Buildings (DE)
 - [[LSS] Limited Radio History](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp; &nbsp; [📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Verkürzte Funk-Historie
-- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.13+1400`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]<br/>
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.25+1231`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Vehicles (DE)
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mission Alarm Time
@@ -154,7 +154,7 @@ This list is auto-generated and contains all scripts that are already ported int
     <summary>🇩🇪 <b>Inhaltsverzeichnis</b> <em>Klicken zum Ein- / Ausklappen</em></summary>
     
 - [[LSS] AAO Alle Fahrzeugtypen](#lss-aao-all-vehicle-types)&nbsp;`2024.09.29+1849`&nbsp;&nbsp;[📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]
-- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.08.13+1409`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
+- [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.10.25+1231`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]
 - [[LSS] AAO leeren](#lss-empty-arr)&nbsp;`2024.05.18+1226`&nbsp;&nbsp;[📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]
 - [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]
@@ -205,7 +205,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Leitstellenansicht-Knopf in der Gebäudeliste ausblenden](#lss-hide-leitstellenansicht-btn-in-building-panel)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;hideLeitstellenansichtBtnInBuildingPanel.user.js][hideLeitstellenansichtBtnInBuildingPanel.user.js:download]
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp;&nbsp;[📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]
 - [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.10.16+1715`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
-- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.13+1400`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
+- [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.25+1231`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
 - [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
@@ -248,7 +248,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                           Download                            |                  Links                  |
 |:---------------:|:------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| 2024.08.13+1409 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
+| 2024.10.25+1231 |    `🇩🇪`    | [aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download] | [Forum][aaoConfigLite.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Config Lite (DE)</summary>
@@ -1036,7 +1036,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                             Download                              |                   Links                   |
 |:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2024.10.13+1400 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
+| 2024.10.25+1231 |    `🇩🇪`    | [limitedVehicles.de.user.js][limitedVehicles.de.user.js:download] | [Forum][limitedVehicles.de.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Limited Vehicles (DE)</summary>
