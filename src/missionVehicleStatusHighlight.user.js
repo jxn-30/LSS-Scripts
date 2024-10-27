@@ -59,7 +59,7 @@
  * @name:de Fahrzeuge nach Status im Einsatzfenster hervorheben
  * @description Highlights vehicles based on their current status in the mission window
  * @description:de Hebt Fahrzeuge im Einsatzfenster basierend auf ihrem aktuellen Status hervor
- * @//forum
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/17912-mission-status-highlight
  * @match /missions/*
  * @grant GM_addStyle
  * @old Mission-Status-Highlight
