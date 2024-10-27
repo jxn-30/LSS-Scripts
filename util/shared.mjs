@@ -137,6 +137,8 @@ export const forEachFile = async callback => {
     const processedFiles = [];
 
     for (const comment of comments) {
+        if (!comment.tags) continue;
+
         const metaFileName = comment.meta?.filename;
         if (!metaFileName) continue;
 
