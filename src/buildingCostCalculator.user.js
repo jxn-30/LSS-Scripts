@@ -89,37 +89,30 @@ GM_addStyle(`
 }
 `);
 
+const logn = (x, base) => Math.log(x) / Math.log(base); // ln(x)/ln(5) = log5(x)
+
 /**
  * @callback Formula
  * @param {number} nth
  * @return {number}
  */
-
 /** @type {Record<string, Formula>} */
 const buildingPriceFormulas = {
     'Feuerwehr': nth =>
-        Math.ceil(100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))),
+        // - 22, when calculating with "currently available buildings", but nth is always 1 more
+        Math.ceil(100_000 + 200_000 * Math.log2(Math.max(1, nth - 23))),
     'Feuerwehr (Kleinwache)': nth =>
         Math.min(
-            Math.ceil(
-                (100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))) / 2
-            ),
+            Math.ceil(buildingPriceFormulas.Feuerwehr(nth) / 2),
             1_000_000
         ),
-    'Polizei': nth =>
-        Math.ceil(100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))),
+    'Polizei': nth => buildingPriceFormulas.Feuerwehr(nth),
     'Polizei (Kleinwache)': nth =>
-        Math.min(
-            Math.ceil(
-                (100_000 + 200_000 * Math.log2(Math.max(1, nth - 22))) / 2
-            ),
-            1_000_000
-        ),
-    'THW': nth => Math.ceil(200_000 + 100_000 * Math.log2(nth + 1)),
+        buildingPriceFormulas['Feuerwehr (Kleinwache)'](nth),
+    'THW': nth => Math.ceil(200_000 + 100_000 * Math.log2(nth)),
     'Bergrettung': nth =>
-        Math.round(
-            100_000 + 100_000 * (Math.log(Math.max(1, nth - 10)) / Math.log(5)) // ln(x)/ln(5) = log5(x)
-        ),
+        Math.round(100_000 + 100_000 * logn(Math.max(1, nth - 10), 5)),
+    'Seenotrettung': nth => buildingPriceFormulas.Bergrettung(nth),
 };
 
 // create a modal
