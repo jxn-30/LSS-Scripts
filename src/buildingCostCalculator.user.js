@@ -2,7 +2,7 @@
 // @name            [LSS] Building cost calculator
 // @name:de         [LSS] Baukostenrechner
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.08.20+1754
+// @version         2024.10.27+1108
 // @author          Jan (jxn_30)
 // @description     Calculates the costs of the next buildings including a sum
 // @description:de  Berechnet die Kosten der nächsten Gebäude inklusive einer Summe

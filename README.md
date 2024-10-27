@@ -41,7 +41,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Browsertitle](#lss-browsertitle)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;browsertitle.user.js][browsertitle.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Browsertitel
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;bsrAAOAboveVehiclelist.user.js][bsrAAOAboveVehiclelist.user.js:download]<br/>
-- [[LSS] Building cost calculator](#lss-building-cost-calculator)&nbsp;`2024.08.20+1754`&nbsp; &nbsp; [📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]<br/>
+- [[LSS] Building cost calculator](#lss-building-cost-calculator)&nbsp;`2024.10.27+1108`&nbsp; &nbsp; [📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Baukostenrechner
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Calendar-Gift-Highlight
@@ -172,7 +172,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Auflistung eigener Fahrzeugtypen](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp;&nbsp;[📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]
 - [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2024.07.13+2114`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
 - [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
-- [[LSS] Baukostenrechner](#lss-building-cost-calculator)&nbsp;`2024.08.20+1754`&nbsp;&nbsp;[📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]
+- [[LSS] Baukostenrechner](#lss-building-cost-calculator)&nbsp;`2024.10.27+1108`&nbsp;&nbsp;[📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]
 - [[LSS] Blaue Kästen in der Einsatzliste ausblenden](#lss-hide-blue-missionlist-boxes)&nbsp;`2024.03.04+1640`&nbsp;&nbsp;[📥️:&nbsp;hideBlueMissionListBoxes.user.js][hideBlueMissionListBoxes.user.js:download]
 - [[LSS] Browsertitel](#lss-browsertitle)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;browsertitle.user.js][browsertitle.user.js:download]
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;bsrAAOAboveVehiclelist.user.js][bsrAAOAboveVehiclelist.user.js:download]
@@ -479,7 +479,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                                 Download                                  |                     Links                     |
 |:---------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
-| 2024.08.20+1754 | [buildingCostCalculator.user.js][buildingCostCalculator.user.js:download] | [Forum][buildingCostCalculator.user.js:forum] |
+| 2024.10.27+1108 | [buildingCostCalculator.user.js][buildingCostCalculator.user.js:download] | [Forum][buildingCostCalculator.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Baukostenrechner</summary>
