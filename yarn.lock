@@ -823,9 +823,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-api@npm:9.3.3":
-  version: 9.3.3
-  resolution: "jsdoc-api@npm:9.3.3"
+"jsdoc-api@npm:9.3.4":
+  version: 9.3.4
+  resolution: "jsdoc-api@npm:9.3.4"
   dependencies:
     array-back: "npm:^6.2.2"
     cache-point: "npm:^3.0.0"
@@ -839,7 +839,7 @@ __metadata:
   peerDependenciesMeta:
     "@75lb/nature":
       optional: true
-  checksum: 10c0/5c84352718fe4bb6c1e86236200806de261a251895f1297d12fe2102ea571ee685b0b29f50b09559999da3c323911d78912528994f120f87ef4fc95bef7fa545
+  checksum: 10c0/e9452c79c39c1bf0369927d29969db6e4dc9266e9f92192d572d78f25d2fef3ad52a4cc138943338ed68c88991266affcb86396a32fd8a9980ceb4811b7d126a
   languageName: node
   linkType: hard
 
@@ -900,7 +900,7 @@ __metadata:
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-userscripts: "npm:0.5.6"
     globals: "npm:15.11.0"
-    jsdoc-api: "npm:9.3.3"
+    jsdoc-api: "npm:9.3.4"
     prettier: "npm:3.3.3"
     simple-git: "npm:3.27.0"
     userscript-meta: "npm:1.0.1"
