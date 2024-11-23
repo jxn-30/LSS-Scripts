@@ -2,7 +2,7 @@
 // @name            [LSS] Training Mouse Protector
 // @name:de         [LSS] Ausbildungs-Mausschoner
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.07.13+2114
+// @version         2024.11.22+1918
 // @author          Jan (jxn_30)
 // @description     Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
 // @description:de  Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
@@ -148,10 +148,10 @@ useSpecificSchoolsCheckbox.addEventListener('change', () =>
 useSpecificSchoolsLabel.prepend(useSpecificSchoolsCheckbox);
 
 GM_addStyle(`
-label:has(#${useSpecificSchoolsCheckbox.id}:not(:checked)) + select[multiple],
-label:has(#${useSpecificSchoolsCheckbox.id}:not(:checked)) + select[multiple] + .help-block {
-    display: none;
-}`);
+ label:has(#${useSpecificSchoolsCheckbox.id}:not(:checked)) + select[multiple],
+             label:has(#${useSpecificSchoolsCheckbox.id}:not(:checked)) + select[multiple] + .help-block {
+                 display: none;
+             }`);
 
 const specificSchoolSelection = document.createElement('select');
 specificSchoolSelection.classList.add('form-control');
@@ -188,6 +188,8 @@ const schoolingRoomSelections = new Set();
 
 const roomsSelectionClass = 'jxn-training_mouse_protector-rooms_use';
 const lastShownOptionClass = 'jxn-training_mouse_protector-last_shown';
+const isDurchschloedelingClass =
+    'jxn-training_mouse_protector-is-durchschloedeling';
 
 const selectStyle = document.createElement('style');
 form?.append(selectStyle);
@@ -217,16 +219,17 @@ const updateSelectStyle = () => {
     });
 
     selectStyle.textContent = `
-.${roomsSelectionClass} .${lastShownOptionClass} ~ option {
-    display: none;
-    pointer-events: none;
-}
+     .${roomsSelectionClass} .${lastShownOptionClass} ~ option {
+         display: none;
+         pointer-events: none;
+     }
 
-body:has(#${allowEmptyCheckbox.id}:checked) #accordion > .panel {
-    opacity: 0.5;
-    pointer-events: none;
-}
-`.trim();
+     body:has(#${allowEmptyCheckbox.id}:checked) #accordion > .panel,
+     form.${isDurchschloedelingClass} #accordion > .panel {
+         opacity: 0.5;
+         pointer-events: none;
+     }
+     `.trim();
 };
 
 form?.querySelectorAll('label[for^="education_"]').forEach(label => {
@@ -345,52 +348,52 @@ const confirmDialogId = 'jxn-training_mouse-protector_confirm-dialog';
 
 // remove modal style added by Traxx
 GM_addStyle(`
-#${confirmDialogId} {
-    position: fixed;
-    padding-top: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-    z-index: 1050;
-}
-#${confirmDialogId} .modal-dialog {
-    max-width: 500px;
-}
-#${confirmDialogId} .modal-body {
-    height: unset;
-    overflow-y: unset;
-}
+     #${confirmDialogId} {
+     position: fixed;
+     padding-top: 0;
+     left: 0;
+     right: 0;
+     top: 0;
+     bottom: 0;
+     overflow: hidden;
+     z-index: 1050;
+     }
+     #${confirmDialogId} .modal-dialog {
+     max-width: 500px;
+     }
+     #${confirmDialogId} .modal-body {
+     height: unset;
+     overflow-y: unset;
+     }
 
-#${confirmDialogId} u {
-    text-decoration-color: #aaa;
-}
+     #${confirmDialogId} u {
+     text-decoration-color: #aaa;
+     }
 
-#${confirmDialogId} .buttons {
-    text-align: center;
-    margin: -15px;
-    margin-top: 15px;
-    border-top: 1px solid;
-}
+     #${confirmDialogId} .buttons {
+     text-align: center;
+     margin: -15px;
+     margin-top: 15px;
+     border-top: 1px solid;
+     }
 
-#${confirmDialogId} .buttons > a {
-    width: 50%;
-    display: inline-block;
-    color: inherit;
-    cursor: pointer;
-    padding: 15px;
-}
+     #${confirmDialogId} .buttons > a {
+     width: 50%;
+     display: inline-block;
+     color: inherit;
+     cursor: pointer;
+     padding: 15px;
+     }
 
-#${confirmDialogId} .buttons > a:hover {
-    background-color: #aaa;
-    text-decoration: none;
-}
+     #${confirmDialogId} .buttons > a:hover {
+     background-color: #aaa;
+     text-decoration: none;
+     }
 
-#${confirmDialogId} .buttons > a:not(:last-child) {
-    border-right: 1px solid;
-}
-`);
+     #${confirmDialogId} .buttons > a:not(:last-child) {
+     border-right: 1px solid;
+     }
+     `);
 
 /**
  * @param {string} educationName
@@ -487,15 +490,15 @@ const confirmDialog = (
 
 let abortedDueToMultipleSchools = false;
 const multipleSchoolsAlert = `
-⚠️🚨 𝐀𝐜𝐡𝐭𝐮𝐧𝐠 𝐀𝐜𝐡𝐭𝐮𝐧𝐠. 𝐄𝐢𝐧𝐞 𝐰𝐢𝐜𝐡𝐭𝐢𝐠𝐞 𝐃𝐮𝐫𝐜𝐡𝐬𝐚𝐠𝐞! 🚨⚠️
+     ⚠️🚨 𝐀𝐜𝐡𝐭𝐮𝐧𝐠 𝐀𝐜𝐡𝐭𝐮𝐧𝐠. 𝐄𝐢𝐧𝐞 𝐰𝐢𝐜𝐡𝐭𝐢𝐠𝐞 𝐃𝐮𝐫𝐜𝐡𝐬𝐚𝐠𝐞! 🚨⚠️
 
-Das Script "Ausbildungs-Mausschoner" ist NICHT mit dem Script "MultipleSchools" von Allure149 kompatibel. Bitte deaktiviere das Script "MultipleSchools", um dieses Script hier verwenden zu können.
+     Das Script "Ausbildungs-Mausschoner" ist NICHT mit dem Script "MultipleSchools" von Allure149 kompatibel. Bitte deaktiviere das Script "MultipleSchools", um dieses Script hier verwenden zu können.
 
-Andernfalls kann es zu unerwartetem Verhalten kommen, für dieses übernimmt der Autor dieses Scriptes keine Haftung.
+     Andernfalls kann es zu unerwartetem Verhalten kommen, für dieses übernimmt der Autor dieses Scriptes keine Haftung.
 
-Viele Grüße
-Euer Tutorial-Polizist mit dem langen Zeigefinger! 👮👆
-`.trim();
+     Viele Grüße
+     Euer Tutorial-Polizist mit dem langen Zeigefinger! 👮👆
+     `.trim();
 
 const checkMultipleSchools = setInterval(() => {
     if (document.querySelector('#multipleClassesSelect')) {
@@ -967,9 +970,32 @@ new Promise((resolve, reject) => {
         };
 
         const reqOr100ms = req =>
-            Promise.all([req, new Promise(r => setTimeout(r, 100))]).then(
-                ([res]) => res
-            );
+            Promise.all([req, new Promise(r => setTimeout(r, 1000))])
+                .then(([res]) => res)
+                .catch(e => {
+                    console.error(e);
+                });
+
+        const progressStyle = document.createElement('style');
+        document.head.append(progressStyle);
+        const setProgressStyle = staff => {
+            const staffSelector = staff.map(s => `[value="${s}"]`).join(', ');
+            progressStyle.textContent = `
+             .panel:has(~ .panel .panel-body .schooling_checkbox:where(${staffSelector})) .panel-heading::before {
+                 content: "✅";
+                 text-align: center;
+                 border-radius: .25em;
+                 margin-right: 1em;
+             }
+
+             .panel-heading:has(+ .panel-body .schooling_checkbox:where(${staffSelector}))::before {
+                 content: "⏳️";
+                 text-align: center;
+                 border-radius: .25em;
+                 margin-right: 1em;
+             }
+             `;
+        };
 
         const doTheDurchschloedeln = async () => {
             if (abortedDueToMultipleSchools) return alert(multipleSchoolsAlert);
@@ -1021,6 +1047,7 @@ new Promise((resolve, reject) => {
             form.querySelectorAll('input, select').forEach(
                 input => (input.disabled = true)
             );
+            form.classList.add(isDurchschloedelingClass);
 
             const currentStateSpan = document.createElement('span');
             currentStateSpan.classList.add('label', 'label-warning');
@@ -1115,6 +1142,7 @@ new Promise((resolve, reject) => {
                     for (const room of staff) {
                         roomNum++;
                         if (!room.length) continue;
+                        setProgressStyle(room);
                         await reqOr100ms(fillRoom(schoolingIds.shift(), room));
                         progressBar.style.setProperty(
                             'width',
@@ -1127,6 +1155,7 @@ new Promise((resolve, reject) => {
                 // this is an own school
                 for (const [schoolId, staff] of Object.entries(roomPlan)) {
                     const staffForSchool = staff.flat();
+                    setProgressStyle(staffForSchool);
                     await reqOr100ms(
                         openSchool(
                             schoolId,
