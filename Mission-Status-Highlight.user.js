@@ -2,7 +2,7 @@
 // @name            [LSS] Mission vehicle status highlight
 // @name:de         [LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.10.25+1322
+// @version         2024.11.24+1328
 // @author          Jan (jxn_30)
 // @description     Highlights vehicles based on their current status in the mission window
 // @description:de  Hebt Fahrzeuge im Einsatzfenster basierend auf ihrem aktuellen Status hervor
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionVehicleStatusHighlight.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionVehicleStatusHighlight.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/17912-mission-status-highlight
 // @match           https://www.operacni-stredisko.cz/missions/*
 // @match           https://policie.operacni-stredisko.cz/missions/*
 // @match           https://www.alarmcentral-spil.dk/missions/*
@@ -59,7 +59,7 @@
  * @name:de Fahrzeuge nach Status im Einsatzfenster hervorheben
  * @description Highlights vehicles based on their current status in the mission window
  * @description:de Hebt Fahrzeuge im Einsatzfenster basierend auf ihrem aktuellen Status hervor
- * @//forum
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/17912-mission-status-highlight
  * @match /missions/*
  * @grant GM_addStyle
  * @old Mission-Status-Highlight

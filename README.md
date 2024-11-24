@@ -113,7 +113,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzsortierung
 - [[LSS] Mission Vehicle Highlight](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge im Einsatz farblich hervorheben
-- [[LSS] Mission vehicle status highlight](#lss-mission-vehicle-status-highlight)&nbsp;`2024.10.25+1322`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]<br/>
+- [[LSS] Mission vehicle status highlight](#lss-mission-vehicle-status-highlight)&nbsp;`2024.11.24+1328`&nbsp; &nbsp; [📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben
 - [[LSS] Mobile Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp; &nbsp; [📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mobiles Layout
@@ -143,7 +143,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
 - [[LSS] Training Finder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp; &nbsp; [📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungsfinder
-- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2024.07.13+2114`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
+- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2024.11.24+1328`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungs-Mausschoner
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp; &nbsp; [📥️:&nbsp;userId.user.js][userId.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
@@ -170,7 +170,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Asynchrone Gefangene](#lss-async-prisoners)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;asyncPrisoners.user.js][asyncPrisoners.user.js:download]
 - [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.08.27+2210`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
 - [[LSS] Auflistung eigener Fahrzeugtypen](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp;&nbsp;[📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]
-- [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2024.07.13+2114`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
+- [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2024.11.24+1328`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
 - [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
 - [[LSS] Baukostenrechner](#lss-building-cost-calculator)&nbsp;`2024.10.27+1108`&nbsp;&nbsp;[📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]
 - [[LSS] Blaue Kästen in der Einsatzliste ausblenden](#lss-hide-blue-missionlist-boxes)&nbsp;`2024.03.04+1640`&nbsp;&nbsp;[📥️:&nbsp;hideBlueMissionListBoxes.user.js][hideBlueMissionListBoxes.user.js:download]
@@ -189,7 +189,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
-- [[LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben](#lss-mission-vehicle-status-highlight)&nbsp;`2024.10.25+1322`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]
+- [[LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben](#lss-mission-vehicle-status-highlight)&nbsp;`2024.11.24+1328`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
@@ -1127,9 +1127,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Highlights vehicles based on their current status in the mission window
 
-|     Version     |     Alias / Old names      |                                        Download                                         |
-|:---------------:|:--------------------------:|:---------------------------------------------------------------------------------------:|
-| 2024.10.25+1322 | `Mission-Status-Highlight` | [missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download] |
+|     Version     |     Alias / Old names      |                                        Download                                         |                        Links                         |
+|:---------------:|:--------------------------:|:---------------------------------------------------------------------------------------:|:----------------------------------------------------:|
+| 2024.11.24+1328 | `Mission-Status-Highlight` | [missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download] | [Forum][missionVehicleStatusHighlight.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben</summary>
@@ -1139,6 +1139,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
 
 [missionVehicleStatusHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/missionVehicleStatusHighlight.user.js
+[missionVehicleStatusHighlight.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/17912-mission-status-highlight
 
 ### [LSS] Mobile Layout
 
@@ -1398,7 +1399,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                                 Download                                  |                     Links                     |
 |:---------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
-| 2024.07.13+2114 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] | [Forum][trainingMouseProtector.user.js:forum] |
+| 2024.11.24+1328 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] | [Forum][trainingMouseProtector.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Ausbildungs-Mausschoner</summary>
