@@ -971,10 +971,10 @@ new Promise((resolve, reject) => {
 
         const reqOr100ms = req =>
             Promise.all([req, new Promise(r => setTimeout(r, 1000))])
-                .then(([res]) => res)
-                .catch(e => {
-                    console.error(e);
-                });
+                .then(([res]) => res);
+                // .catch(e => {
+                //    console.error(e);
+                // });
 
         const progressStyle = document.createElement('style');
         document.head.append(progressStyle);
