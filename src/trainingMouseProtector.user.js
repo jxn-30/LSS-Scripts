@@ -1142,7 +1142,7 @@ new Promise((resolve, reject) => {
                     for (const room of staff) {
                         roomNum++;
                         if (!room.length) continue;
-                        setProgressStyle(room);
+                        // setProgressStyle(room);
                         await reqOr100ms(fillRoom(schoolingIds.shift(), room));
                         progressBar.style.setProperty(
                             'width',
@@ -1155,7 +1155,7 @@ new Promise((resolve, reject) => {
                 // this is an own school
                 for (const [schoolId, staff] of Object.entries(roomPlan)) {
                     const staffForSchool = staff.flat();
-                    setProgressStyle(staffForSchool);
+                    // setProgressStyle(staffForSchool);
                     await reqOr100ms(
                         openSchool(
                             schoolId,
