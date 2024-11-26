@@ -1,7 +1,7 @@
 {
     "name": "jxn_30-lss-scripts",
     "description": "The collection of Scripts for leitstellenspiel, missionchief & co. By jxn_30",
-    "packageManager": "yarn@4.5.2",
+    "packageManager": "yarn@4.5.3",
     "type": "module",
     "scripts": {
         "lint:fix": "yarn eslint . --exit-on-fatal-error --report-unused-disable-directives --cache --cache-strategy content --fix",
