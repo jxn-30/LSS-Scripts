@@ -108,6 +108,10 @@
         'vehicle_type_ids[138]': 1, // GW-Verpflegung
         'vehicle_type_ids[141]': 1, // FKH
         'vehicle_type_ids[142]': 1, // AB-Küche
+        'railway_fire': 1, // Beliebiges Bahnrettungsfahrzeug
+        'vehicle_type_ids[162]': 1, // RW-Schiene
+        'vehicle_type_ids[163]': 1, // HLF Schiene
+        'vehicle_type_ids[164]': 1, // AB-Schiene
 
         // Rettungsdienst
         'rtw': 1, // Rettungswagen
