@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] Scroll-To-Top buttons
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.01.17+1128
+// @version         2024.12.31+1938
 // @author          Jan (jxn_30)
 // @description     Shows a scroll-to-top button on all scrollable elements
 // @description:de  Zeigt einen Knopf, um in Elementen nach oben zu scrollen
@@ -71,6 +71,21 @@ GM_addStyle(`
     right: 1em;
     z-index: 10000;
     float: right;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 50px;
+    height: 100px;
+}
+.scroll-to-top-btn .half {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.scroll-to-top-btn .half:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 `);
 
@@ -92,17 +107,31 @@ if (!window.frameElement || window.frameElement?.src?.startsWith('https://')) {
                     document.body
                 :   target).querySelector(':scope > .scroll-to-top-btn');
             if (!scrollToTopBtn) {
-                scrollToTopBtn = document.createElement('button');
+                scrollToTopBtn = document.createElement('div');
                 scrollToTopBtn.classList.add(
                     'scroll-to-top-btn',
                     'btn',
                     'btn-default'
                 );
-                scrollToTopBtn.textContent = '↑';
-                scrollToTopBtn.addEventListener('click', e => {
+
+                const topHalf = document.createElement('div');
+                topHalf.classList.add('half');
+                topHalf.textContent = '↑';
+                topHalf.addEventListener('click', e => {
                     e.preventDefault();
                     targetOrDocEl.scrollTo({ top: 0, behavior: 'smooth' });
                 });
+
+                const bottomHalf = document.createElement('div');
+                bottomHalf.classList.add('half');
+                bottomHalf.textContent = '↓';
+                bottomHalf.addEventListener('click', e => {
+                    e.preventDefault();
+                    targetOrDocEl.scrollTo({ top: targetOrDocEl.scrollHeight, behavior: 'smooth' });
+                });
+
+                scrollToTopBtn.append(topHalf, bottomHalf);
+
                 if (targetIsDocument) document.body.append(scrollToTopBtn);
                 else target.append(scrollToTopBtn);
                 let translateY = parseFloat(
