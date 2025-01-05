@@ -30,7 +30,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Alliance Member Distance
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;allianceMemberNotes.user.js][allianceMemberNotes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Alliance Member Notes
-- [[LSS] Alliance members panel](#lss-alliance-members-panel)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]<br/>
+- [[LSS] Alliance members panel](#lss-alliance-members-panel)&nbsp;`2025.01.05+1312`&nbsp; &nbsp; [📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Verbandsmitglieder panel
 - [[LSS] ARR Categories Export](#lss-arr-categories-export)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;arrCategoriesExport.user.js][arrCategoriesExport.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO-Kategorien Export
@@ -73,7 +73,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.12.21+0936`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.01.05+1312`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -193,7 +193,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2024.12.21+0936`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.01.05+1312`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -220,7 +220,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Textlänge bei Eingabefeldern prüfen](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp;&nbsp;[📥️:&nbsp;userId.user.js][userId.user.js:download]
-- [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
+- [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2025.01.05+1312`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
 - [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
 - [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2024.08.24+1324`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
@@ -377,7 +377,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                               Download                                |                    Links                    |
 |:---------------:|:---------------------------------------------------------------------:|:-------------------------------------------:|
-| 2024.01.17+1128 | [allianceMembersPanel.user.js][allianceMembersPanel.user.js:download] | [Forum][allianceMembersPanel.user.js:forum] |
+| 2025.01.05+1312 | [allianceMembersPanel.user.js][allianceMembersPanel.user.js:download] | [Forum][allianceMembersPanel.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Verbandsmitglieder panel</summary>
@@ -765,7 +765,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.12.21+0936 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| 2025.01.05+1312 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
