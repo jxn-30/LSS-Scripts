@@ -114,7 +114,7 @@ const roles = {
         title: 'Aufsichtsrat',
         icon: '🔍️',
     },
-    view_logs: {
+    event_manager: {
         title: 'Eventmanager',
         icon: '🗓️',
     },
