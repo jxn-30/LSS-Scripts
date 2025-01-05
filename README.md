@@ -133,7 +133,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Gebäudeliste neu laden
 - [[LSS] Reload missions list](#lss-reload-missions-list)&nbsp;`2024.03.02+1539`&nbsp; &nbsp; [📥️:&nbsp;reloadMissions.user.js][reloadMissions.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzliste neu laden
-- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]<br/>
+- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp; &nbsp; [📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Scroll-To-Top buttons
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] SoSi-Switch (DE)
@@ -215,7 +215,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp;&nbsp;[📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]
 - [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
 - [[LSS] Schnellere AAO-Verfügbarkeitsprüfung](#lss-faster-arr-availability-check)&nbsp;`2024.08.21+1208`&nbsp;&nbsp;[📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]
-- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
+- [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
 - [[LSS] Textlänge bei Eingabefeldern prüfen](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]
@@ -1309,7 +1309,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                      Download                       |               Links                |
 |:---------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2024.01.17+1128 | [scrollToTop.user.js][scrollToTop.user.js:download] | [Forum][scrollToTop.user.js:forum] |
+| 2025.01.05+1319 | [scrollToTop.user.js][scrollToTop.user.js:download] | [Forum][scrollToTop.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Scroll-To-Top buttons</summary>
