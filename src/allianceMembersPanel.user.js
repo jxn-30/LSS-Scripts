@@ -114,6 +114,10 @@ const roles = {
         title: 'Aufsichtsrat',
         icon: '🔍️',
     },
+    view_logs: {
+        title: 'Eventmanager',
+        icon: '🗓️',
+    },
 };
 
 const createRoleFlagSpan = role => {
