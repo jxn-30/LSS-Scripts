@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 69 userscripts*
+*Total: 70 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -49,6 +49,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Zentrale Einstellungen
 - [[LSS] Chat Hider](#lss-chat-hider)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;chatHider.user.js][chatHider.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
+- [[LSS] Chat Reverse](#lss-chat-reverse)&nbsp;`2025.01.14+2330`&nbsp; &nbsp; [📥️:&nbsp;chatReverse.user.js][chatReverse.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Chat umdrehen
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;checkboxMultiselect.user.js][checkboxMultiselect.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Checkbox-multiselect
 - [[LSS] Cleaner Vehicle Market](#lss-cleaner-vehicle-market)&nbsp;`2024.08.27+2210`&nbsp; &nbsp; [📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]<br/>
@@ -179,6 +181,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download]
 - [[LSS] Chat Hider](#lss-chat-hider)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;chatHider.user.js][chatHider.user.js:download]
 - [[LSS] Chat neu laden](#lss-reload-chat)&nbsp;`2023.01.29+1235`&nbsp;&nbsp;[📥️:&nbsp;reloadChat.user.js][reloadChat.user.js:download]
+- [[LSS] Chat umdrehen](#lss-chat-reverse)&nbsp;`2025.01.14+2330`&nbsp;&nbsp;[📥️:&nbsp;chatReverse.user.js][chatReverse.user.js:download]
 - [[LSS] Checkbox-multiselect](#lss-checkbox-multiselect)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;checkboxMultiselect.user.js][checkboxMultiselect.user.js:download]
 - [[LSS] Clickable links](#lss-clickable-links)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;clickableLinks.user.js][clickableLinks.user.js:download]
 - [[LSS] Dark OSM](#lss-dark-osm)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;darkOSM.user.js][darkOSM.user.js:download]
@@ -543,6 +546,23 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [chatHider.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/chatHider.user.js
 [chatHider.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18991-chat-hider/
+
+### [LSS] Chat Reverse
+
+> Makes new chat messages appear at the bottom instead of at the top.
+
+|     Version     |                      Download                       |
+|:---------------:|:---------------------------------------------------:|
+| 2025.01.14+2330 | [chatReverse.user.js][chatReverse.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Chat umdrehen</summary>
+    Dreht den Chat auf den Kopf, sodass neue Nachrichten unten statt oben erscheinen.
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[chatReverse.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/chatReverse.user.js
 
 ### [LSS] Checkbox-multiselect
 

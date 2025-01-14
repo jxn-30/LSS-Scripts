@@ -2,7 +2,7 @@
 // @name            [LSS] Chat Reverse
 // @name:de         [LSS] Chat umdrehen
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2025.01.14+2330
 // @author          Jan (jxn_30)
 // @description     Makes new chat messages appear at the bottom instead of at the top.
 // @description:de  Dreht den Chat auf den Kopf, sodass neue Nachrichten unten statt oben erscheinen.
