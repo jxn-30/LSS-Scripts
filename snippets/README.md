@@ -4,6 +4,7 @@ This directory contains some helpfull snippets that can be executed in browser c
 
 - [Current IDs](./IDs.js)
 - [Alliance Events](./allianceEvents.js)
+- [Missions where patients appear at the end](./patientsAtEnd.js)
 
 # Generating overviews / statistics
 
