@@ -16,6 +16,12 @@ class SharedAPIStorage {
         allianceMembers: 'allianceMembers',
     };
 
+    static #INDEXES = {
+        allianceMembers: {
+            name: 'name',
+        },
+    };
+
     #DB_NAME = `shared-api-storage`;
 
     /** @type {IDBDatabase | null} */
@@ -27,7 +33,7 @@ class SharedAPIStorage {
     async #upgradeDB({ oldVersion }) {
         if (!this.#db) return;
 
-        /** @type {Promise<void>[]} */
+        /** @type {Promise<void>[} */
         const transactions = [];
 
         /**
@@ -67,10 +73,19 @@ class SharedAPIStorage {
                     .transaction
             );
             addTransaction(
-                this.#db.createObjectStore(
-                    this.#class.#TABLES.allianceMembers,
-                    { keyPath: 'id' }
-                ).transaction
+                (() => {
+                    const store = this.#db.createObjectStore(
+                        this.#class.#TABLES.allianceMembers,
+                        { keyPath: 'id' }
+                    );
+                    store.createIndex(
+                        'name',
+                        this.#class.#INDEXES.allianceMembers.name,
+                        { unique: true }
+                    );
+
+                    return store.transaction;
+                })()
             );
         }
 
@@ -117,12 +132,13 @@ class SharedAPIStorage {
         this.#db = null;
     }
 
-    #getEntry(table, key) {
+    #getEntry(table, key, index) {
         return this.#openDB()
             .then(db => {
                 const tx = db.transaction(table, 'readonly');
                 const store = tx.objectStore(table);
-                const request = store.get(key);
+                const request =
+                    index ? store.index(index).get(key) : store.get(key);
                 return new Promise((resolve, reject) => {
                     request.addEventListener('success', () =>
                         resolve(request.result)
@@ -283,27 +299,40 @@ class SharedAPIStorage {
         });
     }
 
-    async getUserInfo() {
+    async getUserInfo(key) {
         const table = this.#class.#TABLES.userInfo;
         await this.#updateSimpleAPI(table, 'userinfo');
-        return this.#getTable(table, true);
+        if (key) return this.#getEntry(table, key);
+        else return this.#getTable(table, true);
     }
 
-    async getAllianceInfo() {
+    async getAllianceInfo(key) {
+        const table = this.#class.#INDEXES.allianceMembers.name;
         await this.#updateAllianceInfo();
-        return this.#getTable(this.#class.#TABLES.allianceInfo, true);
+        if (key) return this.#getEntry(table, key);
+        else return this.#getTable(table, true);
     }
 
-    async getSettings() {
+    async getSettings(key) {
         const table = this.#class.#TABLES.settings;
         await this.#updateSimpleAPI(table, 'settings');
-        return this.#getTable(table, true);
+        if (key) return this.#getEntry(table, key);
+        else return this.#getTable(table, true);
     }
     // endregion
 
-    async getAllianceMembers() {
+    async getAllianceMembers(nameOrId) {
         await this.#updateAllianceInfo();
-        return this.#getTable(this.#class.#TABLES.allianceMembers);
+        const table = this.#class.#TABLES.allianceMembers;
+        if (typeof nameOrId === 'number')
+            return this.#getEntry(table, nameOrId);
+        else if (typeof nameOrId === 'string')
+            return this.#getEntry(
+                table,
+                nameOrId,
+                this.#class.#INDEXES.allianceMembers.name
+            );
+        else return this.#getTable(table);
     }
 }
 
