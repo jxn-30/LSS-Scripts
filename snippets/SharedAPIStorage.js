@@ -1,3 +1,7 @@
+const ONE_MINUTE = 60 * 1000;
+const FIVE_MINUTES = 5 * ONE_MINUTE;
+const ONE_HOUR = 60 * ONE_MINUTE;
+
 /**
  * @typedef {Object} Mission
  */
@@ -5,6 +9,7 @@
 class SharedAPIStorage {
     static #TABLES = {
         lastUpdates: 'lastUpdates',
+        simpleAPIs: 'simpleAPIs',
         missionTypes: 'missionTypes',
     };
 
@@ -32,7 +37,10 @@ class SharedAPIStorage {
                 )
             );
 
-        // In version 1, we introduced storing missionTypes and a table for lastUpdates
+        // In version 1, we introduced:
+        // * a table for lastUpdates
+        // * storing missionTypes
+        // * storing simple APIs such as userinfo, allianceinfo and settings
         if (oldVersion < 1) {
             addTransaction(
                 this.#db.createObjectStore(this.#class.#TABLES.lastUpdates, {
@@ -42,6 +50,11 @@ class SharedAPIStorage {
             addTransaction(
                 this.#db.createObjectStore(this.#class.#TABLES.missionTypes, {
                     keyPath: 'id',
+                }).transaction
+            );
+            addTransaction(
+                this.#db.createObjectStore(this.#class.#TABLES.simpleAPIs, {
+                    keyPath: 'api',
                 }).transaction
             );
         }
@@ -144,15 +157,17 @@ class SharedAPIStorage {
             res => res?.lastUpdate ?? 0
         );
     }
+
+    async #needsUpdate(table, treshhold) {
+        return Date.now() - (await this.#getLastUpdate(table)) > treshhold;
+    }
     // endregion
 
     // region missionTypes
-    async updateMissionTypes() {
+    async #updateMissionTypes() {
         const table = this.#class.#TABLES.missionTypes;
 
-        const lastUpdate = await this.#getLastUpdate(table);
-
-        if (Date.now() - lastUpdate < 60 * 60 * 1000) return;
+        if (!this.#needsUpdate(table, ONE_HOUR)) return;
 
         return Promise.all([
             this.#openDB(),
@@ -176,7 +191,9 @@ class SharedAPIStorage {
     /**
      * @returns {Promise<Record<string, Mission>>}
      */
-    getMissionTypes() {
+    async getMissionTypes() {
+        await this.#updateMissionTypes();
+
         return this.#getTable(this.#class.#TABLES.missionTypes).then(
             missionTypes => {
                 // indexedDB returns an array, so we need to convert it to an object
@@ -188,6 +205,53 @@ class SharedAPIStorage {
                 return missionTypesObject;
             }
         );
+    }
+
+    getMission(id) {
+        return this.#getEntry(this.#class.#TABLES.missionTypes, id);
+    }
+    // endregion
+
+    // region simple APIs (userinfo, allianceinfo, settings)
+    async #updateSimpleAPI(api) {
+        if (!this.#needsUpdate(api, FIVE_MINUTES)) return;
+
+        const table = this.#class.#TABLES.simpleAPIs;
+
+        return Promise.all([
+            this.#openDB(),
+            fetch(`/api/${api}`).then(res => res.json()),
+        ])
+            .then(([db, value]) => {
+                const tx = db.transaction(table, 'readwrite');
+                const store = tx.objectStore(table);
+                store.put({ api, value });
+                return new Promise((resolve, reject) => {
+                    tx.addEventListener('complete', () => resolve());
+                    tx.addEventListener('error', () => reject(tx.error));
+                });
+            })
+            .then(() => this.#setLastUpdate(api))
+            .finally(() => this.#closeDB());
+    }
+
+    async #getSimpleAPI(api) {
+        await this.#updateSimpleAPI(api);
+        return this.#getEntry(this.#class.#TABLES.simpleAPIs, api).then(
+            res => res.value
+        );
+    }
+
+    getUserInfo() {
+        return this.#getSimpleAPI('userinfo');
+    }
+
+    getAllianceInfo() {
+        return this.#getSimpleAPI('allianceinfo');
+    }
+
+    getSettings() {
+        return this.#getSimpleAPI('settings');
     }
     // endregion
 }
