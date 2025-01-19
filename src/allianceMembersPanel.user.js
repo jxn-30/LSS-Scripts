@@ -2,7 +2,7 @@
 // @name            [LSS] Alliance members panel
 // @name:de         [LSS] Verbandsmitglieder panel
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.01.05+1424
+// @version         2025.01.19+1404
 // @author          Jan (jxn_30)
 // @description     Adds a panel to view the list of alliance members directly on the games main page
 // @description:de  Fügt ein Panel hinzu, um die Mitgliederliste des Verbands direkt auf der Hauptseite zu sehen
@@ -50,6 +50,7 @@
 // @match           https://polis.larmcentralen-spelet.se/
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
+// @require         https://github.com/jxn-30/LSS-Scripts/raw/master/snippets/SharedAPIStorage.js
 // @run-at          document-idle
 // @grant           unsafeWindow
 // ==/UserScript==
@@ -62,6 +63,7 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/23543-skriptwunsch-mitglieder-online-status/
  * @match /
  * @grant unsafeWindow
+ * @snippet SharedAPIStorage
  */
 
 /**
@@ -84,6 +86,8 @@ const HIGHLIGHT_FRIENDS = false;
  * false: friends will appear in the list as normal alliance members
  */
 const FRIENDS_ON_TOP = false;
+
+/* global sharedAPIStorage */
 
 const roles = {
     admin: {
@@ -157,23 +161,7 @@ const getFriendsList = () =>
         );
 
 const updateMembersList = () => {
-    fetch('/api/allianceinfo')
-        .then(res => res.json())
-        .then(allianceinfo => {
-            try {
-                localStorage.setItem(
-                    'aAlliance',
-                    JSON.stringify({
-                        lastUpdate: Date.now(),
-                        value: allianceinfo,
-                        userId: unsafeWindow.user_id,
-                    })
-                );
-            } catch (e) {
-                // could not set the item due to storage overflow => do nothing and do not store
-            }
-            return allianceinfo.users;
-        })
+    sharedAPIStorage.getAllianceMembers()
         .then(users => {
             if (HIGHLIGHT_FRIENDS || FRIENDS_ON_TOP) {
                 return getFriendsList().then(friendsList => [

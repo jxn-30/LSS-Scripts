@@ -162,6 +162,11 @@ await forEachFile(
             content,
         }));
 
+        const snippetTags = getTags('snippet').map(({ content }) => ({
+            tag: 'require',
+            content: `${GITHUB}/raw/master/snippets/${content}.js`,
+        }));
+
         // list of tags to add to the userscript
         const userscriptHeaderInformation = [
             {
@@ -205,6 +210,7 @@ await forEachFile(
                 content: forumTag.content || GITHUB,
             },
             ...matches,
+            ...snippetTags,
             ...resourceTags,
             ...getTags('run-at', 'document-idle'),
             ...getTags('grant'),
