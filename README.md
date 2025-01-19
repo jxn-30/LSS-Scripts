@@ -30,7 +30,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Alliance Member Distance
 - [[LSS] Alliance Member Notes](#lss-alliance-member-notes)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;allianceMemberNotes.user.js][allianceMemberNotes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Alliance Member Notes
-- [[LSS] Alliance members panel](#lss-alliance-members-panel)&nbsp;`2025.01.05+1424`&nbsp; &nbsp; [📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]<br/>
+- [[LSS] Alliance members panel](#lss-alliance-members-panel)&nbsp;`2025.01.19+1412`&nbsp; &nbsp; [📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Verbandsmitglieder panel
 - [[LSS] ARR Categories Export](#lss-arr-categories-export)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;arrCategoriesExport.user.js][arrCategoriesExport.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO-Kategorien Export
@@ -223,7 +223,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Textlänge bei Eingabefeldern prüfen](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp;&nbsp;[📥️:&nbsp;userId.user.js][userId.user.js:download]
-- [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2025.01.05+1424`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
+- [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2025.01.19+1412`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
 - [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
 - [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2024.08.24+1324`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
@@ -380,7 +380,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                               Download                                |                    Links                    |
 |:---------------:|:---------------------------------------------------------------------:|:-------------------------------------------:|
-| 2025.01.05+1424 | [allianceMembersPanel.user.js][allianceMembersPanel.user.js:download] | [Forum][allianceMembersPanel.user.js:forum] |
+| 2025.01.19+1412 | [allianceMembersPanel.user.js][allianceMembersPanel.user.js:download] | [Forum][allianceMembersPanel.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Verbandsmitglieder panel</summary>
