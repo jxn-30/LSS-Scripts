@@ -280,6 +280,33 @@ GM_addStyle(`
               `;
         });
 
+        // formPart for setting equipment checkbox
+        const setEquipmentLabel = document.createElement('label');
+        const setEquipment = document.createElement('input');
+        setEquipment.type = 'checkbox';
+        setEquipmentLabel.append(
+            '"Ausrüstung autoamtisch zuweisen"-Haken auch anpassen?\xa0',
+            setEquipment
+        );
+        const setEquipmentNoLabel = document.createElement('label');
+        const setEquipmentNo = document.createElement('input');
+        setEquipmentNo.type = 'radio';
+        setEquipmentNo.checked = true;
+        setEquipmentNoLabel.append(setEquipmentNo, '\xa0Nein');
+        const setEquipmentYesLabel = document.createElement('label');
+        const setEquipmentYes = document.createElement('input');
+        setEquipmentYesLabel.append(setEquipmentYes, '\xa0Ja');
+        setEquipmentYes.type = 'radio';
+        setEquipmentNo.name = setEquipmentYes.name = 'equipment';
+        setEquipmentNo.disabled = setEquipmentYes.disabled = true;
+
+        setEquipment.addEventListener(
+            'change',
+            () =>
+                (setEquipmentNo.disabled = setEquipmentYes.disabled =
+                    !setEquipment.checked)
+        );
+
         // let's fill the selects with possible AAO requirements
         getPossibleAAORequirements().then(tabs => {
             statusBox.textContent =
@@ -390,6 +417,12 @@ GM_addStyle(`
                 );
                 if (from !== to) formData.set(from, '0');
 
+                if (setEquipment.checked) {
+                    formData.set('aao[equipment_mode]', '0');
+                    if (setEquipmentYes.checked)
+                        formData.append('aao[equipment_mode]', '1');
+                }
+
                 // send the updated form data
                 await timeoutReq(
                     fetch(form.action, {
@@ -428,6 +461,12 @@ GM_addStyle(`
             'Faktor:\xa0',
             factorInput,
             factorExample,
+            document.createElement('br'),
+            setEquipmentLabel,
+            '\xa0\xa0\xa0',
+            setEquipmentNoLabel,
+            '\xa0\xa0\xa0',
+            setEquipmentYesLabel,
             document.createElement('br'),
             document.createElement('br'),
             changeBtn
