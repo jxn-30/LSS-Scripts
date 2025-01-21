@@ -237,6 +237,49 @@ GM_addStyle(`
         statusBox.textContent =
             'Status: Lese mögliche Anforderungen aus, bitte habe einen Moment Geduld...';
 
+        // create two empty selects
+        const fromReqSelect = document.createElement('select');
+        fromReqSelect.disabled = true;
+        const toReqSelect = document.createElement('select');
+        toReqSelect.disabled = true;
+
+        // create factor input stuff
+        const factorInput = document.createElement('input');
+        factorInput.type = 'range';
+        const factorMin = 0;
+        const factorMax = 200;
+        const factorMiddle = Math.round((factorMax - factorMin) / 2);
+        factorInput.min = factorMin;
+        factorInput.max = factorMax;
+        factorInput.value = factorMiddle;
+        factorInput.step = 1;
+        const factorExample = document.createElement('span');
+        const getFactor = () => {
+            const value = Number(factorInput.value);
+            if (value <= factorMiddle) return value / factorMiddle;
+            return Math.max(1, 100 * (value / factorMiddle - 1));
+        };
+        const getFactorized = (base, factor) =>
+            Math.min(100, Math.round(base * factor));
+        factorInput.addEventListener('input', () => {
+            const factor = getFactor();
+            const base =
+                factor < 1 ? 90
+                : factor > 1 ?
+                    factor > 50 ?
+                        1
+                    :   2
+                :   50;
+            const selectedFrom =
+                fromReqSelect.querySelector('option:checked')?.textContent;
+            const selectedTo =
+                toReqSelect.querySelector('option:checked')?.textContent;
+            factorExample.innerHTML = `Es wird mit einem Faktor von <b>${factor.toLocaleString()}</b> ersetzt.
+              Beispiel: Aus <b>${base}</b>x ${selectedFrom} wird <b>${getFactorized(base, factor)}</b>x ${selectedTo}.
+              Hinweise: Es wird kaufmännisch gerundet. Maximal 100 möglich.
+              `;
+        });
+
         // let's fill the selects with possible AAO requirements
         getPossibleAAORequirements().then(tabs => {
             statusBox.textContent =
@@ -259,25 +302,14 @@ GM_addStyle(`
 
             fromReqSelect.disabled = false;
             toReqSelect.disabled = false;
+
+            factorInput.dispatchEvent(new Event('input'));
         });
-
-        // create two empty selects
-        const fromReqSelect = document.createElement('select');
-        fromReqSelect.disabled = true;
-        const toReqSelect = document.createElement('select');
-        toReqSelect.disabled = true;
-
-        modal.addEventListener(
-            'change',
-            () =>
-                (changeBtn.disabled = fromReqSelect.value === toReqSelect.value)
-        );
 
         // create a button that triggers replacement
         const changeBtn = document.createElement('button');
         changeBtn.classList.add('btn', 'btn-success');
         changeBtn.textContent = 'Anforderungen ersetzen';
-        changeBtn.disabled = true;
 
         // trigger replacement on click
         changeBtn.addEventListener('click', async () => {
@@ -343,6 +375,7 @@ GM_addStyle(`
                 ]).then(([result]) => result);
 
             // iterate over all AAOs that do have that requirement
+            const factor = getFactor();
             for (const aao of aaos) {
                 // get the form data of this AAO
                 const doc = await timeoutReq(getDoc(aao.href));
@@ -351,8 +384,11 @@ GM_addStyle(`
                 const reqs = Object.fromEntries(formData.entries());
 
                 // update formData
-                formData.set(to, reqs[from]);
-                formData.set(from, '0');
+                formData.set(
+                    to,
+                    getFactorized(Number(reqs[from]), factor).toString()
+                );
+                if (from !== to) formData.set(from, '0');
 
                 // send the updated form data
                 await timeoutReq(
@@ -388,6 +424,10 @@ GM_addStyle(`
             document.createElement('br'),
             'Ersetzen mit:\xa0',
             toReqSelect,
+            document.createElement('br'),
+            'Faktor:\xa0',
+            factorInput,
+            factorExample,
             document.createElement('br'),
             document.createElement('br'),
             changeBtn
