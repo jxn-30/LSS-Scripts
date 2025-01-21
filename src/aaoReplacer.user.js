@@ -2,7 +2,7 @@
 // @name            [LSS] AAO Replacer
 // @name:de         [LSS] AAO Replacer
 // @namespace       https://jxn.lss-manager.de
-// @version         2023.12.25+0046
+// @version         2025.01.22+0041
 // @author          Jan (jxn_30)
 // @description     Allows to replace a requirement in all ARRs with another one.
 // @description:de  Ersetze alle Anforderungen in allen AAOs mit einer anderen.
@@ -419,8 +419,9 @@ GM_addStyle(`
 
                 if (setEquipment.checked) {
                     formData.set('aao[equipment_mode]', '0');
-                    if (setEquipmentYes.checked)
+                    if (setEquipmentYes.checked) {
                         formData.append('aao[equipment_mode]', '1');
+                    }
                 }
 
                 // send the updated form data

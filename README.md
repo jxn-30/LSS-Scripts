@@ -20,7 +20,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Config Lite (DE)
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp; &nbsp; [📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Finder
-- [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2023.12.25+0046`&nbsp; &nbsp; [📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]<br/>
+- [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2025.01.22+0041`&nbsp; &nbsp; [📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Replacer
 - [[LSS] Alarm-Icons](#lss-alarm-icons)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;alarmIcons.user.js][alarmIcons.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Alarm-Icons
@@ -161,7 +161,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2024.12.09+1805`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]
 - [[LSS] AAO leeren](#lss-empty-arr)&nbsp;`2024.05.18+1226`&nbsp;&nbsp;[📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]
-- [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]
+- [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2025.01.22+0041`&nbsp;&nbsp;[📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]
 - [[LSS] AAO-Kategorien Export](#lss-arr-categories-export)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCategoriesExport.user.js][arrCategoriesExport.user.js:download]
 - [[LSS] AAO-Zähler](#lss-arr-counter)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCounter.user.js][arrCounter.user.js:download]
 - [[LSS] Alarm-Icons](#lss-alarm-icons)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;alarmIcons.user.js][alarmIcons.user.js:download]
@@ -290,7 +290,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                      Download                       |               Links                |
 |:---------------:|:---------------------------------------------------:|:----------------------------------:|
-| 2023.12.25+0046 | [aaoReplacer.user.js][aaoReplacer.user.js:download] | [Forum][aaoReplacer.user.js:forum] |
+| 2025.01.22+0041 | [aaoReplacer.user.js][aaoReplacer.user.js:download] | [Forum][aaoReplacer.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Replacer</summary>
