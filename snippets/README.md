@@ -11,6 +11,7 @@ This directory contains some helpfull snippets that can be executed in browser c
 ## Missions
 
 - [Maximum Requirements over all missions](./maxRequests.js)
+- [Amount of stations to get all missions](./allMissionReqs.js)
 - [Missions with more than 5 patients](./missionsGt5Patients.js)
 - [Amount of missions by patient specialization(s)](./missionsPatientSpecializationCount.js)
 
