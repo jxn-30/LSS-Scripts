@@ -1,27 +1,34 @@
+// TODO: Cleanup (delete old keys, old missions, old alliance members)
+const CURRENT_DB_VERSION = 2;
+
 const ONE_MINUTE = 60 * 1000;
 const FIVE_MINUTES = 5 * ONE_MINUTE;
 const ONE_HOUR = 60 * ONE_MINUTE;
+
+const TABLES = {
+    lastUpdates: 'lastUpdates',
+    missionTypes: 'missionTypes',
+    allianceEventTypes: 'allianceEventTypes',
+    userInfo: 'userinfo',
+    allianceInfo: 'allianceinfo',
+    settings: 'settings',
+    allianceMembers: 'allianceMembers',
+};
+
+const INDEXES = {
+    allianceMembers: {
+        name: 'name',
+    },
+    allianceEventTypes: {
+        name: 'caption',
+    },
+};
 
 /**
  * @typedef {Object} Mission
  */
 
 class SharedAPIStorage {
-    static #TABLES = {
-        lastUpdates: 'lastUpdates',
-        missionTypes: 'missionTypes',
-        userInfo: 'userinfo',
-        allianceInfo: 'allianceinfo',
-        settings: 'settings',
-        allianceMembers: 'allianceMembers',
-    };
-
-    static #INDEXES = {
-        allianceMembers: {
-            name: 'name',
-        },
-    };
-
     #DB_NAME = `shared-api-storage`;
 
     /** @type {IDBDatabase | null} */
@@ -46,43 +53,38 @@ class SharedAPIStorage {
                 )
             );
 
+        const createTable = (table, keyPath = undefined) =>
+            this.#db.createObjectStore(table, { keyPath });
+        const createIndex = (store, index, unique = true) =>
+            store.createIndex(index, index, { unique });
+
         // In version 1, we introduced:
         // * a table for lastUpdates
         // * storing missionTypes
         // * storing simple APIs such as userinfo, allianceinfo and settings
         if (oldVersion < 1) {
-            addTransaction(
-                this.#db.createObjectStore(this.#class.#TABLES.lastUpdates)
-                    .transaction
-            );
-            addTransaction(
-                this.#db.createObjectStore(this.#class.#TABLES.missionTypes, {
-                    keyPath: 'id',
-                }).transaction
-            );
-            addTransaction(
-                this.#db.createObjectStore(this.#class.#TABLES.userInfo)
-                    .transaction
-            );
-            addTransaction(
-                this.#db.createObjectStore(this.#class.#TABLES.allianceInfo)
-                    .transaction
-            );
-            addTransaction(
-                this.#db.createObjectStore(this.#class.#TABLES.settings)
-                    .transaction
-            );
+            addTransaction(createTable(TABLES.lastUpdates).transaction);
+            addTransaction(createTable(TABLES.missionTypes, 'id').transaction);
+            addTransaction(createTable(TABLES.userInfo).transaction);
+            addTransaction(createTable(TABLES.allianceInfo).transaction);
+            addTransaction(createTable(TABLES.settings).transaction);
             addTransaction(
                 (() => {
-                    const store = this.#db.createObjectStore(
-                        this.#class.#TABLES.allianceMembers,
-                        { keyPath: 'id' }
-                    );
-                    store.createIndex(
-                        'name',
-                        this.#class.#INDEXES.allianceMembers.name,
-                        { unique: true }
-                    );
+                    const store = createTable(TABLES.allianceMembers, 'id');
+                    createIndex(store, INDEXES.allianceMembers.name);
+
+                    return store.transaction;
+                })()
+            );
+        }
+
+        // In version 2, we introduced:
+        // * storing allianceEventTypes
+        if (oldVersion < 2) {
+            addTransaction(
+                (() => {
+                    const store = createTable(TABLES.allianceEventTypes, 'id');
+                    createIndex(store, INDEXES.allianceEventTypes.name);
 
                     return store.transaction;
                 })()
@@ -90,10 +92,6 @@ class SharedAPIStorage {
         }
 
         await Promise.all(transactions);
-    }
-
-    get #class() {
-        return this.constructor;
     }
 
     /**
@@ -107,7 +105,7 @@ class SharedAPIStorage {
     #openDB() {
         if (this.#db) return Promise.resolve(this.#db);
         return new Promise((resolve, reject) => {
-            const request = indexedDB.open(this.#DB_NAME, 1);
+            const request = indexedDB.open(this.#DB_NAME, CURRENT_DB_VERSION);
 
             let upgradeNeeded = false;
 
@@ -188,20 +186,15 @@ class SharedAPIStorage {
     #setLastUpdate(table) {
         return this.#openDB()
             .then(db => {
-                const tx = db.transaction(
-                    this.#class.#TABLES.lastUpdates,
-                    'readwrite'
-                );
-                const store = tx.objectStore(this.#class.#TABLES.lastUpdates);
+                const tx = db.transaction(TABLES.lastUpdates, 'readwrite');
+                const store = tx.objectStore(TABLES.lastUpdates);
                 store.put(Date.now(), table);
             })
             .finally(() => this.#closeDB());
     }
 
     #getLastUpdate(table) {
-        return this.#getEntry(this.#class.#TABLES.lastUpdates, table).then(
-            res => res || 0
-        );
+        return this.#getEntry(TABLES.lastUpdates, table).then(res => res || 0);
     }
 
     async #needsUpdate(table, treshhold) {
@@ -211,7 +204,7 @@ class SharedAPIStorage {
 
     // region missionTypes
     async #updateMissionTypes() {
-        const table = this.#class.#TABLES.missionTypes;
+        const table = TABLES.missionTypes;
 
         if (!(await this.#needsUpdate(table, ONE_HOUR))) return;
 
@@ -222,9 +215,7 @@ class SharedAPIStorage {
             .then(([db, missionTypes]) => {
                 const tx = db.transaction(table, 'readwrite');
                 const store = tx.objectStore(table);
-                missionTypes.forEach(missionType => {
-                    store.put(missionType);
-                });
+                missionTypes.forEach(missionType => store.put(missionType));
                 return new Promise((resolve, reject) => {
                     tx.addEventListener('complete', () => resolve());
                     tx.addEventListener('error', () => reject(tx.error));
@@ -240,21 +231,20 @@ class SharedAPIStorage {
     async getMissionTypes() {
         await this.#updateMissionTypes();
 
-        return this.#getTable(this.#class.#TABLES.missionTypes).then(
-            missionTypes => {
-                // indexedDB returns an array, so we need to convert it to an object
-                /** @type {Record<string, Mission>} */
-                const missionTypesObject = {};
-                missionTypes.forEach(missionType => {
-                    missionTypesObject[missionType.id] = missionType;
-                });
-                return missionTypesObject;
-            }
-        );
+        return this.#getTable(TABLES.missionTypes).then(missionTypes => {
+            // indexedDB returns an array, so we need to convert it to an object
+            /** @type {Record<string, Mission>} */
+            const missionTypesObject = {};
+            missionTypes.forEach(
+                missionType =>
+                    (missionTypesObject[missionType.id] = missionType)
+            );
+            return missionTypesObject;
+        });
     }
 
     getMission(id) {
-        return this.#getEntry(this.#class.#TABLES.missionTypes, id);
+        return this.#getEntry(TABLES.missionTypes, id);
     }
     // endregion
 
@@ -282,58 +272,94 @@ class SharedAPIStorage {
     }
 
     #updateAllianceInfo() {
-        const membersTable = this.#class.#TABLES.allianceMembers;
-        return this.#updateSimpleAPI(
-            this.#class.#TABLES.allianceInfo,
-            'allianceinfo'
-        ).then(async result => {
-            if (!result) return;
-            const db = await this.#openDB();
-            const tx = db.transaction(membersTable, 'readwrite');
-            const store = tx.objectStore(membersTable);
-            result.users.forEach(user => store.put(user));
-            return new Promise((resolve, reject) => {
-                tx.addEventListener('complete', () => resolve());
-                tx.addEventListener('error', () => reject(tx.error));
-            });
-        });
+        const membersTable = TABLES.allianceMembers;
+        return this.#updateSimpleAPI(TABLES.allianceInfo, 'allianceinfo').then(
+            async result => {
+                if (!result) return;
+                const db = await this.#openDB();
+                const tx = db.transaction(membersTable, 'readwrite');
+                const store = tx.objectStore(membersTable);
+                result.users.forEach(user => store.put(user));
+                return new Promise((resolve, reject) => {
+                    tx.addEventListener('complete', () => resolve());
+                    tx.addEventListener('error', () => reject(tx.error));
+                });
+            }
+        );
     }
 
     async getUserInfo(key) {
-        const table = this.#class.#TABLES.userInfo;
+        const table = TABLES.userInfo;
         await this.#updateSimpleAPI(table, 'userinfo');
         if (key) return this.#getEntry(table, key);
         else return this.#getTable(table, true);
     }
 
     async getAllianceInfo(key) {
-        const table = this.#class.#INDEXES.allianceMembers.name;
+        const table = INDEXES.allianceMembers.name;
         await this.#updateAllianceInfo();
         if (key) return this.#getEntry(table, key);
         else return this.#getTable(table, true);
     }
 
     async getSettings(key) {
-        const table = this.#class.#TABLES.settings;
+        const table = TABLES.settings;
         await this.#updateSimpleAPI(table, 'settings');
         if (key) return this.#getEntry(table, key);
         else return this.#getTable(table, true);
     }
-    // endregion
 
     async getAllianceMembers(nameOrId) {
         await this.#updateAllianceInfo();
-        const table = this.#class.#TABLES.allianceMembers;
+        const table = TABLES.allianceMembers;
         if (typeof nameOrId === 'number')
             return this.#getEntry(table, nameOrId);
         else if (typeof nameOrId === 'string')
             return this.#getEntry(
                 table,
                 nameOrId,
-                this.#class.#INDEXES.allianceMembers.name
+                INDEXES.allianceMembers.name
             );
         else return this.#getTable(table);
     }
+    // endregion
+
+    // region allianceEventTypes
+    async #updateAllianceEventTypes() {
+        const table = TABLES.allianceEventTypes;
+
+        if (!(await this.#needsUpdate(table, ONE_HOUR))) return;
+
+        return Promise.all([
+            this.#openDB(),
+            fetch('/alliance_event_types.json').then(res => res.json()),
+        ])
+            .then(([db, allianceEventTypes]) => {
+                const tx = db.transaction(table, 'readwrite');
+                const store = tx.objectStore(table);
+                allianceEventTypes.forEach(eventType => store.put(eventType));
+                return new Promise((resolve, reject) => {
+                    tx.addEventListener('complete', () => resolve());
+                    tx.addEventListener('error', () => reject(tx.error));
+                });
+            })
+            .finally(() => this.#closeDB());
+    }
+
+    async getAllianceEventTypes(nameOrId) {
+        await this.#updateAllianceEventTypes();
+        const table = TABLES.allianceEventTypes;
+        if (typeof nameOrId === 'number')
+            return this.#getEntry(table, nameOrId);
+        else if (typeof nameOrId === 'string')
+            return this.#getEntry(
+                table,
+                nameOrId,
+                INDEXES.allianceEventTypes.name
+            );
+        else return this.#getTable(table);
+    }
+    // endregion
 }
 
 this.sharedAPIStorage = new SharedAPIStorage();
