@@ -103,8 +103,8 @@
         'vehicle_type_ids[126]': 1, // MTF Drohne
         'vehicle_type_ids[128]': 1, // ELW Drohne
         'vehicle_type_ids[129]': 1, // ELW2 Drohne
-        'vehicle_type_ids[131]': 1, // Bt-Kombi
-        'vehicle_type_ids[130]': 1, // GW-Bt
+        'vehicle_type_ids[140]': 1, // MTW-Verpflegung
+        'vehicle_type_ids[139]': 1, // GW-Küche
         'vehicle_type_ids[138]': 1, // GW-Verpflegung
         'vehicle_type_ids[141]': 1, // FKH
         'vehicle_type_ids[142]': 1, // AB-Küche
