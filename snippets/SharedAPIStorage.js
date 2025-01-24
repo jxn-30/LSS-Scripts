@@ -33,6 +33,7 @@ class SharedAPIStorage {
 
     /** @type {IDBDatabase | null} */
     #db = null;
+    #connections = 0;
 
     /**
      * @param {IDBVersionChangeEvent} event
@@ -103,6 +104,7 @@ class SharedAPIStorage {
     }
 
     #openDB() {
+        this.#connections++;
         if (this.#db) return Promise.resolve(this.#db);
         return new Promise((resolve, reject) => {
             const request = indexedDB.open(this.#DB_NAME, CURRENT_DB_VERSION);
@@ -126,6 +128,8 @@ class SharedAPIStorage {
     }
 
     #closeDB() {
+        this.#connections--;
+        if (this.#connections > 0) return;
         if (this.#db) this.#db.close();
         this.#db = null;
     }
@@ -140,6 +144,24 @@ class SharedAPIStorage {
                 return new Promise((resolve, reject) => {
                     request.addEventListener('success', () =>
                         resolve(request.result)
+                    );
+                    request.addEventListener('error', () =>
+                        reject(request.error)
+                    );
+                });
+            })
+            .finally(() => this.#closeDB());
+    }
+
+    #getKeys(table) {
+        return this.#openDB()
+            .then(db => {
+                const tx = db.transaction(table, 'readonly');
+                const store = tx.objectStore(table);
+                const request = store.getAllKeys();
+                return new Promise((resolve, reject) => {
+                    request.addEventListener('success', () =>
+                        resolve(new Set(request.result))
                     );
                     request.addEventListener('error', () =>
                         reject(request.error)
@@ -212,10 +234,18 @@ class SharedAPIStorage {
             this.#openDB(),
             fetch('/einsaetze.json').then(res => res.json()),
         ])
-            .then(([db, missionTypes]) => {
+            .then(async ([db, missionTypes]) => {
+                const storedMissionTypes = await this.#getKeys(table);
                 const tx = db.transaction(table, 'readwrite');
                 const store = tx.objectStore(table);
-                missionTypes.forEach(missionType => store.put(missionType));
+                const currentMissionTypes = new Set();
+                missionTypes.forEach(missionType => {
+                    currentMissionTypes.add(missionType.id);
+                    store.put(missionType);
+                });
+                storedMissionTypes
+                    .difference(currentMissionTypes)
+                    .forEach(id => store.delete(id));
                 return new Promise((resolve, reject) => {
                     tx.addEventListener('complete', () => resolve());
                     tx.addEventListener('error', () => reject(tx.error));
@@ -276,14 +306,22 @@ class SharedAPIStorage {
         return this.#updateSimpleAPI(TABLES.allianceInfo, 'allianceinfo').then(
             async result => {
                 if (!result) return;
+                const storedUserIDs = await this.#getKeys(membersTable);
                 const db = await this.#openDB();
                 const tx = db.transaction(membersTable, 'readwrite');
                 const store = tx.objectStore(membersTable);
-                result.users.forEach(user => store.put(user));
+                const currentUserIDs = new Set();
+                result.users.forEach(user => {
+                    currentUserIDs.add(user.id);
+                    store.put(user);
+                });
+                storedUserIDs
+                    .difference(currentUserIDs)
+                    .forEach(id => store.delete(id));
                 return new Promise((resolve, reject) => {
                     tx.addEventListener('complete', () => resolve());
                     tx.addEventListener('error', () => reject(tx.error));
-                });
+                }).finally(() => this.#closeDB());
             }
         );
     }
