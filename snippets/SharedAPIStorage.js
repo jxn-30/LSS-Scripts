@@ -230,10 +230,10 @@ class SharedAPIStorage {
 
         if (!(await this.#needsUpdate(table, ONE_HOUR))) return;
 
-        return this.#openDB(db =>
-            fetch('/einsaetze.json')
-                .then(res => res.json())
-                .then(async missionTypes => {
+        return fetch('/einsaetze.json')
+            .then(res => res.json())
+            .then(missionTypes =>
+                this.#openDB(async db => {
                     const storedMissionTypes = await this.#getKeys(table);
                     const tx = db.transaction(table, 'readwrite');
                     const store = tx.objectStore(table);
@@ -249,9 +249,8 @@ class SharedAPIStorage {
                         tx.addEventListener('complete', () => resolve());
                         tx.addEventListener('error', () => reject(tx.error));
                     });
-                })
-                .then(() => this.#setLastUpdate(table))
-        );
+                }).then(() => this.#setLastUpdate(table))
+            );
     }
 
     /**
@@ -279,10 +278,10 @@ class SharedAPIStorage {
     async #updateSimpleAPI(table, endpoint) {
         if (!(await this.#needsUpdate(table, FIVE_MINUTES))) return;
 
-        return this.#openDB(db =>
-            fetch(`/api/${endpoint}`)
-                .then(res => res.json())
-                .then(result => {
+        return fetch(`/api/${endpoint}`)
+            .then(res => res.json())
+            .then(result =>
+                this.#openDB(db => {
                     const tx = db.transaction(table, 'readwrite');
                     const store = tx.objectStore(table);
                     Object.entries(result).forEach(([key, value]) =>
@@ -292,9 +291,8 @@ class SharedAPIStorage {
                         tx.addEventListener('complete', () => resolve(result));
                         tx.addEventListener('error', () => reject(tx.error));
                     });
-                })
-                .then(result => this.#setLastUpdate(table).then(() => result))
-        );
+                }).then(result => this.#setLastUpdate(table).then(() => result))
+            );
     }
 
     #updateAllianceInfo() {
@@ -367,10 +365,10 @@ class SharedAPIStorage {
 
         if (!(await this.#needsUpdate(table, ONE_HOUR))) return;
 
-        return this.#openDB(db =>
-            fetch('/alliance_event_types.json')
-                .then(res => res.json())
-                .then(allianceEventTypes => {
+        return fetch('/alliance_event_types.json')
+            .then(res => res.json())
+            .then(allianceEventTypes =>
+                this.#openDB(db => {
                     const tx = db.transaction(table, 'readwrite');
                     const store = tx.objectStore(table);
                     allianceEventTypes.forEach(eventType =>
@@ -381,7 +379,8 @@ class SharedAPIStorage {
                         tx.addEventListener('error', () => reject(tx.error));
                     });
                 })
-        ).then(() => this.#setLastUpdate(table));
+            )
+            .then(() => this.#setLastUpdate(table));
     }
 
     async getAllianceEventTypes(nameOrId) {
