@@ -103,31 +103,45 @@ class SharedAPIStorage {
         this.#db = db;
     }
 
-    #openDB() {
+    /**
+     * @param {(db: IDBDatabase) => void|Promise<void>} callback
+     */
+    #openDB(callback) {
         this.#connections++;
-        if (this.#db) return Promise.resolve(this.#db);
-        return new Promise((resolve, reject) => {
-            const request = indexedDB.open(this.#DB_NAME, CURRENT_DB_VERSION);
+        const promise =
+            this.#db ?
+                Promise.resolve(this.#db)
+            :   new Promise((resolve, reject) => {
+                    const request = indexedDB.open(
+                        this.#DB_NAME,
+                        CURRENT_DB_VERSION
+                    );
 
-            let upgradeNeeded = false;
+                    let upgradeNeeded = false;
 
-            request.addEventListener('success', () => {
-                if (upgradeNeeded) return;
-                this.#setDB(request.result);
-                return resolve(request.result);
-            });
-            request.addEventListener('error', () => reject(request.error));
+                    request.addEventListener('success', () => {
+                        if (upgradeNeeded) return;
+                        this.#setDB(request.result);
+                        return resolve(request.result);
+                    });
+                    request.addEventListener('error', () =>
+                        reject(request.error)
+                    );
 
-            request.addEventListener('upgradeneeded', async event => {
-                upgradeNeeded = true;
-                this.#setDB(request.result);
-                await this.#upgradeDB(event);
-                return resolve(request.result);
-            });
-        });
+                    request.addEventListener('upgradeneeded', async event => {
+                        upgradeNeeded = true;
+                        this.#setDB(request.result);
+                        await this.#upgradeDB(event);
+                        return resolve(request.result);
+                    });
+                });
+
+        return promise
+            .then(async () => await callback(this.#db))
+            .finally(() => this.#closeDB());
     }
 
-    #closeDB() {
+    #closeDB(connection) {
         this.#connections--;
         if (this.#connections > 0) return;
         if (this.#db) this.#db.close();
@@ -135,12 +149,40 @@ class SharedAPIStorage {
     }
 
     #getEntry(table, key, index) {
-        return this.#openDB()
-            .then(db => {
-                const tx = db.transaction(table, 'readonly');
-                const store = tx.objectStore(table);
-                const request =
-                    index ? store.index(index).get(key) : store.get(key);
+        return this.#openDB(db => {
+            const tx = db.transaction(table, 'readonly');
+            const store = tx.objectStore(table);
+            const request =
+                index ? store.index(index).get(key) : store.get(key);
+            return new Promise((resolve, reject) => {
+                request.addEventListener('success', () =>
+                    resolve(request.result)
+                );
+                request.addEventListener('error', () => reject(request.error));
+            });
+        });
+    }
+
+    #getKeys(table) {
+        return this.#openDB(db => {
+            const tx = db.transaction(table, 'readonly');
+            const store = tx.objectStore(table);
+            const request = store.getAllKeys();
+            return new Promise((resolve, reject) => {
+                request.addEventListener('success', () =>
+                    resolve(new Set(request.result))
+                );
+                request.addEventListener('error', () => reject(request.error));
+            });
+        });
+    }
+
+    #getTable(table, object = false) {
+        return this.#openDB(db => {
+            const tx = db.transaction(table, 'readonly');
+            const store = tx.objectStore(table);
+            if (!object) {
+                const request = store.getAll();
                 return new Promise((resolve, reject) => {
                     request.addEventListener('success', () =>
                         resolve(request.result)
@@ -149,70 +191,28 @@ class SharedAPIStorage {
                         reject(request.error)
                     );
                 });
-            })
-            .finally(() => this.#closeDB());
-    }
-
-    #getKeys(table) {
-        return this.#openDB()
-            .then(db => {
-                const tx = db.transaction(table, 'readonly');
-                const store = tx.objectStore(table);
-                const request = store.getAllKeys();
-                return new Promise((resolve, reject) => {
-                    request.addEventListener('success', () =>
-                        resolve(new Set(request.result))
-                    );
-                    request.addEventListener('error', () =>
-                        reject(request.error)
-                    );
+            }
+            const request = store.openCursor();
+            const result = {};
+            return new Promise((resolve, reject) => {
+                request.addEventListener('success', event => {
+                    const cursor = event.target.result;
+                    if (!cursor) return resolve(result);
+                    result[cursor.key] = cursor.value;
+                    cursor.continue();
                 });
-            })
-            .finally(() => this.#closeDB());
-    }
-
-    #getTable(table, object = false) {
-        return this.#openDB()
-            .then(db => {
-                const tx = db.transaction(table, 'readonly');
-                const store = tx.objectStore(table);
-                if (!object) {
-                    const request = store.getAll();
-                    return new Promise((resolve, reject) => {
-                        request.addEventListener('success', () =>
-                            resolve(request.result)
-                        );
-                        request.addEventListener('error', () =>
-                            reject(request.error)
-                        );
-                    });
-                }
-                const request = store.openCursor();
-                const result = {};
-                return new Promise((resolve, reject) => {
-                    request.addEventListener('success', event => {
-                        const cursor = event.target.result;
-                        if (!cursor) return resolve(result);
-                        result[cursor.key] = cursor.value;
-                        cursor.continue();
-                    });
-                    request.addEventListener('error', () =>
-                        reject(request.error)
-                    );
-                });
-            })
-            .finally(() => this.#closeDB());
+                request.addEventListener('error', () => reject(request.error));
+            });
+        });
     }
 
     // region lastUpdates
     #setLastUpdate(table) {
-        return this.#openDB()
-            .then(db => {
-                const tx = db.transaction(TABLES.lastUpdates, 'readwrite');
-                const store = tx.objectStore(TABLES.lastUpdates);
-                store.put(Date.now(), table);
-            })
-            .finally(() => this.#closeDB());
+        return this.#openDB(db => {
+            const tx = db.transaction(TABLES.lastUpdates, 'readwrite');
+            const store = tx.objectStore(TABLES.lastUpdates);
+            store.put(Date.now(), table);
+        });
     }
 
     #getLastUpdate(table) {
@@ -230,29 +230,28 @@ class SharedAPIStorage {
 
         if (!(await this.#needsUpdate(table, ONE_HOUR))) return;
 
-        return Promise.all([
-            this.#openDB(),
-            fetch('/einsaetze.json').then(res => res.json()),
-        ])
-            .then(async ([db, missionTypes]) => {
-                const storedMissionTypes = await this.#getKeys(table);
-                const tx = db.transaction(table, 'readwrite');
-                const store = tx.objectStore(table);
-                const currentMissionTypes = new Set();
-                missionTypes.forEach(missionType => {
-                    currentMissionTypes.add(missionType.id);
-                    store.put(missionType);
-                });
-                storedMissionTypes
-                    .difference(currentMissionTypes)
-                    .forEach(id => store.delete(id));
-                return new Promise((resolve, reject) => {
-                    tx.addEventListener('complete', () => resolve());
-                    tx.addEventListener('error', () => reject(tx.error));
-                });
-            })
-            .then(() => this.#setLastUpdate(table))
-            .finally(() => this.#closeDB());
+        return this.#openDB(db =>
+            fetch('/einsaetze.json')
+                .then(res => res.json())
+                .then(async missionTypes => {
+                    const storedMissionTypes = await this.#getKeys(table);
+                    const tx = db.transaction(table, 'readwrite');
+                    const store = tx.objectStore(table);
+                    const currentMissionTypes = new Set();
+                    missionTypes.forEach(missionType => {
+                        currentMissionTypes.add(missionType.id);
+                        store.put(missionType);
+                    });
+                    storedMissionTypes
+                        .difference(currentMissionTypes)
+                        .forEach(id => store.delete(id));
+                    return new Promise((resolve, reject) => {
+                        tx.addEventListener('complete', () => resolve());
+                        tx.addEventListener('error', () => reject(tx.error));
+                    });
+                })
+                .then(() => this.#setLastUpdate(table))
+        );
     }
 
     /**
@@ -282,47 +281,49 @@ class SharedAPIStorage {
     async #updateSimpleAPI(table, endpoint) {
         if (!(await this.#needsUpdate(table, FIVE_MINUTES))) return;
 
-        return Promise.all([
-            this.#openDB(),
-            fetch(`/api/${endpoint}`).then(res => res.json()),
-        ])
-            .then(([db, result]) => {
-                const tx = db.transaction(table, 'readwrite');
-                const store = tx.objectStore(table);
-                Object.entries(result).forEach(([key, value]) =>
-                    store.put(value, key)
-                );
-                return new Promise((resolve, reject) => {
-                    tx.addEventListener('complete', () => resolve(result));
-                    tx.addEventListener('error', () => reject(tx.error));
-                });
-            })
-            .then(result => this.#setLastUpdate(table).then(() => result))
-            .finally(() => this.#closeDB());
+        return this.#openDB(db =>
+            fetch(`/api/${endpoint}`)
+                .then(res => res.json())
+                .then(result => {
+                    const tx = db.transaction(table, 'readwrite');
+                    const store = tx.objectStore(table);
+                    Object.entries(result).forEach(([key, value]) =>
+                        store.put(value, key)
+                    );
+                    return new Promise((resolve, reject) => {
+                        tx.addEventListener('complete', () => resolve(result));
+                        tx.addEventListener('error', () => reject(tx.error));
+                    });
+                })
+                .then(result => this.#setLastUpdate(table).then(() => result))
+        );
     }
 
     #updateAllianceInfo() {
         const membersTable = TABLES.allianceMembers;
         return this.#updateSimpleAPI(TABLES.allianceInfo, 'allianceinfo').then(
-            async result => {
-                if (!result) return;
-                const storedUserIDs = await this.#getKeys(membersTable);
-                const db = await this.#openDB();
-                const tx = db.transaction(membersTable, 'readwrite');
-                const store = tx.objectStore(membersTable);
-                const currentUserIDs = new Set();
-                result.users.forEach(user => {
-                    currentUserIDs.add(user.id);
-                    store.put(user);
-                });
-                storedUserIDs
-                    .difference(currentUserIDs)
-                    .forEach(id => store.delete(id));
-                return new Promise((resolve, reject) => {
-                    tx.addEventListener('complete', () => resolve());
-                    tx.addEventListener('error', () => reject(tx.error));
-                }).finally(() => this.#closeDB());
-            }
+            result =>
+                result ?
+                    this.#openDB(async db => {
+                        const storedUserIDs = await this.#getKeys(membersTable);
+                        const tx = db.transaction(membersTable, 'readwrite');
+                        const store = tx.objectStore(membersTable);
+                        const currentUserIDs = new Set();
+                        result.users.forEach(user => {
+                            currentUserIDs.add(user.id);
+                            store.put(user);
+                        });
+                        storedUserIDs
+                            .difference(currentUserIDs)
+                            .forEach(id => store.delete(id));
+                        return new Promise((resolve, reject) => {
+                            tx.addEventListener('complete', () => resolve());
+                            tx.addEventListener('error', () =>
+                                reject(tx.error)
+                            );
+                        });
+                    })
+                :   void 0
         );
     }
 
@@ -368,20 +369,21 @@ class SharedAPIStorage {
 
         if (!(await this.#needsUpdate(table, ONE_HOUR))) return;
 
-        return Promise.all([
-            this.#openDB(),
-            fetch('/alliance_event_types.json').then(res => res.json()),
-        ])
-            .then(([db, allianceEventTypes]) => {
-                const tx = db.transaction(table, 'readwrite');
-                const store = tx.objectStore(table);
-                allianceEventTypes.forEach(eventType => store.put(eventType));
-                return new Promise((resolve, reject) => {
-                    tx.addEventListener('complete', () => resolve());
-                    tx.addEventListener('error', () => reject(tx.error));
-                });
-            })
-            .finally(() => this.#closeDB());
+        return this.#openDB(db =>
+            fetch('/alliance_event_types.json')
+                .then(res => res.json())
+                .then(allianceEventTypes => {
+                    const tx = db.transaction(table, 'readwrite');
+                    const store = tx.objectStore(table);
+                    allianceEventTypes.forEach(eventType =>
+                        store.put(eventType)
+                    );
+                    return new Promise((resolve, reject) => {
+                        tx.addEventListener('complete', () => resolve());
+                        tx.addEventListener('error', () => reject(tx.error));
+                    });
+                })
+        ).then(() => this.#setLastUpdate(table));
     }
 
     async getAllianceEventTypes(nameOrId) {
