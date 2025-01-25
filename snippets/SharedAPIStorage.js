@@ -1,5 +1,4 @@
-// TODO: Cleanup (delete old keys, old missions, old alliance members)
-const CURRENT_DB_VERSION = 2;
+const CURRENT_DB_VERSION = 3;
 
 const ONE_MINUTE = 60 * 1000;
 const FIVE_MINUTES = 5 * ONE_MINUTE;
@@ -13,6 +12,8 @@ const TABLES = {
     allianceInfo: 'allianceinfo',
     settings: 'settings',
     allianceMembers: 'allianceMembers',
+    vehicles: 'vehicles',
+    buildings: 'buildings',
 };
 
 const INDEXES = {
@@ -21,6 +22,14 @@ const INDEXES = {
     },
     allianceEventTypes: {
         name: 'caption',
+    },
+    vehicles: {
+        building: 'building_id',
+        vehicleType: 'vehicle_type',
+    },
+    buildings: {
+        dispatchCenter: 'leitstelle_building_id',
+        buildingType: 'building_type',
     },
 };
 
@@ -92,6 +101,30 @@ class SharedAPIStorage {
             );
         }
 
+        // In version 3, we introduced:
+        // * storing vehicles
+        // * storing buildings
+        if (oldVersion < 3) {
+            addTransaction(
+                (() => {
+                    const store = createTable(TABLES.vehicles, 'id');
+                    createIndex(store, INDEXES.vehicles.building, false);
+                    createIndex(store, INDEXES.vehicles.vehicleType, false);
+
+                    return store.transaction;
+                })()
+            );
+            addTransaction(
+                (() => {
+                    const store = createTable(TABLES.buildings, 'id');
+                    createIndex(store, INDEXES.buildings.dispatchCenter, false);
+                    createIndex(store, INDEXES.buildings.buildingType, false);
+
+                    return store.transaction;
+                })()
+            );
+        }
+
         await Promise.all(transactions);
     }
 
@@ -152,8 +185,11 @@ class SharedAPIStorage {
         return this.#openDB(db => {
             const tx = db.transaction(table, 'readonly');
             const store = tx.objectStore(table);
+            const storeIndex = index ? store.index(index) : null;
             const request =
-                index ? store.index(index).get(key) : store.get(key);
+                storeIndex?.unique ?
+                    storeIndex.get(key)
+                :   (storeIndex?.getAll(key) ?? store.get(key));
             return new Promise((resolve, reject) => {
                 request.addEventListener('success', () =>
                     resolve(request.result)
@@ -397,6 +433,128 @@ class SharedAPIStorage {
         else return this.#getTable(table);
     }
     // endregion
+
+    async *#fetchV2API(api) {
+        let nextPage = `/api/v2/${api}`;
+        while (nextPage) {
+            yield await fetch(nextPage)
+                .then(res => res.json())
+                .then(res => {
+                    nextPage = res.paging.next_page;
+                    return res.result;
+                });
+        }
+    }
+
+    async #updateV2API(table, endpoint, callback) {
+        if (!(await this.#needsUpdate(table, FIVE_MINUTES))) return;
+
+        const storedIDs = await this.#getKeys(table);
+        const currentIDs = new Set();
+
+        for await (const result of this.#fetchV2API(endpoint)) {
+            await this.#openDB(db => {
+                const tx = db.transaction(table, 'readwrite');
+                const store = tx.objectStore(table);
+                result.forEach(item => {
+                    currentIDs.add(item.id);
+                    store.put(item);
+                });
+                return new Promise((resolve, reject) => {
+                    tx.addEventListener('complete', () => resolve());
+                    tx.addEventListener('error', () => reject(tx.error));
+                });
+            });
+            callback?.(result);
+        }
+
+        await this.#setLastUpdate(table);
+
+        const deletedItems = storedIDs.difference(currentIDs);
+
+        if (deletedItems.size === 0) return;
+
+        await this.#openDB(db => {
+            const tx = db.transaction(table, 'readwrite');
+            const store = tx.objectStore(table);
+            deletedItems.forEach(id => store.delete(id));
+            return new Promise((resolve, reject) => {
+                tx.addEventListener('complete', () => resolve());
+                tx.addEventListener('error', () => reject(tx.error));
+            });
+        });
+    }
+
+    async getVehicles(id, callback) {
+        const table = TABLES.vehicles;
+        await this.#updateV2API(table, 'vehicles', callback);
+
+        if (void 0 !== id) return this.#getEntry(table, id);
+        else return this.#getTable(table);
+    }
+
+    async getVehiclesOfType(vehicleType, callback) {
+        const table = TABLES.vehicles;
+        await this.#updateV2API(table, 'vehicles', callback);
+
+        return this.#getEntry(table, vehicleType, INDEXES.vehicles.vehicleType);
+    }
+
+    async #updateBuildings() {
+        const table = TABLES.buildings;
+
+        if (!(await this.#needsUpdate(table, FIVE_MINUTES))) return;
+
+        return fetch('/api/buildings')
+            .then(res => res.json())
+            .then(buildings =>
+                this.#openDB(async db => {
+                    const storedBuildings = await this.#getKeys(table);
+                    const tx = db.transaction(table, 'readwrite');
+                    const store = tx.objectStore(table);
+                    const currentBuildings = new Set();
+                    buildings.forEach(building => {
+                        currentBuildings.add(building.id);
+                        store.put(building);
+                    });
+                    storedBuildings
+                        .difference(currentBuildings)
+                        .forEach(id => store.delete(id));
+                    return new Promise((resolve, reject) => {
+                        tx.addEventListener('complete', () => resolve());
+                        tx.addEventListener('error', () => reject(tx.error));
+                    });
+                })
+            )
+            .then(() => this.#setLastUpdate(table));
+    }
+
+    async getBuildings(id) {
+        await this.#updateBuildings();
+
+        if (void 0 !== id) return this.#getEntry(TABLES.buildings, id);
+        else return this.#getTable(TABLES.buildings);
+    }
+
+    async getBuldingsOfType(buildingType) {
+        await this.#updateBuildings();
+
+        return this.#getEntry(
+            TABLES.buildings,
+            buildingType,
+            INDEXES.buildings.buildingType
+        );
+    }
+
+    async getBuildingsOfDispatchCenter(dispatchCenterId) {
+        await this.#updateBuildings();
+
+        return this.#getEntry(
+            TABLES.buildings,
+            dispatchCenterId,
+            INDEXES.buildings.dispatchCenter
+        );
+    }
 }
 
 this.sharedAPIStorage = new SharedAPIStorage();
