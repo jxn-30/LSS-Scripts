@@ -257,9 +257,10 @@ class SharedAPIStorage {
     /**
      * @returns {Promise<Record<string, Mission>>}
      */
-    async getMissionTypes() {
+    async getMissionTypes(id) {
         await this.#updateMissionTypes();
 
+        if (void 0 !== id) return this.#getEntry(TABLES.missionTypes, id.toString());
         return this.#getTable(TABLES.missionTypes).then(missionTypes => {
             // indexedDB returns an array, so we need to convert it to an object
             /** @type {Record<string, Mission>} */
@@ -270,10 +271,6 @@ class SharedAPIStorage {
             );
             return missionTypesObject;
         });
-    }
-
-    getMission(id) {
-        return this.#getEntry(TABLES.missionTypes, id);
     }
     // endregion
 
