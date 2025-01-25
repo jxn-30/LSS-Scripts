@@ -260,7 +260,8 @@ class SharedAPIStorage {
     async getMissionTypes(id) {
         await this.#updateMissionTypes();
 
-        if (void 0 !== id) return this.#getEntry(TABLES.missionTypes, id.toString());
+        if (void 0 !== id)
+            return this.#getEntry(TABLES.missionTypes, id.toString());
         return this.#getTable(TABLES.missionTypes).then(missionTypes => {
             // indexedDB returns an array, so we need to convert it to an object
             /** @type {Record<string, Mission>} */
