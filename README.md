@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 70 userscripts*
+*Total: 71 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -139,6 +139,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Scroll-To-Top buttons
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] SoSi-Switch (DE)
+- [[LSS] Split Dispatch Center to Ω dispatch centers](#lss-split-dispatch-center-to-dispatch-centers)&nbsp;`2025.01.26+2042`&nbsp; &nbsp; [📥️:&nbsp;splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download]<br/>
 - [[LSS] Status 5 colorize](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp; &nbsp; [📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] S5-Färber
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp; &nbsp; [📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]<br/>
@@ -220,6 +221,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Schnellere AAO-Verfügbarkeitsprüfung](#lss-faster-arr-availability-check)&nbsp;`2024.08.21+1208`&nbsp;&nbsp;[📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
+- [[LSS] Split Dispatch Center to Ω dispatch centers](#lss-split-dispatch-center-to-dispatch-centers)&nbsp;`2025.01.26+2042`&nbsp;&nbsp;[📥️:&nbsp;splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download]
 - [[LSS] Textlänge bei Eingabefeldern prüfen](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp;&nbsp;[📥️:&nbsp;userId.user.js][userId.user.js:download]
@@ -1358,6 +1360,18 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [sonderrechteSwitch.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/sonderrechteSwitch.de.user.js
 [sonderrechteSwitch.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/13928-mit-und-ohne-sonderrechte/&postID=463217#post463217
+
+### [LSS] Split Dispatch Center to Ω dispatch centers
+
+> Moves buildings from one dispatch center to dispatch centers starting their name with Ω.
+
+|     Version     |                                            Download                                             |
+|:---------------:|:-----------------------------------------------------------------------------------------------:|
+| 2025.01.26+2042 | [splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download] |
+
+
+
+[splitDispatchCenterToOmegaCenters.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/splitDispatchCenterToOmegaCenters.user.js
 
 ### [LSS] Status 5 colorize
 

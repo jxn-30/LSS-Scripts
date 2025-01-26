@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Split Dispatch Center to Ω dispatch centers
 // @namespace    https://jxn.lss-manager.de
-// @version      2024.02.14+1250
+// @version      2025.01.26+2042
 // @author       Jan (jxn_30)
 // @description  Moves buildings from one dispatch center to dispatch centers starting their name with Ω.
 // @homepage     https://github.com/jxn-30/LSS-Scripts
