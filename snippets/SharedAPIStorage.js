@@ -434,32 +434,35 @@ class SharedAPIStorage {
     }
     // endregion
 
-    async *#fetchV2API(api) {
-        let nextPage = `/api/v2/${api}`;
+    async *#fetchV2API(api, id) {
+        let nextPage = `/api/v2/${api}${id ? `/${id}` : ''}`;
         while (nextPage) {
             yield await fetch(nextPage)
                 .then(res => res.json())
                 .then(res => {
-                    nextPage = res.paging.next_page;
+                    nextPage = res.paging?.next_page;
                     return res.result;
                 });
         }
     }
 
-    async #updateV2API(table, endpoint, callback) {
-        if (!(await this.#needsUpdate(table, FIVE_MINUTES))) return;
+    async #updateV2API(table, endpoint, id, callback) {
+        const single = void 0 !== id;
+        if (!single && !(await this.#needsUpdate(table, FIVE_MINUTES))) return;
 
         const storedIDs = await this.#getKeys(table);
         const currentIDs = new Set();
 
-        for await (const result of this.#fetchV2API(endpoint)) {
+        for await (const result of this.#fetchV2API(endpoint, id)) {
             await this.#openDB(db => {
                 const tx = db.transaction(table, 'readwrite');
                 const store = tx.objectStore(table);
-                result.forEach(item => {
-                    currentIDs.add(item.id);
-                    store.put(item);
-                });
+                if (single) store.put(result);
+                else
+                    result.forEach(item => {
+                        currentIDs.add(item.id);
+                        store.put(item);
+                    });
                 return new Promise((resolve, reject) => {
                     tx.addEventListener('complete', () => resolve());
                     tx.addEventListener('error', () => reject(tx.error));
@@ -468,26 +471,28 @@ class SharedAPIStorage {
             callback?.(result);
         }
 
-        await this.#setLastUpdate(table);
+        if (!single) {
+            await this.#setLastUpdate(table);
 
-        const deletedItems = storedIDs.difference(currentIDs);
+            const deletedItems = storedIDs.difference(currentIDs);
 
-        if (deletedItems.size === 0) return;
+            if (deletedItems.size === 0) return;
 
-        await this.#openDB(db => {
-            const tx = db.transaction(table, 'readwrite');
-            const store = tx.objectStore(table);
-            deletedItems.forEach(id => store.delete(id));
-            return new Promise((resolve, reject) => {
-                tx.addEventListener('complete', () => resolve());
-                tx.addEventListener('error', () => reject(tx.error));
+            await this.#openDB(db => {
+                const tx = db.transaction(table, 'readwrite');
+                const store = tx.objectStore(table);
+                deletedItems.forEach(id => store.delete(id));
+                return new Promise((resolve, reject) => {
+                    tx.addEventListener('complete', () => resolve());
+                    tx.addEventListener('error', () => reject(tx.error));
+                });
             });
-        });
+        }
     }
 
     async getVehicles(id, callback) {
         const table = TABLES.vehicles;
-        await this.#updateV2API(table, 'vehicles', callback);
+        await this.#updateV2API(table, 'vehicles', id, callback);
 
         if (void 0 !== id) return this.#getEntry(table, id);
         else return this.#getTable(table);
@@ -495,17 +500,18 @@ class SharedAPIStorage {
 
     async getVehiclesOfType(vehicleType, callback) {
         const table = TABLES.vehicles;
-        await this.#updateV2API(table, 'vehicles', callback);
+        await this.#updateV2API(table, 'vehicles', undefined, callback);
 
         return this.#getEntry(table, vehicleType, INDEXES.vehicles.vehicleType);
     }
 
-    async #updateBuildings() {
+    async #updateBuildings(id) {
         const table = TABLES.buildings;
+        const single = void 0 !== id;
 
-        if (!(await this.#needsUpdate(table, FIVE_MINUTES))) return;
+        if (!single && !(await this.#needsUpdate(table, FIVE_MINUTES))) return;
 
-        return fetch('/api/buildings')
+        return fetch('/api/buildings' + (id ? `/${id}` : ''))
             .then(res => res.json())
             .then(buildings =>
                 this.#openDB(async db => {
@@ -513,13 +519,16 @@ class SharedAPIStorage {
                     const tx = db.transaction(table, 'readwrite');
                     const store = tx.objectStore(table);
                     const currentBuildings = new Set();
-                    buildings.forEach(building => {
-                        currentBuildings.add(building.id);
-                        store.put(building);
-                    });
-                    storedBuildings
-                        .difference(currentBuildings)
-                        .forEach(id => store.delete(id));
+                    if (single) store.put(buildings);
+                    else {
+                        buildings.forEach(building => {
+                            currentBuildings.add(building.id);
+                            store.put(building);
+                        });
+                        storedBuildings
+                            .difference(currentBuildings)
+                            .forEach(id => store.delete(id));
+                    }
                     return new Promise((resolve, reject) => {
                         tx.addEventListener('complete', () => resolve());
                         tx.addEventListener('error', () => reject(tx.error));
@@ -530,7 +539,7 @@ class SharedAPIStorage {
     }
 
     async getBuildings(id) {
-        await this.#updateBuildings();
+        await this.#updateBuildings(id);
 
         if (void 0 !== id) return this.#getEntry(TABLES.buildings, id);
         else return this.#getTable(TABLES.buildings);
