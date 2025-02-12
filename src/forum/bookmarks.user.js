@@ -63,6 +63,14 @@
  * @property {function(): void} hide
  */
 
+const Icon = (name, type = 'solid', size = 16) => {
+    const icon = document.createElement('fa-icon');
+    icon.size = size;
+    icon.setIcon(name);
+    icon.toggleAttribute(type, true);
+    return icon;
+};
+
 // create menu for navigation
 class BookmarkManager {
     /**
@@ -204,6 +212,11 @@ class BookmarkManager {
         });
 
         GM_addStyle(`
+.dialogContainer {
+    top: unset;
+    left: unset;
+}
+
 .${BookmarkManager.#modalClass} {
     width: 100%;
     max-width: 100%;
@@ -381,8 +394,7 @@ class BookmarkManager {
         } else {
             const menuLink = document.createElement('a');
             menuLink.classList.add(BookmarkManager.#desktopClasses.link);
-            const menuIcon = document.createElement('span');
-            menuIcon.classList.add('icon', 'icon16', 'fa-bookmark-o');
+            const menuIcon = Icon('bookmark', 'regular');
             menuLink.appendChild(menuIcon);
             menu.append(menuLink);
         }
@@ -450,7 +462,7 @@ class BookmarkManager {
             importBookmarks
         );
 
-        const getMenu = () => document.querySelector(`#${menu.id}`);
+        const getMenu = () => menu;
         const getList = () => getMenu().querySelector(`#${dropdown.id}`);
         const getActionSeparator = () =>
             getList().querySelector(
@@ -522,8 +534,7 @@ class BookmarkManager {
             e.preventDefault();
             modal.hide();
         });
-        const closeIcon = document.createElement('span');
-        closeIcon.classList.add('icon', 'icon24', 'fa-times');
+        const closeIcon = Icon('times', 'solid', 24);
         closeButton.append(closeIcon);
 
         headerElement.append(titleSpan, closeButton);
@@ -745,8 +756,7 @@ class BookmarkManager {
 
             const deleteBtn = document.createElement('button');
             deleteBtn.classList.add('button', 'buttonPrimary');
-            const deleteIcon = document.createElement('span');
-            deleteIcon.classList.add('icon', 'icon16', 'fa-trash');
+            const deleteIcon = Icon('trash');
             deleteBtn.append(deleteIcon);
             deleteBtn.addEventListener('click', () => {
                 wrapper.classList.add('deleted');
@@ -755,15 +765,13 @@ class BookmarkManager {
 
             const upBtn = document.createElement('button');
             upBtn.classList.add('button', 'buttonPrimary');
-            const upIcon = document.createElement('span');
-            upIcon.classList.add('icon', 'icon16', 'fa-arrow-up');
+            const upIcon = Icon('arrow-up');
             upBtn.append(upIcon);
             upBtn.addEventListener('click', () => moveUp(currentIndex()));
 
             const downBtn = document.createElement('button');
             downBtn.classList.add('button', 'buttonPrimary');
-            const downIcon = document.createElement('span');
-            downIcon.classList.add('icon', 'icon16', 'fa-arrow-down');
+            const downIcon = Icon('arrow-down');
             downBtn.append(downIcon);
             downBtn.addEventListener('click', () => moveDown(currentIndex()));
 
@@ -875,8 +883,7 @@ class BookmarkManager {
                 const span = document.createElement('span');
                 span.classList.add('wbbBoard', 'wbbBoardNode1');
 
-                const icon = document.createElement('span');
-                icon.classList.add('icon', 'icon16', 'fa-square-o');
+                const icon = Icon('square', 'regular');
 
                 span.append(icon, ' ', title);
                 liEl.append(span);
@@ -918,7 +925,7 @@ class BookmarkManager {
         };
 
         // manipulate the internal Redactor module to insert the button whenever a new link-dialog is created
-        window.addEventListener('load', () => {
+        /*window.addEventListener('load', () => {
             require(['WoltLabSuite/Core/Ui/Redactor/Link'], t => {
                 const showDialogOrig = t.showDialog;
                 t.showDialog = (...args) => {
@@ -929,7 +936,7 @@ class BookmarkManager {
                     return result;
                 };
             });
-        });
+        });*/
 
         // add some style to make bookmark btn float left and confirm btn float right
         GM_addStyle(`
