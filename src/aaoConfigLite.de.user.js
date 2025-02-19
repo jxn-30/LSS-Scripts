@@ -162,11 +162,12 @@
         'k9': 1, // Diensthundeführerkraftwagen
         'police_motorcycle': 1, // Polizeimotorrad
         'fustw_or_police_motorcycle': 1, // Funkstreifenwagen oder Polizeimotorrad
+        'vehicle_type_ids[[32, 98, 95]]': 1, // Funkstreifenwagen oder Zivilstreifenwagen oder Polizeimotorrad
         'helicopter_bucket': 1, // Außenlastbehälter (allgemein)
         'vehicle_type_ids[98]': 1, // Zivilstreifenwagen
         'vehicle_type_ids[103]': 1, // FuStW (DGL)
         'police_car_or_service_group_leader': 1, // FuStW oder FuStW (DGL)
-        'fustkw_or_civil_patrolcar': 1, // FuStW oder Zivilstreifenwagen
+        'fustkw_or_civil_patrolcar': 1, // Funkstreifenwagen oder Zivilstreifenwagen
         'police_horse_count': 1, // Polizeipferde
         'vehicle_type_ids[134]': 1, // Pferdetransporter klein
         'vehicle_type_ids[135]': 1, // Pferdetransporter groß
