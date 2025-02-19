@@ -79,7 +79,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
-- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]<br/>
+- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Old Like Style
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Verbandsmitgliedergebäude nach Kreis
@@ -200,7 +200,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.02.04+0143`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
-- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
+- [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
 - [[LSS] Gebäude-Direktausbau](#lss-direct-levels-for-buildings)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;buildingDirectLevels.user.js][buildingDirectLevels.user.js:download]
 - [[LSS] Gebäudeliste neu laden](#lss-reload-list-of-buildings)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;reloadBuildinglist.user.js][reloadBuildinglist.user.js:download]
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;gruesse.user.js][gruesse.user.js:download]
@@ -823,7 +823,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                             Download                              |                   Links                   |
 |:---------------:|:------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2023.04.05+1342 |    `🇩🇪`    | [forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download] | [Forum][forum/oldLikeStyle.user.js:forum] |
+| 2025.02.19+1550 |    `🇩🇪`    | [forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download] | [Forum][forum/oldLikeStyle.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Old Like Style</summary>
