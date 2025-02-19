@@ -212,11 +212,6 @@ class BookmarkManager {
         });
 
         GM_addStyle(`
-.dialogContainer {
-    top: unset;
-    left: unset;
-}
-
 .${BookmarkManager.#modalClass} {
     width: 100%;
     max-width: 100%;
@@ -562,7 +557,17 @@ class BookmarkManager {
 
         let overlayHiddenState = overlay.getAttribute('aria-hidden');
 
+        const resizeObserver = new ResizeObserver(() => {
+            if (modal.getAttribute('aria-hidden') === 'false') {
+                const offset = Math.floor(
+                    modal.getBoundingClientRect().width / 2
+                );
+                modal.style.setProperty('--translate-x', `-${offset}px`);
+            }
+        });
+
         modal.show = () => {
+            resizeObserver.observe(modal);
             overlay.addEventListener('click', hideOnOverlayClick);
             overlayHiddenState = overlay.getAttribute('aria-hidden') ?? 'true';
             overlay.setAttribute('aria-hidden', 'false');
@@ -597,6 +602,7 @@ class BookmarkManager {
             showCallback(overlay);
         };
         modal.hide = () => {
+            resizeObserver.disconnect();
             overlay.removeEventListener('click', hideOnOverlayClick);
             overlay.setAttribute('aria-hidden', overlayHiddenState);
             modal.setAttribute('aria-hidden', 'true');
