@@ -14,6 +14,7 @@
 // @match           https://forum.leitstellenspiel.de/*
 // @run-at          document-idle
 // @grant           GM_addStyle
+// @grant           unsafeWindow
 // ==/UserScript==
 
 /**
@@ -25,6 +26,7 @@
  * @locale de_DE
  * @subdomain forum
  * @grant GM_addStyle
+ * @grant unsafeWindow
  */
 
 /* global require */
@@ -64,49 +66,53 @@ const updateLikesElement = (element, amount) => {
     }
 };
 
-document.querySelectorAll('.reactionSummaryList').forEach(summaryList => {
-    /** @type {HTMLDivElement | null} **/
-    const messageContent = summaryList.closest('.messageContent');
+document
+    .querySelectorAll('woltlab-core-reaction-summary')
+    .forEach(summaryList => {
+        /** @type {HTMLDivElement | null} **/
+        const messageContent = summaryList.closest('.messageContent');
 
-    /** @type {HTMLUListElement | null} **/
-    const messageStatus = messageContent?.querySelector(
-        '.messageHeader > .messageHeaderBox > .messageStatus'
-    );
-    if (!messageStatus) return;
+        /** @type {HTMLUListElement | null} **/
+        const messageStatus = messageContent?.querySelector(
+            '.messageHeader > .messageHeaderBox > .messageStatus'
+        );
+        if (!messageStatus) return;
 
-    const likesAmount = parseInt(
-        summaryList
-            .querySelector(
-                `.reactCountButton[data-reaction-type-id="${LIKE_REACTION_ID}"] .reactionCount`
-            )
-            ?.textContent?.trim() ?? '0'
-    );
+        const likesAmount = parseInt(
+            summaryList
+                .querySelector(
+                    `.reactionCountButton:has([data-reaction-type-id="${LIKE_REACTION_ID}"]) .reactionCount`
+                )
+                ?.textContent?.trim() ?? '0'
+        );
 
-    const likesElement = document.createElement('li');
-    likesElement.dataset.likesObjectId = summaryList.dataset.objectId;
-    likesElement.classList.add(LIKES_ELEMENT_CLASS);
-    const likesLink = document.createElement('a');
-    likesLink.href = '#';
-    likesLink.classList.add('wcfLikeCounter');
+        const likesElement = document.createElement('li');
+        likesElement.dataset.likesObjectId = summaryList.objectId;
+        likesElement.classList.add(LIKES_ELEMENT_CLASS);
+        const likesLink = document.createElement('a');
+        likesLink.href = '#';
+        likesLink.classList.add('wcfLikeCounter');
 
-    const likesIcon = document.createElement('span');
-    likesIcon.classList.add('icon', 'icon16', 'fa-thumbs-o-up');
+        const likesIcon = document.createElement('fa-icon');
+        likesIcon.size = 16;
+        likesIcon.setIcon('thumbs-up');
+        likesIcon.toggleAttribute('regular', true);
 
-    const likesValue = document.createElement('span');
-    likesValue.classList.add('wcfLikeValue');
+        const likesValue = document.createElement('span');
+        likesValue.classList.add('wcfLikeValue');
 
-    likesLink.append(likesIcon, likesValue);
-    likesElement.append(likesLink);
-    messageStatus.append(likesElement);
+        likesLink.append(likesIcon, likesValue);
+        likesElement.append(likesLink);
+        messageStatus.append(likesElement);
 
-    updateLikesElement(likesElement, likesAmount);
+        updateLikesElement(likesElement, likesAmount);
 
-    // click on original element when clicking the new one
-    likesLink.addEventListener('click', e => {
-        e.preventDefault();
-        summaryList.dispatchEvent(new MouseEvent('click', e));
+        // click on original element when clicking the new one
+        likesLink.addEventListener('click', e => {
+            e.preventDefault();
+            summaryList.dispatchEvent(new Event('showDetails', e));
+        });
     });
-});
 GM_addStyle(`
 .${LIKES_ELEMENT_CLASS}[data-likes="0"] {
     display: none;
@@ -117,9 +123,7 @@ GM_addStyle(`
 // remove reaction menu and use the old style of reacting
 document.querySelectorAll('.reactButton').forEach(reactButton => {
     // replace the "smile" icon with the "like" icon
-    reactButton
-        .querySelector('.icon')
-        .classList.replace('fa-smile-o', 'fa-thumbs-o-up');
+    reactButton.querySelector('fa-icon')?.setIcon('thumbs-up');
     reactButton.title =
         reactButton.dataset.tooltip =
         reactButton.ariaLabel =
@@ -128,19 +132,14 @@ document.querySelectorAll('.reactButton').forEach(reactButton => {
     if (textContainer) textContainer.textContent = reactButton.title;
 });
 
-// click the Like reaction when clicking the open menu button
+(() =>
+    (unsafeWindow.REACTION_TYPES = {
+        [LIKE_REACTION_ID]: unsafeWindow.REACTION_TYPES[LIKE_REACTION_ID],
+    }))();
+
+// ------------------------------------------------------
+// update the additional like counter
 require(['WoltLabSuite/Core/Ui/Reaction/Handler'], t => {
-    const openReactPopoverOrig = t.prototype._openReactPopover;
-    // do NOT use arrow function here, because it would break the "this" context
-    t.prototype._openReactPopover = function (...args) {
-        const result = openReactPopoverOrig.call(this, ...args);
-
-        // automatically react with Like
-        this._react(LIKE_REACTION_ID);
-
-        return result;
-    };
-
     const ajaxSuccessOrig = t.prototype._ajaxSuccess;
     // do NOT use arrow function here, because it would break the "this" context
     t.prototype._ajaxSuccess = function (...args) {
@@ -167,5 +166,9 @@ require(['WoltLabSuite/Core/Ui/Reaction/Handler'], t => {
 GM_addStyle(`
 .reactionPopover {
     display: none !important;
+}
+
+html[data-color-scheme="dark"] .${LIKES_ELEMENT_CLASS} {
+    filter: brightness(2);
 }
 `);
