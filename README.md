@@ -71,7 +71,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Faster ARR Availability Check](#lss-faster-arr-availability-check)&nbsp;`2024.08.21+1208`&nbsp; &nbsp; [📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Schnellere AAO-Verfügbarkeitsprüfung
-- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
+- [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
@@ -199,7 +199,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.02.04+0143`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
-- [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
+- [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2023.04.05+1342`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
 - [[LSS] Gebäude-Direktausbau](#lss-direct-levels-for-buildings)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;buildingDirectLevels.user.js][buildingDirectLevels.user.js:download]
 - [[LSS] Gebäudeliste neu laden](#lss-reload-list-of-buildings)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;reloadBuildinglist.user.js][reloadBuildinglist.user.js:download]
@@ -751,7 +751,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| 2024.01.17+1128 |    `🇩🇪`    | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
+| 2025.02.19+1505 |    `🇩🇪`    | [forum/bookmarks.user.js][forum/bookmarks.user.js:download] | [Forum][forum/bookmarks.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Lesezeichen</summary>
