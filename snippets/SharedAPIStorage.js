@@ -1,9 +1,32 @@
+// This is a library file that can be included to provide a consistent and intuitive
+// access to the games APIs.
+// It will provide an object `sharedAPIStorage` available in a userscripts context.
+
+// TODO: Check what happens if another tab / instance upgrades the Database
+// TODO: Implement methods for all APIs of the game
+// TODO: Implement methods for the LSSM APIs
+// TODO: Write documentation for this file (JSDoc)
+// TODO: Provide type definitions for API results
+// TODO: Discuss the necessity to access the (way faster) V1 API if the additional data of V2 API is not needed
+
+// This defines the current version of the indexedDB.
+// Which each change to the database structure (e.g. a table is added or removed),
+// This needs to be incremented by 1.
+// Within the SharedAPIStorage.#upgradDB method, this constant wil lbe used
+// to determine which changes needs to be applied to the respective DB isntance.
 const CURRENT_DB_VERSION = 3;
 
+// Some consants that define several commonly used durations in ms.
 const ONE_MINUTE = 60 * 1000;
 const FIVE_MINUTES = 5 * ONE_MINUTE;
 const ONE_HOUR = 60 * ONE_MINUTE;
 
+// These are all tables, the indexedDB contains.
+// We're using this dictionary/object to create some kind of
+// lookup-table. This avoids errors through typos that were more frequent
+// if we simply used the strings within the class.
+// IDEs can also use this for better code completion etc.
+// In TypeScript we would use an Enum here.
 const TABLES = {
     lastUpdates: 'lastUpdates',
     missionTypes: 'missionTypes',
@@ -16,6 +39,9 @@ const TABLES = {
     buildings: 'buildings',
 };
 
+// We're defining the indexes used within the indexedDB here.
+// Indexes are used to improve lookup speed in the table.
+// Again, a lookup-table to reduce errors by typos.
 const INDEXES = {
     allianceMembers: {
         name: 'name',
@@ -33,28 +59,85 @@ const INDEXES = {
     },
 };
 
+// Let's start with some type definitions first.
+// This helps us improving the overall code quality.
+// Type definitions may be outsourced to their own repository or file some day.
+
 /**
+ * A mission as it occurs within the /einsaetze.json (TODO)
+ *
  * @typedef {Object} Mission
  */
 
+/**
+ * A class that provides a central interface for interacting with the games API.
+ * It handles everything needed in order to store the API results within an indexedDB.
+ * It also makes the required network requests to fetch new API results.
+ * The methods exposed to the outside allow getting a whole API as well as
+ * searching through API results in an efficient way (at least for specific keys).
+ */
 class SharedAPIStorage {
+    /**
+     * This is the name of the indexedDB instance.
+     * This MUST NOT be changed at any time as otherwise
+     * a new indexedDB instance would be created.
+     *
+     * @type {string}
+     * @private
+     */
     #DB_NAME = `shared-api-storage`;
 
-    /** @type {IDBDatabase | null} */
+    /**
+     * Within this attribute, we're storing the indexedDB instance.
+     * It is set when opening the indexedDB and unset (to null) when closing.
+     * If we didn't unset this on closing, the indexedDB object would live
+     * permanently within the memory.
+     * Additionally, closing the database allows other scripts or tabs to
+     * also connect to the database, which otherwise wouldn't be possible.
+     *
+     * @type {IDBDatabase | null}
+     * @private
+     */
     #db = null;
+    /**
+     * There may be multiple connections open at the same time,
+     * all of them opened by the same class instance.
+     * We're tracking the amount of open connections in this attribute
+     * to avoid closing the indexedDB when there are still
+     * unfinished transactions and connections.
+     *
+     * @type {number}
+     * @private
+     */
     #connections = 0;
 
     /**
-     * @param {IDBVersionChangeEvent} event
+     * This methods upgrades the database if required.
+     * Upgrading meens changing the structure such as adding or removing tables,
+     * as well as adding or removing indexes.
+     *
+     * @param {IDBVersionChangeEvent} event - the version change event that contains the old version number
+     * @returns {Promise<void>} a Promise that resolves once all upgrade transactions completed.
+     * @private
      */
     async #upgradeDB({ oldVersion }) {
         if (!this.#db) return;
 
-        /** @type {Promise<void>[} */
+        /**
+         * All transactions (creating or altering tables) are stored in this array.
+         * The method returns a Promise which resolves once all transactions are completed.
+         *
+         * @type {Promise<void>[}
+         */
         const transactions = [];
 
         /**
-         * @param {IDBTransaction} transaction
+         * This function is a small helper for transactions.
+         * It adds a Promise that resolves once the transaction
+         * has completed to the transactions array.
+         *
+         * @param {IDBTransaction} transaction - the altering transaction that must complete for the upgrade process to be marked as finished.
+         * @returns {void}
          */
         const addTransaction = transaction =>
             transactions.push(
@@ -63,15 +146,33 @@ class SharedAPIStorage {
                 )
             );
 
+        /**
+         * This function is a small helper.
+         * It creates a table, optionally with a specific key path.
+         *
+         * @param {string} table - the name of the table to be created
+         * @param {string} [keyPath] – the path to the attribute that should be used as a key (default: undefined = no keyPath)
+         * @returns {IDBObjectStore} the created table (ObjectStore)
+         */
         const createTable = (table, keyPath = undefined) =>
             this.#db.createObjectStore(table, { keyPath });
+        /**
+         * This function is a small helper.
+         * It creates an index on a table (ObjectStore).
+         *
+         * @param {IDBObjectStore} store - the table (ObjectStore) to create the index on
+         * @param {string} index - the path to the attribute that should be used as an index
+         * @param {boolean} unique - wether this attribute needs to be unique over all values in this table (default: true)
+         * @returns {IDBIndex} the newly created index
+         */
         const createIndex = (store, index, unique = true) =>
             store.createIndex(index, index, { unique });
 
         // In version 1, we introduced:
         // * a table for lastUpdates
         // * storing missionTypes
-        // * storing simple APIs such as userinfo, allianceinfo and settings
+        // * storing the simple APIs userinfo, allianceinfo and settings
+        // * storing alliance members additionally in their own table
         if (oldVersion < 1) {
             addTransaction(createTable(TABLES.lastUpdates).transaction);
             addTransaction(createTable(TABLES.missionTypes, 'id').transaction);
@@ -125,6 +226,7 @@ class SharedAPIStorage {
             );
         }
 
+        // This promise resolves once all transactions are completed
         await Promise.all(transactions);
     }
 
