@@ -6,7 +6,6 @@
 // @author          Jan (jxn_30)
 // @description     This script speeds up the performance when loading missing vehicles
 // @description:de  Dieses Skript behebt die Performance-Probleme, die beim Nachladen auftreten
-// @forum https://forum.leitstellenspiel.de/index.php?thread/22896-aaos-nur-pro-kategorie-laden/
 // @homepage        https://github.com/jxn-30/LSS-Scripts
 // @homepageURL     https://github.com/jxn-30/LSS-Scripts
 // @icon            https://www.leitstellenspiel.de/favicon.ico
@@ -60,7 +59,6 @@
  * @name:de Nachlade-Performance-Bugfix
  * @description This script speeds up the performance when loading missing vehicles
  * @description:de Dieses Skript behebt die Performance-Probleme, die beim Nachladen auftreten
- * // @forum https://forum.leitstellenspiel.de/index.php?thread/22896-aaos-nur-pro-kategorie-laden/
  * @match /missions/*
  * @grant unsafeWindow
  */
