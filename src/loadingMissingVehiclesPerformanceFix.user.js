@@ -2,7 +2,7 @@
 // @name            [LSS] Performance-Bugfix when loading missing vehicles
 // @name:de         [LSS] Nachlade-Performance-Bugfix
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.08.21+1208
+// @version         2025.03.19+2024
 // @author          Jan (jxn_30)
 // @description     This script speeds up the performance when loading missing vehicles
 // @description:de  Dieses Skript behebt die Performance-Probleme, die beim Nachladen auftreten

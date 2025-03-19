@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 71 userscripts*
+*Total: 72 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -127,6 +127,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Alte Einsatzgeschwindigkeit
 - [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp; &nbsp; [📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] OSM-MapScale
+- [[LSS] Performance-Bugfix when loading missing vehicles](#lss-performance-bugfix-when-loading-missing-vehicles)&nbsp;`2025.03.19+2024`&nbsp; &nbsp; [📥️:&nbsp;loadingMissingVehiclesPerformanceFix.user.js][loadingMissingVehiclesPerformanceFix.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Nachlade-Performance-Bugfix
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] FMS: Einsatzziel
 - [[LSS] Reload chat](#lss-reload-chat)&nbsp;`2023.01.29+1235`&nbsp; &nbsp; [📥️:&nbsp;reloadChat.user.js][reloadChat.user.js:download]<br/>
@@ -215,6 +217,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.25+1231`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
 - [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
+- [[LSS] Nachlade-Performance-Bugfix](#lss-performance-bugfix-when-loading-missing-vehicles)&nbsp;`2025.03.19+2024`&nbsp;&nbsp;[📥️:&nbsp;loadingMissingVehiclesPerformanceFix.user.js][loadingMissingVehiclesPerformanceFix.user.js:download]
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
 - [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp;&nbsp;[📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]
 - [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
@@ -1252,6 +1255,23 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [osmMapscale.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/osmMapscale.user.js
 [osmMapscale.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18908-script-osm-mapscale/
+
+### [LSS] Performance-Bugfix when loading missing vehicles
+
+> This script speeds up the performance when loading missing vehicles
+
+|     Version     |                                               Download                                                |
+|:---------------:|:-----------------------------------------------------------------------------------------------------:|
+| 2025.03.19+2024 | [loadingMissingVehiclesPerformanceFix.user.js][loadingMissingVehiclesPerformanceFix.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Nachlade-Performance-Bugfix</summary>
+    Dieses Skript behebt die Performance-Probleme, die beim Nachladen auftreten
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[loadingMissingVehiclesPerformanceFix.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/loadingMissingVehiclesPerformanceFix.user.js
 
 ### [LSS] RadioMessage: Mission Target
 
