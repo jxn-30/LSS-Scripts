@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            [LSS] AAO Config Lite (DE)
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.02.19+2221
+// @version         2025.03.25+1658
 // @author          JuMaHo & Jan (jxn_30)
 // @description     This Script is for leitstellenspiel.de only!
 // @description:de  Blendet Eingabefelder in der AAO-Konfiguration nach Bedarf ein oder aus.
@@ -18,6 +18,7 @@
 // @match           https://polizei.leitstellenspiel.de/aaos/*/edit
 // @match           https://polizei.leitstellenspiel.de/aaos/*/copy
 // @run-at          document-idle
+// @grant           GM_addStyle
 // ==/UserScript==
 
 /**
@@ -31,6 +32,7 @@
  * @match /aaos/new
  * @match /aaos/*\/edit
  * @match /aaos/*\/copy
+ * @grant GM_addStyle
  */
 
 // This is a working fork of https://github.com/JuMaH0/lss/blob/master/aaolite.user.js
@@ -236,14 +238,12 @@
         'vehicle_type_ids[159]': 1, // Seenotrettungskreuzer
         'vehicle_type_ids[161]': 1, // Hubschrauber (Seenotrettung)
     };
-    Object.entries(aaos).forEach(
-        ([key, show]) =>
-            !show &&
-            document
-                .querySelectorAll(`[for="aao_${key}"]`)
-                .forEach(el =>
-                    el.parentElement.parentElement.classList.add('hidden')
-                )
+
+    GM_addStyle(
+        `.tab-pane :where(${Object.entries(aaos)
+            .filter(([, show]) => !show)
+            .map(([key]) => `.form-group:has(label[for="aao_${key}"])`)
+            .join(', ')}) { display: none; }`
     );
 })();
 
