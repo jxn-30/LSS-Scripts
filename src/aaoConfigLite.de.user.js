@@ -48,6 +48,7 @@
         'wasser_amount_tlf': 1, // Liter Wasser - Nur TLF
         'water_amount_water_carrier': 1, // Liter Wasser - Nur Großtankfahrzeuge
         'water_amount_tlf_water_carrier': 1, // Liter Wasser - Nur TLF oder Großtankfahrzeuge
+        'foam_amount': 1, // Sonderlöschmittelmenge
         'water_damage_pump_value': 1, // Pumpenleistung
         'water_damage_pump_value_only_pumps': 1, // Pumpenleistung - Nur Schmutzwasserpumpen
         'elw': 1, // Einsatzleitfahrzeuge 1
@@ -114,6 +115,11 @@
         'vehicle_type_ids[162]': 1, // RW-Schiene
         'vehicle_type_ids[163]': 1, // HLF Schiene
         'vehicle_type_ids[164]': 1, // AB-Schiene
+        'vehicle_type_ids[166]': 1, // PTLF 4000
+        'vehicle_type_ids[167]': 1, // SLF
+        'vehicle_type_ids[168]': 1, // Anh Sonderlöschmittel
+        'vehicle_type_ids[169]': 1, // AB-Sonderlöschmittel
+        'vehicle_type_ids[170]': 1, // AB-Wasser/Schaum
 
         // Rettungsdienst
         'rtw': 1, // Rettungswagen
