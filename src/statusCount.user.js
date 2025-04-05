@@ -2,7 +2,7 @@
 // @name            [LSS] Status-Count
 // @name:de         [LSS] Status-Zähler
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2025.04.05+1351
 // @author          Jan (jxn_30)
 // @description     Adds a configurable counter to the radio log that shows how many vehicles are in each status
 // @description:de  Fügt einen konfigurierbaren Zähler über dem Funk ein, der anzeigt, wie viele Fahrzeuge sich im jeweiligen Status befinden.

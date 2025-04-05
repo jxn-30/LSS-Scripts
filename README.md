@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 72 userscripts*
+*Total: 73 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -144,6 +144,8 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Split Dispatch Center to Ω dispatch centers](#lss-split-dispatch-center-to-dispatch-centers)&nbsp;`2025.01.26+2042`&nbsp; &nbsp; [📥️:&nbsp;splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download]<br/>
 - [[LSS] Status 5 colorize](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp; &nbsp; [📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] S5-Färber
+- [[LSS] Status-Count](#lss-status-count)&nbsp;`2025.04.05+1351`&nbsp; &nbsp; [📥️:&nbsp;statusCount.user.js][statusCount.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Status-Zähler
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp; &nbsp; [📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
 - [[LSS] Training Finder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp; &nbsp; [📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]<br/>
@@ -225,6 +227,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
 - [[LSS] Split Dispatch Center to Ω dispatch centers](#lss-split-dispatch-center-to-dispatch-centers)&nbsp;`2025.01.26+2042`&nbsp;&nbsp;[📥️:&nbsp;splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download]
+- [[LSS] Status-Zähler](#lss-status-count)&nbsp;`2025.04.05+1351`&nbsp;&nbsp;[📥️:&nbsp;statusCount.user.js][statusCount.user.js:download]
 - [[LSS] Textlänge bei Eingabefeldern prüfen](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp;&nbsp;[📥️:&nbsp;userId.user.js][userId.user.js:download]
@@ -1410,6 +1413,24 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [fms5Colorizer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/fms5Colorizer.user.js
 [fms5Colorizer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23490-scriptwunsch-fms-5-in-hiorg-farbe/
+
+### [LSS] Status-Count
+
+> Adds a configurable counter to the radio log that shows how many vehicles are in each status
+
+|     Version     | Alias / Old names |                      Download                       |               Links                |
+|:---------------:|:-----------------:|:---------------------------------------------------:|:----------------------------------:|
+| 2025.04.05+1351 | `LSS-StatusCount` | [statusCount.user.js][statusCount.user.js:download] | [Forum][statusCount.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Status-Zähler</summary>
+    Fügt einen konfigurierbaren Zähler über dem Funk ein, der anzeigt, wie viele Fahrzeuge sich im jeweiligen Status befinden.
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[statusCount.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/statusCount.user.js
+[statusCount.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/15575-lss-statuscount/
 
 ### [LSS] Toplist Distance
 
