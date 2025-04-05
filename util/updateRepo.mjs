@@ -166,6 +166,10 @@ await forEachFile(
             tag: 'require',
             content: `${GITHUB}/raw/master/snippets/${content}.js`,
         }));
+        const lufsiTags = getTags('lufsi').map(({ content }) => ({
+            tag: 'require',
+            content: `https://raw.githubusercontent.com/LUFSI/framework/refs/heads/main/src/${content}.js`,
+        }));
 
         // list of tags to add to the userscript
         const userscriptHeaderInformation = [
@@ -211,6 +215,7 @@ await forEachFile(
             },
             ...matches,
             ...snippetTags,
+            ...lufsiTags,
             ...resourceTags,
             ...getTags('run-at', 'document-idle'),
             ...getTags('grant'),
