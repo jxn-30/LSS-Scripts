@@ -63,7 +63,7 @@
  * @forum https://forum.leitstellenspiel.de/index.php?thread/23543-skriptwunsch-mitglieder-online-status/
  * @match /
  * @grant unsafeWindow
- * @snippet SharedAPIStorage
+ * @lufsi SharedAPIStorage
  */
 
 /**
