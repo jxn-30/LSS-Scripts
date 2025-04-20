@@ -2,7 +2,7 @@
 // @name            [LSS] Alliance members panel
 // @name:de         [LSS] Verbandsmitglieder panel
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.01.19+1412
+// @version         2025.04.21+0032
 // @author          Jan (jxn_30)
 // @description     Adds a panel to view the list of alliance members directly on the games main page
 // @description:de  Fügt ein Panel hinzu, um die Mitgliederliste des Verbands direkt auf der Hauptseite zu sehen
@@ -50,7 +50,7 @@
 // @match           https://polis.larmcentralen-spelet.se/
 // @match           https://www.112-merkez.com/
 // @match           https://www.dyspetcher101-game.com/
-// @require         https://github.com/jxn-30/LSS-Scripts/raw/master/snippets/SharedAPIStorage.js
+// @require         https://raw.githubusercontent.com/LUFSI/framework/refs/heads/main/src/SharedAPIStorage.js
 // @run-at          document-idle
 // @grant           unsafeWindow
 // ==/UserScript==
