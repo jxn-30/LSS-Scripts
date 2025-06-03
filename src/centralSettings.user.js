@@ -917,6 +917,11 @@ const fillModal = body => {
             'Nur Krankenhäuser mit passender Erweiterung?',
             'elw1Extension'
         );
+    const { label: elw1AutomaticLabel, checkbox: elw1AutomaticCheckbox } =
+        createCheckbox(
+            'Pendelverkehr aktivieren?',
+            'elw1Automatic'
+        );
     const [elw1TaxSelect] = createSelect(
         'elw1Tax',
         'Maximale Verbandsabgabe',
@@ -943,6 +948,7 @@ const fillModal = body => {
         [
             elw1OwnCheckbox,
             elw1ExtensionCheckbox,
+            elw1AutomaticCheckbox,
             elw1TaxSelect,
             elw1DistanceSelect,
             elw1FreeSelect,
@@ -956,6 +962,7 @@ const fillModal = body => {
             elw1EnabledLabel,
             elw1OwnLabel,
             elw1ExtensionLabel,
+            elw1AutomaticLabel,
             elw1TaxSelect,
             elw1DistanceSelect,
             elw1FreeSelect,
@@ -989,6 +996,7 @@ const fillModal = body => {
                         elw1EnabledCheckbox,
                         elw1OwnCheckbox,
                         elw1ExtensionCheckbox,
+                        elw1AutomaticCheckbox,
                     ]
                         .map(c => (c.checked ? '✅' : '❌'))
                         .join(''),
@@ -1007,6 +1015,9 @@ const fillModal = body => {
                             ),
                             'vehicle[hospital_right_building_extension]':
                                 Number(elw1ExtensionCheckbox.checked),
+                            'vehicle[hospital_automatic_return]': Number(
+                                elw1AutomaticCheckbox.checked
+                            ),
                             'vehicle[hospital_max_price]': Number(
                                 elw1TaxSelect.value
                             ),
