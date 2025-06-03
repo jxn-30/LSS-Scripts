@@ -2,7 +2,7 @@
 // @name            [LSS] Central Settings
 // @name:de         [LSS] Zentrale Einstellungen
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.08.24+1324
+// @version         2025.06.03+1222
 // @author          Jan (jxn_30)
 // @description     Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
 // @description:de  Hält Einstellungen für Gebäude (Zellen- und Bettenfreigabe) und Fahrzeuge (automatische Transporte und Zugfahrzeuge) an einem Ort.
@@ -918,10 +918,7 @@ const fillModal = body => {
             'elw1Extension'
         );
     const { label: elw1AutomaticLabel, checkbox: elw1AutomaticCheckbox } =
-        createCheckbox(
-            'Pendelverkehr aktivieren?',
-            'elw1Automatic'
-        );
+        createCheckbox('Pendelverkehr aktivieren?', 'elw1Automatic');
     const [elw1TaxSelect] = createSelect(
         'elw1Tax',
         'Maximale Verbandsabgabe',
