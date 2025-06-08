@@ -101,6 +101,8 @@
  * @match /aaos/*\/copy
  */
 
+/* global existing_aao update_non_active_tab_inputs */
+
 const btn = document.createElement('a');
 btn.classList.add('btn', 'btn-danger', 'btn-sm', 'pull-right');
 btn.textContent = 'Reset';
@@ -108,6 +110,10 @@ btn.addEventListener('click', e => {
     e.preventDefault();
     document
         .querySelectorAll('.tab-content input[type="number"]')
-        .forEach(input => (input.value = 0));
+        .forEach(input => {
+            input.value = 0;
+            existing_aao.set(input.id.replace('aao_', ''), 0);
+        });
+    update_non_active_tab_inputs();
 });
 (() => document.getElementById('tabs')?.append(btn))();
