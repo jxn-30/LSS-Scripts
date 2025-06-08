@@ -2,7 +2,7 @@
 // @name            [LSS] AAO All vehicle types
 // @name:de         [LSS] AAO Alle Fahrzeugtypen
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.09.29+1849
+// @version         2025.06.09+0005
 // @author          Jan (jxn_30)
 // @description     Allows to select all vehicle types in ARRs.
 // @description:de  Erlaubt es, alle Fahrzeugtypen in der AAO auszuwählen, nicht nur die vom Spiel vorgegebenen.
@@ -371,7 +371,10 @@ GM_addStyle(`
 
         // OR-Combinations
         if (/^vehicle_type_ids_\[\d+(?:,\s*\d+)*]$/.test(type)) {
-            createOrCombination(JSON.parse(type.replace('vehicle_type_ids_', '')), amount);
+            createOrCombination(
+                JSON.parse(type.replace('vehicle_type_ids_', '')),
+                amount
+            );
         }
     });
     inputs.forEach(input => (input.disabled = false));
