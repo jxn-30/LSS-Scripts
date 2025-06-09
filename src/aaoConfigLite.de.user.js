@@ -19,6 +19,9 @@
 // @match           https://polizei.leitstellenspiel.de/aaos/*/copy
 // @run-at          document-idle
 // @grant           GM_addStyle
+// @grant           GM_listValues
+// @grant           GM_setValue
+// @grant           GM_getValue
 // ==/UserScript==
 
 /**
@@ -33,244 +36,92 @@
  * @match /aaos/*\/edit
  * @match /aaos/*\/copy
  * @grant GM_addStyle
+ * @grant GM_listValues
+ * @grant GM_setValue
+ * @grant GM_getValue
  */
 
-// This is a working fork of https://github.com/JuMaH0/lss/blob/master/aaolite.user.js
+// This has originally been a working fork of https://github.com/JuMaH0/lss/blob/master/aaolite.user.js
+// It is now further developed to adapt to ingame changes
+// Configuration does not happen via the script itself but via UI since 2025-06-09
 
-(function () {
-    // 0 = Fahrzeuge werden in der Liste ausgeblendet 1 = Fahrzeuge werden eingeblendet
-    const aaos = {
-        // Feuerwehr
-        'fire': 1, // Löschfahrzeuge oder Tanklöschfahrzeuge
-        'lf_only': 1, // Löschfahrzeuge
-        'tlf_only': 1, // Tanklöschfahrzeuge
-        'wasser_amount': 1, // Liter Wasser
-        'wasser_amount_tlf': 1, // Liter Wasser - Nur TLF
-        'water_amount_water_carrier': 1, // Liter Wasser - Nur Großtankfahrzeuge
-        'water_amount_tlf_water_carrier': 1, // Liter Wasser - Nur TLF oder Großtankfahrzeuge
-        'foam_amount': 1, // Sonderlöschmittelmenge
-        'water_damage_pump_value': 1, // Pumpenleistung
-        'water_damage_pump_value_only_pumps': 1, // Pumpenleistung - Nur Schmutzwasserpumpen
-        'elw': 1, // Einsatzleitfahrzeuge 1
-        'elw2': 1, // Einsatzleitfahrzeuge 2
-        'elw1_or_elw2': 1, // ELW 1, ELW 2 oder AB-Einsatzleitung
-        'ab_einsatzleitung_only': 1, // AB-Einsatzleitung
-        'elw2_or_ab_elw': 1, // ELW 2 oder AB-Einsatzleitung
-        'elw1_or_elw_drone': 1, // ELW1 oder ELW Drohne
-        'elw2_or_elw2_drone': 1, // ELW2 oder ELW2 Drohne
-        'dlk': 1, // Drehleitern
-        'dlk_or_tm50': 1, // DLK oder TM 50
-        'hlf_only': 1, // HLF
-        'hlf_or_rw_and_lf': 1, // HLF oder RW und LF
-        'rw': 1, // Rüstwagen oder HLF
-        'rw_only': 1, // Rüstwagen
-        'ab_ruest': 1, // AB Rüst
-        'ab_ruest_rw': 1, // AB Rüst oder Rüstwagen oder HLF
-        'gwa': 1, // GW-A oder AB-Atemschutz
-        'ab_atemschutz_only': 1, // AB-Atemschutz
-        'gw_atemschutz_only': 1, // GW-A
-        'gwoel': 1, // GW-Öl oder AB-Öl
-        'ab_oel_only': 1, // AB-Öl
-        'gw_oel_only': 1, // GW-Öl
-        'gwl2wasser': 1, // Schlauchwagen oder AB-Schlauch
-        'gwl2wasser_only': 1, // Nur Schlauchwagen
-        'abl2wasser_only': 1, // AB-Schlauch
-        'vehicle_type_ids[143]': 1, // Anh Schlauch
-        'gwl2wasser_all': 1, // Alle Schlauchfahrzeuge
-        'gwmesstechnik': 1, // GW-Messtechnik
-        'gwgefahrgut': 1, // GW-Gefahrgut oder AB-Gefahrgut
-        'gw_gefahrgut_only': 1, // GW-Gefahrgut
-        'ab_gefahrgut_only': 1, // AB-Gefahrgut
-        'gwhoehenrettung': 1, // GW-Höhenrettung
-        'dekon_p': 1, // Dekon-P oder AB-Dekon-P
-        'only_dekon_p': 1, // Dekon-P
-        'only_ab_dekon_p': 1, // AB-Dekon-P
-        'mtw': 1, // MTW
-        'fwk': 1, // Feuerwehrkran
-        'arff': 1, // Flugfeldlöschfahrzeug
-        'rettungstreppe': 1, // Rettungstreppe
-        'turboloescher': 1, // Turbolöscher
-        'tm50': 1, // TM 50
-        'ulf': 1, // ULF mit Löscharm
-        'gw_werkfeuerwehr': 1, // GW-Werkfeuerwehr
-        'ventilation': 1, // Lüfter
-        'vehicle_type_ids[104]': 1, // GW-L1
-        'vehicle_type_ids[105]': 1, // GW-L2
-        'vehicle_type_ids[106]': 1, // MTF-L
-        'water_carrier': 1, // Beliebiges Großtankfahrzeug
-        'vehicle_type_ids[118]': 1, // Kleintankwagen
-        'vehicle_type_ids[120]': 1, // Tankwagen
-        'vehicle_type_ids[121]': 1, // GTLF
-        'vehicle_type_ids[117]': 1, // AB-Tank
-        'vehicle_type_ids[119]': 1, // AB-Lösch
-        'vehicle_type_ids[126]': 1, // MTF Drohne
-        'vehicle_type_ids[128]': 1, // ELW Drohne
-        'vehicle_type_ids[129]': 1, // ELW2 Drohne
-        'vehicle_type_ids[140]': 1, // MTW-Verpflegung
-        'vehicle_type_ids[139]': 1, // GW-Küche
-        'vehicle_type_ids[138]': 1, // GW-Verpflegung
-        'vehicle_type_ids[141]': 1, // FKH
-        'vehicle_type_ids[142]': 1, // AB-Küche
-        'railway_fire': 1, // Beliebiges Bahnrettungsfahrzeug
-        'vehicle_type_ids[162]': 1, // RW-Schiene
-        'vehicle_type_ids[163]': 1, // HLF Schiene
-        'vehicle_type_ids[164]': 1, // AB-Schiene
-        'vehicle_type_ids[166]': 1, // PTLF 4000
-        'vehicle_type_ids[167]': 1, // SLF
-        'vehicle_type_ids[168]': 1, // Anh Sonderlöschmittel
-        'vehicle_type_ids[169]': 1, // AB-Sonderlöschmittel
-        'vehicle_type_ids[170]': 1, // AB-Wasser/Schaum
+const getHiddenSelectors = () =>
+    GM_listValues()
+        .map(
+            tab =>
+                `#${tab} .form-group:where(${GM_getValue(tab, []).map(entry => `:has(label[for="${entry}"])`)})`
+        )
+        .join(',\n');
 
-        // Rettungsdienst
-        'rtw': 1, // Rettungswagen
-        'ktw': 1, // Krankentransportwagen
-        'ktw_or_rtw': 1, // KTW oder RTW
-        'ktw_or_rtw_2': 1, // KTW oder RTW oder ITW
-        'nef': 1, // Notarzteinsatzfahrzeug oder Rettungshubschrauber
-        'rth_only': 1, // Rettungshubschrauber
-        'nef_only': 1, // Notarzteinsatzfahrzeug
-        'vehicle_type_ids[74]': 1, // NAW
-        'vehicle_type_ids[97]': 1, // ITW
-        'naw': 1, // NAW oder ITW
-        'naw_or_rtw_and_nef': 1, // NAW oder ITW oder NEF+RTW
-        'naw_or_rtw_and_nef_or_rth': 1, // NAW oder ITW oder NEF/RTH+RTW
-        'kdow_lna': 1, // KdoW-LNA
-        'kdow_orgl': 1, // KdoW-OrgL
-        'grtw': 1, // GRTW
-        'grtw0': 1, // GRTW (7 Patienten - ohne Notarzt)
-        'grtw1': 1, // GRTW (3 Patienten - inkl. Notarzt)
-        'vehicle_type_ids[[150, 149]]': 1, // Beliebiger GW-Bergrettung
-        'vehicle_type_ids[150]': 1, // GW-Bergrettung
-        'vehicle_type_ids[149]': 1, // GW-Bergrettung (NEF)
-        'vehicle_type_ids[151]': 1, // ELW Bergrettung
-        'vehicle_type_ids[152]': 1, // ATV
-        'vehicle_type_ids[153]': 1, // Hundestaffel (Bergrettung)
-        'vehicle_type_ids[154]': 1, // Schneefahrzeug
-        'mountain_height_rescue': 1, // Höhenrettung (Bergrettung)
-        'vehicle_type_ids[158]': 1, // GW-Höhenrettung (Bergrettung)
-        'vehicle_type_ids[155]': 1, // Anh Höhenrettung (Bergrettung)
-        'lift': 1, // Hubschrauber mit Winde
+const style = GM_addStyle();
 
-        // Polizei
-        'fustw': 1, // Funkstreifenwagen
-        'lebefkw': 1, // Leichter Befehlskraftwagen (leBefKw)
-        'fukw': 1, // FüKW (Führungskraftwagen - Polizei)
-        'grukw': 1, // GruKw (Gruppenkraftwagen)
-        'gefkw': 1, // GefKw (Gefangenenkraftwagen)
-        'vehicle_type_ids[[61, 156]]': 1, // Beliebiger Polizeihubschrauber
-        'polizeihubschrauber': 1, // Polizeihubschrauber
-        'vehicle_type_ids[156]': 1, // Polizeihubschrauber mit verbauter Winde
-        'wasserwerfer': 1, // Wasserwerfer
-        'sek_zf': 1, // SEK - ZF
-        'sek_mtf': 1, // SEK - MTF
-        'vehicle_type_ids[[79, 80]]': 1, // SEK-ZF oder SEK-MTF
-        'mek_zf': 1, // MEK - ZF
-        'mek_mtf': 1, // MEK - MTF
-        'vehicle_type_ids[[81, 82]]': 1, // MEK-ZF oder MEK-MTF
-        'k9': 1, // Diensthundeführerkraftwagen
-        'police_motorcycle': 1, // Polizeimotorrad
-        'fustw_or_police_motorcycle': 1, // Funkstreifenwagen oder Polizeimotorrad
-        'vehicle_type_ids[[32, 98, 95]]': 1, // Funkstreifenwagen oder Zivilstreifenwagen oder Polizeimotorrad
-        'helicopter_bucket': 1, // Außenlastbehälter (allgemein)
-        'vehicle_type_ids[98]': 1, // Zivilstreifenwagen
-        'vehicle_type_ids[103]': 1, // FuStW (DGL)
-        'police_car_or_service_group_leader': 1, // FuStW oder FuStW (DGL)
-        'fustkw_or_civil_patrolcar': 1, // Funkstreifenwagen oder Zivilstreifenwagen
-        'police_horse_count': 1, // Polizeipferde
-        'vehicle_type_ids[134]': 1, // Pferdetransporter klein
-        'vehicle_type_ids[135]': 1, // Pferdetransporter groß
-        'vehicle_type_ids[136]': 1, // Anh Pferdetransport
-        'vehicle_type_ids[137]': 1, // Zugfahrzeug Pferdetransport
-        'vehicle_type_ids[165]': 1, // LauKw
+const globalToggle = document.createElement('span');
+globalToggle.classList.add('glyphicon', 'glyphicon-eye-open', 'pull-right');
+globalToggle.style.setProperty('cursor', 'pointer');
+globalToggle.style.setProperty('margin-right', '0.5em');
 
-        // THW
-        'gkw': 1, // Gerätekraftwagen (GKW)
-        'thw_mtw': 1, // Mannschaftstransportwagen Technischer Zug (MTW-TZ - THW)
-        'thw_mzkw': 1, // Mehrzweck-Gerätewagen (FGr N)
-        'vehicle_type_ids[124]': 1, // MTW-OV
-        'thw_lkw': 1, // Lastkraftwagen-Kipper 9 t (LKW K 9)
-        'thw_brmg_r': 1, // Radlader groß (BRmG R)
-        'thw_dle': 1, // Anhänger Drucklufterzeugung (Anh DLE)
-        'vehicle_type_ids[100]': 1, // MLW 4
-        'thw_mlw5': 1, // Mannschaftslastwagen Typ V (MLW 5)
-        'thw_tauchkraftwagen': 1, // Tauchkraftwagen
-        'thw_tauchkraftwagen_or_gw_taucher': 1, // Tauchkraftwagen oder GW-Taucher
-        'thw_anh_mzab': 1, // Anh MzAB
-        'thw_anh_schlb': 1, // Anh SchlB
-        'thw_anh_mzb': 1, // Anh MzB
-        'thw_lkw_7_lkr_19_tm': 1, // LKW 7 Lkr 19 tm
-        'rescue_dogs_thw': 1, // Anhänger Hundetransport
-        'pump': 1, // Schmutzwasserpumpen
-        'water_damage_pump': 1, // Feuerlöschpumpen
-        'vehicle_type_ids[123]': 1, // LKW 7 Lbw (FGr WP)
-        'vehicle_type_ids[101]': 1, // Anh SwPu
-        'vehicle_type_ids[102]': 1, // Anh 7
-        'vehicle_type_ids[109]': 1, // MzGW SB
-        'vehicle_type_ids[122]': 1, // LKW 7 Lbw (FGr E)
-        'energy_supply': 1, // NEA50
-        'energy_supply_2': 1, // NEA200
-        'drone': 1, // Beliebige Drohneneinheit
-        'vehicle_type_ids[125]': 1, // MTW-Tr UL
-        'vehicle_type_ids[144]': 1, // FüKW (THW)
-        'vehicle_type_ids[145]': 1, // FüKomKW
-        'vehicle_type_ids[146]': 1, // Anh FüLa
-        'vehicle_type_ids[147]': 1, // FmKW
-        'vehicle_type_ids[148]': 1, // MTW-FGr K
+const updateStyle = () =>
+    (style.textContent =
+        globalToggle.classList.contains('glyphicon-eye-open') ?
+            `${getHiddenSelectors()} {
+    display: none;
+}`
+        :   '');
+updateStyle();
 
-        // SEG
-        'ktw_b': 1, // KTW Typ B
-        'seg_elw': 1, // ELW 1 (SEG)
-        'gw_san': 1, // GW-San
-        'rescue_dogs_seg': 1, // Rettungshundefahrzeug
-        'vehicle_type_ids[127]': 1, // GW-UAS
-        'vehicle_type_ids[131]': 1, // Bt-Kombi
-        'care_service_equipment': 1, // Betreuungs- und Verpflegungsausstattung
-        'vehicle_type_ids[130]': 1, // GW-Bt
-        'vehicle_type_ids[133]': 1, // Bt LKW
-        'vehicle_type_ids[132]': 1, // FKH
+const add = (tab, entry) => {
+    const hidden = new Set(GM_getValue(tab, []));
+    hidden.add(entry);
+    GM_setValue(tab, Array.from(hidden));
+    updateStyle();
+};
+const remove = (tab, entry) => {
+    const hidden = new Set(GM_getValue(tab, []));
+    hidden.delete(entry);
+    GM_setValue(tab, Array.from(hidden));
+    updateStyle();
+};
 
-        // Wasserrettung
-        'gw_taucher': 1, // GW-Taucher
-        'gw_wasserrettung': 1, // GW-Wasserrettung
-        'boot': 1, // Boote (Allgemein)
-        'mzb': 1, // Mehrzweckboot
+globalToggle.addEventListener('click', e => {
+    e.preventDefault();
+    globalToggle.classList.toggle('glyphicon-eye-open');
+    globalToggle.classList.toggle('glyphicon-eye-close');
+    if (globalToggle.classList.contains('glyphicon-eye-close')) {
+        style.textContent = '';
+    } else updateStyle();
+});
 
-        // Rettungshundestaffel
-        'rescue_dogs': 1, // Anhänger Hundetransport oder Rettungshundefahrzeug
-
-        // Seenotrettung
-        'vehicle_type_ids[[160, 159]]': 1, // Beliebiges Seenotrettungsschiff
-        'vehicle_type_ids[160]': 1, // Seenotrettungsboot
-        'vehicle_type_ids[159]': 1, // Seenotrettungskreuzer
-        'vehicle_type_ids[161]': 1, // Hubschrauber (Seenotrettung)
-    };
-
-    GM_addStyle(
-        `.tab-pane :where(${Object.entries(aaos)
-            .filter(([, show]) => !show)
-            .map(([key]) => `.form-group:has(label[for="aao_${key}"])`)
-            .join(', ')}) { display: none; }`
+(() => {
+    const initiallyHidden = Object.fromEntries(
+        GM_listValues().map(tab => [tab, GM_getValue(tab, [])])
     );
-})();
 
-// Code to generate the list:
-/*
-Array.from(document.querySelectorAll('#tabs > li > a'))
-    .map(tab =>
-        [
-            `// ${tab.textContent.trim()}`,
-            ...Array.from(
-                document.querySelectorAll(`${new URL(tab.href).hash} label`)
-            ).map(
-                label =>
-                    `'${label
-                        .getAttribute('for')
-                        .replace(
-                            /^aao_/,
-                            ''
-                        )}': 1, // ${label.textContent.trim()}`
-            ),
-        ].join('\n')
-    )
-    .join('\n\n');
-*/
+    console.log(initiallyHidden);
+
+    document.querySelectorAll('#tab_panels .tab-pane').forEach(tab =>
+        tab.querySelectorAll('.form-group label').forEach(label => {
+            const toggleBtn = document.createElement('span');
+            toggleBtn.classList.add(
+                'glyphicon',
+                initiallyHidden[tab.id]?.includes(label.htmlFor) ?
+                    'glyphicon-eye-close'
+                :   'glyphicon-eye-open'
+            );
+            toggleBtn.style.setProperty('cursor', 'pointer');
+            toggleBtn.style.setProperty('margin-left', '0.5em');
+
+            toggleBtn.addEventListener('click', e => {
+                e.preventDefault();
+                if (toggleBtn.classList.contains('glyphicon-eye-open')) {
+                    add(tab.id, label.htmlFor);
+                } else remove(tab.id, label.htmlFor);
+                toggleBtn.classList.toggle('glyphicon-eye-open');
+                toggleBtn.classList.toggle('glyphicon-eye-close');
+            });
+
+            label.append(toggleBtn);
+        })
+    );
+
+    document.getElementById('tabs').append(globalToggle);
+})();
