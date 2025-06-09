@@ -19,7 +19,7 @@
         "globals": "16.2.0",
         "jsdoc-api": "9.3.4",
         "prettier": "3.5.3",
-        "simple-git": "3.27.0",
+        "simple-git": "3.28.0",
         "userscript-meta": "1.0.1"
     }
 }
