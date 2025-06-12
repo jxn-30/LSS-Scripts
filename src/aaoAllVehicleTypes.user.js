@@ -142,7 +142,7 @@
  * @grant GM_addStyle
  */
 
-/* global I18n existing_aao */
+/* global I18n */
 
 /**
  * @typedef {object} VehicleType
@@ -167,6 +167,20 @@ const getVehicleTypes = lang =>
         .then(vehicles =>
             vehicles.sort((a, b) => a.caption.localeCompare(b.caption))
         );
+
+/**
+ * reads the vehicle types from AAO-API
+ * @returns {Promise<Record<number, number>>}
+ */
+const getAAOVehicleTypes = () => {
+    const id = document.location.pathname.match(
+        /(?<=\/aaos\/)\d+(?=\/edit)/
+    )?.[0];
+    if (!id) return Promise.resolve({});
+    return fetch(`/api/v1/aaos/${id}`)
+        .then(res => res.json())
+        .then(({ vehicle_types }) => vehicle_types ?? {});
+};
 
 const createFormRow = () => {
     const row = document.createElement('div');
@@ -268,7 +282,7 @@ GM_addStyle(`
         input.value =
             document.querySelector(`input[name="vehicle_type_ids[${id}]"]`)
                 ?.value ?? '0';
-        label.htmlFor = input.id = `vehicle_type_ids_${id}`;
+        label.htmlFor = input.id = `jxn30-aao-${id}`;
         input.disabled = true;
         inputWrapper.append(input);
         inputs.push(input);
@@ -364,20 +378,20 @@ GM_addStyle(`
     });
     combinationsTab.append(addCombinationButton);
 
-    existing_aao.entries().forEach(([type, amount]) => {
-        document
-            .querySelectorAll(`input[name="vehicle_type_ids[${type}]"]`)
-            .forEach(input => (input.value = amount));
+    getAAOVehicleTypes()
+        .then(types =>
+            Object.entries(types).forEach(([type, amount]) => {
+                document
+                    .querySelectorAll(`input[name="vehicle_type_ids[${type}]"]`)
+                    .forEach(input => (input.value = amount));
 
-        // OR-Combinations
-        if (/^vehicle_type_ids_\[\d+(?:,\s*\d+)*]$/.test(type)) {
-            createOrCombination(
-                JSON.parse(type.replace('vehicle_type_ids_', '')),
-                amount
-            );
-        }
-    });
-    inputs.forEach(input => (input.disabled = false));
+                // OR-Combinations
+                if (/^\[\d+(?:,\s*\d+)*]$/.test(type)) {
+                    createOrCombination(JSON.parse(type), amount);
+                }
+            })
+        )
+        .then(() => inputs.forEach(input => (input.disabled = false)));
 
     /**
      * updates all inputs with the same name as the target
