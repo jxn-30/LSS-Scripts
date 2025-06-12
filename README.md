@@ -14,7 +14,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
-- [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2025.06.09+0005`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
+- [[LSS] AAO All vehicle types](#lss-aao-all-vehicle-types)&nbsp;`2025.06.12+0943`&nbsp; &nbsp; [📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Alle Fahrzeugtypen
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2025.06.09+1706`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Config Lite (DE)
@@ -162,7 +162,7 @@ This list is auto-generated and contains all scripts that are already ported int
 <details>
     <summary>🇩🇪 <b>Inhaltsverzeichnis</b> <em>Klicken zum Ein- / Ausklappen</em></summary>
     
-- [[LSS] AAO Alle Fahrzeugtypen](#lss-aao-all-vehicle-types)&nbsp;`2025.06.09+0005`&nbsp;&nbsp;[📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]
+- [[LSS] AAO Alle Fahrzeugtypen](#lss-aao-all-vehicle-types)&nbsp;`2025.06.12+0943`&nbsp;&nbsp;[📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2025.06.09+1706`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]
 - [[LSS] AAO leeren](#lss-empty-arr)&nbsp;`2025.06.09+0005`&nbsp;&nbsp;[📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]
@@ -244,7 +244,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |     Version     |                             Download                              |                   Links                   |
 |:---------------:|:-----------------------------------------------------------------:|:-----------------------------------------:|
-| 2025.06.09+0005 | [aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download] | [Forum][aaoAllVehicleTypes.user.js:forum] |
+| 2025.06.12+0943 | [aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download] | [Forum][aaoAllVehicleTypes.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO Alle Fahrzeugtypen</summary>
