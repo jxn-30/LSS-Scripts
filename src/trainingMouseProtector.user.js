@@ -336,13 +336,11 @@ const setRoomSelection = schools => {
     roomsSelection.dispatchEvent(new InputEvent('change'));
 };
 
-const getTrainingDuration = () =>
-    parseInt(
-        document
-            .querySelector(`label[for="education_${form.education.value}"]`)
-            ?.textContent?.trim()
-            .match(/(?<=\()\d+(?=[^)]*\)$)/u)?.[0] ?? '0'
-    );
+const eduField = form.elements['education_select'];
+const getTrainingDuration = () => {
+    const parts = (eduField.value || '').split(':');
+    return parseInt(parts[1] || '0', 10);
+};
 
 const confirmDialogId = 'jxn-training_mouse-protector_confirm-dialog';
 
@@ -665,8 +663,10 @@ new Promise((resolve, reject) => {
                         return;
                     }
                     const buildingId = building.getAttribute('building_id');
+                    const onlyNumber = parseInt(eduField.value.split(':')[1], 10);
+
                     fetch(
-                        `/buildings/${schoolBuildingId}/schoolingEducationCheck?education=${form.education.value}&only_building_id=${buildingId}`
+                        `/buildings/${schoolBuildingId}/schoolingEducationCheck?education=${onlyNumber}&only_building_id=${buildingId}`
                     )
                         .then(res =>
                             res.ok ? res.text() : Promise.reject(res)
@@ -681,7 +681,7 @@ new Promise((resolve, reject) => {
                 });
         const scrollEvent = () => {
             // if no education is selected, abort
-            if (!form.education.value) return;
+            if (!eduField.value) return;
             if (scrollTimeout) clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(loadVisibleEducatedCounters, 100);
         };
@@ -797,7 +797,7 @@ new Promise((resolve, reject) => {
                         $(body).html(html);
                         unsafeWindow.schooling_disable(
                             document
-                                .querySelector('input[name=education]:checked')
+                                .querySelector('input[name="education_select"]:checked')
                                 ?.getAttribute('education_key')
                         );
                     });
@@ -864,7 +864,7 @@ new Promise((resolve, reject) => {
                     allRooms.push([]);
                 }
                 firstNonEmpty.input.click();
-                form.education.value = firstNonEmpty.input.value;
+                eduField.value = firstNonEmpty.input.value;
                 return allRooms;
             }
 
@@ -917,7 +917,7 @@ new Promise((resolve, reject) => {
             );
             schoolUrl.searchParams.set('utf8', '✓');
             schoolUrl.searchParams.set('authenticity_token', authToken);
-            schoolUrl.searchParams.set('education', education);
+            schoolUrl.searchParams.set('education_select', education);
             schoolUrl.searchParams.set('alliance[duration]', duration);
             schoolUrl.searchParams.set('alliance[cost]', cost);
             schoolUrl.searchParams.set('building_rooms_use', rooms.toString());
@@ -1018,7 +1018,7 @@ new Promise((resolve, reject) => {
                 if (emptyRoomsInSchool) emptySchools++;
             }
 
-            const education = form.education.value;
+            const education = eduField.value;
             const duration = form['alliance[duration]'].value;
             const cost = form['alliance[cost]'].value;
 
