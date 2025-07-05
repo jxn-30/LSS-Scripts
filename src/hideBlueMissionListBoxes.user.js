@@ -2,7 +2,7 @@
 // @name            [LSS] Hide blue Missionlist boxes
 // @name:de         [LSS] Blaue Kästen in der Einsatzliste ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.07.05+2107
+// @version         2025.07.05+2111
 // @author          Jan (jxn_30)
 // @description     Hides the blue boxes in the missionlist (that inform about how to get missions)
 // @description:de  Blendet die blauen Kästen in der Einsatzliste aus (die über das Erhalten von Einsätzen informieren)
