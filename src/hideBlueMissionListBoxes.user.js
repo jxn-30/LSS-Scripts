@@ -2,7 +2,7 @@
 // @name            [LSS] Hide blue Missionlist boxes
 // @name:de         [LSS] Blaue Kästen in der Einsatzliste ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.03.04+1640
+// @version         2025.07.05+2107
 // @author          Jan (jxn_30)
 // @description     Hides the blue boxes in the missionlist (that inform about how to get missions)
 // @description:de  Blendet die blauen Kästen in der Einsatzliste aus (die über das Erhalten von Einsätzen informieren)
@@ -65,7 +65,10 @@
  */
 
 GM_addStyle(`
-#emergency_no, #ktw_no_transports, #alliance_no_mission
+#emergency_no, /* Notfalleinsätze */
+#alliance_no_mission, /* Verbandseinsätze */
+#patient_no_transports, /* Krankentransporte */
+#critical_no_transports /* Intensivverlegungen */
 {
     display: none !important;
 }`);
