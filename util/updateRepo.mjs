@@ -361,8 +361,11 @@ ${lang ? getTOC(lang) : getFullTOC()}
 const scriptOverviewMarkdown = sortedScriptsLocalized
     .get('')
     .map(script => {
-        const headerRow = ['Version'];
-        const contentRow = [script.version];
+        const headerRow = ['Source Code', 'Version'];
+        const contentRow = [
+            `[\`src/${script.filename}\`][${script.filename}:source]`,
+            script.version,
+        ];
         if (script.flagsAvailable.length) {
             headerRow.push('Available in');
             contentRow.push(
@@ -420,6 +423,7 @@ ${Object.values(script.locales)
     )
     .join('\n')}
 
+[${script.filename}:source]: ./blob/master/src/${script.filename}
 [${script.filename}:download]: ${script.url}
 ${script.forum ? `[${script.filename}:forum]: ${script.forum}` : ''}
 `.trim();
