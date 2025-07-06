@@ -2,7 +2,7 @@
 // @name            [LSS] Training Mouse Protector
 // @name:de         [LSS] Ausbildungs-Mausschoner
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.11.24+1351
+// @version         2025.07.07+0011
 // @author          Jan (jxn_30)
 // @description     Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
 // @description:de  Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
@@ -336,7 +336,7 @@ const setRoomSelection = schools => {
     roomsSelection.dispatchEvent(new InputEvent('change'));
 };
 
-const eduField = form.elements['education_select'];
+const eduField = form.elements.education_select;
 const getTrainingDuration = () => {
     const parts = (eduField.value || '').split(':');
     return parseInt(parts[1] || '0', 10);
@@ -663,7 +663,10 @@ new Promise((resolve, reject) => {
                         return;
                     }
                     const buildingId = building.getAttribute('building_id');
-                    const onlyNumber = parseInt(eduField.value.split(':')[1], 10);
+                    const onlyNumber = parseInt(
+                        eduField.value.split(':')[1],
+                        10
+                    );
 
                     fetch(
                         `/buildings/${schoolBuildingId}/schoolingEducationCheck?education=${onlyNumber}&only_building_id=${buildingId}`
@@ -797,7 +800,9 @@ new Promise((resolve, reject) => {
                         $(body).html(html);
                         unsafeWindow.schooling_disable(
                             document
-                                .querySelector('input[name="education_select"]:checked')
+                                .querySelector(
+                                    'input[name="education_select"]:checked'
+                                )
                                 ?.getAttribute('education_key')
                         );
                     });
