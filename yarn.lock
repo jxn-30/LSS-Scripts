@@ -31,12 +31,12 @@ __metadata:
   linkType: hard
 
 "@babel/types@npm:^7.28.0":
-  version: 7.28.0
-  resolution: "@babel/types@npm:7.28.0"
+  version: 7.28.1
+  resolution: "@babel/types@npm:7.28.1"
   dependencies:
     "@babel/helper-string-parser": "npm:^7.27.1"
     "@babel/helper-validator-identifier": "npm:^7.27.1"
-  checksum: 10c0/7ca8521bf5e2d2ed4db31176efaaf94463a6b7a4d16dcc60e34e963b3596c2ecadb85457bebed13a9ee9a5829ef5f515d05b55a991b6a8f3b835451843482e39
+  checksum: 10c0/5e99b346c11ee42ffb0cadc28159fe0b184d865a2cc1593df79b199772a534f6453969b4942aa5e4a55a3081863096e1cc3fc1c724d826926dc787cf229b845d
   languageName: node
   linkType: hard
 
@@ -679,8 +679,8 @@ __metadata:
   linkType: hard
 
 "file-set@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "file-set@npm:5.2.2"
+  version: 5.3.0
+  resolution: "file-set@npm:5.3.0"
   dependencies:
     array-back: "npm:^6.2.2"
     fast-glob: "npm:^3.3.2"
@@ -689,7 +689,7 @@ __metadata:
   peerDependenciesMeta:
     "@75lb/nature":
       optional: true
-  checksum: 10c0/e6cc401f3bfc17dfbad180c294197fc8d466718d01bc33cf972dba5e4cf636566a1abcd51dd88fd9a4cdf56000591c721908cf50401887aece16963d88e4754b
+  checksum: 10c0/d7b98e0f4552d3262b0eea92299e61cb67af2185ac944756ba55c30dbc4a9e8ddac837b003c3e49e11c430f498d2f3c8da612436f2de0d98df7a0d6f490bb490
   languageName: node
   linkType: hard
 
