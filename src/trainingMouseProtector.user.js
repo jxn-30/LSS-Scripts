@@ -195,7 +195,7 @@ const selectStyle = document.createElement('style');
 form?.append(selectStyle);
 
 const updateSelectStyle = () => {
-    roomsSelection.disabled = allowEmptyCheckbox.checked;
+    roomsSelection.disabled = false;
 
     const remainingRooms =
         parseInt(roomsSelection.lastElementChild.value) -
@@ -231,19 +231,6 @@ const updateSelectStyle = () => {
      }
      `.trim();
 };
-
-form?.querySelectorAll('label[for^="education_"]').forEach(label => {
-    /** @type {HTMLInputElement} */
-    const input = document.getElementById(label.htmlFor);
-    const select = document.createElement('select');
-    select.disabled = true;
-    select.classList.add(roomsSelectionClass);
-    label.after(select);
-
-    select.addEventListener('change', updateSelectStyle);
-
-    schoolingRoomSelections.add({ select, input });
-});
 
 roomsSelection.addEventListener('change', updateSelectStyle);
 allowEmptyCheckbox.addEventListener('change', updateSelectStyle);
@@ -861,27 +848,48 @@ new Promise((resolve, reject) => {
             /** @type {string[][]} */
             const allRooms = [];
 
-            const firstNonEmpty = Array.from(schoolingRoomSelections).find(
-                ({ select }) => select.value !== '0'
-            );
-            if (allowEmptyCheckbox.checked && firstNonEmpty) {
-                for (let i = 0; i < parseInt(firstNonEmpty.select.value); i++) {
+            if (allowEmptyCheckbox.checked) {
+                const roomCount = parseInt(roomsSelection.value || '0');
+                for (let i = 0; i < roomCount; i++) {
                     allRooms.push([]);
                 }
-                firstNonEmpty.input.click();
-                eduField.value = firstNonEmpty.input.value;
+
+                const firstSelected = Array.from(schoolingRoomSelections).find(
+                    ({ select }) => select.value !== '0'
+                );
+                if (firstSelected) {
+                    firstSelected.input.click();
+                    eduField.value = firstSelected.input.value;
+                }
+
+                return allRooms;
+            } else {
+                const firstNonEmpty = Array.from(schoolingRoomSelections).find(
+                    ({ select }) => select.value !== '0'
+                );
+                if (allowEmptyCheckbox.checked && firstNonEmpty) {
+                    for (
+                        let i = 0;
+                        i < parseInt(firstNonEmpty.select.value);
+                        i++
+                    ) {
+                        allRooms.push([]);
+                    }
+                    firstNonEmpty.input.click();
+                    eduField.value = firstNonEmpty.input.value;
+                    return allRooms;
+                }
+
+                /** @type {string[]} */
+                const allStaff = Array.from(
+                    document.querySelectorAll('.schooling_checkbox:checked')
+                ).map(checkbox => checkbox.value);
+                // slice staff into rooms of 10 peeps each
+                for (let i = 0; i < allStaff.length; i += 10) {
+                    allRooms.push(allStaff.slice(i, i + 10));
+                }
                 return allRooms;
             }
-
-            /** @type {string[]} */
-            const allStaff = Array.from(
-                document.querySelectorAll('.schooling_checkbox:checked')
-            ).map(checkbox => checkbox.value);
-            // slice staff into rooms of 10 peeps each
-            for (let i = 0; i < allStaff.length; i += 10) {
-                allRooms.push(allStaff.slice(i, i + 10));
-            }
-            return allRooms;
         };
         /**
          * @param {string[][]} rooms
@@ -971,16 +979,15 @@ new Promise((resolve, reject) => {
                 body: schoolingUrl.search.replace(/^\?/, ''),
                 method: 'POST',
                 mode: 'cors',
-            });
+            }).catch(e => console.error(e));
         };
 
         const reqOr100ms = req =>
-            Promise.all([req, new Promise(r => setTimeout(r, 1000))]).then(
-                ([res]) => res
-            );
-        // .catch(e => {
-        //    console.error(e);
-        // });
+            Promise.all([req, new Promise(r => setTimeout(r, 1000))])
+                .then(([res]) => res)
+                .catch(e => {
+                    console.error(e);
+                });
 
         const progressStyle = document.createElement('style');
         document.head.append(progressStyle);
@@ -1031,7 +1038,9 @@ new Promise((resolve, reject) => {
                 SETTING_SHOW_CONFIRM_DIALOG &&
                 !(await confirmDialog(
                     document
-                        .querySelector(`label:has([name="education"]:checked)`)
+                        .querySelector(
+                            `select[name="education_select"] option:checked`
+                        )
                         ?.textContent?.trim() ?? '',
                     totalStaff,
                     filledSchools,
@@ -1145,16 +1154,20 @@ new Promise((resolve, reject) => {
                     }
                     let roomNum = 0;
 
-                    for (const room of staff) {
-                        roomNum++;
-                        if (!room.length) continue;
-                        // setProgressStyle(room);
-                        await reqOr100ms(fillRoom(schoolingIds.shift(), room));
-                        progressBar.style.setProperty(
-                            'width',
-                            `${((progress + roomNum / staff.length) / totalSchools) * 100}%`
-                        );
-                    }
+                    await Promise.all(
+                        staff.map(async room => {
+                            if (!room.length) return;
+                            // setProgressStyle(room);
+                            await reqOr100ms(
+                                fillRoom(schoolingIds.shift(), room)
+                            );
+                            roomNum++;
+                            progressBar.style.setProperty(
+                                'width',
+                                `${((progress + roomNum / staff.length) / totalSchools) * 100}%`
+                            );
+                        })
+                    );
                     doProgress(schoolId, staffForSchool.length);
                 }
             } else {
