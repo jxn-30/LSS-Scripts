@@ -69,7 +69,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] AAO leeren
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
-- [[LSS] Faster ARR Availability Check](#lss-faster-arr-availability-check)&nbsp;`2024.08.21+1208`&nbsp; &nbsp; [📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]<br/>
+- [[LSS] Faster ARR Availability Check](#lss-faster-arr-availability-check)&nbsp;`2025.07.23+2135`&nbsp; &nbsp; [📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Schnellere AAO-Verfügbarkeitsprüfung
 - [[LSS] Forum: Bookmarks](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
@@ -223,7 +223,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Nav Tab Clicker](#lss-nav-tab-clicker)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;navTabClicker.user.js][navTabClicker.user.js:download]
 - [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp;&nbsp;[📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]
 - [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
-- [[LSS] Schnellere AAO-Verfügbarkeitsprüfung](#lss-faster-arr-availability-check)&nbsp;`2024.08.21+1208`&nbsp;&nbsp;[📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]
+- [[LSS] Schnellere AAO-Verfügbarkeitsprüfung](#lss-faster-arr-availability-check)&nbsp;`2025.07.23+2135`&nbsp;&nbsp;[📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
 - [[LSS] Split Dispatch Center to Ω dispatch centers](#lss-split-dispatch-center-to-dispatch-centers)&nbsp;`2025.01.26+2042`&nbsp;&nbsp;[📥️:&nbsp;splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download]
@@ -767,7 +767,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                                      Source Code                                      |     Version     |                                     Download                                      |                       Links                       |
 |:-------------------------------------------------------------------------------------:|:---------------:|:---------------------------------------------------------------------------------:|:-------------------------------------------------:|
-| [`src/fasterAAOAvailabilityCheck.user.js`][fasterAAOAvailabilityCheck.user.js:source] | 2024.08.21+1208 | [fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download] | [Forum][fasterAAOAvailabilityCheck.user.js:forum] |
+| [`src/fasterAAOAvailabilityCheck.user.js`][fasterAAOAvailabilityCheck.user.js:source] | 2025.07.23+2135 | [fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download] | [Forum][fasterAAOAvailabilityCheck.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Schnellere AAO-Verfügbarkeitsprüfung</summary>
