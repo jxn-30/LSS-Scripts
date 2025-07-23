@@ -76,7 +76,7 @@ unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // check availability of all AAOs without category and within current category
     document
         .querySelectorAll(
-            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active) .aao_btn'
+            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active) .aao_btn:not(:has(.label-success))'
         )
         .forEach(btn =>
             aao_available(Number(btn.getAttribute('aao_id')), calculateTime)
@@ -84,7 +84,7 @@ unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // check availability of all vehicle groups within current category
     document
         .querySelectorAll(
-            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active) .vehicle_group'
+            ':where(#mission_aao_no_category, #aao_without_category, .tab-pane.active) .vehicle_group:not(:has(.label-success))'
         )
         .forEach(btn =>
             vehicle_group_available(
