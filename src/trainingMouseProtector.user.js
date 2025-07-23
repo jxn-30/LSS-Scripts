@@ -1155,6 +1155,7 @@ new Promise((resolve, reject) => {
                     let roomNum = 0;
 
                     await Promise.all(
+                        // eslint-disable-next-line no-loop-func
                         staff.map(async room => {
                             if (!room.length) return;
                             // setProgressStyle(room);
