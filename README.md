@@ -75,7 +75,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.06.08+0035`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.07.23+1453`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -150,7 +150,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
 - [[LSS] Training Finder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp; &nbsp; [📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungsfinder
-- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2025.07.07+0011`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
+- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2025.07.23+1453`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Ausbildungs-Mausschoner
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp; &nbsp; [📥️:&nbsp;userId.user.js][userId.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
@@ -177,7 +177,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Asynchrone Gefangene](#lss-async-prisoners)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;asyncPrisoners.user.js][asyncPrisoners.user.js:download]
 - [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.08.27+2210`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
 - [[LSS] Auflistung eigener Fahrzeugtypen](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp;&nbsp;[📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]
-- [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2025.07.07+0011`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
+- [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2025.07.23+1453`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
 - [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
 - [[LSS] Baukostenrechner](#lss-building-cost-calculator)&nbsp;`2024.10.27+1108`&nbsp;&nbsp;[📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]
 - [[LSS] Blaue Kästen in der Einsatzliste ausblenden](#lss-hide-blue-missionlist-boxes)&nbsp;`2025.07.05+2111`&nbsp;&nbsp;[📥️:&nbsp;hideBlueMissionListBoxes.user.js][hideBlueMissionListBoxes.user.js:download]
@@ -201,7 +201,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.06.08+0035`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.07.23+1453`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -824,7 +824,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                           Source Code                           |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------------------------------------------------------:|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2025.06.08+0035 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2025.07.23+1453 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -1544,7 +1544,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                                  Source Code                                  |     Version     |                                 Download                                  |                     Links                     |
 |:-----------------------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
-| [`src/trainingMouseProtector.user.js`][trainingMouseProtector.user.js:source] | 2025.07.07+0011 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] | [Forum][trainingMouseProtector.user.js:forum] |
+| [`src/trainingMouseProtector.user.js`][trainingMouseProtector.user.js:source] | 2025.07.23+1453 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] | [Forum][trainingMouseProtector.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Ausbildungs-Mausschoner</summary>
