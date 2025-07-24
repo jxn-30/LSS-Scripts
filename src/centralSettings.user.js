@@ -919,6 +919,8 @@ const fillModal = body => {
         );
     const { label: elw1AutomaticLabel, checkbox: elw1AutomaticCheckbox } =
         createCheckbox('Pendelverkehr aktivieren?', 'elw1Automatic');
+    const { label: elw1OwnSettingsLabel, checkbox: elw1OwnSettingsCheckbox } =
+        createCheckbox('Allgemeine Einstellung?', 'elw1OwnSettings');
     const [elw1TaxSelect] = createSelect(
         'elw1Tax',
         'Maximale Verbandsabgabe',
@@ -946,6 +948,7 @@ const fillModal = body => {
             elw1OwnCheckbox,
             elw1ExtensionCheckbox,
             elw1AutomaticCheckbox,
+            elw1OwnSettingsCheckbox,
             elw1TaxSelect,
             elw1DistanceSelect,
             elw1FreeSelect,
@@ -960,6 +963,7 @@ const fillModal = body => {
             elw1OwnLabel,
             elw1ExtensionLabel,
             elw1AutomaticLabel,
+            elw1OwnSettingsLabel,
             elw1TaxSelect,
             elw1DistanceSelect,
             elw1FreeSelect,
@@ -994,6 +998,7 @@ const fillModal = body => {
                         elw1OwnCheckbox,
                         elw1ExtensionCheckbox,
                         elw1AutomaticCheckbox,
+                        elw1OwnSettingsCheckbox,
                     ]
                         .map(c => (c.checked ? '✅' : '❌'))
                         .join(''),
@@ -1004,6 +1009,9 @@ const fillModal = body => {
                     ...item,
                     updateFn: () =>
                         editVehicle(vehicle.id, {
+                            'vehicle[use_general_transport_settings]': Number(
+                                elw1OwnSettingsCheckbox.checked
+                            ),
                             'vehicle[hospital_automatic]': Number(
                                 elw1EnabledCheckbox.checked
                             ),
