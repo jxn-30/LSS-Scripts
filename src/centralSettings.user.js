@@ -2,7 +2,7 @@
 // @name            [LSS] Central Settings
 // @name:de         [LSS] Zentrale Einstellungen
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.06.03+1222
+// @version         2025.07.24+1707
 // @author          Jan (jxn_30)
 // @description     Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
 // @description:de  Hält Einstellungen für Gebäude (Zellen- und Bettenfreigabe) und Fahrzeuge (automatische Transporte und Zugfahrzeuge) an einem Ort.
@@ -1054,8 +1054,10 @@ const fillModal = body => {
     fustwDglEnabledCheckbox.checked = true;
     const { label: fustwDglOwnLabel, checkbox: fustwDglOwnCheckbox } =
         createCheckbox('Nur eigene Zellen?', 'fustwDglOwn');
-    const { label: fustwDglOwnSettingsLabel, checkbox: fustwDglOwnSettingsCheckbox } =
-        createCheckbox('Allgemeine Einstellung?', 'fustwDglOwnSettings');
+    const {
+        label: fustwDglOwnSettingsLabel,
+        checkbox: fustwDglOwnSettingsCheckbox,
+    } = createCheckbox('Allgemeine Einstellung?', 'fustwDglOwnSettings');
     const [fustwDglTaxSelect] = createSelect(
         'fustwDglTax',
         'Maximale Verbandsabgabe',
@@ -1133,7 +1135,11 @@ const fillModal = body => {
                     wrongList,
                     link,
                     ': ➡️ ',
-                    [fustwDglEnabledCheckbox, fustwDglOwnCheckbox, fustwDglOwnSettingsCheckbox]
+                    [
+                        fustwDglEnabledCheckbox,
+                        fustwDglOwnCheckbox,
+                        fustwDglOwnSettingsCheckbox,
+                    ]
                         .map(c => (c.checked ? '✅' : '❌'))
                         .join(''),
                     ` ${fustwDglTaxSelect.value}\xa0%; ${fustwDglDistanceSelect.value}\xa0km; ${fustwDglFreeSelect.value}\xa0Plätze; `,
@@ -1146,8 +1152,9 @@ const fillModal = body => {
                     ...item,
                     updateFn: () =>
                         editVehicle(vehicle.id, {
-                            'vehicle[use_general_transport_settings]':
-                                Number(fustwDglOwnSettingsCheckbox.checked),
+                            'vehicle[use_general_transport_settings]': Number(
+                                fustwDglOwnSettingsCheckbox.checked
+                            ),
                             'vehicle[vehicle_extra_information_attributes][police_cell_automatic]':
                                 Number(fustwDglEnabledCheckbox.checked),
                             'vehicle[vehicle_extra_information_attributes][police_cell_own]':
