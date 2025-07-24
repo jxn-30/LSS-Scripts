@@ -45,7 +45,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Baukostenrechner
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Calendar-Gift-Highlight
-- [[LSS] Central Settings](#lss-central-settings)&nbsp;`2025.07.24+1707`&nbsp; &nbsp; [📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]<br/>
+- [[LSS] Central Settings](#lss-central-settings)&nbsp;`2025.07.24+1718`&nbsp; &nbsp; [📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Zentrale Einstellungen
 - [[LSS] Chat Hider](#lss-chat-hider)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;chatHider.user.js][chatHider.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
@@ -234,7 +234,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2025.04.21+0032`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
 - [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
-- [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2025.07.24+1707`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
+- [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2025.07.24+1718`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
     
 </details>
 
@@ -541,7 +541,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                           Source Code                           |     Version     |                          Download                           |                 Links                  |
 |:---------------------------------------------------------------:|:---------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/centralSettings.user.js`][centralSettings.user.js:source] | 2025.07.24+1707 | [centralSettings.user.js][centralSettings.user.js:download] | [Forum][centralSettings.user.js:forum] |
+| [`src/centralSettings.user.js`][centralSettings.user.js:source] | 2025.07.24+1718 | [centralSettings.user.js][centralSettings.user.js:download] | [Forum][centralSettings.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Zentrale Einstellungen</summary>
