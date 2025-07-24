@@ -1054,6 +1054,8 @@ const fillModal = body => {
     fustwDglEnabledCheckbox.checked = true;
     const { label: fustwDglOwnLabel, checkbox: fustwDglOwnCheckbox } =
         createCheckbox('Nur eigene Zellen?', 'fustwDglOwn');
+    const { label: fustwDglOwnSettingsLabel, checkbox: fustwDglOwnSettingsCheckbox } =
+        createCheckbox('Allgemeine Einstellung?', 'fustwDglOwnSettings');
     const [fustwDglTaxSelect] = createSelect(
         'fustwDglTax',
         'Maximale Verbandsabgabe',
@@ -1086,6 +1088,7 @@ const fillModal = body => {
     fustwDglEnabledCheckbox.addEventListener('change', () => {
         [
             fustwDglOwnCheckbox,
+            fustwDglOwnSettingsCheckbox,
             fustwDglTaxSelect,
             fustwDglDistanceSelect,
             fustwDglFreeSelect,
@@ -1099,6 +1102,7 @@ const fillModal = body => {
         [
             fustwDglEnabledLabel,
             fustwDglOwnLabel,
+            fustwDglOwnSettingsLabel,
             fustwDglTaxSelect,
             fustwDglDistanceSelect,
             fustwDglFreeSelect,
@@ -1129,7 +1133,7 @@ const fillModal = body => {
                     wrongList,
                     link,
                     ': ➡️ ',
-                    [fustwDglEnabledCheckbox, fustwDglOwnCheckbox]
+                    [fustwDglEnabledCheckbox, fustwDglOwnCheckbox, fustwDglOwnSettingsCheckbox]
                         .map(c => (c.checked ? '✅' : '❌'))
                         .join(''),
                     ` ${fustwDglTaxSelect.value}\xa0%; ${fustwDglDistanceSelect.value}\xa0km; ${fustwDglFreeSelect.value}\xa0Plätze; `,
@@ -1142,6 +1146,8 @@ const fillModal = body => {
                     ...item,
                     updateFn: () =>
                         editVehicle(vehicle.id, {
+                            'vehicle[use_general_transport_settings]':
+                                Number(fustwDglOwnSettingsCheckbox.checked),
                             'vehicle[vehicle_extra_information_attributes][police_cell_automatic]':
                                 Number(fustwDglEnabledCheckbox.checked),
                             'vehicle[vehicle_extra_information_attributes][police_cell_own]':
