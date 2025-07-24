@@ -366,7 +366,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cache-point@npm:^3.0.0":
+"cache-point@npm:^3.0.1":
   version: 3.0.1
   resolution: "cache-point@npm:3.0.1"
   dependencies:
@@ -678,9 +678,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-set@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "file-set@npm:5.2.2"
+"file-set@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "file-set@npm:5.3.0"
   dependencies:
     array-back: "npm:^6.2.2"
     fast-glob: "npm:^3.3.2"
@@ -689,7 +689,7 @@ __metadata:
   peerDependenciesMeta:
     "@75lb/nature":
       optional: true
-  checksum: 10c0/e6cc401f3bfc17dfbad180c294197fc8d466718d01bc33cf972dba5e4cf636566a1abcd51dd88fd9a4cdf56000591c721908cf50401887aece16963d88e4754b
+  checksum: 10c0/d7b98e0f4552d3262b0eea92299e61cb67af2185ac944756ba55c30dbc4a9e8ddac837b003c3e49e11c430f498d2f3c8da612436f2de0d98df7a0d6f490bb490
   languageName: node
   linkType: hard
 
@@ -849,14 +849,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-api@npm:9.3.4":
-  version: 9.3.4
-  resolution: "jsdoc-api@npm:9.3.4"
+"jsdoc-api@npm:9.3.5":
+  version: 9.3.5
+  resolution: "jsdoc-api@npm:9.3.5"
   dependencies:
     array-back: "npm:^6.2.2"
-    cache-point: "npm:^3.0.0"
+    cache-point: "npm:^3.0.1"
     current-module-paths: "npm:^1.1.2"
-    file-set: "npm:^5.2.2"
+    file-set: "npm:^5.3.0"
     jsdoc: "npm:^4.0.4"
     object-to-spawn-args: "npm:^2.0.1"
     walk-back: "npm:^5.1.1"
@@ -865,7 +865,7 @@ __metadata:
   peerDependenciesMeta:
     "@75lb/nature":
       optional: true
-  checksum: 10c0/e9452c79c39c1bf0369927d29969db6e4dc9266e9f92192d572d78f25d2fef3ad52a4cc138943338ed68c88991266affcb86396a32fd8a9980ceb4811b7d126a
+  checksum: 10c0/c526b2fcbc3d454214a3a29f4041e1f22bf44f706b2e59bf46f18b47a8e40dfbb7509c775d31a1f59d9a9a687cfa59379c5d487ca7038d780e039693a257a016
   languageName: node
   linkType: hard
 
@@ -926,7 +926,7 @@ __metadata:
     eslint-config-prettier: "npm:10.1.8"
     eslint-plugin-userscripts: "npm:0.5.6"
     globals: "npm:16.3.0"
-    jsdoc-api: "npm:9.3.4"
+    jsdoc-api: "npm:9.3.5"
     prettier: "npm:3.6.2"
     simple-git: "npm:3.28.0"
     userscript-meta: "npm:1.0.1"
