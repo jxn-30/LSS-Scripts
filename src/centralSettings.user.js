@@ -2,7 +2,7 @@
 // @name            [LSS] Central Settings
 // @name:de         [LSS] Zentrale Einstellungen
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.06.03+1222
+// @version         2025.07.24+1718
 // @author          Jan (jxn_30)
 // @description     Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
 // @description:de  Hält Einstellungen für Gebäude (Zellen- und Bettenfreigabe) und Fahrzeuge (automatische Transporte und Zugfahrzeuge) an einem Ort.
@@ -919,6 +919,8 @@ const fillModal = body => {
         );
     const { label: elw1AutomaticLabel, checkbox: elw1AutomaticCheckbox } =
         createCheckbox('Pendelverkehr aktivieren?', 'elw1Automatic');
+    const { label: elw1OwnSettingsLabel, checkbox: elw1OwnSettingsCheckbox } =
+        createCheckbox('Allgemeine Einstellung?', 'elw1OwnSettings');
     const [elw1TaxSelect] = createSelect(
         'elw1Tax',
         'Maximale Verbandsabgabe',
@@ -946,6 +948,7 @@ const fillModal = body => {
             elw1OwnCheckbox,
             elw1ExtensionCheckbox,
             elw1AutomaticCheckbox,
+            elw1OwnSettingsCheckbox,
             elw1TaxSelect,
             elw1DistanceSelect,
             elw1FreeSelect,
@@ -960,6 +963,7 @@ const fillModal = body => {
             elw1OwnLabel,
             elw1ExtensionLabel,
             elw1AutomaticLabel,
+            elw1OwnSettingsLabel,
             elw1TaxSelect,
             elw1DistanceSelect,
             elw1FreeSelect,
@@ -994,6 +998,7 @@ const fillModal = body => {
                         elw1OwnCheckbox,
                         elw1ExtensionCheckbox,
                         elw1AutomaticCheckbox,
+                        elw1OwnSettingsCheckbox,
                     ]
                         .map(c => (c.checked ? '✅' : '❌'))
                         .join(''),
@@ -1004,6 +1009,9 @@ const fillModal = body => {
                     ...item,
                     updateFn: () =>
                         editVehicle(vehicle.id, {
+                            'vehicle[use_general_transport_settings]': Number(
+                                elw1OwnSettingsCheckbox.checked
+                            ),
                             'vehicle[hospital_automatic]': Number(
                                 elw1EnabledCheckbox.checked
                             ),
@@ -1054,6 +1062,10 @@ const fillModal = body => {
     fustwDglEnabledCheckbox.checked = true;
     const { label: fustwDglOwnLabel, checkbox: fustwDglOwnCheckbox } =
         createCheckbox('Nur eigene Zellen?', 'fustwDglOwn');
+    const {
+        label: fustwDglOwnSettingsLabel,
+        checkbox: fustwDglOwnSettingsCheckbox,
+    } = createCheckbox('Allgemeine Einstellung?', 'fustwDglOwnSettings');
     const [fustwDglTaxSelect] = createSelect(
         'fustwDglTax',
         'Maximale Verbandsabgabe',
@@ -1086,6 +1098,7 @@ const fillModal = body => {
     fustwDglEnabledCheckbox.addEventListener('change', () => {
         [
             fustwDglOwnCheckbox,
+            fustwDglOwnSettingsCheckbox,
             fustwDglTaxSelect,
             fustwDglDistanceSelect,
             fustwDglFreeSelect,
@@ -1099,6 +1112,7 @@ const fillModal = body => {
         [
             fustwDglEnabledLabel,
             fustwDglOwnLabel,
+            fustwDglOwnSettingsLabel,
             fustwDglTaxSelect,
             fustwDglDistanceSelect,
             fustwDglFreeSelect,
@@ -1129,7 +1143,11 @@ const fillModal = body => {
                     wrongList,
                     link,
                     ': ➡️ ',
-                    [fustwDglEnabledCheckbox, fustwDglOwnCheckbox]
+                    [
+                        fustwDglEnabledCheckbox,
+                        fustwDglOwnCheckbox,
+                        fustwDglOwnSettingsCheckbox,
+                    ]
                         .map(c => (c.checked ? '✅' : '❌'))
                         .join(''),
                     ` ${fustwDglTaxSelect.value}\xa0%; ${fustwDglDistanceSelect.value}\xa0km; ${fustwDglFreeSelect.value}\xa0Plätze; `,
@@ -1142,6 +1160,9 @@ const fillModal = body => {
                     ...item,
                     updateFn: () =>
                         editVehicle(vehicle.id, {
+                            'vehicle[use_general_transport_settings]': Number(
+                                fustwDglOwnSettingsCheckbox.checked
+                            ),
                             'vehicle[vehicle_extra_information_attributes][police_cell_automatic]':
                                 Number(fustwDglEnabledCheckbox.checked),
                             'vehicle[vehicle_extra_information_attributes][police_cell_own]':
