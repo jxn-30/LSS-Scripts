@@ -2,7 +2,7 @@
 // @name            [LSS] Own alliance mission count
 // @name:de         [LSS] Freigabenzähler
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.10.27+2323
+// @version         2025.07.27+2353
 // @author          Jan (jxn_30)
 // @description     Allows to add diverse counters to the top of the mission list
 // @description:de  Ermöglicht diverse Zähler oben in der Einsatzliste

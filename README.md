@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 73 userscripts*
+*Total: 74 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -127,6 +127,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Alte Einsatzgeschwindigkeit
 - [[LSS] OSM-MapScale](#lss-osm-mapscale)&nbsp;`2024.01.19+2109`&nbsp; &nbsp; [📥️:&nbsp;osmMapscale.user.js][osmMapscale.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] OSM-MapScale
+- [[LSS] Own alliance mission count](#lss-own-alliance-mission-count)&nbsp;`2025.07.27+2353`&nbsp; &nbsp; [📥️:&nbsp;ownAllianceMissionCount.user.js][ownAllianceMissionCount.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Freigabenzähler
 - [[LSS] Performance-Bugfix when loading missing vehicles](#lss-performance-bugfix-when-loading-missing-vehicles)&nbsp;`2025.03.19+2024`&nbsp; &nbsp; [📥️:&nbsp;loadingMissingVehiclesPerformanceFix.user.js][loadingMissingVehiclesPerformanceFix.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Nachlade-Performance-Bugfix
 - [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]<br/>
@@ -205,6 +207,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
+- [[LSS] Freigabenzähler](#lss-own-alliance-mission-count)&nbsp;`2025.07.27+2353`&nbsp;&nbsp;[📥️:&nbsp;ownAllianceMissionCount.user.js][ownAllianceMissionCount.user.js:download]
 - [[LSS] Gebäude-Direktausbau](#lss-direct-levels-for-buildings)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;buildingDirectLevels.user.js][buildingDirectLevels.user.js:download]
 - [[LSS] Gebäudeliste neu laden](#lss-reload-list-of-buildings)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;reloadBuildinglist.user.js][reloadBuildinglist.user.js:download]
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;gruesse.user.js][gruesse.user.js:download]
@@ -1316,6 +1319,25 @@ This list is auto-generated and contains all scripts that are already ported int
 [osmMapscale.user.js:source]: ./blob/master/src/osmMapscale.user.js
 [osmMapscale.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/osmMapscale.user.js
 [osmMapscale.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18908-script-osm-mapscale/
+
+### [LSS] Own alliance mission count
+
+> Allows to add diverse counters to the top of the mission list
+
+|                                   Source Code                                   |     Version     |     Alias / Old names     |                                  Download                                   |                     Links                      |
+|:-------------------------------------------------------------------------------:|:---------------:|:-------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------:|
+| [`src/ownAllianceMissionCount.user.js`][ownAllianceMissionCount.user.js:source] | 2025.07.27+2353 | `OwnAllianceMissionCount` | [ownAllianceMissionCount.user.js][ownAllianceMissionCount.user.js:download] | [Forum][ownAllianceMissionCount.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Freigabenzähler</summary>
+    Ermöglicht diverse Zähler oben in der Einsatzliste
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[ownAllianceMissionCount.user.js:source]: ./blob/master/src/ownAllianceMissionCount.user.js
+[ownAllianceMissionCount.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/ownAllianceMissionCount.user.js
+[ownAllianceMissionCount.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/16843-script-ownalliancemissioncount/
 
 ### [LSS] Performance-Bugfix when loading missing vehicles
 
