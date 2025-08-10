@@ -331,17 +331,61 @@ wrapper.classList.add('overview_outer', 'bigMapWindow');
 
 wrapper.append(panel);
 
-if (MODE === 'own' || bigMapMenu) {
+const widthClasses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
+    c => `col-sm-${c}`
+);
+
+const mapMode = () => {
+    wrapper.classList.remove(...widthClasses);
     wrapper.classList.add('col-sm-3');
+
     document
-        .querySelector('#buildings_outer')
-        ?.classList.replace('col-sm-4', 'col-sm-3');
+        .getElementById('buildings_outer')
+        ?.classList.remove(...widthClasses);
+    document.getElementById('buildings_outer')?.classList.add('col-sm-3');
+
+    document.getElementById('chat_outer')?.classList.remove(...widthClasses);
+    document.getElementById('chat_outer')?.classList.add('col-sm-3');
+
+    document.getElementById('radio_outer')?.classList.remove(...widthClasses);
+    document.getElementById('radio_outer')?.classList.add('col-sm-3');
+};
+
+const noMapMode = () => {
+    wrapper.classList.remove(...widthClasses);
+    wrapper.classList.add('col-sm-6');
+
     document
-        .querySelector('#chat_outer')
-        ?.classList.replace('col-sm-4', 'col-sm-3');
-    const radioWrapper = document.querySelector('#radio_outer');
-    radioWrapper?.classList.replace('col-sm-4', 'col-sm-3');
-    radioWrapper?.after(wrapper);
+        .getElementById('buildings_outer')
+        ?.classList.remove(...widthClasses);
+    document.getElementById('buildings_outer')?.classList.add('col-sm-4');
+
+    document.getElementById('chat_outer')?.classList.remove(...widthClasses);
+    document.getElementById('chat_outer')?.classList.add('col-sm-4');
+
+    document.getElementById('radio_outer')?.classList.remove(...widthClasses);
+    document.getElementById('radio_outer')?.classList.add('col-sm-6');
+};
+
+if (MODE === 'own' || bigMapMenu) {
+    if (MODE === 'own') {
+        if (window.mapViewExpanded) noMapMode();
+        else mapMode();
+
+        const expandOrig = unsafeWindow.mapExpand;
+        unsafeWindow.mapExpand = (...args) => {
+            noMapMode();
+            return expandOrig(...args);
+        };
+
+        const restoreOrig = unsafeWindow.mapViewRestore;
+        unsafeWindow.mapViewRestore = (...args) => {
+            mapMode();
+            return restoreOrig(...args);
+        };
+    }
+
+    document.getElementById('radio_outer')?.after(wrapper);
 
     if (bigMapMenu) {
         const menuBtn = document.createElement('img');
