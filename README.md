@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 74 userscripts*
+*Total: 75 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -107,6 +107,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Verkürzte Funk-Historie
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.25+1231`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Vehicles (DE)
+- [[LSS] Map Expander](#lss-map-expander)&nbsp;`2025.08.11+1716`&nbsp; &nbsp; [📥️:&nbsp;expandMap.user.js][expandMap.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Karte expandieren
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Mission Alarm Time
 - [[LSS] Mission Participation State on Map](#lss-mission-participation-state-on-map)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;missionParticipationStateOnMap.user.js][missionParticipationStateOnMap.user.js:download]<br/>
@@ -211,6 +213,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Gebäude-Direktausbau](#lss-direct-levels-for-buildings)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;buildingDirectLevels.user.js][buildingDirectLevels.user.js:download]
 - [[LSS] Gebäudeliste neu laden](#lss-reload-list-of-buildings)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;reloadBuildinglist.user.js][reloadBuildinglist.user.js:download]
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;gruesse.user.js][gruesse.user.js:download]
+- [[LSS] Karte expandieren](#lss-map-expander)&nbsp;`2025.08.11+1716`&nbsp;&nbsp;[📥️:&nbsp;expandMap.user.js][expandMap.user.js:download]
 - [[LSS] Kartensuche ausblenden](#lss-hide-map-search)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;hideMapSearch.user.js][hideMapSearch.user.js:download]
 - [[LSS] Kein Hintergrund bei Bewerbung](#lss-hide-application-background)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;hideApplicationBackground.user.js][hideApplicationBackground.user.js:download]
 - [[LSS] Kein Hintergrund vom Forum](#lss-hide-forum-background)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;hideForumBackground.user.js][hideForumBackground.user.js:download]
@@ -1129,6 +1132,25 @@ This list is auto-generated and contains all scripts that are already ported int
 [limitedVehicles.de.user.js:source]: ./blob/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
+
+### [LSS] Map Expander
+
+> Automagically expands the map to a new window on loading the page
+
+|                     Source Code                     |     Version     |                    Download                     |              Links               |
+|:---------------------------------------------------:|:---------------:|:-----------------------------------------------:|:--------------------------------:|
+| [`src/expandMap.user.js`][expandMap.user.js:source] | 2025.08.11+1716 | [expandMap.user.js][expandMap.user.js:download] | [Forum][expandMap.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Karte expandieren</summary>
+    Expandiert die Karte beim Laden des Spiels automagisch in ein neues Fenster
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[expandMap.user.js:source]: ./blob/master/src/expandMap.user.js
+[expandMap.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/expandMap.user.js
+[expandMap.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/28668-script-karte-expandieren-automagisch-die-karte-in-einem-neuen-fenster-%C3%B6ffnen/
 
 ### [LSS] Mission Alarm Time
 

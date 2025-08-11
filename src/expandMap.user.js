@@ -2,7 +2,7 @@
 // @name            [LSS] Map Expander
 // @name:de         [LSS] Karte expandieren
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2025.08.11+1716
 // @author          Jan (jxn_30)
 // @description     Automagically expands the map to a new window on loading the page
 // @description:de  Expandiert die Karte beim Laden des Spiels automagisch in ein neues Fenster
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/expandMap.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/expandMap.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/28668-script-karte-expandieren-automagisch-die-karte-in-einem-neuen-fenster-%C3%B6ffnen/
 // @match           https://www.operacni-stredisko.cz/
 // @match           https://policie.operacni-stredisko.cz/
 // @match           https://www.alarmcentral-spil.dk/
