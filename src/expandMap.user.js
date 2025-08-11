@@ -2,7 +2,7 @@
 // @name            [LSS] Map Expander
 // @name:de         [LSS] Karte expandieren
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.08.11+1716
+// @version         2025.08.11+2048
 // @author          Jan (jxn_30)
 // @description     Automagically expands the map to a new window on loading the page
 // @description:de  Expandiert die Karte beim Laden des Spiels automagisch in ein neues Fenster
