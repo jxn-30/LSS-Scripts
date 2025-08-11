@@ -62,4 +62,6 @@
  * @match /
  */
 
-window.mapExpand(!!document.getElementById('bigMapMenu'));
+/* global mapExpand */
+
+mapExpand(!!document.getElementById('bigMapMenu'));
