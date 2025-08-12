@@ -2,7 +2,7 @@
 // @name            [LSS] Training Mouse Protector
 // @name:de         [LSS] Ausbildungs-Mausschoner
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.07.23+1453
+// @version         2025.08.12+1338
 // @author          Jan (jxn_30)
 // @description     Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
 // @description:de  Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
@@ -324,10 +324,12 @@ const setRoomSelection = schools => {
 };
 
 const eduField = form.elements.education_select;
-const getTrainingDuration = () => {
-    const parts = (eduField.value || '').split(':');
-    return parseInt(parts[1] || '0', 10);
-};
+const getTrainingDuration = () =>
+    parseInt(
+        eduField
+            .querySelector('option:checked')
+            ?.textContent?.match(/(?<=\()\d+(?=\s*.*?\)$)/)[0]
+    );
 
 const confirmDialogId = 'jxn-training_mouse-protector_confirm-dialog';
 
