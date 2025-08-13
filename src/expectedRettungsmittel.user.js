@@ -2,7 +2,7 @@
 // @name            [LSS] Expected Patient resources
 // @name:de         [LSS] Erwartete Rettungsmittel
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2025.08.13+1552
 // @author          Jan (jxn_30)
 // @description     Calculates what resources for patients are expected to be required.
 // @description:de  Berechnet, wie viele Rettungsmittel für die Patienten vermutlich benötigt werden.

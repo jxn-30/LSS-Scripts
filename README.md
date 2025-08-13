@@ -10,7 +10,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 75 userscripts*
+*Total: 76 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -67,6 +67,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzdauer
 - [[LSS] Empty ARR](#lss-empty-arr)&nbsp;`2025.06.09+0005`&nbsp; &nbsp; [📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO leeren
+- [[LSS] Expected Patient resources](#lss-expected-patient-resources)&nbsp;`2025.08.13+1552`&nbsp; &nbsp; [📥️:&nbsp;expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Erwartete Rettungsmittel
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
 - [[LSS] Faster ARR Availability Check](#lss-faster-arr-availability-check)&nbsp;`2025.07.23+2135`&nbsp; &nbsp; [📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]<br/>
@@ -199,6 +201,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;einsatzdauer.user.js][einsatzdauer.user.js:download]
 - [[LSS] Einsatzliste neu laden](#lss-reload-missions-list)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;reloadMissions.user.js][reloadMissions.user.js:download]
 - [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
+- [[LSS] Erwartete Rettungsmittel](#lss-expected-patient-resources)&nbsp;`2025.08.13+1552`&nbsp;&nbsp;[📥️:&nbsp;expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download]
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
 - [[LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben](#lss-mission-vehicle-status-highlight)&nbsp;`2024.11.24+1328`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]
@@ -747,6 +750,24 @@ This list is auto-generated and contains all scripts that are already ported int
 [emptyAAO.user.js:source]: ./blob/master/src/emptyAAO.user.js
 [emptyAAO.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/emptyAAO.user.js
 [emptyAAO.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/26414-script-aao-leeren-alle-anforderungen-in-einer-aao-auf-0-setzen/
+
+### [LSS] Expected Patient resources
+
+> Calculates what resources for patients are expected to be required.
+
+|                                  Source Code                                  |     Version     |                                 Download                                  |
+|:-----------------------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------------------:|
+| [`src/expectedRettungsmittel.user.js`][expectedRettungsmittel.user.js:source] | 2025.08.13+1552 | [expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Erwartete Rettungsmittel</summary>
+    Berechnet, wie viele Rettungsmittel für die Patienten vermutlich benötigt werden.
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[expectedRettungsmittel.user.js:source]: ./blob/master/src/expectedRettungsmittel.user.js
+[expectedRettungsmittel.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/expectedRettungsmittel.user.js
 
 ### [LSS] extra alarm & close button
 
