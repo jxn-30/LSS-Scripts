@@ -328,7 +328,7 @@ const getTrainingDuration = () =>
     parseInt(
         eduField
             .querySelector('option:checked')
-            ?.textContent?.match(/(?<=\()\d+(?=\s*.*?\)$)/)[0]
+            ?.textContent?.match(/(?<=\()\d+(?=\s*.*?\)$)/)?.[0] ?? '0'
     );
 
 const confirmDialogId = 'jxn-training_mouse-protector_confirm-dialog';
