@@ -67,7 +67,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzdauer
 - [[LSS] Empty ARR](#lss-empty-arr)&nbsp;`2025.06.09+0005`&nbsp; &nbsp; [📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO leeren
-- [[LSS] Expected Patient resources](#lss-expected-patient-resources)&nbsp;`2025.08.13+1552`&nbsp; &nbsp; [📥️:&nbsp;expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download]<br/>
+- [[LSS] Expected Patient resources](#lss-expected-patient-resources)&nbsp;`2025.08.13+2133`&nbsp; &nbsp; [📥️:&nbsp;expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Erwartete Rettungsmittel
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] extra alarm & close button
@@ -201,7 +201,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Einsatzdauer](#lss-einsatzdauer)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;einsatzdauer.user.js][einsatzdauer.user.js:download]
 - [[LSS] Einsatzliste neu laden](#lss-reload-missions-list)&nbsp;`2024.03.02+1539`&nbsp;&nbsp;[📥️:&nbsp;reloadMissions.user.js][reloadMissions.user.js:download]
 - [[LSS] Einsatzsortierung](#lss-mission-sort)&nbsp;`2024.07.16+1139`&nbsp;&nbsp;[📥️:&nbsp;missionSort.user.js][missionSort.user.js:download]
-- [[LSS] Erwartete Rettungsmittel](#lss-expected-patient-resources)&nbsp;`2025.08.13+1552`&nbsp;&nbsp;[📥️:&nbsp;expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download]
+- [[LSS] Erwartete Rettungsmittel](#lss-expected-patient-resources)&nbsp;`2025.08.13+2133`&nbsp;&nbsp;[📥️:&nbsp;expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download]
 - [[LSS] extra alarm & close button](#lss-extra-alarm-close-button)&nbsp;`2024.01.17+1128`&nbsp;&nbsp;[📥️:&nbsp;extraAlarmAndCloseBtn.user.js][extraAlarmAndCloseBtn.user.js:download]
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
 - [[LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben](#lss-mission-vehicle-status-highlight)&nbsp;`2024.11.24+1328`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]
@@ -757,7 +757,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                                  Source Code                                  |     Version     |                                 Download                                  |
 |:-----------------------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------------------:|
-| [`src/expectedRettungsmittel.user.js`][expectedRettungsmittel.user.js:source] | 2025.08.13+1552 | [expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download] |
+| [`src/expectedRettungsmittel.user.js`][expectedRettungsmittel.user.js:source] | 2025.08.13+2133 | [expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Erwartete Rettungsmittel</summary>

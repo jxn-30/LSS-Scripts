@@ -2,7 +2,7 @@
 // @name            [LSS] Expected Patient resources
 // @name:de         [LSS] Erwartete Rettungsmittel
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.08.13+1552
+// @version         2025.08.13+2133
 // @author          Jan (jxn_30)
 // @description     Calculates what resources for patients are expected to be required.
 // @description:de  Berechnet, wie viele Rettungsmittel für die Patienten vermutlich benötigt werden.
@@ -50,7 +50,7 @@
 // @match           https://polis.larmcentralen-spelet.se/missions/*
 // @match           https://www.112-merkez.com/missions/*
 // @match           https://www.dyspetcher101-game.com/missions/*
-// @require         https://raw.githubusercontent.com/LUFSI/framework/refs/heads/main/src/sharedAPIStorage.js
+// @require         https://raw.githubusercontent.com/LUFSI/framework/refs/heads/main/src/SharedAPIStorage.js
 // @run-at          document-idle
 // ==/UserScript==
 
@@ -90,7 +90,10 @@ const estimateNeed = (patients, ...probabilities) => {
     );
 
     // We want to round up (to be sure), also results cannot be less than 0 and not larger than the amount of patients.
-    return Math.max(0, Math.min(patients, Math.ceil(mean + Z_SCORE * standardDeviation)));
+    return Math.max(
+        0,
+        Math.min(patients, Math.ceil(mean + Z_SCORE * standardDeviation))
+    );
 };
 
 const getMissionType = () => {
