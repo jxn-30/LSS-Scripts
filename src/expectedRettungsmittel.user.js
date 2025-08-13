@@ -60,7 +60,7 @@
  * @description Calculates what resources for patients are expected to be required.
  * @description:de Berechnet, wie viele Rettungsmittel für die Patienten vermutlich benötigt werden.
  * @match /missions/*
- * @lufsi sharedAPIStorage
+ * @lufsi SharedAPIStorage
  */
 
 const CONFIDENCE = 95; // Mit 95 % Wahrscheinlichkeit reichen die berechneten Rettungsmittel aus.
@@ -89,8 +89,8 @@ const estimateNeed = (patients, ...probabilities) => {
         patients * probability * (1 - probability)
     );
 
-    // We want to round up (to be sure), also results cannot be less than 0.
-    return Math.max(0, Math.ceil(mean + Z_SCORE * standardDeviation));
+    // We want to round up (to be sure), also results cannot be less than 0 and not larger than the amount of patients.
+    return Math.max(0, Math.min(patients, Math.ceil(mean + Z_SCORE * standardDeviation)));
 };
 
 const getMissionType = () => {
