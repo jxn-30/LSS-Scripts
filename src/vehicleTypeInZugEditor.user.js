@@ -2,7 +2,7 @@
 // @name            [LSS] Vehicle Type in Zug-Editor
 // @name:de         [LSS] Fahrzeugtypen im Zug-Editor
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.11.20+1358
+// @version         2025.11.20+1402
 // @author          Jan (jxn_30)
 // @description     Shows the type of each vehicle in the Zug-Editor
 // @description:de  Zeigt die Fahrzeugtypen im Zug-Editor an
