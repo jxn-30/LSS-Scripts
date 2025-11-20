@@ -162,7 +162,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeugmarkt: Anzahl anzeigen
-- [[LSS] Vehicle Type in Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1402`&nbsp; &nbsp; [📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]<br/>
+- [[LSS] Vehicle Type in Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1418`&nbsp; &nbsp; [📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeugtypen im Zug-Editor
 - [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2025.09.25+1206`&nbsp; &nbsp; [📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]<br/>
     
@@ -209,7 +209,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeuge im Einsatz farblich hervorheben](#lss-mission-vehicle-highlight)&nbsp;`2024.08.21+0156`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleHighlight.user.js][missionVehicleHighlight.user.js:download]
 - [[LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben](#lss-mission-vehicle-status-highlight)&nbsp;`2024.11.24+1328`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
-- [[LSS] Fahrzeugtypen im Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1402`&nbsp;&nbsp;[📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]
+- [[LSS] Fahrzeugtypen im Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1418`&nbsp;&nbsp;[📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
 - [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2025.11.19+1239`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
@@ -1671,7 +1671,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                                  Source Code                                  |     Version     |                                 Download                                  |
 |:-----------------------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------------------:|
-| [`src/vehicleTypeInZugEditor.user.js`][vehicleTypeInZugEditor.user.js:source] | 2025.11.20+1402 | [vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download] |
+| [`src/vehicleTypeInZugEditor.user.js`][vehicleTypeInZugEditor.user.js:source] | 2025.11.20+1418 | [vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download] |
 
 <details>
     <summary>🇩🇪 [LSS] Fahrzeugtypen im Zug-Editor</summary>
