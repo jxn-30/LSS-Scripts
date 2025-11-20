@@ -2,7 +2,7 @@
 // @name            [LSS] Vehicle Type in Zug-Editor
 // @name:de         [LSS] Fahrzeugtypen im Zug-Editor
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.11.20+1402
+// @version         2025.11.20+1410
 // @author          Jan (jxn_30)
 // @description     Shows the type of each vehicle in the Zug-Editor
 // @description:de  Zeigt die Fahrzeugtypen im Zug-Editor an
@@ -111,29 +111,32 @@ const loadingSpan = document.createElement('span');
         .querySelector('.vehicle_group_vehicles .col-sm-9')
         ?.prepend(loadingSpan))();
 
+const makeBadge = ({ id, vehicle_type, vehicle_type_caption }, types) => {
+    const span = document.createElement('span');
+    span.id = `vehicle_type_span_${id}`;
+    span.innerHTML = `&nbsp;<a class="btn btn-default btn-xs disabled">${types[vehicle_type].caption}</a>`;
+    if (vehicle_type_caption) {
+        span.innerHTML += `&nbsp;<a class="btn btn-default btn-xs disabled">${vehicle_type_caption}</a>`;
+    }
+    document.getElementById(span.id)?.remove();
+    document
+        .getElementById(`vehicle_group_vehicle_ids_${id}`)
+        ?.parentElement?.append(span);
+};
+
 const tryFetching = () => {
     loadingSpan.textContent = `⏳️`;
-
     window
         .fetch(`https://api.lss-manager.de/${I18n.locale}/vehicles`)
         .then(res => res.json())
         .then(types =>
-            sharedAPIStorage.getVehicles(undefined, vehicles =>
-                vehicles.forEach(
-                    ({ id, vehicle_type, vehicle_type_caption }) => {
-                        const span = document.createElement('span');
-                        span.id = `vehicle_type_span_${id}`;
-                        span.innerHTML = `&nbsp;<a class="btn btn-default btn-xs disabled">${types[vehicle_type].caption}</a>`;
-                        if (vehicle_type_caption) {
-                            span.innerHTML += `&nbsp;<a class="btn btn-default btn-xs disabled">${vehicle_type_caption}</a>`;
-                        }
-                        document.getElementById(span.id)?.remove();
-                        document
-                            .getElementById(`vehicle_group_vehicle_ids_${id}`)
-                            ?.parentElement?.append(span);
-                    }
+            sharedAPIStorage
+                .getVehicles(undefined, vehicles =>
+                    vehicles.forEach(vehicle => makeBadge(vehicle, types))
                 )
-            )
+                .then(vehicles =>
+                    vehicles.forEach(vehicle => makeBadge(vehicle, types))
+                )
         )
         .then(() => loadingSpan.remove())
         .catch(() => {
