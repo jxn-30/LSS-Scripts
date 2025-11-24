@@ -1,5 +1,12 @@
 # LSS-Scripts
 
+> [!NOTE]
+> **Disclaimer**
+>
+> 🇩🇪 Aktuell stehen meine Scripte primär zum Download zur Verfügung. Die Scripte werden nicht zwingend aktiv aktuell gehalten und ich gebe keinen aktiven Support mehr für diese.
+>
+> 🇬🇧 Currently, my scripts are primarily available for download. The scripts are not necessarily kept up to date, and I no longer provide active support for them.
+
 These are some scripts for Leitstellenspiel, Missionchief and the other versions.
 
 Alias-Versions (old links) are still working, but will be removed in the future.
