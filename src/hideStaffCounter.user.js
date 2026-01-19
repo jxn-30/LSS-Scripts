@@ -2,7 +2,7 @@
 // @name            [LSS] Hide Staff Counter
 // @name:de         [LSS] Personalzähler ausblenden
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2026.01.19+1523
 // @author          Jan (jxn_30)
 // @description     Hides the staff counter in missions.
 // @description:de  Blendet den Personalzähler in Einsätzen aus.
