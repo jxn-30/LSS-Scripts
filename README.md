@@ -72,7 +72,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Gebäude-Direktausbau
 - [[LSS] Einsatzdauer](#lss-einsatzdauer)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;einsatzdauer.user.js][einsatzdauer.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzdauer
-- [[LSS] Empty ARR](#lss-empty-arr)&nbsp;`2025.06.09+0005`&nbsp; &nbsp; [📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]<br/>
+- [[LSS] Empty ARR](#lss-empty-arr)&nbsp;`2026.02.12+1617`&nbsp; &nbsp; [📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO leeren
 - [[LSS] Expected Patient resources](#lss-expected-patient-resources)&nbsp;`2025.08.13+2133`&nbsp; &nbsp; [📥️:&nbsp;expectedRettungsmittel.user.js][expectedRettungsmittel.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Erwartete Rettungsmittel
@@ -183,7 +183,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] AAO Alle Fahrzeugtypen](#lss-aao-all-vehicle-types)&nbsp;`2025.06.12+0943`&nbsp;&nbsp;[📥️:&nbsp;aaoAllVehicleTypes.user.js][aaoAllVehicleTypes.user.js:download]
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2025.06.09+1706`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]
-- [[LSS] AAO leeren](#lss-empty-arr)&nbsp;`2025.06.09+0005`&nbsp;&nbsp;[📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]
+- [[LSS] AAO leeren](#lss-empty-arr)&nbsp;`2026.02.12+1617`&nbsp;&nbsp;[📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]
 - [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2025.01.22+0041`&nbsp;&nbsp;[📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]
 - [[LSS] AAO-Kategorien Export](#lss-arr-categories-export)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCategoriesExport.user.js][arrCategoriesExport.user.js:download]
 - [[LSS] AAO-Zähler](#lss-arr-counter)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCounter.user.js][arrCounter.user.js:download]
@@ -753,7 +753,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                    Source Code                    |     Version     |                   Download                    |              Links              |
 |:-------------------------------------------------:|:---------------:|:---------------------------------------------:|:-------------------------------:|
-| [`src/emptyAAO.user.js`][emptyAAO.user.js:source] | 2025.06.09+0005 | [emptyAAO.user.js][emptyAAO.user.js:download] | [Forum][emptyAAO.user.js:forum] |
+| [`src/emptyAAO.user.js`][emptyAAO.user.js:source] | 2026.02.12+1617 | [emptyAAO.user.js][emptyAAO.user.js:download] | [Forum][emptyAAO.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] AAO leeren</summary>
