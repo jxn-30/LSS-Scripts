@@ -2,7 +2,7 @@
 // @name            [LSS] Keep LSSM V.4 vehicle counter open
 // @name:de         [LSS] LSSM V.4 Fahrzeugzähler offen halten
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2026.03.23+1430
 // @author          Jan (jxn_30)
 // @description     Keeps the dropup that counts selected vehicles open
 // @description:de  Hält has Dropup, das die ausgewählten Fahrzeuge zählt, offen

@@ -17,7 +17,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 79 userscripts*
+*Total: 80 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -84,7 +84,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.02.12+1552`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.03.23+1430`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -109,6 +109,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Personalzähler ausblenden
 - [[LSS] Input max length](#lss-input-max-length)&nbsp;`2024.01.17+1128`&nbsp; &nbsp; [📥️:&nbsp;inputMaxLen.user.js][inputMaxLen.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Textlänge bei Eingabefeldern prüfen
+- [[LSS] Keep LSSM V.4 vehicle counter open](#lss-keep-lssm-v-4-vehicle-counter-open)&nbsp;`2026.03.23+1430`&nbsp; &nbsp; [📥️:&nbsp;keep-v4-svc-open.user.js][keep-v4-svc-open.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] LSSM V.4 Fahrzeugzähler offen halten
 - [[LSS] Leitstellenansicht Nav-toggle](#lss-leitstellenansicht-nav-toggle)&nbsp;`2023.06.03+1512`&nbsp; &nbsp; [📥️:&nbsp;navToggleLeitstellenansicht.user.js][navToggleLeitstellenansicht.user.js:download]<br/>
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp; &nbsp; [📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Lightbox-Lightbox
@@ -221,7 +223,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeugtypen im Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1418`&nbsp;&nbsp;[📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.02.12+1552`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.03.23+1430`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -239,6 +241,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Lightbox-Lightbox](#lss-lightbox-lightbox)&nbsp;`2023.11.11+1223`&nbsp;&nbsp;[📥️:&nbsp;lightboxLightbox.user.js][lightboxLightbox.user.js:download]
 - [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.10.16+1715`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.25+1231`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
+- [[LSS] LSSM V.4 Fahrzeugzähler offen halten](#lss-keep-lssm-v-4-vehicle-counter-open)&nbsp;`2026.03.23+1430`&nbsp;&nbsp;[📥️:&nbsp;keep-v4-svc-open.user.js][keep-v4-svc-open.user.js:download]
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
 - [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
 - [[LSS] Nachlade-Performance-Bugfix](#lss-performance-bugfix-when-loading-missing-vehicles)&nbsp;`2025.03.19+2024`&nbsp;&nbsp;[📥️:&nbsp;loadingMissingVehiclesPerformanceFix.user.js][loadingMissingVehiclesPerformanceFix.user.js:download]
@@ -866,7 +869,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                           Source Code                           |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------------------------------------------------------:|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.02.12+1552 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.03.23+1430 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -1097,6 +1100,24 @@ This list is auto-generated and contains all scripts that are already ported int
 [inputMaxLen.user.js:source]: ./blob/master/src/inputMaxLen.user.js
 [inputMaxLen.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/inputMaxLen.user.js
 [inputMaxLen.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/11756-erledigt-textl%C3%A4nge-in-begrenzten-eingabefeldern-schon-bei-eingabe-pr%C3%BCfen/
+
+### [LSS] Keep LSSM V.4 vehicle counter open
+
+> Keeps the dropup that counts selected vehicles open
+
+|                            Source Code                            |     Version     |                           Download                            |
+|:-----------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------:|
+| [`src/keep-v4-svc-open.user.js`][keep-v4-svc-open.user.js:source] | 2026.03.23+1430 | [keep-v4-svc-open.user.js][keep-v4-svc-open.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] LSSM V.4 Fahrzeugzähler offen halten</summary>
+    Hält has Dropup, das die ausgewählten Fahrzeuge zählt, offen
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[keep-v4-svc-open.user.js:source]: ./blob/master/src/keep-v4-svc-open.user.js
+[keep-v4-svc-open.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/keep-v4-svc-open.user.js
 
 ### [LSS] Leitstellenansicht Nav-toggle
 
