@@ -67,7 +67,7 @@
 /* global $, aao_available, vehicle_group_available */
 
 // update the aaoCheckAvailable to only check visible AAOs and vehicle groups.
-unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
+/*unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // mark all AAO-Tabs as unchecked
     document
         .querySelectorAll('.tab-pane[data-aaos-availability-checked]')
@@ -96,7 +96,7 @@ unsafeWindow.aaoCheckAvailable = (calculateTime = false) => {
     // mark current category as checked
     document.querySelector('.tab-pane.active').dataset.aaosAvailabilityChecked =
         '';
-};
+};*/
 
 // update the vehicle_group_available to be more performant
 unsafeWindow.vehicle_group_available = (id, calculateTime = false) => {
@@ -153,10 +153,10 @@ unsafeWindow.vehicle_group_available = (id, calculateTime = false) => {
     }
 };
 
-const CALCULATE_TIME = !!document.querySelector('.aao_timer');
+// const CALCULATE_TIME = !!document.querySelector('.aao_timer');
 
 // This is ugly jQuery, but we can't do it without unfortunately
-$('#aao-tabs').on('shown.bs.tab', () => {
+/*$('#aao-tabs').on('shown.bs.tab', () => {
     // check availability of all AAOs and vehicle groups within current category
     document
         .querySelectorAll(
@@ -178,4 +178,4 @@ $('#aao-tabs').on('shown.bs.tab', () => {
     // mark current category as checked
     document.querySelector('.tab-pane.active').dataset.aaosAvailabilityChecked =
         '';
-});
+});*/
