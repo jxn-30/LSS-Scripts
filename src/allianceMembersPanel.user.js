@@ -86,6 +86,12 @@ const HIGHLIGHT_FRIENDS = false;
  * false: friends will appear in the list as normal alliance members
  */
 const FRIENDS_ON_TOP = false;
+/**
+ * Show buttons for mentioning a user and whispering to a user?
+ * true: there will be buttons shown, similar to in the chat window
+ * false: no buttons for montioning and whispering are shown
+ */
+const CHAT_BTNS = true;
 
 /* global sharedAPIStorage */
 
@@ -194,6 +200,24 @@ const updateMembersList = () => {
                     }.png`;
                     iconCell.append(icon);
 
+                    if (CHAT_BTNS) {
+                        const btnsCell = row.insertCell();
+
+                        const mentionImg = document.createElement('img');
+                        mentionImg.classList.add('alliance_chat_copy_username');
+                        mentionImg.src = '/images/icons8-reply.svg';
+                        mentionImg.dataset.username = user.name;
+
+                        const whisperImg = document.createElement('img');
+                        whisperImg.classList.add(
+                            'alliance_chat_private_username'
+                        );
+                        whisperImg.src = '/images/icons8-privacy.svg';
+                        whisperImg.dataset.username = user.name;
+
+                        btnsCell.append(mentionImg, whisperImg);
+                    }
+
                     const nameCell = row.insertCell();
                     const link = document.createElement('a');
                     link.classList.add('lightbox-open');
@@ -291,6 +315,27 @@ const table = document.createElement('table');
 table.classList.add('table', 'table-striped', 'table-hover', 'table-condensed');
 const tableBody = document.createElement('tbody');
 tableBody.id = `${prefix}_table_body`;
+
+if (CHAT_BTNS) {
+    tableBody.addEventListener('click', e => {
+        const target = e.target;
+        if (!target) return;
+        const img = target.closest(
+            '.alliance_chat_copy_username, .alliance_chat_private_username'
+        );
+        if (!(img instanceof HTMLImageElement)) return;
+
+        if (img.classList.contains('alliance_chat_copy_username')) {
+            e.preventDefault();
+            document.getElementById('alliance_chat_message').value +=
+                `@${img.dataset.username} `;
+        } else if (img.classList.contains('alliance_chat_private_username')) {
+            e.preventDefault();
+            document.getElementById('alliance_chat_message').value =
+                `/w ${img.dataset.username}`;
+        }
+    });
+}
 
 table.append(tableBody);
 
