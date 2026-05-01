@@ -84,7 +84,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.03.23+1430`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.05.01+1040`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -223,7 +223,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeugtypen im Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1418`&nbsp;&nbsp;[📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.03.23+1430`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.05.01+1040`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -869,7 +869,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                           Source Code                           |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------------------------------------------------------:|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.03.23+1430 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.05.01+1040 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
