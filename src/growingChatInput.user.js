@@ -2,7 +2,7 @@
 // @name            [LSS] Growing Chat-Input
 // @name:de         [LSS] Wachsende Chat-Eingabe
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2026.05.07+2112
 // @author          Jan (jxn_30)
 // @description     Allows the Chat-Input to grow vertically for better readability
 // @description:de  Lässt das Chat-Eingabefeld horizontal wachsen, damit man die eigene Nachricht besser lesen kann.

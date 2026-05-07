@@ -17,7 +17,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 80 userscripts*
+*Total: 81 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -92,6 +92,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Old Like Style
 - [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Verbandsmitgliedergebäude nach Kreis
+- [[LSS] Growing Chat-Input](#lss-growing-chat-input)&nbsp;`2026.05.07+2112`&nbsp; &nbsp; [📥️:&nbsp;growingChatInput.user.js][growingChatInput.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Wachsende Chat-Eingabe
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;gruesse.user.js][gruesse.user.js:download]<br/>
 - [[LSS] Hide Application Background](#lss-hide-application-background)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;hideApplicationBackground.user.js][hideApplicationBackground.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Kein Hintergrund bei Bewerbung
@@ -261,6 +263,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
 - [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2025.09.25+1206`&nbsp;&nbsp;[📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
+- [[LSS] Wachsende Chat-Eingabe](#lss-growing-chat-input)&nbsp;`2026.05.07+2112`&nbsp;&nbsp;[📥️:&nbsp;growingChatInput.user.js][growingChatInput.user.js:download]
 - [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2025.07.24+1718`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
     
 </details>
@@ -937,6 +940,24 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [getAllianceMemberBuildingsByDECounty.user.js:source]: ./blob/master/src/getAllianceMemberBuildingsByDECounty.user.js
 [getAllianceMemberBuildingsByDECounty.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/getAllianceMemberBuildingsByDECounty.user.js
+
+### [LSS] Growing Chat-Input
+
+> Allows the Chat-Input to grow vertically for better readability
+
+|                            Source Code                            |     Version     |                           Download                            |
+|:-----------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------:|
+| [`src/growingChatInput.user.js`][growingChatInput.user.js:source] | 2026.05.07+2112 | [growingChatInput.user.js][growingChatInput.user.js:download] |
+
+<details>
+    <summary>🇩🇪 [LSS] Wachsende Chat-Eingabe</summary>
+    Lässt das Chat-Eingabefeld horizontal wachsen, damit man die eigene Nachricht besser lesen kann.
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[growingChatInput.user.js:source]: ./blob/master/src/growingChatInput.user.js
+[growingChatInput.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/growingChatInput.user.js
 
 ### [LSS] Grüße vom Jan
 
