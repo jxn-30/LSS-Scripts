@@ -2,7 +2,7 @@
 // @name            [LSS] SLF nicht als LF alarmieren
 // @name:de         [LSS] SLF nicht als LF alarmieren
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2026.05.15+1338
 // @author          Jan (jxn_30)
 // @description     Verhindert es, dass die LF-AAO auch SLFs auswählt.
 // @description:de  Verhindert es, dass die LF-AAO auch SLFs auswählt.
