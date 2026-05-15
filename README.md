@@ -158,7 +158,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzliste neu laden
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp; &nbsp; [📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Scroll-To-Top buttons
-- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.05.15+1338`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]<br/>
+- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.05.15+1342`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] SLF nicht als LF alarmieren
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] SoSi-Switch (DE)
@@ -255,7 +255,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
 - [[LSS] Schnellere AAO-Verfügbarkeitsprüfung](#lss-faster-arr-availability-check)&nbsp;`2026.03.31+1637`&nbsp;&nbsp;[📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
-- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.05.15+1338`&nbsp;&nbsp;[📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]
+- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.05.15+1342`&nbsp;&nbsp;[📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
 - [[LSS] Split Dispatch Center to Ω dispatch centers](#lss-split-dispatch-center-to-dispatch-centers)&nbsp;`2025.01.26+2042`&nbsp;&nbsp;[📥️:&nbsp;splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download]
 - [[LSS] Status-Zähler](#lss-status-count)&nbsp;`2025.04.05+1351`&nbsp;&nbsp;[📥️:&nbsp;statusCount.user.js][statusCount.user.js:download]
@@ -1577,9 +1577,9 @@ This list is auto-generated and contains all scripts that are already ported int
 
 > Verhindert es, dass die LF-AAO auch SLFs auswählt.
 
-|                   Source Code                   |     Version     | Available in |                  Download                   |
-|:-----------------------------------------------:|:---------------:|:------------:|:-------------------------------------------:|
-| [`src/SLFNoLF.user.js`][SLFNoLF.user.js:source] | 2026.05.15+1338 |    `🇩🇪`    | [SLFNoLF.user.js][SLFNoLF.user.js:download] |
+|                   Source Code                   |     Version     | Available in |                  Download                   |             Links              |
+|:-----------------------------------------------:|:---------------:|:------------:|:-------------------------------------------:|:------------------------------:|
+| [`src/SLFNoLF.user.js`][SLFNoLF.user.js:source] | 2026.05.15+1342 |    `🇩🇪`    | [SLFNoLF.user.js][SLFNoLF.user.js:download] | [Forum][SLFNoLF.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] SLF nicht als LF alarmieren</summary>
@@ -1590,6 +1590,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [SLFNoLF.user.js:source]: ./blob/master/src/SLFNoLF.user.js
 [SLFNoLF.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/SLFNoLF.user.js
+[SLFNoLF.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/29736-script-slf-nicht-als-lf-alarmieren/
 
 ### [LSS] SoSi-Switch (DE)
 

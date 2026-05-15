@@ -2,7 +2,7 @@
 // @name            [LSS] SLF nicht als LF alarmieren
 // @name:de         [LSS] SLF nicht als LF alarmieren
 // @namespace       https://jxn.lss-manager.de
-// @version         2026.05.15+1338
+// @version         2026.05.15+1342
 // @author          Jan (jxn_30)
 // @description     Verhindert es, dass die LF-AAO auch SLFs auswählt.
 // @description:de  Verhindert es, dass die LF-AAO auch SLFs auswählt.
@@ -11,7 +11,7 @@
 // @icon            https://www.leitstellenspiel.de/favicon.ico
 // @updateURL       https://github.com/jxn-30/LSS-Scripts/raw/master/src/SLFNoLF.user.js
 // @downloadURL     https://github.com/jxn-30/LSS-Scripts/raw/master/src/SLFNoLF.user.js
-// @supportURL      https://github.com/jxn-30/LSS-Scripts
+// @supportURL      https://forum.leitstellenspiel.de/index.php?thread/29736-script-slf-nicht-als-lf-alarmieren/
 // @match           https://www.leitstellenspiel.de/missions/*
 // @match           https://polizei.leitstellenspiel.de/missions/*
 // @run-at          document-idle
