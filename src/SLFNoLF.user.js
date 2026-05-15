@@ -23,7 +23,7 @@
  * @name:de SLF nicht als LF alarmieren
  * @description Verhindert es, dass die LF-AAO auch SLFs auswählt.
  * @description:de Verhindert es, dass die LF-AAO auch SLFs auswählt.
- * @//forum https://forum.leitstellenspiel.de/index.php?thread/25128-script-aao-alle-fahrzeugtypen-ausw%C3%A4hlbar/
+ * @forum https://forum.leitstellenspiel.de/index.php?thread/29736-script-slf-nicht-als-lf-alarmieren/
  * @locale de_DE
  * @match /missions/*
  * @grant unsafeWindow
