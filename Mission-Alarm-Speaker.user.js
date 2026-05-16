@@ -11,8 +11,8 @@
     'use strict';
 
     const useVehicleType = true;
-    const playGong = false;
-    const gongUrl = '';
+    const playGong = true;
+    const gongUrl = 'https://www.101soundboards.com/sounds/6939036-feuerwehr-gong';
     const renamedVariables = [
         ["-", " "], ["FuStW", "Funkstreife"]
     ];    
