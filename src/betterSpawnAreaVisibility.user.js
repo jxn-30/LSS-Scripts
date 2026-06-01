@@ -65,6 +65,14 @@
  */
 
 GM_addStyle(`
+    .leaflet-pane.leaflet-overlay-pane:has(.leaflet-interactive[stroke="orange"]) {
+        z-index: 601;
+    }
+
+    .leaflet-pane.leaflet-overlay-pane:has(.leaflet-interactive[stroke="orange"]) * {
+        pointer-events: none;
+    }
+
     .leaflet-pane.leaflet-overlay-pane .leaflet-interactive[stroke="orange"] {
         stroke-width: 5px;
         fill-opacity: 0.25;
