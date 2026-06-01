@@ -17,7 +17,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 83 userscripts*
+*Total: 84 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -45,6 +45,8 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] AAO-Zähler
 - [[LSS] Async Prisoners](#lss-async-prisoners)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;asyncPrisoners.user.js][asyncPrisoners.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Asynchrone Gefangene
+- [[LSS] Better SpawnArea visibility](#lss-better-spawnarea-visibility)&nbsp;`2026.06.01+1827`&nbsp; &nbsp; [📥️:&nbsp;betterSpawnAreaVisibility.user.js][betterSpawnAreaVisibility.user.js:download]<br/>
+&nbsp;&nbsp;🇩🇪: [LSS] Bessere Sichtbarkeit von Generierungsradien
 - [[LSS] Browsertitle](#lss-browsertitle)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;browsertitle.user.js][browsertitle.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Browsertitel
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;bsrAAOAboveVehiclelist.user.js][bsrAAOAboveVehiclelist.user.js:download]<br/>
@@ -205,6 +207,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2025.08.13+1655`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
 - [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
 - [[LSS] Baukostenrechner](#lss-building-cost-calculator)&nbsp;`2024.10.27+1108`&nbsp;&nbsp;[📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]
+- [[LSS] Bessere Sichtbarkeit von Generierungsradien](#lss-better-spawnarea-visibility)&nbsp;`2026.06.01+1827`&nbsp;&nbsp;[📥️:&nbsp;betterSpawnAreaVisibility.user.js][betterSpawnAreaVisibility.user.js:download]
 - [[LSS] Blaue Kästen in der Einsatzliste ausblenden](#lss-hide-blue-missionlist-boxes)&nbsp;`2025.07.05+2111`&nbsp;&nbsp;[📥️:&nbsp;hideBlueMissionListBoxes.user.js][hideBlueMissionListBoxes.user.js:download]
 - [[LSS] Browsertitel](#lss-browsertitle)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;browsertitle.user.js][browsertitle.user.js:download]
 - [[LSS] BSR AAO über Fahrzeugliste](#lss-bsr-aao-ber-fahrzeugliste)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;bsrAAOAboveVehiclelist.user.js][bsrAAOAboveVehiclelist.user.js:download]
@@ -500,6 +503,25 @@ This list is auto-generated and contains all scripts that are already ported int
 [asyncPrisoners.user.js:source]: ./blob/master/src/asyncPrisoners.user.js
 [asyncPrisoners.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/asyncPrisoners.user.js
 [asyncPrisoners.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18769-gefangene-ohne-seite-neu-zu-laden-abschicken/
+
+### [LSS] Better SpawnArea visibility
+
+> Improves visibility of the circles while setting mission spawn area
+
+|                                     Source Code                                     |     Version     |                                    Download                                     |                      Links                       |
+|:-----------------------------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------------------------:|:------------------------------------------------:|
+| [`src/betterSpawnAreaVisibility.user.js`][betterSpawnAreaVisibility.user.js:source] | 2026.06.01+1827 | [betterSpawnAreaVisibility.user.js][betterSpawnAreaVisibility.user.js:download] | [Forum][betterSpawnAreaVisibility.user.js:forum] |
+
+<details>
+    <summary>🇩🇪 [LSS] Bessere Sichtbarkeit von Generierungsradien</summary>
+    Verbessert die Sichtbarkeit der Kreise, wenn man einen Generierungsradius setzt
+</details>
+
+<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
+
+[betterSpawnAreaVisibility.user.js:source]: ./blob/master/src/betterSpawnAreaVisibility.user.js
+[betterSpawnAreaVisibility.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/betterSpawnAreaVisibility.user.js
+[betterSpawnAreaVisibility.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/29069-umgesetzt-radius-spezialeinsatzgebiet-seenotrettung-auf-1km-und-500m-erweitern
 
 ### [LSS] Browsertitle
 

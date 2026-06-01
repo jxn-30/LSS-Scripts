@@ -2,7 +2,7 @@
 // @name            [LSS] Better SpawnArea visibility
 // @name:de         [LSS] Bessere Sichtbarkeit von Generierungsradien
 // @namespace       https://jxn.lss-manager.de
-// @version         2024.02.14+1250
+// @version         2026.06.01+1827
 // @author          Jan (jxn_30)
 // @description     Improves visibility of the circles while setting mission spawn area
 // @description:de  Verbessert die Sichtbarkeit der Kreise, wenn man einen Generierungsradius setzt
