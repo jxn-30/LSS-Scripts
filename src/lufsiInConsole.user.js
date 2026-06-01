@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] LUFSI-Framework in console
 // @namespace    https://jxn.lss-manager.de
-// @version      2024.02.14+1250
+// @version      2026.06.01+1542
 // @author       Jan (jxn_30)
 // @description  Adds the tools of LUFSI-Framework to window object to allow using them in console
 // @homepage     https://github.com/jxn-30/LSS-Scripts

@@ -17,7 +17,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 82 userscripts*
+*Total: 83 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -122,6 +122,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Verkürzte Funk-Historie
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.25+1231`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Limited Vehicles (DE)
+- [[LSS] LUFSI-Framework in console](#lss-lufsi-framework-in-console)&nbsp;`2026.06.01+1542`&nbsp; &nbsp; [📥️:&nbsp;lufsiInConsole.user.js][lufsiInConsole.user.js:download]<br/>
 - [[LSS] Map Expander](#lss-map-expander)&nbsp;`2025.08.11+2048`&nbsp; &nbsp; [📥️:&nbsp;expandMap.user.js][expandMap.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Karte expandieren
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]<br/>
@@ -246,6 +247,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Limited Buildings (DE)](#lss-limited-buildings-de)&nbsp;`2024.10.16+1715`&nbsp;&nbsp;[📥️:&nbsp;limitedBuildings.de.user.js][limitedBuildings.de.user.js:download]
 - [[LSS] Limited Vehicles (DE)](#lss-limited-vehicles-de)&nbsp;`2024.10.25+1231`&nbsp;&nbsp;[📥️:&nbsp;limitedVehicles.de.user.js][limitedVehicles.de.user.js:download]
 - [[LSS] LSSM V.4 Fahrzeugzähler offen halten](#lss-keep-lssm-v-4-vehicle-counter-open)&nbsp;`2026.03.23+1430`&nbsp;&nbsp;[📥️:&nbsp;keep-v4-svc-open.user.js][keep-v4-svc-open.user.js:download]
+- [[LSS] LUFSI-Framework in console](#lss-lufsi-framework-in-console)&nbsp;`2026.06.01+1542`&nbsp;&nbsp;[📥️:&nbsp;lufsiInConsole.user.js][lufsiInConsole.user.js:download]
 - [[LSS] Mission Alarm Time](#lss-mission-alarm-time)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;missionAlarmTime.user.js][missionAlarmTime.user.js:download]
 - [[LSS] Mobiles Layout](#lss-mobile-layout)&nbsp;`2023.06.29+1345`&nbsp;&nbsp;[📥️:&nbsp;mobileLayout.user.js][mobileLayout.user.js:download]
 - [[LSS] Nachlade-Performance-Bugfix](#lss-performance-bugfix-when-loading-missing-vehicles)&nbsp;`2025.03.19+2024`&nbsp;&nbsp;[📥️:&nbsp;loadingMissingVehiclesPerformanceFix.user.js][loadingMissingVehiclesPerformanceFix.user.js:download]
@@ -1231,6 +1233,19 @@ This list is auto-generated and contains all scripts that are already ported int
 [limitedVehicles.de.user.js:source]: ./blob/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/limitedVehicles.de.user.js
 [limitedVehicles.de.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/24131-script-limitedvehicles-schnelle-%C3%BCbersicht-wie-viele-limitierte-fahrzeuge-man-hat/
+
+### [LSS] LUFSI-Framework in console
+
+> Adds the tools of LUFSI-Framework to window object to allow using them in console
+
+|                          Source Code                          |     Version     |                         Download                          |
+|:-------------------------------------------------------------:|:---------------:|:---------------------------------------------------------:|
+| [`src/lufsiInConsole.user.js`][lufsiInConsole.user.js:source] | 2026.06.01+1542 | [lufsiInConsole.user.js][lufsiInConsole.user.js:download] |
+
+
+
+[lufsiInConsole.user.js:source]: ./blob/master/src/lufsiInConsole.user.js
+[lufsiInConsole.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/lufsiInConsole.user.js
 
 ### [LSS] Map Expander
 
