@@ -794,7 +794,7 @@ const fillModal = body => {
 
     const createCellsLists = (buildings, tax, correctList, wrongList) => {
         const cellBuildings = buildings.filter(b =>
-            [6, 16, 19].includes(b.building_type)
+            [6, 16, 19, 29].includes(b.building_type)
         );
         cellBuildings.forEach(cellBuilding => {
             const link = createLink(
