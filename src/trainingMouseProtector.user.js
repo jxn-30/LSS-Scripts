@@ -2,7 +2,7 @@
 // @name            [LSS] Training Mouse Protector
 // @name:de         [LSS] Ausbildungs-Mausschoner
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.08.13+1655
+// @version         2026.06.04+1326
 // @author          Jan (jxn_30)
 // @description     Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
 // @description:de  Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
@@ -776,7 +776,7 @@ new Promise((resolve, reject) => {
         unsafeWindow.getSelectedEducation ??= () => {
             const selectedOption = $('#education_select');
             // todo update when changed to dropdown
-            let selectedValue = selectedOption.val();
+            const selectedValue = selectedOption.val();
             if (!selectedValue) {
                 return [];
             }
