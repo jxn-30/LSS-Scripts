@@ -614,6 +614,21 @@ new Promise((resolve, reject) => {
                 loadingImg.classList.add('ajaxLoader');
                 loadingImg.src = '/images/ajax-loader.gif';
 
+                new MutationObserver((list, observer) => {
+                    if (
+                        list.some(records =>
+                            Array.from(records.addedNodes).some(
+                                el => el instanceof HTMLTableElement
+                            )
+                        )
+                    ) {
+                        observer.disconnect();
+                        unsafeWindow.schooling_disable(
+                            unsafeWindow.getSelectedEducationKey()
+                        );
+                    }
+                }).observe(body, { childList: true });
+
                 headingRight.append(selectSpan, currentLabel);
                 heading.append(headingRight);
                 body.append(loadingImg);
@@ -758,6 +773,36 @@ new Promise((resolve, reject) => {
         unsafeWindow.update_costs =
             unsafeWindow.update_personnel_counter_navbar;
 
+        unsafeWindow.getSelectedEducation ??= () => {
+            const selectedOption = $('#education_select');
+            // todo update when changed to dropdown
+            let selectedValue = selectedOption.val();
+            if (!selectedValue) {
+                return [];
+            }
+            const valueSplit = selectedValue.split(':');
+            if (valueSplit.length !== 2) {
+                return [];
+            }
+            return valueSplit;
+        };
+
+        unsafeWindow.getSelectedEducationKey ??= () => {
+            const educationKey = getSelectedEducation();
+            if (educationKey.length !== 2) {
+                return undefined;
+            }
+            return educationKey[0];
+        };
+
+        unsafeWindow.getSelectedEducationValue ??= () => {
+            const educationKey = getSelectedEducation();
+            if (educationKey.length !== 2) {
+                return undefined;
+            }
+            return educationKey[1];
+        };
+
         // open a building when clicking on the heading
         document.addEventListener('click', e => {
             const target = e.target;
@@ -778,6 +823,7 @@ new Promise((resolve, reject) => {
             body.classList.toggle('hidden');
 
             // has not been loaded yet
+            // that may not be executed if other scripts do that too
             if (heading.matches(':has( + .panel-body .ajaxLoader)')) {
                 const href = heading.getAttribute('href');
                 unsafeWindow.loadedBuildings.push(href);
@@ -788,11 +834,7 @@ new Promise((resolve, reject) => {
                         // we need to use jQuery html here to execute the JS inside
                         $(body).html(html);
                         unsafeWindow.schooling_disable(
-                            document
-                                .querySelector(
-                                    'input[name="education_select"]:checked'
-                                )
-                                ?.getAttribute('education_key')
+                            unsafeWindow.getSelectedEducationKey()
                         );
                     });
             }
