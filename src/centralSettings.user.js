@@ -2,7 +2,7 @@
 // @name            [LSS] Central Settings
 // @name:de         [LSS] Zentrale Einstellungen
 // @namespace       https://jxn.lss-manager.de
-// @version         2025.07.24+1718
+// @version         2026.06.04+2040
 // @author          Jan (jxn_30)
 // @description     Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
 // @description:de  Hält Einstellungen für Gebäude (Zellen- und Bettenfreigabe) und Fahrzeuge (automatische Transporte und Zugfahrzeuge) an einem Ort.

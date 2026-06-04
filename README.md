@@ -54,7 +54,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Baukostenrechner
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Calendar-Gift-Highlight
-- [[LSS] Central Settings](#lss-central-settings)&nbsp;`2025.07.24+1718`&nbsp; &nbsp; [📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]<br/>
+- [[LSS] Central Settings](#lss-central-settings)&nbsp;`2026.06.04+2040`&nbsp; &nbsp; [📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Zentrale Einstellungen
 - [[LSS] Chat Hider](#lss-chat-hider)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;chatHider.user.js][chatHider.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
@@ -272,7 +272,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2025.09.25+1206`&nbsp;&nbsp;[📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
 - [[LSS] Wachsende Chat-Eingabe](#lss-growing-chat-input)&nbsp;`2026.05.07+2112`&nbsp;&nbsp;[📥️:&nbsp;growingChatInput.user.js][growingChatInput.user.js:download]
-- [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2025.07.24+1718`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
+- [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2026.06.04+2040`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
     
 </details>
 
@@ -598,7 +598,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                           Source Code                           |     Version     |                          Download                           |                 Links                  |
 |:---------------------------------------------------------------:|:---------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/centralSettings.user.js`][centralSettings.user.js:source] | 2025.07.24+1718 | [centralSettings.user.js][centralSettings.user.js:download] | [Forum][centralSettings.user.js:forum] |
+| [`src/centralSettings.user.js`][centralSettings.user.js:source] | 2026.06.04+2040 | [centralSettings.user.js][centralSettings.user.js:download] | [Forum][centralSettings.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Zentrale Einstellungen</summary>
