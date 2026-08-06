@@ -64,16 +64,19 @@
  * @grant unsafeWindow
  */
 
+/* global missions_data */
+
 const statusDescription = true; //Setzte diesen Wert auf false, um sowas wie "Auf Anfahrt", "Am Einsatzort" etc auszublenden.
 
 const radioMessageOrig = unsafeWindow.radioMessage;
 unsafeWindow.radioMessage = t => {
     if (t.mission_id !== 0) {
         t.fms_text =
-            (statusDescription ? `${t.fms_text} <br>` : '') +
-            document
-                .querySelector(`#mission_caption_${t.mission_id}`)
-                ?.textContent?.trim();
+            (statusDescription ? `${t.fms_text} <br>` : '') + missions_data ?
+                missions_data.get(t.mission_id).searchValue
+            :   document
+                    .querySelector(`#mission_caption_${t.mission_id}`)
+                    ?.textContent?.trim();
     }
     radioMessageOrig(t);
 };
