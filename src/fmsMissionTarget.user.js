@@ -73,7 +73,10 @@ unsafeWindow.radioMessage = t => {
     if (t.mission_id !== 0) {
         t.fms_text =
             (statusDescription ? `${t.fms_text} <br>` : '') + missions_data ?
-                missions_data.get(t.mission_id).searchValue
+                new DOMParser().parseFromString(
+                    missions_data.get(t.mission_id)?.caption_address,
+                    'text/html'
+                ).documentElement.textContent
             :   document
                     .querySelector(`#mission_caption_${t.mission_id}`)
                     ?.textContent?.trim();
