@@ -28,6 +28,6 @@
     ],
     "rangeStrategy": "pin",
     "reviewers": ["jxn-30"],
-    "schedule": ["before 3am every weekday"],
+    "schedule": ["before 3am on Tuesday"],
     "timezone": "Europe/Berlin"
 }
