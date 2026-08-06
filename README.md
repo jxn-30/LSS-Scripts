@@ -86,7 +86,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.07.28+1118`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.08.06+1132`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -151,7 +151,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Freigabenzähler
 - [[LSS] Performance-Bugfix when loading missing vehicles](#lss-performance-bugfix-when-loading-missing-vehicles)&nbsp;`2025.03.19+2024`&nbsp; &nbsp; [📥️:&nbsp;loadingMissingVehiclesPerformanceFix.user.js][loadingMissingVehiclesPerformanceFix.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Nachlade-Performance-Bugfix
-- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]<br/>
+- [[LSS] RadioMessage: Mission Target](#lss-radiomessage-mission-target)&nbsp;`2026.08.06+1132`&nbsp; &nbsp; [📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] FMS: Einsatzziel
 - [[LSS] Reload chat](#lss-reload-chat)&nbsp;`2023.01.29+1235`&nbsp; &nbsp; [📥️:&nbsp;reloadChat.user.js][reloadChat.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Chat neu laden
@@ -229,9 +229,9 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeuge nach Status im Einsatzfenster hervorheben](#lss-mission-vehicle-status-highlight)&nbsp;`2024.11.24+1328`&nbsp;&nbsp;[📥️:&nbsp;missionVehicleStatusHighlight.user.js][missionVehicleStatusHighlight.user.js:download]
 - [[LSS] Fahrzeugmarkt: Anzahl anzeigen](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp;&nbsp;[📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]
 - [[LSS] Fahrzeugtypen im Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1418`&nbsp;&nbsp;[📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]
-- [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
+- [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2026.08.06+1132`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.07.28+1118`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.08.06+1132`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -899,7 +899,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                           Source Code                           |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------------------------------------------------------:|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.07.28+1118 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.08.06+1132 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -1521,7 +1521,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                            Source Code                            |     Version     |                           Download                            |                  Links                  |
 |:-----------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------:|:---------------------------------------:|
-| [`src/fmsMissionTarget.user.js`][fmsMissionTarget.user.js:source] | 2023.06.03+1511 | [fmsMissionTarget.user.js][fmsMissionTarget.user.js:download] | [Forum][fmsMissionTarget.user.js:forum] |
+| [`src/fmsMissionTarget.user.js`][fmsMissionTarget.user.js:source] | 2026.08.06+1132 | [fmsMissionTarget.user.js][fmsMissionTarget.user.js:download] | [Forum][fmsMissionTarget.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] FMS: Einsatzziel</summary>
