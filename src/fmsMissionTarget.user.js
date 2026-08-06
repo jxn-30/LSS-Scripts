@@ -2,7 +2,7 @@
 // @name            [LSS] RadioMessage: Mission Target
 // @name:de         [LSS] FMS: Einsatzziel
 // @namespace       https://jxn.lss-manager.de
-// @version         2026.08.06+1132
+// @version         2026.08.06+1142
 // @author          Jan (jxn_30)
 // @description     Adds the current mission (including address) to the radio message
 // @description:de  Fügt den aktuellen Einsatz (inklusive Adresse) zur Funkmeldung hinzu
