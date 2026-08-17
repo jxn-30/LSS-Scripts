@@ -29,6 +29,12 @@
  * @grant unsafeWindow
  */
 
+// Die Fahrzeug IDs finden sich unter https://lnk.lss-manager.de/ids
+// Nicht vergessen, hinter einer Zahl auch ein Komma zu setzen.
+const Fahrzeuge = [
+    167, // SLF
+];
+
 const LFAttributes = [
     'fire',
     'lf_only',
@@ -39,11 +45,9 @@ const LFAttributes = [
 const removeLFAttributes = () =>
     document
         .querySelectorAll(
-            `.vehicle_checkbox[vehicle_type_id="167"]:is(${LFAttributes.map(attr => `[${CSS.escape(attr)}="1"]`).join(',')})`
+            `.vehicle_checkbox:is(${Fahrzeuge.map(id => `[vehicle_type_id="${id}"]`).join(',')}):is(${LFAttributes.map(attr => `[${CSS.escape(attr)}="1"]`).join(',')})`
         )
-        .forEach(slf =>
-            LFAttributes.forEach(attr => slf.removeAttribute(attr))
-        );
+        .forEach(v => LFAttributes.forEach(attr => v.removeAttribute(attr)));
 
 removeLFAttributes();
 
