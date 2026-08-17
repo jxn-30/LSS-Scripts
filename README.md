@@ -86,7 +86,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Lesezeichen
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Custom Navbar
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.08.06+1132`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.08.17+1216`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Dashboard
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
@@ -161,7 +161,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Einsatzliste neu laden
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp; &nbsp; [📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Scroll-To-Top buttons
-- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.05.15+1342`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]<br/>
+- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.08.17+1216`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] SLF nicht als LF alarmieren
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] SoSi-Switch (DE)
@@ -231,7 +231,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Fahrzeugtypen im Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1418`&nbsp;&nbsp;[📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]
 - [[LSS] FMS: Einsatzziel](#lss-radiomessage-mission-target)&nbsp;`2026.08.06+1142`&nbsp;&nbsp;[📥️:&nbsp;fmsMissionTarget.user.js][fmsMissionTarget.user.js:download]
 - [[LSS] Forum: Custom Navbar](#lss-forum-custom-navbar)&nbsp;`2024.07.10+1411`&nbsp;&nbsp;[📥️:&nbsp;forum/customNavbar.user.js][forum/customNavbar.user.js:download]
-- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.08.06+1132`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
+- [[LSS] Forum: Dashboard](#lss-forum-dashboard)&nbsp;`2026.08.17+1216`&nbsp;&nbsp;[📥️:&nbsp;forum/dashboard.user.js][forum/dashboard.user.js:download]
 - [[LSS] Forum: External Links](#lss-forum-external-links)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;forum/externalLink.user.js][forum/externalLink.user.js:download]
 - [[LSS] Forum: Lesezeichen](#lss-forum-bookmarks)&nbsp;`2025.02.19+1505`&nbsp;&nbsp;[📥️:&nbsp;forum/bookmarks.user.js][forum/bookmarks.user.js:download]
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;&nbsp;[📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]
@@ -260,7 +260,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] S5-Färber](#lss-status-5-colorize)&nbsp;`2022.12.03+0016`&nbsp;&nbsp;[📥️:&nbsp;fms5Colorizer.user.js][fms5Colorizer.user.js:download]
 - [[LSS] Schnellere AAO-Verfügbarkeitsprüfung](#lss-faster-arr-availability-check)&nbsp;`2026.03.31+1637`&nbsp;&nbsp;[📥️:&nbsp;fasterAAOAvailabilityCheck.user.js][fasterAAOAvailabilityCheck.user.js:download]
 - [[LSS] Scroll-To-Top buttons](#lss-scroll-to-top-buttons)&nbsp;`2025.01.05+1319`&nbsp;&nbsp;[📥️:&nbsp;scrollToTop.user.js][scrollToTop.user.js:download]
-- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.05.15+1342`&nbsp;&nbsp;[📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]
+- [[LSS] SLF nicht als LF alarmieren](#lss-slf-nicht-als-lf-alarmieren)&nbsp;`2026.08.17+1216`&nbsp;&nbsp;[📥️:&nbsp;SLFNoLF.user.js][SLFNoLF.user.js:download]
 - [[LSS] SoSi-Switch (DE)](#lss-sosi-switch-de)&nbsp;`2023.08.25+1029`&nbsp;&nbsp;[📥️:&nbsp;sonderrechteSwitch.de.user.js][sonderrechteSwitch.de.user.js:download]
 - [[LSS] Split Dispatch Center to Ω dispatch centers](#lss-split-dispatch-center-to-dispatch-centers)&nbsp;`2025.01.26+2042`&nbsp;&nbsp;[📥️:&nbsp;splitDispatchCenterToOmegaCenters.user.js][splitDispatchCenterToOmegaCenters.user.js:download]
 - [[LSS] Status-Zähler](#lss-status-count)&nbsp;`2025.04.05+1351`&nbsp;&nbsp;[📥️:&nbsp;statusCount.user.js][statusCount.user.js:download]
@@ -899,7 +899,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                           Source Code                           |     Version     | Available in |                          Download                           |                 Links                  |
 |:---------------------------------------------------------------:|:---------------:|:------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.08.06+1132 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
+| [`src/forum/dashboard.user.js`][forum/dashboard.user.js:source] | 2026.08.17+1216 |    `🇩🇪`    | [forum/dashboard.user.js][forum/dashboard.user.js:download] | [Forum][forum/dashboard.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] Forum: Dashboard</summary>
@@ -1616,7 +1616,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                   Source Code                   |     Version     | Available in |                  Download                   |             Links              |
 |:-----------------------------------------------:|:---------------:|:------------:|:-------------------------------------------:|:------------------------------:|
-| [`src/SLFNoLF.user.js`][SLFNoLF.user.js:source] | 2026.05.15+1342 |    `🇩🇪`    | [SLFNoLF.user.js][SLFNoLF.user.js:download] | [Forum][SLFNoLF.user.js:forum] |
+| [`src/SLFNoLF.user.js`][SLFNoLF.user.js:source] | 2026.08.17+1216 |    `🇩🇪`    | [SLFNoLF.user.js][SLFNoLF.user.js:download] | [Forum][SLFNoLF.user.js:forum] |
 
 <details>
     <summary>🇩🇪 [LSS] SLF nicht als LF alarmieren</summary>
