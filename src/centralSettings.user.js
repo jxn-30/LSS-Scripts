@@ -171,6 +171,21 @@ const reGetAllianceBuildings = () => {
     return getAllianceBuildings();
 };
 
+const getEquipment = () =>
+    cache.equipment ??
+    fetch('/api/equipments')
+        .then(res => res.json())
+        .then(
+            v =>
+                (cache.equipment = v.toSorted((a, b) =>
+                    a.caption.localeCompare(b.caption)
+                ))
+        );
+const reGetEquipment = () => {
+    delete cache.equipment;
+    return getEquipment();
+};
+
 let roleFlags;
 const getRoleFlags = () =>
     roleFlags ??
@@ -319,6 +334,23 @@ const editVehicle = async (id, data) =>
         Object.entries(data).forEach(([key, value]) =>
             formData.set(key, value.toString())
         );
+    });
+
+const assignEquipment = (equipment, vehicleId) =>
+    fetch(`/equipment_assign_to/${equipment.building_id}/${equipment.id}`, {
+        credentials: 'include',
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            utf8: '✓',
+            authenticity_token: document.querySelector(
+                'meta[name="csrf-token"]'
+            ).content,
+            assigned_vehicle_id: vehicleId.toString(),
+        }).toString(),
     });
 
 const editBuilding = async (id, { toggleShare, tax }) => {
@@ -629,7 +661,7 @@ const createTabPaneContent = (
     return [form, listWrapper];
 };
 
-const fillModal = body => {
+const fillModal = async body => {
     const tabList = document.createElement('ul');
     tabList.classList.add('nav', 'nav-tabs');
     tabList.setAttribute('role', 'tablist');
@@ -1397,6 +1429,122 @@ const fillModal = body => {
     );
     // endregion
 
+    // region Ausrüstung
+    const { tab: equipmentTab, tabPane: equipmentTabPane } = createTab(
+        'Ausrüstung',
+        'equipment'
+    );
+    tabList.append(equipmentTab);
+    tabContent.append(equipmentTabPane);
+
+    const equipmentTypes = new Map();
+    cache.equipment.forEach(e => {
+        equipmentTypes.set(e.equipment_type, {
+            caption: e.caption,
+            size: e.size,
+        });
+    });
+
+    const [equipmentSelect] = createSelect(
+        '',
+        'Ausrüstung auswählen',
+        equipmentTypes
+            .entries()
+            .map(([value, { caption }]) => ({
+                value,
+                text: caption,
+            }))
+            .toArray()
+    );
+
+    const [logisticSelect, logisticOption] = createSelect(
+        '',
+        'Logistik-Fahrzeug auswählen'
+    );
+
+    equipmentSelect.addEventListener('change', () => {
+        logisticSelect.replaceChildren(logisticOption);
+        if (equipmentSelect.value === '-1') return;
+        const size = equipmentTypes.get(equipmentSelect.value).size;
+        const possibleLogistics = Object.entries(vehicleTypes).filter(
+            ([_, v]) => v.equipmentCapacity >= size
+        );
+        possibleLogistics.forEach(([id, vType]) =>
+            logisticSelect.append(new Option(vType.caption, id.toString()))
+        );
+    });
+
+    const [equipmentForm, equipmentListWrapper] = createTabPaneContent(
+        'Korrektes Logistikfahrzeug: %s Ausrüstungen',
+        'Falsches Logistikfahrzeug: %s Ausrüstungen',
+        [equipmentSelect, logisticSelect],
+        (correctList, wrongList) => {
+            if (
+                equipmentSelect.value === '-1' ||
+                logisticSelect.value === '-1'
+            ) {
+                return equipmentListWrapper.after(selectionHint);
+            }
+            selectionHint.remove();
+
+            const equipment = cache.equipment.filter(
+                e => e.equipment_type === equipmentSelect.value
+            );
+
+            equipment.forEach(e => {
+                const logisticVehicle = cache.vehicles.find(
+                    v =>
+                        v.building_id === e.building_id &&
+                        v.vehicle_type === Number(logisticSelect.value)
+                );
+
+                const isCorrect = logisticVehicle?.id === e.assigned_vehicle_id;
+
+                const currentVehicle = cache.vehicles.find(
+                    v => v.id === e.assigned_vehicle_id
+                );
+                const equipmentBuilding = cache.buildings.find(
+                    b => b.id === e.building_id
+                );
+
+                const item = addListGroupItem(
+                    isCorrect ? correctList : wrongList,
+                    e.caption,
+                    ': ',
+                    ...(isCorrect ?
+                        []
+                    :   [currentVehicle?.caption ?? '', ' ➡️ ']),
+                    ...(logisticVehicle ?
+                        [logisticVehicle.caption]
+                    :   [
+                            '⚠️  Kein passendes Logistik-Fahrzeug gefunden!',
+                            createLink(
+                                `/buildings/${e.building_id}`,
+                                `(${equipmentBuilding.caption})`
+                            ),
+                        ])
+                );
+
+                if (!isCorrect) {
+                    currentWrongList.set(e.id, {
+                        ...item,
+                        updateFn: () => assignEquipment(e, logisticVehicle.id),
+                    });
+                }
+            });
+
+            console.log(currentWrongList);
+        },
+        [reGetEquipment]
+    );
+
+    equipmentTabPane.append(
+        equipmentForm,
+        'Diese Funktion ist zum halbwegs funktionieren gedacht, nicht zum gut aussehen. Bitte verzeihe, wenn Dinge hässlich oder unlogisch wirken oder nicht so richtig sinnvoll funktionieren :)',
+        equipmentListWrapper
+    );
+    // endregion
+
     const reloadHint = document.createElement('li');
     reloadHint.style.setProperty('padding', '10px');
     reloadHint.textContent =
@@ -1425,11 +1573,11 @@ triggerLi.addEventListener('click', event => {
         getVehicles(),
         getBuildings(),
         getAllianceBuildings(),
+        getEquipment(),
         getRoleFlags(),
-    ]).then(() => {
-        fillModal(body);
-        finish();
-    });
+    ])
+        .then(() => fillModal(body))
+        .then(() => finish());
 });
 
 // insert the trigger-element to the DOM
