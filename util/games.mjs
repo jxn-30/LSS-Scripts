@@ -56,8 +56,8 @@ export const GAMES = {
     },
     es_MX: {
         flag: '🇲🇽',
-        name: 'Centro-de-Mando.mx',
-        shortURL: 'centro-de-mando.mx',
+        name: 'Centro-de-Mando-Americas.com',
+        shortURL: 'centro-de-mando-americas.com',
     },
     fi_FI: {
         flag: '🇫🇮',
@@ -124,8 +124,8 @@ export const GAMES = {
     },
     ru_RU: {
         flag: '🇷🇺',
-        name: 'Dispetcher112.ru',
-        shortURL: 'dispetcher112.ru',
+        name: 'Dispetcher-112.com',
+        shortURL: 'dispetcher-112.com',
     },
     sk_SK: {
         flag: '🇸🇰',
