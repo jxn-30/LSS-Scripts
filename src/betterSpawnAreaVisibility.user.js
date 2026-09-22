@@ -25,7 +25,7 @@
 // @match           https://www.missionchief.com/buildings/*
 // @match           https://police.missionchief.com/buildings/*
 // @match           https://www.centro-de-mando.es/buildings/*
-// @match           https://www.centro-de-mando.mx/buildings/*
+// @match           https://www.centro-de-mando-americas.com/buildings/*
 // @match           https://www.hatakeskuspeli.com/buildings/*
 // @match           https://poliisi.hatakeskuspeli.com/buildings/*
 // @match           https://www.operateur112.fr/buildings/*
@@ -44,7 +44,7 @@
 // @match           https://www.jogo-operador112.com/buildings/*
 // @match           https://policia.jogo-operador112.com/buildings/*
 // @match           https://www.jocdispecerat112.com/buildings/*
-// @match           https://www.dispetcher112.ru/buildings/*
+// @match           https://www.dispetcher-112.com/buildings/*
 // @match           https://www.dispecerske-centrum.com/buildings/*
 // @match           https://www.larmcentralen-spelet.se/buildings/*
 // @match           https://polis.larmcentralen-spelet.se/buildings/*

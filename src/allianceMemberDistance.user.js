@@ -37,8 +37,8 @@
 // @match           https://police.missionchief.com/verband/mitglieder/*
 // @match           https://www.centro-de-mando.es/verband/mitglieder
 // @match           https://www.centro-de-mando.es/verband/mitglieder/*
-// @match           https://www.centro-de-mando.mx/verband/mitglieder
-// @match           https://www.centro-de-mando.mx/verband/mitglieder/*
+// @match           https://www.centro-de-mando-americas.com/verband/mitglieder
+// @match           https://www.centro-de-mando-americas.com/verband/mitglieder/*
 // @match           https://www.hatakeskuspeli.com/verband/mitglieder
 // @match           https://www.hatakeskuspeli.com/verband/mitglieder/*
 // @match           https://poliisi.hatakeskuspeli.com/verband/mitglieder
@@ -75,8 +75,8 @@
 // @match           https://policia.jogo-operador112.com/verband/mitglieder/*
 // @match           https://www.jocdispecerat112.com/verband/mitglieder
 // @match           https://www.jocdispecerat112.com/verband/mitglieder/*
-// @match           https://www.dispetcher112.ru/verband/mitglieder
-// @match           https://www.dispetcher112.ru/verband/mitglieder/*
+// @match           https://www.dispetcher-112.com/verband/mitglieder
+// @match           https://www.dispetcher-112.com/verband/mitglieder/*
 // @match           https://www.dispecerske-centrum.com/verband/mitglieder
 // @match           https://www.dispecerske-centrum.com/verband/mitglieder/*
 // @match           https://www.larmcentralen-spelet.se/verband/mitglieder

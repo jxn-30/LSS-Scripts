@@ -38,8 +38,8 @@
 // @match           https://police.missionchief.com/buildings/*/equipments/new
 // @match           https://www.centro-de-mando.es/buildings/*/vehicles/new
 // @match           https://www.centro-de-mando.es/buildings/*/equipments/new
-// @match           https://www.centro-de-mando.mx/buildings/*/vehicles/new
-// @match           https://www.centro-de-mando.mx/buildings/*/equipments/new
+// @match           https://www.centro-de-mando-americas.com/buildings/*/vehicles/new
+// @match           https://www.centro-de-mando-americas.com/buildings/*/equipments/new
 // @match           https://www.hatakeskuspeli.com/buildings/*/vehicles/new
 // @match           https://www.hatakeskuspeli.com/buildings/*/equipments/new
 // @match           https://poliisi.hatakeskuspeli.com/buildings/*/vehicles/new
@@ -76,8 +76,8 @@
 // @match           https://policia.jogo-operador112.com/buildings/*/equipments/new
 // @match           https://www.jocdispecerat112.com/buildings/*/vehicles/new
 // @match           https://www.jocdispecerat112.com/buildings/*/equipments/new
-// @match           https://www.dispetcher112.ru/buildings/*/vehicles/new
-// @match           https://www.dispetcher112.ru/buildings/*/equipments/new
+// @match           https://www.dispetcher-112.com/buildings/*/vehicles/new
+// @match           https://www.dispetcher-112.com/buildings/*/equipments/new
 // @match           https://www.dispecerske-centrum.com/buildings/*/vehicles/new
 // @match           https://www.dispecerske-centrum.com/buildings/*/equipments/new
 // @match           https://www.larmcentralen-spelet.se/buildings/*/vehicles/new

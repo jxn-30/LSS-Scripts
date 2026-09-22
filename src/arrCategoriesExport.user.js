@@ -25,7 +25,7 @@
 // @match           https://www.missionchief.com/aao_categorys
 // @match           https://police.missionchief.com/aao_categorys
 // @match           https://www.centro-de-mando.es/aao_categorys
-// @match           https://www.centro-de-mando.mx/aao_categorys
+// @match           https://www.centro-de-mando-americas.com/aao_categorys
 // @match           https://www.hatakeskuspeli.com/aao_categorys
 // @match           https://poliisi.hatakeskuspeli.com/aao_categorys
 // @match           https://www.operateur112.fr/aao_categorys
@@ -44,7 +44,7 @@
 // @match           https://www.jogo-operador112.com/aao_categorys
 // @match           https://policia.jogo-operador112.com/aao_categorys
 // @match           https://www.jocdispecerat112.com/aao_categorys
-// @match           https://www.dispetcher112.ru/aao_categorys
+// @match           https://www.dispetcher-112.com/aao_categorys
 // @match           https://www.dispecerske-centrum.com/aao_categorys
 // @match           https://www.larmcentralen-spelet.se/aao_categorys
 // @match           https://polis.larmcentralen-spelet.se/aao_categorys

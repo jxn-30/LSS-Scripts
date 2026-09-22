@@ -24,7 +24,7 @@
 // @match           https://www.missionchief.com/missions/*
 // @match           https://police.missionchief.com/missions/*
 // @match           https://www.centro-de-mando.es/missions/*
-// @match           https://www.centro-de-mando.mx/missions/*
+// @match           https://www.centro-de-mando-americas.com/missions/*
 // @match           https://www.hatakeskuspeli.com/missions/*
 // @match           https://poliisi.hatakeskuspeli.com/missions/*
 // @match           https://www.operateur112.fr/missions/*
@@ -43,7 +43,7 @@
 // @match           https://www.jogo-operador112.com/missions/*
 // @match           https://policia.jogo-operador112.com/missions/*
 // @match           https://www.jocdispecerat112.com/missions/*
-// @match           https://www.dispetcher112.ru/missions/*
+// @match           https://www.dispetcher-112.com/missions/*
 // @match           https://www.dispecerske-centrum.com/missions/*
 // @match           https://www.larmcentralen-spelet.se/missions/*
 // @match           https://polis.larmcentralen-spelet.se/missions/*

@@ -36,8 +36,8 @@
 // @match        https://police.missionchief.com/?mapview=true
 // @match        https://www.centro-de-mando.es/
 // @match        https://www.centro-de-mando.es/?mapview=true
-// @match        https://www.centro-de-mando.mx/
-// @match        https://www.centro-de-mando.mx/?mapview=true
+// @match        https://www.centro-de-mando-americas.com/
+// @match        https://www.centro-de-mando-americas.com/?mapview=true
 // @match        https://www.hatakeskuspeli.com/
 // @match        https://www.hatakeskuspeli.com/?mapview=true
 // @match        https://poliisi.hatakeskuspeli.com/
@@ -74,8 +74,8 @@
 // @match        https://policia.jogo-operador112.com/?mapview=true
 // @match        https://www.jocdispecerat112.com/
 // @match        https://www.jocdispecerat112.com/?mapview=true
-// @match        https://www.dispetcher112.ru/
-// @match        https://www.dispetcher112.ru/?mapview=true
+// @match        https://www.dispetcher-112.com/
+// @match        https://www.dispetcher-112.com/?mapview=true
 // @match        https://www.dispecerske-centrum.com/
 // @match        https://www.dispecerske-centrum.com/?mapview=true
 // @match        https://www.larmcentralen-spelet.se/

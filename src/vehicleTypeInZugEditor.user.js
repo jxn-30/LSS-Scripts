@@ -38,8 +38,8 @@
 // @match           https://police.missionchief.com/vehicle_groups/new
 // @match           https://www.centro-de-mando.es/vehicle_groups/*/edit
 // @match           https://www.centro-de-mando.es/vehicle_groups/new
-// @match           https://www.centro-de-mando.mx/vehicle_groups/*/edit
-// @match           https://www.centro-de-mando.mx/vehicle_groups/new
+// @match           https://www.centro-de-mando-americas.com/vehicle_groups/*/edit
+// @match           https://www.centro-de-mando-americas.com/vehicle_groups/new
 // @match           https://www.hatakeskuspeli.com/vehicle_groups/*/edit
 // @match           https://www.hatakeskuspeli.com/vehicle_groups/new
 // @match           https://poliisi.hatakeskuspeli.com/vehicle_groups/*/edit
@@ -76,8 +76,8 @@
 // @match           https://policia.jogo-operador112.com/vehicle_groups/new
 // @match           https://www.jocdispecerat112.com/vehicle_groups/*/edit
 // @match           https://www.jocdispecerat112.com/vehicle_groups/new
-// @match           https://www.dispetcher112.ru/vehicle_groups/*/edit
-// @match           https://www.dispetcher112.ru/vehicle_groups/new
+// @match           https://www.dispetcher-112.com/vehicle_groups/*/edit
+// @match           https://www.dispetcher-112.com/vehicle_groups/new
 // @match           https://www.dispecerske-centrum.com/vehicle_groups/*/edit
 // @match           https://www.dispecerske-centrum.com/vehicle_groups/new
 // @match           https://www.larmcentralen-spelet.se/vehicle_groups/*/edit

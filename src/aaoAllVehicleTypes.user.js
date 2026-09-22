@@ -51,9 +51,9 @@
 // @match           https://www.centro-de-mando.es/aaos/new
 // @match           https://www.centro-de-mando.es/aaos/*/edit
 // @match           https://www.centro-de-mando.es/aaos/*/copy
-// @match           https://www.centro-de-mando.mx/aaos/new
-// @match           https://www.centro-de-mando.mx/aaos/*/edit
-// @match           https://www.centro-de-mando.mx/aaos/*/copy
+// @match           https://www.centro-de-mando-americas.com/aaos/new
+// @match           https://www.centro-de-mando-americas.com/aaos/*/edit
+// @match           https://www.centro-de-mando-americas.com/aaos/*/copy
 // @match           https://www.hatakeskuspeli.com/aaos/new
 // @match           https://www.hatakeskuspeli.com/aaos/*/edit
 // @match           https://www.hatakeskuspeli.com/aaos/*/copy
@@ -108,9 +108,9 @@
 // @match           https://www.jocdispecerat112.com/aaos/new
 // @match           https://www.jocdispecerat112.com/aaos/*/edit
 // @match           https://www.jocdispecerat112.com/aaos/*/copy
-// @match           https://www.dispetcher112.ru/aaos/new
-// @match           https://www.dispetcher112.ru/aaos/*/edit
-// @match           https://www.dispetcher112.ru/aaos/*/copy
+// @match           https://www.dispetcher-112.com/aaos/new
+// @match           https://www.dispetcher-112.com/aaos/*/edit
+// @match           https://www.dispetcher-112.com/aaos/*/copy
 // @match           https://www.dispecerske-centrum.com/aaos/new
 // @match           https://www.dispecerske-centrum.com/aaos/*/edit
 // @match           https://www.dispecerske-centrum.com/aaos/*/copy

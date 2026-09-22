@@ -38,8 +38,8 @@
 // @match           https://police.missionchief.com/aaos/*/copy
 // @match           https://www.centro-de-mando.es/aaos/*/edit
 // @match           https://www.centro-de-mando.es/aaos/*/copy
-// @match           https://www.centro-de-mando.mx/aaos/*/edit
-// @match           https://www.centro-de-mando.mx/aaos/*/copy
+// @match           https://www.centro-de-mando-americas.com/aaos/*/edit
+// @match           https://www.centro-de-mando-americas.com/aaos/*/copy
 // @match           https://www.hatakeskuspeli.com/aaos/*/edit
 // @match           https://www.hatakeskuspeli.com/aaos/*/copy
 // @match           https://poliisi.hatakeskuspeli.com/aaos/*/edit
@@ -76,8 +76,8 @@
 // @match           https://policia.jogo-operador112.com/aaos/*/copy
 // @match           https://www.jocdispecerat112.com/aaos/*/edit
 // @match           https://www.jocdispecerat112.com/aaos/*/copy
-// @match           https://www.dispetcher112.ru/aaos/*/edit
-// @match           https://www.dispetcher112.ru/aaos/*/copy
+// @match           https://www.dispetcher-112.com/aaos/*/edit
+// @match           https://www.dispetcher-112.com/aaos/*/copy
 // @match           https://www.dispecerske-centrum.com/aaos/*/edit
 // @match           https://www.dispecerske-centrum.com/aaos/*/copy
 // @match           https://www.larmcentralen-spelet.se/aaos/*/edit

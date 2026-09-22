@@ -37,8 +37,8 @@
 // @match           https://police.missionchief.com/toplist?page=*
 // @match           https://www.centro-de-mando.es/toplist
 // @match           https://www.centro-de-mando.es/toplist?page=*
-// @match           https://www.centro-de-mando.mx/toplist
-// @match           https://www.centro-de-mando.mx/toplist?page=*
+// @match           https://www.centro-de-mando-americas.com/toplist
+// @match           https://www.centro-de-mando-americas.com/toplist?page=*
 // @match           https://www.hatakeskuspeli.com/toplist
 // @match           https://www.hatakeskuspeli.com/toplist?page=*
 // @match           https://poliisi.hatakeskuspeli.com/toplist
@@ -75,8 +75,8 @@
 // @match           https://policia.jogo-operador112.com/toplist?page=*
 // @match           https://www.jocdispecerat112.com/toplist
 // @match           https://www.jocdispecerat112.com/toplist?page=*
-// @match           https://www.dispetcher112.ru/toplist
-// @match           https://www.dispetcher112.ru/toplist?page=*
+// @match           https://www.dispetcher-112.com/toplist
+// @match           https://www.dispetcher-112.com/toplist?page=*
 // @match           https://www.dispecerske-centrum.com/toplist
 // @match           https://www.dispecerske-centrum.com/toplist?page=*
 // @match           https://www.larmcentralen-spelet.se/toplist

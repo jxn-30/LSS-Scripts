@@ -37,8 +37,8 @@
 // @match           https://police.missionchief.com/alliances?page=*
 // @match           https://www.centro-de-mando.es/alliances
 // @match           https://www.centro-de-mando.es/alliances?page=*
-// @match           https://www.centro-de-mando.mx/alliances
-// @match           https://www.centro-de-mando.mx/alliances?page=*
+// @match           https://www.centro-de-mando-americas.com/alliances
+// @match           https://www.centro-de-mando-americas.com/alliances?page=*
 // @match           https://www.hatakeskuspeli.com/alliances
 // @match           https://www.hatakeskuspeli.com/alliances?page=*
 // @match           https://poliisi.hatakeskuspeli.com/alliances
@@ -75,8 +75,8 @@
 // @match           https://policia.jogo-operador112.com/alliances?page=*
 // @match           https://www.jocdispecerat112.com/alliances
 // @match           https://www.jocdispecerat112.com/alliances?page=*
-// @match           https://www.dispetcher112.ru/alliances
-// @match           https://www.dispetcher112.ru/alliances?page=*
+// @match           https://www.dispetcher-112.com/alliances
+// @match           https://www.dispetcher-112.com/alliances?page=*
 // @match           https://www.dispecerske-centrum.com/alliances
 // @match           https://www.dispecerske-centrum.com/alliances?page=*
 // @match           https://www.larmcentralen-spelet.se/alliances
