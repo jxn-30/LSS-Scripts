@@ -1,97 +1,22 @@
 // ==UserScript==
-// @name         [LSS] Verbandsschulen
-// @namespace    https://jxn.lss-manager.de
-// @version      2025.09.25+1206
-// @author       Jan (jxn_30)
+// @name         LSS Verbandsschulen
 // @description  Helfer beim Bauen von Verbandsschulen
-// @homepage     https://github.com/jxn-30/LSS-Scripts
-// @homepageURL  https://github.com/jxn-30/LSS-Scripts
-// @icon         https://www.leitstellenspiel.de/favicon.ico
-// @updateURL    https://github.com/jxn-30/LSS-Scripts/raw/master/src/verbandsschulenBauer.user.js
-// @downloadURL  https://github.com/jxn-30/LSS-Scripts/raw/master/src/verbandsschulenBauer.user.js
-// @supportURL   https://github.com/jxn-30/LSS-Scripts
-// @match        https://www.operacni-stredisko.cz/
-// @match        https://www.operacni-stredisko.cz/?mapview=true
-// @match        https://policie.operacni-stredisko.cz/
-// @match        https://policie.operacni-stredisko.cz/?mapview=true
-// @match        https://www.alarmcentral-spil.dk/
-// @match        https://www.alarmcentral-spil.dk/?mapview=true
-// @match        https://politi.alarmcentral-spil.dk/
-// @match        https://politi.alarmcentral-spil.dk/?mapview=true
+// @version      1.0.0
+// @author       Jan (jxn_30)
 // @match        https://www.leitstellenspiel.de/
 // @match        https://www.leitstellenspiel.de/?mapview=true
-// @match        https://polizei.leitstellenspiel.de/
-// @match        https://polizei.leitstellenspiel.de/?mapview=true
-// @match        https://www.missionchief-australia.com/
-// @match        https://www.missionchief-australia.com/?mapview=true
-// @match        https://police.missionchief-australia.com/
-// @match        https://police.missionchief-australia.com/?mapview=true
-// @match        https://www.missionchief.co.uk/
-// @match        https://www.missionchief.co.uk/?mapview=true
-// @match        https://police.missionchief.co.uk/
-// @match        https://police.missionchief.co.uk/?mapview=true
-// @match        https://www.missionchief.com/
-// @match        https://www.missionchief.com/?mapview=true
-// @match        https://police.missionchief.com/
-// @match        https://police.missionchief.com/?mapview=true
-// @match        https://www.centro-de-mando.es/
-// @match        https://www.centro-de-mando.es/?mapview=true
-// @match        https://www.centro-de-mando-americas.com/
-// @match        https://www.centro-de-mando-americas.com/?mapview=true
-// @match        https://www.hatakeskuspeli.com/
-// @match        https://www.hatakeskuspeli.com/?mapview=true
-// @match        https://poliisi.hatakeskuspeli.com/
-// @match        https://poliisi.hatakeskuspeli.com/?mapview=true
-// @match        https://www.operateur112.fr/
-// @match        https://www.operateur112.fr/?mapview=true
-// @match        https://police.operateur112.fr/
-// @match        https://police.operateur112.fr/?mapview=true
-// @match        https://www.operatore112.it/
-// @match        https://www.operatore112.it/?mapview=true
-// @match        https://polizia.operatore112.it/
-// @match        https://polizia.operatore112.it/?mapview=true
-// @match        https://www.missionchief-japan.com/
-// @match        https://www.missionchief-japan.com/?mapview=true
-// @match        https://www.missionchief-korea.com/
-// @match        https://www.missionchief-korea.com/?mapview=true
-// @match        https://www.nodsentralspillet.com/
-// @match        https://www.nodsentralspillet.com/?mapview=true
-// @match        https://politiet.nodsentralspillet.com/
-// @match        https://politiet.nodsentralspillet.com/?mapview=true
-// @match        https://www.meldkamerspel.com/
-// @match        https://www.meldkamerspel.com/?mapview=true
-// @match        https://politie.meldkamerspel.com/
-// @match        https://politie.meldkamerspel.com/?mapview=true
-// @match        https://www.operatorratunkowy.pl/
-// @match        https://www.operatorratunkowy.pl/?mapview=true
-// @match        https://policja.operatorratunkowy.pl/
-// @match        https://policja.operatorratunkowy.pl/?mapview=true
-// @match        https://www.operador193.com/
-// @match        https://www.operador193.com/?mapview=true
-// @match        https://www.jogo-operador112.com/
-// @match        https://www.jogo-operador112.com/?mapview=true
-// @match        https://policia.jogo-operador112.com/
-// @match        https://policia.jogo-operador112.com/?mapview=true
-// @match        https://www.jocdispecerat112.com/
-// @match        https://www.jocdispecerat112.com/?mapview=true
-// @match        https://www.dispetcher-112.com/
-// @match        https://www.dispetcher-112.com/?mapview=true
-// @match        https://www.dispecerske-centrum.com/
-// @match        https://www.dispecerske-centrum.com/?mapview=true
-// @match        https://www.larmcentralen-spelet.se/
-// @match        https://www.larmcentralen-spelet.se/?mapview=true
-// @match        https://polis.larmcentralen-spelet.se/
-// @match        https://polis.larmcentralen-spelet.se/?mapview=true
-// @match        https://www.112-merkez.com/
-// @match        https://www.112-merkez.com/?mapview=true
-// @match        https://www.dyspetcher101-game.com/
-// @match        https://www.dyspetcher101-game.com/?mapview=true
+// @namespace    https://jxn.lss-manager.de/
+// @downloadURL  https://lfvbw.ledbrain.de/verbandsschulen.user.js
+// @updateURL    https://lfvbw.ledbrain.de/verbandsschulen.user.js
+// @grant        unsafeWindow
+// @grant        GM_addStyle
 // @run-at       document-idle
 // ==/UserScript==
 
 /**
  * @name Verbandsschulen
  * @description Helfer beim Bauen von Verbandsschulen
+ * @locale de_DE
  * @match /
  * @match /?mapview=true
  */
@@ -114,6 +39,76 @@ const getLng = n => {
     return lng > 180 ? lng - 360 : lng;
 };
 
+const getNextNValues = (type, startNth, amount) => {
+    if (!(type in schools)) return;
+    const [lat, kuerzel] = schools[type];
+    const nths = new Array(amount).fill(startNth).map((n, i) => n + i);
+
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+
+    const bodies = nths.map(nth =>
+        new URLSearchParams({
+            'utf8': '✓',
+            'authenticity_token': token,
+            'building[building_type]': type.toString(),
+            'building[name]': `[VB] ${kuerzel}-Schule ${nth.toString().padStart(4, 0)}`,
+            'building[latitude]': lat.toString(),
+            'building[longitude]': getLng(nth),
+            'build_with_coins': '',
+            'build_as_alliance': '1',
+            'building[address]': 'Buchhaldenwasensträßchen, 71384 Schnait',
+            'building[start_vehicle_feuerwache]': '',
+            'building[start_vehicle_feuerwache_kleinwache]': '',
+            'build_another': 'on',
+        }).toString()
+    );
+
+    return bodies;
+};
+
+const createMultipleBtn = (type, startNth, amount) => {
+    const build25Btn = document.createElement('span');
+    build25Btn.id = `build_${amount}_schools`;
+    build25Btn.classList.add('btn', 'btn-success');
+    build25Btn.textContent = `${amount} bauen`;
+    build25Btn.addEventListener('click', async e => {
+        e.preventDefault();
+
+        const bodies = getNextNValues(type, startNth, amount);
+        for (const i in bodies) {
+            if (!bodies.hasOwnProperty(i)) continue;
+            const body = bodies[i];
+            console.log(`Will ${i}/${amount - 1}`);
+            await fetch('https://www.leitstellenspiel.de/buildings', {
+                credentials: 'include',
+                headers: {
+                    'Accept': '*/*',
+                    'Accept-Language': 'de-DE,en-US;q=0.9,en;q=0.8',
+                    'Content-Type':
+                        'application/x-www-form-urlencoded; charset=UTF-8',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Sec-GPC': '1',
+                    'Sec-Fetch-Dest': 'empty',
+                    'Sec-Fetch-Mode': 'cors',
+                    'Sec-Fetch-Site': 'same-origin',
+                    'Priority': 'u=0',
+                },
+                referrer: 'https://www.leitstellenspiel.de/',
+                body,
+                method: 'POST',
+                mode: 'cors',
+            });
+            console.log(`Done ${i}/${amount - 1}`);
+        }
+
+        document.querySelector('#building_back_button').click();
+    });
+
+    // eslint-disable-next-line no-unused-expressions
+    document.getElementById(build25Btn.id)?.replaceWith(build25Btn) ??
+        document.querySelector('#address_forms')?.after(build25Btn);
+};
+
 const setMarkerAndName = (type, nth) => {
     if (!(type in schools)) return;
     const [lat, kuerzel] = schools[type];
@@ -123,6 +118,9 @@ const setMarkerAndName = (type, nth) => {
     document.querySelector('#building_longitude').value = lng;
     document.querySelector('#building_name').value =
         `[VB] ${kuerzel}-Schule ${nth.toString().padStart(4, 0)}`;
+
+    createMultipleBtn(type, nth, 5);
+    createMultipleBtn(type, nth, 25);
 };
 
 GM_addStyle(`
@@ -185,8 +183,8 @@ const randomColor = () =>
         .toString(16)
         .padStart(6, '0')}`;
 const onceAround = 360 / lngStep;
-// eslint-disable-next-line guard-for-in
 for (const school in schools) {
+    if (!schools.hasOwnProperty(school)) continue;
     const [lat, _, step] = schools[school];
     for (let i = step; i < onceAround; i += step) {
         const color = randomColor();
