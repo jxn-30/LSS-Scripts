@@ -1,15 +1,19 @@
 // ==UserScript==
-// @name         LSS Verbandsschulen
-// @description  Helfer beim Bauen von Verbandsschulen
-// @version      1.0.0
+// @name         [LSS] Verbandsschulen
+// @namespace    https://jxn.lss-manager.de
+// @version      2026.11.05+1717
 // @author       Jan (jxn_30)
+// @description  Helfer beim Bauen von Verbandsschulen
+// @homepage     https://github.com/jxn-30/LSS-Scripts
+// @homepageURL  https://github.com/jxn-30/LSS-Scripts
+// @icon         https://www.leitstellenspiel.de/favicon.ico
+// @updateURL    https://github.com/jxn-30/LSS-Scripts/raw/master/src/verbandsschulenBauer.user.js
+// @downloadURL  https://github.com/jxn-30/LSS-Scripts/raw/master/src/verbandsschulenBauer.user.js
+// @supportURL   https://github.com/jxn-30/LSS-Scripts
 // @match        https://www.leitstellenspiel.de/
 // @match        https://www.leitstellenspiel.de/?mapview=true
-// @namespace    https://jxn.lss-manager.de/
-// @downloadURL  https://lfvbw.ledbrain.de/verbandsschulen.user.js
-// @updateURL    https://lfvbw.ledbrain.de/verbandsschulen.user.js
-// @grant        unsafeWindow
-// @grant        GM_addStyle
+// @match        https://polizei.leitstellenspiel.de/
+// @match        https://polizei.leitstellenspiel.de/?mapview=true
 // @run-at       document-idle
 // ==/UserScript==
 
