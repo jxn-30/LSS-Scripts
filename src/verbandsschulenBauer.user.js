@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Verbandsschulen
 // @namespace    https://jxn.lss-manager.de
-// @version      2026.11.05+1717
+// @version      2026.11.08+1354
 // @author       Jan (jxn_30)
 // @description  Helfer beim Bauen von Verbandsschulen
 // @homepage     https://github.com/jxn-30/LSS-Scripts
@@ -15,6 +15,7 @@
 // @match        https://polizei.leitstellenspiel.de/
 // @match        https://polizei.leitstellenspiel.de/?mapview=true
 // @run-at       document-idle
+// @grant        GM_addStyle
 // ==/UserScript==
 
 /**
@@ -23,6 +24,7 @@
  * @locale de_DE
  * @match /
  * @match /?mapview=true
+ * @grant GM_addStyle
  */
 
 /* global L, map */
@@ -71,12 +73,21 @@ const getNextNValues = (type, startNth, amount) => {
 };
 
 const createMultipleBtn = (type, startNth, amount) => {
+    const multipleClass = 'build-multiple-schools';
     const build25Btn = document.createElement('span');
     build25Btn.id = `build_${amount}_schools`;
-    build25Btn.classList.add('btn', 'btn-success');
+    build25Btn.classList.add('btn', 'btn-success', multipleClass);
     build25Btn.textContent = `${amount} bauen`;
     build25Btn.addEventListener('click', async e => {
         e.preventDefault();
+
+        document
+            .querySelectorAll(`.${multipleClass}, .alliance_activate`)
+            .forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('disabled');
+                btn.style.setProperty('pointer-events', 'none');
+            });
 
         const bodies = getNextNValues(type, startNth, amount);
         for (const i in bodies) {
