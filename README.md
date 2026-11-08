@@ -182,7 +182,7 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeugmarkt: Anzahl anzeigen
 - [[LSS] Vehicle Type in Zug-Editor](#lss-vehicle-type-in-zug-editor)&nbsp;`2025.11.20+1418`&nbsp; &nbsp; [📥️:&nbsp;vehicleTypeInZugEditor.user.js][vehicleTypeInZugEditor.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Fahrzeugtypen im Zug-Editor
-- [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2026.11.05+1717`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]<br/>
+- [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2026.11.08+1355`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]<br/>
     
 </details>
 
@@ -269,7 +269,7 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp;&nbsp;[📥️:&nbsp;userId.user.js][userId.user.js:download]
 - [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2026.05.01+1706`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
 - [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
-- [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2026.11.05+1717`&nbsp;&nbsp;[📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]
+- [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2026.11.08+1355`&nbsp;&nbsp;[📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
 - [[LSS] Wachsende Chat-Eingabe](#lss-growing-chat-input)&nbsp;`2026.05.07+2112`&nbsp;&nbsp;[📥️:&nbsp;growingChatInput.user.js][growingChatInput.user.js:download]
 - [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2026.08.18+2145`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
@@ -1818,7 +1818,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 |                                Source Code                                |     Version     | Available in |                               Download                                |
 |:-------------------------------------------------------------------------:|:---------------:|:------------:|:---------------------------------------------------------------------:|
-| [`src/verbandsschulenBauer.user.js`][verbandsschulenBauer.user.js:source] | 2026.11.05+1717 |    `🇩🇪`    | [verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download] |
+| [`src/verbandsschulenBauer.user.js`][verbandsschulenBauer.user.js:source] | 2026.11.08+1355 |    `🇩🇪`    | [verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download] |
 
 
 

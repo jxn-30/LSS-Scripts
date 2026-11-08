@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Verbandsschulen
 // @namespace    https://jxn.lss-manager.de
-// @version      2026.11.08+1354
+// @version      2026.11.08+1355
 // @author       Jan (jxn_30)
 // @description  Helfer beim Bauen von Verbandsschulen
 // @homepage     https://github.com/jxn-30/LSS-Scripts
