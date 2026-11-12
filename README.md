@@ -17,7 +17,7 @@ This list is auto-generated and contains all scripts that are already ported int
 
 <!-- prettier-ignore-start -->
 <!-- == BEGIN SCRIPT-OVERVIEW == -->
-*Total: 84 userscripts*
+*Total: 79 userscripts*
 <details>
     <summary> <b>Table of Contents</b> <em>Click to expand / collapse</em></summary>
     
@@ -27,8 +27,6 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Config Lite (DE)
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp; &nbsp; [📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] AAO Finder
-- [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2025.01.22+0041`&nbsp; &nbsp; [📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]<br/>
-&nbsp;&nbsp;🇩🇪: [LSS] AAO Replacer
 - [[LSS] Alarm-Icons](#lss-alarm-icons)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;alarmIcons.user.js][alarmIcons.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Alarm-Icons
 - [[LSS] Alliance Distance](#lss-alliance-distance)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;allianceDistance.user.js][allianceDistance.user.js:download]<br/>
@@ -54,8 +52,6 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Baukostenrechner
 - [[LSS] Calendar-Gift-Highlight](#lss-calendar-gift-highlight)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;calendarGiftHighlight.user.js][calendarGiftHighlight.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Calendar-Gift-Highlight
-- [[LSS] Central Settings](#lss-central-settings)&nbsp;`2026.08.18+2145`&nbsp; &nbsp; [📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]<br/>
-&nbsp;&nbsp;🇩🇪: [LSS] Zentrale Einstellungen
 - [[LSS] Chat Hider](#lss-chat-hider)&nbsp;`2023.06.03+1511`&nbsp; &nbsp; [📥️:&nbsp;chatHider.user.js][chatHider.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Chat Hider
 - [[LSS] Chat Reverse](#lss-chat-reverse)&nbsp;`2025.01.14+2330`&nbsp; &nbsp; [📥️:&nbsp;chatReverse.user.js][chatReverse.user.js:download]<br/>
@@ -92,8 +88,6 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: External Links
 - [[LSS] Forum: Old Like Style](#lss-forum-old-like-style)&nbsp;`2025.02.19+1550`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;forum/oldLikeStyle.user.js][forum/oldLikeStyle.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Forum: Old Like Style
-- [[LSS] get buildings of Alliance-Members by german county](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]<br/>
-&nbsp;&nbsp;🇩🇪: [LSS] Verbandsmitgliedergebäude nach Kreis
 - [[LSS] Growing Chat-Input](#lss-growing-chat-input)&nbsp;`2026.05.07+2112`&nbsp; &nbsp; [📥️:&nbsp;growingChatInput.user.js][growingChatInput.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Wachsende Chat-Eingabe
 - [[LSS] Grüße vom Jan](#lss-gr-e-vom-jan)&nbsp;`2023.06.03+1511`&nbsp;(`🇩🇪`) &nbsp; [📥️:&nbsp;gruesse.user.js][gruesse.user.js:download]<br/>
@@ -172,10 +166,6 @@ This list is auto-generated and contains all scripts that are already ported int
 &nbsp;&nbsp;🇩🇪: [LSS] Status-Zähler
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp; &nbsp; [📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] Toplist Distance
-- [[LSS] Training Finder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp; &nbsp; [📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]<br/>
-&nbsp;&nbsp;🇩🇪: [LSS] Ausbildungsfinder
-- [[LSS] Training Mouse Protector](#lss-training-mouse-protector)&nbsp;`2026.06.04+1326`&nbsp; &nbsp; [📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]<br/>
-&nbsp;&nbsp;🇩🇪: [LSS] Ausbildungs-Mausschoner
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp; &nbsp; [📥️:&nbsp;userId.user.js][userId.user.js:download]<br/>
 &nbsp;&nbsp;🇩🇪: [LSS] User-ID
 - [[LSS] Vehicle market: Show amount](#lss-vehicle-market-show-amount)&nbsp;`2024.07.06+1514`&nbsp; &nbsp; [📥️:&nbsp;vehicleMarketShowAmount.user.js][vehicleMarketShowAmount.user.js:download]<br/>
@@ -193,7 +183,6 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] AAO Config Lite (DE)](#lss-aao-config-lite-de)&nbsp;`2025.06.09+1706`&nbsp;&nbsp;[📥️:&nbsp;aaoConfigLite.de.user.js][aaoConfigLite.de.user.js:download]
 - [[LSS] AAO Finder](#lss-aao-finder)&nbsp;`2023.12.25+0046`&nbsp;&nbsp;[📥️:&nbsp;aaoFinder.user.js][aaoFinder.user.js:download]
 - [[LSS] AAO leeren](#lss-empty-arr)&nbsp;`2026.02.12+1617`&nbsp;&nbsp;[📥️:&nbsp;emptyAAO.user.js][emptyAAO.user.js:download]
-- [[LSS] AAO Replacer](#lss-aao-replacer)&nbsp;`2025.01.22+0041`&nbsp;&nbsp;[📥️:&nbsp;aaoReplacer.user.js][aaoReplacer.user.js:download]
 - [[LSS] AAO-Kategorien Export](#lss-arr-categories-export)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCategoriesExport.user.js][arrCategoriesExport.user.js:download]
 - [[LSS] AAO-Zähler](#lss-arr-counter)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;arrCounter.user.js][arrCounter.user.js:download]
 - [[LSS] Alarm-Icons](#lss-alarm-icons)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;alarmIcons.user.js][alarmIcons.user.js:download]
@@ -204,8 +193,6 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Asynchrone Gefangene](#lss-async-prisoners)&nbsp;`2023.06.03+1511`&nbsp;&nbsp;[📥️:&nbsp;asyncPrisoners.user.js][asyncPrisoners.user.js:download]
 - [[LSS] Aufgeräumter Fahrzeugmarkt](#lss-cleaner-vehicle-market)&nbsp;`2024.08.27+2210`&nbsp;&nbsp;[📥️:&nbsp;cleanerVehicleMarket.user.js][cleanerVehicleMarket.user.js:download]
 - [[LSS] Auflistung eigener Fahrzeugtypen](#lss-custom-vehicle-types-listing)&nbsp;`2024.01.07+1821`&nbsp;&nbsp;[📥️:&nbsp;customVehicleTypesListing.user.js][customVehicleTypesListing.user.js:download]
-- [[LSS] Ausbildungs-Mausschoner](#lss-training-mouse-protector)&nbsp;`2026.06.04+1326`&nbsp;&nbsp;[📥️:&nbsp;trainingMouseProtector.user.js][trainingMouseProtector.user.js:download]
-- [[LSS] Ausbildungsfinder](#lss-training-finder)&nbsp;`2024.01.19+1234`&nbsp;&nbsp;[📥️:&nbsp;trainingFinder.user.js][trainingFinder.user.js:download]
 - [[LSS] Baukostenrechner](#lss-building-cost-calculator)&nbsp;`2024.10.27+1108`&nbsp;&nbsp;[📥️:&nbsp;buildingCostCalculator.user.js][buildingCostCalculator.user.js:download]
 - [[LSS] Bessere Sichtbarkeit von Generierungsradien](#lss-better-spawnarea-visibility)&nbsp;`2026.06.01+1833`&nbsp;&nbsp;[📥️:&nbsp;betterSpawnAreaVisibility.user.js][betterSpawnAreaVisibility.user.js:download]
 - [[LSS] Blaue Kästen in der Einsatzliste ausblenden](#lss-hide-blue-missionlist-boxes)&nbsp;`2025.07.05+2111`&nbsp;&nbsp;[📥️:&nbsp;hideBlueMissionListBoxes.user.js][hideBlueMissionListBoxes.user.js:download]
@@ -268,11 +255,9 @@ This list is auto-generated and contains all scripts that are already ported int
 - [[LSS] Toplist Distance](#lss-toplist-distance)&nbsp;`2023.06.03+1512`&nbsp;&nbsp;[📥️:&nbsp;toplistDistance.user.js][toplistDistance.user.js:download]
 - [[LSS] User-ID](#lss-user-id)&nbsp;`2024.01.07+1848`&nbsp;&nbsp;[📥️:&nbsp;userId.user.js][userId.user.js:download]
 - [[LSS] Verbandsmitglieder panel](#lss-alliance-members-panel)&nbsp;`2026.05.01+1706`&nbsp;&nbsp;[📥️:&nbsp;allianceMembersPanel.user.js][allianceMembersPanel.user.js:download]
-- [[LSS] Verbandsmitgliedergebäude nach Kreis](#lss-get-buildings-of-alliance-members-by-german-county)&nbsp;`2023.05.11+0900`&nbsp;&nbsp;[📥️:&nbsp;getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download]
 - [[LSS] Verbandsschulen](#lss-verbandsschulen)&nbsp;`2026.11.08+1355`&nbsp;&nbsp;[📥️:&nbsp;verbandsschulenBauer.user.js][verbandsschulenBauer.user.js:download]
 - [[LSS] Verkürzte Funk-Historie](#lss-limited-radio-history)&nbsp;`2023.12.21+0058`&nbsp;&nbsp;[📥️:&nbsp;limitedRadioHistory.user.js][limitedRadioHistory.user.js:download]
 - [[LSS] Wachsende Chat-Eingabe](#lss-growing-chat-input)&nbsp;`2026.05.07+2112`&nbsp;&nbsp;[📥️:&nbsp;growingChatInput.user.js][growingChatInput.user.js:download]
-- [[LSS] Zentrale Einstellungen](#lss-central-settings)&nbsp;`2026.08.18+2145`&nbsp;&nbsp;[📥️:&nbsp;centralSettings.user.js][centralSettings.user.js:download]
     
 </details>
 
@@ -332,25 +317,6 @@ This list is auto-generated and contains all scripts that are already ported int
 [aaoFinder.user.js:source]: ./blob/master/src/aaoFinder.user.js
 [aaoFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoFinder.user.js
 [aaoFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25194-script-aao-finder-finde-aaos-die-bestimmte-anforderungen-enthalten/
-
-### [LSS] AAO Replacer
-
-> Allows to replace a requirement in all ARRs with another one.
-
-|                       Source Code                       |     Version     |                      Download                       |               Links                |
-|:-------------------------------------------------------:|:---------------:|:---------------------------------------------------:|:----------------------------------:|
-| [`src/aaoReplacer.user.js`][aaoReplacer.user.js:source] | 2025.01.22+0041 | [aaoReplacer.user.js][aaoReplacer.user.js:download] | [Forum][aaoReplacer.user.js:forum] |
-
-<details>
-    <summary>🇩🇪 [LSS] AAO Replacer</summary>
-    Ersetze alle Anforderungen in allen AAOs mit einer anderen.
-</details>
-
-<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
-
-[aaoReplacer.user.js:source]: ./blob/master/src/aaoReplacer.user.js
-[aaoReplacer.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/aaoReplacer.user.js
-[aaoReplacer.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25193-script-aao-replacer-schnell-anforderung-durch-eine-andere-ersetzen/
 
 ### [LSS] Alarm-Icons
 
@@ -591,25 +557,6 @@ This list is auto-generated and contains all scripts that are already ported int
 
 [calendarGiftHighlight.user.js:source]: ./blob/master/src/calendarGiftHighlight.user.js
 [calendarGiftHighlight.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/calendarGiftHighlight.user.js
-
-### [LSS] Central Settings
-
-> Keeps settings for buildings (sharing cells and beds) and vehicles (automatic transport and towing vehicles) in one place.
-
-|                           Source Code                           |     Version     |                          Download                           |                 Links                  |
-|:---------------------------------------------------------------:|:---------------:|:-----------------------------------------------------------:|:--------------------------------------:|
-| [`src/centralSettings.user.js`][centralSettings.user.js:source] | 2026.08.18+2145 | [centralSettings.user.js][centralSettings.user.js:download] | [Forum][centralSettings.user.js:forum] |
-
-<details>
-    <summary>🇩🇪 [LSS] Zentrale Einstellungen</summary>
-    Hält Einstellungen für Gebäude (Zellen- und Bettenfreigabe) und Fahrzeuge (automatische Transporte und Zugfahrzeuge) an einem Ort.
-</details>
-
-<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
-
-[centralSettings.user.js:source]: ./blob/master/src/centralSettings.user.js
-[centralSettings.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/centralSettings.user.js
-[centralSettings.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/26968-script-zentrale-einstellungen-endlich-wieder-krankenh%C3%A4user-zellen-elw-1-seg-und/
 
 ### [LSS] Chat Hider
 
@@ -949,24 +896,6 @@ This list is auto-generated and contains all scripts that are already ported int
 [forum/oldLikeStyle.user.js:source]: ./blob/master/src/forum/oldLikeStyle.user.js
 [forum/oldLikeStyle.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/forum/oldLikeStyle.user.js
 [forum/oldLikeStyle.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/23913-forum-alter-like-style/
-
-### [LSS] get buildings of Alliance-Members by german county
-
-> This script summarizes how many buildings of each type the alliance members have in each german county.
-
-|                                                Source Code                                                |     Version     | Available in |                                               Download                                                |
-|:---------------------------------------------------------------------------------------------------------:|:---------------:|:------------:|:-----------------------------------------------------------------------------------------------------:|
-| [`src/getAllianceMemberBuildingsByDECounty.user.js`][getAllianceMemberBuildingsByDECounty.user.js:source] | 2023.05.11+0900 |    `🇩🇪`    | [getAllianceMemberBuildingsByDECounty.user.js][getAllianceMemberBuildingsByDECounty.user.js:download] |
-
-<details>
-    <summary>🇩🇪 [LSS] Verbandsmitgliedergebäude nach Kreis</summary>
-    Dieses Script fasst zusammen, wie viele Gebäude jeder Art die Verbandsmitglieder in jedem Stadt-/Landkreis haben.
-</details>
-
-<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
-
-[getAllianceMemberBuildingsByDECounty.user.js:source]: ./blob/master/src/getAllianceMemberBuildingsByDECounty.user.js
-[getAllianceMemberBuildingsByDECounty.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/getAllianceMemberBuildingsByDECounty.user.js
 
 ### [LSS] Growing Chat-Input
 
@@ -1717,44 +1646,6 @@ This list is auto-generated and contains all scripts that are already ported int
 [toplistDistance.user.js:source]: ./blob/master/src/toplistDistance.user.js
 [toplistDistance.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/toplistDistance.user.js
 [toplistDistance.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/18531-script-differenz-zum-n%C3%A4chsten-verband-verbandsmitglied-spieler/
-
-### [LSS] Training Finder
-
-> Lists all buildings and amount of staff with a specific training
-
-|                          Source Code                          |     Version     |                         Download                          |                 Links                 |
-|:-------------------------------------------------------------:|:---------------:|:---------------------------------------------------------:|:-------------------------------------:|
-| [`src/trainingFinder.user.js`][trainingFinder.user.js:source] | 2024.01.19+1234 | [trainingFinder.user.js][trainingFinder.user.js:download] | [Forum][trainingFinder.user.js:forum] |
-
-<details>
-    <summary>🇩🇪 [LSS] Ausbildungsfinder</summary>
-    Listet alle Gebäude und die Anzahl an Personal mit einer bestimmten Ausbildung auf
-</details>
-
-<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
-
-[trainingFinder.user.js:source]: ./blob/master/src/trainingFinder.user.js
-[trainingFinder.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingFinder.user.js
-[trainingFinder.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25273-script-ausbildungsfinder/
-
-### [LSS] Training Mouse Protector
-
-> Protects your mouse by reducing the amount of unnecessary clicks to train much staff.
-
-|                                  Source Code                                  |     Version     |                                 Download                                  |                     Links                     |
-|:-----------------------------------------------------------------------------:|:---------------:|:-------------------------------------------------------------------------:|:---------------------------------------------:|
-| [`src/trainingMouseProtector.user.js`][trainingMouseProtector.user.js:source] | 2026.06.04+1326 | [trainingMouseProtector.user.js][trainingMouseProtector.user.js:download] | [Forum][trainingMouseProtector.user.js:forum] |
-
-<details>
-    <summary>🇩🇪 [LSS] Ausbildungs-Mausschoner</summary>
-    Schützt deine Maus, indem die Anzahl der unnötigen Klicks reduziert wird, um viel Personal auszubilden.
-</details>
-
-<p align="center"><sub><a href="#scripts" title="Back to top / Zurück nach oben">⬆️ Back to top / Zurück nach oben ⬆️</a></sub></p>
-
-[trainingMouseProtector.user.js:source]: ./blob/master/src/trainingMouseProtector.user.js
-[trainingMouseProtector.user.js:download]: https://github.com/jxn-30/LSS-Scripts/raw/master/src/trainingMouseProtector.user.js
-[trainingMouseProtector.user.js:forum]: https://forum.leitstellenspiel.de/index.php?thread/25707-script-ausbildungs-mausschoner-endlich-machen-massen-ausbildungen-wieder-spa%C3%9F/
 
 ### [LSS] User-ID
 
