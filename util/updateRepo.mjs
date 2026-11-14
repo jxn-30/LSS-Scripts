@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { parse as parseMeta } from 'userscript-meta';
 import path from 'path';
-import simpleGit from 'simple-git';
+import { simpleGit } from 'simple-git';
 
 import { GAMES } from './games.mjs';
 
