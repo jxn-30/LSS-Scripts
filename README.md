@@ -1,11 +1,16 @@
 # LSS-Scripts
 
-> [!NOTE]
-> **Disclaimer**
+> [!WARNING]
 >
-> 🇩🇪 Aktuell stehen meine Scripte primär zum Download zur Verfügung. Die Scripte werden nicht zwingend aktiv aktuell gehalten und ich gebe keinen aktiven Support mehr für diese.
+> 🇩🇪 Die Verwendung der hier vorgestellten Scripts erfolgt auf eigene Gefahr.
+> Einige zuvor hier veröffentlichte Scripts verstoßen seit dem 12.11.2026 unter Umständen, je nach Nutzung, gegen [Script-Richtlinien](https://forum.leitstellenspiel.de/index.php?thread/30427-skript-vs-bot-was-ist-erlaubt-was-nicht/&postID=605837#post605837) des Betreibers und werden daher nicht mehr zum Download angeboten.
+> Das Bereitstellen von Kopien und Adaptionen der hier vorgestellten Scripte ist im Rahmen der [MIT-Lizenz](./LICENSE) erlaubt, erfolgt aber auf eigene Verantwortung.
+> Die hier vorgestellten Scripte werden lediglich zum Download zur Verfügung gestellt. Es werden keine Aktualisierungen veröffentlicht. Es wird kein aktiver Support für die Scripte gegeben.
 >
-> 🇬🇧 Currently, my scripts are primarily available for download. The scripts are not necessarily kept up to date, and I no longer provide active support for them.
+> 🇬🇧 Use of the scripts presented here is at your own risk.
+> Some scripts previously published here may, depending on their use, violate the [Script Guidelines](https://forum.leitstellenspiel.de/index.php?thread/30427-skript-vs-bot-was-ist-erlaubt-was-nicht/&postID=605837#post605837) since 2026-11-12 and are therefore no longer available for download.
+> Distributing copies and adaptations of the scripts presented here is permitted under the [MIT License](./LICENSE), but is done at your own risk.
+> The scripts presented here are provided for download only. No updates will be released. No active support is provided for the scripts.
 
 These are some scripts for Leitstellenspiel, Missionchief and the other versions.
 
