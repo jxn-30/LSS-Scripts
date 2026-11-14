@@ -1,7 +1,7 @@
 import { createHash } from 'crypto';
 import fs from 'fs';
 import path from 'path';
-import simpleGit from 'simple-git';
+import { simpleGit } from 'simple-git';
 import { GITHUB, ROOT_PATH } from './shared.mjs';
 
 /**
